@@ -1,0 +1,4 @@
+<map id="EmulateMemory" name="EmulateMemory">
+<area shape="rect" id="node3" href="$classEmulatePcodeCache.html" title="A SLEIGH based implementation of the Emulate interface. " alt="" coords="5,155,151,181"/>
+<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface. " alt="" coords="43,5,113,32"/>
+</map>

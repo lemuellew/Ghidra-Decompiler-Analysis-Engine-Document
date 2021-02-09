@@ -1,0 +1,6 @@
+<map id="SleighBase" name="SleighBase">
+<area shape="rect" id="node4" href="$classSleigh.html" title="Sleigh" alt="" coords="5,229,64,256"/>
+<area shape="rect" id="node5" href="$classSleighCompile.html" title="SleighCompile" alt="" coords="88,229,195,256"/>
+<area shape="rect" id="node2" href="$classTranslate.html" title="The interface to a translation engine for a processor. " alt="" coords="50,80,126,107"/>
+<area shape="rect" id="node3" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="20,5,156,32"/>
+</map>

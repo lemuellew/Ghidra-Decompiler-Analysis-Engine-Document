@@ -1,0 +1,6 @@
+<map id="Scope" name="Scope">
+<area shape="rect" id="node2" href="$classScopeGhidra.html" title="An implementation of the Scope interface by querying a Ghidra client for Symbol information. " alt="" coords="5,80,103,107"/>
+<area shape="rect" id="node3" href="$classScopeInternal.html" title="An in&#45;memory implementation of the Scope interface. " alt="" coords="127,80,229,107"/>
+<area shape="rect" id="node4" href="$classScopeGhidraNamespace.html" title="A global namespace Scope. " alt="" coords="17,155,184,181"/>
+<area shape="rect" id="node5" href="$classScopeLocal.html" title="A Symbol scope for local variables of a particular function. " alt="" coords="209,155,299,181"/>
+</map>

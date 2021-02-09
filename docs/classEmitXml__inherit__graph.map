@@ -1,0 +1,4 @@
+<map id="EmitXml" name="EmitXml">
+<area shape="rect" id="node2" href="$classEmitNoXml.html" title="A trivial emitter that outputs syntax straight to the stream. " alt="" coords="5,80,95,107"/>
+<area shape="rect" id="node3" href="$classEmitPrettyPrint.html" title="A generic source code pretty printer. " alt="" coords="119,80,229,107"/>
+</map>

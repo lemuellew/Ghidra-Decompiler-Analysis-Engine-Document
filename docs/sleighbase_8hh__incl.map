@@ -1,0 +1,19 @@
+<map id="sleighbase.hh" name="sleighbase.hh">
+<area shape="rect" id="node2" href="$translate_8hh.html" title="Classes for disassembly and pcode generation. " alt="" coords="210,379,301,405"/>
+<area shape="rect" id="node23" href="$slghsymbol_8hh_source.html" title="slghsymbol.hh" alt="" coords="293,80,399,107"/>
+<area shape="rect" id="node3" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops. " alt="" coords="323,453,419,480"/>
+<area shape="rect" id="node22" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats. " alt="" coords="223,453,288,480"/>
+<area shape="rect" id="node4" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="293,528,380,555"/>
+<area shape="rect" id="node20" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="404,528,507,555"/>
+<area shape="rect" id="node5" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="299,603,374,629"/>
+<area shape="rect" id="node6" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="437,677,503,704"/>
+<area shape="rect" id="node18" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="239,677,301,704"/>
+<area shape="rect" id="node7" href="$types_8h_source.html" title="types.h" alt="" coords="267,752,332,779"/>
+<area shape="rect" id="node21" href="$opcodes_8hh.html" title="All the individual p&#45;code operations. " alt="" coords="128,603,217,629"/>
+<area shape="rect" id="node24" href="$semantics_8hh_source.html" title="semantics.hh" alt="" coords="295,229,395,256"/>
+<area shape="rect" id="node28" href="$slghpatexpress_8hh_source.html" title="slghpatexpress.hh" alt="" coords="394,155,522,181"/>
+<area shape="rect" id="node25" href="$context_8hh_source.html" title="context.hh" alt="" coords="322,304,405,331"/>
+<area shape="rect" id="node26" href="$globalcontext_8hh.html" title="Utilities for getting address&#45;based context to the disassembler and decompiler. " alt="" coords="325,379,442,405"/>
+<area shape="rect" id="node27" href="$partmap_8hh.html" title="The partmap&lt;&gt; template mapping a linear space to value objects. " alt="" coords="531,528,617,555"/>
+<area shape="rect" id="node29" href="$slghpattern_8hh_source.html" title="slghpattern.hh" alt="" coords="419,229,523,256"/>
+</map>

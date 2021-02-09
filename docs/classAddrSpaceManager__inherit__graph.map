@@ -1,0 +1,14 @@
+<map id="AddrSpaceManager" name="AddrSpaceManager">
+<area shape="rect" id="node2" href="$classArchitecture.html" title="Manager for all the major decompiler subsystems. " alt="" coords="178,80,270,107"/>
+<area shape="rect" id="node8" href="$classTranslate.html" title="The interface to a translation engine for a processor. " alt="" coords="406,80,482,107"/>
+<area shape="rect" id="node3" href="$classArchitectureGhidra.html" title="An implementation of the Architecture interface and connection to a Ghidra client. " alt="" coords="5,155,136,181"/>
+<area shape="rect" id="node4" href="$classSleighArchitecture.html" title="An Architecture that uses the decompiler&#39;s native SLEIGH translation engine. " alt="" coords="160,155,288,181"/>
+<area shape="rect" id="node5" href="$classBfdArchitecture.html" title="Architecture that reads executable files using GNU BFD libraries. " alt="" coords="9,229,121,256"/>
+<area shape="rect" id="node6" href="$classRawBinaryArchitecture.html" title="Architecture that reads its binary as a raw file. " alt="" coords="146,229,302,256"/>
+<area shape="rect" id="node7" href="$classXmlArchitecture.html" title="An Architecture that loads executables using an XML format. " alt="" coords="327,229,441,256"/>
+<area shape="rect" id="node9" href="$classDummyTranslate.html" title="DummyTranslate" alt="" coords="312,155,435,181"/>
+<area shape="rect" id="node10" href="$classGhidraTranslate.html" title="An implementation of Translate that queries a Ghidra client for p&#45;code information. " alt="" coords="459,155,573,181"/>
+<area shape="rect" id="node11" href="$classSleighBase.html" title="Common core of classes that read or write SLEIGH specification files natively. " alt="" coords="597,155,685,181"/>
+<area shape="rect" id="node12" href="$classSleigh.html" title="Sleigh" alt="" coords="559,229,617,256"/>
+<area shape="rect" id="node13" href="$classSleighCompile.html" title="SleighCompile" alt="" coords="641,229,748,256"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="CommentDatabase" name="CommentDatabase">
+<area shape="rect" id="node2" href="$classCommentDatabaseGhidra.html" title="An implementation of CommentDatabase backed by a Ghidra client. " alt="" coords="5,80,179,107"/>
+<area shape="rect" id="node3" href="$classCommentDatabaseInternal.html" title="An in&#45;memory implementation of the CommentDatabase API. " alt="" coords="203,80,381,107"/>
+</map>

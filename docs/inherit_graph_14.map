@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classAssemblyEmit.html" title="Abstract class for emitting disassembly to an application. " alt="" coords="5,31,112,57"/>
+<area shape="rect" id="node2" href="$classAssemblyRaw.html" title="AssemblyRaw" alt="" coords="175,5,281,32"/>
+<area shape="rect" id="node3" href="$classIfaceAssemblyEmit.html" title="IfaceAssemblyEmit" alt="" coords="160,56,296,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SegmentOp" name="SegmentOp">
+<area shape="rect" id="node2" href="$classTermPatternOp.html" title="A user defined p&#45;code op that has a dynamically defined procedure. " alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$classUserPcodeOp.html" title="The base class for a detailed definition of a user&#45;defined p&#45;code operation. " alt="" coords="9,5,113,32"/>
+</map>

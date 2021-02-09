@@ -1,0 +1,11 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classUserPcodeOp.html" title="The base class for a detailed definition of a user&#45;defined p&#45;code operation. " alt="" coords="5,107,109,133"/>
+<area shape="rect" id="node2" href="$classInjectedUserOp.html" title="A user defined operation that is injected with other p&#45;code. " alt="" coords="180,5,293,32"/>
+<area shape="rect" id="node3" href="$classJumpAssistOp.html" title="A user defined p&#45;code op for assisting the recovery of jump tables. " alt="" coords="183,56,291,83"/>
+<area shape="rect" id="node4" href="$classTermPatternOp.html" title="A user defined p&#45;code op that has a dynamically defined procedure. " alt="" coords="181,107,292,133"/>
+<area shape="rect" id="node6" href="$classUnspecializedPcodeOp.html" title="A user defined p&#45;code op with no specialization. " alt="" coords="157,157,316,184"/>
+<area shape="rect" id="node7" href="$classVolatileOp.html" title="A base class for operations that access volatile memory. " alt="" coords="195,208,278,235"/>
+<area shape="rect" id="node5" href="$classSegmentOp.html" title="The segmented address operator. " alt="" coords="375,107,466,133"/>
+<area shape="rect" id="node8" href="$classVolatileReadOp.html" title="An operation that reads from volatile memory. " alt="" coords="364,183,477,209"/>
+<area shape="rect" id="node9" href="$classVolatileWriteOp.html" title="An operation that writes to volatile memory. " alt="" coords="364,233,477,260"/>
+</map>

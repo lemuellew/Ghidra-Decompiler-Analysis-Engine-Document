@@ -1,0 +1,4 @@
+<map id="JumpBasic2" name="JumpBasic2">
+<area shape="rect" id="node2" href="$classJumpBasic.html" title="The basic switch model. " alt="" coords="9,80,96,107"/>
+<area shape="rect" id="node3" href="$classJumpModel.html" title="A jump&#45;table execution model. " alt="" coords="8,5,97,32"/>
+</map>

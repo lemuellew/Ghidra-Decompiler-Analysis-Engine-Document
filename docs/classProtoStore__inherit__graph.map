@@ -1,0 +1,4 @@
+<map id="ProtoStore" name="ProtoStore">
+<area shape="rect" id="node2" href="$classProtoStoreInternal.html" title="A collection of parameter descriptions without backing symbols. " alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node3" href="$classProtoStoreSymbol.html" title="A collection of parameter descriptions backed by Symbol information. " alt="" coords="157,80,285,107"/>
+</map>

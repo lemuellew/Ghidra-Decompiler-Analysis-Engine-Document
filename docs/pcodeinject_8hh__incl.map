@@ -1,0 +1,27 @@
+<map id="pcodeinject.hh" name="pcodeinject.hh">
+<area shape="rect" id="node2" href="$emulateutil_8hh.html" title="(Lightweight) emulation interface for executing PcodeOp objects within a syntax tree or for executing..." alt="" coords="375,80,478,107"/>
+<area shape="rect" id="node3" href="$emulate_8hh.html" title="Classes for emulating p&#45;code. " alt="" coords="431,379,518,405"/>
+<area shape="rect" id="node27" href="$op_8hh.html" title="The PcodeOp and PcodeOpBank classes. " alt="" coords="367,155,422,181"/>
+<area shape="rect" id="node4" href="$memstate_8hh.html" title="Classes for keeping track of memory state during emulation. " alt="" coords="517,453,616,480"/>
+<area shape="rect" id="node25" href="$translate_8hh.html" title="Classes for disassembly and pcode generation. " alt="" coords="403,453,493,480"/>
+<area shape="rect" id="node5" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops. " alt="" coords="544,528,640,555"/>
+<area shape="rect" id="node24" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image. " alt="" coords="421,528,520,555"/>
+<area shape="rect" id="node6" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="429,603,515,629"/>
+<area shape="rect" id="node22" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="541,603,643,629"/>
+<area shape="rect" id="node7" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="480,677,555,704"/>
+<area shape="rect" id="node8" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="559,752,625,779"/>
+<area shape="rect" id="node20" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="297,752,359,779"/>
+<area shape="rect" id="node9" href="$types_8h_source.html" title="types.h" alt="" coords="215,827,281,853"/>
+<area shape="rect" id="node23" href="$opcodes_8hh.html" title="All the individual p&#45;code operations. " alt="" coords="366,677,455,704"/>
+<area shape="rect" id="node26" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats. " alt="" coords="318,603,383,629"/>
+<area shape="rect" id="node28" href="$typeop_8hh.html" title="Data&#45;type and behavior information associated with specific p&#45;code op&#45;codes. " alt="" coords="333,229,411,256"/>
+<area shape="rect" id="node29" href="$cpool_8hh.html" title="Definitions to support a constant pool for deferred compilation languages (i.e. java byte&#45;code) ..." alt="" coords="234,304,305,331"/>
+<area shape="rect" id="node31" href="$variable_8hh.html" title="Definitions for high&#45;level variables. " alt="" coords="329,304,415,331"/>
+<area shape="rect" id="node34" href="$printlanguage_8hh.html" title="Classes for printing tokens in a high&#45;level language. " alt="" coords="67,379,184,405"/>
+<area shape="rect" id="node30" href="$type_8hh.html" title="Classes for describing and printing data&#45;types. " alt="" coords="237,528,302,555"/>
+<area shape="rect" id="node32" href="$varnode_8hh.html" title="The Varnode and VarnodeBank classes. " alt="" coords="321,379,407,405"/>
+<area shape="rect" id="node33" href="$cover_8hh.html" title="Classes describing the topological scope of variables within a function. " alt="" coords="307,453,379,480"/>
+<area shape="rect" id="node35" href="$capability_8hh.html" title="Infrastructure for discovering code extensions to the decompiler. " alt="" coords="115,752,210,779"/>
+<area shape="rect" id="node36" href="$cast_8hh.html" title="API and specific strategies for applying type casts. " alt="" coords="43,453,109,480"/>
+<area shape="rect" id="node37" href="$prettyprint_8hh.html" title="Routines for emitting high&#45;level (C) language syntax in a well formatted way. " alt="" coords="133,453,232,480"/>
+</map>

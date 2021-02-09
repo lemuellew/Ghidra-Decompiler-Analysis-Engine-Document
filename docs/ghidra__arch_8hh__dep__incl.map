@@ -1,0 +1,11 @@
+<map id="ghidra_arch.hh" name="ghidra_arch.hh">
+<area shape="rect" id="node2" href="$comment__ghidra_8hh.html" title="Obtain comments by talking to a Ghidra client. " alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node3" href="$cpool__ghidra_8hh.html" title="Utility for implementing a constant pool backed by a Ghidra client. " alt="" coords="166,80,279,107"/>
+<area shape="rect" id="node4" href="$database__ghidra_8hh.html" title="Facilities for retrieving symbol information from a Ghidra client. " alt="" coords="303,80,438,107"/>
+<area shape="rect" id="node5" href="$ghidra__context_8hh.html" title="Obtaining context information from a Ghidra client. " alt="" coords="463,80,588,107"/>
+<area shape="rect" id="node6" href="$loadimage__ghidra_8hh.html" title="Use the Ghidra client as a load image. " alt="" coords="612,80,753,107"/>
+<area shape="rect" id="node7" href="$ghidra__translate_8hh.html" title="Class for fetching p&#45;code from a Ghidra client. " alt="" coords="778,80,910,107"/>
+<area shape="rect" id="node8" href="$typegrp__ghidra_8hh.html" title="Interface for requesting data&#45;type information from a Ghidra client. " alt="" coords="935,80,1060,107"/>
+<area shape="rect" id="node9" href="$ghidra__process_8hh.html" title="The formal commands that can be issued to the decompiler by the Ghidra client. " alt="" coords="983,155,1111,181"/>
+<area shape="rect" id="node10" href="$inject__ghidra_8hh.html" title="P&#45;code injection classes using a Ghidra client as the back&#45;end for generating p&#45;code. " alt="" coords="1135,80,1249,107"/>
+</map>

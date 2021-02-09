@@ -1,0 +1,25 @@
+<map id="TypeOpEqual" name="TypeOpEqual">
+<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output. " alt="" coords="765,29,870,56"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="537,29,605,56"/>
+<area shape="rect" id="node4" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="251,5,342,32"/>
+<area shape="rect" id="node5" href="$classTypeFactory.html" title="Container class for all Datatype objects in an Architecture. " alt="" coords="249,119,344,145"/>
+<area shape="rect" id="node6" href="$classArchitecture.html" title="Manager for all the major decompiler subsystems. " alt="" coords="525,441,617,468"/>
+<area shape="rect" id="node19" href="$classCastStrategy.html" title="A strategy for applying type casts. " alt="" coords="521,119,620,145"/>
+<area shape="rect" id="node8" href="$classPcodeInjectLibrary.html" title="A collection of p&#45;code injection payloads. " alt="" coords="752,464,883,491"/>
+<area shape="rect" id="node17" href="$classPrintLanguage.html" title="The base class API for emitting a high&#45;level language. " alt="" coords="765,328,870,355"/>
+<area shape="rect" id="node7" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="5,552,141,579"/>
+<area shape="rect" id="node15" href="$classTranslate.html" title="The interface to a translation engine for a processor. " alt="" coords="259,213,335,240"/>
+<area shape="rect" id="node9" href="$classRangeList.html" title="A disjoint set of Ranges, possibly across multiple address spaces. " alt="" coords="256,264,337,291"/>
+<area shape="rect" id="node10" href="$classUserOpManage.html" title="Manager/container for description objects (UserPcodeOp) of user defined p&#45;code ops. " alt="" coords="240,315,353,341"/>
+<area shape="rect" id="node11" href="$classOptionDatabase.html" title="A Dispatcher for possible ArchOption commands. " alt="" coords="239,365,355,392"/>
+<area shape="rect" id="node12" href="$classActionDatabase.html" title="Database of root Action objects that can be used to transform a function. " alt="" coords="239,416,354,443"/>
+<area shape="rect" id="node13" href="$classLoadImage.html" title="An interface into a particular binary executable image. " alt="" coords="253,467,340,493"/>
+<area shape="rect" id="node14" href="$classDatabase.html" title="A manager for symbol scopes for a whole executable. " alt="" coords="257,517,336,544"/>
+<area shape="rect" id="node16" href="$classConstantPool.html" title="An interface to the pool of constant objects for byte&#45;code languages. " alt="" coords="246,619,347,645"/>
+<area shape="rect" id="node18" href="$classEmitXml.html" title="Base class (and interface) for pretty printing and XML markup of tokens. " alt="" coords="535,305,607,332"/>
+<area shape="rect" id="node20" href="$structVarnodeData.html" title="Data defining a specific memory location. " alt="" coords="247,669,346,696"/>
+<area shape="rect" id="node21" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="30,669,117,696"/>
+<area shape="rect" id="node22" href="$classProtoModel.html" title="A prototype model: a model for passing parameters between functions. " alt="" coords="253,721,341,748"/>
+<area shape="rect" id="node23" href="$classContextDatabase.html" title="An interface to a database of disassembly/decompiler context information. " alt="" coords="235,772,359,799"/>
+<area shape="rect" id="node24" href="$classCommentDatabase.html" title="An interface to a container of comments. " alt="" coords="229,823,364,849"/>
+</map>

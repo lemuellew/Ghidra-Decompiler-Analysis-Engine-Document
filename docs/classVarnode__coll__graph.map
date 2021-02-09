@@ -1,0 +1,4 @@
+<map id="Varnode" name="Varnode">
+<area shape="rect" id="node2" href="$classValueSet.html" title="A range of values attached to a Varnode within a data&#45;flow subsystem. " alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node3" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="104,5,179,32"/>
+</map>

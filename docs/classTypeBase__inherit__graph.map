@@ -1,0 +1,6 @@
+<map id="TypeBase" name="TypeBase">
+<area shape="rect" id="node3" href="$classTypeChar.html" title="Base type for character data&#45;types: i.e. char. " alt="" coords="5,155,84,181"/>
+<area shape="rect" id="node4" href="$classTypeEnum.html" title="An enumerated Datatype object: an integer with named values. " alt="" coords="109,155,194,181"/>
+<area shape="rect" id="node5" href="$classTypeUnicode.html" title="The unicode data&#45;type: i.e. wchar. " alt="" coords="218,155,317,181"/>
+<area shape="rect" id="node2" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="114,5,189,32"/>
+</map>

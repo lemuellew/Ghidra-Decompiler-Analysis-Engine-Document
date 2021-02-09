@@ -1,0 +1,13 @@
+<map id="LowlevelError" name="LowlevelError">
+<area shape="rect" id="node2" href="$structBadDataError.html" title="Exception for bad instruction data. " alt="" coords="201,5,302,32"/>
+<area shape="rect" id="node3" href="$structDataUnavailError.html" title="Exception indicating data was not available. " alt="" coords="190,56,313,83"/>
+<area shape="rect" id="node4" href="$structEvaluationError.html" title="EvaluationError" alt="" coords="196,107,307,133"/>
+<area shape="rect" id="node5" href="$structJavaError.html" title="Exception that mirrors exceptions thrown by the Ghidra client. " alt="" coords="212,157,291,184"/>
+<area shape="rect" id="node6" href="$structJumptableNotReachableError.html" title="Exception thrown is there are no legal flows to a switch. " alt="" coords="155,208,348,235"/>
+<area shape="rect" id="node7" href="$structJumptableThunkError.html" title="Exception thrown for a thunk mechanism that looks like a jump&#45;table. " alt="" coords="178,259,325,285"/>
+<area shape="rect" id="node8" href="$structParamUnassignedError.html" title="Exception thrown when a prototype can&#39;t be modeled properly. " alt="" coords="173,309,330,336"/>
+<area shape="rect" id="node9" href="$structParseError.html" title="An error generated while parsing a command or language. " alt="" coords="209,360,293,387"/>
+<area shape="rect" id="node10" href="$structRecovError.html" title="A generic recoverable error. " alt="" coords="207,411,295,437"/>
+<area shape="rect" id="node11" href="$structSleighError.html" title="SleighError" alt="" coords="208,461,295,488"/>
+<area shape="rect" id="node12" href="$structUnimplError.html" title="Exception for encountering unimplemented pcode. " alt="" coords="206,512,297,539"/>
+</map>

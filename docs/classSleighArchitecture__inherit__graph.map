@@ -1,0 +1,7 @@
+<map id="SleighArchitecture" name="SleighArchitecture">
+<area shape="rect" id="node4" href="$classBfdArchitecture.html" title="Architecture that reads executable files using GNU BFD libraries. " alt="" coords="5,229,117,256"/>
+<area shape="rect" id="node5" href="$classRawBinaryArchitecture.html" title="Architecture that reads its binary as a raw file. " alt="" coords="142,229,298,256"/>
+<area shape="rect" id="node6" href="$classXmlArchitecture.html" title="An Architecture that loads executables using an XML format. " alt="" coords="323,229,437,256"/>
+<area shape="rect" id="node2" href="$classArchitecture.html" title="Manager for all the major decompiler subsystems. " alt="" coords="174,80,266,107"/>
+<area shape="rect" id="node3" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="152,5,288,32"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="pcoderaw.hh" name="pcoderaw.hh">
+<area shape="rect" id="node2" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="297,80,383,107"/>
+<area shape="rect" id="node18" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="386,155,489,181"/>
+<area shape="rect" id="node3" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="287,155,361,181"/>
+<area shape="rect" id="node4" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="341,229,408,256"/>
+<area shape="rect" id="node16" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="253,229,315,256"/>
+<area shape="rect" id="node5" href="$types_8h_source.html" title="types.h" alt="" coords="251,304,317,331"/>
+<area shape="rect" id="node19" href="$opcodes_8hh.html" title="All the individual p&#45;code operations. " alt="" coords="433,229,522,256"/>
+</map>

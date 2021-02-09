@@ -1,0 +1,13 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="5,157,80,184"/>
+<area shape="rect" id="node2" href="$classTypeArray.html" title="Datatype object representing an array of elements. " alt="" coords="145,5,227,32"/>
+<area shape="rect" id="node3" href="$classTypeBase.html" title="Base class for the fundamental atomic types. " alt="" coords="145,56,227,83"/>
+<area shape="rect" id="node7" href="$classTypeCode.html" title="Datatype object representing executable code. " alt="" coords="145,107,227,133"/>
+<area shape="rect" id="node8" href="$classTypePointer.html" title="Datatype object representing a pointer. " alt="" coords="140,157,232,184"/>
+<area shape="rect" id="node9" href="$classTypeSpacebase.html" title="Special Datatype object used to describe pointers that index into the symbol table. " alt="" coords="128,208,244,235"/>
+<area shape="rect" id="node10" href="$classTypeStruct.html" title="A composite Datatype object: A &quot;structure&quot; with component &quot;fields&quot;. " alt="" coords="143,259,229,285"/>
+<area shape="rect" id="node11" href="$classTypeVoid.html" title="Formal &quot;void&quot; data&#45;type object. " alt="" coords="147,309,225,336"/>
+<area shape="rect" id="node4" href="$classTypeChar.html" title="Base type for character data&#45;types: i.e. char. " alt="" coords="302,5,381,32"/>
+<area shape="rect" id="node5" href="$classTypeEnum.html" title="An enumerated Datatype object: an integer with named values. " alt="" coords="299,56,384,83"/>
+<area shape="rect" id="node6" href="$classTypeUnicode.html" title="The unicode data&#45;type: i.e. wchar. " alt="" coords="292,107,391,133"/>
+</map>

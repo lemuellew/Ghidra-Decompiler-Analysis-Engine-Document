@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classScope.html" title="A collection of Symbol objects within a single (namespace or functional) scope. " alt="" coords="5,31,64,57"/>
+<area shape="rect" id="node2" href="$classScopeGhidra.html" title="An implementation of the Scope interface by querying a Ghidra client for Symbol information. " alt="" coords="115,5,212,32"/>
+<area shape="rect" id="node3" href="$classScopeInternal.html" title="An in&#45;memory implementation of the Scope interface. " alt="" coords="112,56,215,83"/>
+<area shape="rect" id="node4" href="$classScopeGhidraNamespace.html" title="A global namespace Scope. " alt="" coords="263,31,429,57"/>
+<area shape="rect" id="node5" href="$classScopeLocal.html" title="A Symbol scope for local variables of a particular function. " alt="" coords="301,81,391,108"/>
+</map>

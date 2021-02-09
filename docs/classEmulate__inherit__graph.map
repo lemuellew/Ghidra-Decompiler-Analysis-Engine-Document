@@ -1,0 +1,7 @@
+<map id="Emulate" name="Emulate">
+<area shape="rect" id="node2" href="$classEmulateMemory.html" title="An abstract Emulate class using a MemoryState object as the backing machine state. " alt="" coords="26,80,143,107"/>
+<area shape="rect" id="node4" href="$classEmulatePcodeOp.html" title="Emulation based on (existing) PcodeOps and Varnodes. " alt="" coords="169,80,293,107"/>
+<area shape="rect" id="node6" href="$classEmulateSnippet.html" title="Emulate a snippet of PcodeOps out of a functional context. " alt="" coords="318,80,433,107"/>
+<area shape="rect" id="node3" href="$classEmulatePcodeCache.html" title="A SLEIGH based implementation of the Emulate interface. " alt="" coords="5,155,151,181"/>
+<area shape="rect" id="node5" href="$classEmulateFunction.html" title="A light&#45;weight emulator to calculate switch targets from switch variables. " alt="" coords="175,155,295,181"/>
+</map>

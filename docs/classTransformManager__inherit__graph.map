@@ -1,0 +1,5 @@
+<map id="TransformManager" name="TransformManager">
+<area shape="rect" id="node2" href="$classLaneDivide.html" title="LaneDivide" alt="" coords="5,80,92,107"/>
+<area shape="rect" id="node3" href="$classSplitFlow.html" title="Class for splitting up Varnodes that hold 2 logical variables. " alt="" coords="116,80,192,107"/>
+<area shape="rect" id="node4" href="$classSubfloatFlow.html" title="Class for tracing changes of precision in floating point variables. " alt="" coords="217,80,315,107"/>
+</map>

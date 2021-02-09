@@ -1,0 +1,4 @@
+<map id="EmulatePcodeCache" name="EmulatePcodeCache">
+<area shape="rect" id="node2" href="$classEmulateMemory.html" title="An abstract Emulate class using a MemoryState object as the backing machine state. " alt="" coords="19,80,137,107"/>
+<area shape="rect" id="node3" href="$classEmulate.html" title="A pcode&#45;based emulator interface. " alt="" coords="43,5,113,32"/>
+</map>

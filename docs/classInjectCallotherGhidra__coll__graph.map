@@ -1,0 +1,4 @@
+<map id="InjectCallotherGhidra" name="InjectCallotherGhidra">
+<area shape="rect" id="node2" href="$classInjectPayloadGhidra.html" title="An injection payload that uses a Ghidra client to generate the p&#45;code ops. " alt="" coords="8,80,147,107"/>
+<area shape="rect" id="node3" href="$classInjectPayload.html" title="An active container for a set of p&#45;code operations that can be injected into data&#45;flow. " alt="" coords="27,5,128,32"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="printc.hh" name="printc.hh">
+<area shape="rect" id="node2" href="$printlanguage_8hh.html" title="Classes for printing tokens in a high&#45;level language. " alt="" coords="683,80,800,107"/>
+<area shape="rect" id="node23" href="$comment_8hh.html" title="A database interface for high&#45;level language comments. " alt="" coords="558,229,653,256"/>
+<area shape="rect" id="node3" href="$capability_8hh.html" title="Infrastructure for discovering code extensions to the decompiler. " alt="" coords="822,453,917,480"/>
+<area shape="rect" id="node7" href="$cast_8hh.html" title="API and specific strategies for applying type casts. " alt="" coords="643,155,709,181"/>
+<area shape="rect" id="node22" href="$prettyprint_8hh.html" title="Routines for emitting high&#45;level (C) language syntax in a well formatted way. " alt="" coords="733,155,832,181"/>
+<area shape="rect" id="node4" href="$types_8h_source.html" title="types.h" alt="" coords="750,528,815,555"/>
+<area shape="rect" id="node8" href="$type_8hh.html" title="Classes for describing and printing data&#45;types. " alt="" coords="677,229,742,256"/>
+<area shape="rect" id="node9" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="605,304,691,331"/>
+<area shape="rect" id="node10" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="611,379,685,405"/>
+<area shape="rect" id="node11" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="448,453,515,480"/>
+<area shape="rect" id="node21" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="661,453,723,480"/>
+</map>

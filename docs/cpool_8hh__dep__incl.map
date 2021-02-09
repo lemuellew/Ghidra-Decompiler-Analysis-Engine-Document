@@ -1,0 +1,46 @@
+<map id="cpool.hh" name="cpool.hh">
+<area shape="rect" id="node2" href="$typeop_8hh.html" title="Data&#45;type and behavior information associated with specific p&#45;code op&#45;codes. " alt="" coords="1503,80,1582,107"/>
+<area shape="rect" id="node3" href="$op_8hh.html" title="The PcodeOp and PcodeOpBank classes. " alt="" coords="1583,155,1638,181"/>
+<area shape="rect" id="node45" href="$userop_8hh.html" title="Classes for more detailed definitions of user defined p&#45;code operations. " alt="" coords="1458,155,1537,181"/>
+<area shape="rect" id="node4" href="$emulateutil_8hh.html" title="(Lightweight) emulation interface for executing PcodeOp objects within a syntax tree or for executing..." alt="" coords="1649,229,1751,256"/>
+<area shape="rect" id="node42" href="$rangeutil_8hh.html" title="Documentation for the CircleRange class. " alt="" coords="1775,229,1865,256"/>
+<area shape="rect" id="node43" href="$fspec_8hh.html" title="Definitions for specifying functions prototypes. " alt="" coords="1512,379,1584,405"/>
+<area shape="rect" id="node44" href="$merge_8hh.html" title="Utilities for merging low&#45;level Varnodes into high&#45;level variables. " alt="" coords="1586,304,1662,331"/>
+<area shape="rect" id="node5" href="$jumptable_8hh.html" title="Classes to support jump&#45;tables and their recovery. " alt="" coords="1772,304,1868,331"/>
+<area shape="rect" id="node40" href="$pcodeinject_8hh.html" title="Classes for managing p&#45;code injection. " alt="" coords="1616,453,1723,480"/>
+<area shape="rect" id="node6" href="$block_8hh.html" title="Classes related to basic blocks and control&#45;flow structuring. " alt="" coords="2030,379,2101,405"/>
+<area shape="rect" id="node7" href="$action_8hh.html" title="Action, Rule, and other associates classes supporting transformations on function data&#45;flow..." alt="" coords="2211,453,2285,480"/>
+<area shape="rect" id="node39" href="$heritage_8hh.html" title="Utilities for building Static Single Assignment (SSA) form. " alt="" coords="2022,453,2109,480"/>
+<area shape="rect" id="node8" href="$architecture_8hh.html" title="Architecture and associated classes that help manage a single processor architecture and load image..." alt="" coords="1421,528,1529,555"/>
+<area shape="rect" id="node37" href="$ruleaction_8hh.html" title="This is the basic set of transformation Rule objects. " alt="" coords="2427,603,2523,629"/>
+<area shape="rect" id="node38" href="$blockaction_8hh.html" title="Actions and classes associated with transforming and structuring the control&#45;flow graph..." alt="" coords="2480,528,2587,555"/>
+<area shape="rect" id="node9" href="$funcdata_8hh.html" title="Utilities for processing data structures associated with a single function. " alt="" coords="2020,603,2111,629"/>
+<area shape="rect" id="node14" href="$libdecomp_8hh_source.html" title="libdecomp.hh" alt="" coords="5,827,104,853"/>
+<area shape="rect" id="node24" href="$sleigh__arch_8hh.html" title="Architecture objects that use a Translate object derived from Sleigh. " alt="" coords="203,603,309,629"/>
+<area shape="rect" id="node28" href="$ghidra__arch_8hh.html" title="Ghidra specific architecture information and connection to a Ghidra client. " alt="" coords="1145,603,1252,629"/>
+<area shape="rect" id="node10" href="$coreaction_8hh.html" title="Core decompilation actions which are indepedent of any particular architecture. " alt="" coords="2538,677,2638,704"/>
+<area shape="rect" id="node11" href="$graph_8hh_source.html" title="graph.hh" alt="" coords="2133,677,2205,704"/>
+<area shape="rect" id="node15" href="$grammar_8hh_source.html" title="grammar.hh" alt="" coords="1709,677,1800,704"/>
+<area shape="rect" id="node17" href="$paramid_8hh_source.html" title="paramid.hh" alt="" coords="2022,677,2109,704"/>
+<area shape="rect" id="node18" href="$condexe_8hh.html" title="Classes for simplifying control&#45;flow with shared conditional expressions. " alt="" coords="2322,677,2411,704"/>
+<area shape="rect" id="node19" href="$double_8hh_source.html" title="double.hh" alt="" coords="2435,677,2514,704"/>
+<area shape="rect" id="node20" href="$subflow_8hh.html" title="Classes for reducing/splitting Varnodes containing smaller logical values. " alt="" coords="1824,677,1909,704"/>
+<area shape="rect" id="node21" href="$flow_8hh.html" title="Utilities for following control&#45;flow in p&#45;code generated from machine instructions. " alt="" coords="1933,677,1997,704"/>
+<area shape="rect" id="node22" href="$unify_8hh_source.html" title="unify.hh" alt="" coords="2230,677,2298,704"/>
+<area shape="rect" id="node12" href="$ifacedecomp_8hh_source.html" title="ifacedecomp.hh" alt="" coords="1852,752,1967,779"/>
+<area shape="rect" id="node13" href="$codedata_8hh_source.html" title="codedata.hh" alt="" coords="1863,827,1956,853"/>
+<area shape="rect" id="node16" href="$ghidra__process_8hh.html" title="The formal commands that can be issued to the decompiler by the Ghidra client. " alt="" coords="1580,752,1708,779"/>
+<area shape="rect" id="node23" href="$rulecompile_8hh_source.html" title="rulecompile.hh" alt="" coords="2211,752,2317,779"/>
+<area shape="rect" id="node25" href="$bfd__arch_8hh.html" title="Specific implementation of Architecture using GNU BFD libraries. " alt="" coords="327,677,417,704"/>
+<area shape="rect" id="node26" href="$raw__arch_8hh.html" title="Bare bones capability for treating a file as a raw executable image. " alt="" coords="92,677,185,704"/>
+<area shape="rect" id="node27" href="$xml__arch_8hh.html" title="Extension to read executables based on an XML format. " alt="" coords="209,677,303,704"/>
+<area shape="rect" id="node29" href="$comment__ghidra_8hh.html" title="Obtain comments by talking to a Ghidra client. " alt="" coords="441,677,577,704"/>
+<area shape="rect" id="node30" href="$cpool__ghidra_8hh.html" title="Utility for implementing a constant pool backed by a Ghidra client. " alt="" coords="602,677,715,704"/>
+<area shape="rect" id="node31" href="$database__ghidra_8hh.html" title="Facilities for retrieving symbol information from a Ghidra client. " alt="" coords="739,677,874,704"/>
+<area shape="rect" id="node32" href="$ghidra__context_8hh.html" title="Obtaining context information from a Ghidra client. " alt="" coords="899,677,1024,704"/>
+<area shape="rect" id="node33" href="$loadimage__ghidra_8hh.html" title="Use the Ghidra client as a load image. " alt="" coords="1048,677,1189,704"/>
+<area shape="rect" id="node34" href="$ghidra__translate_8hh.html" title="Class for fetching p&#45;code from a Ghidra client. " alt="" coords="1214,677,1346,704"/>
+<area shape="rect" id="node35" href="$typegrp__ghidra_8hh.html" title="Interface for requesting data&#45;type information from a Ghidra client. " alt="" coords="1371,677,1496,704"/>
+<area shape="rect" id="node36" href="$inject__ghidra_8hh.html" title="P&#45;code injection classes using a Ghidra client as the back&#45;end for generating p&#45;code. " alt="" coords="1571,677,1685,704"/>
+<area shape="rect" id="node41" href="$inject__sleigh_8hh_source.html" title="inject_sleigh.hh" alt="" coords="1553,528,1665,555"/>
+</map>

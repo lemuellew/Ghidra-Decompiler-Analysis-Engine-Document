@@ -1,0 +1,16 @@
+<map id="funcdata.hh" name="funcdata.hh">
+<area shape="rect" id="node2" href="$coreaction_8hh.html" title="Core decompilation actions which are indepedent of any particular architecture. " alt="" coords="5,80,105,107"/>
+<area shape="rect" id="node3" href="$graph_8hh_source.html" title="graph.hh" alt="" coords="130,80,202,107"/>
+<area shape="rect" id="node7" href="$grammar_8hh_source.html" title="grammar.hh" alt="" coords="338,80,429,107"/>
+<area shape="rect" id="node9" href="$paramid_8hh_source.html" title="paramid.hh" alt="" coords="227,80,313,107"/>
+<area shape="rect" id="node10" href="$condexe_8hh.html" title="Classes for simplifying control&#45;flow with shared conditional expressions. " alt="" coords="453,80,543,107"/>
+<area shape="rect" id="node11" href="$double_8hh_source.html" title="double.hh" alt="" coords="567,80,645,107"/>
+<area shape="rect" id="node12" href="$subflow_8hh.html" title="Classes for reducing/splitting Varnodes containing smaller logical values. " alt="" coords="670,80,755,107"/>
+<area shape="rect" id="node13" href="$flow_8hh.html" title="Utilities for following control&#45;flow in p&#45;code generated from machine instructions. " alt="" coords="779,80,843,107"/>
+<area shape="rect" id="node14" href="$unify_8hh_source.html" title="unify.hh" alt="" coords="868,80,936,107"/>
+<area shape="rect" id="node4" href="$ifacedecomp_8hh_source.html" title="ifacedecomp.hh" alt="" coords="181,155,295,181"/>
+<area shape="rect" id="node5" href="$codedata_8hh_source.html" title="codedata.hh" alt="" coords="131,229,225,256"/>
+<area shape="rect" id="node6" href="$libdecomp_8hh_source.html" title="libdecomp.hh" alt="" coords="249,229,347,256"/>
+<area shape="rect" id="node8" href="$ghidra__process_8hh.html" title="The formal commands that can be issued to the decompiler by the Ghidra client. " alt="" coords="319,155,447,181"/>
+<area shape="rect" id="node15" href="$rulecompile_8hh_source.html" title="rulecompile.hh" alt="" coords="849,155,955,181"/>
+</map>

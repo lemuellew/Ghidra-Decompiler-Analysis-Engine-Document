@@ -1,0 +1,12 @@
+<map id="SpecificSymbol" name="SpecificSymbol">
+<area shape="rect" id="node4" href="$classEndSymbol.html" title="EndSymbol" alt="" coords="5,229,95,256"/>
+<area shape="rect" id="node5" href="$classFlowDestSymbol.html" title="FlowDestSymbol" alt="" coords="119,229,242,256"/>
+<area shape="rect" id="node6" href="$classFlowRefSymbol.html" title="FlowRefSymbol" alt="" coords="266,229,381,256"/>
+<area shape="rect" id="node7" href="$classOperandSymbol.html" title="OperandSymbol" alt="" coords="405,229,519,256"/>
+<area shape="rect" id="node8" href="$classPatternlessSymbol.html" title="PatternlessSymbol" alt="" coords="544,229,676,256"/>
+<area shape="rect" id="node11" href="$classStartSymbol.html" title="StartSymbol" alt="" coords="700,229,795,256"/>
+<area shape="rect" id="node2" href="$classTripleSymbol.html" title="TripleSymbol" alt="" coords="343,80,442,107"/>
+<area shape="rect" id="node3" href="$classSleighSymbol.html" title="SleighSymbol" alt="" coords="341,5,444,32"/>
+<area shape="rect" id="node9" href="$classEpsilonSymbol.html" title="EpsilonSymbol" alt="" coords="487,304,597,331"/>
+<area shape="rect" id="node10" href="$classVarnodeSymbol.html" title="VarnodeSymbol" alt="" coords="621,304,735,331"/>
+</map>

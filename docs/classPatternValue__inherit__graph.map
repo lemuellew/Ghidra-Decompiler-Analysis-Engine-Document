@@ -1,0 +1,9 @@
+<map id="PatternValue" name="PatternValue">
+<area shape="rect" id="node3" href="$classConstantValue.html" title="ConstantValue" alt="" coords="346,5,454,32"/>
+<area shape="rect" id="node4" href="$classContextField.html" title="ContextField" alt="" coords="352,56,448,83"/>
+<area shape="rect" id="node5" href="$classEndInstructionValue.html" title="EndInstructionValue" alt="" coords="331,107,469,133"/>
+<area shape="rect" id="node6" href="$classOperandValue.html" title="OperandValue" alt="" coords="348,157,452,184"/>
+<area shape="rect" id="node7" href="$classStartInstructionValue.html" title="StartInstructionValue" alt="" coords="328,208,472,235"/>
+<area shape="rect" id="node8" href="$classTokenField.html" title="TokenField" alt="" coords="357,259,443,285"/>
+<area shape="rect" id="node2" href="$classPatternExpression.html" title="PatternExpression" alt="" coords="5,132,135,159"/>
+</map>

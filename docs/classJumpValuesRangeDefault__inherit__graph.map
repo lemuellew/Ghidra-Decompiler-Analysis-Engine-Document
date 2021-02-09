@@ -1,0 +1,4 @@
+<map id="JumpValuesRangeDefault" name="JumpValuesRangeDefault">
+<area shape="rect" id="node2" href="$classJumpValuesRange.html" title="single entry switch variable that can take a range of values " alt="" coords="27,80,159,107"/>
+<area shape="rect" id="node3" href="$classJumpValues.html" title="An iterator over values a switch variable can take. " alt="" coords="45,5,140,32"/>
+</map>

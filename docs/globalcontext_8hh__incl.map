@@ -1,0 +1,11 @@
+<map id="globalcontext.hh" name="globalcontext.hh">
+<area shape="rect" id="node2" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops. " alt="" coords="744,80,840,107"/>
+<area shape="rect" id="node21" href="$partmap_8hh.html" title="The partmap&lt;&gt; template mapping a linear space to value objects. " alt="" coords="837,155,923,181"/>
+<area shape="rect" id="node3" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="651,155,738,181"/>
+<area shape="rect" id="node19" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="741,229,843,256"/>
+<area shape="rect" id="node4" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="641,229,716,256"/>
+<area shape="rect" id="node5" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="496,304,563,331"/>
+<area shape="rect" id="node17" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="668,304,729,331"/>
+<area shape="rect" id="node6" href="$types_8h_source.html" title="types.h" alt="" coords="761,379,826,405"/>
+<area shape="rect" id="node20" href="$opcodes_8hh.html" title="All the individual p&#45;code operations. " alt="" coords="754,304,843,331"/>
+</map>

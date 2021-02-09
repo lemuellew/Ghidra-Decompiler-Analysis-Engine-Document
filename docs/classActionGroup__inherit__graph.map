@@ -1,0 +1,4 @@
+<map id="ActionGroup" name="ActionGroup">
+<area shape="rect" id="node3" href="$classActionRestartGroup.html" title="Action which checks if restart (sub)actions have been generated and restarts itself. " alt="" coords="5,155,143,181"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="45,5,103,32"/>
+</map>

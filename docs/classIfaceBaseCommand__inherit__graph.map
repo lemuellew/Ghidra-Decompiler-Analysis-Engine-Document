@@ -1,0 +1,9 @@
+<map id="IfaceBaseCommand" name="IfaceBaseCommand">
+<area shape="rect" id="node3" href="$classIfcClosefile.html" title="IfcClosefile" alt="" coords="5,155,93,181"/>
+<area shape="rect" id="node4" href="$classIfcEcho.html" title="IfcEcho" alt="" coords="117,155,184,181"/>
+<area shape="rect" id="node5" href="$classIfcHistory.html" title="IfcHistory" alt="" coords="209,155,287,181"/>
+<area shape="rect" id="node6" href="$classIfcOpenfile.html" title="IfcOpenfile" alt="" coords="312,155,397,181"/>
+<area shape="rect" id="node7" href="$classIfcOpenfileAppend.html" title="IfcOpenfileAppend" alt="" coords="422,155,551,181"/>
+<area shape="rect" id="node8" href="$classIfcQuit.html" title="IfcQuit" alt="" coords="576,155,637,181"/>
+<area shape="rect" id="node2" href="$classIfaceCommand.html" title="IfaceCommand" alt="" coords="246,5,357,32"/>
+</map>

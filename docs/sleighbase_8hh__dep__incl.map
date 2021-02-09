@@ -1,0 +1,11 @@
+<map id="sleighbase.hh" name="sleighbase.hh">
+<area shape="rect" id="node2" href="$sleigh_8hh_source.html" title="sleigh.hh" alt="" coords="259,80,333,107"/>
+<area shape="rect" id="node9" href="$pcodeparse_8hh_source.html" title="pcodeparse.hh" alt="" coords="357,80,464,107"/>
+<area shape="rect" id="node10" href="$slgh__compile_8hh_source.html" title="slgh_compile.hh" alt="" coords="489,80,605,107"/>
+<area shape="rect" id="node3" href="$sleigh__arch_8hh.html" title="Architecture objects that use a Translate object derived from Sleigh. " alt="" coords="176,155,283,181"/>
+<area shape="rect" id="node8" href="$inject__sleigh_8hh_source.html" title="inject_sleigh.hh" alt="" coords="307,155,419,181"/>
+<area shape="rect" id="node4" href="$bfd__arch_8hh.html" title="Specific implementation of Architecture using GNU BFD libraries. " alt="" coords="5,229,96,256"/>
+<area shape="rect" id="node5" href="$libdecomp_8hh_source.html" title="libdecomp.hh" alt="" coords="120,229,219,256"/>
+<area shape="rect" id="node6" href="$raw__arch_8hh.html" title="Bare bones capability for treating a file as a raw executable image. " alt="" coords="243,229,336,256"/>
+<area shape="rect" id="node7" href="$xml__arch_8hh.html" title="Extension to read executables based on an XML format. " alt="" coords="360,229,453,256"/>
+</map>

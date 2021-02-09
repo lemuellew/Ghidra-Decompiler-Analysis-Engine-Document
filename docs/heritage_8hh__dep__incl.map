@@ -1,0 +1,17 @@
+<map id="heritage.hh" name="heritage.hh">
+<area shape="rect" id="node2" href="$funcdata_8hh.html" title="Utilities for processing data structures associated with a single function. " alt="" coords="453,80,543,107"/>
+<area shape="rect" id="node3" href="$coreaction_8hh.html" title="Core decompilation actions which are indepedent of any particular architecture. " alt="" coords="5,155,105,181"/>
+<area shape="rect" id="node4" href="$graph_8hh_source.html" title="graph.hh" alt="" coords="130,155,202,181"/>
+<area shape="rect" id="node8" href="$grammar_8hh_source.html" title="grammar.hh" alt="" coords="338,155,429,181"/>
+<area shape="rect" id="node10" href="$paramid_8hh_source.html" title="paramid.hh" alt="" coords="227,155,313,181"/>
+<area shape="rect" id="node11" href="$condexe_8hh.html" title="Classes for simplifying control&#45;flow with shared conditional expressions. " alt="" coords="453,155,543,181"/>
+<area shape="rect" id="node12" href="$double_8hh_source.html" title="double.hh" alt="" coords="567,155,645,181"/>
+<area shape="rect" id="node13" href="$subflow_8hh.html" title="Classes for reducing/splitting Varnodes containing smaller logical values. " alt="" coords="670,155,755,181"/>
+<area shape="rect" id="node14" href="$flow_8hh.html" title="Utilities for following control&#45;flow in p&#45;code generated from machine instructions. " alt="" coords="779,155,843,181"/>
+<area shape="rect" id="node15" href="$unify_8hh_source.html" title="unify.hh" alt="" coords="868,155,936,181"/>
+<area shape="rect" id="node5" href="$ifacedecomp_8hh_source.html" title="ifacedecomp.hh" alt="" coords="181,229,295,256"/>
+<area shape="rect" id="node6" href="$codedata_8hh_source.html" title="codedata.hh" alt="" coords="131,304,225,331"/>
+<area shape="rect" id="node7" href="$libdecomp_8hh_source.html" title="libdecomp.hh" alt="" coords="249,304,347,331"/>
+<area shape="rect" id="node9" href="$ghidra__process_8hh.html" title="The formal commands that can be issued to the decompiler by the Ghidra client. " alt="" coords="319,229,447,256"/>
+<area shape="rect" id="node16" href="$rulecompile_8hh_source.html" title="rulecompile.hh" alt="" coords="849,229,955,256"/>
+</map>

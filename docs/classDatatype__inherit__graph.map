@@ -1,0 +1,12 @@
+<map id="Datatype" name="Datatype">
+<area shape="rect" id="node2" href="$classTypeArray.html" title="Datatype object representing an array of elements. " alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node3" href="$classTypeBase.html" title="Base class for the fundamental atomic types. " alt="" coords="113,80,194,107"/>
+<area shape="rect" id="node7" href="$classTypeCode.html" title="Datatype object representing executable code. " alt="" coords="219,80,301,107"/>
+<area shape="rect" id="node8" href="$classTypePointer.html" title="Datatype object representing a pointer. " alt="" coords="326,80,418,107"/>
+<area shape="rect" id="node9" href="$classTypeSpacebase.html" title="Special Datatype object used to describe pointers that index into the symbol table. " alt="" coords="442,80,558,107"/>
+<area shape="rect" id="node10" href="$classTypeStruct.html" title="A composite Datatype object: A &quot;structure&quot; with component &quot;fields&quot;. " alt="" coords="582,80,669,107"/>
+<area shape="rect" id="node11" href="$classTypeVoid.html" title="Formal &quot;void&quot; data&#45;type object. " alt="" coords="693,80,771,107"/>
+<area shape="rect" id="node4" href="$classTypeChar.html" title="Base type for character data&#45;types: i.e. char. " alt="" coords="7,155,86,181"/>
+<area shape="rect" id="node5" href="$classTypeEnum.html" title="An enumerated Datatype object: an integer with named values. " alt="" coords="111,155,196,181"/>
+<area shape="rect" id="node6" href="$classTypeUnicode.html" title="The unicode data&#45;type: i.e. wchar. " alt="" coords="220,155,319,181"/>
+</map>

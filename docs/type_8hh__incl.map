@@ -1,0 +1,7 @@
+<map id="type.hh" name="type.hh">
+<area shape="rect" id="node2" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="321,80,408,107"/>
+<area shape="rect" id="node3" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="327,155,402,181"/>
+<area shape="rect" id="node4" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="466,229,533,256"/>
+<area shape="rect" id="node16" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="246,229,307,256"/>
+<area shape="rect" id="node5" href="$types_8h_source.html" title="types.h" alt="" coords="331,304,396,331"/>
+</map>

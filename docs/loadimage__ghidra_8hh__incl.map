@@ -1,0 +1,40 @@
+<map id="loadimage_ghidra.hh" name="loadimage_ghidra.hh">
+<area shape="rect" id="node2" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image. " alt="" coords="6,229,105,256"/>
+<area shape="rect" id="node19" href="$ghidra__arch_8hh.html" title="Ghidra specific architecture information and connection to a Ghidra client. " alt="" coords="262,80,369,107"/>
+<area shape="rect" id="node3" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="423,901,509,928"/>
+<area shape="rect" id="node4" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="471,976,546,1003"/>
+<area shape="rect" id="node5" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="401,1051,467,1077"/>
+<area shape="rect" id="node17" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="570,1051,631,1077"/>
+<area shape="rect" id="node6" href="$types_8h_source.html" title="types.h" alt="" coords="832,1125,897,1152"/>
+<area shape="rect" id="node20" href="$architecture_8hh.html" title="Architecture and associated classes that help manage a single processor architecture and load image..." alt="" coords="432,155,540,181"/>
+<area shape="rect" id="node21" href="$capability_8hh.html" title="Infrastructure for discovering code extensions to the decompiler. " alt="" coords="901,1051,996,1077"/>
+<area shape="rect" id="node22" href="$varmap_8hh.html" title="Classes for keeping track of local variables and reconstructing stack layout. " alt="" coords="179,304,262,331"/>
+<area shape="rect" id="node23" href="$database_8hh.html" title="Symbol and Scope objects for the decompiler. " alt="" coords="169,603,262,629"/>
+<area shape="rect" id="node31" href="$action_8hh.html" title="Action, Rule, and other associates classes supporting transformations on function data&#45;flow..." alt="" coords="690,229,765,256"/>
+<area shape="rect" id="node36" href="$translate_8hh.html" title="Classes for disassembly and pcode generation. " alt="" coords="589,603,679,629"/>
+<area shape="rect" id="node43" href="$pcodeinject_8hh.html" title="Classes for managing p&#45;code injection. " alt="" coords="597,379,703,405"/>
+<area shape="rect" id="node44" href="$fspec_8hh.html" title="Definitions for specifying functions prototypes. " alt="" coords="387,453,459,480"/>
+<area shape="rect" id="node45" href="$globalcontext_8hh.html" title="Utilities for getting address&#45;based context to the disassembler and decompiler. " alt="" coords="387,603,505,629"/>
+<area shape="rect" id="node46" href="$comment_8hh.html" title="A database interface for high&#45;level language comments. " alt="" coords="439,304,533,331"/>
+<area shape="rect" id="node47" href="$userop_8hh.html" title="Classes for more detailed definitions of user defined p&#45;code operations. " alt="" coords="848,379,927,405"/>
+<area shape="rect" id="node48" href="$options_8hh.html" title="Classes for processing architecture configuration options. " alt="" coords="314,976,397,1003"/>
+<area shape="rect" id="node49" href="$transform_8hh.html" title="Classes for building large scale transforms of function data&#45;flow. " alt="" coords="917,528,1012,555"/>
+<area shape="rect" id="node50" href="$prefersplit_8hh_source.html" title="prefersplit.hh" alt="" coords="1003,229,1100,256"/>
+<area shape="rect" id="node24" href="$variable_8hh.html" title="Definitions for high&#45;level variables. " alt="" coords="746,677,831,704"/>
+<area shape="rect" id="node29" href="$partmap_8hh.html" title="The partmap&lt;&gt; template mapping a linear space to value objects. " alt="" coords="231,677,317,704"/>
+<area shape="rect" id="node30" href="$rangemap_8hh.html" title="Templates to define interval map containers. " alt="" coords="93,827,191,853"/>
+<area shape="rect" id="node25" href="$varnode_8hh.html" title="The Varnode and VarnodeBank classes. " alt="" coords="777,752,864,779"/>
+<area shape="rect" id="node26" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops. " alt="" coords="575,827,671,853"/>
+<area shape="rect" id="node28" href="$cover_8hh.html" title="Classes describing the topological scope of variables within a function. " alt="" coords="785,827,857,853"/>
+<area shape="rect" id="node27" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="585,901,688,928"/>
+<area shape="rect" id="node32" href="$block_8hh.html" title="Classes related to basic blocks and control&#45;flow structuring. " alt="" coords="724,304,795,331"/>
+<area shape="rect" id="node33" href="$jumptable_8hh.html" title="Classes to support jump&#45;tables and their recovery. " alt="" coords="727,379,823,405"/>
+<area shape="rect" id="node34" href="$emulateutil_8hh.html" title="(Lightweight) emulation interface for executing PcodeOp objects within a syntax tree or for executing..." alt="" coords="600,453,703,480"/>
+<area shape="rect" id="node42" href="$rangeutil_8hh.html" title="Documentation for the CircleRange class. " alt="" coords="729,453,819,480"/>
+<area shape="rect" id="node35" href="$emulate_8hh.html" title="Classes for emulating p&#45;code. " alt="" coords="601,528,688,555"/>
+<area shape="rect" id="node38" href="$op_8hh.html" title="The PcodeOp and PcodeOpBank classes. " alt="" coords="728,528,783,555"/>
+<area shape="rect" id="node37" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats. " alt="" coords="504,752,569,779"/>
+<area shape="rect" id="node39" href="$typeop_8hh.html" title="Data&#45;type and behavior information associated with specific p&#45;code op&#45;codes. " alt="" coords="789,603,868,629"/>
+<area shape="rect" id="node40" href="$cpool_8hh.html" title="Definitions to support a constant pool for deferred compilation languages (i.e. java byte&#45;code) ..." alt="" coords="856,677,927,704"/>
+<area shape="rect" id="node41" href="$printlanguage_8hh.html" title="Classes for printing tokens in a high&#45;level language. " alt="" coords="930,752,1047,779"/>
+</map>

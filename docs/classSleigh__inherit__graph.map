@@ -1,0 +1,5 @@
+<map id="Sleigh" name="Sleigh">
+<area shape="rect" id="node2" href="$classSleighBase.html" title="Common core of classes that read or write SLEIGH specification files natively. " alt="" coords="29,155,117,181"/>
+<area shape="rect" id="node3" href="$classTranslate.html" title="The interface to a translation engine for a processor. " alt="" coords="35,80,111,107"/>
+<area shape="rect" id="node4" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="5,5,141,32"/>
+</map>

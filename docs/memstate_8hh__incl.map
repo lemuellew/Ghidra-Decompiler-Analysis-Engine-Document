@@ -1,0 +1,11 @@
+<map id="memstate.hh" name="memstate.hh">
+<area shape="rect" id="node2" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops. " alt="" coords="393,80,489,107"/>
+<area shape="rect" id="node21" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image. " alt="" coords="271,80,369,107"/>
+<area shape="rect" id="node3" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="281,155,367,181"/>
+<area shape="rect" id="node19" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="390,229,493,256"/>
+<area shape="rect" id="node4" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="287,229,361,256"/>
+<area shape="rect" id="node5" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="341,304,408,331"/>
+<area shape="rect" id="node17" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="253,304,315,331"/>
+<area shape="rect" id="node6" href="$types_8h_source.html" title="types.h" alt="" coords="251,379,317,405"/>
+<area shape="rect" id="node20" href="$opcodes_8hh.html" title="All the individual p&#45;code operations. " alt="" coords="433,304,522,331"/>
+</map>

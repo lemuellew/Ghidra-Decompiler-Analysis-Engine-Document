@@ -1,0 +1,5 @@
+<map id="ScopeInternal" name="ScopeInternal">
+<area shape="rect" id="node3" href="$classScopeGhidraNamespace.html" title="A global namespace Scope. " alt="" coords="5,155,172,181"/>
+<area shape="rect" id="node4" href="$classScopeLocal.html" title="A Symbol scope for local variables of a particular function. " alt="" coords="197,155,287,181"/>
+<area shape="rect" id="node2" href="$classScope.html" title="A collection of Symbol objects within a single (namespace or functional) scope. " alt="" coords="135,5,194,32"/>
+</map>

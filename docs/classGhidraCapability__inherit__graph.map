@@ -1,0 +1,4 @@
+<map id="GhidraCapability" name="GhidraCapability">
+<area shape="rect" id="node3" href="$classGhidraDecompCapability.html" title="The core decompiler commands capability. " alt="" coords="5,155,172,181"/>
+<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="33,5,144,32"/>
+</map>

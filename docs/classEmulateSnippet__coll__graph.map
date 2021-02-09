@@ -1,0 +1,4 @@
+<map id="EmulateSnippet" name="EmulateSnippet">
+<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface. " alt="" coords="27,95,98,121"/>
+<area shape="rect" id="node3" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="17,5,108,32"/>
+</map>

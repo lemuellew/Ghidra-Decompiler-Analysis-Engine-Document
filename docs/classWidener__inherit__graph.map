@@ -1,0 +1,4 @@
+<map id="Widener" name="Widener">
+<area shape="rect" id="node2" href="$classWidenerFull.html" title="Class for doing normal widening. " alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node3" href="$classWidenerNone.html" title="Class for freezing value sets at a specific iteration (to accelerate convergence) ..." alt="" coords="120,80,221,107"/>
+</map>

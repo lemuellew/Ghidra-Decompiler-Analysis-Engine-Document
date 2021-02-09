@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classAddressResolver.html" title="Abstract class for converting native constants to addresses. " alt="" coords="5,5,128,32"/>
+<area shape="rect" id="node2" href="$classSegmentedResolver.html" title="A resolver for segmented architectures. " alt="" coords="176,5,316,32"/>
+</map>

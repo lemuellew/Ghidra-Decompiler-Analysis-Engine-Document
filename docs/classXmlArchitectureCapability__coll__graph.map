@@ -1,0 +1,4 @@
+<map id="XmlArchitectureCapability" name="XmlArchitectureCapability">
+<area shape="rect" id="node2" href="$classArchitectureCapability.html" title="Abstract extension point for building Architecture objects. " alt="" coords="17,80,167,107"/>
+<area shape="rect" id="node3" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="37,5,147,32"/>
+</map>

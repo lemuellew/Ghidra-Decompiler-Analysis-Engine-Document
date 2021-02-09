@@ -1,0 +1,7 @@
+<map id="TypeOpUnary" name="TypeOpUnary">
+<area shape="rect" id="node3" href="$classTypeOpBoolNegate.html" title="Information about the BOOL_NEGATE op&#45;code. " alt="" coords="5,155,141,181"/>
+<area shape="rect" id="node4" href="$classTypeOpFloatNeg.html" title="Information about the FLOAT_NEG op&#45;code. " alt="" coords="166,155,287,181"/>
+<area shape="rect" id="node5" href="$classTypeOpInt2Comp.html" title="Information about the INT_2COMP op&#45;code. " alt="" coords="312,155,437,181"/>
+<area shape="rect" id="node6" href="$classTypeOpIntNegate.html" title="Information about the INT_NEGATE op&#45;code. " alt="" coords="461,155,587,181"/>
+<area shape="rect" id="node2" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="266,5,334,32"/>
+</map>

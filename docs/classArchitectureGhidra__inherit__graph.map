@@ -1,0 +1,4 @@
+<map id="ArchitectureGhidra" name="ArchitectureGhidra">
+<area shape="rect" id="node2" href="$classArchitecture.html" title="Manager for all the major decompiler subsystems. " alt="" coords="27,80,119,107"/>
+<area shape="rect" id="node3" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="5,5,141,32"/>
+</map>

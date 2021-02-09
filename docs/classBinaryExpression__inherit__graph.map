@@ -1,0 +1,12 @@
+<map id="BinaryExpression" name="BinaryExpression">
+<area shape="rect" id="node3" href="$classAndExpression.html" title="AndExpression" alt="" coords="372,5,483,32"/>
+<area shape="rect" id="node4" href="$classDivExpression.html" title="DivExpression" alt="" coords="374,56,481,83"/>
+<area shape="rect" id="node5" href="$classLeftShiftExpression.html" title="LeftShiftExpression" alt="" coords="359,107,495,133"/>
+<area shape="rect" id="node6" href="$classMultExpression.html" title="MultExpression" alt="" coords="371,157,483,184"/>
+<area shape="rect" id="node7" href="$classOrExpression.html" title="OrExpression" alt="" coords="377,208,478,235"/>
+<area shape="rect" id="node8" href="$classPlusExpression.html" title="PlusExpression" alt="" coords="371,259,484,285"/>
+<area shape="rect" id="node9" href="$classRightShiftExpression.html" title="RightShiftExpression" alt="" coords="355,309,500,336"/>
+<area shape="rect" id="node10" href="$classSubExpression.html" title="SubExpression" alt="" coords="372,360,483,387"/>
+<area shape="rect" id="node11" href="$classXorExpression.html" title="XorExpression" alt="" coords="374,411,481,437"/>
+<area shape="rect" id="node2" href="$classPatternExpression.html" title="PatternExpression" alt="" coords="5,208,135,235"/>
+</map>

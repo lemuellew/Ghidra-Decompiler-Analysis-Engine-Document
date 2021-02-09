@@ -1,0 +1,8 @@
+<map id="Translate" name="Translate">
+<area shape="rect" id="node3" href="$classDummyTranslate.html" title="DummyTranslate" alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node4" href="$classGhidraTranslate.html" title="An implementation of Translate that queries a Ghidra client for p&#45;code information. " alt="" coords="152,155,267,181"/>
+<area shape="rect" id="node5" href="$classSleighBase.html" title="Common core of classes that read or write SLEIGH specification files natively. " alt="" coords="291,155,379,181"/>
+<area shape="rect" id="node2" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="141,5,277,32"/>
+<area shape="rect" id="node6" href="$classSleigh.html" title="Sleigh" alt="" coords="252,229,311,256"/>
+<area shape="rect" id="node7" href="$classSleighCompile.html" title="SleighCompile" alt="" coords="335,229,441,256"/>
+</map>

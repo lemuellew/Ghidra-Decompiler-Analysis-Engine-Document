@@ -1,0 +1,34 @@
+<map id="ArchOption" name="ArchOption">
+<area shape="rect" id="node2" href="$classOptionAliasBlock.html" title="Set how locked data&#45;types on the stack affect alias heuristics. " alt="" coords="184,5,307,32"/>
+<area shape="rect" id="node3" href="$classOptionAllowContextSet.html" title="Toggle whether the disassembly engine is allowed to modify context. " alt="" coords="166,56,325,83"/>
+<area shape="rect" id="node4" href="$classOptionCommentHeader.html" title="Toggle whether different comment types are emitted by the decompiler in the header for a function..." alt="" coords="166,107,325,133"/>
+<area shape="rect" id="node5" href="$classOptionCommentIndent.html" title="How many characters to indent comment lines. " alt="" coords="169,157,322,184"/>
+<area shape="rect" id="node6" href="$classOptionCommentInstruction.html" title="Toggle whether different comment types are emitted by the decompiler in the body of a function..." alt="" coords="156,208,335,235"/>
+<area shape="rect" id="node7" href="$classOptionCommentStyle.html" title="Set the style of comment emitted by the decompiler. " alt="" coords="172,259,319,285"/>
+<area shape="rect" id="node8" href="$classOptionConventionPrinting.html" title="Toggle whether the calling convention is printed when emitting function prototypes. " alt="" coords="160,309,331,336"/>
+<area shape="rect" id="node9" href="$classOptionCurrentAction.html" title="Toggle a sub&#45;group of actions within a root Action. " alt="" coords="175,360,315,387"/>
+<area shape="rect" id="node10" href="$classOptionDefaultPrototype.html" title="Set the default prototype model for analyzing unknown functions. " alt="" coords="166,411,325,437"/>
+<area shape="rect" id="node11" href="$classOptionErrorReinterpreted.html" title="Toggle whether off&#45;cut reinterpretation of an instruction is a fatal error. " alt="" coords="162,461,329,488"/>
+<area shape="rect" id="node12" href="$classOptionErrorTooManyInstructions.html" title="Toggle whether too many instructions in one function body is considered a fatal error. " alt="" coords="140,512,351,539"/>
+<area shape="rect" id="node13" href="$classOptionErrorUnimplemented.html" title="Toggle whether unimplemented instructions are treated as a fatal error. " alt="" coords="156,563,335,589"/>
+<area shape="rect" id="node14" href="$classOptionExtraPop.html" title="Set the extrapop parameter used by the (default) prototype model. " alt="" coords="188,613,303,640"/>
+<area shape="rect" id="node15" href="$classOptionHideExtensions.html" title="Toggle whether implied extensions (ZEXT or SEXT) are printed. " alt="" coords="169,664,321,691"/>
+<area shape="rect" id="node16" href="$classOptionIgnoreUnimplemented.html" title="Toggle whether unimplemented instructions are treated as a no&#45;operation. " alt="" coords="152,715,339,741"/>
+<area shape="rect" id="node17" href="$classOptionIndentIncrement.html" title="Set the number of characters to indent per nested scope. " alt="" coords="168,765,323,792"/>
+<area shape="rect" id="node18" href="$classOptionInferConstPtr.html" title="Toggle whether the decompiler attempts to infer constant pointers. " alt="" coords="176,816,315,843"/>
+<area shape="rect" id="node19" href="$classOptionInline.html" title="Mark/unmark a specific function as inline. " alt="" coords="200,867,291,893"/>
+<area shape="rect" id="node20" href="$classOptionInPlaceOps.html" title="Toggle whether in&#45;place operators (+=, *=, &amp;=, etc.) are emitted by the decompiler. " alt="" coords="181,917,309,944"/>
+<area shape="rect" id="node21" href="$classOptionIntegerFormat.html" title="Set the formatting strategy used by the decompiler to emit integers. " alt="" coords="175,968,316,995"/>
+<area shape="rect" id="node22" href="$classOptionJumpLoad.html" title="Toggle whether the decompiler should try to recover the table used to evaluate a switch. " alt="" coords="185,1019,305,1045"/>
+<area shape="rect" id="node23" href="$classOptionMaxLineWidth.html" title="Set the maximum number of characters per decompiled line. " alt="" coords="174,1069,317,1096"/>
+<area shape="rect" id="node24" href="$classOptionNoCastPrinting.html" title="Toggle whether cast syntax is emitted by the decompiler or stripped. " alt="" coords="171,1120,320,1147"/>
+<area shape="rect" id="node25" href="$classOptionNoReturn.html" title="Mark/unmark a specific function with the noreturn property. " alt="" coords="187,1171,303,1197"/>
+<area shape="rect" id="node26" href="$classOptionNullPrinting.html" title="Toggle whether null pointers should be printed as the string &quot;NULL&quot;. " alt="" coords="182,1221,309,1248"/>
+<area shape="rect" id="node27" href="$classOptionProtoEval.html" title="Set the prototype model to use when evaluating the parameters of the current function. " alt="" coords="187,1272,304,1299"/>
+<area shape="rect" id="node28" href="$classOptionReadOnly.html" title="Toggle whether read&#45;only memory locations have their value propagated. " alt="" coords="186,1323,305,1349"/>
+<area shape="rect" id="node29" href="$classOptionSetAction.html" title="Establish a new root Action for the decompiler. " alt="" coords="187,1373,304,1400"/>
+<area shape="rect" id="node30" href="$classOptionSetLanguage.html" title="Set the current language emitted by the decompiler. " alt="" coords="177,1424,313,1451"/>
+<area shape="rect" id="node31" href="$classOptionStructAlign.html" title="Alter the &quot;structure alignment&quot; data organization setting. " alt="" coords="183,1475,307,1501"/>
+<area shape="rect" id="node32" href="$classOptionToggleRule.html" title="Toggle whether a specific Rule is applied in the current Action. " alt="" coords="182,1525,309,1552"/>
+<area shape="rect" id="node33" href="$classOptionWarning.html" title="Toggle whether a warning should be issued if a specific action/rule is applied. " alt="" coords="191,1576,299,1603"/>
+</map>

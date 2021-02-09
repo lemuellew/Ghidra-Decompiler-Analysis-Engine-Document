@@ -1,0 +1,10 @@
+<map id="UserPcodeOp" name="UserPcodeOp">
+<area shape="rect" id="node2" href="$classInjectedUserOp.html" title="A user defined operation that is injected with other p&#45;code. " alt="" coords="5,80,119,107"/>
+<area shape="rect" id="node3" href="$classJumpAssistOp.html" title="A user defined p&#45;code op for assisting the recovery of jump tables. " alt="" coords="143,80,251,107"/>
+<area shape="rect" id="node4" href="$classTermPatternOp.html" title="A user defined p&#45;code op that has a dynamically defined procedure. " alt="" coords="275,80,385,107"/>
+<area shape="rect" id="node6" href="$classUnspecializedPcodeOp.html" title="A user defined p&#45;code op with no specialization. " alt="" coords="409,80,568,107"/>
+<area shape="rect" id="node7" href="$classVolatileOp.html" title="A base class for operations that access volatile memory. " alt="" coords="593,80,675,107"/>
+<area shape="rect" id="node5" href="$classSegmentOp.html" title="The segmented address operator. " alt="" coords="285,155,375,181"/>
+<area shape="rect" id="node8" href="$classVolatileReadOp.html" title="An operation that reads from volatile memory. " alt="" coords="508,155,621,181"/>
+<area shape="rect" id="node9" href="$classVolatileWriteOp.html" title="An operation that writes to volatile memory. " alt="" coords="645,155,759,181"/>
+</map>

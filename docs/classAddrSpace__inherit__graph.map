@@ -1,0 +1,10 @@
+<map id="AddrSpace" name="AddrSpace">
+<area shape="rect" id="node2" href="$classConstantSpace.html" title="Special AddrSpace for representing constants during analysis. " alt="" coords="146,5,258,32"/>
+<area shape="rect" id="node3" href="$classFspecSpace.html" title="A special space for encoding FuncCallSpecs. " alt="" coords="155,56,249,83"/>
+<area shape="rect" id="node4" href="$classIopSpace.html" title="Space for storing internal PcodeOp pointers as addresses. " alt="" coords="163,107,241,133"/>
+<area shape="rect" id="node5" href="$classJoinSpace.html" title="The pool of logically joined variables. " alt="" coords="161,157,243,184"/>
+<area shape="rect" id="node6" href="$classOtherSpace.html" title="Special AddrSpace for special/user&#45;defined address spaces. " alt="" coords="157,208,247,235"/>
+<area shape="rect" id="node7" href="$classOverlaySpace.html" title="An overlay space. " alt="" coords="150,259,254,285"/>
+<area shape="rect" id="node8" href="$classSpacebaseSpace.html" title="A virtual space stack space. " alt="" coords="140,309,264,336"/>
+<area shape="rect" id="node9" href="$classUniqueSpace.html" title="The pool of temporary storage registers. " alt="" coords="152,360,252,387"/>
+</map>

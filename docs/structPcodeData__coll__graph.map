@@ -1,0 +1,4 @@
+<map id="PcodeData" name="PcodeData">
+<area shape="rect" id="node2" href="$structVarnodeData.html" title="Data defining a specific memory location. " alt="" coords="5,95,104,121"/>
+<area shape="rect" id="node3" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="11,5,98,32"/>
+</map>

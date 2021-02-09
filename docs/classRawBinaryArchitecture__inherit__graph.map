@@ -1,0 +1,5 @@
+<map id="RawBinaryArchitecture" name="RawBinaryArchitecture">
+<area shape="rect" id="node2" href="$classSleighArchitecture.html" title="An Architecture that uses the decompiler&#39;s native SLEIGH translation engine. " alt="" coords="19,155,147,181"/>
+<area shape="rect" id="node3" href="$classArchitecture.html" title="Manager for all the major decompiler subsystems. " alt="" coords="37,80,129,107"/>
+<area shape="rect" id="node4" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="15,5,151,32"/>
+</map>

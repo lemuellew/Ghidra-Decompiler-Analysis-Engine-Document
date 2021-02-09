@@ -1,0 +1,4 @@
+<map id="ProtoParameter" name="ProtoParameter">
+<area shape="rect" id="node2" href="$classParameterBasic.html" title="A stand&#45;alone parameter with no backing symbol. " alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node3" href="$classParameterSymbol.html" title="A parameter with a formal backing Symbol. " alt="" coords="145,80,271,107"/>
+</map>

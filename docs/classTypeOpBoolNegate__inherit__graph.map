@@ -1,0 +1,4 @@
+<map id="TypeOpBoolNegate" name="TypeOpBoolNegate">
+<area shape="rect" id="node2" href="$classTypeOpUnary.html" title="A generic unary operator: one input and one output. " alt="" coords="22,80,125,107"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="39,5,107,32"/>
+</map>

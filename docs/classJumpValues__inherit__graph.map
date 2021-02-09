@@ -1,0 +1,4 @@
+<map id="JumpValues" name="JumpValues">
+<area shape="rect" id="node2" href="$classJumpValuesRange.html" title="single entry switch variable that can take a range of values " alt="" coords="27,80,159,107"/>
+<area shape="rect" id="node3" href="$classJumpValuesRangeDefault.html" title="A jump&#45;table starting range with two possible execution paths. " alt="" coords="5,155,180,181"/>
+</map>
