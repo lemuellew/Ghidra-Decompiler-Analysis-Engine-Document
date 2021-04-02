@@ -1,3 +1,4 @@
 <map id="RuleSubvarSubpiece" name="RuleSubvarSubpiece">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="53,5,102,32"/>
+<area shape="rect" id="node1" title="Perform SubVariableFlow analysis triggered by SUBPIECE." alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="57,5,108,32"/>
 </map>

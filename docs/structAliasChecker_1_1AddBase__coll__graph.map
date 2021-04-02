@@ -1,5 +1,6 @@
 <map id="AliasChecker::AddBase" name="AliasChecker::AddBase">
-<area shape="rect" id="node2" href="$classVarnode.html" title="A low&#45;level variable or contiguous set of bytes described by an Address and a size. " alt="" coords="57,95,127,121"/>
-<area shape="rect" id="node3" href="$classValueSet.html" title="A range of values attached to a Varnode within a data&#45;flow subsystem. " alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node4" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="104,5,179,32"/>
+<area shape="rect" id="node1" title="A helper class holding a Varnode pointer reference and a possible index added to it." alt="" coords="12,199,183,225"/>
+<area shape="rect" id="node2" href="$classVarnode.html" title="A low&#45;level variable or contiguous set of bytes described by an Address and a size." alt="" coords="59,95,135,121"/>
+<area shape="rect" id="node3" href="$classValueSet.html" title="A range of values attached to a Varnode within a data&#45;flow subsystem." alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node4" href="$classDatatype.html" title="The base datatype class for the decompiler." alt="" coords="109,5,192,32"/>
 </map>

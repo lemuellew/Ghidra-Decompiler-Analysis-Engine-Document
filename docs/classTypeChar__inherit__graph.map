@@ -1,4 +1,5 @@
 <map id="TypeChar" name="TypeChar">
-<area shape="rect" id="node2" href="$classTypeBase.html" title="Base class for the fundamental atomic types. " alt="" coords="5,80,87,107"/>
-<area shape="rect" id="node3" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="9,5,83,32"/>
+<area shape="rect" id="node1" title="Base type for character data&#45;types: i.e. char." alt="" coords="6,155,89,181"/>
+<area shape="rect" id="node2" href="$classTypeBase.html" title="Base class for the fundamental atomic types." alt="" coords="5,80,89,107"/>
+<area shape="rect" id="node3" href="$classDatatype.html" title="The base datatype class for the decompiler." alt="" coords="6,5,89,32"/>
 </map>

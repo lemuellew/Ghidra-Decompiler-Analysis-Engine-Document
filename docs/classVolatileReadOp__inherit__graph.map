@@ -1,4 +1,5 @@
 <map id="VolatileReadOp" name="VolatileReadOp">
-<area shape="rect" id="node2" href="$classVolatileOp.html" title="A base class for operations that access volatile memory. " alt="" coords="21,80,103,107"/>
-<area shape="rect" id="node3" href="$classUserPcodeOp.html" title="The base class for a detailed definition of a user&#45;defined p&#45;code operation. " alt="" coords="10,5,114,32"/>
+<area shape="rect" id="node1" title="An operation that reads from volatile memory." alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node2" href="$classVolatileOp.html" title="A base class for operations that access volatile memory." alt="" coords="21,80,112,107"/>
+<area shape="rect" id="node3" href="$classUserPcodeOp.html" title="The base class for a detailed definition of a user&#45;defined p&#45;code operation." alt="" coords="12,5,121,32"/>
 </map>

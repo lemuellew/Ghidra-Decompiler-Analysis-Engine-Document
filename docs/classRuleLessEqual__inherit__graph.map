@@ -1,3 +1,4 @@
 <map id="RuleLessEqual" name="RuleLessEqual">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="36,5,85,32"/>
+<area shape="rect" id="node1" title="Simplify &#39;less than or equal&#39;: V &lt; W || V == W =&gt; V &lt;= W" alt="" coords="5,80,121,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="38,5,89,32"/>
 </map>

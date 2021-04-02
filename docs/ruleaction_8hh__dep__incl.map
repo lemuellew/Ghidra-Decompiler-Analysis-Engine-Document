@@ -1,4 +1,5 @@
 <map id="ruleaction.hh" name="ruleaction.hh">
-<area shape="rect" id="node2" href="$coreaction_8hh.html" title="Core decompilation actions which are indepedent of any particular architecture. " alt="" coords="5,80,105,107"/>
-<area shape="rect" id="node3" href="$double_8hh_source.html" title="double.hh" alt="" coords="129,80,208,107"/>
+<area shape="rect" id="node1" title="This is the basic set of transformation Rule objects." alt="" coords="69,5,175,32"/>
+<area shape="rect" id="node2" href="$coreaction_8hh.html" title="Core decompilation actions which are indepedent of any particular architecture." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$double_8hh_source.html" title=" " alt="" coords="140,80,227,107"/>
 </map>

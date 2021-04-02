@@ -1,5 +1,6 @@
 <map id="MemoryBank" name="MemoryBank">
-<area shape="rect" id="node2" href="$classMemoryHashOverlay.html" title="A memory bank that implements reads and writes using a hash table. " alt="" coords="5,80,151,107"/>
-<area shape="rect" id="node3" href="$classMemoryImage.html" title="A kind of MemoryBank which retrieves its data from an underlying LoadImage. " alt="" coords="175,80,280,107"/>
-<area shape="rect" id="node4" href="$classMemoryPageOverlay.html" title="Memory bank that overlays some other memory bank, using a &quot;copy on write&quot; behavior. " alt="" coords="305,80,449,107"/>
+<area shape="rect" id="node1" title="Memory storage/state for a single AddressSpace." alt="" coords="193,5,303,32"/>
+<area shape="rect" id="node2" href="$classMemoryHashOverlay.html" title="A memory bank that implements reads and writes using a hash table." alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node3" href="$classMemoryImage.html" title="A kind of MemoryBank which retrieves its data from an underlying LoadImage." alt="" coords="189,80,307,107"/>
+<area shape="rect" id="node4" href="$classMemoryPageOverlay.html" title="Memory bank that overlays some other memory bank, using a &quot;copy on write&quot; behavior." alt="" coords="331,80,490,107"/>
 </map>

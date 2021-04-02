@@ -1,3 +1,4 @@
 <map id="Address" name="Address">
-<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node1" title="A low&#45;level machine address for labelling bytes and data." alt="" coords="13,95,88,121"/>
+<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored." alt="" coords="5,5,96,32"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="EmulateSnippet" name="EmulateSnippet">
-<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface. " alt="" coords="27,95,98,121"/>
-<area shape="rect" id="node3" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="17,5,108,32"/>
+<area shape="rect" id="node1" title="Emulate a snippet of PcodeOps out of a functional context." alt="" coords="5,171,131,197"/>
+<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface." alt="" coords="30,95,106,121"/>
+<area shape="rect" id="node3" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes." alt="" coords="19,5,117,32"/>
 </map>

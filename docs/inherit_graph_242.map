@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structTypeSpecifiers.html" title="TypeSpecifiers" alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node1" href="$classTraverseConstraint.html" title=" " alt="" coords="5,56,151,83"/>
+<area shape="rect" id="node2" href="$classTraverseCountState.html" title=" " alt="" coords="207,5,358,32"/>
+<area shape="rect" id="node3" href="$classTraverseDescendState.html" title=" " alt="" coords="199,56,367,83"/>
+<area shape="rect" id="node4" href="$classTraverseGroupState.html" title=" " alt="" coords="207,107,358,133"/>
 </map>

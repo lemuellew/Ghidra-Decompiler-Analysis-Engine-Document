@@ -1,0 +1,4 @@
+<map id="PcodeOpNode" name="PcodeOpNode">
+<area shape="rect" id="node1" title="An edge in a data&#45;flow path or graph." alt="" coords="5,95,119,121"/>
+<area shape="rect" id="node2" href="$classPcodeOp.html" title="Lowest level operation of the p&#45;code language." alt="" coords="23,5,101,32"/>
+</map>

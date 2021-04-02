@@ -1,4 +1,5 @@
 <map id="IfcCodeDataDumpModelHits" name="IfcCodeDataDumpModelHits">
-<area shape="rect" id="node2" href="$classIfaceCodeDataCommand.html" title="IfaceCodeDataCommand" alt="" coords="15,80,186,107"/>
-<area shape="rect" id="node3" href="$classIfaceCommand.html" title="IfaceCommand" alt="" coords="45,5,156,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,155,212,181"/>
+<area shape="rect" id="node2" href="$classIfaceCodeDataCommand.html" title=" " alt="" coords="16,80,201,107"/>
+<area shape="rect" id="node3" href="$classIfaceCommand.html" title="A command that can be executed from the command line." alt="" coords="48,5,169,32"/>
 </map>

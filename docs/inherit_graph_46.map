@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classContentHandler.html" title="The SAX interface for parsing XML documents. " alt="" coords="5,5,119,32"/>
-<area shape="rect" id="node2" href="$classTreeHandler.html" title="A SAX interface implementation for constructing an in&#45;memory DOM model. " alt="" coords="167,5,260,32"/>
+<area shape="rect" id="node1" href="$classContentHandler.html" title="The SAX interface for parsing XML documents." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="$classTreeHandler.html" title="A SAX interface implementation for constructing an in&#45;memory DOM model." alt="" coords="177,5,277,32"/>
 </map>

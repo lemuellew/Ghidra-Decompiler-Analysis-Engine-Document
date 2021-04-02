@@ -1,3 +1,4 @@
 <map id="IopSpace" name="IopSpace">
-<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node1" title="Space for storing internal PcodeOp pointers as addresses." alt="" coords="10,80,91,107"/>
+<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored." alt="" coords="5,5,96,32"/>
 </map>

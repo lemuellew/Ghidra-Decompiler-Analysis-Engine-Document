@@ -1,3 +1,55 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classOpToken.html" title="A token representing an operator in the high&#45;level language. " alt="" coords="5,5,80,32"/>
+<area shape="rect" id="node1" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes." alt="" coords="5,1297,104,1324"/>
+<area shape="rect" id="node2" href="$classOpBehaviorBoolAnd.html" title="CPUI_BOOL_AND behavior." alt="" coords="179,5,331,32"/>
+<area shape="rect" id="node3" href="$classOpBehaviorBoolNegate.html" title="CPUI_BOOL_NEGATE behavior." alt="" coords="167,56,342,83"/>
+<area shape="rect" id="node4" href="$classOpBehaviorBoolOr.html" title="CPUI_BOOL_OR behavior." alt="" coords="183,107,326,133"/>
+<area shape="rect" id="node5" href="$classOpBehaviorBoolXor.html" title="CPUI_BOOL_XOR behavior." alt="" coords="180,157,329,184"/>
+<area shape="rect" id="node6" href="$classOpBehaviorCopy.html" title="CPUI_COPY behavior." alt="" coords="189,208,320,235"/>
+<area shape="rect" id="node7" href="$classOpBehaviorEqual.html" title="CPUI_INT_EQUAL behavior." alt="" coords="187,259,322,285"/>
+<area shape="rect" id="node8" href="$classOpBehaviorFloatAbs.html" title="CPUI_FLOAT_ABS behavior." alt="" coords="177,309,332,336"/>
+<area shape="rect" id="node9" href="$classOpBehaviorFloatAdd.html" title="CPUI_FLOAT_ADD behavior." alt="" coords="177,360,333,387"/>
+<area shape="rect" id="node10" href="$classOpBehaviorFloatCeil.html" title="CPUI_FLOAT_CEIL behavior." alt="" coords="177,411,333,437"/>
+<area shape="rect" id="node11" href="$classOpBehaviorFloatDiv.html" title="CPUI_FLOAT_DIV behavior." alt="" coords="178,461,331,488"/>
+<area shape="rect" id="node12" href="$classOpBehaviorFloatEqual.html" title="CPUI_FLOAT_EQUAL behavior." alt="" coords="171,512,338,539"/>
+<area shape="rect" id="node13" href="$classOpBehaviorFloatFloat2Float.html" title="CPUI_FLOAT_FLOAT2FLOAT behavior." alt="" coords="152,563,357,589"/>
+<area shape="rect" id="node14" href="$classOpBehaviorFloatFloor.html" title="CPUI_FLOAT_FLOOR behavior." alt="" coords="173,613,337,640"/>
+<area shape="rect" id="node15" href="$classOpBehaviorFloatInt2Float.html" title="CPUI_FLOAT_INT2FLOAT behavior." alt="" coords="160,664,349,691"/>
+<area shape="rect" id="node16" href="$classOpBehaviorFloatLess.html" title="CPUI_FLOAT_LESS behavior." alt="" coords="175,715,335,741"/>
+<area shape="rect" id="node17" href="$classOpBehaviorFloatLessEqual.html" title="CPUI_FLOAT_LESSEQUAL behavior." alt="" coords="157,765,353,792"/>
+<area shape="rect" id="node18" href="$classOpBehaviorFloatMult.html" title="CPUI_FLOAT_MULT behavior." alt="" coords="175,816,335,843"/>
+<area shape="rect" id="node19" href="$classOpBehaviorFloatNan.html" title="CPUI_FLOAT_NAN behavior." alt="" coords="176,867,333,893"/>
+<area shape="rect" id="node20" href="$classOpBehaviorFloatNeg.html" title="CPUI_FLOAT_NEG behavior." alt="" coords="176,917,333,944"/>
+<area shape="rect" id="node21" href="$classOpBehaviorFloatNotEqual.html" title="CPUI_FLOAT_NOTEQUAL behavior." alt="" coords="159,968,350,995"/>
+<area shape="rect" id="node22" href="$classOpBehaviorFloatRound.html" title="CPUI_FLOAT_ROUND behavior." alt="" coords="169,1019,341,1045"/>
+<area shape="rect" id="node23" href="$classOpBehaviorFloatSqrt.html" title="CPUI_FLOAT_SQRT behavior." alt="" coords="176,1069,333,1096"/>
+<area shape="rect" id="node24" href="$classOpBehaviorFloatSub.html" title="CPUI_FLOAT_SUB behavior." alt="" coords="177,1120,332,1147"/>
+<area shape="rect" id="node25" href="$classOpBehaviorFloatTrunc.html" title="CPUI_FLOAT_TRUNC behavior." alt="" coords="171,1171,338,1197"/>
+<area shape="rect" id="node26" href="$classOpBehaviorInt2Comp.html" title="CPUI_INT_2COMP behavior." alt="" coords="174,1221,335,1248"/>
+<area shape="rect" id="node27" href="$classOpBehaviorIntAdd.html" title="CPUI_INT_ADD behavior." alt="" coords="185,1272,325,1299"/>
+<area shape="rect" id="node28" href="$classOpBehaviorIntAnd.html" title="CPUI_INT_AND behavior." alt="" coords="185,1323,325,1349"/>
+<area shape="rect" id="node29" href="$classOpBehaviorIntCarry.html" title="CPUI_INT_CARRY behavior." alt="" coords="179,1373,330,1400"/>
+<area shape="rect" id="node30" href="$classOpBehaviorIntDiv.html" title="CPUI_INT_DIV behavior." alt="" coords="186,1424,323,1451"/>
+<area shape="rect" id="node31" href="$classOpBehaviorIntLeft.html" title="CPUI_INT_LEFT behavior." alt="" coords="185,1475,325,1501"/>
+<area shape="rect" id="node32" href="$classOpBehaviorIntLess.html" title="CPUI_INT_LESS behavior." alt="" coords="183,1525,327,1552"/>
+<area shape="rect" id="node33" href="$classOpBehaviorIntLessEqual.html" title="CPUI_INT_LESSEQUAL behavior." alt="" coords="165,1576,345,1603"/>
+<area shape="rect" id="node34" href="$classOpBehaviorIntMult.html" title="CPUI_INT_MULT behavior." alt="" coords="183,1627,327,1653"/>
+<area shape="rect" id="node35" href="$classOpBehaviorIntNegate.html" title="CPUI_INT_NEGATE behavior." alt="" coords="173,1677,336,1704"/>
+<area shape="rect" id="node36" href="$classOpBehaviorIntOr.html" title="CPUI_INT_OR behavior." alt="" coords="189,1728,320,1755"/>
+<area shape="rect" id="node37" href="$classOpBehaviorIntRem.html" title="CPUI_INT_REM behavior." alt="" coords="182,1779,327,1805"/>
+<area shape="rect" id="node38" href="$classOpBehaviorIntRight.html" title="CPUI_INT_RIGHT behavior." alt="" coords="180,1829,329,1856"/>
+<area shape="rect" id="node39" href="$classOpBehaviorIntSborrow.html" title="CPUI_INT_SBORROW behavior." alt="" coords="171,1880,339,1907"/>
+<area shape="rect" id="node40" href="$classOpBehaviorIntScarry.html" title="CPUI_INT_SCARRY behavior." alt="" coords="177,1931,333,1957"/>
+<area shape="rect" id="node41" href="$classOpBehaviorIntSdiv.html" title="CPUI_INT_SDIV behavior." alt="" coords="183,1981,326,2008"/>
+<area shape="rect" id="node42" href="$classOpBehaviorIntSext.html" title="CPUI_INT_SEXT behavior." alt="" coords="183,2032,327,2059"/>
+<area shape="rect" id="node43" href="$classOpBehaviorIntSless.html" title="CPUI_INT_SLESS behavior." alt="" coords="180,2083,329,2109"/>
+<area shape="rect" id="node44" href="$classOpBehaviorIntSlessEqual.html" title="CPUI_INT_SLESSEQUAL behavior." alt="" coords="162,2133,347,2160"/>
+<area shape="rect" id="node45" href="$classOpBehaviorIntSrem.html" title="CPUI_INT_SREM behavior." alt="" coords="180,2184,329,2211"/>
+<area shape="rect" id="node46" href="$classOpBehaviorIntSright.html" title="CPUI_INT_SRIGHT behavior." alt="" coords="178,2235,331,2261"/>
+<area shape="rect" id="node47" href="$classOpBehaviorIntSub.html" title="CPUI_INT_SUB behavior." alt="" coords="185,2285,324,2312"/>
+<area shape="rect" id="node48" href="$classOpBehaviorIntXor.html" title="CPUI_INT_XOR behavior." alt="" coords="186,2336,323,2363"/>
+<area shape="rect" id="node49" href="$classOpBehaviorIntZext.html" title="CPUI_INT_ZEXT behavior." alt="" coords="182,2387,327,2413"/>
+<area shape="rect" id="node50" href="$classOpBehaviorNotEqual.html" title="CPUI_INT_NOTEQUAL behavior." alt="" coords="176,2437,333,2464"/>
+<area shape="rect" id="node51" href="$classOpBehaviorPiece.html" title="CPUI_PIECE behavior." alt="" coords="188,2488,321,2515"/>
+<area shape="rect" id="node52" href="$classOpBehaviorPopcount.html" title="CPUI_POPCOUNT behavior." alt="" coords="175,2539,334,2565"/>
+<area shape="rect" id="node53" href="$classOpBehaviorSubpiece.html" title="CPUI_SUBPIECE behavior." alt="" coords="176,2589,333,2616"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="ExecutablePcodeGhidra" name="ExecutablePcodeGhidra">
-<area shape="rect" id="node2" href="$classExecutablePcode.html" title="A snippet of p&#45;code that can be executed outside of normal analysis. " alt="" coords="25,80,149,107"/>
-<area shape="rect" id="node3" href="$classInjectPayload.html" title="An active container for a set of p&#45;code operations that can be injected into data&#45;flow. " alt="" coords="36,5,137,32"/>
+<area shape="rect" id="node1" title="A p&#45;code script that uses a Ghidra client to generate the p&#45;code ops." alt="" coords="5,155,181,181"/>
+<area shape="rect" id="node2" href="$classExecutablePcode.html" title="A snippet of p&#45;code that can be executed outside of normal analysis." alt="" coords="27,80,160,107"/>
+<area shape="rect" id="node3" href="$classInjectPayload.html" title="An active container for a set of p&#45;code operations that can be injected into data&#45;flow." alt="" coords="38,5,149,32"/>
 </map>

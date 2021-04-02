@@ -1,3 +1,4 @@
 <map id="TypeField" name="TypeField">
-<area shape="rect" id="node2" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="7,5,82,32"/>
+<area shape="rect" id="node1" title="Specifies subfields of a structure or what a pointer points to." alt="" coords="5,95,88,121"/>
+<area shape="rect" id="node2" href="$classDatatype.html" title="The base datatype class for the decompiler." alt="" coords="5,5,88,32"/>
 </map>

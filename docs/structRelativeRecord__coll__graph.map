@@ -1,4 +1,5 @@
 <map id="RelativeRecord" name="RelativeRecord">
-<area shape="rect" id="node2" href="$structVarnodeData.html" title="Data defining a specific memory location. " alt="" coords="12,95,111,121"/>
-<area shape="rect" id="node3" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="18,5,105,32"/>
+<area shape="rect" id="node1" title="Class for describing a relative p&#45;code branch destination." alt="" coords="5,184,127,211"/>
+<area shape="rect" id="node2" href="$structVarnodeData.html" title="Data defining a specific memory location." alt="" coords="13,95,119,121"/>
+<area shape="rect" id="node3" href="$classAddrSpace.html" title="A region where processor data is stored." alt="" coords="21,5,111,32"/>
 </map>

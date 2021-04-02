@@ -1,4 +1,5 @@
 <map id="TypeOpIntSext" name="TypeOpIntSext">
-<area shape="rect" id="node2" href="$classTypeOpFunc.html" title="A generic functional operator. " alt="" coords="12,80,109,107"/>
-<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="27,5,95,32"/>
+<area shape="rect" id="node1" title="Information about the INT_SEXT op&#45;code." alt="" coords="5,155,121,181"/>
+<area shape="rect" id="node2" href="$classTypeOpFunc.html" title="A generic functional operator." alt="" coords="13,80,113,107"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="28,5,99,32"/>
 </map>

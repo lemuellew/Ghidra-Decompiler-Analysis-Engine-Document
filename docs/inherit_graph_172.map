@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPcodeOpEdge.html" title="Class representing a term in an additive expression. " alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node1" href="$classPcodeInjectLibrary.html" title="A collection of p&#45;code injection payloads." alt="" coords="5,31,148,57"/>
+<area shape="rect" id="node2" href="$classPcodeInjectLibraryGhidra.html" title="A p&#45;code injection library that uses a Ghidra client to generate/compile the injection p&#45;code." alt="" coords="196,5,381,32"/>
+<area shape="rect" id="node3" href="$classPcodeInjectLibrarySleigh.html" title=" " alt="" coords="197,56,380,83"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="RuleIntLessEqual" name="RuleIntLessEqual">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="43,5,93,32"/>
+<area shape="rect" id="node1" title="Convert LESSEQUAL to LESS: V &lt;= c =&gt; V &lt; (c+1)" alt="" coords="5,80,139,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="47,5,97,32"/>
 </map>

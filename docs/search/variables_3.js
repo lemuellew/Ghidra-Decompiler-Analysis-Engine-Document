@@ -1,15 +1,21 @@
 var searchData=
 [
-  ['datatype',['dataType',['../classVarnode.html#aca10bd02fe48fd788e8c3752a9176a55',1,'Varnode']]],
-  ['deadcodedelay',['deadcodedelay',['../classAddrSpace.html#aa2fd37355d0ed2ebee552ac944f67d95',1,'AddrSpace']]],
-  ['defaultfp',['defaultfp',['../classArchitecture.html#a1e0f5d45f6dcd494b15bb55f81f656b2',1,'Architecture']]],
-  ['defaultreturnaddr',['defaultReturnAddr',['../classArchitecture.html#ad0b5e0d6c22247d4ec2422c81ddec8f8',1,'Architecture']]],
-  ['delay',['delay',['../classAddrSpace.html#adb1ad3a09f9860eac23dd34f910808cd',1,'AddrSpace']]],
-  ['dereference',['dereference',['../classPrintC.html#a7d63db28ddbeb25416eeb5b5abffdf13',1,'PrintC']]],
-  ['dispflags',['dispflags',['../classSymbol.html#a58776a81e4ba35c90bb0d3bf2fea5c32',1,'Symbol']]],
-  ['divequal',['divequal',['../classPrintC.html#a4a6ff1f6d6449a198b2cecfe4bf4f925',1,'PrintC']]],
-  ['divide',['divide',['../classPrintC.html#a28bc4b767b118dfad5f43aaadb10eaf4',1,'PrintC']]],
-  ['dotdotdot',['dotdotdot',['../structPrototypePieces.html#a06df4f0bbd4f67847962c3ae35e8945d',1,'PrototypePieces']]],
-  ['dynamic',['dynamic',['../classInjectPayload.html#a17ef3ad9e289596c2ea756b44f03e043',1,'InjectPayload']]],
-  ['dynamicentry',['dynamicentry',['../classScopeInternal.html#a74bb56d748daae518b88b73d8f687d75',1,'ScopeInternal']]]
+  ['datamap_6639',['datamap',['../classIfaceStatus.html#ac85d5fe1254b348a3f77a9d5ec6603b8',1,'IfaceStatus']]],
+  ['dataptr_6640',['dataptr',['../structRelativeRecord.html#a850f0350cbee0663232960529ed4f271',1,'RelativeRecord']]],
+  ['datatype_6641',['dataType',['../classVarnode.html#aca10bd02fe48fd788e8c3752a9176a55',1,'Varnode']]],
+  ['dcp_6642',['dcp',['../classIfaceDecompCommand.html#a577eeaba407343565278a765a17bf4b7',1,'IfaceDecompCommand']]],
+  ['deadcodedelay_6643',['deadcodedelay',['../classAddrSpace.html#aa2fd37355d0ed2ebee552ac944f67d95',1,'AddrSpace']]],
+  ['defaultfp_6644',['defaultfp',['../classArchitecture.html#a1e0f5d45f6dcd494b15bb55f81f656b2',1,'Architecture']]],
+  ['defaultreturnaddr_6645',['defaultReturnAddr',['../classArchitecture.html#ad0b5e0d6c22247d4ec2422c81ddec8f8',1,'Architecture']]],
+  ['delay_6646',['delay',['../classAddrSpace.html#adb1ad3a09f9860eac23dd34f910808cd',1,'AddrSpace']]],
+  ['depthresolution_6647',['depthResolution',['../classSymbol.html#ad48ee897e3e0612b2039b83d522017fa',1,'Symbol']]],
+  ['depthscope_6648',['depthScope',['../classSymbol.html#afeaad42c7f817dab09147c49ba7c5fd6',1,'Symbol']]],
+  ['dereference_6649',['dereference',['../classPrintC.html#a7d63db28ddbeb25416eeb5b5abffdf13',1,'PrintC']]],
+  ['dispflags_6650',['dispflags',['../classSymbol.html#a58776a81e4ba35c90bb0d3bf2fea5c32',1,'Symbol']]],
+  ['divequal_6651',['divequal',['../classPrintC.html#a4a6ff1f6d6449a198b2cecfe4bf4f925',1,'PrintC']]],
+  ['divide_6652',['divide',['../classPrintC.html#a28bc4b767b118dfad5f43aaadb10eaf4',1,'PrintC']]],
+  ['done_6653',['done',['../classIfaceStatus.html#aa8a31d6b1164019ee725b33e52769254',1,'IfaceStatus']]],
+  ['dotdotdot_6654',['dotdotdot',['../structPrototypePieces.html#a06df4f0bbd4f67847962c3ae35e8945d',1,'PrototypePieces']]],
+  ['dynamic_6655',['dynamic',['../classInjectPayload.html#a17ef3ad9e289596c2ea756b44f03e043',1,'InjectPayload']]],
+  ['dynamicentry_6656',['dynamicentry',['../classScopeInternal.html#a74bb56d748daae518b88b73d8f687d75',1,'ScopeInternal']]]
 ];

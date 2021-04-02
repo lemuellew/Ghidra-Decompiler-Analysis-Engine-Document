@@ -1,3 +1,4 @@
 <map id="RulePiece2Sext" name="RulePiece2Sext">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="39,5,88,32"/>
+<area shape="rect" id="node1" title="Concatenation with sign bits becomes an extension: concat( V s&gt;&gt; #0x1f , V) =&gt; sext(V)" alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="41,5,92,32"/>
 </map>

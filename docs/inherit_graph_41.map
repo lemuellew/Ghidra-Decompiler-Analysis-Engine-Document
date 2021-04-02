@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classConstantPool.html" title="An interface to the pool of constant objects for byte&#45;code languages. " alt="" coords="5,31,107,57"/>
-<area shape="rect" id="node2" href="$classConstantPoolGhidra.html" title="An implementation of ConstantPool using a Ghidra client as the backing storage. " alt="" coords="157,5,296,32"/>
-<area shape="rect" id="node3" href="$classConstantPoolInternal.html" title="An implementation of the ConstantPool interface storing records internally in RAM. " alt="" coords="155,56,299,83"/>
+<area shape="rect" id="node1" href="$classConstantPool.html" title="An interface to the pool of constant objects for byte&#45;code languages." alt="" coords="5,31,113,57"/>
+<area shape="rect" id="node2" href="$classConstantPoolGhidra.html" title="An implementation of ConstantPool using a Ghidra client as the backing storage." alt="" coords="165,5,316,32"/>
+<area shape="rect" id="node3" href="$classConstantPoolInternal.html" title="An implementation of the ConstantPool interface storing records internally in RAM." alt="" coords="161,56,320,83"/>
 </map>

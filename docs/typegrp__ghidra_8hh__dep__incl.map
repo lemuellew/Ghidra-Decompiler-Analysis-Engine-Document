@@ -1,3 +1,4 @@
 <map id="typegrp_ghidra.hh" name="typegrp_ghidra.hh">
-<area shape="rect" id="node2" href="$ghidra__process_8hh.html" title="The formal commands that can be issued to the decompiler by the Ghidra client. " alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node1" title="Interface for requesting data&#45;type information from a Ghidra client." alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node2" href="$ghidra__process_8hh.html" title="The formal commands that can be issued to the decompiler by the Ghidra client." alt="" coords="5,80,145,107"/>
 </map>

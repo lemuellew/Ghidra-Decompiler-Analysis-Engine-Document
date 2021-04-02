@@ -1,3 +1,4 @@
 <map id="SpacebaseSpace" name="SpacebaseSpace">
-<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="24,5,111,32"/>
+<area shape="rect" id="node1" title="A virtual space stack space." alt="" coords="5,80,136,107"/>
+<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored." alt="" coords="25,5,116,32"/>
 </map>

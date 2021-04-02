@@ -1,3 +1,4 @@
 <map id="RuleLoadVarnode" name="RuleLoadVarnode">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="43,5,93,32"/>
+<area shape="rect" id="node1" title="Convert LOAD operations using a constant offset to COPY." alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="48,5,99,32"/>
 </map>

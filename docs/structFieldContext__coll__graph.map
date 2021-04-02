@@ -1,8 +1,9 @@
 <map id="FieldContext" name="FieldContext">
-<area shape="rect" id="node2" href="$classVarnodeSymbol.html" title="VarnodeSymbol" alt="" coords="14,309,129,336"/>
-<area shape="rect" id="node3" href="$classPatternlessSymbol.html" title="PatternlessSymbol" alt="" coords="5,233,137,260"/>
-<area shape="rect" id="node4" href="$classSpecificSymbol.html" title="SpecificSymbol" alt="" coords="15,157,128,184"/>
-<area shape="rect" id="node5" href="$classTripleSymbol.html" title="TripleSymbol" alt="" coords="22,81,121,108"/>
-<area shape="rect" id="node6" href="$classSleighSymbol.html" title="SleighSymbol" alt="" coords="20,5,123,32"/>
-<area shape="rect" id="node7" href="$structFieldQuality.html" title="FieldQuality" alt="" coords="153,309,243,336"/>
+<area shape="rect" id="node1" title=" " alt="" coords="127,399,230,425"/>
+<area shape="rect" id="node2" href="$classVarnodeSymbol.html" title=" " alt="" coords="15,309,140,336"/>
+<area shape="rect" id="node3" href="$classPatternlessSymbol.html" title=" " alt="" coords="5,233,149,260"/>
+<area shape="rect" id="node4" href="$classSpecificSymbol.html" title=" " alt="" coords="16,157,139,184"/>
+<area shape="rect" id="node5" href="$classTripleSymbol.html" title=" " alt="" coords="24,81,131,108"/>
+<area shape="rect" id="node6" href="$classSleighSymbol.html" title=" " alt="" coords="22,5,133,32"/>
+<area shape="rect" id="node7" href="$structFieldQuality.html" title=" " alt="" coords="164,309,263,336"/>
 </map>

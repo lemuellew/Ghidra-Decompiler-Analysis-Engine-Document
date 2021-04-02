@@ -1,9 +1,10 @@
 <map id="IfaceBaseCommand" name="IfaceBaseCommand">
-<area shape="rect" id="node3" href="$classIfcClosefile.html" title="IfcClosefile" alt="" coords="5,155,93,181"/>
-<area shape="rect" id="node4" href="$classIfcEcho.html" title="IfcEcho" alt="" coords="117,155,184,181"/>
-<area shape="rect" id="node5" href="$classIfcHistory.html" title="IfcHistory" alt="" coords="209,155,287,181"/>
-<area shape="rect" id="node6" href="$classIfcOpenfile.html" title="IfcOpenfile" alt="" coords="312,155,397,181"/>
-<area shape="rect" id="node7" href="$classIfcOpenfileAppend.html" title="IfcOpenfileAppend" alt="" coords="422,155,551,181"/>
-<area shape="rect" id="node8" href="$classIfcQuit.html" title="IfcQuit" alt="" coords="576,155,637,181"/>
-<area shape="rect" id="node2" href="$classIfaceCommand.html" title="IfaceCommand" alt="" coords="246,5,357,32"/>
+<area shape="rect" id="node1" title="A root class for a basic set of commands." alt="" coords="240,80,393,107"/>
+<area shape="rect" id="node3" href="$classIfcClosefile.html" title="Close command, closing the current bulk output file." alt="" coords="5,155,100,181"/>
+<area shape="rect" id="node4" href="$classIfcEcho.html" title="Echo command to echo the current command line to the bulk output stream." alt="" coords="125,155,194,181"/>
+<area shape="rect" id="node5" href="$classIfcHistory.html" title="History command to list the most recent successful commands." alt="" coords="218,155,303,181"/>
+<area shape="rect" id="node6" href="$classIfcOpenfile.html" title="Open file command to redirect bulk output to a specific file stream." alt="" coords="327,155,421,181"/>
+<area shape="rect" id="node7" href="$classIfcOpenfileAppend.html" title="Open file command directing bulk output to be appended to a specific file." alt="" coords="445,155,588,181"/>
+<area shape="rect" id="node8" href="$classIfcQuit.html" title="Quit command to terminate processing from the given interface." alt="" coords="612,155,677,181"/>
+<area shape="rect" id="node2" href="$classIfaceCommand.html" title="A command that can be executed from the command line." alt="" coords="256,5,377,32"/>
 </map>

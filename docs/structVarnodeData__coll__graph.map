@@ -1,3 +1,4 @@
 <map id="VarnodeData" name="VarnodeData">
-<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="11,5,98,32"/>
+<area shape="rect" id="node1" title="Data defining a specific memory location." alt="" coords="5,95,112,121"/>
+<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored." alt="" coords="13,5,104,32"/>
 </map>

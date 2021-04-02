@@ -1,3 +1,4 @@
 <map id="IfaceDecompData" name="IfaceDecompData">
-<area shape="rect" id="node2" href="$classIfaceData.html" title="IfaceData" alt="" coords="30,5,109,32"/>
+<area shape="rect" id="node1" title="Common data shared by decompiler commands." alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node2" href="$classIfaceData.html" title="Data specialized for a particular command module." alt="" coords="32,5,117,32"/>
 </map>

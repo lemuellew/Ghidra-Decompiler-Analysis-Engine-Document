@@ -1,3 +1,4 @@
 <map id="OptionErrorTooManyInstructions" name="OptionErrorTooManyInstructions">
-<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object. " alt="" coords="67,5,154,32"/>
+<area shape="rect" id="node1" title="Toggle whether too many instructions in one function body is considered a fatal error." alt="" coords="5,80,236,107"/>
+<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object." alt="" coords="73,5,168,32"/>
 </map>

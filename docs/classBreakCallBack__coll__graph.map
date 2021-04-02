@@ -1,4 +1,5 @@
 <map id="BreakCallBack" name="BreakCallBack">
-<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface. " alt="" coords="25,95,95,121"/>
-<area shape="rect" id="node3" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="15,5,105,32"/>
+<area shape="rect" id="node1" title="A breakpoint object." alt="" coords="5,184,123,211"/>
+<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface." alt="" coords="26,95,102,121"/>
+<area shape="rect" id="node3" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes." alt="" coords="15,5,113,32"/>
 </map>

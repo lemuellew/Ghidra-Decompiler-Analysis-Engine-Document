@@ -1,0 +1,4 @@
+<map id="OptionForLoops" name="OptionForLoops">
+<area shape="rect" id="node1" title="Toggle whether the decompiler attempts to recover for&#45;loop variables." alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object." alt="" coords="19,5,114,32"/>
+</map>

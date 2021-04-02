@@ -1,7 +1,8 @@
 <map id="Pattern" name="Pattern">
-<area shape="rect" id="node2" href="$classDisjointPattern.html" title="DisjointPattern" alt="" coords="147,80,255,107"/>
-<area shape="rect" id="node6" href="$classOrPattern.html" title="OrPattern" alt="" coords="279,80,357,107"/>
-<area shape="rect" id="node3" href="$classCombinePattern.html" title="CombinePattern" alt="" coords="5,155,121,181"/>
-<area shape="rect" id="node4" href="$classContextPattern.html" title="ContextPattern" alt="" coords="145,155,256,181"/>
-<area shape="rect" id="node5" href="$classInstructionPattern.html" title="InstructionPattern" alt="" coords="281,155,406,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="245,5,314,32"/>
+<area shape="rect" id="node2" href="$classDisjointPattern.html" title=" " alt="" coords="157,80,276,107"/>
+<area shape="rect" id="node6" href="$classOrPattern.html" title=" " alt="" coords="300,80,384,107"/>
+<area shape="rect" id="node3" href="$classCombinePattern.html" title=" " alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node4" href="$classContextPattern.html" title=" " alt="" coords="157,155,277,181"/>
+<area shape="rect" id="node5" href="$classInstructionPattern.html" title=" " alt="" coords="301,155,439,181"/>
 </map>

@@ -1,0 +1,8 @@
+<map id="interface.hh" name="interface.hh">
+<area shape="rect" id="node1" title="Classes and utilities for a generic command&#45;line interface." alt="" coords="72,5,172,32"/>
+<area shape="rect" id="node2" href="$ifaceterm_8hh.html" title="Add some terminal capabilities to the command&#45;line interface (IfaceStatus)" alt="" coords="69,80,175,107"/>
+<area shape="rect" id="node3" href="$ifacedecomp_8hh.html" title="Console interface commands for the decompiler engine." alt="" coords="59,155,185,181"/>
+<area shape="rect" id="node4" href="$codedata_8hh_source.html" title=" " alt="" coords="5,229,108,256"/>
+<area shape="rect" id="node5" href="$libdecomp_8hh_source.html" title=" " alt="" coords="132,229,243,256"/>
+<area shape="rect" id="node6" href="$testfunction_8hh.html" title="Framework for decompiler data driven single function tests." alt="" coords="127,304,247,331"/>
+</map>

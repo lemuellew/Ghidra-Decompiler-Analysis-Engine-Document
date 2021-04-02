@@ -1,3 +1,4 @@
 <map id="TypePointer" name="TypePointer">
-<area shape="rect" id="node2" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="14,5,89,32"/>
+<area shape="rect" id="node1" title="Datatype object representing a pointer." alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node2" href="$classDatatype.html" title="The base datatype class for the decompiler." alt="" coords="13,5,96,32"/>
 </map>

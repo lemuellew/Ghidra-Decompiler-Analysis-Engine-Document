@@ -1,3 +1,4 @@
 <map id="RuleSubCancel" name="RuleSubCancel">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="37,5,87,32"/>
+<area shape="rect" id="node1" title="Simplify composition of SUBPIECE with INT_ZEXT or INT_SEXT." alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="39,5,90,32"/>
 </map>

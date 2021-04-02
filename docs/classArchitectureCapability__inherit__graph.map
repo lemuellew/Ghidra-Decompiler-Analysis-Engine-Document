@@ -1,6 +1,7 @@
 <map id="ArchitectureCapability" name="ArchitectureCapability">
-<area shape="rect" id="node3" href="$classBfdArchitectureCapability.html" title="Extension point for building a GNU BFD capable Architecture. " alt="" coords="385,5,555,32"/>
-<area shape="rect" id="node4" href="$classRawBinaryArchitectureCapability.html" title="Extension point for building an Architecture that reads in raw images. " alt="" coords="363,56,577,83"/>
-<area shape="rect" id="node5" href="$classXmlArchitectureCapability.html" title="Extension for building an XML format capable Architecture. " alt="" coords="383,107,557,133"/>
-<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="5,56,116,83"/>
+<area shape="rect" id="node1" title="Abstract extension point for building Architecture objects." alt="" coords="175,56,341,83"/>
+<area shape="rect" id="node3" href="$classBfdArchitectureCapability.html" title="Extension point for building a GNU BFD capable Architecture." alt="" coords="413,5,603,32"/>
+<area shape="rect" id="node4" href="$classRawBinaryArchitectureCapability.html" title="Extension point for building an Architecture that reads in raw images." alt="" coords="389,56,627,83"/>
+<area shape="rect" id="node5" href="$classXmlArchitectureCapability.html" title="Extension for building an XML format capable Architecture." alt="" coords="411,107,605,133"/>
+<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler." alt="" coords="5,56,127,83"/>
 </map>

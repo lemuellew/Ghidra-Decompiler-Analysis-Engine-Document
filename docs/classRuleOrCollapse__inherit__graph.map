@@ -1,3 +1,4 @@
 <map id="RuleOrCollapse" name="RuleOrCollapse">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="38,5,87,32"/>
+<area shape="rect" id="node1" title="Collapse unnecessary INT_OR." alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="41,5,92,32"/>
 </map>

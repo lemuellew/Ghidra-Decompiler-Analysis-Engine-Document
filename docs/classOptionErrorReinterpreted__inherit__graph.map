@@ -1,3 +1,4 @@
 <map id="OptionErrorReinterpreted" name="OptionErrorReinterpreted">
-<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object. " alt="" coords="45,5,132,32"/>
+<area shape="rect" id="node1" title="Toggle whether off&#45;cut reinterpretation of an instruction is a fatal error." alt="" coords="5,80,191,107"/>
+<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object." alt="" coords="51,5,145,32"/>
 </map>

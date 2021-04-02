@@ -1,4 +1,5 @@
 <map id="PrintLanguage::ReversePolish" name="PrintLanguage::ReversePolish">
-<area shape="rect" id="node2" href="$classOpToken.html" title="A token representing an operator in the high&#45;level language. " alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node3" href="$classPcodeOp.html" title="Lowest level operation of the p&#45;code language. " alt="" coords="173,5,249,32"/>
+<area shape="rect" id="node1" title="An entry on the reverse polish notation (RPN) stack." alt="" coords="25,95,239,121"/>
+<area shape="rect" id="node2" href="$classOpToken.html" title="A token representing an operator in the high&#45;level language." alt="" coords="5,5,83,32"/>
+<area shape="rect" id="node3" href="$classPcodeOp.html" title="Lowest level operation of the p&#45;code language." alt="" coords="181,5,259,32"/>
 </map>

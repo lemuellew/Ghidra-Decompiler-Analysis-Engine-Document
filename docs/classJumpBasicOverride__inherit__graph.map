@@ -1,4 +1,5 @@
 <map id="JumpBasicOverride" name="JumpBasicOverride">
-<area shape="rect" id="node2" href="$classJumpBasic.html" title="The basic switch model. " alt="" coords="30,80,117,107"/>
-<area shape="rect" id="node3" href="$classJumpModel.html" title="A jump&#45;table execution model. " alt="" coords="29,5,118,32"/>
+<area shape="rect" id="node1" title="A basic jump&#45;table model incorporating manual override information." alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node2" href="$classJumpBasic.html" title="The basic switch model." alt="" coords="33,80,124,107"/>
+<area shape="rect" id="node3" href="$classJumpModel.html" title="A jump&#45;table execution model." alt="" coords="31,5,126,32"/>
 </map>

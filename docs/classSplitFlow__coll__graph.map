@@ -1,3 +1,4 @@
 <map id="SplitFlow" name="SplitFlow">
-<area shape="rect" id="node2" href="$classTransformManager.html" title="Class for splitting larger registers holding smaller logical lanes. " alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node1" title="Class for splitting up Varnodes that hold 2 logical variables." alt="" coords="37,80,119,107"/>
+<area shape="rect" id="node2" href="$classTransformManager.html" title="Class for splitting larger registers holding smaller logical lanes." alt="" coords="5,5,151,32"/>
 </map>

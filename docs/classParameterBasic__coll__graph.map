@@ -1,3 +1,4 @@
 <map id="ParameterBasic" name="ParameterBasic">
-<area shape="rect" id="node2" href="$classProtoParameter.html" title="A function parameter viewed as a name, data&#45;type, and storage address. " alt="" coords="6,5,119,32"/>
+<area shape="rect" id="node1" title="A stand&#45;alone parameter with no backing symbol." alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node2" href="$classProtoParameter.html" title="A function parameter viewed as a name, data&#45;type, and storage address." alt="" coords="6,5,130,32"/>
 </map>

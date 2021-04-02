@@ -1,4 +1,113 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classIfaceStatus.html" title="IfaceStatus" alt="" coords="5,5,95,32"/>
-<area shape="rect" id="node2" href="$classIfaceTerm.html" title="IfaceTerm" alt="" coords="143,5,224,32"/>
+<area shape="rect" id="node1" href="$classIfaceCommand.html" title="A command that can be executed from the command line." alt="" coords="5,512,127,539"/>
+<area shape="rect" id="node2" href="$classIfaceBaseCommand.html" title="A root class for a basic set of commands." alt="" coords="191,157,344,184"/>
+<area shape="rect" id="node9" href="$classIfaceCodeDataCommand.html" title=" " alt="" coords="175,487,360,513"/>
+<area shape="rect" id="node18" href="$classIfaceCommandDummy.html" title="A dummy command used during parsing." alt="" coords="181,537,354,564"/>
+<area shape="rect" id="node19" href="$classIfaceDecompCommand.html" title="Root class for all decompiler specific commands." alt="" coords="180,2969,355,2996"/>
+<area shape="rect" id="node3" href="$classIfcClosefile.html" title="Close command, closing the current bulk output file." alt="" coords="464,5,559,32"/>
+<area shape="rect" id="node4" href="$classIfcEcho.html" title="Echo command to echo the current command line to the bulk output stream." alt="" coords="477,56,546,83"/>
+<area shape="rect" id="node5" href="$classIfcHistory.html" title="History command to list the most recent successful commands." alt="" coords="469,107,554,133"/>
+<area shape="rect" id="node6" href="$classIfcOpenfile.html" title="Open file command to redirect bulk output to a specific file stream." alt="" coords="465,157,558,184"/>
+<area shape="rect" id="node7" href="$classIfcOpenfileAppend.html" title="Open file command directing bulk output to be appended to a specific file." alt="" coords="440,208,583,235"/>
+<area shape="rect" id="node8" href="$classIfcQuit.html" title="Quit command to terminate processing from the given interface." alt="" coords="479,259,544,285"/>
+<area shape="rect" id="node10" href="$classIfcCodeDataDumpCrossRefs.html" title=" " alt="" coords="408,309,615,336"/>
+<area shape="rect" id="node11" href="$classIfcCodeDataDumpModelHits.html" title=" " alt="" coords="408,360,615,387"/>
+<area shape="rect" id="node12" href="$classIfcCodeDataDumpStarts.html" title=" " alt="" coords="422,411,601,437"/>
+<area shape="rect" id="node13" href="$classIfcCodeDataDumpTargetHits.html" title=" " alt="" coords="408,461,615,488"/>
+<area shape="rect" id="node14" href="$classIfcCodeDataDumpUnlinked.html" title=" " alt="" coords="412,512,611,539"/>
+<area shape="rect" id="node15" href="$classIfcCodeDataInit.html" title=" " alt="" coords="450,563,573,589"/>
+<area shape="rect" id="node16" href="$classIfcCodeDataRun.html" title=" " alt="" coords="448,613,575,640"/>
+<area shape="rect" id="node17" href="$classIfcCodeDataTarget.html" title=" " alt="" coords="440,664,583,691"/>
+<area shape="rect" id="node20" href="$classIfcAddpath.html" title=" " alt="" coords="465,715,557,741"/>
+<area shape="rect" id="node21" href="$classIfcAddrrangeLoad.html" title="Create a new function at an address: load addr &lt;address&gt; [&lt;funcname&gt;]" alt="" coords="443,765,579,792"/>
+<area shape="rect" id="node22" href="$classIfcAdjustVma.html" title="Change the base address of the load image: adjust vma 0xabcd0123" alt="" coords="457,816,566,843"/>
+<area shape="rect" id="node23" href="$classIfcAnalyzeRange.html" title="Run value&#45;set analysis on the current function: analyze range full|partial &lt;varnode&gt;" alt="" coords="446,867,577,893"/>
+<area shape="rect" id="node24" href="$classIfcBreakaction.html" title="Set a breakpoint when a Rule or Action executes: break action &lt;actionname&gt;" alt="" coords="453,917,569,944"/>
+<area shape="rect" id="node25" href="$classIfcBreakstart.html" title="Set a break point at the start of an Action: break start &lt;actionname&gt;" alt="" coords="458,968,565,995"/>
+<area shape="rect" id="node26" href="$classIfcCallFixup.html" title="Add a new call fix&#45;up to the program: fixup call ..." alt="" coords="463,1019,560,1045"/>
+<area shape="rect" id="node27" href="$classIfcCallGraphBuild.html" title="Build the call&#45;graph for the architecture/program: callgraph build" alt="" coords="444,1069,579,1096"/>
+<area shape="rect" id="node29" href="$classIfcCallGraphDump.html" title="Write the current call&#45;graph to a file: callgraph dump &lt;filename&gt;" alt="" coords="441,1120,582,1147"/>
+<area shape="rect" id="node30" href="$classIfcCallGraphList.html" title="List all functions in leaf order: callgraph list" alt="" coords="449,1171,574,1197"/>
+<area shape="rect" id="node31" href="$classIfcCallGraphLoad.html" title="Load the call&#45;graph from a file: callgraph load &lt;filename&gt;" alt="" coords="445,1221,578,1248"/>
+<area shape="rect" id="node32" href="$classIfcCallOtherFixup.html" title="Add a new callother fix&#45;up to the program: fixup callother ..." alt="" coords="445,1272,578,1299"/>
+<area shape="rect" id="node33" href="$classIfcCleararch.html" title="Clear the current architecture/program: clear architecture" alt="" coords="461,1323,561,1349"/>
+<area shape="rect" id="node34" href="$classIfcComment.html" title="A comment within a command script: % A comment in a script" alt="" coords="460,1373,563,1400"/>
+<area shape="rect" id="node35" href="$classIfcCommentInstr.html" title="Attach a comment to an address: comment &lt;address&gt; comment text..." alt="" coords="446,1424,577,1451"/>
+<area shape="rect" id="node36" href="$classIfcContinue.html" title="Continue decompilation after a break point: continue" alt="" coords="463,1475,559,1501"/>
+<area shape="rect" id="node37" href="$classIfcCountPcode.html" title="Count p&#45;code in the current function: count pcode" alt="" coords="454,1525,569,1552"/>
+<area shape="rect" id="node38" href="$classIfcDeadcodedelay.html" title="Change when dead code elimination starts: deadcode delay &lt;name&gt; &lt;delay&gt;" alt="" coords="442,1576,581,1603"/>
+<area shape="rect" id="node39" href="$classIfcDecompile.html" title="Decompile the current function: decompile" alt="" coords="457,1627,565,1653"/>
+<area shape="rect" id="node40" href="$classIfcDump.html" title="Display bytes in the load image: dump &lt;address+size&gt;" alt="" coords="473,1677,550,1704"/>
+<area shape="rect" id="node41" href="$classIfcDumpbinary.html" title="Dump a memory to file: binary &lt;address+size&gt; &lt;filename&gt;" alt="" coords="452,1728,571,1755"/>
+<area shape="rect" id="node42" href="$classIfcDuplicateHash.html" title="Check for duplicate hashes in functions: duplicate hash" alt="" coords="445,1779,578,1805"/>
+<area shape="rect" id="node43" href="$classIfcFlowOverride.html" title="Create a control&#45;flow override: override flow &lt;address&gt; branch|call|callreturn|return" alt="" coords="449,1829,574,1856"/>
+<area shape="rect" id="node44" href="$classIfcForceDec.html" title="Mark a constant to be printed in decimal format: force dec &lt;varnode&gt;" alt="" coords="462,1880,561,1907"/>
+<area shape="rect" id="node45" href="$classIfcForcegoto.html" title="Force a branch to be an unstructured goto: force goto &lt;branchaddr&gt; &lt;targetaddr&gt;" alt="" coords="460,1931,563,1957"/>
+<area shape="rect" id="node46" href="$classIfcForceHex.html" title="Mark a constant to be printed in hex format: force hex &lt;varnode&gt;" alt="" coords="462,1981,561,2008"/>
+<area shape="rect" id="node47" href="$classIfcFuncload.html" title="Make a specific function current: load function &lt;functionname&gt;" alt="" coords="463,2032,559,2059"/>
+<area shape="rect" id="node48" href="$classIfcGlobalAdd.html" title="Add a memory range as discoverable global variables: global add &lt;address+size&gt;" alt="" coords="459,2083,564,2109"/>
+<area shape="rect" id="node49" href="$classIfcGlobalify.html" title="Treat all normal memory as discoverable global variables: global spaces" alt="" coords="463,2133,560,2160"/>
+<area shape="rect" id="node50" href="$classIfcGlobalRegisters.html" title="Name global registers: global registers" alt="" coords="441,2184,582,2211"/>
+<area shape="rect" id="node51" href="$classIfcGlobalRemove.html" title="Remove a memory range from discoverable global variables: global remove &lt;address+size&gt;" alt="" coords="444,2235,579,2261"/>
+<area shape="rect" id="node52" href="$classIfcGraphControlflow.html" title="Write a graph representation of control&#45;flow to a file: graph controlflow &lt;filename&gt;" alt="" coords="435,2285,587,2312"/>
+<area shape="rect" id="node53" href="$classIfcGraphDataflow.html" title="Write a graph representation of data&#45;flow to a file: graph dataflow &lt;filename&gt;" alt="" coords="443,2336,579,2363"/>
+<area shape="rect" id="node54" href="$classIfcGraphDom.html" title="Write the forward dominance graph to a file: graph dom &lt;filename&gt;" alt="" coords="457,2387,565,2413"/>
+<area shape="rect" id="node55" href="$classIfcJumpOverride.html" title="Provide an overriding jump&#45;table for an indirect branch: override jumptable ..." alt="" coords="448,2437,575,2464"/>
+<area shape="rect" id="node56" href="$classIfcListaction.html" title="List all current actions and rules for the decompiler: list action" alt="" coords="461,2488,562,2515"/>
+<area shape="rect" id="node57" href="$classIfcListOverride.html" title="Display any overrides for the current function: list override" alt="" coords="453,2539,570,2565"/>
+<area shape="rect" id="node58" href="$classIfcListprototypes.html" title="List known prototype models: list prototypes" alt="" coords="446,2589,577,2616"/>
+<area shape="rect" id="node59" href="$classIfcLoadFile.html" title=" " alt="" coords="466,2640,557,2667"/>
+<area shape="rect" id="node60" href="$classIfcLockPrototype.html" title="Lock in the current function&#39;s prototype: prototype lock" alt="" coords="446,2691,577,2717"/>
+<area shape="rect" id="node61" href="$classIfcMapaddress.html" title="Map a new symbol into the program: map address &lt;address&gt; &lt;typedeclaration&gt;" alt="" coords="453,2741,570,2768"/>
+<area shape="rect" id="node62" href="$classIfcMapexternalref.html" title="Create an external ref symbol map externalref &lt;address&gt; &lt;refaddress&gt; [&lt;name&gt;]" alt="" coords="442,2792,581,2819"/>
+<area shape="rect" id="node63" href="$classIfcMapfunction.html" title="Create a new function: map function &lt;address&gt; [&lt;functionname&gt;] [nocode]" alt="" coords="452,2843,571,2869"/>
+<area shape="rect" id="node64" href="$classIfcMaphash.html" title="Add a dynamic symbol to the current function: map hash &lt;address&gt; &lt;hash&gt; &lt;typedeclaration&gt;" alt="" coords="463,2893,560,2920"/>
+<area shape="rect" id="node65" href="$classIfcMaplabel.html" title="Create a code label: map label &lt;name&gt; &lt;address&gt;" alt="" coords="462,2944,561,2971"/>
+<area shape="rect" id="node66" href="$classIfcNameVarnode.html" title="Attach a named symbol to a specific Varnode: name varnode &lt;varnode&gt; &lt;name&gt;" alt="" coords="446,2995,577,3021"/>
+<area shape="rect" id="node67" href="$classIfcOption.html" title="Adjust a decompiler option: option &lt;optionname&gt; [&lt;param1&gt;] [&lt;param2&gt;] [&lt;param3&gt;]" alt="" coords="471,3045,552,3072"/>
+<area shape="rect" id="node68" href="$classIfcParseFile.html" title="Parse a file with C declarations: parse file &lt;filename&gt;" alt="" coords="463,3096,559,3123"/>
+<area shape="rect" id="node69" href="$classIfcParseLine.html" title="Parse a line of C syntax: parse line ..." alt="" coords="461,3147,562,3173"/>
+<area shape="rect" id="node70" href="$classIfcPreferSplit.html" title="Mark a storage location to be split: prefersplit &lt;address+size&gt; &lt;splitsize&gt;" alt="" coords="458,3197,565,3224"/>
+<area shape="rect" id="node71" href="$classIfcPrintActionstats.html" title="Print transform statistics for the decompiler engine: print actionstats" alt="" coords="441,3248,582,3275"/>
+<area shape="rect" id="node72" href="$classIfcPrintBlocktree.html" title="Print a description of the current functions control&#45;flow: print tree block" alt="" coords="446,3299,577,3325"/>
+<area shape="rect" id="node73" href="$classIfcPrintCFlat.html" title="Print current function without control&#45;flow: print C flat" alt="" coords="460,3349,563,3376"/>
+<area shape="rect" id="node74" href="$classIfcPrintCGlobals.html" title="Print declarations for any known global variables: print C globals" alt="" coords="448,3400,575,3427"/>
+<area shape="rect" id="node75" href="$classIfcPrintCover.html" title="Print cover info about a HighVariable: print cover high &lt;name&gt;" alt="" coords="458,3451,565,3477"/>
+<area shape="rect" id="node76" href="$classIfcPrintCStruct.html" title="Print the current function using C syntax:print C" alt="" coords="454,3501,569,3528"/>
+<area shape="rect" id="node77" href="$classIfcPrintCTypes.html" title="Print any known type definitions: print C types" alt="" coords="454,3552,569,3579"/>
+<area shape="rect" id="node78" href="$classIfcPrintCXml.html" title="Print the current function with C syntax and XML markup:print C xml" alt="" coords="460,3603,563,3629"/>
+<area shape="rect" id="node79" href="$classIfcPrintdisasm.html" title="Print disassembly of a memory range: disassemble [&lt;address1&gt; &lt;address2&gt;]" alt="" coords="454,3653,569,3680"/>
+<area shape="rect" id="node80" href="$classIfcPrintExtrapop.html" title="Print change to stack pointer for called function: print extrapop [&lt;functionname&gt;]" alt="" coords="448,3704,575,3731"/>
+<area shape="rect" id="node81" href="$classIfcPrintHigh.html" title="Display all Varnodes in a HighVariable: print high &lt;name&gt;" alt="" coords="462,3755,561,3781"/>
+<area shape="rect" id="node82" href="$classIfcPrintInputs.html" title="Print info about the current function&#39;s input Varnodes: print inputs" alt="" coords="457,3805,565,3832"/>
+<area shape="rect" id="node83" href="$classIfcPrintInputsAll.html" title="Print info about input Varnodes for all functions: print inputs all" alt="" coords="449,3856,574,3883"/>
+<area shape="rect" id="node84" href="$classIfcPrintLanguage.html" title="Print current output using a specific language: print language &lt;langname&gt;" alt="" coords="446,3907,577,3933"/>
+<area shape="rect" id="node85" href="$classIfcPrintLocalrange.html" title="Print range of locals on the stack: print localrange" alt="" coords="442,3957,581,3984"/>
+<area shape="rect" id="node86" href="$classIfcPrintMap.html" title="Print info about a scope/namespace: print map &lt;name&gt;" alt="" coords="463,4008,559,4035"/>
+<area shape="rect" id="node87" href="$classIfcPrintParamMeasures.html" title="Perform parameter&#45;id analysis on the current function: print parammeasures" alt="" coords="425,4059,598,4085"/>
+<area shape="rect" id="node88" href="$classIfcPrintRaw.html" title="Print the raw p&#45;code for the current function: print raw" alt="" coords="463,4109,559,4136"/>
+<area shape="rect" id="node89" href="$classIfcPrintSpaces.html" title="Print all address spaces: print spaces" alt="" coords="454,4160,569,4187"/>
+<area shape="rect" id="node90" href="$classIfcPrintTree.html" title="Print all Varnodes in the current function: print tree varnode" alt="" coords="464,4211,559,4237"/>
+<area shape="rect" id="node91" href="$classIfcPrintVarnode.html" title="Print information about a Varnode: print varnode &lt;varnode&gt;" alt="" coords="450,4261,573,4288"/>
+<area shape="rect" id="node92" href="$classIfcProduceC.html" title="Write decompilation for all functions to a file: produce C &lt;filename&gt;" alt="" coords="462,4312,561,4339"/>
+<area shape="rect" id="node93" href="$classIfcProducePrototypes.html" title="Determine the prototype model for all functions: produce prototypes" alt="" coords="431,4363,591,4389"/>
+<area shape="rect" id="node94" href="$classIfcProtooverride.html" title="Override the prototype of a called function: override prototype &lt;address&gt; &lt;declaration&gt;" alt="" coords="448,4413,575,4440"/>
+<area shape="rect" id="node95" href="$classIfcReadonly.html" title="Mark a memory range as read&#45;only: readonly &lt;address+size&gt;" alt="" coords="462,4464,561,4491"/>
+<area shape="rect" id="node96" href="$classIfcReadSymbols.html" title="Read in symbols from the load image: read symbols" alt="" coords="448,4515,575,4541"/>
+<area shape="rect" id="node97" href="$classIfcRemove.html" title="Remove a symbol by name: remove &lt;varname&gt;" alt="" coords="465,4565,557,4592"/>
+<area shape="rect" id="node98" href="$classIfcRename.html" title="Rename a variable: rename &lt;oldname&gt; &lt;newname&gt;" alt="" coords="465,4616,557,4643"/>
+<area shape="rect" id="node99" href="$classIfcResetActionstats.html" title="Reset transform statistics for the decompiler engine: reset actionstats" alt="" coords="437,4667,585,4693"/>
+<area shape="rect" id="node100" href="$classIfcRestore.html" title=" " alt="" coords="467,4717,555,4744"/>
+<area shape="rect" id="node101" href="$classIfcRetype.html" title="Change the data&#45;type of a symbol: retype &lt;varname&gt; &lt;typedeclaration&gt;" alt="" coords="469,4768,553,4795"/>
+<area shape="rect" id="node102" href="$classIfcSave.html" title=" " alt="" coords="476,4819,547,4845"/>
+<area shape="rect" id="node103" href="$classIfcSetcontextrange.html" title="Set a context variable: set context &lt;name&gt; &lt;value&gt; [&lt;startaddress&gt; &lt;endaddress&gt;]" alt="" coords="439,4869,584,4896"/>
+<area shape="rect" id="node104" href="$classIfcSettrackedrange.html" title="Set the value of a register: set track &lt;name&gt; &lt;value&gt; [&lt;startaddress&gt; &lt;endaddress&gt;]" alt="" coords="439,4920,583,4947"/>
+<area shape="rect" id="node105" href="$classIfcSource.html" title="Execute a command script : source &lt;filename&gt;" alt="" coords="470,4971,553,4997"/>
+<area shape="rect" id="node106" href="$classIfcStructureBlocks.html" title="Structure an external control&#45;flow graph: structure blocks &lt;infile&gt; &lt;outfile&gt;" alt="" coords="441,5021,581,5048"/>
+<area shape="rect" id="node107" href="$classIfcTypeVarnode.html" title="Attach a typed symbol to a specific Varnode: type varnode &lt;varnode&gt; &lt;typedeclaration&gt;" alt="" coords="450,5072,573,5099"/>
+<area shape="rect" id="node108" href="$classIfcUnlockPrototype.html" title="Unlock the current function&#39;s prototype: prototype unlock" alt="" coords="438,5123,585,5149"/>
+<area shape="rect" id="node109" href="$classIfcVarnodeCover.html" title="Print cover information about a Varnode: print cover varnode &lt;varnode&gt;" alt="" coords="446,5173,577,5200"/>
+<area shape="rect" id="node110" href="$classIfcVarnodehighCover.html" title="Print cover info about a HighVariable: print cover varnodehigh &lt;varnode&gt;" alt="" coords="432,5224,591,5251"/>
+<area shape="rect" id="node111" href="$classIfcVolatile.html" title="Mark a memory range as volatile: volatile &lt;address+size&gt;" alt="" coords="467,5275,555,5301"/>
+<area shape="rect" id="node28" href="$classIfcCallGraphBuildQuick.html" title="Build the call&#45;graph using quick analysis: callgraph build quick" alt="" coords="663,1069,835,1096"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="ActionStackPtrFlow" name="ActionStackPtrFlow">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="45,5,104,32"/>
+<area shape="rect" id="node1" title="Analyze change to the stack pointer across sub&#45;function calls." alt="" coords="5,80,153,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="48,5,111,32"/>
 </map>

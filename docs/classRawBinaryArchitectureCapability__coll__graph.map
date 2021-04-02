@@ -1,4 +1,5 @@
 <map id="RawBinaryArchitectureCapability" name="RawBinaryArchitectureCapability">
-<area shape="rect" id="node2" href="$classArchitectureCapability.html" title="Abstract extension point for building Architecture objects. " alt="" coords="37,80,188,107"/>
-<area shape="rect" id="node3" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="57,5,168,32"/>
+<area shape="rect" id="node1" title="Extension point for building an Architecture that reads in raw images." alt="" coords="5,155,243,181"/>
+<area shape="rect" id="node2" href="$classArchitectureCapability.html" title="Abstract extension point for building Architecture objects." alt="" coords="41,80,207,107"/>
+<area shape="rect" id="node3" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler." alt="" coords="63,5,185,32"/>
 </map>

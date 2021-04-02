@@ -1,3 +1,4 @@
 <map id="RuleLogic2Bool" name="RuleLogic2Bool">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="37,5,87,32"/>
+<area shape="rect" id="node1" title="Convert logical to boolean operations: V &amp; W =&gt; V &amp;&amp; W, V | W =&gt; V || W" alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="41,5,92,32"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="BlockCondition" name="BlockCondition">
-<area shape="rect" id="node2" href="$classBlockGraph.html" title="A control&#45;flow block built out of sub&#45;components. " alt="" coords="15,80,106,107"/>
-<area shape="rect" id="node3" href="$classFlowBlock.html" title="Description of a control&#45;flow block containing PcodeOps. " alt="" coords="19,5,102,32"/>
+<area shape="rect" id="node1" title="Two conditional blocks combined into one conditional using BOOL_AND or BOOL_OR." alt="" coords="5,155,125,181"/>
+<area shape="rect" id="node2" href="$classBlockGraph.html" title="A control&#45;flow block built out of sub&#45;components." alt="" coords="17,80,114,107"/>
+<area shape="rect" id="node3" href="$classFlowBlock.html" title="Description of a control&#45;flow block containing PcodeOps." alt="" coords="21,5,110,32"/>
 </map>

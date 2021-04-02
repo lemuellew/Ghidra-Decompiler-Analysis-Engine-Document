@@ -1,3 +1,4 @@
 <map id="RuleAddUnsigned" name="RuleAddUnsigned">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="44,5,93,32"/>
+<area shape="rect" id="node1" title="Cleanup: Convert INT_ADD of constants to INT_SUB: V + 0xff... =&gt; V &#45; 0x00..." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="49,5,99,32"/>
 </map>

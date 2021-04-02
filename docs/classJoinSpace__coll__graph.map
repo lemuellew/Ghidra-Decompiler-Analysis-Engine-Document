@@ -1,3 +1,4 @@
 <map id="JoinSpace" name="JoinSpace">
-<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node1" title="The pool of logically joined variables." alt="" coords="8,80,93,107"/>
+<area shape="rect" id="node2" href="$classAddrSpace.html" title="A region where processor data is stored." alt="" coords="5,5,96,32"/>
 </map>

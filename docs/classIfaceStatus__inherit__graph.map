@@ -1,3 +1,5 @@
 <map id="IfaceStatus" name="IfaceStatus">
-<area shape="rect" id="node2" href="$classIfaceTerm.html" title="IfaceTerm" alt="" coords="9,80,91,107"/>
+<area shape="rect" id="node1" title="A generic console mode interface and command executor." alt="" coords="103,5,197,32"/>
+<area shape="rect" id="node2" href="$classConsoleCommands.html" title="A console command run as part of a test sequence." alt="" coords="5,80,153,107"/>
+<area shape="rect" id="node3" href="$classIfaceTerm.html" title="Implement the command&#45;line interface on top of a specific input stream." alt="" coords="177,80,264,107"/>
 </map>

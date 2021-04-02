@@ -1,3 +1,4 @@
 <map id="ActionNormalizeBranches" name="ActionNormalizeBranches">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="63,5,121,32"/>
+<area shape="rect" id="node1" title="Flip conditional control&#45;flow so that preferred comparison operators are used." alt="" coords="5,80,196,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="69,5,132,32"/>
 </map>

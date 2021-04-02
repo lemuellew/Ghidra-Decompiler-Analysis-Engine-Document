@@ -1,4 +1,5 @@
 <map id="ScopeGhidraNamespace" name="ScopeGhidraNamespace">
-<area shape="rect" id="node2" href="$classScopeInternal.html" title="An in&#45;memory implementation of the Scope interface. " alt="" coords="37,80,140,107"/>
-<area shape="rect" id="node3" href="$classScope.html" title="A collection of Symbol objects within a single (namespace or functional) scope. " alt="" coords="59,5,118,32"/>
+<area shape="rect" id="node1" title="A global namespace Scope." alt="" coords="5,155,187,181"/>
+<area shape="rect" id="node2" href="$classScopeInternal.html" title="An in&#45;memory implementation of the Scope interface." alt="" coords="41,80,151,107"/>
+<area shape="rect" id="node3" href="$classScope.html" title="A collection of Symbol objects within a single (namespace or functional) scope." alt="" coords="65,5,127,32"/>
 </map>

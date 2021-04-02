@@ -1,7 +1,8 @@
 <map id="NotEqualEquation" name="NotEqualEquation">
-<area shape="rect" id="node2" href="$classValExpressEquation.html" title="ValExpressEquation" alt="" coords="98,184,238,211"/>
-<area shape="rect" id="node3" href="$classPatternEquation.html" title="PatternEquation" alt="" coords="5,95,120,121"/>
-<area shape="rect" id="node4" href="$classTokenPattern.html" title="TokenPattern" alt="" coords="13,5,113,32"/>
-<area shape="rect" id="node5" href="$classPatternExpression.html" title="PatternExpression" alt="" coords="153,5,282,32"/>
-<area shape="rect" id="node6" href="$classPatternValue.html" title="PatternValue" alt="" coords="215,95,313,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="111,260,250,287"/>
+<area shape="rect" id="node2" href="$classValExpressEquation.html" title=" " alt="" coords="105,184,256,211"/>
+<area shape="rect" id="node3" href="$classPatternEquation.html" title=" " alt="" coords="5,95,132,121"/>
+<area shape="rect" id="node4" href="$classTokenPattern.html" title=" " alt="" coords="15,5,122,32"/>
+<area shape="rect" id="node5" href="$classPatternExpression.html" title=" " alt="" coords="180,5,320,32"/>
+<area shape="rect" id="node6" href="$classPatternValue.html" title=" " alt="" coords="230,95,337,121"/>
 </map>

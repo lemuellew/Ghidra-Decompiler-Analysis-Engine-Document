@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opcode',['OpCode',['../opcodes_8hh.html#abeb7dfb0e9e2b3114e240a405d046ea7',1,'opcodes.hh']]]
+  ['namespace_5fstrategy_6913',['namespace_strategy',['../classPrintLanguage.html#aaa1b21c8cff3cf130aa6b95ea1339c82',1,'PrintLanguage']]]
 ];

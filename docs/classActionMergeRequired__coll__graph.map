@@ -1,3 +1,4 @@
 <map id="ActionMergeRequired" name="ActionMergeRequired">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="49,5,108,32"/>
+<area shape="rect" id="node1" title="Make required Varnode merges as dictated by CPUI_MULTIEQUAL, CPUI_INDIRECT, and addrtied property." alt="" coords="5,80,168,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="55,5,118,32"/>
 </map>

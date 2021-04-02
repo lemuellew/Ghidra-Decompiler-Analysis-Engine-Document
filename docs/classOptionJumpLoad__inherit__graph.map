@@ -1,3 +1,4 @@
 <map id="OptionJumpLoad" name="OptionJumpLoad">
-<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object. " alt="" coords="22,5,109,32"/>
+<area shape="rect" id="node1" title="Toggle whether the decompiler should try to recover the table used to evaluate a switch." alt="" coords="5,80,135,107"/>
+<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object." alt="" coords="23,5,117,32"/>
 </map>

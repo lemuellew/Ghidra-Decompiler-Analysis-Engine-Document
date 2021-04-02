@@ -1,14 +1,26 @@
 <map id="emulate.hh" name="emulate.hh">
-<area shape="rect" id="node2" href="$memstate_8hh.html" title="Classes for keeping track of memory state during emulation. " alt="" coords="497,80,596,107"/>
-<area shape="rect" id="node23" href="$translate_8hh.html" title="Classes for disassembly and pcode generation. " alt="" coords="620,80,711,107"/>
-<area shape="rect" id="node3" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops. " alt="" coords="575,155,671,181"/>
-<area shape="rect" id="node22" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image. " alt="" coords="452,155,551,181"/>
-<area shape="rect" id="node4" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="465,229,551,256"/>
-<area shape="rect" id="node20" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="570,304,673,331"/>
-<area shape="rect" id="node5" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="471,304,545,331"/>
-<area shape="rect" id="node6" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="475,379,541,405"/>
-<area shape="rect" id="node18" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="668,379,729,405"/>
-<area shape="rect" id="node7" href="$types_8h_source.html" title="types.h" alt="" coords="742,453,807,480"/>
-<area shape="rect" id="node21" href="$opcodes_8hh.html" title="All the individual p&#45;code operations. " alt="" coords="835,379,925,405"/>
-<area shape="rect" id="node24" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats. " alt="" coords="677,229,742,256"/>
+<area shape="rect" id="node1" title="Classes for emulating p&#45;code." alt="" coords="596,5,692,32"/>
+<area shape="rect" id="node2" href="$memstate_8hh.html" title="Classes for keeping track of memory state during emulation." alt="" coords="525,80,635,107"/>
+<area shape="rect" id="node23" href="$translate_8hh.html" title="Classes for disassembly and pcode generation." alt="" coords="659,80,759,107"/>
+<area shape="rect" id="node3" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops." alt="" coords="612,155,716,181"/>
+<area shape="rect" id="node22" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image." alt="" coords="477,155,587,181"/>
+<area shape="rect" id="node4" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants." alt="" coords="495,229,588,256"/>
+<area shape="rect" id="node20" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations." alt="" coords="605,304,720,331"/>
+<area shape="rect" id="node5" href="$space_8hh.html" title="Classes for describing address spaces." alt="" coords="501,304,581,331"/>
+<area shape="rect" id="node6" href="$error_8hh.html" title="Base class for error handling facilities." alt="" coords="505,379,578,405"/>
+<area shape="rect" id="node18" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler." alt="" coords="712,379,779,405"/>
+<area shape="rect" id="node7" href="$types_8h_source.html" title=" " alt="" coords="789,453,859,480"/>
+<area shape="rect" id="node8" title=" " alt="" coords="5,453,80,480"/>
+<area shape="rect" id="node9" title=" " alt="" coords="883,453,957,480"/>
+<area shape="rect" id="node10" title=" " alt="" coords="528,453,603,480"/>
+<area shape="rect" id="node11" title=" " alt="" coords="627,453,677,480"/>
+<area shape="rect" id="node12" title=" " alt="" coords="104,453,147,480"/>
+<area shape="rect" id="node13" title=" " alt="" coords="171,453,213,480"/>
+<area shape="rect" id="node14" title=" " alt="" coords="702,453,765,480"/>
+<area shape="rect" id="node15" title=" " alt="" coords="237,453,323,480"/>
+<area shape="rect" id="node16" title=" " alt="" coords="347,453,413,480"/>
+<area shape="rect" id="node17" title=" " alt="" coords="438,453,503,480"/>
+<area shape="rect" id="node19" title=" " alt="" coords="981,453,1040,480"/>
+<area shape="rect" id="node21" href="$opcodes_8hh.html" title="All the individual p&#45;code operations." alt="" coords="888,379,984,405"/>
+<area shape="rect" id="node24" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats." alt="" coords="720,229,792,256"/>
 </map>

@@ -1,6 +1,7 @@
 <map id="PcodeEmit" name="PcodeEmit">
-<area shape="rect" id="node2" href="$classDisassemblyEngine.html" title="DisassemblyEngine" alt="" coords="5,80,144,107"/>
-<area shape="rect" id="node3" href="$classPcodeEmitCache.html" title="P&#45;code emitter that dumps its raw Varnodes and PcodeOps to an in memory cache. " alt="" coords="169,80,293,107"/>
-<area shape="rect" id="node4" href="$classPcodeEmitFd.html" title="A p&#45;code emitter for building PcodeOp objects. " alt="" coords="317,80,419,107"/>
-<area shape="rect" id="node5" href="$classPcodeRawOut.html" title="PcodeRawOut" alt="" coords="443,80,549,107"/>
+<area shape="rect" id="node1" title="Abstract class for emitting pcode to an application." alt="" coords="271,5,362,32"/>
+<area shape="rect" id="node2" href="$classDisassemblyEngine.html" title=" " alt="" coords="5,80,156,107"/>
+<area shape="rect" id="node3" href="$classPcodeEmitCache.html" title="P&#45;code emitter that dumps its raw Varnodes and PcodeOps to an in memory cache." alt="" coords="181,80,311,107"/>
+<area shape="rect" id="node4" href="$classPcodeEmitFd.html" title="A p&#45;code emitter for building PcodeOp objects." alt="" coords="335,80,442,107"/>
+<area shape="rect" id="node5" href="$classPcodeRawOut.html" title=" " alt="" coords="466,80,578,107"/>
 </map>

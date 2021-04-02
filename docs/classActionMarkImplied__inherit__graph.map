@@ -1,3 +1,4 @@
 <map id="ActionMarkImplied" name="ActionMarkImplied">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="41,5,100,32"/>
+<area shape="rect" id="node1" title="Mark all the implied Varnode objects, which will have no explicit token in the output." alt="" coords="5,80,151,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="47,5,109,32"/>
 </map>

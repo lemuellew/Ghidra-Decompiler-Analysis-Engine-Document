@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classContextDatabase.html" title="An interface to a database of disassembly/decompiler context information. " alt="" coords="5,31,129,57"/>
-<area shape="rect" id="node2" href="$classContextGhidra.html" title="An implementation of a ContextDatabase obtaining context information via a Ghidra client..." alt="" coords="179,5,286,32"/>
-<area shape="rect" id="node3" href="$classContextInternal.html" title="An in&#45;memory implementation of the ContextDatabase interface. " alt="" coords="177,56,288,83"/>
+<area shape="rect" id="node1" href="$classContextDatabase.html" title="An interface to a database of disassembly/decompiler context information." alt="" coords="5,31,140,57"/>
+<area shape="rect" id="node2" href="$classContextGhidra.html" title="An implementation of a ContextDatabase obtaining context information via a Ghidra client." alt="" coords="191,5,307,32"/>
+<area shape="rect" id="node3" href="$classContextInternal.html" title="An in&#45;memory implementation of the ContextDatabase interface." alt="" coords="188,56,311,83"/>
 </map>

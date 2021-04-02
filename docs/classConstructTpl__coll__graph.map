@@ -1,3 +1,4 @@
 <map id="ConstructTpl" name="ConstructTpl">
-<area shape="rect" id="node2" href="$classHandleTpl.html" title="HandleTpl" alt="" coords="13,5,95,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,95,109,121"/>
+<area shape="rect" id="node2" href="$classHandleTpl.html" title=" " alt="" coords="13,5,101,32"/>
 </map>

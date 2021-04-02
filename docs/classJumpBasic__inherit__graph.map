@@ -1,5 +1,6 @@
 <map id="JumpBasic" name="JumpBasic">
-<area shape="rect" id="node3" href="$classJumpBasic2.html" title="A basic jump&#45;table model with an added default address path. " alt="" coords="5,155,100,181"/>
-<area shape="rect" id="node4" href="$classJumpBasicOverride.html" title="A basic jump&#45;table model incorporating manual override information. " alt="" coords="125,155,261,181"/>
-<area shape="rect" id="node2" href="$classJumpModel.html" title="A jump&#45;table execution model. " alt="" coords="77,5,167,32"/>
+<area shape="rect" id="node1" title="The basic switch model." alt="" coords="83,80,173,107"/>
+<area shape="rect" id="node3" href="$classJumpBasic2.html" title="A basic jump&#45;table model with an added default address path." alt="" coords="5,155,104,181"/>
+<area shape="rect" id="node4" href="$classJumpBasicOverride.html" title="A basic jump&#45;table model incorporating manual override information." alt="" coords="128,155,275,181"/>
+<area shape="rect" id="node2" href="$classJumpModel.html" title="A jump&#45;table execution model." alt="" coords="81,5,175,32"/>
 </map>

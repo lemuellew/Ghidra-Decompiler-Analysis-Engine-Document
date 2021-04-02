@@ -1,7 +1,8 @@
 <map id="LoadImage" name="LoadImage">
-<area shape="rect" id="node2" href="$classLoadImageBfd.html" title="LoadImageBfd" alt="" coords="5,80,112,107"/>
-<area shape="rect" id="node3" href="$classLoadImageGhidra.html" title="An implementation of the LoadImage interface using a Ghidra client as the back&#45;end. " alt="" coords="137,80,261,107"/>
-<area shape="rect" id="node4" href="$classLoadImageXml.html" title="Implementation of the LoadImage interface using underlying data stored in an XML format. " alt="" coords="285,80,395,107"/>
-<area shape="rect" id="node5" href="$classMyLoadImage.html" title="MyLoadImage" alt="" coords="419,80,523,107"/>
-<area shape="rect" id="node6" href="$classRawLoadImage.html" title="A simple raw binary loadimage. " alt="" coords="547,80,661,107"/>
+<area shape="rect" id="node1" title="An interface into a particular binary executable image." alt="" coords="320,5,415,32"/>
+<area shape="rect" id="node2" href="$classLoadImageBfd.html" title=" " alt="" coords="5,80,121,107"/>
+<area shape="rect" id="node3" href="$classLoadImageGhidra.html" title="An implementation of the LoadImage interface using a Ghidra client as the back&#45;end." alt="" coords="145,80,283,107"/>
+<area shape="rect" id="node4" href="$classLoadImageXml.html" title="Implementation of the LoadImage interface using underlying data stored in an XML format." alt="" coords="307,80,427,107"/>
+<area shape="rect" id="node5" href="$classMyLoadImage.html" title=" " alt="" coords="451,80,566,107"/>
+<area shape="rect" id="node6" href="$classRawLoadImage.html" title="A simple raw binary loadimage." alt="" coords="590,80,713,107"/>
 </map>

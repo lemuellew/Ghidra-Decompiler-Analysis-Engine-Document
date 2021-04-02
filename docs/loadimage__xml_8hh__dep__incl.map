@@ -1,3 +1,4 @@
 <map id="loadimage_xml.hh" name="loadimage_xml.hh">
-<area shape="rect" id="node2" href="$xml__arch_8hh.html" title="Extension to read executables based on an XML format. " alt="" coords="22,80,115,107"/>
+<area shape="rect" id="node1" title="Support for programs stored using an XML schema." alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node2" href="$xml__arch_8hh.html" title="Extension to read executables based on an XML format." alt="" coords="25,80,128,107"/>
 </map>

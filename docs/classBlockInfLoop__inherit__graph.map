@@ -1,4 +1,5 @@
 <map id="BlockInfLoop" name="BlockInfLoop">
-<area shape="rect" id="node2" href="$classBlockGraph.html" title="A control&#45;flow block built out of sub&#45;components. " alt="" coords="9,80,100,107"/>
-<area shape="rect" id="node3" href="$classFlowBlock.html" title="Description of a control&#45;flow block containing PcodeOps. " alt="" coords="13,5,96,32"/>
+<area shape="rect" id="node1" title="An infinite loop structure." alt="" coords="5,155,112,181"/>
+<area shape="rect" id="node2" href="$classBlockGraph.html" title="A control&#45;flow block built out of sub&#45;components." alt="" coords="10,80,107,107"/>
+<area shape="rect" id="node3" href="$classFlowBlock.html" title="Description of a control&#45;flow block containing PcodeOps." alt="" coords="14,5,103,32"/>
 </map>

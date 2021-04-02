@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classBreakCallBack.html" title="A breakpoint object. " alt="" coords="5,56,115,83"/>
-<area shape="rect" id="node2" href="$classPrintfCallBack.html" title="PrintfCallBack" alt="" coords="176,5,283,32"/>
-<area shape="rect" id="node3" href="$classPutsCallBack.html" title="PutsCallBack" alt="" coords="178,56,281,83"/>
-<area shape="rect" id="node4" href="$classTerminateCallBack.html" title="TerminateCallBack" alt="" coords="163,107,296,133"/>
+<area shape="rect" id="node1" href="$classBreakCallBack.html" title="A breakpoint object." alt="" coords="5,56,123,83"/>
+<area shape="rect" id="node2" href="$classPrintfCallBack.html" title=" " alt="" coords="185,5,300,32"/>
+<area shape="rect" id="node3" href="$classPutsCallBack.html" title=" " alt="" coords="189,56,296,83"/>
+<area shape="rect" id="node4" href="$classTerminateCallBack.html" title=" " alt="" coords="171,107,315,133"/>
 </map>

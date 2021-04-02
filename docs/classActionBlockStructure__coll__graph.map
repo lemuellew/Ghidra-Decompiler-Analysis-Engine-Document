@@ -1,3 +1,4 @@
 <map id="ActionBlockStructure" name="ActionBlockStructure">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="49,5,107,32"/>
+<area shape="rect" id="node1" title="Structure control&#45;flow using standard high&#45;level code constructs." alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="53,5,116,32"/>
 </map>

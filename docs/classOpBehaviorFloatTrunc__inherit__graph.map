@@ -1,3 +1,4 @@
 <map id="OpBehaviorFloatTrunc" name="OpBehaviorFloatTrunc">
-<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="36,5,127,32"/>
+<area shape="rect" id="node1" title="CPUI_FLOAT_TRUNC behavior." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes." alt="" coords="39,5,138,32"/>
 </map>

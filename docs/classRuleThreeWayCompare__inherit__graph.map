@@ -1,3 +1,4 @@
 <map id="RuleThreeWayCompare" name="RuleThreeWayCompare">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="62,5,111,32"/>
+<area shape="rect" id="node1" title="Simplify expressions involving three&#45;way comparisons." alt="" coords="5,80,181,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="68,5,119,32"/>
 </map>

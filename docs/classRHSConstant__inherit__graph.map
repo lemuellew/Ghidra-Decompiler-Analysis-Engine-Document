@@ -1,11 +1,12 @@
 <map id="RHSConstant" name="RHSConstant">
-<area shape="rect" id="node2" href="$classConstantAbsolute.html" title="ConstantAbsolute" alt="" coords="176,5,303,32"/>
-<area shape="rect" id="node3" href="$classConstantConsumed.html" title="ConstantConsumed" alt="" coords="170,56,309,83"/>
-<area shape="rect" id="node4" href="$classConstantExpression.html" title="ConstantExpression" alt="" coords="169,107,309,133"/>
-<area shape="rect" id="node5" href="$classConstantHeritageKnown.html" title="ConstantHeritageKnown" alt="" coords="157,157,321,184"/>
-<area shape="rect" id="node6" href="$classConstantIsConstant.html" title="ConstantIsConstant" alt="" coords="170,208,309,235"/>
-<area shape="rect" id="node7" href="$classConstantNamed.html" title="ConstantNamed" alt="" coords="181,259,298,285"/>
-<area shape="rect" id="node8" href="$classConstantNZMask.html" title="ConstantNZMask" alt="" coords="177,309,302,336"/>
-<area shape="rect" id="node9" href="$classConstantOffset.html" title="ConstantOffset" alt="" coords="184,360,295,387"/>
-<area shape="rect" id="node10" href="$classConstantVarnodeSize.html" title="ConstantVarnodeSize" alt="" coords="165,411,314,437"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,208,112,235"/>
+<area shape="rect" id="node2" href="$classConstantAbsolute.html" title=" " alt="" coords="181,5,319,32"/>
+<area shape="rect" id="node3" href="$classConstantConsumed.html" title=" " alt="" coords="175,56,325,83"/>
+<area shape="rect" id="node4" href="$classConstantExpression.html" title=" " alt="" coords="175,107,325,133"/>
+<area shape="rect" id="node5" href="$classConstantHeritageKnown.html" title=" " alt="" coords="160,157,340,184"/>
+<area shape="rect" id="node6" href="$classConstantIsConstant.html" title=" " alt="" coords="175,208,325,235"/>
+<area shape="rect" id="node7" href="$classConstantNamed.html" title=" " alt="" coords="187,259,313,285"/>
+<area shape="rect" id="node8" href="$classConstantNZMask.html" title=" " alt="" coords="183,309,317,336"/>
+<area shape="rect" id="node9" href="$classConstantOffset.html" title=" " alt="" coords="190,360,310,387"/>
+<area shape="rect" id="node10" href="$classConstantVarnodeSize.html" title=" " alt="" coords="169,411,331,437"/>
 </map>

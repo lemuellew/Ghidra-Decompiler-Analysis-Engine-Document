@@ -1,3 +1,4 @@
 <map id="TypeOpLoad" name="TypeOpLoad">
-<area shape="rect" id="node2" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="19,5,87,32"/>
+<area shape="rect" id="node1" title="Information about the LOAD op&#45;code." alt="" coords="5,80,107,107"/>
+<area shape="rect" id="node2" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="21,5,91,32"/>
 </map>

@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classUserOpManage.html" title="Manager/container for description objects (UserPcodeOp) of user defined p&#45;code ops. " alt="" coords="5,5,119,32"/>
+<area shape="rect" id="node1" href="$classTypeModifier.html" title=" " alt="" coords="5,56,112,83"/>
+<area shape="rect" id="node2" href="$classArrayModifier.html" title=" " alt="" coords="170,5,281,32"/>
+<area shape="rect" id="node3" href="$classFunctionModifier.html" title=" " alt="" coords="160,56,291,83"/>
+<area shape="rect" id="node4" href="$classPointerModifier.html" title=" " alt="" coords="164,107,287,133"/>
 </map>

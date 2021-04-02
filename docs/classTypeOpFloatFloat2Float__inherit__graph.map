@@ -1,4 +1,5 @@
 <map id="TypeOpFloatFloat2Float" name="TypeOpFloatFloat2Float">
-<area shape="rect" id="node2" href="$classTypeOpFunc.html" title="A generic functional operator. " alt="" coords="38,80,135,107"/>
-<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="53,5,121,32"/>
+<area shape="rect" id="node1" title="Information about the FLOAT_FLOAT2FLOAT op&#45;code." alt="" coords="5,155,183,181"/>
+<area shape="rect" id="node2" href="$classTypeOpFunc.html" title="A generic functional operator." alt="" coords="44,80,144,107"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="59,5,129,32"/>
 </map>

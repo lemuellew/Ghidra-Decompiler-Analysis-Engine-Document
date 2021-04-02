@@ -1,3 +1,4 @@
 <map id="OptionInPlaceOps" name="OptionInPlaceOps">
-<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object. " alt="" coords="26,5,113,32"/>
+<area shape="rect" id="node1" title="Toggle whether in&#45;place operators (+=, *=, &amp;=, etc.) are emitted by the decompiler." alt="" coords="5,80,143,107"/>
+<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object." alt="" coords="27,5,121,32"/>
 </map>

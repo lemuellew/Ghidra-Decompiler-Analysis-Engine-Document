@@ -1,7 +1,8 @@
 <map id="TypeOpUnary" name="TypeOpUnary">
-<area shape="rect" id="node3" href="$classTypeOpBoolNegate.html" title="Information about the BOOL_NEGATE op&#45;code. " alt="" coords="5,155,141,181"/>
-<area shape="rect" id="node4" href="$classTypeOpFloatNeg.html" title="Information about the FLOAT_NEG op&#45;code. " alt="" coords="166,155,287,181"/>
-<area shape="rect" id="node5" href="$classTypeOpInt2Comp.html" title="Information about the INT_2COMP op&#45;code. " alt="" coords="312,155,437,181"/>
-<area shape="rect" id="node6" href="$classTypeOpIntNegate.html" title="Information about the INT_NEGATE op&#45;code. " alt="" coords="461,155,587,181"/>
-<area shape="rect" id="node2" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="266,5,334,32"/>
+<area shape="rect" id="node1" title="A generic unary operator: one input and one output." alt="" coords="264,80,373,107"/>
+<area shape="rect" id="node3" href="$classTypeOpBoolNegate.html" title="Information about the BOOL_NEGATE op&#45;code." alt="" coords="5,155,152,181"/>
+<area shape="rect" id="node4" href="$classTypeOpFloatNeg.html" title="Information about the FLOAT_NEG op&#45;code." alt="" coords="177,155,306,181"/>
+<area shape="rect" id="node5" href="$classTypeOpInt2Comp.html" title="Information about the INT_2COMP op&#45;code." alt="" coords="331,155,464,181"/>
+<area shape="rect" id="node6" href="$classTypeOpIntNegate.html" title="Information about the INT_NEGATE op&#45;code." alt="" coords="489,155,623,181"/>
+<area shape="rect" id="node2" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="283,5,354,32"/>
 </map>

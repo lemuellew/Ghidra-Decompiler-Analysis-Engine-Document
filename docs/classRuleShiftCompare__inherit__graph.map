@@ -1,3 +1,4 @@
 <map id="RuleShiftCompare" name="RuleShiftCompare">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="45,5,95,32"/>
+<area shape="rect" id="node1" title="Transform shifts in comparisons: V &gt;&gt; c == d =&gt; V == (d &lt;&lt; c)" alt="" coords="5,80,145,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="50,5,101,32"/>
 </map>

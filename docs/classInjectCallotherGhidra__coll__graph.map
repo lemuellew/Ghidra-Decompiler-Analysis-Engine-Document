@@ -1,4 +1,5 @@
 <map id="InjectCallotherGhidra" name="InjectCallotherGhidra">
-<area shape="rect" id="node2" href="$classInjectPayloadGhidra.html" title="An injection payload that uses a Ghidra client to generate the p&#45;code ops. " alt="" coords="8,80,147,107"/>
-<area shape="rect" id="node3" href="$classInjectPayload.html" title="An active container for a set of p&#45;code operations that can be injected into data&#45;flow. " alt="" coords="27,5,128,32"/>
+<area shape="rect" id="node1" title="A callother&#45;fixup injection that uses a Ghidra client to generate the p&#45;code ops." alt="" coords="5,155,165,181"/>
+<area shape="rect" id="node2" href="$classInjectPayloadGhidra.html" title="An injection payload that uses a Ghidra client to generate the p&#45;code ops." alt="" coords="9,80,162,107"/>
+<area shape="rect" id="node3" href="$classInjectPayload.html" title="An active container for a set of p&#45;code operations that can be injected into data&#45;flow." alt="" coords="30,5,141,32"/>
 </map>

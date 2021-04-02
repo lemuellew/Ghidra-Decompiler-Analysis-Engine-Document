@@ -1,3 +1,4 @@
 <map id="EmitPrettyPrint" name="EmitPrettyPrint">
-<area shape="rect" id="node2" href="$classEmitXml.html" title="Base class (and interface) for pretty printing and XML markup of tokens. " alt="" coords="25,5,97,32"/>
+<area shape="rect" id="node1" title="A generic source code pretty printer." alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node2" href="$classEmitXml.html" title="Base class (and interface) for pretty printing and XML markup of tokens." alt="" coords="27,5,105,32"/>
 </map>

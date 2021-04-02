@@ -1,3 +1,4 @@
 <map id="FunctionSymbol" name="FunctionSymbol">
-<area shape="rect" id="node2" href="$classSymbol.html" title="The base class for a symbol in a symbol table or scope. " alt="" coords="30,5,97,32"/>
+<area shape="rect" id="node1" title="A Symbol representing an executable function." alt="" coords="5,80,132,107"/>
+<area shape="rect" id="node2" href="$classSymbol.html" title="The base class for a symbol in a symbol table or scope." alt="" coords="33,5,104,32"/>
 </map>

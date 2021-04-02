@@ -1,4 +1,5 @@
 <map id="CastStrategyJava" name="CastStrategyJava">
-<area shape="rect" id="node2" href="$classCastStrategyC.html" title="Casting strategies that are specific to the C language. " alt="" coords="14,80,123,107"/>
-<area shape="rect" id="node3" href="$classCastStrategy.html" title="A strategy for applying type casts. " alt="" coords="19,5,118,32"/>
+<area shape="rect" id="node1" title="Casting strategies that are specific to the Java language." alt="" coords="5,155,140,181"/>
+<area shape="rect" id="node2" href="$classCastStrategyC.html" title="Casting strategies that are specific to the C language." alt="" coords="15,80,130,107"/>
+<area shape="rect" id="node3" href="$classCastStrategy.html" title="A strategy for applying type casts." alt="" coords="19,5,126,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classRangeHint.html" title="Partial data&#45;type information mapped to a specific range of bytes. " alt="" coords="5,5,89,32"/>
+<area shape="rect" id="node1" href="$classProtoModel.html" title="A prototype model: a model for passing parameters between functions." alt="" coords="5,5,101,32"/>
+<area shape="rect" id="node2" href="$classProtoModelMerged.html" title="A prototype model made by merging together other models." alt="" coords="149,5,295,32"/>
 </map>

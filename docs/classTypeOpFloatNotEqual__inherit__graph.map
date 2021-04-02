@@ -1,4 +1,5 @@
 <map id="TypeOpFloatNotEqual" name="TypeOpFloatNotEqual">
-<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output. " alt="" coords="28,80,133,107"/>
-<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="47,5,115,32"/>
+<area shape="rect" id="node1" title="Information about the FLOAT_NOTEQUAL op&#45;code." alt="" coords="5,155,168,181"/>
+<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output." alt="" coords="31,80,143,107"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="51,5,122,32"/>
 </map>

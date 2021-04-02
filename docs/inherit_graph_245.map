@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classUnifyDatatype.html" title="UnifyDatatype" alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node1" href="$classTypeFactory.html" title="Container class for all Datatype objects in an Architecture." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node2" href="$classTypeFactoryGhidra.html" title="An implementation of the TypeFactory interface, query a Ghidra client for data&#45;type information." alt="" coords="153,5,296,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="LaneDivide" name="LaneDivide">
-<area shape="rect" id="node2" href="$classTransformManager.html" title="Class for splitting larger registers holding smaller logical lanes. " alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node1" title="Class for splitting data&#45;flow on laned registers." alt="" coords="31,80,125,107"/>
+<area shape="rect" id="node2" href="$classTransformManager.html" title="Class for splitting larger registers holding smaller logical lanes." alt="" coords="5,5,151,32"/>
 </map>

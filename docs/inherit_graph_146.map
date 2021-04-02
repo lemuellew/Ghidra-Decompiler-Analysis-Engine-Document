@@ -1,7 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classParamList.html" title="ParamList" alt="" coords="5,56,87,83"/>
-<area shape="rect" id="node2" href="$classParamListStandard.html" title="A standard model for parameters as an ordered list of storage resources. " alt="" coords="135,56,268,83"/>
-<area shape="rect" id="node3" href="$classParamListMerged.html" title="A union of other input parameter passing models. " alt="" coords="331,5,455,32"/>
-<area shape="rect" id="node4" href="$classParamListRegister.html" title="An unstructured model for passing input parameters to a function. " alt="" coords="328,56,459,83"/>
-<area shape="rect" id="node5" href="$classParamListStandardOut.html" title="A standard model for passing back return values from a function. " alt="" coords="316,107,471,133"/>
+<area shape="rect" id="node1" href="$classParamEntry.html" title="A contiguous range of memory that can be used to pass parameters." alt="" coords="5,5,104,32"/>
 </map>

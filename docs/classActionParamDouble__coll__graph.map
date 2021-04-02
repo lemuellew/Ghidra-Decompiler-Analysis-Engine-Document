@@ -1,3 +1,4 @@
 <map id="ActionParamDouble" name="ActionParamDouble">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="45,5,104,32"/>
+<area shape="rect" id="node1" title="Deal with situations that look like double precision parameters." alt="" coords="5,80,156,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="49,5,112,32"/>
 </map>

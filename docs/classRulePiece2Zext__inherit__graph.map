@@ -1,3 +1,4 @@
 <map id="RulePiece2Zext" name="RulePiece2Zext">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="38,5,87,32"/>
+<area shape="rect" id="node1" title="Concatenation with 0 becomes an extension: V = concat(#0,W) =&gt; V = zext(W)" alt="" coords="5,80,129,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="42,5,93,32"/>
 </map>

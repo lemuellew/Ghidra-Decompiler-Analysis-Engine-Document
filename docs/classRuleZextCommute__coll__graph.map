@@ -1,3 +1,4 @@
 <map id="RuleZextCommute" name="RuleZextCommute">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="47,5,96,32"/>
+<area shape="rect" id="node1" title="Commute INT_ZEXT with INT_RIGHT: zext(V) &gt;&gt; W =&gt; zext(V &gt;&gt; W)" alt="" coords="5,80,151,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="53,5,103,32"/>
 </map>

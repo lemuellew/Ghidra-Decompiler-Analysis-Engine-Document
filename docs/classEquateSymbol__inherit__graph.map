@@ -1,3 +1,4 @@
 <map id="EquateSymbol" name="EquateSymbol">
-<area shape="rect" id="node2" href="$classSymbol.html" title="The base class for a symbol in a symbol table or scope. " alt="" coords="25,5,92,32"/>
+<area shape="rect" id="node1" title="A Symbol that holds equate information for a constant." alt="" coords="5,80,121,107"/>
+<area shape="rect" id="node2" href="$classSymbol.html" title="The base class for a symbol in a symbol table or scope." alt="" coords="28,5,99,32"/>
 </map>

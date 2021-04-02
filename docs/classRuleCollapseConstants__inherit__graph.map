@@ -1,3 +1,4 @@
 <map id="RuleCollapseConstants" name="RuleCollapseConstants">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="61,5,110,32"/>
+<area shape="rect" id="node1" title="Collapse constant expressions." alt="" coords="5,80,177,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="66,5,117,32"/>
 </map>

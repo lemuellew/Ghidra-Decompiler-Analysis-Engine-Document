@@ -1,14 +1,15 @@
 <map id="FlowBlock" name="FlowBlock">
-<area shape="rect" id="node2" href="$classBlockBasic.html" title="A basic block for p&#45;code operations. " alt="" coords="137,107,225,133"/>
-<area shape="rect" id="node3" href="$classBlockCopy.html" title="This class is used to mirror the BlockBasic objects in the fixed control&#45;flow graph for a function..." alt="" coords="138,157,225,184"/>
-<area shape="rect" id="node4" href="$classBlockGraph.html" title="A control&#45;flow block built out of sub&#45;components. " alt="" coords="136,208,227,235"/>
-<area shape="rect" id="node5" href="$classBlockCondition.html" title="Two conditional blocks combined into one conditional using BOOL_AND or BOOL_OR. " alt="" coords="275,5,385,32"/>
-<area shape="rect" id="node6" href="$classBlockDoWhile.html" title="A loop structure where the condition is checked at the bottom. " alt="" coords="277,56,383,83"/>
-<area shape="rect" id="node7" href="$classBlockGoto.html" title="A block that terminates with an unstructured (goto) branch to another block. " alt="" coords="289,107,371,133"/>
-<area shape="rect" id="node8" href="$classBlockIf.html" title="A basic &quot;if&quot; block. " alt="" coords="299,157,361,184"/>
-<area shape="rect" id="node9" href="$classBlockInfLoop.html" title="An infinite loop structure. " alt="" coords="281,208,379,235"/>
-<area shape="rect" id="node10" href="$classBlockList.html" title="A series of blocks that execute in sequence. " alt="" coords="292,259,368,285"/>
-<area shape="rect" id="node11" href="$classBlockMultiGoto.html" title="A block with multiple edges out, at least one of which is an unstructured (goto) branch. " alt="" coords="275,309,385,336"/>
-<area shape="rect" id="node12" href="$classBlockSwitch.html" title="A structured switch construction. " alt="" coords="283,360,377,387"/>
-<area shape="rect" id="node13" href="$classBlockWhileDo.html" title="A loop structure where the condition is checked at the top. " alt="" coords="277,411,383,437"/>
+<area shape="rect" id="node1" title="Description of a control&#45;flow block containing PcodeOps." alt="" coords="5,157,95,184"/>
+<area shape="rect" id="node2" href="$classBlockBasic.html" title="A basic block for p&#45;code operations." alt="" coords="145,107,238,133"/>
+<area shape="rect" id="node3" href="$classBlockCopy.html" title="This class is used to mirror the BlockBasic objects in the fixed control&#45;flow graph for a function." alt="" coords="146,157,237,184"/>
+<area shape="rect" id="node4" href="$classBlockGraph.html" title="A control&#45;flow block built out of sub&#45;components." alt="" coords="143,208,240,235"/>
+<area shape="rect" id="node5" href="$classBlockCondition.html" title="Two conditional blocks combined into one conditional using BOOL_AND or BOOL_OR." alt="" coords="289,5,409,32"/>
+<area shape="rect" id="node6" href="$classBlockDoWhile.html" title="A loop structure where the condition is checked at the bottom." alt="" coords="293,56,406,83"/>
+<area shape="rect" id="node7" href="$classBlockGoto.html" title="A block that terminates with an unstructured (goto) branch to another block." alt="" coords="305,107,394,133"/>
+<area shape="rect" id="node8" href="$classBlockIf.html" title="A basic &quot;if&quot; block." alt="" coords="316,157,383,184"/>
+<area shape="rect" id="node9" href="$classBlockInfLoop.html" title="An infinite loop structure." alt="" coords="296,208,403,235"/>
+<area shape="rect" id="node10" href="$classBlockList.html" title="A series of blocks that execute in sequence." alt="" coords="309,259,390,285"/>
+<area shape="rect" id="node11" href="$classBlockMultiGoto.html" title="A block with multiple edges out, at least one of which is an unstructured (goto) branch." alt="" coords="288,309,411,336"/>
+<area shape="rect" id="node12" href="$classBlockSwitch.html" title="A structured switch construction." alt="" coords="299,360,400,387"/>
+<area shape="rect" id="node13" href="$classBlockWhileDo.html" title="A loop structure where the condition is checked at the top." alt="" coords="293,411,406,437"/>
 </map>

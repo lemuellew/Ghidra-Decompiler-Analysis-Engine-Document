@@ -1,3 +1,4 @@
 <map id="blockaction.hh" name="blockaction.hh">
-<area shape="rect" id="node2" href="$coreaction_8hh.html" title="Core decompilation actions which are indepedent of any particular architecture. " alt="" coords="9,80,109,107"/>
+<area shape="rect" id="node1" title="Actions and classes associated with transforming and structuring the control&#45;flow graph." alt="" coords="5,5,123,32"/>
+<area shape="rect" id="node2" href="$coreaction_8hh.html" title="Core decompilation actions which are indepedent of any particular architecture." alt="" coords="9,80,119,107"/>
 </map>

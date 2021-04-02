@@ -1,5 +1,6 @@
 <map id="ParamListMerged" name="ParamListMerged">
-<area shape="rect" id="node2" href="$classParamListStandard.html" title="A standard model for parameters as an ordered list of storage resources. " alt="" coords="33,95,166,121"/>
-<area shape="rect" id="node3" href="$classParamList.html" title="ParamList" alt="" coords="5,5,87,32"/>
-<area shape="rect" id="node4" href="$classAddrSpace.html" title="A region where processor data is stored. " alt="" coords="111,5,197,32"/>
+<area shape="rect" id="node1" title="A union of other input parameter passing models." alt="" coords="37,171,173,197"/>
+<area shape="rect" id="node2" href="$classParamListStandard.html" title="A standard model for parameters as an ordered list of storage resources." alt="" coords="32,95,177,121"/>
+<area shape="rect" id="node3" href="$classParamList.html" title=" " alt="" coords="5,5,92,32"/>
+<area shape="rect" id="node4" href="$classAddrSpace.html" title="A region where processor data is stored." alt="" coords="117,5,207,32"/>
 </map>

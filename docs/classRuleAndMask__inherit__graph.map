@@ -1,3 +1,4 @@
 <map id="RuleAndMask" name="RuleAndMask">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="33,5,82,32"/>
+<area shape="rect" id="node1" title="Collapse unnecessary INT_AND." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="35,5,86,32"/>
 </map>

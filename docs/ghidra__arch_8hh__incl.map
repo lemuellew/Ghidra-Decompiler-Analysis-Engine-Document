@@ -1,40 +1,52 @@
 <map id="ghidra_arch.hh" name="ghidra_arch.hh">
-<area shape="rect" id="node2" href="$architecture_8hh.html" title="Architecture and associated classes that help manage a single processor architecture and load image..." alt="" coords="527,80,635,107"/>
-<area shape="rect" id="node3" href="$capability_8hh.html" title="Infrastructure for discovering code extensions to the decompiler. " alt="" coords="99,976,194,1003"/>
-<area shape="rect" id="node7" href="$varmap_8hh.html" title="Classes for keeping track of local variables and reconstructing stack layout. " alt="" coords="1129,155,1212,181"/>
-<area shape="rect" id="node8" href="$database_8hh.html" title="Symbol and Scope objects for the decompiler. " alt="" coords="983,528,1076,555"/>
-<area shape="rect" id="node29" href="$action_8hh.html" title="Action, Rule, and other associates classes supporting transformations on function data&#45;flow..." alt="" coords="600,155,675,181"/>
-<area shape="rect" id="node35" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image. " alt="" coords="359,752,457,779"/>
-<area shape="rect" id="node36" href="$translate_8hh.html" title="Classes for disassembly and pcode generation. " alt="" coords="336,677,427,704"/>
-<area shape="rect" id="node43" href="$pcodeinject_8hh.html" title="Classes for managing p&#45;code injection. " alt="" coords="464,304,571,331"/>
-<area shape="rect" id="node44" href="$fspec_8hh.html" title="Definitions for specifying functions prototypes. " alt="" coords="983,379,1055,405"/>
-<area shape="rect" id="node45" href="$globalcontext_8hh.html" title="Utilities for getting address&#45;based context to the disassembler and decompiler. " alt="" coords="789,528,907,555"/>
-<area shape="rect" id="node46" href="$comment_8hh.html" title="A database interface for high&#45;level language comments. " alt="" coords="187,229,282,256"/>
-<area shape="rect" id="node47" href="$userop_8hh.html" title="Classes for more detailed definitions of user defined p&#45;code operations. " alt="" coords="423,229,502,256"/>
-<area shape="rect" id="node48" href="$options_8hh.html" title="Classes for processing architecture configuration options. " alt="" coords="261,901,344,928"/>
-<area shape="rect" id="node49" href="$transform_8hh.html" title="Classes for building large scale transforms of function data&#45;flow. " alt="" coords="715,304,810,331"/>
-<area shape="rect" id="node50" href="$prefersplit_8hh_source.html" title="prefersplit.hh" alt="" coords="886,155,983,181"/>
-<area shape="rect" id="node4" href="$types_8h_source.html" title="types.h" alt="" coords="245,1051,310,1077"/>
-<area shape="rect" id="node9" href="$variable_8hh.html" title="Definitions for high&#45;level variables. " alt="" coords="727,603,812,629"/>
-<area shape="rect" id="node27" href="$partmap_8hh.html" title="The partmap&lt;&gt; template mapping a linear space to value objects. " alt="" coords="938,603,1025,629"/>
-<area shape="rect" id="node28" href="$rangemap_8hh.html" title="Templates to define interval map containers. " alt="" coords="999,901,1097,928"/>
-<area shape="rect" id="node10" href="$varnode_8hh.html" title="The Varnode and VarnodeBank classes. " alt="" coords="766,677,853,704"/>
-<area shape="rect" id="node11" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops. " alt="" coords="497,752,593,779"/>
-<area shape="rect" id="node26" href="$cover_8hh.html" title="Classes describing the topological scope of variables within a function. " alt="" coords="773,752,845,779"/>
-<area shape="rect" id="node12" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants. " alt="" coords="365,827,451,853"/>
-<area shape="rect" id="node25" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations. " alt="" coords="495,827,598,853"/>
-<area shape="rect" id="node13" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="371,901,445,928"/>
-<area shape="rect" id="node14" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="513,976,580,1003"/>
-<area shape="rect" id="node24" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="272,976,333,1003"/>
-<area shape="rect" id="node30" href="$block_8hh.html" title="Classes related to basic blocks and control&#45;flow structuring. " alt="" coords="605,229,675,256"/>
-<area shape="rect" id="node31" href="$jumptable_8hh.html" title="Classes to support jump&#45;tables and their recovery. " alt="" coords="595,304,691,331"/>
-<area shape="rect" id="node32" href="$emulateutil_8hh.html" title="(Lightweight) emulation interface for executing PcodeOp objects within a syntax tree or for executing..." alt="" coords="467,379,570,405"/>
-<area shape="rect" id="node42" href="$rangeutil_8hh.html" title="Documentation for the CircleRange class. " alt="" coords="595,379,685,405"/>
-<area shape="rect" id="node33" href="$emulate_8hh.html" title="Classes for emulating p&#45;code. " alt="" coords="419,603,506,629"/>
-<area shape="rect" id="node38" href="$op_8hh.html" title="The PcodeOp and PcodeOpBank classes. " alt="" coords="613,453,667,480"/>
-<area shape="rect" id="node34" href="$memstate_8hh.html" title="Classes for keeping track of memory state during emulation. " alt="" coords="451,677,549,704"/>
-<area shape="rect" id="node37" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats. " alt="" coords="186,827,251,853"/>
-<area shape="rect" id="node39" href="$typeop_8hh.html" title="Data&#45;type and behavior information associated with specific p&#45;code op&#45;codes. " alt="" coords="563,528,642,555"/>
-<area shape="rect" id="node40" href="$cpool_8hh.html" title="Definitions to support a constant pool for deferred compilation languages (i.e. java byte&#45;code) ..." alt="" coords="530,603,601,629"/>
-<area shape="rect" id="node41" href="$printlanguage_8hh.html" title="Classes for printing tokens in a high&#45;level language. " alt="" coords="93,677,211,704"/>
+<area shape="rect" id="node1" title="Ghidra specific architecture information and connection to a Ghidra client." alt="" coords="458,5,577,32"/>
+<area shape="rect" id="node2" href="$architecture_8hh.html" title="Architecture and associated classes that help manage a single processor architecture and load image." alt="" coords="457,80,577,107"/>
+<area shape="rect" id="node3" href="$capability_8hh.html" title="Infrastructure for discovering code extensions to the decompiler." alt="" coords="187,1051,291,1077"/>
+<area shape="rect" id="node7" href="$varmap_8hh.html" title="Classes for keeping track of local variables and reconstructing stack layout." alt="" coords="969,155,1061,181"/>
+<area shape="rect" id="node8" href="$database_8hh.html" title="Symbol and Scope objects for the decompiler." alt="" coords="998,528,1101,555"/>
+<area shape="rect" id="node30" href="$action_8hh.html" title="Action, Rule, and other associates classes supporting transformations on function data&#45;flow." alt="" coords="476,155,559,181"/>
+<area shape="rect" id="node35" href="$translate_8hh.html" title="Classes for disassembly and pcode generation." alt="" coords="261,528,361,555"/>
+<area shape="rect" id="node41" href="$pcodeinject_8hh.html" title="Classes for managing p&#45;code injection." alt="" coords="381,229,499,256"/>
+<area shape="rect" id="node42" href="$fspec_8hh.html" title="Definitions for specifying functions prototypes." alt="" coords="815,379,892,405"/>
+<area shape="rect" id="node43" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image." alt="" coords="94,229,205,256"/>
+<area shape="rect" id="node44" href="$globalcontext_8hh.html" title="Utilities for getting address&#45;based context to the disassembler and decompiler." alt="" coords="743,528,873,555"/>
+<area shape="rect" id="node45" href="$comment_8hh.html" title="A database interface for high&#45;level language comments." alt="" coords="241,304,345,331"/>
+<area shape="rect" id="node46" href="$stringmanage_8hh.html" title="Classes for decoding and storing string data." alt="" coords="807,677,939,704"/>
+<area shape="rect" id="node47" href="$userop_8hh.html" title="Classes for more detailed definitions of user defined p&#45;code operations." alt="" coords="655,304,742,331"/>
+<area shape="rect" id="node48" href="$options_8hh.html" title="Classes for processing architecture configuration options." alt="" coords="339,976,429,1003"/>
+<area shape="rect" id="node49" href="$transform_8hh.html" title="Classes for building large scale transforms of function data&#45;flow." alt="" coords="329,379,436,405"/>
+<area shape="rect" id="node50" href="$prefersplit_8hh_source.html" title=" " alt="" coords="583,155,692,181"/>
+<area shape="rect" id="node4" href="$types_8h_source.html" title=" " alt="" coords="203,1125,274,1152"/>
+<area shape="rect" id="node5" title=" " alt="" coords="298,1125,361,1152"/>
+<area shape="rect" id="node6" title=" " alt="" coords="120,1125,179,1152"/>
+<area shape="rect" id="node9" href="$variable_8hh.html" title="Definitions for high&#45;level variables." alt="" coords="783,603,878,629"/>
+<area shape="rect" id="node28" href="$partmap_8hh.html" title="The partmap&lt;&gt; template mapping a linear space to value objects." alt="" coords="954,603,1051,629"/>
+<area shape="rect" id="node29" href="$rangemap_8hh.html" title="Templates to define interval map containers." alt="" coords="1051,752,1159,779"/>
+<area shape="rect" id="node10" href="$varnode_8hh.html" title="The Varnode and VarnodeBank classes." alt="" coords="461,677,555,704"/>
+<area shape="rect" id="node11" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops." alt="" coords="467,752,571,779"/>
+<area shape="rect" id="node26" href="$cover_8hh.html" title="Classes describing the topological scope of variables within a function." alt="" coords="607,752,686,779"/>
+<area shape="rect" id="node12" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants." alt="" coords="472,901,565,928"/>
+<area shape="rect" id="node25" href="$opbehavior_8hh.html" title="Classes for describing the behavior of individual p&#45;code operations." alt="" coords="568,827,683,853"/>
+<area shape="rect" id="node13" href="$space_8hh.html" title="Classes for describing address spaces." alt="" coords="504,976,584,1003"/>
+<area shape="rect" id="node14" href="$error_8hh.html" title="Base class for error handling facilities." alt="" coords="589,1051,662,1077"/>
+<area shape="rect" id="node24" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler." alt="" coords="389,1051,456,1077"/>
+<area shape="rect" id="node15" title=" " alt="" coords="873,1125,948,1152"/>
+<area shape="rect" id="node16" title=" " alt="" coords="485,1125,558,1152"/>
+<area shape="rect" id="node17" title=" " alt="" coords="385,1125,460,1152"/>
+<area shape="rect" id="node18" title=" " alt="" coords="972,1125,1023,1152"/>
+<area shape="rect" id="node19" title=" " alt="" coords="1047,1125,1089,1152"/>
+<area shape="rect" id="node20" title=" " alt="" coords="1113,1125,1156,1152"/>
+<area shape="rect" id="node21" title=" " alt="" coords="583,1125,668,1152"/>
+<area shape="rect" id="node22" title=" " alt="" coords="692,1125,759,1152"/>
+<area shape="rect" id="node23" title=" " alt="" coords="783,1125,849,1152"/>
+<area shape="rect" id="node27" href="$type_8hh.html" title="Classes for describing and printing data&#45;types." alt="" coords="734,827,805,853"/>
+<area shape="rect" id="node31" href="$block_8hh.html" title="Classes related to basic blocks and control&#45;flow structuring." alt="" coords="523,229,600,256"/>
+<area shape="rect" id="node32" href="$jumptable_8hh.html" title="Classes to support jump&#45;tables and their recovery." alt="" coords="471,304,579,331"/>
+<area shape="rect" id="node33" href="$emulateutil_8hh.html" title="(Lightweight) emulation interface for executing PcodeOp objects within a syntax tree or for executing..." alt="" coords="461,379,579,405"/>
+<area shape="rect" id="node34" href="$emulate_8hh.html" title="Classes for emulating p&#45;code." alt="" coords="348,453,444,480"/>
+<area shape="rect" id="node37" href="$op_8hh.html" title="The PcodeOp and PcodeOpBank classes." alt="" coords="631,453,689,480"/>
+<area shape="rect" id="node36" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats." alt="" coords="192,901,264,928"/>
+<area shape="rect" id="node38" href="$typeop_8hh.html" title="Data&#45;type and behavior information associated with specific p&#45;code op&#45;codes." alt="" coords="631,528,718,555"/>
+<area shape="rect" id="node39" href="$cpool_8hh.html" title="Definitions to support a constant pool for deferred compilation languages (i.e. java byte&#45;code)" alt="" coords="580,677,657,704"/>
+<area shape="rect" id="node40" href="$printlanguage_8hh.html" title="Classes for printing tokens in a high&#45;level language." alt="" coords="373,603,505,629"/>
 </map>

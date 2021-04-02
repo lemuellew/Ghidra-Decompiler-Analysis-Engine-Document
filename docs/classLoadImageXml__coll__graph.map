@@ -1,3 +1,4 @@
 <map id="LoadImageXml" name="LoadImageXml">
-<area shape="rect" id="node2" href="$classLoadImage.html" title="An interface into a particular binary executable image. " alt="" coords="17,5,103,32"/>
+<area shape="rect" id="node1" title="Implementation of the LoadImage interface using underlying data stored in an XML format." alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node2" href="$classLoadImage.html" title="An interface into a particular binary executable image." alt="" coords="18,5,113,32"/>
 </map>

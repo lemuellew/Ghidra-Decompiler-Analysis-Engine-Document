@@ -1,3 +1,4 @@
 <map id="RuleAndPiece" name="RuleAndPiece">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="33,5,83,32"/>
+<area shape="rect" id="node1" title="Convert PIECE to INT_ZEXT where appropriate: V &amp; concat(W,X) =&gt; zext(X)" alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="35,5,86,32"/>
 </map>

@@ -1,8 +1,9 @@
 <map id="Architecture" name="Architecture">
-<area shape="rect" id="node3" href="$classArchitectureGhidra.html" title="An implementation of the Architecture interface and connection to a Ghidra client. " alt="" coords="5,155,136,181"/>
-<area shape="rect" id="node4" href="$classSleighArchitecture.html" title="An Architecture that uses the decompiler&#39;s native SLEIGH translation engine. " alt="" coords="160,155,288,181"/>
-<area shape="rect" id="node2" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="79,5,215,32"/>
-<area shape="rect" id="node5" href="$classBfdArchitecture.html" title="Architecture that reads executable files using GNU BFD libraries. " alt="" coords="9,229,121,256"/>
-<area shape="rect" id="node6" href="$classRawBinaryArchitecture.html" title="Architecture that reads its binary as a raw file. " alt="" coords="146,229,302,256"/>
-<area shape="rect" id="node7" href="$classXmlArchitecture.html" title="An Architecture that loads executables using an XML format. " alt="" coords="327,229,441,256"/>
+<area shape="rect" id="node1" title="Manager for all the major decompiler subsystems." alt="" coords="109,80,211,107"/>
+<area shape="rect" id="node3" href="$classArchitectureGhidra.html" title="An implementation of the Architecture interface and connection to a Ghidra client." alt="" coords="5,155,149,181"/>
+<area shape="rect" id="node4" href="$classSleighArchitecture.html" title="An Architecture that uses the decompiler&#39;s native SLEIGH translation engine." alt="" coords="173,155,315,181"/>
+<area shape="rect" id="node2" href="$classAddrSpaceManager.html" title="A manager for different address spaces." alt="" coords="86,5,234,32"/>
+<area shape="rect" id="node5" href="$classBfdArchitecture.html" title="Architecture that reads executable files using GNU BFD libraries." alt="" coords="12,229,135,256"/>
+<area shape="rect" id="node6" href="$classRawBinaryArchitecture.html" title="Architecture that reads its binary as a raw file." alt="" coords="159,229,329,256"/>
+<area shape="rect" id="node7" href="$classXmlArchitecture.html" title="An Architecture that loads executables using an XML format." alt="" coords="354,229,481,256"/>
 </map>

@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classLoadTable.html" title="A description where and how data was loaded from memory. " alt="" coords="5,5,88,32"/>
+<area shape="rect" id="node1" href="$classLoadImage.html" title="An interface into a particular binary executable image." alt="" coords="5,107,100,133"/>
+<area shape="rect" id="node2" href="$classLoadImageBfd.html" title=" " alt="" coords="159,5,275,32"/>
+<area shape="rect" id="node3" href="$classLoadImageGhidra.html" title="An implementation of the LoadImage interface using a Ghidra client as the back&#45;end." alt="" coords="148,56,285,83"/>
+<area shape="rect" id="node4" href="$classLoadImageXml.html" title="Implementation of the LoadImage interface using underlying data stored in an XML format." alt="" coords="157,107,277,133"/>
+<area shape="rect" id="node5" href="$classMyLoadImage.html" title=" " alt="" coords="159,157,274,184"/>
+<area shape="rect" id="node6" href="$classRawLoadImage.html" title="A simple raw binary loadimage." alt="" coords="155,208,278,235"/>
 </map>

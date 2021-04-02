@@ -1,3 +1,4 @@
 <map id="RuleCarryElim" name="RuleCarryElim">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="34,5,83,32"/>
+<area shape="rect" id="node1" title="Transform INT_CARRY using a constant: carry(V,c) =&gt; &#45;c &lt;= V" alt="" coords="5,80,120,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="37,5,88,32"/>
 </map>

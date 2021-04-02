@@ -1,3 +1,4 @@
 <map id="RuleSignNearMult" name="RuleSignNearMult">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="45,5,94,32"/>
+<area shape="rect" id="node1" title="Simplify division form: (V + (V s&gt;&gt; 0x1f)&gt;&gt;(32&#45;n)) &amp; (&#45;1&lt;&lt;n) =&gt; (V s/ 2^n) * 2^n" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="49,5,100,32"/>
 </map>

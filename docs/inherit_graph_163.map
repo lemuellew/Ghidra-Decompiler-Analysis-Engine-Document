@@ -1,5 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPcodeBuilder.html" title="PcodeBuilder" alt="" coords="5,31,104,57"/>
-<area shape="rect" id="node2" href="$classMacroBuilder.html" title="MacroBuilder" alt="" coords="152,5,251,32"/>
-<area shape="rect" id="node3" href="$classSleighBuilder.html" title="SleighBuilder" alt="" coords="152,56,251,83"/>
+<area shape="rect" id="node1" href="$classPattern.html" title=" " alt="" coords="5,81,75,108"/>
+<area shape="rect" id="node2" href="$classDisjointPattern.html" title=" " alt="" coords="123,56,241,83"/>
+<area shape="rect" id="node6" href="$classOrPattern.html" title=" " alt="" coords="140,107,224,133"/>
+<area shape="rect" id="node3" href="$classCombinePattern.html" title=" " alt="" coords="295,5,422,32"/>
+<area shape="rect" id="node4" href="$classContextPattern.html" title=" " alt="" coords="299,56,419,83"/>
+<area shape="rect" id="node5" href="$classInstructionPattern.html" title=" " alt="" coords="289,107,428,133"/>
 </map>

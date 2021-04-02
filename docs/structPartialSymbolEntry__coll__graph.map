@@ -1,5 +1,6 @@
 <map id="PartialSymbolEntry" name="PartialSymbolEntry">
-<area shape="rect" id="node2" href="$classOpToken.html" title="A token representing an operator in the high&#45;level language. " alt="" coords="5,95,80,121"/>
-<area shape="rect" id="node3" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="180,5,255,32"/>
-<area shape="rect" id="node4" href="$structTypeField.html" title="Specifies subfields of a structure or what a pointer points to. " alt="" coords="262,95,341,121"/>
+<area shape="rect" id="node1" title="A structure for pushing nested fields to the RPN stack." alt="" coords="131,184,277,211"/>
+<area shape="rect" id="node2" href="$classOpToken.html" title="A token representing an operator in the high&#45;level language." alt="" coords="5,95,83,121"/>
+<area shape="rect" id="node3" href="$classDatatype.html" title="The base datatype class for the decompiler." alt="" coords="201,5,284,32"/>
+<area shape="rect" id="node4" href="$structTypeField.html" title="Specifies subfields of a structure or what a pointer points to." alt="" coords="275,95,357,121"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="WidenerFull" name="WidenerFull">
-<area shape="rect" id="node2" href="$classWidener.html" title="Class holding a particular widening strategy for the ValueSetSolver iteration algorithm. " alt="" coords="15,5,86,32"/>
+<area shape="rect" id="node1" title="Class for doing normal widening." alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node2" href="$classWidener.html" title="Class holding a particular widening strategy for the ValueSetSolver iteration algorithm." alt="" coords="17,5,93,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="IfaceCapability" name="IfaceCapability">
-<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node1" title="Groups of console commands that are discovered by the loader." alt="" coords="6,80,126,107"/>
+<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler." alt="" coords="5,5,127,32"/>
 </map>

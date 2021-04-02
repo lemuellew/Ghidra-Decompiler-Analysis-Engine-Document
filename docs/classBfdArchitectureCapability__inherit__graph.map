@@ -1,4 +1,5 @@
 <map id="BfdArchitectureCapability" name="BfdArchitectureCapability">
-<area shape="rect" id="node2" href="$classArchitectureCapability.html" title="Abstract extension point for building Architecture objects. " alt="" coords="15,80,166,107"/>
-<area shape="rect" id="node3" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="35,5,146,32"/>
+<area shape="rect" id="node1" title="Extension point for building a GNU BFD capable Architecture." alt="" coords="5,155,195,181"/>
+<area shape="rect" id="node2" href="$classArchitectureCapability.html" title="Abstract extension point for building Architecture objects." alt="" coords="17,80,183,107"/>
+<area shape="rect" id="node3" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler." alt="" coords="39,5,161,32"/>
 </map>

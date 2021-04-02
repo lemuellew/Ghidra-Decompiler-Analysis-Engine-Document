@@ -1,3 +1,4 @@
 <map id="ConstantPoolGhidra" name="ConstantPoolGhidra">
-<area shape="rect" id="node2" href="$classConstantPool.html" title="An interface to the pool of constant objects for byte&#45;code languages. " alt="" coords="24,5,125,32"/>
+<area shape="rect" id="node1" title="An implementation of ConstantPool using a Ghidra client as the backing storage." alt="" coords="5,80,156,107"/>
+<area shape="rect" id="node2" href="$classConstantPool.html" title="An interface to the pool of constant objects for byte&#45;code languages." alt="" coords="27,5,135,32"/>
 </map>

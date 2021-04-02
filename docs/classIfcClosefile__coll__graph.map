@@ -1,5 +1,6 @@
 <map id="IfcClosefile" name="IfcClosefile">
-<area shape="rect" id="node2" href="$classIfaceBaseCommand.html" title="IfaceBaseCommand" alt="" coords="51,95,193,121"/>
-<area shape="rect" id="node3" href="$classIfaceCommand.html" title="IfaceCommand" alt="" coords="5,5,116,32"/>
-<area shape="rect" id="node4" href="$classIfaceStatus.html" title="IfaceStatus" alt="" coords="140,5,229,32"/>
+<area shape="rect" id="node1" title="Close command, closing the current bulk output file." alt="" coords="84,171,179,197"/>
+<area shape="rect" id="node2" href="$classIfaceBaseCommand.html" title="A root class for a basic set of commands." alt="" coords="55,95,208,121"/>
+<area shape="rect" id="node3" href="$classIfaceCommand.html" title="A command that can be executed from the command line." alt="" coords="5,5,127,32"/>
+<area shape="rect" id="node4" href="$classIfaceStatus.html" title="A generic console mode interface and command executor." alt="" coords="151,5,245,32"/>
 </map>

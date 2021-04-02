@@ -1,3 +1,4 @@
 <map id="RuleIndirectCollapse" name="RuleIndirectCollapse">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="52,5,101,32"/>
+<area shape="rect" id="node1" title="Remove a CPUI_INDIRECT if its blocking PcodeOp is dead." alt="" coords="5,80,161,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="58,5,109,32"/>
 </map>

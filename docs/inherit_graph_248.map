@@ -1,11 +1,77 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classUserPcodeOp.html" title="The base class for a detailed definition of a user&#45;defined p&#45;code operation. " alt="" coords="5,107,109,133"/>
-<area shape="rect" id="node2" href="$classInjectedUserOp.html" title="A user defined operation that is injected with other p&#45;code. " alt="" coords="180,5,293,32"/>
-<area shape="rect" id="node3" href="$classJumpAssistOp.html" title="A user defined p&#45;code op for assisting the recovery of jump tables. " alt="" coords="183,56,291,83"/>
-<area shape="rect" id="node4" href="$classTermPatternOp.html" title="A user defined p&#45;code op that has a dynamically defined procedure. " alt="" coords="181,107,292,133"/>
-<area shape="rect" id="node6" href="$classUnspecializedPcodeOp.html" title="A user defined p&#45;code op with no specialization. " alt="" coords="157,157,316,184"/>
-<area shape="rect" id="node7" href="$classVolatileOp.html" title="A base class for operations that access volatile memory. " alt="" coords="195,208,278,235"/>
-<area shape="rect" id="node5" href="$classSegmentOp.html" title="The segmented address operator. " alt="" coords="375,107,466,133"/>
-<area shape="rect" id="node8" href="$classVolatileReadOp.html" title="An operation that reads from volatile memory. " alt="" coords="364,183,477,209"/>
-<area shape="rect" id="node9" href="$classVolatileWriteOp.html" title="An operation that writes to volatile memory. " alt="" coords="364,233,477,260"/>
+<area shape="rect" id="node1" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="5,1981,76,2008"/>
+<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output." alt="" coords="135,765,247,792"/>
+<area shape="rect" id="node33" href="$classTypeOpBranch.html" title="Information about the BRANCH op&#45;code." alt="" coords="134,1525,249,1552"/>
+<area shape="rect" id="node34" href="$classTypeOpBranchind.html" title="Information about the BRANCHIND op&#45;code." alt="" coords="124,1576,259,1603"/>
+<area shape="rect" id="node35" href="$classTypeOpCall.html" title="Information about the CALL op&#45;code." alt="" coords="144,1627,239,1653"/>
+<area shape="rect" id="node36" href="$classTypeOpCallind.html" title="Information about the CALLIND op&#45;code." alt="" coords="134,1677,249,1704"/>
+<area shape="rect" id="node37" href="$classTypeOpCallother.html" title="Information about the CALLOTHER op&#45;code (user defined p&#45;code operations)" alt="" coords="127,1728,256,1755"/>
+<area shape="rect" id="node38" href="$classTypeOpCast.html" title="Information about the CAST op&#45;code." alt="" coords="142,1779,241,1805"/>
+<area shape="rect" id="node39" href="$classTypeOpCbranch.html" title="Information about the CBRANCH op&#45;code." alt="" coords="130,1829,253,1856"/>
+<area shape="rect" id="node40" href="$classTypeOpCopy.html" title="Information about the COPY op&#45;code." alt="" coords="140,1880,243,1907"/>
+<area shape="rect" id="node41" href="$classTypeOpCpoolref.html" title="Information about the CPOOLREF op&#45;code." alt="" coords="129,1931,254,1957"/>
+<area shape="rect" id="node42" href="$classTypeOpFunc.html" title="A generic functional operator." alt="" coords="141,1981,241,2008"/>
+<area shape="rect" id="node62" href="$classTypeOpIndirect.html" title="Information about the INDIRECT op&#45;code." alt="" coords="132,2032,251,2059"/>
+<area shape="rect" id="node63" href="$classTypeOpLoad.html" title="Information about the LOAD op&#45;code." alt="" coords="141,2083,242,2109"/>
+<area shape="rect" id="node64" href="$classTypeOpMulti.html" title="Information about the MULTIEQUAL op&#45;code." alt="" coords="140,2133,243,2160"/>
+<area shape="rect" id="node65" href="$classTypeOpNew.html" title="Information about the NEW op&#45;code." alt="" coords="142,2184,241,2211"/>
+<area shape="rect" id="node66" href="$classTypeOpPtradd.html" title="Information about the PTRADD op&#45;code." alt="" coords="135,2235,247,2261"/>
+<area shape="rect" id="node67" href="$classTypeOpPtrsub.html" title="Information about the PTRSUB op&#45;code." alt="" coords="136,2285,247,2312"/>
+<area shape="rect" id="node68" href="$classTypeOpReturn.html" title="Information about the RETURN op&#45;code." alt="" coords="135,2336,248,2363"/>
+<area shape="rect" id="node69" href="$classTypeOpSegment.html" title="Information about the SEGMENTOP op&#45;code." alt="" coords="127,2387,255,2413"/>
+<area shape="rect" id="node70" href="$classTypeOpStore.html" title="Information about the STORE op&#45;code." alt="" coords="139,2437,243,2464"/>
+<area shape="rect" id="node71" href="$classTypeOpUnary.html" title="A generic unary operator: one input and one output." alt="" coords="137,2539,246,2565"/>
+<area shape="rect" id="node3" href="$classTypeOpBoolAnd.html" title="Information about the BOOL_AND op&#45;code." alt="" coords="333,5,457,32"/>
+<area shape="rect" id="node4" href="$classTypeOpBoolOr.html" title="Information about the BOOL_OR op&#45;code." alt="" coords="338,56,453,83"/>
+<area shape="rect" id="node5" href="$classTypeOpBoolXor.html" title="Information about the BOOL_XOR op&#45;code." alt="" coords="335,107,456,133"/>
+<area shape="rect" id="node6" href="$classTypeOpEqual.html" title="Information about the INT_EQUAL op&#45;code." alt="" coords="342,157,449,184"/>
+<area shape="rect" id="node7" href="$classTypeOpFloatAdd.html" title="Information about the FLOAT_ADD op&#45;code." alt="" coords="331,208,459,235"/>
+<area shape="rect" id="node8" href="$classTypeOpFloatDiv.html" title="Information about the FLOAT_DIV op&#45;code." alt="" coords="333,259,458,285"/>
+<area shape="rect" id="node9" href="$classTypeOpFloatEqual.html" title="Information about the FLOAT_EQUAL op&#45;code." alt="" coords="326,309,465,336"/>
+<area shape="rect" id="node10" href="$classTypeOpFloatLess.html" title="Information about the FLOAT_LESS op&#45;code." alt="" coords="329,360,461,387"/>
+<area shape="rect" id="node11" href="$classTypeOpFloatLessEqual.html" title="Information about the FLOAT_LESSEQUAL op&#45;code." alt="" coords="311,411,479,437"/>
+<area shape="rect" id="node12" href="$classTypeOpFloatMult.html" title="Information about the FLOAT_MULT op&#45;code." alt="" coords="329,461,461,488"/>
+<area shape="rect" id="node13" href="$classTypeOpFloatNotEqual.html" title="Information about the FLOAT_NOTEQUAL op&#45;code." alt="" coords="314,512,477,539"/>
+<area shape="rect" id="node14" href="$classTypeOpFloatSub.html" title="Information about the FLOAT_SUB op&#45;code." alt="" coords="332,563,459,589"/>
+<area shape="rect" id="node15" href="$classTypeOpIntAdd.html" title="Information about the INT_ADD op&#45;code." alt="" coords="339,613,451,640"/>
+<area shape="rect" id="node16" href="$classTypeOpIntAnd.html" title="Information about the INT_AND op&#45;code." alt="" coords="339,664,451,691"/>
+<area shape="rect" id="node17" href="$classTypeOpIntDiv.html" title="Information about the INT_DIV op&#45;code." alt="" coords="341,715,450,741"/>
+<area shape="rect" id="node18" href="$classTypeOpIntLeft.html" title="Information about the INT_LEFT op&#45;code." alt="" coords="339,765,451,792"/>
+<area shape="rect" id="node19" href="$classTypeOpIntLess.html" title="Information about the INT_LESS op&#45;code." alt="" coords="337,816,453,843"/>
+<area shape="rect" id="node20" href="$classTypeOpIntLessEqual.html" title="Information about the INT_LESSEQUAL op&#45;code." alt="" coords="319,867,471,893"/>
+<area shape="rect" id="node21" href="$classTypeOpIntMult.html" title="Information about the INT_MULT op&#45;code." alt="" coords="337,917,453,944"/>
+<area shape="rect" id="node22" href="$classTypeOpIntOr.html" title="Information about the INT_OR op&#45;code." alt="" coords="344,968,447,995"/>
+<area shape="rect" id="node23" href="$classTypeOpIntRem.html" title="Information about the INT_REM op&#45;code." alt="" coords="337,1019,454,1045"/>
+<area shape="rect" id="node24" href="$classTypeOpIntRight.html" title="Information about the INT_RIGHT op&#45;code." alt="" coords="335,1069,456,1096"/>
+<area shape="rect" id="node25" href="$classTypeOpIntSdiv.html" title="Information about the INT_SDIV op&#45;code." alt="" coords="338,1120,453,1147"/>
+<area shape="rect" id="node26" href="$classTypeOpIntSless.html" title="Information about the INT_SLESS op&#45;code." alt="" coords="335,1171,456,1197"/>
+<area shape="rect" id="node27" href="$classTypeOpIntSlessEqual.html" title="Information about the INT_SLESSEQUAL op&#45;code." alt="" coords="317,1221,474,1248"/>
+<area shape="rect" id="node28" href="$classTypeOpIntSrem.html" title="Information about the INT_SREM op&#45;code." alt="" coords="335,1272,456,1299"/>
+<area shape="rect" id="node29" href="$classTypeOpIntSright.html" title="Information about the INT_SRIGHT op&#45;code." alt="" coords="333,1323,458,1349"/>
+<area shape="rect" id="node30" href="$classTypeOpIntSub.html" title="Information about the INT_SUB op&#45;code." alt="" coords="340,1373,451,1400"/>
+<area shape="rect" id="node31" href="$classTypeOpIntXor.html" title="Information about the INT_XOR op&#45;code." alt="" coords="341,1424,450,1451"/>
+<area shape="rect" id="node32" href="$classTypeOpNotEqual.html" title="Information about the INT_NOTEQUAL op&#45;code." alt="" coords="331,1475,460,1501"/>
+<area shape="rect" id="node43" href="$classTypeOpExtract.html" title="Information about the EXTRACT op&#45;code." alt="" coords="337,1525,453,1552"/>
+<area shape="rect" id="node44" href="$classTypeOpFloatAbs.html" title="Information about the FLOAT_ABS op&#45;code." alt="" coords="332,1576,459,1603"/>
+<area shape="rect" id="node45" href="$classTypeOpFloatCeil.html" title="Information about the FLOAT_CEIL op&#45;code." alt="" coords="331,1627,459,1653"/>
+<area shape="rect" id="node46" href="$classTypeOpFloatFloat2Float.html" title="Information about the FLOAT_FLOAT2FLOAT op&#45;code." alt="" coords="307,1677,484,1704"/>
+<area shape="rect" id="node47" href="$classTypeOpFloatFloor.html" title="Information about the FLOAT_FLOOR op&#45;code." alt="" coords="327,1728,463,1755"/>
+<area shape="rect" id="node48" href="$classTypeOpFloatInt2Float.html" title="Information about the FLOAT_INT2FLOAT op&#45;code." alt="" coords="315,1779,476,1805"/>
+<area shape="rect" id="node49" href="$classTypeOpFloatNan.html" title="Information about the FLOAT_NAN op&#45;code." alt="" coords="331,1829,460,1856"/>
+<area shape="rect" id="node50" href="$classTypeOpFloatRound.html" title="Information about the FLOAT_ROUND op&#45;code." alt="" coords="323,1880,467,1907"/>
+<area shape="rect" id="node51" href="$classTypeOpFloatSqrt.html" title="Information about the FLOAT_SQRT op&#45;code." alt="" coords="331,1931,460,1957"/>
+<area shape="rect" id="node52" href="$classTypeOpFloatTrunc.html" title="Information about the FLOAT_TRUNC op&#45;code." alt="" coords="326,1981,465,2008"/>
+<area shape="rect" id="node53" href="$classTypeOpInsert.html" title="Information about the INSERT op&#45;code." alt="" coords="342,2032,449,2059"/>
+<area shape="rect" id="node54" href="$classTypeOpIntCarry.html" title="Information about the INT_CARRY op&#45;code." alt="" coords="334,2083,457,2109"/>
+<area shape="rect" id="node55" href="$classTypeOpIntSborrow.html" title="Information about the INT_SBORROW op&#45;code." alt="" coords="325,2133,465,2160"/>
+<area shape="rect" id="node56" href="$classTypeOpIntScarry.html" title="Information about the INT_SCARRY op&#45;code." alt="" coords="331,2184,459,2211"/>
+<area shape="rect" id="node57" href="$classTypeOpIntSext.html" title="Information about the INT_SEXT op&#45;code." alt="" coords="337,2235,453,2261"/>
+<area shape="rect" id="node58" href="$classTypeOpIntZext.html" title="Information about the INT_ZEXT op&#45;code." alt="" coords="337,2285,454,2312"/>
+<area shape="rect" id="node59" href="$classTypeOpPiece.html" title="Information about the PIECE op&#45;code." alt="" coords="343,2336,448,2363"/>
+<area shape="rect" id="node60" href="$classTypeOpPopcount.html" title="Information about the POPCOUNT op&#45;code." alt="" coords="330,2387,461,2413"/>
+<area shape="rect" id="node61" href="$classTypeOpSubpiece.html" title="Information about the SUBPIECE op&#45;code." alt="" coords="331,2437,460,2464"/>
+<area shape="rect" id="node72" href="$classTypeOpBoolNegate.html" title="Information about the BOOL_NEGATE op&#45;code." alt="" coords="322,2488,469,2515"/>
+<area shape="rect" id="node73" href="$classTypeOpFloatNeg.html" title="Information about the FLOAT_NEG op&#45;code." alt="" coords="331,2539,460,2565"/>
+<area shape="rect" id="node74" href="$classTypeOpInt2Comp.html" title="Information about the INT_2COMP op&#45;code." alt="" coords="329,2589,462,2616"/>
+<area shape="rect" id="node75" href="$classTypeOpIntNegate.html" title="Information about the INT_NEGATE op&#45;code." alt="" coords="328,2640,463,2667"/>
 </map>

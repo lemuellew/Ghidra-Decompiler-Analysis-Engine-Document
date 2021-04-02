@@ -1,3 +1,4 @@
 <map id="ActionHeritage" name="ActionHeritage">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="30,5,89,32"/>
+<area shape="rect" id="node1" title="Build Static Single Assignment (SSA) representation for function." alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="33,5,96,32"/>
 </map>

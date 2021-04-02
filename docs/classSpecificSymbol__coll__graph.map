@@ -1,4 +1,5 @@
 <map id="SpecificSymbol" name="SpecificSymbol">
-<area shape="rect" id="node2" href="$classTripleSymbol.html" title="TripleSymbol" alt="" coords="13,80,111,107"/>
-<area shape="rect" id="node3" href="$classSleighSymbol.html" title="SleighSymbol" alt="" coords="11,5,113,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,155,128,181"/>
+<area shape="rect" id="node2" href="$classTripleSymbol.html" title=" " alt="" coords="13,80,120,107"/>
+<area shape="rect" id="node3" href="$classSleighSymbol.html" title=" " alt="" coords="11,5,122,32"/>
 </map>

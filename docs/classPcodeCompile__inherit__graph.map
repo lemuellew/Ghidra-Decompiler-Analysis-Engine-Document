@@ -1,4 +1,5 @@
 <map id="PcodeCompile" name="PcodeCompile">
-<area shape="rect" id="node2" href="$classPcodeSnippet.html" title="PcodeSnippet" alt="" coords="5,80,108,107"/>
-<area shape="rect" id="node3" href="$classSleighPcode.html" title="SleighPcode" alt="" coords="132,80,227,107"/>
+<area shape="rect" id="node1" title=" " alt="" coords="69,5,183,32"/>
+<area shape="rect" id="node2" href="$classPcodeSnippet.html" title=" " alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$classSleighPcode.html" title=" " alt="" coords="141,80,242,107"/>
 </map>

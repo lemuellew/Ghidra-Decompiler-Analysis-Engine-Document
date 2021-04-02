@@ -1,3 +1,4 @@
 <map id="SegmentedResolver" name="SegmentedResolver">
-<area shape="rect" id="node2" href="$classAddressResolver.html" title="Abstract class for converting native constants to addresses. " alt="" coords="14,5,137,32"/>
+<area shape="rect" id="node1" title="A resolver for segmented architectures." alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node2" href="$classAddressResolver.html" title="Abstract class for converting native constants to addresses." alt="" coords="17,5,147,32"/>
 </map>

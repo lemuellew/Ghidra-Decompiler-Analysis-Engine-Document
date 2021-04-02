@@ -1,3 +1,4 @@
 <map id="ActionDoNothing" name="ActionDoNothing">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="37,5,95,32"/>
+<area shape="rect" id="node1" title="Remove blocks that do nothing." alt="" coords="5,80,137,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="40,5,103,32"/>
 </map>

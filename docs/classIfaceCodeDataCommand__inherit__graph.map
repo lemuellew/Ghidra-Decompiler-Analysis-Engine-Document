@@ -1,11 +1,12 @@
 <map id="IfaceCodeDataCommand" name="IfaceCodeDataCommand">
-<area shape="rect" id="node3" href="$classIfcCodeDataDumpCrossRefs.html" title="IfcCodeDataDumpCrossRefs" alt="" coords="383,5,577,32"/>
-<area shape="rect" id="node4" href="$classIfcCodeDataDumpModelHits.html" title="IfcCodeDataDumpModelHits" alt="" coords="385,56,575,83"/>
-<area shape="rect" id="node5" href="$classIfcCodeDataDumpStarts.html" title="IfcCodeDataDumpStarts" alt="" coords="397,107,563,133"/>
-<area shape="rect" id="node6" href="$classIfcCodeDataDumpTargetHits.html" title="IfcCodeDataDumpTargetHits" alt="" coords="384,157,576,184"/>
-<area shape="rect" id="node7" href="$classIfcCodeDataDumpUnlinked.html" title="IfcCodeDataDumpUnlinked" alt="" coords="389,208,571,235"/>
-<area shape="rect" id="node8" href="$classIfcCodeDataInit.html" title="IfcCodeDataInit" alt="" coords="423,259,537,285"/>
-<area shape="rect" id="node9" href="$classIfcCodeDataRun.html" title="IfcCodeDataRun" alt="" coords="420,309,540,336"/>
-<area shape="rect" id="node10" href="$classIfcCodeDataTarget.html" title="IfcCodeDataTarget" alt="" coords="413,360,547,387"/>
-<area shape="rect" id="node2" href="$classIfaceCommand.html" title="IfaceCommand" alt="" coords="5,183,116,209"/>
+<area shape="rect" id="node1" title=" " alt="" coords="175,183,360,209"/>
+<area shape="rect" id="node3" href="$classIfcCodeDataDumpCrossRefs.html" title=" " alt="" coords="408,5,615,32"/>
+<area shape="rect" id="node4" href="$classIfcCodeDataDumpModelHits.html" title=" " alt="" coords="408,56,615,83"/>
+<area shape="rect" id="node5" href="$classIfcCodeDataDumpStarts.html" title=" " alt="" coords="422,107,601,133"/>
+<area shape="rect" id="node6" href="$classIfcCodeDataDumpTargetHits.html" title=" " alt="" coords="408,157,615,184"/>
+<area shape="rect" id="node7" href="$classIfcCodeDataDumpUnlinked.html" title=" " alt="" coords="412,208,611,235"/>
+<area shape="rect" id="node8" href="$classIfcCodeDataInit.html" title=" " alt="" coords="450,259,573,285"/>
+<area shape="rect" id="node9" href="$classIfcCodeDataRun.html" title=" " alt="" coords="448,309,575,336"/>
+<area shape="rect" id="node10" href="$classIfcCodeDataTarget.html" title=" " alt="" coords="440,360,583,387"/>
+<area shape="rect" id="node2" href="$classIfaceCommand.html" title="A command that can be executed from the command line." alt="" coords="5,183,127,209"/>
 </map>

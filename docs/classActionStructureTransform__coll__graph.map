@@ -1,0 +1,4 @@
+<map id="ActionStructureTransform" name="ActionStructureTransform">
+<area shape="rect" id="node1" title="Give each control&#45;flow structure an opportunity to make a final transform." alt="" coords="5,80,193,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="68,5,131,32"/>
+</map>

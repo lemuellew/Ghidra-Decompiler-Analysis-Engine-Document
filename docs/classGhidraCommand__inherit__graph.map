@@ -1,9 +1,10 @@
 <map id="GhidraCommand" name="GhidraCommand">
-<area shape="rect" id="node2" href="$classDecompileAt.html" title="Command to decompile a specific function. " alt="" coords="190,5,287,32"/>
-<area shape="rect" id="node3" href="$classDeregisterProgram.html" title="Command to release all resources associated with a Program (executable) in the decompiler. " alt="" coords="173,56,304,83"/>
-<area shape="rect" id="node4" href="$classFlushNative.html" title="Command to flush all symbols associated with a Program (executable) " alt="" coords="193,107,285,133"/>
-<area shape="rect" id="node5" href="$classRegisterProgram.html" title="Command to register a new Program (executable) with the decompiler. " alt="" coords="179,157,299,184"/>
-<area shape="rect" id="node6" href="$classSetAction.html" title="Command to set the root Action used by the decompiler or toggle output components. " alt="" coords="199,208,278,235"/>
-<area shape="rect" id="node7" href="$classSetOptions.html" title="Command to toggle options within the decompiler. " alt="" coords="195,259,282,285"/>
-<area shape="rect" id="node8" href="$classStructureGraph.html" title="Command to structure a control&#45;flow graph. " alt="" coords="183,309,294,336"/>
+<area shape="rect" id="node1" title="Base class for a command to the decompiler as issued by a Ghidra client." alt="" coords="5,157,137,184"/>
+<area shape="rect" id="node2" href="$classDecompileAt.html" title="Command to decompile a specific function." alt="" coords="205,5,311,32"/>
+<area shape="rect" id="node3" href="$classDeregisterProgram.html" title="Command to release all resources associated with a Program (executable) in the decompiler." alt="" coords="185,56,331,83"/>
+<area shape="rect" id="node4" href="$classFlushNative.html" title="Command to flush all symbols associated with a Program (executable)" alt="" coords="208,107,308,133"/>
+<area shape="rect" id="node5" href="$classRegisterProgram.html" title="Command to register a new Program (executable) with the decompiler." alt="" coords="193,157,323,184"/>
+<area shape="rect" id="node6" href="$classSetAction.html" title="Command to set the root Action used by the decompiler or toggle output components." alt="" coords="216,208,300,235"/>
+<area shape="rect" id="node7" href="$classSetOptions.html" title="Command to toggle options within the decompiler." alt="" coords="211,259,305,285"/>
+<area shape="rect" id="node8" href="$classStructureGraph.html" title="Command to structure a control&#45;flow graph." alt="" coords="198,309,318,336"/>
 </map>

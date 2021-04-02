@@ -1,4 +1,5 @@
 <map id="EquationLeftEllipsis" name="EquationLeftEllipsis">
-<area shape="rect" id="node2" href="$classPatternEquation.html" title="PatternEquation" alt="" coords="17,95,131,121"/>
-<area shape="rect" id="node3" href="$classTokenPattern.html" title="TokenPattern" alt="" coords="24,5,124,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,171,156,197"/>
+<area shape="rect" id="node2" href="$classPatternEquation.html" title=" " alt="" coords="17,95,144,121"/>
+<area shape="rect" id="node3" href="$classTokenPattern.html" title=" " alt="" coords="27,5,134,32"/>
 </map>

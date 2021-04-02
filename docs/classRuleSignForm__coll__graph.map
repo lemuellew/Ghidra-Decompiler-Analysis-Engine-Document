@@ -1,3 +1,4 @@
 <map id="RuleSignForm" name="RuleSignForm">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="33,5,83,32"/>
+<area shape="rect" id="node1" title="Normalize sign extraction: sub(sext(V),c) =&gt; V s&gt;&gt; 31" alt="" coords="5,80,117,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="36,5,87,32"/>
 </map>

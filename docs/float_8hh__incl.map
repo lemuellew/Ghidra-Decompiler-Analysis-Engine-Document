@@ -1,4 +1,10 @@
 <map id="float.hh" name="float.hh">
-<area shape="rect" id="node2" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="231,80,293,107"/>
-<area shape="rect" id="node3" href="$types_8h_source.html" title="types.h" alt="" coords="5,155,71,181"/>
+<area shape="rect" id="node1" title="Support for decoding different floating&#45;point formats." alt="" coords="245,5,317,32"/>
+<area shape="rect" id="node2" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler." alt="" coords="247,80,314,107"/>
+<area shape="rect" id="node3" href="$types_8h_source.html" title=" " alt="" coords="5,155,76,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="100,155,173,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="198,155,273,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="297,155,355,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="380,155,443,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="467,155,518,181"/>
 </map>

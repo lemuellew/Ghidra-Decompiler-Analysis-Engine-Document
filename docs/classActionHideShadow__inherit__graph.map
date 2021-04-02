@@ -1,3 +1,4 @@
 <map id="ActionHideShadow" name="ActionHideShadow">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="43,5,101,32"/>
+<area shape="rect" id="node1" title="Locate shadow Varnodes and adjust them so they are hidden." alt="" coords="5,80,149,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="46,5,109,32"/>
 </map>

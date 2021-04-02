@@ -1,5 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPcodeInjectLibrary.html" title="A collection of p&#45;code injection payloads. " alt="" coords="5,31,136,57"/>
-<area shape="rect" id="node2" href="$classPcodeInjectLibraryGhidra.html" title="A p&#45;code injection library that uses a Ghidra client to generate/compile the injection p&#45;code..." alt="" coords="184,5,352,32"/>
-<area shape="rect" id="node3" href="$classPcodeInjectLibrarySleigh.html" title="PcodeInjectLibrarySleigh" alt="" coords="185,56,351,83"/>
+<area shape="rect" id="node1" href="$classPcodeCacher.html" title="Class for caching a chunk of p&#45;code, prior to emitting." alt="" coords="5,5,112,32"/>
 </map>

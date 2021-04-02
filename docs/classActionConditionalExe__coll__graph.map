@@ -1,3 +1,4 @@
 <map id="ActionConditionalExe" name="ActionConditionalExe">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="49,5,108,32"/>
+<area shape="rect" id="node1" title="Search for and remove various forms of redundant CBRANCH operations." alt="" coords="5,80,167,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="55,5,117,32"/>
 </map>

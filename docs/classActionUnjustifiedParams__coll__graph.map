@@ -1,3 +1,4 @@
 <map id="ActionUnjustifiedParams" name="ActionUnjustifiedParams">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="59,5,118,32"/>
+<area shape="rect" id="node1" title="Adjust improperly justified parameters." alt="" coords="5,80,188,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="65,5,128,32"/>
 </map>

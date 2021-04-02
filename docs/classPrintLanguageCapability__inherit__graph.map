@@ -1,5 +1,6 @@
 <map id="PrintLanguageCapability" name="PrintLanguageCapability">
-<area shape="rect" id="node3" href="$classPrintCCapability.html" title="Factory and static initializer for the &quot;c&#45;language&quot; back&#45;end to the decompiler. " alt="" coords="5,155,123,181"/>
-<area shape="rect" id="node4" href="$classPrintJavaCapability.html" title="Factory and static initializer for the &quot;java&#45;language&quot; back&#45;end to the decompiler. " alt="" coords="147,155,282,181"/>
-<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="83,5,194,32"/>
+<area shape="rect" id="node1" title="Base class for high&#45;level language capabilities." alt="" coords="58,80,239,107"/>
+<area shape="rect" id="node3" href="$classPrintCCapability.html" title="Factory and static initializer for the &quot;c&#45;language&quot; back&#45;end to the decompiler." alt="" coords="5,155,132,181"/>
+<area shape="rect" id="node4" href="$classPrintJavaCapability.html" title="Factory and static initializer for the &quot;java&#45;language&quot; back&#45;end to the decompiler." alt="" coords="157,155,303,181"/>
+<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler." alt="" coords="88,5,209,32"/>
 </map>

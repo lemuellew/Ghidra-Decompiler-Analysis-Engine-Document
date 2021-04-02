@@ -1,7 +1,12 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classScope.html" title="A collection of Symbol objects within a single (namespace or functional) scope. " alt="" coords="5,31,64,57"/>
-<area shape="rect" id="node2" href="$classScopeGhidra.html" title="An implementation of the Scope interface by querying a Ghidra client for Symbol information. " alt="" coords="115,5,212,32"/>
-<area shape="rect" id="node3" href="$classScopeInternal.html" title="An in&#45;memory implementation of the Scope interface. " alt="" coords="112,56,215,83"/>
-<area shape="rect" id="node4" href="$classScopeGhidraNamespace.html" title="A global namespace Scope. " alt="" coords="263,31,429,57"/>
-<area shape="rect" id="node5" href="$classScopeLocal.html" title="A Symbol scope for local variables of a particular function. " alt="" coords="301,81,391,108"/>
+<area shape="rect" id="node1" href="$classRHSConstant.html" title=" " alt="" coords="5,208,112,235"/>
+<area shape="rect" id="node2" href="$classConstantAbsolute.html" title=" " alt="" coords="181,5,319,32"/>
+<area shape="rect" id="node3" href="$classConstantConsumed.html" title=" " alt="" coords="175,56,325,83"/>
+<area shape="rect" id="node4" href="$classConstantExpression.html" title=" " alt="" coords="175,107,325,133"/>
+<area shape="rect" id="node5" href="$classConstantHeritageKnown.html" title=" " alt="" coords="160,157,340,184"/>
+<area shape="rect" id="node6" href="$classConstantIsConstant.html" title=" " alt="" coords="175,208,325,235"/>
+<area shape="rect" id="node7" href="$classConstantNamed.html" title=" " alt="" coords="187,259,313,285"/>
+<area shape="rect" id="node8" href="$classConstantNZMask.html" title=" " alt="" coords="183,309,317,336"/>
+<area shape="rect" id="node9" href="$classConstantOffset.html" title=" " alt="" coords="190,360,310,387"/>
+<area shape="rect" id="node10" href="$classConstantVarnodeSize.html" title=" " alt="" coords="169,411,331,437"/>
 </map>

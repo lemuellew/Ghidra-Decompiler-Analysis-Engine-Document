@@ -1,0 +1,5 @@
+<map id="StringManager" name="StringManager">
+<area shape="rect" id="node1" title="Storage for decoding and storing strings associated with an address." alt="" coords="121,5,239,32"/>
+<area shape="rect" id="node2" href="$classGhidraStringManager.html" title="Implementation of the StringManager that queries through the ghidra client." alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node3" href="$classStringManagerUnicode.html" title="An implementation of StringManager that understands terminated unicode strings." alt="" coords="189,80,360,107"/>
+</map>

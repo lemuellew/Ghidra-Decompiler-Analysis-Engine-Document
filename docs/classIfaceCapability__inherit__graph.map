@@ -1,5 +1,6 @@
 <map id="IfaceCapability" name="IfaceCapability">
-<area shape="rect" id="node3" href="$classIfaceCodeDataCapability.html" title="IfaceCodeDataCapability" alt="" coords="5,155,173,181"/>
-<area shape="rect" id="node4" href="$classIfaceDecompCapability.html" title="IfaceDecompCapability" alt="" coords="198,155,357,181"/>
-<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler. " alt="" coords="127,5,238,32"/>
+<area shape="rect" id="node1" title="Groups of console commands that are discovered by the loader." alt="" coords="139,80,259,107"/>
+<area shape="rect" id="node3" href="$classIfaceCodeDataCapability.html" title=" " alt="" coords="5,155,189,181"/>
+<area shape="rect" id="node4" href="$classIfaceDecompCapability.html" title="Interface capability point for all decompiler commands." alt="" coords="214,155,389,181"/>
+<area shape="rect" id="node2" href="$classCapabilityPoint.html" title="Class for automatically registering extension points to the decompiler." alt="" coords="138,5,259,32"/>
 </map>

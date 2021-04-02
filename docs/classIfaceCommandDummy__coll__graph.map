@@ -1,3 +1,4 @@
 <map id="IfaceCommandDummy" name="IfaceCommandDummy">
-<area shape="rect" id="node2" href="$classIfaceCommand.html" title="IfaceCommand" alt="" coords="29,5,139,32"/>
+<area shape="rect" id="node1" title="A dummy command used during parsing." alt="" coords="5,80,179,107"/>
+<area shape="rect" id="node2" href="$classIfaceCommand.html" title="A command that can be executed from the command line." alt="" coords="31,5,153,32"/>
 </map>

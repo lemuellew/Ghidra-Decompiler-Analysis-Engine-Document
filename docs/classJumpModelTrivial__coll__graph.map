@@ -1,4 +1,5 @@
 <map id="JumpModelTrivial" name="JumpModelTrivial">
-<area shape="rect" id="node2" href="$classJumpModel.html" title="A jump&#45;table execution model. " alt="" coords="23,95,112,121"/>
-<area shape="rect" id="node3" href="$classJumpTable.html" title="A map from values to control&#45;flow targets within a function. " alt="" coords="24,5,111,32"/>
+<area shape="rect" id="node1" title="A trivial jump&#45;table model, where the BRANCHIND input Varnode is the switch variable." alt="" coords="5,171,140,197"/>
+<area shape="rect" id="node2" href="$classJumpModel.html" title="A jump&#45;table execution model." alt="" coords="25,95,120,121"/>
+<area shape="rect" id="node3" href="$classJumpTable.html" title="A map from values to control&#45;flow targets within a function." alt="" coords="28,5,117,32"/>
 </map>

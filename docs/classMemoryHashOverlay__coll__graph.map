@@ -1,3 +1,4 @@
 <map id="MemoryHashOverlay" name="MemoryHashOverlay">
-<area shape="rect" id="node2" href="$classMemoryBank.html" title="Memory storage/state for a single AddressSpace. " alt="" coords="29,5,127,32"/>
+<area shape="rect" id="node1" title="A memory bank that implements reads and writes using a hash table." alt="" coords="5,80,165,107"/>
+<area shape="rect" id="node2" href="$classMemoryBank.html" title="Memory storage/state for a single AddressSpace." alt="" coords="31,5,140,32"/>
 </map>

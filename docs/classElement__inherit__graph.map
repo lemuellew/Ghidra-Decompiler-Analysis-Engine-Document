@@ -1,3 +1,4 @@
 <map id="Element" name="Element">
-<area shape="rect" id="node2" href="$classDocument.html" title="A complete in&#45;memory XML document. " alt="" coords="5,80,88,107"/>
+<area shape="rect" id="node1" title="An XML element. A node in the DOM tree." alt="" coords="12,5,88,32"/>
+<area shape="rect" id="node2" href="$classDocument.html" title="A complete in&#45;memory XML document." alt="" coords="5,80,95,107"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="IfaceAssemblyEmit" name="IfaceAssemblyEmit">
-<area shape="rect" id="node2" href="$classAssemblyEmit.html" title="Abstract class for emitting disassembly to an application. " alt="" coords="20,5,127,32"/>
+<area shape="rect" id="node1" title="Disassembly emitter that prints to a console stream." alt="" coords="5,80,153,107"/>
+<area shape="rect" id="node2" href="$classAssemblyEmit.html" title="Abstract class for emitting disassembly to an application." alt="" coords="21,5,137,32"/>
 </map>

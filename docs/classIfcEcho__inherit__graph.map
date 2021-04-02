@@ -1,4 +1,5 @@
 <map id="IfcEcho" name="IfcEcho">
-<area shape="rect" id="node2" href="$classIfaceBaseCommand.html" title="IfaceBaseCommand" alt="" coords="5,80,147,107"/>
-<area shape="rect" id="node3" href="$classIfaceCommand.html" title="IfaceCommand" alt="" coords="21,5,131,32"/>
+<area shape="rect" id="node1" title="Echo command to echo the current command line to the bulk output stream." alt="" coords="47,155,117,181"/>
+<area shape="rect" id="node2" href="$classIfaceBaseCommand.html" title="A root class for a basic set of commands." alt="" coords="5,80,159,107"/>
+<area shape="rect" id="node3" href="$classIfaceCommand.html" title="A command that can be executed from the command line." alt="" coords="21,5,143,32"/>
 </map>

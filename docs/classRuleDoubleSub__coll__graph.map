@@ -1,3 +1,4 @@
 <map id="RuleDoubleSub" name="RuleDoubleSub">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="37,5,87,32"/>
+<area shape="rect" id="node1" title="Simplify chained SUBPIECE: sub( sub(V,c), d) =&gt; sub(V, c+d)" alt="" coords="5,80,127,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="41,5,91,32"/>
 </map>

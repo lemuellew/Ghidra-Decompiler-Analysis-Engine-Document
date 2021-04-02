@@ -1,3 +1,4 @@
 <map id="RuleSub2Add" name="RuleSub2Add">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="32,5,81,32"/>
+<area shape="rect" id="node1" title="Eliminate INT_SUB: V &#45; W =&gt; V + W * &#45;1" alt="" coords="5,80,113,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="34,5,85,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="ContentHandler" name="ContentHandler">
-<area shape="rect" id="node2" href="$classTreeHandler.html" title="A SAX interface implementation for constructing an in&#45;memory DOM model. " alt="" coords="15,80,109,107"/>
+<area shape="rect" id="node1" title="The SAX interface for parsing XML documents." alt="" coords="5,5,129,32"/>
+<area shape="rect" id="node2" href="$classTreeHandler.html" title="A SAX interface implementation for constructing an in&#45;memory DOM model." alt="" coords="17,80,117,107"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="ProtoStoreInternal" name="ProtoStoreInternal">
-<area shape="rect" id="node2" href="$classProtoStore.html" title="A collection parameter descriptions making up a function prototype. " alt="" coords="27,5,111,32"/>
+<area shape="rect" id="node1" title="A collection of parameter descriptions without backing symbols." alt="" coords="5,80,145,107"/>
+<area shape="rect" id="node2" href="$classProtoStore.html" title="A collection parameter descriptions making up a function prototype." alt="" coords="30,5,121,32"/>
 </map>

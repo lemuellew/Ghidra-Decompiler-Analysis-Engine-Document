@@ -1,0 +1,52 @@
+<map id="ifacedecomp.hh" name="ifacedecomp.hh">
+<area shape="rect" id="node1" title="Console interface commands for the decompiler engine." alt="" coords="208,5,335,32"/>
+<area shape="rect" id="node2" href="$ifaceterm_8hh.html" title="Add some terminal capabilities to the command&#45;line interface (IfaceStatus)" alt="" coords="5,155,111,181"/>
+<area shape="rect" id="node13" href="$graph_8hh_source.html" title=" " alt="" coords="344,80,423,107"/>
+<area shape="rect" id="node48" href="$grammar_8hh_source.html" title=" " alt="" coords="447,80,549,107"/>
+<area shape="rect" id="node49" href="$callgraph_8hh_source.html" title=" " alt="" coords="135,155,237,181"/>
+<area shape="rect" id="node50" href="$paramid_8hh_source.html" title=" " alt="" coords="223,80,319,107"/>
+<area shape="rect" id="node3" href="$interface_8hh.html" title="Classes and utilities for a generic command&#45;line interface." alt="" coords="601,752,701,779"/>
+<area shape="rect" id="node4" href="$capability_8hh.html" title="Infrastructure for discovering code extensions to the decompiler." alt="" coords="1057,827,1161,853"/>
+<area shape="rect" id="node7" title=" " alt="" coords="1090,901,1149,928"/>
+<area shape="rect" id="node8" title=" " alt="" coords="833,901,883,928"/>
+<area shape="rect" id="node9" title=" " alt="" coords="621,901,706,928"/>
+<area shape="rect" id="node10" title=" " alt="" coords="735,901,808,928"/>
+<area shape="rect" id="node11" title=" " alt="" coords="514,901,589,928"/>
+<area shape="rect" id="node12" title=" " alt="" coords="630,827,691,853"/>
+<area shape="rect" id="node5" href="$types_8h_source.html" title=" " alt="" coords="908,901,979,928"/>
+<area shape="rect" id="node6" title=" " alt="" coords="1003,901,1065,928"/>
+<area shape="rect" id="node14" href="$funcdata_8hh.html" title="Utilities for processing data structures associated with a single function." alt="" coords="391,155,490,181"/>
+<area shape="rect" id="node15" href="$architecture_8hh.html" title="Architecture and associated classes that help manage a single processor architecture and load image." alt="" coords="741,229,861,256"/>
+<area shape="rect" id="node44" href="$override_8hh.html" title="A system for sending override commands to the decompiler." alt="" coords="1071,229,1167,256"/>
+<area shape="rect" id="node45" href="$heritage_8hh.html" title="Utilities for building Static Single Assignment (SSA) form" alt="" coords="146,229,242,256"/>
+<area shape="rect" id="node46" href="$merge_8hh.html" title="Utilities for merging low&#45;level Varnodes into high&#45;level variables." alt="" coords="1375,229,1459,256"/>
+<area shape="rect" id="node47" href="$dynamic_8hh.html" title="Utilities for making references to dynamic variables: defined as locations and constants that can onl..." alt="" coords="349,453,447,480"/>
+<area shape="rect" id="node16" href="$varmap_8hh.html" title="Classes for keeping track of local variables and reconstructing stack layout." alt="" coords="1060,304,1152,331"/>
+<area shape="rect" id="node17" href="$database_8hh.html" title="Symbol and Scope objects for the decompiler." alt="" coords="1095,379,1197,405"/>
+<area shape="rect" id="node27" href="$action_8hh.html" title="Action, Rule, and other associates classes supporting transformations on function data&#45;flow." alt="" coords="247,304,330,331"/>
+<area shape="rect" id="node29" href="$pcodeinject_8hh.html" title="Classes for managing p&#45;code injection." alt="" coords="1329,304,1446,331"/>
+<area shape="rect" id="node32" href="$fspec_8hh.html" title="Definitions for specifying functions prototypes." alt="" coords="1227,379,1305,405"/>
+<area shape="rect" id="node33" href="$translate_8hh.html" title="Classes for disassembly and pcode generation." alt="" coords="881,528,981,555"/>
+<area shape="rect" id="node35" href="$loadimage_8hh.html" title="Classes and API for accessing a binary load image." alt="" coords="311,528,421,555"/>
+<area shape="rect" id="node36" href="$globalcontext_8hh.html" title="Utilities for getting address&#45;based context to the disassembler and decompiler." alt="" coords="854,379,985,405"/>
+<area shape="rect" id="node37" href="$comment_8hh.html" title="A database interface for high&#45;level language comments." alt="" coords="457,603,561,629"/>
+<area shape="rect" id="node38" href="$stringmanage_8hh.html" title="Classes for decoding and storing string data." alt="" coords="801,304,933,331"/>
+<area shape="rect" id="node40" href="$userop_8hh.html" title="Classes for more detailed definitions of user defined p&#45;code operations." alt="" coords="691,304,777,331"/>
+<area shape="rect" id="node41" href="$options_8hh.html" title="Classes for processing architecture configuration options." alt="" coords="726,752,817,779"/>
+<area shape="rect" id="node42" href="$transform_8hh.html" title="Classes for building large scale transforms of function data&#45;flow." alt="" coords="522,453,629,480"/>
+<area shape="rect" id="node43" href="$prefersplit_8hh_source.html" title=" " alt="" coords="557,304,666,331"/>
+<area shape="rect" id="node18" href="$variable_8hh.html" title="Definitions for high&#45;level variables." alt="" coords="1096,453,1191,480"/>
+<area shape="rect" id="node25" href="$partmap_8hh.html" title="The partmap&lt;&gt; template mapping a linear space to value objects." alt="" coords="975,453,1072,480"/>
+<area shape="rect" id="node26" href="$rangemap_8hh.html" title="Templates to define interval map containers." alt="" coords="1215,453,1323,480"/>
+<area shape="rect" id="node19" href="$varnode_8hh.html" title="The Varnode and VarnodeBank classes." alt="" coords="616,528,711,555"/>
+<area shape="rect" id="node20" href="$pcoderaw_8hh.html" title="Raw descriptions of varnodes and p&#45;code ops." alt="" coords="751,603,855,629"/>
+<area shape="rect" id="node21" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants." alt="" coords="519,677,613,704"/>
+<area shape="rect" id="node22" href="$space_8hh.html" title="Classes for describing address spaces." alt="" coords="841,752,921,779"/>
+<area shape="rect" id="node23" href="$error_8hh.html" title="Base class for error handling facilities." alt="" coords="817,827,891,853"/>
+<area shape="rect" id="node24" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler." alt="" coords="915,827,982,853"/>
+<area shape="rect" id="node28" href="$block_8hh.html" title="Classes related to basic blocks and control&#45;flow structuring." alt="" coords="146,379,223,405"/>
+<area shape="rect" id="node30" href="$emulateutil_8hh.html" title="(Lightweight) emulation interface for executing PcodeOp objects within a syntax tree or for executing..." alt="" coords="1329,379,1446,405"/>
+<area shape="rect" id="node31" href="$op_8hh.html" title="The PcodeOp and PcodeOpBank classes." alt="" coords="1358,453,1417,480"/>
+<area shape="rect" id="node34" href="$float_8hh.html" title="Support for decoding different floating&#45;point formats." alt="" coords="906,677,978,704"/>
+<area shape="rect" id="node39" href="$type_8hh.html" title="Classes for describing and printing data&#45;types." alt="" coords="735,528,805,555"/>
+</map>

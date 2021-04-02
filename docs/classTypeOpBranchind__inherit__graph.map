@@ -1,3 +1,4 @@
 <map id="TypeOpBranchind" name="TypeOpBranchind">
-<area shape="rect" id="node2" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="35,5,103,32"/>
+<area shape="rect" id="node1" title="Information about the BRANCHIND op&#45;code." alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node2" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="37,5,108,32"/>
 </map>

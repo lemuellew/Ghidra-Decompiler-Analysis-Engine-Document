@@ -1,3 +1,4 @@
 <map id="RuleSignDiv2" name="RuleSignDiv2">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="32,5,81,32"/>
+<area shape="rect" id="node1" title="Convert INT_SRIGHT form into INT_SDIV: (V + &#45;1*(V s&gt;&gt; 31)) s&gt;&gt; 1 =&gt; V s/ 2" alt="" coords="5,80,115,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="35,5,85,32"/>
 </map>

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['tag_5ftype',['tag_type',['../classTokenSplit.html#aeb8df0fee5549b7698495e5b408acc77',1,'TokenSplit']]],
-  ['tagtype',['tagtype',['../classPrintLanguage.html#a7102f70f47777d8b17af52c5157c473e',1,'PrintLanguage']]],
-  ['tokentype',['tokentype',['../classOpToken.html#af41c7f108d5662ede7765c5a6c44eaff',1,'OpToken']]],
-  ['type_5fmetatype',['type_metatype',['../type_8hh.html#aef6429f2523cdf4d415ba04a0209e61f',1,'type.hh']]],
-  ['typeflags',['typeflags',['../classRule.html#a605c4d4f6690f01deb9aa08c358fbc43',1,'Rule']]]
+  ['spacetype_6918',['spacetype',['../space_8hh.html#a1a83535cca68b7ca3f25bfad70262231',1,'space.hh']]],
+  ['statusflags_6919',['statusflags',['../classAction.html#adfa1c8c9c12ae9fccf0f0c743d420ff5',1,'Action']]],
+  ['syntax_5fhighlight_6920',['syntax_highlight',['../classEmitXml.html#a7c3577436da429c3c75f4b82cac6864f',1,'EmitXml']]]
 ];

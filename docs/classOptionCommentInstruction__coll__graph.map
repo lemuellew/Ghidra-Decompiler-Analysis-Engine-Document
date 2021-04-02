@@ -1,3 +1,4 @@
 <map id="OptionCommentInstruction" name="OptionCommentInstruction">
-<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object. " alt="" coords="51,5,138,32"/>
+<area shape="rect" id="node1" title="Toggle whether different comment types are emitted by the decompiler in the body of a function." alt="" coords="5,80,204,107"/>
+<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object." alt="" coords="57,5,152,32"/>
 </map>

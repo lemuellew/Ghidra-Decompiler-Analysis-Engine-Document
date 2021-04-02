@@ -1,3 +1,4 @@
 <map id="RuleBitUndistribute" name="RuleBitUndistribute">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="48,5,97,32"/>
+<area shape="rect" id="node1" title="Undo distributed operations through INT_AND, INT_OR, and INT_XOR." alt="" coords="5,80,155,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="55,5,105,32"/>
 </map>

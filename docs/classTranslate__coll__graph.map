@@ -1,3 +1,4 @@
 <map id="Translate" name="Translate">
-<area shape="rect" id="node2" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node1" title="The interface to a translation engine for a processor." alt="" coords="38,80,121,107"/>
+<area shape="rect" id="node2" href="$classAddrSpaceManager.html" title="A manager for different address spaces." alt="" coords="5,5,153,32"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="RuleSborrow" name="RuleSborrow">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="29,5,79,32"/>
+<area shape="rect" id="node1" title="Simplify signed comparisons using INT_SBORROW." alt="" coords="5,80,109,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="32,5,83,32"/>
 </map>

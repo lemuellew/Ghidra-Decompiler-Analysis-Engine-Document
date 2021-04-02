@@ -1,3 +1,4 @@
 <map id="OpBehaviorIntNegate" name="OpBehaviorIntNegate">
-<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="33,5,124,32"/>
+<area shape="rect" id="node1" title="CPUI_INT_NEGATE behavior." alt="" coords="5,80,168,107"/>
+<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes." alt="" coords="37,5,136,32"/>
 </map>

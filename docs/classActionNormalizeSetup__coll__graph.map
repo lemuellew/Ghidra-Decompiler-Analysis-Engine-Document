@@ -1,3 +1,4 @@
 <map id="ActionNormalizeSetup" name="ActionNormalizeSetup">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="52,5,111,32"/>
+<area shape="rect" id="node1" title="Prepare function prototypes for &quot;normalize&quot; simplification." alt="" coords="5,80,172,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="57,5,120,32"/>
 </map>

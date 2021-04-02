@@ -1,3 +1,4 @@
 <map id="OptionReadOnly" name="OptionReadOnly">
-<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object. " alt="" coords="21,5,108,32"/>
+<area shape="rect" id="node1" title="Toggle whether read&#45;only memory locations have their value propagated." alt="" coords="5,80,133,107"/>
+<area shape="rect" id="node2" href="$classArchOption.html" title="Base class for options classes that affect the configuration of the Architecture object." alt="" coords="22,5,117,32"/>
 </map>

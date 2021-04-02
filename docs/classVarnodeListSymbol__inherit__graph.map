@@ -1,6 +1,7 @@
 <map id="VarnodeListSymbol" name="VarnodeListSymbol">
-<area shape="rect" id="node2" href="$classValueSymbol.html" title="ValueSymbol" alt="" coords="23,229,122,256"/>
-<area shape="rect" id="node3" href="$classFamilySymbol.html" title="FamilySymbol" alt="" coords="20,155,125,181"/>
-<area shape="rect" id="node4" href="$classTripleSymbol.html" title="TripleSymbol" alt="" coords="23,80,122,107"/>
-<area shape="rect" id="node5" href="$classSleighSymbol.html" title="SleighSymbol" alt="" coords="21,5,124,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,304,153,331"/>
+<area shape="rect" id="node2" href="$classValueSymbol.html" title=" " alt="" coords="25,229,133,256"/>
+<area shape="rect" id="node3" href="$classFamilySymbol.html" title=" " alt="" coords="22,155,137,181"/>
+<area shape="rect" id="node4" href="$classTripleSymbol.html" title=" " alt="" coords="26,80,133,107"/>
+<area shape="rect" id="node5" href="$classSleighSymbol.html" title=" " alt="" coords="24,5,135,32"/>
 </map>

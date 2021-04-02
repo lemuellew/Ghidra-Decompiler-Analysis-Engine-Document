@@ -1,4 +1,5 @@
 <map id="TypeOpIntSub" name="TypeOpIntSub">
-<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output. " alt="" coords="6,80,111,107"/>
-<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="25,5,93,32"/>
+<area shape="rect" id="node1" title="Information about the INT_SUB op&#45;code." alt="" coords="6,155,117,181"/>
+<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output." alt="" coords="5,80,117,107"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="26,5,97,32"/>
 </map>

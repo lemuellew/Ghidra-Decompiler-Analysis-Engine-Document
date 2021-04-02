@@ -1,3 +1,4 @@
 <map id="ActionShadowVar" name="ActionShadowVar">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="39,5,98,32"/>
+<area shape="rect" id="node1" title="Check for one CPUI_MULTIEQUAL input set defining more than one Varnode." alt="" coords="5,80,141,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="42,5,105,32"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="TypeOpBoolAnd" name="TypeOpBoolAnd">
-<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output. " alt="" coords="11,80,117,107"/>
-<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="30,5,98,32"/>
+<area shape="rect" id="node1" title="Information about the BOOL_AND op&#45;code." alt="" coords="5,155,129,181"/>
+<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output." alt="" coords="11,80,123,107"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="32,5,103,32"/>
 </map>

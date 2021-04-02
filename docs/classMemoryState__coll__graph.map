@@ -1,4 +1,5 @@
 <map id="MemoryState" name="MemoryState">
-<area shape="rect" id="node2" href="$classTranslate.html" title="The interface to a translation engine for a processor. " alt="" coords="35,81,111,108"/>
-<area shape="rect" id="node3" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node1" title="All storage/state for a pcode machine." alt="" coords="24,171,135,197"/>
+<area shape="rect" id="node2" href="$classTranslate.html" title="The interface to a translation engine for a processor." alt="" coords="38,81,121,108"/>
+<area shape="rect" id="node3" href="$classAddrSpaceManager.html" title="A manager for different address spaces." alt="" coords="5,5,153,32"/>
 </map>

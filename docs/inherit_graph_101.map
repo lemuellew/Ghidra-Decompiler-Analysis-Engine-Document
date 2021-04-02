@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classIndirectForm.html" title="IndirectForm" alt="" coords="5,5,100,32"/>
+<area shape="rect" id="node1" href="$structIfaceError.html" title="An exception specific to the command line interface." alt="" coords="5,31,91,57"/>
+<area shape="rect" id="node2" href="$structIfaceExecutionError.html" title="An exception throw during the execution of a command." alt="" coords="139,5,288,32"/>
+<area shape="rect" id="node3" href="$structIfaceParseError.html" title="An exception describing a parsing error in a command line." alt="" coords="153,56,274,83"/>
 </map>

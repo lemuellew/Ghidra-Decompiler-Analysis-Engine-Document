@@ -1,3 +1,4 @@
 <map id="SetAction" name="SetAction">
-<area shape="rect" id="node2" href="$classGhidraCommand.html" title="Base class for a command to the decompiler as issued by a Ghidra client. " alt="" coords="5,5,125,32"/>
+<area shape="rect" id="node1" title="Command to set the root Action used by the decompiler or toggle output components." alt="" coords="29,80,113,107"/>
+<area shape="rect" id="node2" href="$classGhidraCommand.html" title="Base class for a command to the decompiler as issued by a Ghidra client." alt="" coords="5,5,137,32"/>
 </map>

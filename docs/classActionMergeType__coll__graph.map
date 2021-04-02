@@ -1,3 +1,4 @@
 <map id="ActionMergeType" name="ActionMergeType">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="38,5,97,32"/>
+<area shape="rect" id="node1" title="Try to merge Varnodes of the same type (if they don&#39;t hold different values at the same time)" alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="41,5,104,32"/>
 </map>

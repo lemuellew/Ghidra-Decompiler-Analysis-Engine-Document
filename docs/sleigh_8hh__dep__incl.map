@@ -1,0 +1,10 @@
+<map id="sleigh.hh" name="sleigh.hh">
+<area shape="rect" id="node1" title="Classes and utilities for the main SLEIGH engine." alt="" coords="281,5,362,32"/>
+<area shape="rect" id="node2" href="$sleigh__arch_8hh.html" title="Architecture objects that use a Translate object derived from Sleigh." alt="" coords="191,80,307,107"/>
+<area shape="rect" id="node8" href="$inject__sleigh_8hh_source.html" title=" " alt="" coords="331,80,455,107"/>
+<area shape="rect" id="node3" href="$bfd__arch_8hh.html" title="Specific implementation of Architecture using GNU BFD libraries." alt="" coords="5,155,104,181"/>
+<area shape="rect" id="node4" href="$libdecomp_8hh_source.html" title=" " alt="" coords="129,155,239,181"/>
+<area shape="rect" id="node6" href="$raw__arch_8hh.html" title="Bare bones capability for treating a file as a raw executable image." alt="" coords="264,155,365,181"/>
+<area shape="rect" id="node7" href="$xml__arch_8hh.html" title="Extension to read executables based on an XML format." alt="" coords="390,155,493,181"/>
+<area shape="rect" id="node5" href="$testfunction_8hh.html" title="Framework for decompiler data driven single function tests." alt="" coords="124,229,244,256"/>
+</map>

@@ -1,3 +1,4 @@
 <map id="RuleHumptyOr" name="RuleHumptyOr">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="35,5,85,32"/>
+<area shape="rect" id="node1" title="Simplify masked pieces INT_ORed together: (V &amp; ff00) | (V &amp; 00ff) =&gt; V" alt="" coords="5,80,124,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="39,5,90,32"/>
 </map>

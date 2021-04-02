@@ -1,6 +1,8 @@
 <map id="sleigh_arch.hh" name="sleigh_arch.hh">
-<area shape="rect" id="node2" href="$bfd__arch_8hh.html" title="Specific implementation of Architecture using GNU BFD libraries. " alt="" coords="5,80,96,107"/>
-<area shape="rect" id="node3" href="$libdecomp_8hh_source.html" title="libdecomp.hh" alt="" coords="120,80,219,107"/>
-<area shape="rect" id="node4" href="$raw__arch_8hh.html" title="Bare bones capability for treating a file as a raw executable image. " alt="" coords="243,80,336,107"/>
-<area shape="rect" id="node5" href="$xml__arch_8hh.html" title="Extension to read executables based on an XML format. " alt="" coords="360,80,453,107"/>
+<area shape="rect" id="node1" title="Architecture objects that use a Translate object derived from Sleigh." alt="" coords="191,5,307,32"/>
+<area shape="rect" id="node2" href="$bfd__arch_8hh.html" title="Specific implementation of Architecture using GNU BFD libraries." alt="" coords="5,80,104,107"/>
+<area shape="rect" id="node3" href="$libdecomp_8hh_source.html" title=" " alt="" coords="129,80,239,107"/>
+<area shape="rect" id="node5" href="$raw__arch_8hh.html" title="Bare bones capability for treating a file as a raw executable image." alt="" coords="264,80,365,107"/>
+<area shape="rect" id="node6" href="$xml__arch_8hh.html" title="Extension to read executables based on an XML format." alt="" coords="390,80,493,107"/>
+<area shape="rect" id="node4" href="$testfunction_8hh.html" title="Framework for decompiler data driven single function tests." alt="" coords="124,155,244,181"/>
 </map>

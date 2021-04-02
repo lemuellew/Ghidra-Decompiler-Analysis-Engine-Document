@@ -1,3 +1,4 @@
 <map id="RuleBooleanNegate" name="RuleBooleanNegate">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="50,5,99,32"/>
+<area shape="rect" id="node1" title="Simplify comparisons with boolean values: V == false =&gt; !V, V == true =&gt; V" alt="" coords="5,80,156,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="55,5,106,32"/>
 </map>

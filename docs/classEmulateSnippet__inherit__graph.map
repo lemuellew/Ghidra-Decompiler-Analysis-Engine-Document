@@ -1,3 +1,4 @@
 <map id="EmulateSnippet" name="EmulateSnippet">
-<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface. " alt="" coords="27,5,98,32"/>
+<area shape="rect" id="node1" title="Emulate a snippet of PcodeOps out of a functional context." alt="" coords="5,80,131,107"/>
+<area shape="rect" id="node2" href="$classEmulate.html" title="A pcode&#45;based emulator interface." alt="" coords="30,5,106,32"/>
 </map>

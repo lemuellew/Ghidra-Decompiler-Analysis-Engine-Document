@@ -1,6 +1,18 @@
 <map id="address.hh" name="address.hh">
-<area shape="rect" id="node2" href="$space_8hh.html" title="Classes for describing address spaces. " alt="" coords="327,80,402,107"/>
-<area shape="rect" id="node3" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="466,155,533,181"/>
-<area shape="rect" id="node15" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="246,155,307,181"/>
-<area shape="rect" id="node4" href="$types_8h_source.html" title="types.h" alt="" coords="331,229,396,256"/>
+<area shape="rect" id="node1" title="Classes for specifying addresses and other low&#45;level constants." alt="" coords="340,5,433,32"/>
+<area shape="rect" id="node2" href="$space_8hh.html" title="Classes for describing address spaces." alt="" coords="347,80,427,107"/>
+<area shape="rect" id="node3" href="$error_8hh.html" title="Base class for error handling facilities." alt="" coords="493,155,566,181"/>
+<area shape="rect" id="node15" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler." alt="" coords="260,155,327,181"/>
+<area shape="rect" id="node4" href="$types_8h_source.html" title=" " alt="" coords="349,229,419,256"/>
+<area shape="rect" id="node5" title=" " alt="" coords="541,229,616,256"/>
+<area shape="rect" id="node6" title=" " alt="" coords="443,229,517,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="88,229,163,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="187,229,237,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="640,229,683,256"/>
+<area shape="rect" id="node10" title=" " alt="" coords="707,229,749,256"/>
+<area shape="rect" id="node11" title=" " alt="" coords="262,229,325,256"/>
+<area shape="rect" id="node12" title=" " alt="" coords="773,229,859,256"/>
+<area shape="rect" id="node13" title=" " alt="" coords="883,229,949,256"/>
+<area shape="rect" id="node14" title=" " alt="" coords="974,229,1039,256"/>
+<area shape="rect" id="node16" title=" " alt="" coords="5,229,64,256"/>
 </map>

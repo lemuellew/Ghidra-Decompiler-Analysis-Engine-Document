@@ -1,4 +1,5 @@
 <map id="InjectContext" name="InjectContext">
-<area shape="rect" id="node2" href="$classInjectContextGhidra.html" title="An injection context that can be serialized and sent to the Ghidra client. " alt="" coords="5,80,144,107"/>
-<area shape="rect" id="node3" href="$classInjectContextSleigh.html" title="InjectContextSleigh" alt="" coords="168,80,304,107"/>
+<area shape="rect" id="node1" title="Context needed to emit a p&#45;code injection as a full set of p&#45;code operations." alt="" coords="113,5,223,32"/>
+<area shape="rect" id="node2" href="$classInjectContextGhidra.html" title="An injection context that can be serialized and sent to the Ghidra client." alt="" coords="5,80,157,107"/>
+<area shape="rect" id="node3" href="$classInjectContextSleigh.html" title=" " alt="" coords="181,80,331,107"/>
 </map>

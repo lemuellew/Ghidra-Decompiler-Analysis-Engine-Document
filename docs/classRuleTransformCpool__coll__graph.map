@@ -1,3 +1,4 @@
 <map id="RuleTransformCpool" name="RuleTransformCpool">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="52,5,101,32"/>
+<area shape="rect" id="node1" title="Transform CPOOLREF operations by looking up the value in the constant pool." alt="" coords="5,80,160,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="57,5,108,32"/>
 </map>

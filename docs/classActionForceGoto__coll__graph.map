@@ -1,3 +1,4 @@
 <map id="ActionForceGoto" name="ActionForceGoto">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="36,5,95,32"/>
+<area shape="rect" id="node1" title="Apply any overridden forced gotos." alt="" coords="5,80,135,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="39,5,101,32"/>
 </map>

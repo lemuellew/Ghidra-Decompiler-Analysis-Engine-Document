@@ -1,3 +1,4 @@
 <map id="RuleSubExtComm" name="RuleSubExtComm">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="46,5,95,32"/>
+<area shape="rect" id="node1" title="Commute SUBPIECE and INT_ZEXT: sub(zext(V),c) =&gt; zext(sub(V,c))" alt="" coords="5,80,144,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="49,5,100,32"/>
 </map>

@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPcodeOpBank.html" title="Container class for PcodeOps associated with a single function. " alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node1" href="$classPcodeEmit.html" title="Abstract class for emitting pcode to an application." alt="" coords="5,81,96,108"/>
+<area shape="rect" id="node2" href="$classDisassemblyEngine.html" title=" " alt="" coords="144,5,295,32"/>
+<area shape="rect" id="node3" href="$classPcodeEmitCache.html" title="P&#45;code emitter that dumps its raw Varnodes and PcodeOps to an in memory cache." alt="" coords="154,56,285,83"/>
+<area shape="rect" id="node4" href="$classPcodeEmitFd.html" title="A p&#45;code emitter for building PcodeOp objects." alt="" coords="166,107,273,133"/>
+<area shape="rect" id="node5" href="$classPcodeRawOut.html" title=" " alt="" coords="163,157,275,184"/>
 </map>

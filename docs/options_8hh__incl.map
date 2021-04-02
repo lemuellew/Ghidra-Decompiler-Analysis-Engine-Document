@@ -1,5 +1,17 @@
 <map id="options.hh" name="options.hh">
-<area shape="rect" id="node2" href="$error_8hh.html" title="Base class for error handling facilities. " alt="" coords="466,80,533,107"/>
-<area shape="rect" id="node14" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler. " alt="" coords="246,80,307,107"/>
-<area shape="rect" id="node3" href="$types_8h_source.html" title="types.h" alt="" coords="331,155,396,181"/>
+<area shape="rect" id="node1" title="Classes for processing architecture configuration options." alt="" coords="341,5,432,32"/>
+<area shape="rect" id="node2" href="$error_8hh.html" title="Base class for error handling facilities." alt="" coords="493,80,566,107"/>
+<area shape="rect" id="node14" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler." alt="" coords="260,80,327,107"/>
+<area shape="rect" id="node3" href="$types_8h_source.html" title=" " alt="" coords="349,155,419,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="541,155,616,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="443,155,517,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="88,155,163,181"/>
+<area shape="rect" id="node7" title=" " alt="" coords="187,155,237,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="640,155,683,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="707,155,749,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="262,155,325,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="773,155,859,181"/>
+<area shape="rect" id="node12" title=" " alt="" coords="883,155,949,181"/>
+<area shape="rect" id="node13" title=" " alt="" coords="974,155,1039,181"/>
+<area shape="rect" id="node15" title=" " alt="" coords="5,155,64,181"/>
 </map>

@@ -1,3 +1,4 @@
 <map id="ActionDynamicMapping" name="ActionDynamicMapping">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="56,5,115,32"/>
+<area shape="rect" id="node1" title="Attach dynamically mapped symbols to Varnodes in time for data&#45;type propagation." alt="" coords="5,80,183,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="63,5,125,32"/>
 </map>

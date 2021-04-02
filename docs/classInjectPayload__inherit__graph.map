@@ -1,12 +1,13 @@
 <map id="InjectPayload" name="InjectPayload">
-<area shape="rect" id="node2" href="$classExecutablePcode.html" title="A snippet of p&#45;code that can be executed outside of normal analysis. " alt="" coords="169,56,293,83"/>
-<area shape="rect" id="node5" href="$classInjectPayloadDynamic.html" title="InjectPayloadDynamic" alt="" coords="155,107,308,133"/>
-<area shape="rect" id="node6" href="$classInjectPayloadGhidra.html" title="An injection payload that uses a Ghidra client to generate the p&#45;code ops. " alt="" coords="162,157,301,184"/>
-<area shape="rect" id="node9" href="$classInjectPayloadSleigh.html" title="InjectPayloadSleigh" alt="" coords="163,208,300,235"/>
-<area shape="rect" id="node3" href="$classExecutablePcodeGhidra.html" title="A p&#45;code script that uses a Ghidra client to generate the p&#45;code ops. " alt="" coords="356,5,519,32"/>
-<area shape="rect" id="node4" href="$classExecutablePcodeSleigh.html" title="ExecutablePcodeSleigh" alt="" coords="357,56,517,83"/>
-<area shape="rect" id="node7" href="$classInjectCallfixupGhidra.html" title="A call&#45;fixup injection that uses a Ghidra client to generate the p&#45;code ops. " alt="" coords="366,107,509,133"/>
-<area shape="rect" id="node8" href="$classInjectCallotherGhidra.html" title="A callother&#45;fixup injection that uses a Ghidra client to generate the p&#45;code ops. ..." alt="" coords="365,157,509,184"/>
-<area shape="rect" id="node10" href="$classInjectPayloadCallfixup.html" title="InjectPayloadCallfixup" alt="" coords="361,208,513,235"/>
-<area shape="rect" id="node11" href="$classInjectPayloadCallother.html" title="InjectPayloadCallother" alt="" coords="361,259,514,285"/>
+<area shape="rect" id="node1" title="An active container for a set of p&#45;code operations that can be injected into data&#45;flow." alt="" coords="5,132,116,159"/>
+<area shape="rect" id="node2" href="$classExecutablePcode.html" title="A snippet of p&#45;code that can be executed outside of normal analysis." alt="" coords="181,56,315,83"/>
+<area shape="rect" id="node5" href="$classInjectPayloadDynamic.html" title=" " alt="" coords="164,107,332,133"/>
+<area shape="rect" id="node6" href="$classInjectPayloadGhidra.html" title="An injection payload that uses a Ghidra client to generate the p&#45;code ops." alt="" coords="171,157,325,184"/>
+<area shape="rect" id="node9" href="$classInjectPayloadSleigh.html" title=" " alt="" coords="173,208,323,235"/>
+<area shape="rect" id="node3" href="$classExecutablePcodeGhidra.html" title="A p&#45;code script that uses a Ghidra client to generate the p&#45;code ops." alt="" coords="380,5,556,32"/>
+<area shape="rect" id="node4" href="$classExecutablePcodeSleigh.html" title=" " alt="" coords="381,56,555,83"/>
+<area shape="rect" id="node7" href="$classInjectCallfixupGhidra.html" title="A call&#45;fixup injection that uses a Ghidra client to generate the p&#45;code ops." alt="" coords="389,107,547,133"/>
+<area shape="rect" id="node8" href="$classInjectCallotherGhidra.html" title="A callother&#45;fixup injection that uses a Ghidra client to generate the p&#45;code ops." alt="" coords="388,157,548,184"/>
+<area shape="rect" id="node10" href="$classInjectPayloadCallfixup.html" title=" " alt="" coords="384,208,552,235"/>
+<area shape="rect" id="node11" href="$classInjectPayloadCallother.html" title=" " alt="" coords="383,259,553,285"/>
 </map>

@@ -1,4 +1,5 @@
 <map id="IfaceData" name="IfaceData">
-<area shape="rect" id="node2" href="$classCodeDataAnalysis.html" title="CodeDataAnalysis" alt="" coords="5,80,136,107"/>
-<area shape="rect" id="node3" href="$classIfaceDecompData.html" title="IfaceDecompData" alt="" coords="160,80,288,107"/>
+<area shape="rect" id="node1" title="Data specialized for a particular command module." alt="" coords="115,5,200,32"/>
+<area shape="rect" id="node2" href="$classCodeDataAnalysis.html" title=" " alt="" coords="5,80,147,107"/>
+<area shape="rect" id="node3" href="$classIfaceDecompData.html" title="Common data shared by decompiler commands." alt="" coords="171,80,309,107"/>
 </map>

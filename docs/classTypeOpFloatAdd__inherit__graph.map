@@ -1,4 +1,5 @@
 <map id="TypeOpFloatAdd" name="TypeOpFloatAdd">
-<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output. " alt="" coords="13,80,118,107"/>
-<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code. " alt="" coords="31,5,99,32"/>
+<area shape="rect" id="node1" title="Information about the FLOAT_ADD op&#45;code." alt="" coords="5,155,133,181"/>
+<area shape="rect" id="node2" href="$classTypeOpBinary.html" title="A generic binary operator: two inputs and one output." alt="" coords="13,80,125,107"/>
+<area shape="rect" id="node3" href="$classTypeOp.html" title="Associate data&#45;type and behavior information with a specific p&#45;code op&#45;code." alt="" coords="34,5,105,32"/>
 </map>

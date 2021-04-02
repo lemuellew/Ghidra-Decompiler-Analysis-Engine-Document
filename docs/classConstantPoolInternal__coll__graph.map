@@ -1,3 +1,4 @@
 <map id="ConstantPoolInternal" name="ConstantPoolInternal">
-<area shape="rect" id="node2" href="$classConstantPool.html" title="An interface to the pool of constant objects for byte&#45;code languages. " alt="" coords="27,5,128,32"/>
+<area shape="rect" id="node1" title="An implementation of the ConstantPool interface storing records internally in RAM." alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node2" href="$classConstantPool.html" title="An interface to the pool of constant objects for byte&#45;code languages." alt="" coords="31,5,139,32"/>
 </map>

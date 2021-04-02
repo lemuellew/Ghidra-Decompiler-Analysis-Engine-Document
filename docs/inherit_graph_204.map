@@ -1,3 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classSeqNum.html" title="A class for uniquely labelling and comparing PcodeOps. " alt="" coords="5,5,79,32"/>
+<area shape="rect" id="node1" href="$classScope.html" title="A collection of Symbol objects within a single (namespace or functional) scope." alt="" coords="5,31,67,57"/>
+<area shape="rect" id="node2" href="$classScopeGhidra.html" title="An implementation of the Scope interface by querying a Ghidra client for Symbol information." alt="" coords="118,5,222,32"/>
+<area shape="rect" id="node3" href="$classScopeInternal.html" title="An in&#45;memory implementation of the Scope interface." alt="" coords="115,56,225,83"/>
+<area shape="rect" id="node4" href="$classScopeGhidraNamespace.html" title="A global namespace Scope." alt="" coords="273,31,455,57"/>
+<area shape="rect" id="node5" href="$classScopeLocal.html" title="A Symbol scope for local variables of a particular function." alt="" coords="317,81,411,108"/>
 </map>

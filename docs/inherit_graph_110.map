@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classLaneDescription.html" title="Description of logical lanes within a big Varnode. " alt="" coords="5,5,121,32"/>
+<area shape="rect" id="node1" href="$classJumpModel.html" title="A jump&#45;table execution model." alt="" coords="5,56,100,83"/>
+<area shape="rect" id="node2" href="$classJumpAssisted.html" title="A jump&#45;table model assisted by pseudo&#45;op directives in the code." alt="" coords="160,5,271,32"/>
+<area shape="rect" id="node3" href="$classJumpBasic.html" title="The basic switch model." alt="" coords="170,56,261,83"/>
+<area shape="rect" id="node6" href="$classJumpModelTrivial.html" title="A trivial jump&#45;table model, where the BRANCHIND input Varnode is the switch variable." alt="" coords="148,107,283,133"/>
+<area shape="rect" id="node4" href="$classJumpBasic2.html" title="A basic jump&#45;table model with an added default address path." alt="" coords="355,31,453,57"/>
+<area shape="rect" id="node5" href="$classJumpBasicOverride.html" title="A basic jump&#45;table model incorporating manual override information." alt="" coords="331,81,477,108"/>
 </map>

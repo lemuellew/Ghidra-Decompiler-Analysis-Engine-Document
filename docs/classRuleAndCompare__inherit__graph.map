@@ -1,3 +1,4 @@
 <map id="RuleAndCompare" name="RuleAndCompare">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="43,5,93,32"/>
+<area shape="rect" id="node1" title="Simplify INT_ZEXT and SUBPIECE in masked comparison: zext(V) &amp; c == 0 =&gt; V &amp; (c &amp; mask) == 0" alt="" coords="5,80,140,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="47,5,98,32"/>
 </map>

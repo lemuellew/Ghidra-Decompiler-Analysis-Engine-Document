@@ -1,3 +1,4 @@
 <map id="RuleDivOpt" name="RuleDivOpt">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="26,5,75,32"/>
+<area shape="rect" id="node1" title="Convert INT_MULT and shift forms into INT_DIV or INT_SDIV." alt="" coords="5,80,101,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="28,5,79,32"/>
 </map>

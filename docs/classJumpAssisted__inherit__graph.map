@@ -1,3 +1,4 @@
 <map id="JumpAssisted" name="JumpAssisted">
-<area shape="rect" id="node2" href="$classJumpModel.html" title="A jump&#45;table execution model. " alt="" coords="13,5,103,32"/>
+<area shape="rect" id="node1" title="A jump&#45;table model assisted by pseudo&#45;op directives in the code." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node2" href="$classJumpModel.html" title="A jump&#45;table execution model." alt="" coords="13,5,108,32"/>
 </map>

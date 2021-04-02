@@ -1,3 +1,4 @@
 <map id="ActionInputPrototype" name="ActionInputPrototype">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="48,5,107,32"/>
+<area shape="rect" id="node1" title="Calculate the prototype for the function." alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="53,5,116,32"/>
 </map>

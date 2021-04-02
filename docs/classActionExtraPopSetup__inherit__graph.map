@@ -1,3 +1,4 @@
 <map id="ActionExtraPopSetup" name="ActionExtraPopSetup">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="49,5,108,32"/>
+<area shape="rect" id="node1" title="Define formal link between stack&#45;pointer values before and after sub&#45;function calls." alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="53,5,116,32"/>
 </map>

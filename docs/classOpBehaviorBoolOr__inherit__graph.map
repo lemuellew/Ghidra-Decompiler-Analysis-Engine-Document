@@ -1,3 +1,4 @@
 <map id="OpBehaviorBoolOr" name="OpBehaviorBoolOr">
-<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="25,5,116,32"/>
+<area shape="rect" id="node1" title="CPUI_BOOL_OR behavior." alt="" coords="5,80,148,107"/>
+<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes." alt="" coords="27,5,126,32"/>
 </map>

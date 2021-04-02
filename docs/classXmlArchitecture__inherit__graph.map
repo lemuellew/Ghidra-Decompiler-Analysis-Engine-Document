@@ -1,5 +1,6 @@
 <map id="XmlArchitecture" name="XmlArchitecture">
-<area shape="rect" id="node2" href="$classSleighArchitecture.html" title="An Architecture that uses the decompiler&#39;s native SLEIGH translation engine. " alt="" coords="9,155,137,181"/>
-<area shape="rect" id="node3" href="$classArchitecture.html" title="Manager for all the major decompiler subsystems. " alt="" coords="27,80,119,107"/>
-<area shape="rect" id="node4" href="$classAddrSpaceManager.html" title="A manager for different address spaces. " alt="" coords="5,5,141,32"/>
+<area shape="rect" id="node1" title="An Architecture that loads executables using an XML format." alt="" coords="16,229,143,256"/>
+<area shape="rect" id="node2" href="$classSleighArchitecture.html" title="An Architecture that uses the decompiler&#39;s native SLEIGH translation engine." alt="" coords="9,155,150,181"/>
+<area shape="rect" id="node3" href="$classArchitecture.html" title="Manager for all the major decompiler subsystems." alt="" coords="29,80,130,107"/>
+<area shape="rect" id="node4" href="$classAddrSpaceManager.html" title="A manager for different address spaces." alt="" coords="5,5,153,32"/>
 </map>

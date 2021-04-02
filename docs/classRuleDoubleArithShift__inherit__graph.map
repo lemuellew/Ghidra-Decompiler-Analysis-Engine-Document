@@ -1,3 +1,4 @@
 <map id="RuleDoubleArithShift" name="RuleDoubleArithShift">
-<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode. " alt="" coords="53,5,102,32"/>
+<area shape="rect" id="node1" title="Simplify two sequential INT_SRIGHT: (x s&gt;&gt; #c) s&gt;&gt; #d =&gt; x s&gt;&gt; saturate(#c + #d)" alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node2" href="$classRule.html" title="Class for performing a single transformation on a PcodeOp or Varnode." alt="" coords="59,5,110,32"/>
 </map>

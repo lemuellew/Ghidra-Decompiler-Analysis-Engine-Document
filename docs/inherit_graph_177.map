@@ -1,5 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPrintLanguage.html" title="The base class API for emitting a high&#45;level language. " alt="" coords="5,5,111,32"/>
-<area shape="rect" id="node2" href="$classPrintC.html" title="The c&#45;language token emitter. " alt="" coords="159,5,217,32"/>
-<area shape="rect" id="node3" href="$classPrintJava.html" title="The java&#45;language token emitter. " alt="" coords="265,5,343,32"/>
+<area shape="rect" id="node1" href="$structPcodeOpNode.html" title="An edge in a data&#45;flow path or graph." alt="" coords="5,5,119,32"/>
 </map>

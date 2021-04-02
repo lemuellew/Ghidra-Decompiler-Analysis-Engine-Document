@@ -1,3 +1,4 @@
 <map id="ActionSetCasts" name="ActionSetCasts">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="33,5,92,32"/>
+<area shape="rect" id="node1" title="Fill&#45;in CPUI_CAST p&#45;code ops as required by the casting strategy." alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="34,5,97,32"/>
 </map>

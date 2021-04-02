@@ -1,3 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classSymbolEntry.html" title="A storage location for a particular Symbol. " alt="" coords="5,5,103,32"/>
+<area shape="rect" id="node1" href="$classStringManager.html" title="Storage for decoding and storing strings associated with an address." alt="" coords="5,31,123,57"/>
+<area shape="rect" id="node2" href="$classGhidraStringManager.html" title="Implementation of the StringManager that queries through the ghidra client." alt="" coords="176,5,336,32"/>
+<area shape="rect" id="node3" href="$classStringManagerUnicode.html" title="An implementation of StringManager that understands terminated unicode strings." alt="" coords="171,56,341,83"/>
 </map>

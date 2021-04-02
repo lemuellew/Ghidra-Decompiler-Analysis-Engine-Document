@@ -1,3 +1,4 @@
 <map id="RawLoadImage" name="RawLoadImage">
-<area shape="rect" id="node2" href="$classLoadImage.html" title="An interface into a particular binary executable image. " alt="" coords="19,5,105,32"/>
+<area shape="rect" id="node1" title="A simple raw binary loadimage." alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node2" href="$classLoadImage.html" title="An interface into a particular binary executable image." alt="" coords="19,5,114,32"/>
 </map>

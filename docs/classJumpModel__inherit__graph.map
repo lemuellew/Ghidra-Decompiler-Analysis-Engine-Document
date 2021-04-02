@@ -1,7 +1,8 @@
 <map id="JumpModel" name="JumpModel">
-<area shape="rect" id="node2" href="$classJumpAssisted.html" title="A jump&#45;table model assisted by pseudo&#45;op directives in the code. " alt="" coords="5,80,111,107"/>
-<area shape="rect" id="node3" href="$classJumpBasic.html" title="The basic switch model. " alt="" coords="135,80,221,107"/>
-<area shape="rect" id="node6" href="$classJumpModelTrivial.html" title="A trivial jump&#45;table model, where the BRANCHIND input Varnode is the switch variable. " alt="" coords="245,80,369,107"/>
-<area shape="rect" id="node4" href="$classJumpBasic2.html" title="A basic jump&#45;table model with an added default address path. " alt="" coords="60,155,155,181"/>
-<area shape="rect" id="node5" href="$classJumpBasicOverride.html" title="A basic jump&#45;table model incorporating manual override information. " alt="" coords="179,155,315,181"/>
+<area shape="rect" id="node1" title="A jump&#45;table execution model." alt="" coords="139,5,233,32"/>
+<area shape="rect" id="node2" href="$classJumpAssisted.html" title="A jump&#45;table model assisted by pseudo&#45;op directives in the code." alt="" coords="5,80,116,107"/>
+<area shape="rect" id="node3" href="$classJumpBasic.html" title="The basic switch model." alt="" coords="141,80,231,107"/>
+<area shape="rect" id="node6" href="$classJumpModelTrivial.html" title="A trivial jump&#45;table model, where the BRANCHIND input Varnode is the switch variable." alt="" coords="256,80,391,107"/>
+<area shape="rect" id="node4" href="$classJumpBasic2.html" title="A basic jump&#45;table model with an added default address path." alt="" coords="63,155,162,181"/>
+<area shape="rect" id="node5" href="$classJumpBasicOverride.html" title="A basic jump&#45;table model incorporating manual override information." alt="" coords="186,155,333,181"/>
 </map>

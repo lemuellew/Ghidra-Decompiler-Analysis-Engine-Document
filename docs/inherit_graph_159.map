@@ -1,8 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classPattern.html" title="Pattern" alt="" coords="5,81,69,108"/>
-<area shape="rect" id="node2" href="$classDisjointPattern.html" title="DisjointPattern" alt="" coords="117,56,225,83"/>
-<area shape="rect" id="node6" href="$classOrPattern.html" title="OrPattern" alt="" coords="132,107,211,133"/>
-<area shape="rect" id="node3" href="$classCombinePattern.html" title="CombinePattern" alt="" coords="278,5,394,32"/>
-<area shape="rect" id="node4" href="$classContextPattern.html" title="ContextPattern" alt="" coords="281,56,391,83"/>
-<area shape="rect" id="node5" href="$classInstructionPattern.html" title="InstructionPattern" alt="" coords="273,107,399,133"/>
+<area shape="rect" id="node1" href="$classpartmap.html" title=" " alt="" coords="5,5,236,32"/>
 </map>

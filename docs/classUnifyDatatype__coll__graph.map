@@ -1,8 +1,9 @@
 <map id="UnifyDatatype" name="UnifyDatatype">
-<area shape="rect" id="node2" href="$classVarnode.html" title="A low&#45;level variable or contiguous set of bytes described by an Address and a size. " alt="" coords="105,95,175,121"/>
-<area shape="rect" id="node3" href="$classValueSet.html" title="A range of values attached to a Varnode within a data&#45;flow subsystem. " alt="" coords="5,5,80,32"/>
-<area shape="rect" id="node4" href="$classDatatype.html" title="The base datatype class for the decompiler. " alt="" coords="104,5,179,32"/>
-<area shape="rect" id="node5" href="$classBlockBasic.html" title="A basic block for p&#45;code operations. " alt="" coords="200,95,288,121"/>
-<area shape="rect" id="node6" href="$classFlowBlock.html" title="Description of a control&#45;flow block containing PcodeOps. " alt="" coords="203,5,285,32"/>
-<area shape="rect" id="node7" href="$classPcodeOp.html" title="Lowest level operation of the p&#45;code language. " alt="" coords="313,95,389,121"/>
+<area shape="rect" id="node1" title=" " alt="" coords="201,184,319,211"/>
+<area shape="rect" id="node2" href="$classVarnode.html" title="A low&#45;level variable or contiguous set of bytes described by an Address and a size." alt="" coords="113,95,189,121"/>
+<area shape="rect" id="node3" href="$classValueSet.html" title="A range of values attached to a Varnode within a data&#45;flow subsystem." alt="" coords="5,5,85,32"/>
+<area shape="rect" id="node4" href="$classDatatype.html" title="The base datatype class for the decompiler." alt="" coords="109,5,192,32"/>
+<area shape="rect" id="node5" href="$classBlockBasic.html" title="A basic block for p&#45;code operations." alt="" coords="213,95,307,121"/>
+<area shape="rect" id="node6" href="$classFlowBlock.html" title="Description of a control&#45;flow block containing PcodeOps." alt="" coords="217,5,306,32"/>
+<area shape="rect" id="node7" href="$classPcodeOp.html" title="Lowest level operation of the p&#45;code language." alt="" coords="331,95,410,121"/>
 </map>

@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classMultForm.html" title="MultForm" alt="" coords="5,5,83,32"/>
+<area shape="rect" id="node1" href="$classMemoryBank.html" title="Memory storage/state for a single AddressSpace." alt="" coords="5,56,115,83"/>
+<area shape="rect" id="node2" href="$classMemoryHashOverlay.html" title="A memory bank that implements reads and writes using a hash table." alt="" coords="163,5,323,32"/>
+<area shape="rect" id="node3" href="$classMemoryImage.html" title="A kind of MemoryBank which retrieves its data from an underlying LoadImage." alt="" coords="184,56,301,83"/>
+<area shape="rect" id="node4" href="$classMemoryPageOverlay.html" title="Memory bank that overlays some other memory bank, using a &quot;copy on write&quot; behavior." alt="" coords="163,107,322,133"/>
 </map>

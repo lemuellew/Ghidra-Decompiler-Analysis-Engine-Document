@@ -1,3 +1,4 @@
 <map id="OpBehaviorIntLessEqual" name="OpBehaviorIntLessEqual">
-<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes. " alt="" coords="43,5,134,32"/>
+<area shape="rect" id="node1" title="CPUI_INT_LESSEQUAL behavior." alt="" coords="5,80,185,107"/>
+<area shape="rect" id="node2" href="$classOpBehavior.html" title="Class encapsulating the action/behavior of specific pcode opcodes." alt="" coords="46,5,145,32"/>
 </map>

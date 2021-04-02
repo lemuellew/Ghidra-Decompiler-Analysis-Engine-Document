@@ -1,3 +1,4 @@
 <map id="ActionMultiCse" name="ActionMultiCse">
-<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph. " alt="" coords="31,5,90,32"/>
+<area shape="rect" id="node1" title="Perform Common Sub&#45;expression Elimination on CPUI_MULTIEQUAL ops." alt="" coords="5,80,125,107"/>
+<area shape="rect" id="node2" href="$classAction.html" title="Large scale transformations applied to the varnode/op graph." alt="" coords="34,5,97,32"/>
 </map>

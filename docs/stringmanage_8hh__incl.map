@@ -1,0 +1,20 @@
+<map id="stringmanage.hh" name="stringmanage.hh">
+<area shape="rect" id="node1" title="Classes for decoding and storing string data." alt="" coords="321,5,453,32"/>
+<area shape="rect" id="node2" href="$type_8hh.html" title="Classes for describing and printing data&#45;types." alt="" coords="351,80,422,107"/>
+<area shape="rect" id="node3" href="$address_8hh.html" title="Classes for specifying addresses and other low&#45;level constants." alt="" coords="340,155,433,181"/>
+<area shape="rect" id="node4" href="$space_8hh.html" title="Classes for describing address spaces." alt="" coords="347,229,427,256"/>
+<area shape="rect" id="node5" href="$error_8hh.html" title="Base class for error handling facilities." alt="" coords="493,304,566,331"/>
+<area shape="rect" id="node17" href="$xml_8hh.html" title="Lightweight (and incomplete) XML parser for marshaling data to and from the decompiler." alt="" coords="260,304,327,331"/>
+<area shape="rect" id="node6" href="$types_8h_source.html" title=" " alt="" coords="349,379,419,405"/>
+<area shape="rect" id="node7" title=" " alt="" coords="541,379,616,405"/>
+<area shape="rect" id="node8" title=" " alt="" coords="443,379,517,405"/>
+<area shape="rect" id="node9" title=" " alt="" coords="88,379,163,405"/>
+<area shape="rect" id="node10" title=" " alt="" coords="187,379,237,405"/>
+<area shape="rect" id="node11" title=" " alt="" coords="640,379,683,405"/>
+<area shape="rect" id="node12" title=" " alt="" coords="707,379,749,405"/>
+<area shape="rect" id="node13" title=" " alt="" coords="262,379,325,405"/>
+<area shape="rect" id="node14" title=" " alt="" coords="773,379,859,405"/>
+<area shape="rect" id="node15" title=" " alt="" coords="883,379,949,405"/>
+<area shape="rect" id="node16" title=" " alt="" coords="974,379,1039,405"/>
+<area shape="rect" id="node18" title=" " alt="" coords="5,379,64,405"/>
+</map>
