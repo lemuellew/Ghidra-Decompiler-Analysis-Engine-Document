@@ -1,0 +1,110 @@
+\hypertarget{classProtoModelMerged}{}\doxysection{Proto\+Model\+Merged Class Reference}
+\label{classProtoModelMerged}\index{ProtoModelMerged@{ProtoModelMerged}}
+
+
+A prototype model made by merging together other models.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Proto\+Model\+Merged\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classProtoModelMerged__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Proto\+Model\+Merged\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classProtoModelMerged__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classProtoModelMerged_a735f43c1161758dcb6e8e2caf6e1c51c}{fold\+In}} (\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$model)
+\begin{DoxyCompactList}\small\item\em Fold-\/in an additional prototype model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$ \mbox{\hyperlink{classProtoModelMerged_a3679cbe7a72e251e72d9b7140c0fac40}{select\+Model}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Select the best model given a set of trials. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoModelMerged_aea3dceb1497499800015607bbfd2d863}\label{classProtoModelMerged_aea3dceb1497499800015607bbfd2d863}} 
+virtual bool {\bfseries is\+Merged} (void) const
+\item 
+virtual void \mbox{\hyperlink{classProtoModelMerged_a1c80c617c086b0edacb483f8315d12e9}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} model from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A prototype model made by merging together other models. 
+
+This model serves as a placeholder for multiple models, when the exact model hasn\textquotesingle{}t been immediately determined. At the time of active parameter recovery the correct model is selected for the given set of trials from among the constituent prototype models used to build {\bfseries{this}}, by calling the method \mbox{\hyperlink{classProtoModelMerged_a3679cbe7a72e251e72d9b7140c0fac40}{select\+Model()}}. Up to this time, {\bfseries{this}} serves as a merged form of the models so that all potential parameter trials will be included in the analysis. The parameter recovery for the output part of the model is currently limited, so the constituent models must all share the same output model, and this part is {\itshape not} currently merged. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProtoModelMerged_a735f43c1161758dcb6e8e2caf6e1c51c}\label{classProtoModelMerged_a735f43c1161758dcb6e8e2caf6e1c51c}} 
+\index{ProtoModelMerged@{ProtoModelMerged}!foldIn@{foldIn}}
+\index{foldIn@{foldIn}!ProtoModelMerged@{ProtoModelMerged}}
+\doxysubsubsection{\texorpdfstring{foldIn()}{foldIn()}}
+{\footnotesize\ttfamily void Proto\+Model\+Merged\+::fold\+In (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{model }\end{DoxyParamCaption})}
+
+
+
+Fold-\/in an additional prototype model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & is the new prototype model to add to the merge \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classProtoModelMerged_a1c80c617c086b0edacb483f8315d12e9}\label{classProtoModelMerged_a1c80c617c086b0edacb483f8315d12e9}} 
+\index{ProtoModelMerged@{ProtoModelMerged}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ProtoModelMerged@{ProtoModelMerged}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Proto\+Model\+Merged\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} model from an X\+ML stream. 
+
+Read in details about {\bfseries{this}} model from a $<$prototype$>$ tag 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the $<$prototype$>$ element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classProtoModel_a8fe30abbc7fe1c709b1b8fe9c81803b8}{Proto\+Model}}.
+
+\mbox{\Hypertarget{classProtoModelMerged_a3679cbe7a72e251e72d9b7140c0fac40}\label{classProtoModelMerged_a3679cbe7a72e251e72d9b7140c0fac40}} 
+\index{ProtoModelMerged@{ProtoModelMerged}!selectModel@{selectModel}}
+\index{selectModel@{selectModel}!ProtoModelMerged@{ProtoModelMerged}}
+\doxysubsubsection{\texorpdfstring{selectModel()}{selectModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$ Proto\+Model\+Merged\+::select\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const}
+
+
+
+Select the best model given a set of trials. 
+
+The model that best matches the given set of input parameter trials is returned. This method currently uses the \mbox{\hyperlink{classScoreProtoModel}{Score\+Proto\+Model}} object to score the different prototype models. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the set of parameter trials \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the prototype model that scores the best 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

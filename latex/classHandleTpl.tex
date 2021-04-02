@@ -1,0 +1,62 @@
+\hypertarget{classHandleTpl}{}\doxysection{Handle\+Tpl Class Reference}
+\label{classHandleTpl}\index{HandleTpl@{HandleTpl}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHandleTpl_aa0f4a174aa7a805d729d14de077f6e8c}\label{classHandleTpl_aa0f4a174aa7a805d729d14de077f6e8c}} 
+{\bfseries Handle\+Tpl} (const \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vn)
+\item 
+\mbox{\Hypertarget{classHandleTpl_a3a807fd582c34e36e82d2183f596929c}\label{classHandleTpl_a3a807fd582c34e36e82d2183f596929c}} 
+{\bfseries Handle\+Tpl} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&spc, const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&sz, const \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vn, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$t\+\_\+space, uintb t\+\_\+offset)
+\item 
+\mbox{\Hypertarget{classHandleTpl_a5f4ad63ff134b7f4ccd5e0a850a4b54d}\label{classHandleTpl_a5f4ad63ff134b7f4ccd5e0a850a4b54d}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_aff10fb854af932febb9d02f585e0f2ad}\label{classHandleTpl_aff10fb854af932febb9d02f585e0f2ad}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Ptr\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_abdf430c75dc094764836095bd4bc4a8c}\label{classHandleTpl_abdf430c75dc094764836095bd4bc4a8c}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Ptr\+Offset} (void) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_a6c6b9afa686c7e8d76a0b2fc8292db6c}\label{classHandleTpl_a6c6b9afa686c7e8d76a0b2fc8292db6c}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Ptr\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_a3c7ffa1d4d9449f2be7b742c66cc3773}\label{classHandleTpl_a3c7ffa1d4d9449f2be7b742c66cc3773}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_a948f2f911e4564fa3f6ef99c335d179d}\label{classHandleTpl_a948f2f911e4564fa3f6ef99c335d179d}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Temp\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_affc924ba1240b7dcd0df72398e34d85d}\label{classHandleTpl_affc924ba1240b7dcd0df72398e34d85d}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Temp\+Offset} (void) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_af6e14547c5db9f9ca16f86756e020a1d}\label{classHandleTpl_af6e14547c5db9f9ca16f86756e020a1d}} 
+void {\bfseries set\+Size} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&sz)
+\item 
+\mbox{\Hypertarget{classHandleTpl_a81fee0c1a82ff4abc4735f7dc8f22e0a}\label{classHandleTpl_a81fee0c1a82ff4abc4735f7dc8f22e0a}} 
+void {\bfseries set\+Ptr\+Size} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&sz)
+\item 
+\mbox{\Hypertarget{classHandleTpl_a6771a49d39c41a4ca2e1eabba1a1b28a}\label{classHandleTpl_a6771a49d39c41a4ca2e1eabba1a1b28a}} 
+void {\bfseries set\+Ptr\+Offset} (uintb val)
+\item 
+\mbox{\Hypertarget{classHandleTpl_abfcb8475255773b9fec8a682aa1b85e0}\label{classHandleTpl_abfcb8475255773b9fec8a682aa1b85e0}} 
+void {\bfseries set\+Temp\+Offset} (uintb val)
+\item 
+\mbox{\Hypertarget{classHandleTpl_ad63a0ce0388c46af005d036efc20758f}\label{classHandleTpl_ad63a0ce0388c46af005d036efc20758f}} 
+void {\bfseries fix} (\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \&hand, const \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_acb53d25d53479eff5c054f16a023c2b2}\label{classHandleTpl_acb53d25d53479eff5c054f16a023c2b2}} 
+void {\bfseries change\+Handle\+Index} (const vector$<$ int4 $>$ \&handmap)
+\item 
+\mbox{\Hypertarget{classHandleTpl_aee0b4e635198cb82374e925c6b7c9475}\label{classHandleTpl_aee0b4e635198cb82374e925c6b7c9475}} 
+void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classHandleTpl_a6dbad0fa7a1f102c7cc70763932c9b67}\label{classHandleTpl_a6dbad0fa7a1f102c7cc70763932c9b67}} 
+void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+semantics.\+hh\item 
+semantics.\+cc\end{DoxyCompactItemize}

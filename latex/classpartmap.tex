@@ -1,0 +1,171 @@
+\hypertarget{classpartmap}{}\doxysection{partmap$<$ \+\_\+linetype, \+\_\+valuetype $>$ Class Template Reference}
+\label{classpartmap}\index{partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}}
+
+
+A map from a linear space to value objects.  
+
+
+
+
+{\ttfamily \#include $<$partmap.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classpartmap_abdafeca5ddc449596a7d188791b4702f}\label{classpartmap_abdafeca5ddc449596a7d188791b4702f}} 
+typedef std\+::map$<$ \+\_\+linetype, \+\_\+valuetype $>$ \mbox{\hyperlink{classpartmap_abdafeca5ddc449596a7d188791b4702f}{maptype}}
+\begin{DoxyCompactList}\small\item\em Defining the map from split points to value objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpartmap_a795a7501233dbf866b98a51585552d06}\label{classpartmap_a795a7501233dbf866b98a51585552d06}} 
+typedef maptype\+::iterator \mbox{\hyperlink{classpartmap_a795a7501233dbf866b98a51585552d06}{iterator}}
+\begin{DoxyCompactList}\small\item\em A partmap iterator is an iterator into the map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classpartmap_a01c7ea382b2a493dbd4a4431a2c39520}\label{classpartmap_a01c7ea382b2a493dbd4a4431a2c39520}} 
+typedef maptype\+::const\+\_\+iterator \mbox{\hyperlink{classpartmap_a01c7ea382b2a493dbd4a4431a2c39520}{const\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em A constant iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+valuetype \& \mbox{\hyperlink{classpartmap_af5e8ac68250b9e90bef2481df65bdeb3}{get\+Value}} (const \+\_\+linetype \&pnt)
+\begin{DoxyCompactList}\small\item\em Get the value object at a point. \end{DoxyCompactList}\item 
+const \+\_\+valuetype \& \mbox{\hyperlink{classpartmap_a2bb428c33ce4c264eafe568c17e9096c}{get\+Value}} (const \+\_\+linetype \&pnt) const
+\begin{DoxyCompactList}\small\item\em Get the value object at a point. \end{DoxyCompactList}\item 
+const \+\_\+valuetype \& \mbox{\hyperlink{classpartmap_ac0e5535fb352dd1bd1d85971cdac1d9f}{bounds}} (const \+\_\+linetype \&pnt, \+\_\+linetype \&before, \+\_\+linetype \&after, int \&valid) const
+\begin{DoxyCompactList}\small\item\em Get the value object for a given point and return the range over which the value object applies. \end{DoxyCompactList}\item 
+\+\_\+valuetype \& \mbox{\hyperlink{classpartmap_addca2efbfee018ee367de754e7772305}{split}} (const \+\_\+linetype \&pnt)
+\begin{DoxyCompactList}\small\item\em Introduce a new split point. \end{DoxyCompactList}\item 
+\+\_\+valuetype \& \mbox{\hyperlink{classpartmap_a3b1d7eb7e874b0f11ea3a578de6d0263}{clear\+Range}} (const \+\_\+linetype \&pnt1, const \+\_\+linetype \&pnt2)
+\begin{DoxyCompactList}\small\item\em Clear a range of split points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+linetype, typename \+\_\+valuetype$>$\newline
+class partmap$<$ \+\_\+linetype, \+\_\+valuetype $>$}
+
+A map from a linear space to value objects. 
+
+The partmap is a template class taking\+:
+\begin{DoxyItemize}
+\item \+\_\+linetype which represents an element in the linear space
+\item \+\_\+valuetype which are the objects that linear space maps to
+\end{DoxyItemize}
+
+Let R be the linear space with an ordering, and let \{ a\+\_\+i \} be a finite set of points in R. The a\+\_\+i partition R into a finite number of disjoint sets \{ x \+: x $<$ a\+\_\+0 \}, \{ x \+: x$>$=a\+\_\+0 \&\& x $<$ a\+\_\+1 \}, ... \{ x \+: x$>$=a\+\_\+i \&\& x $<$ a\+\_\+i+1 \}, ... \{ x \+: x$>$=a\+\_\+n \}
+
+A partmap maps elements of this partition to \+\_\+valuetype objects A \+\_\+valuetype is then associated with any element x in R by looking up the value associated with the partition element containing x.
+
+The map is defined by starting with a {\itshape default} value object that applies to the whole linear space. Then {\itshape split} points are introduced, one at a time, in the linear space. At each split point, the associated value object is split into two objects. At any point the value object describing some part of the linear space can be changed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classpartmap_ac0e5535fb352dd1bd1d85971cdac1d9f}\label{classpartmap_ac0e5535fb352dd1bd1d85971cdac1d9f}} 
+\index{partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}!bounds@{bounds}}
+\index{bounds@{bounds}!partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}}
+\doxysubsubsection{\texorpdfstring{bounds()}{bounds()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+linetype , typename \+\_\+valuetype $>$ \\
+const \+\_\+valuetype \& \mbox{\hyperlink{classpartmap}{partmap}}$<$ \+\_\+linetype, \+\_\+valuetype $>$\+::bounds (\begin{DoxyParamCaption}\item[{const \+\_\+linetype \&}]{pnt,  }\item[{\+\_\+linetype \&}]{before,  }\item[{\+\_\+linetype \&}]{after,  }\item[{int \&}]{valid }\end{DoxyParamCaption}) const}
+
+
+
+Get the value object for a given point and return the range over which the value object applies. 
+
+Pass back a {\bfseries{before}} and {\bfseries{after}} point defining the maximal range over which the value applies. An additional validity code is passed back describing which of the bounding points apply\+:
+\begin{DoxyItemize}
+\item 0 if both bounds apply
+\item 1 if there is no lower bound
+\item 2 if there is no upper bound,
+\item 3 if there is neither a lower or upper bound 
+\begin{DoxyParams}{Parameters}
+{\em pnt} & is the given point around which to compute the range \\
+\hline
+{\em before} & is a reference to the passed back lower bound \\
+\hline
+{\em after} & is a reference to the passed back upper bound \\
+\hline
+{\em valid} & is a reference to the passed back validity code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding value object 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classpartmap_a3b1d7eb7e874b0f11ea3a578de6d0263}\label{classpartmap_a3b1d7eb7e874b0f11ea3a578de6d0263}} 
+\index{partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}!clearRange@{clearRange}}
+\index{clearRange@{clearRange}!partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}}
+\doxysubsubsection{\texorpdfstring{clearRange()}{clearRange()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+linetype , typename \+\_\+valuetype $>$ \\
+\+\_\+valuetype \& \mbox{\hyperlink{classpartmap}{partmap}}$<$ \+\_\+linetype, \+\_\+valuetype $>$\+::clear\+Range (\begin{DoxyParamCaption}\item[{const \+\_\+linetype \&}]{pnt1,  }\item[{const \+\_\+linetype \&}]{pnt2 }\end{DoxyParamCaption})}
+
+
+
+Clear a range of split points. 
+
+Split points are introduced at the two boundary points of the given range, and all split points in between are removed. The value object that was initially present at the left-\/most boundary point becomes the value (as a copy) for the whole range. 
+\begin{DoxyParams}{Parameters}
+{\em pnt1} & is the left-\/most boundary point of the range \\
+\hline
+{\em pnt2} & is the right-\/most boundary point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value object assigned to the range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpartmap_af5e8ac68250b9e90bef2481df65bdeb3}\label{classpartmap_af5e8ac68250b9e90bef2481df65bdeb3}} 
+\index{partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+linetype , typename \+\_\+valuetype $>$ \\
+\+\_\+valuetype \& \mbox{\hyperlink{classpartmap}{partmap}}$<$ \+\_\+linetype, \+\_\+valuetype $>$\+::get\+Value (\begin{DoxyParamCaption}\item[{const \+\_\+linetype \&}]{pnt }\end{DoxyParamCaption})}
+
+
+
+Get the value object at a point. 
+
+Look up the first split point coming before the given point and return the value object it maps to. If there is no earlier split point return the default value. 
+\begin{DoxyParams}{Parameters}
+{\em pnt} & is the given point in the linear space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding value object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpartmap_a2bb428c33ce4c264eafe568c17e9096c}\label{classpartmap_a2bb428c33ce4c264eafe568c17e9096c}} 
+\index{partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+linetype , typename \+\_\+valuetype $>$ \\
+const \+\_\+valuetype \& \mbox{\hyperlink{classpartmap}{partmap}}$<$ \+\_\+linetype, \+\_\+valuetype $>$\+::get\+Value (\begin{DoxyParamCaption}\item[{const \+\_\+linetype \&}]{pnt }\end{DoxyParamCaption}) const}
+
+
+
+Get the value object at a point. 
+
+Look up the first split point coming before the given point and return the value object it maps to. If there is no earlier split point return the default value. 
+\begin{DoxyParams}{Parameters}
+{\em pnt} & is the given point in the linear space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding value object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classpartmap_addca2efbfee018ee367de754e7772305}\label{classpartmap_addca2efbfee018ee367de754e7772305}} 
+\index{partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}!split@{split}}
+\index{split@{split}!partmap$<$ \_linetype, \_valuetype $>$@{partmap$<$ \_linetype, \_valuetype $>$}}
+\doxysubsubsection{\texorpdfstring{split()}{split()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+linetype , typename \+\_\+valuetype $>$ \\
+\+\_\+valuetype \& \mbox{\hyperlink{classpartmap}{partmap}}$<$ \+\_\+linetype, \+\_\+valuetype $>$\+::split (\begin{DoxyParamCaption}\item[{const \+\_\+linetype \&}]{pnt }\end{DoxyParamCaption})}
+
+
+
+Introduce a new split point. 
+
+Add (if not already present) a point to the linear partition. 
+\begin{DoxyParams}{Parameters}
+{\em pnt} & is the (new) point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (possibly) new value object for the range starting at the point 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{partmap_8hh}{partmap.\+hh}}\end{DoxyCompactItemize}

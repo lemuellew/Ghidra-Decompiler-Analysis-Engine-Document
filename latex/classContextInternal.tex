@@ -1,0 +1,281 @@
+\hypertarget{classContextInternal}{}\doxysection{Context\+Internal Class Reference}
+\label{classContextInternal}\index{ContextInternal@{ContextInternal}}
+
+
+An in-\/memory implementation of the \mbox{\hyperlink{classContextDatabase}{Context\+Database}} interface.  
+
+
+
+
+{\ttfamily \#include $<$globalcontext.\+hh$>$}
+
+
+
+Inheritance diagram for Context\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classContextInternal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Context\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classContextInternal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int4 \mbox{\hyperlink{classContextInternal_ace67dca0cb2ecdc012cabcfd571a43d8}{get\+Context\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Retrieve the number of words (uintm) in a context {\itshape blob}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextInternal_ad4674e15208ed415b717d058edc1a140}{register\+Variable}} (const string \&nm, int4 sbit, int4 ebit)
+\begin{DoxyCompactList}\small\item\em Register a new named context variable (as a bit range) with the database. \end{DoxyCompactList}\item 
+virtual const uintm $\ast$ \mbox{\hyperlink{classContextInternal_a817dcba491a21368cfa81b522ff21b39}{get\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Get the context blob of values associated with a given address. \end{DoxyCompactList}\item 
+virtual const uintm $\ast$ \mbox{\hyperlink{classContextInternal_a8b1a3c3cee5fdfe657c114a8ce341e5c}{get\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, uintb \&first, uintb \&last) const
+\begin{DoxyCompactList}\small\item\em Get the context blob of values associated with a given address and its bounding offsets. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \& \mbox{\hyperlink{classContextInternal_a38f6d0158f108dd29132250b1cb234b1}{get\+Tracked\+Default}} (void)
+\begin{DoxyCompactList}\small\item\em Get the set of default values for all tracked registers. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \& \mbox{\hyperlink{classContextInternal_a0953f0bba2a187d4cd001463c9f667ab}{get\+Tracked\+Set}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Get the set of tracked register values associated with the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \& \mbox{\hyperlink{classContextInternal_aa3e2cdba48dac0da0a63c023b96fd07a}{create\+Set}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr1, const \mbox{\hyperlink{classAddress}{Address}} \&addr2)
+\begin{DoxyCompactList}\small\item\em Create a tracked register set that is valid over the given range. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextInternal_a98a632ce5decb052fdf7057d6b6433ed}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize the entire database to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextInternal_acaa68fc13719dbed6a06ec20d04bc6bf}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore the state of {\bfseries{this}} database object from a serialized X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextInternal_a1b06379e4ee5c7c3105047737bb4331b}{restore\+From\+Spec}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Add initial context state from X\+ML tags in compiler/processor specifications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An in-\/memory implementation of the \mbox{\hyperlink{classContextDatabase}{Context\+Database}} interface. 
+
+Context blobs are held in a partition map on addresses. Any address within the map indicates a {\itshape split} point, where the value of a context variable was explicitly changed. Sets of tracked registers are held in a separate partition map. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classContextInternal_aa3e2cdba48dac0da0a63c023b96fd07a}\label{classContextInternal_aa3e2cdba48dac0da0a63c023b96fd07a}} 
+\index{ContextInternal@{ContextInternal}!createSet@{createSet}}
+\index{createSet@{createSet}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{createSet()}{createSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \& Context\+Internal\+::create\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr1,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create a tracked register set that is valid over the given range. 
+
+This really should be an internal routine. The created set is empty, old values are blown away. If old/default values are to be preserved, they must be copied back in. 
+\begin{DoxyParams}{Parameters}
+{\em addr1} & is the starting address of the given range \\
+\hline
+{\em addr2} & is (1 past) the ending address of the given range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the empty set of tracked register values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_aba61e2244e4c12105ed5b45a47720808}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_a817dcba491a21368cfa81b522ff21b39}\label{classContextInternal_a817dcba491a21368cfa81b522ff21b39}} 
+\index{ContextInternal@{ContextInternal}!getContext@{getContext}}
+\index{getContext@{getContext}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{getContext()}{getContext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const uintm$\ast$ Context\+Internal\+::get\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the context blob of values associated with a given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the memory region holding the context values for the address 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_a780d39f9c8f7bafe9bbb7eb948d3f9ca}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_a8b1a3c3cee5fdfe657c114a8ce341e5c}\label{classContextInternal_a8b1a3c3cee5fdfe657c114a8ce341e5c}} 
+\index{ContextInternal@{ContextInternal}!getContext@{getContext}}
+\index{getContext@{getContext}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{getContext()}{getContext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const uintm $\ast$ Context\+Internal\+::get\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uintb \&}]{first,  }\item[{uintb \&}]{last }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the context blob of values associated with a given address and its bounding offsets. 
+
+In addition to the memory region, the range of addresses for which the region is valid is passed back as offsets into the address space. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em first} & will hold the starting offset of the valid range \\
+\hline
+{\em last} & will hold the ending offset of the valid range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the memory region holding the context values for the address 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_adbc2e2f157fe56f212f0edb55435dd7d}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_ace67dca0cb2ecdc012cabcfd571a43d8}\label{classContextInternal_ace67dca0cb2ecdc012cabcfd571a43d8}} 
+\index{ContextInternal@{ContextInternal}!getContextSize@{getContextSize}}
+\index{getContextSize@{getContextSize}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{getContextSize()}{getContextSize()}}
+{\footnotesize\ttfamily virtual int4 Context\+Internal\+::get\+Context\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve the number of words (uintm) in a context {\itshape blob}. 
+
+\begin{DoxyReturn}{Returns}
+the number of words 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_add56654146d3e6d9bab727980fd1da28}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_a38f6d0158f108dd29132250b1cb234b1}\label{classContextInternal_a38f6d0158f108dd29132250b1cb234b1}} 
+\index{ContextInternal@{ContextInternal}!getTrackedDefault@{getTrackedDefault}}
+\index{getTrackedDefault@{getTrackedDefault}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{getTrackedDefault()}{getTrackedDefault()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}}\& Context\+Internal\+::get\+Tracked\+Default (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the set of default values for all tracked registers. 
+
+\begin{DoxyReturn}{Returns}
+the list of \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} objects 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_a08908cbaeb6c0a722e40f9392d9615bd}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_a0953f0bba2a187d4cd001463c9f667ab}\label{classContextInternal_a0953f0bba2a187d4cd001463c9f667ab}} 
+\index{ContextInternal@{ContextInternal}!getTrackedSet@{getTrackedSet}}
+\index{getTrackedSet@{getTrackedSet}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{getTrackedSet()}{getTrackedSet()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}}\& Context\+Internal\+::get\+Tracked\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the set of tracked register values associated with the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the list of \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} objects 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_a6ea1e4b793286c0b1ecbafcc58422339}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_ad4674e15208ed415b717d058edc1a140}\label{classContextInternal_ad4674e15208ed415b717d058edc1a140}} 
+\index{ContextInternal@{ContextInternal}!registerVariable@{registerVariable}}
+\index{registerVariable@{registerVariable}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{registerVariable()}{registerVariable()}}
+{\footnotesize\ttfamily void Context\+Internal\+::register\+Variable (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{int4}]{sbit,  }\item[{int4}]{ebit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Register a new named context variable (as a bit range) with the database. 
+
+A new variable is registered by providing a name and the range of bits the value will occupy within the context blob. The full blob size is automatically increased if necessary. The variable must be contained within a single word, and all variables must be registered before any values can be set. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the new variable \\
+\hline
+{\em sbit} & is the position of the variable\textquotesingle{}s most significant bit within the blob \\
+\hline
+{\em ebit} & is the position of the variable\textquotesingle{}s least significant bit within the blob \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_a990c6b94512bff06a37d4b59b7316a4f}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_a1b06379e4ee5c7c3105047737bb4331b}\label{classContextInternal_a1b06379e4ee5c7c3105047737bb4331b}} 
+\index{ContextInternal@{ContextInternal}!restoreFromSpec@{restoreFromSpec}}
+\index{restoreFromSpec@{restoreFromSpec}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{restoreFromSpec()}{restoreFromSpec()}}
+{\footnotesize\ttfamily void Context\+Internal\+::restore\+From\+Spec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add initial context state from X\+ML tags in compiler/processor specifications. 
+
+The database can be configured with a consistent initial state by providing $<$context\+\_\+data$>$ tags in either the compiler or processor specification file for the architecture 
+\begin{DoxyParams}{Parameters}
+{\em el} & is a $<$context\+\_\+data$>$ tag \\
+\hline
+{\em manage} & is used to resolve address space references \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_ab21ed86cbe093ccf2f5a81a7db4a7174}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_acaa68fc13719dbed6a06ec20d04bc6bf}\label{classContextInternal_acaa68fc13719dbed6a06ec20d04bc6bf}} 
+\index{ContextInternal@{ContextInternal}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Context\+Internal\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the state of {\bfseries{this}} database object from a serialized X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root element of the X\+ML describing the database state \\
+\hline
+{\em manage} & is used to resolve address space references \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_a779b5bcb5326d79e748a3dc9df0137d0}{Context\+Database}}.
+
+\mbox{\Hypertarget{classContextInternal_a98a632ce5decb052fdf7057d6b6433ed}\label{classContextInternal_a98a632ce5decb052fdf7057d6b6433ed}} 
+\index{ContextInternal@{ContextInternal}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!ContextInternal@{ContextInternal}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Context\+Internal\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize the entire database to an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classContextDatabase_aaf116d099044b04dbcb6d83a079b1836}{Context\+Database}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globalcontext_8hh}{globalcontext.\+hh}}\item 
+globalcontext.\+cc\end{DoxyCompactItemize}

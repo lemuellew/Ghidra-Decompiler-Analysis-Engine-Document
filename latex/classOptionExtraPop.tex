@@ -1,0 +1,79 @@
+\hypertarget{classOptionExtraPop}{}\doxysection{Option\+Extra\+Pop Class Reference}
+\label{classOptionExtraPop}\index{OptionExtraPop@{OptionExtraPop}}
+
+
+Set the {\bfseries{extrapop}} parameter used by the (default) prototype model.  
+
+
+
+
+Inheritance diagram for Option\+Extra\+Pop\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classOptionExtraPop__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Option\+Extra\+Pop\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classOptionExtraPop__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classOptionExtraPop_a19de8bfd77683f807a1a20ba4d9103dc}{apply}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb, const string \&p1, const string \&p2, const string \&p3) const
+\begin{DoxyCompactList}\small\item\em Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Set the {\bfseries{extrapop}} parameter used by the (default) prototype model. 
+
+The {\bfseries{extrapop}} for a function is the number of bytes popped from the stack that a calling function can assume when this function is called.
+
+The first parameter is the integer value to use as the {\itshape extrapop}, or the special value \char`\"{}unknown\char`\"{} which triggers the {\itshape extrapop} recovery analysis.
+
+The second parameter, if present, indicates a specific function to modify. Otherwise, the default prototype model is modified. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptionExtraPop_a19de8bfd77683f807a1a20ba4d9103dc}\label{classOptionExtraPop_a19de8bfd77683f807a1a20ba4d9103dc}} 
+\index{OptionExtraPop@{OptionExtraPop}!apply@{apply}}
+\index{apply@{apply}!OptionExtraPop@{OptionExtraPop}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily string Option\+Extra\+Pop\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb,  }\item[{const string \&}]{p1,  }\item[{const string \&}]{p2,  }\item[{const string \&}]{p3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+This method is overloaded by the different Option classes to provide possible configuration of different parts of the \mbox{\hyperlink{classArchitecture}{Architecture}}. The user can provide up to three optional parameters to tailor a specific type of configuration. The method returns a confirmation/failure message as feedback. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} being configured \\
+\hline
+{\em p1} & is the first optional configuration string \\
+\hline
+{\em p2} & is the second optional configuration string \\
+\hline
+{\em p3} & is the third optional configuration string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a confirmation/failure message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{Arch\+Option}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

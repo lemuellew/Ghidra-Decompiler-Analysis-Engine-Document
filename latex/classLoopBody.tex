@@ -1,0 +1,305 @@
+\hypertarget{classLoopBody}{}\doxysection{Loop\+Body Class Reference}
+\label{classLoopBody}\index{LoopBody@{LoopBody}}
+
+
+A description of the body of a loop.  
+
+
+
+
+{\ttfamily \#include $<$blockaction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classLoopBody_a5c34d8675c1290e7b3ad25d602f6d52e}{get\+Current\+Bounds}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$$\ast$top, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Return current loop bounds ({\bfseries{head}} and {\bfseries{bottom}}). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_aca6d8a4529165274b791ed9ec37385ef}{find\+Base}} (vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&body)
+\begin{DoxyCompactList}\small\item\em Mark the body Flow\+Blocks of {\bfseries{this}} loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_add1dd57bc541e2a76e7874017721fd48}{extend}} (vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&body) const
+\begin{DoxyCompactList}\small\item\em Extend body (to blocks that never exit) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_a44aa946a133471f9ea5820fab49685f3}{find\+Exit}} (const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&body)
+\begin{DoxyCompactList}\small\item\em Choose the exit block for {\bfseries{this}} loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_a43635dafd8293567ca13c10be0aead6f}{order\+Tails}} (void)
+\begin{DoxyCompactList}\small\item\em Find preferred {\bfseries{tail}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_a7c3db3d0244209f2a200998b9a1b01cb}{label\+Exit\+Edges}} (const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&body)
+\begin{DoxyCompactList}\small\item\em Label edges that exit the loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_a86b8806010db2bfe0fc11b41e906278a}{label\+Containments}} (const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&body, const vector$<$ \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ $>$ \&looporder)
+\begin{DoxyCompactList}\small\item\em Record any loops that {\bfseries{body}} contains. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_ab172e6e4e585fe12494548b642e000fc}{emit\+Likely\+Edges}} (list$<$ \mbox{\hyperlink{classFloatingEdge}{Floating\+Edge}} $>$ \&likely, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Collect likely {\itshape unstructured} edges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_a24f6fd993c0e4fe0684f9fa4446e9e9c}{set\+Exit\+Marks}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Mark all the exits to this loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoopBody_a0864eadb313ff31a3075bf916018be8e}{clear\+Exit\+Marks}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Clear the mark on all the exits to this loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classLoopBody_a4f29c37ed94852f51302cbd3c0a9f85c}{merge\+Identical\+Heads}} (vector$<$ \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ $>$ \&looporder)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMerge}{Merge}} loop bodies that share the same {\itshape head}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classLoopBody_af92c183b5af2d39509af1148ffeb8acf}{compare\+\_\+ends}} (\mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$a, \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Compare the {\bfseries{head}} then {\bfseries{tail}}. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classLoopBody_aa21c0bf7e110479ebeb1590c8ef58542}{compare\+\_\+head}} (\mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$a, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$looptop)
+\begin{DoxyCompactList}\small\item\em Compare just the {\bfseries{head}}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ \mbox{\hyperlink{classLoopBody_a4fd224d75508dcfb4826877b99ad32ce}{find}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$looptop, const vector$<$ \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ $>$ \&looporder)
+\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classLoopBody}{Loop\+Body}}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classLoopBody_ad6ed614162d7e081baeb297718c0e58c}{clear\+Marks}} (vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&body)
+\begin{DoxyCompactList}\small\item\em Clear the body marks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A description of the body of a loop. 
+
+Following Tarjan, assuming there are no {\itshape irreducible} edges, a loop body is defined by the {\itshape head} (or entry-\/point) and 1 or more tails, which each have a {\itshape back} {\itshape edge} into the head. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoopBody_a0864eadb313ff31a3075bf916018be8e}\label{classLoopBody_a0864eadb313ff31a3075bf916018be8e}} 
+\index{LoopBody@{LoopBody}!clearExitMarks@{clearExitMarks}}
+\index{clearExitMarks@{clearExitMarks}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{clearExitMarks()}{clearExitMarks()}}
+{\footnotesize\ttfamily void Loop\+Body\+::clear\+Exit\+Marks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Clear the mark on all the exits to this loop. 
+
+This clears the f\+\_\+loop\+\_\+exit\+\_\+edge on any edge exiting {\bfseries{this}} loop. 
+\begin{DoxyParams}{Parameters}
+{\em graph} & is the containing control-\/flow structure \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_ad6ed614162d7e081baeb297718c0e58c}\label{classLoopBody_ad6ed614162d7e081baeb297718c0e58c}} 
+\index{LoopBody@{LoopBody}!clearMarks@{clearMarks}}
+\index{clearMarks@{clearMarks}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{clearMarks()}{clearMarks()}}
+{\footnotesize\ttfamily void Loop\+Body\+::clear\+Marks (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clear the body marks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & is the list of \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} nodes that have been marked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_af92c183b5af2d39509af1148ffeb8acf}\label{classLoopBody_af92c183b5af2d39509af1148ffeb8acf}} 
+\index{LoopBody@{LoopBody}!compare\_ends@{compare\_ends}}
+\index{compare\_ends@{compare\_ends}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{compare\_ends()}{compare\_ends()}}
+{\footnotesize\ttfamily bool Loop\+Body\+::compare\+\_\+ends (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compare the {\bfseries{head}} then {\bfseries{tail}}. 
+
+Compare two loops based on the indices of the {\bfseries{head}} and then the {\itshape tail}. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classLoopBody}{Loop\+Body}} to compare \\
+\hline
+{\em b} & is the second \mbox{\hyperlink{classLoopBody}{Loop\+Body}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the first \mbox{\hyperlink{classLoopBody}{Loop\+Body}} comes before the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoopBody_aa21c0bf7e110479ebeb1590c8ef58542}\label{classLoopBody_aa21c0bf7e110479ebeb1590c8ef58542}} 
+\index{LoopBody@{LoopBody}!compare\_head@{compare\_head}}
+\index{compare\_head@{compare\_head}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{compare\_head()}{compare\_head()}}
+{\footnotesize\ttfamily int4 Loop\+Body\+::compare\+\_\+head (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{looptop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compare just the {\bfseries{head}}. 
+
+Compare two loops based on the indices of the {\bfseries{head}} 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classLoopBody}{Loop\+Body}} to compare \\
+\hline
+{\em looptop} & is the second \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1,0, or 1 if the first is ordered before, the same, or after the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoopBody_ab172e6e4e585fe12494548b642e000fc}\label{classLoopBody_ab172e6e4e585fe12494548b642e000fc}} 
+\index{LoopBody@{LoopBody}!emitLikelyEdges@{emitLikelyEdges}}
+\index{emitLikelyEdges@{emitLikelyEdges}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{emitLikelyEdges()}{emitLikelyEdges()}}
+{\footnotesize\ttfamily void Loop\+Body\+::emit\+Likely\+Edges (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{classFloatingEdge}{Floating\+Edge}} $>$ \&}]{likely,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Collect likely {\itshape unstructured} edges. 
+
+Add edges that exit from {\bfseries{this}} loop body to the list of likely {\itshape gotos}, giving them the proper priority. 
+\begin{DoxyParams}{Parameters}
+{\em likely} & will hold the exit edges in (reverse) priority order \\
+\hline
+{\em graph} & is the containing control-\/flow graph \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_add1dd57bc541e2a76e7874017721fd48}\label{classLoopBody_add1dd57bc541e2a76e7874017721fd48}} 
+\index{LoopBody@{LoopBody}!extend@{extend}}
+\index{extend@{extend}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{extend()}{extend()}}
+{\footnotesize\ttfamily void Loop\+Body\+::extend (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{body }\end{DoxyParamCaption}) const}
+
+
+
+Extend body (to blocks that never exit) 
+
+Extend the {\bfseries{body}} of this loop to every \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that can be reached {\bfseries{only}} from {\bfseries{head}} without hitting the {\bfseries{exitblock}}. Assume {\bfseries{body}} has been filled out by \mbox{\hyperlink{classLoopBody_aca6d8a4529165274b791ed9ec37385ef}{find\+Base()}} and that all these blocks have their mark set. 
+\begin{DoxyParams}{Parameters}
+{\em body} & contains the current loop body and will be extended \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_a4fd224d75508dcfb4826877b99ad32ce}\label{classLoopBody_a4fd224d75508dcfb4826877b99ad32ce}} 
+\index{LoopBody@{LoopBody}!find@{find}}
+\index{find@{find}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ Loop\+Body\+::find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{looptop,  }\item[{const vector$<$ \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ $>$ \&}]{looporder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find a \mbox{\hyperlink{classLoopBody}{Loop\+Body}}. 
+
+Given the top \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} of a loop, find corresponding \mbox{\hyperlink{classLoopBody}{Loop\+Body}} record from an ordered list. This assumes \mbox{\hyperlink{classLoopBody_a4f29c37ed94852f51302cbd3c0a9f85c}{merge\+Identical\+Heads()}} has been run so that the head is uniquely identifying. 
+\begin{DoxyParams}{Parameters}
+{\em looptop} & is the top of the loop \\
+\hline
+{\em looporder} & is the ordered list of \mbox{\hyperlink{classLoopBody}{Loop\+Body}} records \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classLoopBody}{Loop\+Body}} or N\+U\+LL if none found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoopBody_aca6d8a4529165274b791ed9ec37385ef}\label{classLoopBody_aca6d8a4529165274b791ed9ec37385ef}} 
+\index{LoopBody@{LoopBody}!findBase@{findBase}}
+\index{findBase@{findBase}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{findBase()}{findBase()}}
+{\footnotesize\ttfamily void Loop\+Body\+::find\+Base (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{body }\end{DoxyParamCaption})}
+
+
+
+Mark the body Flow\+Blocks of {\bfseries{this}} loop. 
+
+Collect all \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} nodes that reach a {\bfseries{tail}} of the loop without going through {\bfseries{head}}. Put them in a list and mark them. 
+\begin{DoxyParams}{Parameters}
+{\em body} & will contain the body nodes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_a44aa946a133471f9ea5820fab49685f3}\label{classLoopBody_a44aa946a133471f9ea5820fab49685f3}} 
+\index{LoopBody@{LoopBody}!findExit@{findExit}}
+\index{findExit@{findExit}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{findExit()}{findExit()}}
+{\footnotesize\ttfamily void Loop\+Body\+::find\+Exit (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{body }\end{DoxyParamCaption})}
+
+
+
+Choose the exit block for {\bfseries{this}} loop. 
+
+A structured loop is allowed at most one exit block\+: pick this block. First build a set of trial exits, preferring from a {\bfseries{tail}}, then from {\bfseries{head}}, then from the middle. If there is no containing loop, just return the first such exit we find. 
+\begin{DoxyParams}{Parameters}
+{\em body} & is the list \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects in the loop body, which we assume are marked. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_a5c34d8675c1290e7b3ad25d602f6d52e}\label{classLoopBody_a5c34d8675c1290e7b3ad25d602f6d52e}} 
+\index{LoopBody@{LoopBody}!getCurrentBounds@{getCurrentBounds}}
+\index{getCurrentBounds@{getCurrentBounds}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{getCurrentBounds()}{getCurrentBounds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Loop\+Body\+::get\+Current\+Bounds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$$\ast$}]{top,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Return current loop bounds ({\bfseries{head}} and {\bfseries{bottom}}). 
+
+This updates the {\bfseries{head}} and {\bfseries{tail}} nodes to \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} in the current collapsed graph. This returns the first {\bfseries{tail}} and passes back the head. 
+\begin{DoxyParams}{Parameters}
+{\em top} & is where {\bfseries{head}} is passed back \\
+\hline
+{\em graph} & is the containing control-\/flow structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the current loop {\bfseries{head}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoopBody_a86b8806010db2bfe0fc11b41e906278a}\label{classLoopBody_a86b8806010db2bfe0fc11b41e906278a}} 
+\index{LoopBody@{LoopBody}!labelContainments@{labelContainments}}
+\index{labelContainments@{labelContainments}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{labelContainments()}{labelContainments()}}
+{\footnotesize\ttfamily void Loop\+Body\+::label\+Containments (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{body,  }\item[{const vector$<$ \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ $>$ \&}]{looporder }\end{DoxyParamCaption})}
+
+
+
+Record any loops that {\bfseries{body}} contains. 
+
+Search for any loop contained by {\bfseries{this}} and update is {\bfseries{depth}} and {\bfseries{immed\+\_\+container}} field. 
+\begin{DoxyParams}{Parameters}
+{\em body} & is the set of \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} nodes making up this loop \\
+\hline
+{\em looporder} & is the list of known loops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_a7c3db3d0244209f2a200998b9a1b01cb}\label{classLoopBody_a7c3db3d0244209f2a200998b9a1b01cb}} 
+\index{LoopBody@{LoopBody}!labelExitEdges@{labelExitEdges}}
+\index{labelExitEdges@{labelExitEdges}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{labelExitEdges()}{labelExitEdges()}}
+{\footnotesize\ttfamily void Loop\+Body\+::label\+Exit\+Edges (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{body }\end{DoxyParamCaption})}
+
+
+
+Label edges that exit the loop. 
+
+Label any edge that leaves the set of nodes in {\bfseries{body}}. Put the edges in priority for removal, middle exit at front, {\itshape head} exit, then {\itshape tail} exit. We assume all the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} nodes in {\bfseries{body}} have been marked. 
+\begin{DoxyParams}{Parameters}
+{\em body} & is list of nodes in {\bfseries{this}} loop body \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_a4f29c37ed94852f51302cbd3c0a9f85c}\label{classLoopBody_a4f29c37ed94852f51302cbd3c0a9f85c}} 
+\index{LoopBody@{LoopBody}!mergeIdenticalHeads@{mergeIdenticalHeads}}
+\index{mergeIdenticalHeads@{mergeIdenticalHeads}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{mergeIdenticalHeads()}{mergeIdenticalHeads()}}
+{\footnotesize\ttfamily void Loop\+Body\+::merge\+Identical\+Heads (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classLoopBody}{Loop\+Body}} $\ast$ $>$ \&}]{looporder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\mbox{\hyperlink{classMerge}{Merge}} loop bodies that share the same {\itshape head}. 
+
+Look for \mbox{\hyperlink{classLoopBody}{Loop\+Body}} records that share a {\bfseries{head}}. \mbox{\hyperlink{classMerge}{Merge}} each {\bfseries{tail}} from one into the other. Set the merged \mbox{\hyperlink{classLoopBody}{Loop\+Body}} {\bfseries{head}} to N\+U\+LL, for later clean up. 
+\begin{DoxyParams}{Parameters}
+{\em looporder} & is the list of \mbox{\hyperlink{classLoopBody}{Loop\+Body}} records \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoopBody_a43635dafd8293567ca13c10be0aead6f}\label{classLoopBody_a43635dafd8293567ca13c10be0aead6f}} 
+\index{LoopBody@{LoopBody}!orderTails@{orderTails}}
+\index{orderTails@{orderTails}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{orderTails()}{orderTails()}}
+{\footnotesize\ttfamily void Loop\+Body\+::order\+Tails (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Find preferred {\bfseries{tail}}. 
+
+The idea is if there is more than one {\bfseries{tail}} for a loop, some tails are more \char`\"{}preferred\char`\"{} than others and should have their exit edges preserved longer and be the target of the D\+AG path. Currently we look for a single {\bfseries{tail}} that has an outgoing edge to the {\bfseries{exitblock}} and make sure it is the first tail. \mbox{\Hypertarget{classLoopBody_a24f6fd993c0e4fe0684f9fa4446e9e9c}\label{classLoopBody_a24f6fd993c0e4fe0684f9fa4446e9e9c}} 
+\index{LoopBody@{LoopBody}!setExitMarks@{setExitMarks}}
+\index{setExitMarks@{setExitMarks}!LoopBody@{LoopBody}}
+\doxysubsubsection{\texorpdfstring{setExitMarks()}{setExitMarks()}}
+{\footnotesize\ttfamily void Loop\+Body\+::set\+Exit\+Marks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Mark all the exits to this loop. 
+
+Exit edges have their f\+\_\+loop\+\_\+exit\+\_\+edge property set. 
+\begin{DoxyParams}{Parameters}
+{\em graph} & is the containing control-\/flow structure \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{blockaction_8hh}{blockaction.\+hh}}\item 
+blockaction.\+cc\end{DoxyCompactItemize}

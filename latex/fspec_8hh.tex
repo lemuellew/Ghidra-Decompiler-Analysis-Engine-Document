@@ -1,0 +1,89 @@
+\hypertarget{fspec_8hh}{}\doxysection{fspec.\+hh File Reference}
+\label{fspec_8hh}\index{fspec.hh@{fspec.hh}}
+
+
+Definitions for specifying functions prototypes.  
+
+
+{\ttfamily \#include \char`\"{}op.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rangemap.\+hh\char`\"{}}\newline
+Include dependency graph for fspec.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fspec_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fspec_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structParamUnassignedError}{Param\+Unassigned\+Error}}
+\begin{DoxyCompactList}\small\item\em Exception thrown when a prototype can\textquotesingle{}t be modeled properly. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamEntry}{Param\+Entry}}
+\begin{DoxyCompactList}\small\item\em A contiguous range of memory that can be used to pass parameters. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamEntryRange}{Param\+Entry\+Range}}
+\begin{DoxyCompactList}\small\item\em Class for storing \mbox{\hyperlink{classParamEntry}{Param\+Entry}} objects in an interval range (rangemap) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamTrial}{Param\+Trial}}
+\begin{DoxyCompactList}\small\item\em A register or memory register that may be used to pass a parameter or return value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamActive}{Param\+Active}}
+\begin{DoxyCompactList}\small\item\em Container class for \mbox{\hyperlink{classParamTrial}{Param\+Trial}} objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classFspecSpace}{Fspec\+Space}}
+\begin{DoxyCompactList}\small\item\em A special space for encoding \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}}
+\begin{DoxyCompactList}\small\item\em Basic elements of a parameter\+: address, data-\/type, properties. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEffectRecord}{Effect\+Record}}
+\begin{DoxyCompactList}\small\item\em Description of the indirect effect a sub-\/function has on a memory range. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamList}{Param\+List}}
+\item 
+class \mbox{\hyperlink{classParamListStandard}{Param\+List\+Standard}}
+\begin{DoxyCompactList}\small\item\em A standard model for parameters as an ordered list of storage resources. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamListStandardOut}{Param\+List\+Standard\+Out}}
+\begin{DoxyCompactList}\small\item\em A standard model for passing back return values from a function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamListRegister}{Param\+List\+Register}}
+\begin{DoxyCompactList}\small\item\em An unstructured model for passing input parameters to a function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParamListMerged}{Param\+List\+Merged}}
+\begin{DoxyCompactList}\small\item\em A union of other input parameter passing models. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProtoModel}{Proto\+Model}}
+\begin{DoxyCompactList}\small\item\em A {\bfseries{prototype}} {\bfseries{model\+:}} a model for passing parameters between functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classScoreProtoModel}{Score\+Proto\+Model}}
+\begin{DoxyCompactList}\small\item\em Class for calculating \char`\"{}goodness of fit\char`\"{} of parameter trials against a prototype model. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProtoModelMerged}{Proto\+Model\+Merged}}
+\begin{DoxyCompactList}\small\item\em A prototype model made by merging together other models. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}}
+\begin{DoxyCompactList}\small\item\em A function parameter viewed as a name, data-\/type, and storage address. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParameterBasic}{Parameter\+Basic}}
+\begin{DoxyCompactList}\small\item\em A stand-\/alone parameter with no backing symbol. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProtoStore}{Proto\+Store}}
+\begin{DoxyCompactList}\small\item\em A collection parameter descriptions making up a function prototype. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classParameterSymbol}{Parameter\+Symbol}}
+\begin{DoxyCompactList}\small\item\em A parameter with a formal backing \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProtoStoreSymbol}{Proto\+Store\+Symbol}}
+\begin{DoxyCompactList}\small\item\em A collection of parameter descriptions backed by \mbox{\hyperlink{classSymbol}{Symbol}} information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classProtoStoreInternal}{Proto\+Store\+Internal}}
+\begin{DoxyCompactList}\small\item\em A collection of parameter descriptions without backing symbols. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}}
+\begin{DoxyCompactList}\small\item\em Raw components of a function prototype (obtained from parsing source code) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classFuncProto}{Func\+Proto}}
+\begin{DoxyCompactList}\small\item\em A {\bfseries{function}} {\bfseries{prototype}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}}
+\begin{DoxyCompactList}\small\item\em A class for analyzing parameters to a sub-\/function call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{fspec_8hh_a034dd951d43e43b9e7d26f7326000992}\label{fspec_8hh_a034dd951d43e43b9e7d26f7326000992}} 
+typedef \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \mbox{\hyperlink{classParamEntryRange}{Param\+Entry\+Range}} $>$ \mbox{\hyperlink{fspec_8hh_a034dd951d43e43b9e7d26f7326000992}{Param\+Entry\+Resolver}}
+\begin{DoxyCompactList}\small\item\em A map from offset to \mbox{\hyperlink{classParamEntry}{Param\+Entry}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions for specifying functions prototypes. 
+

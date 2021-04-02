@@ -1,0 +1,203 @@
+\hypertarget{classProtoStoreInternal}{}\doxysection{Proto\+Store\+Internal Class Reference}
+\label{classProtoStoreInternal}\index{ProtoStoreInternal@{ProtoStoreInternal}}
+
+
+A collection of parameter descriptions without backing symbols.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Proto\+Store\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classProtoStoreInternal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Proto\+Store\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classProtoStoreInternal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProtoStoreInternal_a16f69dbe9bc548f8bee41daa68c28ee5}{Proto\+Store\+Internal}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$vt)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreInternal_a37baf5313582d2748bc012b95a651076}{set\+Input}} (int4 i, const string \&nm, const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&pieces)
+\begin{DoxyCompactList}\small\item\em Establish name, data-\/type, storage of a specific input parameter. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classProtoStoreInternal_ae3948caba06771c1df6dea3af57d55c1}{clear\+Input}} (int4 i)
+\begin{DoxyCompactList}\small\item\em Clear the input parameter at the specified slot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreInternal_a42caab4f3ba540a08e6c130f7e52a8ff}\label{classProtoStoreInternal_a42caab4f3ba540a08e6c130f7e52a8ff}} 
+virtual void \mbox{\hyperlink{classProtoStoreInternal_a42caab4f3ba540a08e6c130f7e52a8ff}{clear\+All\+Inputs}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all input parameters (and any backing symbols) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreInternal_a3114aa2721c50c2ffa1bca2912d3f5ff}\label{classProtoStoreInternal_a3114aa2721c50c2ffa1bca2912d3f5ff}} 
+virtual int4 \mbox{\hyperlink{classProtoStoreInternal_a3114aa2721c50c2ffa1bca2912d3f5ff}{get\+Num\+Inputs}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of input parameters for {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreInternal_ab637f859e1c4553e24d4651836ce7c84}\label{classProtoStoreInternal_ab637f859e1c4553e24d4651836ce7c84}} 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreInternal_ab637f859e1c4553e24d4651836ce7c84}{get\+Input}} (int4 i)
+\begin{DoxyCompactList}\small\item\em Get the i-\/th input parameter (or N\+U\+LL if it doesn\textquotesingle{}t exist) \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreInternal_a9dfb7feca9c49b33e9857740e7ea9a9a}{set\+Output}} (const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&piece)
+\begin{DoxyCompactList}\small\item\em Establish the data-\/type and storage of the return value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreInternal_a8d17ecfc29c19b63b9d462462887017f}\label{classProtoStoreInternal_a8d17ecfc29c19b63b9d462462887017f}} 
+virtual void \mbox{\hyperlink{classProtoStoreInternal_a8d17ecfc29c19b63b9d462462887017f}{clear\+Output}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the return value to T\+Y\+P\+E\+\_\+\+V\+O\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreInternal_a01b4100ec95fcd835b7f8ae6cad8f796}\label{classProtoStoreInternal_a01b4100ec95fcd835b7f8ae6cad8f796}} 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreInternal_a01b4100ec95fcd835b7f8ae6cad8f796}{get\+Output}} (void)
+\begin{DoxyCompactList}\small\item\em Get the return-\/value description. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreInternal_ac14aea73b6e7381a6751a1bcf98c1930}\label{classProtoStoreInternal_ac14aea73b6e7381a6751a1bcf98c1930}} 
+virtual \mbox{\hyperlink{classProtoStore}{Proto\+Store}} $\ast$ \mbox{\hyperlink{classProtoStoreInternal_ac14aea73b6e7381a6751a1bcf98c1930}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the entire collection of parameter descriptions. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classProtoStoreInternal_a1ad86117b6c4aaace47788adaef58880}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save any parameters that are not backed by symbols to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classProtoStoreInternal_ae1c3cd409eda277f1ff924cf858eddef}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$model)
+\begin{DoxyCompactList}\small\item\em Restore any internal parameter descriptions from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collection of parameter descriptions without backing symbols. 
+
+Parameter descriptions are stored internally to the object and are not mirrored by a symbol table. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProtoStoreInternal_a16f69dbe9bc548f8bee41daa68c28ee5}\label{classProtoStoreInternal_a16f69dbe9bc548f8bee41daa68c28ee5}} 
+\index{ProtoStoreInternal@{ProtoStoreInternal}!ProtoStoreInternal@{ProtoStoreInternal}}
+\index{ProtoStoreInternal@{ProtoStoreInternal}!ProtoStoreInternal@{ProtoStoreInternal}}
+\doxysubsubsection{\texorpdfstring{ProtoStoreInternal()}{ProtoStoreInternal()}}
+{\footnotesize\ttfamily Proto\+Store\+Internal\+::\+Proto\+Store\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{vt }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vt} & is the {\bfseries{void}} data-\/type used for an unspecified return value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProtoStoreInternal_ae3948caba06771c1df6dea3af57d55c1}\label{classProtoStoreInternal_ae3948caba06771c1df6dea3af57d55c1}} 
+\index{ProtoStoreInternal@{ProtoStoreInternal}!clearInput@{clearInput}}
+\index{clearInput@{clearInput}!ProtoStoreInternal@{ProtoStoreInternal}}
+\doxysubsubsection{\texorpdfstring{clearInput()}{clearInput()}}
+{\footnotesize\ttfamily void Proto\+Store\+Internal\+::clear\+Input (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear the input parameter at the specified slot. 
+
+The parameter is excised, any following parameters are shifted to fill its spot. If there is a backing \mbox{\hyperlink{classSymbol}{Symbol}}, it is removed from the \mbox{\hyperlink{classSymbolTable}{Symbol\+Table}} 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the specified parameter slot to remove \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoStore_afa6361ac313cdd2ccef1531209389cdc}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreInternal_ae1c3cd409eda277f1ff924cf858eddef}\label{classProtoStoreInternal_ae1c3cd409eda277f1ff924cf858eddef}} 
+\index{ProtoStoreInternal@{ProtoStoreInternal}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ProtoStoreInternal@{ProtoStoreInternal}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Proto\+Store\+Internal\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore any internal parameter descriptions from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is a root $<$internallist$>$ element containing $<$param$>$ and $<$retparam$>$ sub-\/tags. \\
+\hline
+{\em model} & is prototype model for determining storage for unassigned parameters \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoStore_a7311214c33205be191361836d716f99b}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreInternal_a1ad86117b6c4aaace47788adaef58880}\label{classProtoStoreInternal_a1ad86117b6c4aaace47788adaef58880}} 
+\index{ProtoStoreInternal@{ProtoStoreInternal}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!ProtoStoreInternal@{ProtoStoreInternal}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Proto\+Store\+Internal\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save any parameters that are not backed by symbols to an X\+ML stream. 
+
+Symbols are stored elsewhere, so symbol backed parameters are not serialized. If there are any internal parameters an $<$internallist$>$ tag is emitted. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoStore_ac6e8cc6bfcb10d84a69c3f6011c5de06}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreInternal_a37baf5313582d2748bc012b95a651076}\label{classProtoStoreInternal_a37baf5313582d2748bc012b95a651076}} 
+\index{ProtoStoreInternal@{ProtoStoreInternal}!setInput@{setInput}}
+\index{setInput@{setInput}!ProtoStoreInternal@{ProtoStoreInternal}}
+\doxysubsubsection{\texorpdfstring{setInput()}{setInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ Proto\+Store\+Internal\+::set\+Input (\begin{DoxyParamCaption}\item[{int4}]{i,  }\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&}]{pieces }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Establish name, data-\/type, storage of a specific input parameter. 
+
+This either allocates a new parameter or replaces the existing one at the specified input slot. If there is a backing symbol table, a \mbox{\hyperlink{classSymbol}{Symbol}} is created or modified. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the specified input slot \\
+\hline
+{\em nm} & is the (optional) name of the parameter \\
+\hline
+{\em pieces} & holds the raw storage address and data-\/type to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new/modified \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classProtoStore_af24924b3d08fedff7e55788f2b7a0043}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreInternal_a9dfb7feca9c49b33e9857740e7ea9a9a}\label{classProtoStoreInternal_a9dfb7feca9c49b33e9857740e7ea9a9a}} 
+\index{ProtoStoreInternal@{ProtoStoreInternal}!setOutput@{setOutput}}
+\index{setOutput@{setOutput}!ProtoStoreInternal@{ProtoStoreInternal}}
+\doxysubsubsection{\texorpdfstring{setOutput()}{setOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ Proto\+Store\+Internal\+::set\+Output (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Establish the data-\/type and storage of the return value. 
+
+This either allocates a new parameter or replaces the existing one. A {\itshape void} return value can be specified with an {\itshape invalid} address and T\+Y\+P\+E\+\_\+\+V\+O\+ID data-\/type. 
+\begin{DoxyParams}{Parameters}
+{\em piece} & holds the raw storage address and data-\/type to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new/modified \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classProtoStore_a51a4d28fac8dc3ba5037190ed0cc0edc}{Proto\+Store}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

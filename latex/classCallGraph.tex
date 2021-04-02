@@ -1,0 +1,56 @@
+\hypertarget{classCallGraph}{}\doxysection{Call\+Graph Class Reference}
+\label{classCallGraph}\index{CallGraph@{CallGraph}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCallGraph_a4e571ae9abe012afa6265dd7b95835cb}\label{classCallGraph_a4e571ae9abe012afa6265dd7b95835cb}} 
+{\bfseries Call\+Graph} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g)
+\item 
+\mbox{\Hypertarget{classCallGraph_a8c6cd0bdd5cfc3e3e5b34890820de311}\label{classCallGraph_a8c6cd0bdd5cfc3e3e5b34890820de311}} 
+\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ {\bfseries get\+Arch} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraph_ae04a791d05bc2b05942e33ab58f01f45}\label{classCallGraph_ae04a791d05bc2b05942e33ab58f01f45}} 
+\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$ {\bfseries add\+Node} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f)
+\item 
+\mbox{\Hypertarget{classCallGraph_ae89cb838d6da0c1febdb1e52e38c1e35}\label{classCallGraph_ae89cb838d6da0c1febdb1e52e38c1e35}} 
+\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$ {\bfseries add\+Node} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const string \&nm)
+\item 
+\mbox{\Hypertarget{classCallGraph_afcb9ae755c10124ffae9e3808993a5bc}\label{classCallGraph_afcb9ae755c10124ffae9e3808993a5bc}} 
+\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$ {\bfseries find\+Node} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\item 
+\mbox{\Hypertarget{classCallGraph_ad7507630c86bb153d772f48d00210b48}\label{classCallGraph_ad7507630c86bb153d772f48d00210b48}} 
+void {\bfseries add\+Edge} (\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$from, \mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$to, const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\item 
+\mbox{\Hypertarget{classCallGraph_a6433c96e380e121b3b4f200714996fe4}\label{classCallGraph_a6433c96e380e121b3b4f200714996fe4}} 
+void {\bfseries delete\+In\+Edge} (\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$node, int4 i)
+\item 
+\mbox{\Hypertarget{classCallGraph_a226293ff8bec627b62cf0759fa5a4352}\label{classCallGraph_a226293ff8bec627b62cf0759fa5a4352}} 
+\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$ {\bfseries init\+Leaf\+Walk} (void)
+\item 
+\mbox{\Hypertarget{classCallGraph_a466944999f6f0f2b68cbfc90043ecc6c}\label{classCallGraph_a466944999f6f0f2b68cbfc90043ecc6c}} 
+\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$ {\bfseries next\+Leaf} (\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$node)
+\item 
+\mbox{\Hypertarget{classCallGraph_a0726755cab08bdb512eb183b088bc32b}\label{classCallGraph_a0726755cab08bdb512eb183b088bc32b}} 
+map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $>$\+::iterator {\bfseries begin} (void)
+\item 
+\mbox{\Hypertarget{classCallGraph_ad363d6774131c216fcb865ad114aadd9}\label{classCallGraph_ad363d6774131c216fcb865ad114aadd9}} 
+map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $>$\+::iterator {\bfseries end} (void)
+\item 
+\mbox{\Hypertarget{classCallGraph_ad551fc740c138722552a84e314a37d84}\label{classCallGraph_ad551fc740c138722552a84e314a37d84}} 
+void {\bfseries build\+All\+Nodes} (void)
+\item 
+\mbox{\Hypertarget{classCallGraph_a3cc813013efc9165d2f0496c9de488e4}\label{classCallGraph_a3cc813013efc9165d2f0496c9de488e4}} 
+void {\bfseries build\+Edges} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\item 
+\mbox{\Hypertarget{classCallGraph_a4b5c78fa8c1942020bac287c81f8f56d}\label{classCallGraph_a4b5c78fa8c1942020bac287c81f8f56d}} 
+void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classCallGraph_ac92fb04f41917974663c5e92d46e51a5}\label{classCallGraph_ac92fb04f41917974663c5e92d46e51a5}} 
+void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+callgraph.\+hh\item 
+callgraph.\+cc\end{DoxyCompactItemize}

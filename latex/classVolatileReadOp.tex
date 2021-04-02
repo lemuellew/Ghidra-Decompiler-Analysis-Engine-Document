@@ -1,0 +1,94 @@
+\hypertarget{classVolatileReadOp}{}\doxysection{Volatile\+Read\+Op Class Reference}
+\label{classVolatileReadOp}\index{VolatileReadOp@{VolatileReadOp}}
+
+
+An operation that reads from volatile memory.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Volatile\+Read\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classVolatileReadOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Volatile\+Read\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVolatileReadOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classVolatileReadOp_afb60313306e36c095f37000b325142a0}{get\+Operator\+Name}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Get the symbol representing this operation in decompiled code. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVolatileReadOp_abdb0f4262d311abca0c8a3fe07ed758e}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore the detailed description from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An operation that reads from volatile memory. 
+
+This C\+A\+L\+L\+O\+T\+H\+ER p-\/code operation takes as its input parameter, after the constant id, a reference \mbox{\hyperlink{classVarnode}{Varnode}} to the memory being read. The output returned by this operation is the actual value read from memory. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVolatileReadOp_afb60313306e36c095f37000b325142a0}\label{classVolatileReadOp_afb60313306e36c095f37000b325142a0}} 
+\index{VolatileReadOp@{VolatileReadOp}!getOperatorName@{getOperatorName}}
+\index{getOperatorName@{getOperatorName}!VolatileReadOp@{VolatileReadOp}}
+\doxysubsubsection{\texorpdfstring{getOperatorName()}{getOperatorName()}}
+{\footnotesize\ttfamily string Volatile\+Read\+Op\+::get\+Operator\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the symbol representing this operation in decompiled code. 
+
+This will return the symbol formally displayed in source code, which can be tailored more than the low-\/level name 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the operation (in context) where a symbol is needed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the symbol as a string 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUserPcodeOp_a7529472e93f9077d5bfdb9cc1142bfbb}{User\+Pcode\+Op}}.
+
+\mbox{\Hypertarget{classVolatileReadOp_abdb0f4262d311abca0c8a3fe07ed758e}\label{classVolatileReadOp_abdb0f4262d311abca0c8a3fe07ed758e}} 
+\index{VolatileReadOp@{VolatileReadOp}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!VolatileReadOp@{VolatileReadOp}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Volatile\+Read\+Op\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the detailed description from an X\+ML stream. 
+
+The details of how a user defined operation behaves can be dynamically configured from an X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element describing the op \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUserPcodeOp_a2a7b7c637369bc4fba4604cd83a937af}{User\+Pcode\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

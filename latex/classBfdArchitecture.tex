@@ -1,0 +1,113 @@
+\hypertarget{classBfdArchitecture}{}\doxysection{Bfd\+Architecture Class Reference}
+\label{classBfdArchitecture}\index{BfdArchitecture@{BfdArchitecture}}
+
+
+\mbox{\hyperlink{classArchitecture}{Architecture}} that reads executable files using G\+NU B\+FD libraries.  
+
+
+
+
+{\ttfamily \#include $<$bfd\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Bfd\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classBfdArchitecture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bfd\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBfdArchitecture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classBfdArchitecture_ac775d8894dd3abba1effafe22881a131}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize this architecture to X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBfdArchitecture_a577d1f082486f2cd6f134d1ce5eb3989}{restore\+Xml}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\begin{DoxyCompactList}\small\item\em Restore the \mbox{\hyperlink{classArchitecture}{Architecture}} state from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBfdArchitecture_ae164cc02f6b1fd8711dc24dea2a03afd}{Bfd\+Architecture}} (const string \&fname, const string \&targ, ostream $\ast$estream)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classArchitecture}{Architecture}} that reads executable files using G\+NU B\+FD libraries. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBfdArchitecture_ae164cc02f6b1fd8711dc24dea2a03afd}\label{classBfdArchitecture_ae164cc02f6b1fd8711dc24dea2a03afd}} 
+\index{BfdArchitecture@{BfdArchitecture}!BfdArchitecture@{BfdArchitecture}}
+\index{BfdArchitecture@{BfdArchitecture}!BfdArchitecture@{BfdArchitecture}}
+\doxysubsubsection{\texorpdfstring{BfdArchitecture()}{BfdArchitecture()}}
+{\footnotesize\ttfamily Bfd\+Architecture\+::\+Bfd\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{fname,  }\item[{const string \&}]{targ,  }\item[{ostream $\ast$}]{estream }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+This just wraps the base class constructor 
+\begin{DoxyParams}{Parameters}
+{\em fname} & is the path to the executable file \\
+\hline
+{\em targ} & is the (optional) language id to use for the file \\
+\hline
+{\em estream} & is the stream to use for the error console \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBfdArchitecture_a577d1f082486f2cd6f134d1ce5eb3989}\label{classBfdArchitecture_a577d1f082486f2cd6f134d1ce5eb3989}} 
+\index{BfdArchitecture@{BfdArchitecture}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!BfdArchitecture@{BfdArchitecture}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Bfd\+Architecture\+::restore\+Xml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the \mbox{\hyperlink{classArchitecture}{Architecture}} state from an X\+ML stream. 
+
+Read in all the sub-\/component state from a $<$save\+\_\+state$>$ X\+ML tag When adding stuff to this B\+E\+W\+A\+RE\+: The spec file has already initialized stuff 
+\begin{DoxyParams}{Parameters}
+{\em store} & is document store containing the parsed root tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classArchitecture_ab15a398b9f84dd62ad36d1e83895783a}{Architecture}}.
+
+\mbox{\Hypertarget{classBfdArchitecture_ac775d8894dd3abba1effafe22881a131}\label{classBfdArchitecture_ac775d8894dd3abba1effafe22881a131}} 
+\index{BfdArchitecture@{BfdArchitecture}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!BfdArchitecture@{BfdArchitecture}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Bfd\+Architecture\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize this architecture to X\+ML. 
+
+Write the current state of all types, symbols, functions, etc. an X\+ML stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classArchitecture_af760a127622d4cdd4b6b436122478cb5}{Architecture}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bfd__arch_8hh}{bfd\+\_\+arch.\+hh}}\item 
+bfd\+\_\+arch.\+cc\end{DoxyCompactItemize}

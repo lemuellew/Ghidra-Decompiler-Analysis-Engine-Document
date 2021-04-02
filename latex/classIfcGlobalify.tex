@@ -1,0 +1,62 @@
+\hypertarget{classIfcGlobalify}{}\doxysection{Ifc\+Globalify Class Reference}
+\label{classIfcGlobalify}\index{IfcGlobalify@{IfcGlobalify}}
+
+
+Treat all normal memory as discoverable global variables\+: {\ttfamily global spaces}  
+
+
+
+
+Inheritance diagram for Ifc\+Globalify\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcGlobalify__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Globalify\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcGlobalify__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcGlobalify_a30fe295b7731c4161efb170abbd90c10}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Treat all normal memory as discoverable global variables\+: {\ttfamily global spaces} 
+
+This has the drastic effect that the decompiler will treat all registers and stack locations as global variables. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcGlobalify_a30fe295b7731c4161efb170abbd90c10}\label{classIfcGlobalify_a30fe295b7731c4161efb170abbd90c10}} 
+\index{IfcGlobalify@{IfcGlobalify}!execute@{execute}}
+\index{execute@{execute}!IfcGlobalify@{IfcGlobalify}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Globalify\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

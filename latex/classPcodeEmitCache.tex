@@ -1,0 +1,104 @@
+\hypertarget{classPcodeEmitCache}{}\doxysection{Pcode\+Emit\+Cache Class Reference}
+\label{classPcodeEmitCache}\index{PcodeEmitCache@{PcodeEmitCache}}
+
+
+P-\/code emitter that dumps its raw Varnodes and Pcode\+Ops to an in memory cache.  
+
+
+
+
+{\ttfamily \#include $<$emulate.\+hh$>$}
+
+
+
+Inheritance diagram for Pcode\+Emit\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classPcodeEmitCache__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pcode\+Emit\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classPcodeEmitCache__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPcodeEmitCache_a478720d9338eec8533c3450c5b216781}{Pcode\+Emit\+Cache}} (vector$<$ \mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$ $>$ \&ocache, vector$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ $>$ \&vcache, const vector$<$ \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ $>$ \&in, uintb uniq\+Reserve)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPcodeEmitCache_a493e849e384f3a63cbf1676c43d6bbe1}{dump}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$outvar, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$vars, int4 isize)
+\begin{DoxyCompactList}\small\item\em The main pcode emit method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+P-\/code emitter that dumps its raw Varnodes and Pcode\+Ops to an in memory cache. 
+
+This is used for emulation when full \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects aren\textquotesingle{}t needed 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPcodeEmitCache_a478720d9338eec8533c3450c5b216781}\label{classPcodeEmitCache_a478720d9338eec8533c3450c5b216781}} 
+\index{PcodeEmitCache@{PcodeEmitCache}!PcodeEmitCache@{PcodeEmitCache}}
+\index{PcodeEmitCache@{PcodeEmitCache}!PcodeEmitCache@{PcodeEmitCache}}
+\doxysubsubsection{\texorpdfstring{PcodeEmitCache()}{PcodeEmitCache()}}
+{\footnotesize\ttfamily Pcode\+Emit\+Cache\+::\+Pcode\+Emit\+Cache (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$ $>$ \&}]{ocache,  }\item[{vector$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ $>$ \&}]{vcache,  }\item[{const vector$<$ \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ $>$ \&}]{in,  }\item[{uintb}]{uniq\+Reserve }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+Provide the emitter with the containers that will hold the cached p-\/code ops and varnodes. 
+\begin{DoxyParams}{Parameters}
+{\em ocache} & is the container for cached \mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} \\
+\hline
+{\em vcache} & is the container for cached \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \\
+\hline
+{\em in} & is the map of \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} \\
+\hline
+{\em uniq\+Reserve} & is the starting offset for temporaries in the {\itshape unique} space \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeEmitCache_a493e849e384f3a63cbf1676c43d6bbe1}\label{classPcodeEmitCache_a493e849e384f3a63cbf1676c43d6bbe1}} 
+\index{PcodeEmitCache@{PcodeEmitCache}!dump@{dump}}
+\index{dump@{dump}!PcodeEmitCache@{PcodeEmitCache}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void Pcode\+Emit\+Cache\+::dump (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{outvar,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{vars,  }\item[{int4}]{isize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The main pcode emit method. 
+
+A single pcode instruction is returned to the application via this method. Particular applications override it to tailor how the operations are used. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+{\em opc} & is the opcode of the particular pcode instruction \\
+\hline
+{\em outvar} & if not {\itshape null} is a pointer to data about the output varnode \\
+\hline
+{\em vars} & is a pointer to an array of \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} for each input varnode \\
+\hline
+{\em isize} & is the number of input varnodes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}{Pcode\+Emit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{emulate_8hh}{emulate.\+hh}}\item 
+emulate.\+cc\end{DoxyCompactItemize}

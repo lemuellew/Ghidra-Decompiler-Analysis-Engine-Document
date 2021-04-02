@@ -1,0 +1,121 @@
+\hypertarget{classRuleTrivialBool}{}\doxysection{Rule\+Trivial\+Bool Class Reference}
+\label{classRuleTrivialBool}\index{RuleTrivialBool@{RuleTrivialBool}}
+
+
+Simplify boolean expressions when one side is constant.  
+
+
+
+
+Inheritance diagram for Rule\+Trivial\+Bool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classRuleTrivialBool__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Trivial\+Bool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classRuleTrivialBool__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRuleTrivialBool_a889c0573c7bc1c1d231ec03bd58a13c0}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRuleTrivialBool_acdd8aeb672d69e778194b2cc750ba143}{get\+Op\+List}} (vector$<$ uint4 $>$ \&oplist) const
+\begin{DoxyCompactList}\small\item\em List of op codes this rule operates on. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRuleTrivialBool_a0254986d799ca6fd09ecb6e96288eae1}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Simplify boolean expressions when one side is constant. 
+
+
+\begin{DoxyItemize}
+\item {\ttfamily V \&\& false =$>$ false}
+\item {\ttfamily V \&\& true =$>$ V}
+\item {\ttfamily V $\vert$$\vert$ false =$>$ V}
+\item {\ttfamily V $\vert$$\vert$ true =$>$ true}
+\item {\ttfamily V $^\wedge$$^\wedge$ true =$>$ !V}
+\item {\ttfamily V $^\wedge$$^\wedge$ false =$>$ V} 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRuleTrivialBool_a0254986d799ca6fd09ecb6e96288eae1}\label{classRuleTrivialBool_a0254986d799ca6fd09ecb6e96288eae1}} 
+\index{RuleTrivialBool@{RuleTrivialBool}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RuleTrivialBool@{RuleTrivialBool}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Trivial\+Bool\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRuleTrivialBool_a889c0573c7bc1c1d231ec03bd58a13c0}\label{classRuleTrivialBool_a889c0573c7bc1c1d231ec03bd58a13c0}} 
+\index{RuleTrivialBool@{RuleTrivialBool}!clone@{clone}}
+\index{clone@{clone}!RuleTrivialBool@{RuleTrivialBool}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Trivial\+Bool\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+\mbox{\Hypertarget{classRuleTrivialBool_acdd8aeb672d69e778194b2cc750ba143}\label{classRuleTrivialBool_acdd8aeb672d69e778194b2cc750ba143}} 
+\index{RuleTrivialBool@{RuleTrivialBool}!getOpList@{getOpList}}
+\index{getOpList@{getOpList}!RuleTrivialBool@{RuleTrivialBool}}
+\doxysubsubsection{\texorpdfstring{getOpList()}{getOpList()}}
+{\footnotesize\ttfamily void Rule\+Trivial\+Bool\+::get\+Op\+List (\begin{DoxyParamCaption}\item[{vector$<$ uint4 $>$ \&}]{oplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List of op codes this rule operates on. 
+
+Populate the given array with all possible Op\+Codes this \mbox{\hyperlink{classRule}{Rule}} might apply to. By default, this method returns all possible Op\+Codes 
+\begin{DoxyParams}{Parameters}
+{\em oplist} & is the array to populate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4023bfc7825de0ab866790551856d10e}{Rule}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

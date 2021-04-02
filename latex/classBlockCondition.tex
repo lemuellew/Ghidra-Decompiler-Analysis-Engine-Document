@@ -1,0 +1,244 @@
+\hypertarget{classBlockCondition}{}\doxysection{Block\+Condition Class Reference}
+\label{classBlockCondition}\index{BlockCondition@{BlockCondition}}
+
+
+Two conditional blocks combined into one conditional using B\+O\+O\+L\+\_\+\+A\+ND or B\+O\+O\+L\+\_\+\+OR.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+Condition\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classBlockCondition__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+Condition\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classBlockCondition__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockCondition_a654b72b19819b68c6f09e507dfee4ddd}\label{classBlockCondition_a654b72b19819b68c6f09e507dfee4ddd}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classBlockCondition_ab25a80cf066d355146cd5b4a67d91f46}\label{classBlockCondition_ab25a80cf066d355146cd5b4a67d91f46}} 
+virtual void {\bfseries scope\+Break} (int4 curexit, int4 curloopexit)
+\item 
+virtual void \mbox{\hyperlink{classBlockCondition_a94ff21df098dda7c4cb50c87c500c439}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockCondition_a952361756ea8b84dc0234d00d628c164}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBlockCondition_a2af1221f54ea05c5c8b25b4321f60705}{negate\+Condition}} (bool toporbottom)
+\begin{DoxyCompactList}\small\item\em Flip the condition computed by {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockCondition_a031007ca09262646abc489c6d5d29e50}{get\+Split\+Point}} (void)
+\begin{DoxyCompactList}\small\item\em Get the leaf splitting block. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classBlockCondition_a586d47e72963c4e5f719f3673ef3743c}{flip\+In\+Place\+Test}} (vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&fliplist) const
+\begin{DoxyCompactList}\small\item\em Test normalizing the conditional branch in {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockCondition_a600c60c9af3b7ad9d7b8f58fa0f7ab5a}{flip\+In\+Place\+Execute}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the flip to normalize conditional branch executed by {\bfseries{this}} block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockCondition_acfde1060a17a2c40b1cb9edf90e69595}\label{classBlockCondition_acfde1060a17a2c40b1cb9edf90e69595}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ {\bfseries last\+Op} (void) const
+\item 
+\mbox{\Hypertarget{classBlockCondition_a38493adfe801b32d82244de3ee75c6fc}\label{classBlockCondition_a38493adfe801b32d82244de3ee75c6fc}} 
+virtual bool {\bfseries is\+Complex} (void) const
+\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockCondition_aefdc0e19b1623ebefa07b05b5bd85408}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockCondition_a1e24ce75951cb7a66b281eeabe7854c0}{save\+Xml\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save basic information as X\+ML attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Two conditional blocks combined into one conditional using B\+O\+O\+L\+\_\+\+A\+ND or B\+O\+O\+L\+\_\+\+OR. 
+
+This class is used to construct full conditional expressions. An instance glues together two components, each with two outgoing edges. Of the four edges, 1 must go between the two components, and 2 must go to the same exit block, so there will be exactly 2 distinct exit blocks in total. The new condition can be interpreted as either\+:
+\begin{DoxyItemize}
+\item If condition one {\bfseries{and}} condition two, goto exit 0, otherwise goto exit 1.
+\item If condition one {\bfseries{or}} condition two, goto exit 1, otherwise goto exit 0.
+\end{DoxyItemize}
+
+depending on the boolean operation setting for the condition 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockCondition_a952361756ea8b84dc0234d00d628c164}\label{classBlockCondition_a952361756ea8b84dc0234d00d628c164}} 
+\index{BlockCondition@{BlockCondition}!emit@{emit}}
+\index{emit@{emit}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+Condition\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockCondition_a600c60c9af3b7ad9d7b8f58fa0f7ab5a}\label{classBlockCondition_a600c60c9af3b7ad9d7b8f58fa0f7ab5a}} 
+\index{BlockCondition@{BlockCondition}!flipInPlaceExecute@{flipInPlaceExecute}}
+\index{flipInPlaceExecute@{flipInPlaceExecute}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{flipInPlaceExecute()}{flipInPlaceExecute()}}
+{\footnotesize\ttfamily void Block\+Condition\+::flip\+In\+Place\+Execute (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the flip to normalize conditional branch executed by {\bfseries{this}} block. 
+
+This reverses the outgoing edge order in the right basic blocks, but does not modify the instructions directly. 
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCondition_a586d47e72963c4e5f719f3673ef3743c}\label{classBlockCondition_a586d47e72963c4e5f719f3673ef3743c}} 
+\index{BlockCondition@{BlockCondition}!flipInPlaceTest@{flipInPlaceTest}}
+\index{flipInPlaceTest@{flipInPlaceTest}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{flipInPlaceTest()}{flipInPlaceTest()}}
+{\footnotesize\ttfamily int4 Block\+Condition\+::flip\+In\+Place\+Test (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&}]{fliplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Test normalizing the conditional branch in {\bfseries{this}}. 
+
+Find the set of \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects that need to be adjusted to flip the condition {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} calculates.
+
+Return\+:
+\begin{DoxyItemize}
+\item 0 if the flip would normalize the condition
+\item 1 if the flip doesn\textquotesingle{}t affect normalization of the condition
+\item 2 if the flip produces an unnormalized condition 
+\begin{DoxyParams}{Parameters}
+{\em fliplist} & will contain the Pcode\+Ops that need to be adjusted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the condition will be normalized, 1 or 2 otherwise 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCondition_a031007ca09262646abc489c6d5d29e50}\label{classBlockCondition_a031007ca09262646abc489c6d5d29e50}} 
+\index{BlockCondition@{BlockCondition}!getSplitPoint@{getSplitPoint}}
+\index{getSplitPoint@{getSplitPoint}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{getSplitPoint()}{getSplitPoint()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}$\ast$ Block\+Condition\+::get\+Split\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the leaf splitting block. 
+
+If {\bfseries{this}} block ends with a conditional branch, return the deepest component block that performs the split. This component needs to be able to perform \mbox{\hyperlink{classBlockCondition_a586d47e72963c4e5f719f3673ef3743c}{flip\+In\+Place\+Test()}} and \mbox{\hyperlink{classBlockCondition_a600c60c9af3b7ad9d7b8f58fa0f7ab5a}{flip\+In\+Place\+Execute()}} \begin{DoxyReturn}{Returns}
+the component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} or N\+U\+LL if this doesn\textquotesingle{}t end in a conditional branch 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a20996aacbad259e2e4a7bb0c72482335}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCondition_a2af1221f54ea05c5c8b25b4321f60705}\label{classBlockCondition_a2af1221f54ea05c5c8b25b4321f60705}} 
+\index{BlockCondition@{BlockCondition}!negateCondition@{negateCondition}}
+\index{negateCondition@{negateCondition}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{negateCondition()}{negateCondition()}}
+{\footnotesize\ttfamily bool Block\+Condition\+::negate\+Condition (\begin{DoxyParamCaption}\item[{bool}]{toporbottom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Flip the condition computed by {\bfseries{this}}. 
+
+Flip the order of outgoing edges (at least). This should also affect the original op causing the condition. Note\+: we don\textquotesingle{}t have to flip at all levels of the hierarchy only at the top and at the bottom 
+\begin{DoxyParams}{Parameters}
+{\em toporbottom} & is {\bfseries{true}} if {\bfseries{this}} is the top outermost block of the hierarchy getting negated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made to data-\/flow 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_ae0f8a479ae1548280ff0b4f45bc08dc3}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCondition_aefdc0e19b1623ebefa07b05b5bd85408}\label{classBlockCondition_aefdc0e19b1623ebefa07b05b5bd85408}} 
+\index{BlockCondition@{BlockCondition}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Condition\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockCondition_a94ff21df098dda7c4cb50c87c500c439}\label{classBlockCondition_a94ff21df098dda7c4cb50c87c500c439}} 
+\index{BlockCondition@{BlockCondition}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+Condition\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCondition_a1e24ce75951cb7a66b281eeabe7854c0}\label{classBlockCondition_a1e24ce75951cb7a66b281eeabe7854c0}} 
+\index{BlockCondition@{BlockCondition}!saveXmlHeader@{saveXmlHeader}}
+\index{saveXmlHeader@{saveXmlHeader}!BlockCondition@{BlockCondition}}
+\doxysubsubsection{\texorpdfstring{saveXmlHeader()}{saveXmlHeader()}}
+{\footnotesize\ttfamily void Block\+Condition\+::save\+Xml\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save basic information as X\+ML attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a6cf95f66e3f6940a8342b3e6fdfc5ca2}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

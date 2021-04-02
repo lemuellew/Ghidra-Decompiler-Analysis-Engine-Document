@@ -1,0 +1,105 @@
+\hypertarget{classIfcDuplicateHash}{}\doxysection{Ifc\+Duplicate\+Hash Class Reference}
+\label{classIfcDuplicateHash}\index{IfcDuplicateHash@{IfcDuplicateHash}}
+
+
+Check for duplicate hashes in functions\+: {\ttfamily duplicate hash}  
+
+
+
+
+Inheritance diagram for Ifc\+Duplicate\+Hash\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcDuplicateHash__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Duplicate\+Hash\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcDuplicateHash__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcDuplicateHash_a8a4048b58da97771dcad39343e231b03}{execute}} (istream \&s)
+\item 
+virtual void \mbox{\hyperlink{classIfcDuplicateHash_a5459747ed3d0b946f717556fd9e40c08}{iteration\+Callback}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Perform the per-\/function aspect of {\bfseries{this}} command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIfcDuplicateHash_a022b4692a40e890a64d0a960cfc74cb7}{check}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, ostream \&s)
+\begin{DoxyCompactList}\small\item\em Check for duplicate hashes in given function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Check for duplicate hashes in functions\+: {\ttfamily duplicate hash} 
+
+All functions in the architecture/program are decompiled, and for each a check is made for \mbox{\hyperlink{classVarnode}{Varnode}} pairs with identical hash values. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcDuplicateHash_a022b4692a40e890a64d0a960cfc74cb7}\label{classIfcDuplicateHash_a022b4692a40e890a64d0a960cfc74cb7}} 
+\index{IfcDuplicateHash@{IfcDuplicateHash}!check@{check}}
+\index{check@{check}!IfcDuplicateHash@{IfcDuplicateHash}}
+\doxysubsubsection{\texorpdfstring{check()}{check()}}
+{\footnotesize\ttfamily void Ifc\+Duplicate\+Hash\+::check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{ostream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check for duplicate hashes in given function. 
+
+For each duplicate discovered, a message is written to the provided stream. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the given function to search \\
+\hline
+{\em s} & is the stream to write messages to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfcDuplicateHash_a8a4048b58da97771dcad39343e231b03}\label{classIfcDuplicateHash_a8a4048b58da97771dcad39343e231b03}} 
+\index{IfcDuplicateHash@{IfcDuplicateHash}!execute@{execute}}
+\index{execute@{execute}!IfcDuplicateHash@{IfcDuplicateHash}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Duplicate\+Hash\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfcDuplicateHash_a5459747ed3d0b946f717556fd9e40c08}\label{classIfcDuplicateHash_a5459747ed3d0b946f717556fd9e40c08}} 
+\index{IfcDuplicateHash@{IfcDuplicateHash}!iterationCallback@{iterationCallback}}
+\index{iterationCallback@{iterationCallback}!IfcDuplicateHash@{IfcDuplicateHash}}
+\doxysubsubsection{\texorpdfstring{iterationCallback()}{iterationCallback()}}
+{\footnotesize\ttfamily void Ifc\+Duplicate\+Hash\+::iteration\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the per-\/function aspect of {\bfseries{this}} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the particular function to operate on \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}{Iface\+Decomp\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,328 @@
+\hypertarget{classParamEntry}{}\doxysection{Param\+Entry Class Reference}
+\label{classParamEntry}\index{ParamEntry@{ParamEntry}}
+
+
+A contiguous range of memory that can be used to pass parameters.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a6445d0ea4550d0f61d3fd399ce0b132c}{force\+\_\+left\+\_\+justify}} = 1, 
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a45b2f9c4e8d3b35690dc840d2166fe51}{reverse\+\_\+stack}} = 2, 
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a073a14d23a40a6d2755460a4bce6e2e9}{smallsize\+\_\+zext}} = 4, 
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a21054b237603831d14b82b9d16b5baeb}{smallsize\+\_\+sext}} = 8, 
+\newline
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3adf66695cb7eff34dbf4d2ef63d09174d}{smallsize\+\_\+inttype}} = 32, 
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a5fcca54ba25ce326bb9c9a58264bed88}{smallsize\+\_\+floatext}} = 64, 
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a99f501dbe12bd1271a10979776d61a47}{extracheck\+\_\+high}} = 128, 
+\mbox{\hyperlink{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a1faec835456469d104135ab2d0aa915e}{extracheck\+\_\+low}} = 256
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParamEntry_a14263620a380623342baad65d07a0948}{Param\+Entry}} (\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} t, int4 grp, int4 grpsize, const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 sz, int4 mnsz, int4 align, bool normalstack)
+\begin{DoxyCompactList}\small\item\em Construct entry from components. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParamEntry_a57be6dd1ea538a557fa636e53b392618}{contains}} (const \mbox{\hyperlink{classParamEntry}{Param\+Entry}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} contain the indicated entry. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParamEntry_a0634c47b3e467a2c0bfc1a4a00cffcc3}{contained\+By}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz) const
+\begin{DoxyCompactList}\small\item\em Is this entry contained by the given range. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classParamEntry_ad2394315fdaceeb41f3b67f31f0ef01e}{justified\+Contain}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz) const
+\begin{DoxyCompactList}\small\item\em Calculate endian aware containment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParamEntry_a8725ae536c3a2eb5747df143eee4a552}{get\+Container}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Calculate the containing memory range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{classParamEntry_ae81b887aea24a253882ce6562d10a7a0}{assumed\+Extension}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Calculate the type of {\itshape extension} to expect for the given logical value. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classParamEntry_af5f3ce2b0cce7b2400a14ab3abc37cd9}{get\+Slot}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 skip) const
+\begin{DoxyCompactList}\small\item\em Calculate the {\itshape slot} occupied by a specific address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classParamEntry_afa742398e87fda08bc9cfaa69304c4be}{get\+Addr\+By\+Slot}} (int4 \&slot, int4 sz) const
+\begin{DoxyCompactList}\small\item\em Calculate the storage address assigned when allocating a parameter of a given size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamEntry_a53c2087cab53baf85ca84cf830146cd4}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage, bool normalstack)
+\begin{DoxyCompactList}\small\item\em Restore the entry from an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamEntry_accbffc7f8083606b4571d39cf0ac0606}{extra\+Checks}} (list$<$ \mbox{\hyperlink{classParamEntry}{Param\+Entry}} $>$ \&entry)
+\begin{DoxyCompactList}\small\item\em Check if {\bfseries{this}} entry represents a {\itshape joined} parameter and requires extra scrutiny. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A contiguous range of memory that can be used to pass parameters. 
+
+This range can be used to pass a single parameter (is\+Exclusion() == {\bfseries{true}}). This is intended to model a parameter passed in a register. The logical value does not have to fill the entire range. The size in bytes can range from a minimum, get\+Min\+Size(), to the whole range, get\+Size(). Justification and extension of the logical value within the range can be specified.
+
+Alternately the range can be used as a resource for multiple parameters (is\+Exclusion() == {\bfseries{false}}). In this case, the parameters are allocated sequentially (usually) starting from the front of the range. The amount of space consumed by each parameter is dictated by an {\itshape alignment} setting in bytes.
+
+A \mbox{\hyperlink{classParamEntry}{Param\+Entry}} can be associated with a particular class of data-\/types. Usually\+:
+\begin{DoxyItemize}
+\item T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN for general purpose parameters
+\item T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT for dedicated floating-\/point registers 
+\end{DoxyItemize}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_left\_justify@{force\_left\_justify}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!force\_left\_justify@{force\_left\_justify}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a6445d0ea4550d0f61d3fd399ce0b132c}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a6445d0ea4550d0f61d3fd399ce0b132c}} 
+force\+\_\+left\+\_\+justify&Big endian values are left justified within their slot. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reverse\_stack@{reverse\_stack}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!reverse\_stack@{reverse\_stack}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a45b2f9c4e8d3b35690dc840d2166fe51}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a45b2f9c4e8d3b35690dc840d2166fe51}} 
+reverse\+\_\+stack&Slots (for {\itshape non-\/exlusion} entries) are allocated in reverse order. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{smallsize\_zext@{smallsize\_zext}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!smallsize\_zext@{smallsize\_zext}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a073a14d23a40a6d2755460a4bce6e2e9}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a073a14d23a40a6d2755460a4bce6e2e9}} 
+smallsize\+\_\+zext&Assume values that are below the max {\bfseries{size}} are zero extended into this container. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{smallsize\_sext@{smallsize\_sext}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!smallsize\_sext@{smallsize\_sext}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a21054b237603831d14b82b9d16b5baeb}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a21054b237603831d14b82b9d16b5baeb}} 
+smallsize\+\_\+sext&Assume values that are below the max {\bfseries{size}} are sign extended into this container. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{smallsize\_inttype@{smallsize\_inttype}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!smallsize\_inttype@{smallsize\_inttype}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3adf66695cb7eff34dbf4d2ef63d09174d}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3adf66695cb7eff34dbf4d2ef63d09174d}} 
+smallsize\+\_\+inttype&Assume values that are below the max {\bfseries{size}} are sign OR zero extended based on integer type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{smallsize\_floatext@{smallsize\_floatext}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!smallsize\_floatext@{smallsize\_floatext}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a5fcca54ba25ce326bb9c9a58264bed88}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a5fcca54ba25ce326bb9c9a58264bed88}} 
+smallsize\+\_\+floatext&Assume values smaller than max {\bfseries{size}} are floating-\/point extended to full size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{extracheck\_high@{extracheck\_high}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!extracheck\_high@{extracheck\_high}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a99f501dbe12bd1271a10979776d61a47}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a99f501dbe12bd1271a10979776d61a47}} 
+extracheck\+\_\+high&Perform extra checks during parameter recovery on most sig portion of the double. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{extracheck\_low@{extracheck\_low}!ParamEntry@{ParamEntry}}\index{ParamEntry@{ParamEntry}!extracheck\_low@{extracheck\_low}}}\mbox{\Hypertarget{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a1faec835456469d104135ab2d0aa915e}\label{classParamEntry_ac2717c4cafbf14b70f326ae8bac627c3a1faec835456469d104135ab2d0aa915e}} 
+extracheck\+\_\+low&Perform extra checks during parameter recovery on least sig portion of the double. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParamEntry_a14263620a380623342baad65d07a0948}\label{classParamEntry_a14263620a380623342baad65d07a0948}} 
+\index{ParamEntry@{ParamEntry}!ParamEntry@{ParamEntry}}
+\index{ParamEntry@{ParamEntry}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{ParamEntry()}{ParamEntry()}}
+{\footnotesize\ttfamily Param\+Entry\+::\+Param\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}}}]{t,  }\item[{int4}]{grp,  }\item[{int4}]{grpsize,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{sz,  }\item[{int4}]{mnsz,  }\item[{int4}]{align,  }\item[{bool}]{normalstack }\end{DoxyParamCaption})}
+
+
+
+Construct entry from components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & is the data-\/type class (T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN or T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT) \\
+\hline
+{\em grp} & is the group id \\
+\hline
+{\em grpsize} & is the number of consecutive groups occupied \\
+\hline
+{\em loc} & is the starting address of the memory range \\
+\hline
+{\em sz} & is the number of bytes in the range \\
+\hline
+{\em mnsz} & is the smallest size of a logical value \\
+\hline
+{\em align} & is the alignment (0 means the memory range will hold one parameter exclusively) \\
+\hline
+{\em normalstack} & is {\bfseries{true}} if parameters are allocated from the front of the range \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParamEntry_ae81b887aea24a253882ce6562d10a7a0}\label{classParamEntry_ae81b887aea24a253882ce6562d10a7a0}} 
+\index{ParamEntry@{ParamEntry}!assumedExtension@{assumedExtension}}
+\index{assumedExtension@{assumedExtension}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{assumedExtension()}{assumedExtension()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} Param\+Entry\+::assumed\+Extension (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the type of {\itshape extension} to expect for the given logical value. 
+
+Return\+:
+\begin{DoxyItemize}
+\item C\+P\+U\+I\+\_\+\+C\+O\+PY if no extensions are assumed for small values in this container
+\item C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+E\+XT indicates a sign extension
+\item C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+Z\+E\+XT indicates a zero extension
+\item C\+P\+U\+I\+\_\+\+P\+I\+E\+CE indicates an integer extension based on type of parameter
+\end{DoxyItemize}
+
+(A C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT=float extension is handled by heritage and \mbox{\hyperlink{classJoinRecord}{Join\+Record}}) If returning an extension operator, pass back the container being extended. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the logical value \\
+\hline
+{\em sz} & is the size of the logical value in bytes \\
+\hline
+{\em res} & will hold the passed back containing range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the type of extension 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamEntry_a0634c47b3e467a2c0bfc1a4a00cffcc3}\label{classParamEntry_a0634c47b3e467a2c0bfc1a4a00cffcc3}} 
+\index{ParamEntry@{ParamEntry}!containedBy@{containedBy}}
+\index{containedBy@{containedBy}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{containedBy()}{containedBy()}}
+{\footnotesize\ttfamily bool Param\+Entry\+::contained\+By (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Is this entry contained by the given range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the potential containing range \\
+\hline
+{\em sz} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the entire \mbox{\hyperlink{classParamEntry}{Param\+Entry}} fits inside the range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamEntry_a57be6dd1ea538a557fa636e53b392618}\label{classParamEntry_a57be6dd1ea538a557fa636e53b392618}} 
+\index{ParamEntry@{ParamEntry}!contains@{contains}}
+\index{contains@{contains}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Param\+Entry\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParamEntry}{Param\+Entry}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Does {\bfseries{this}} contain the indicated entry. 
+
+This entry must properly contain the other memory range, and the entry properties must be compatible. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other entry to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the other entry is contained 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamEntry_accbffc7f8083606b4571d39cf0ac0606}\label{classParamEntry_accbffc7f8083606b4571d39cf0ac0606}} 
+\index{ParamEntry@{ParamEntry}!extraChecks@{extraChecks}}
+\index{extraChecks@{extraChecks}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{extraChecks()}{extraChecks()}}
+{\footnotesize\ttfamily void Param\+Entry\+::extra\+Checks (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{classParamEntry}{Param\+Entry}} $>$ \&}]{entry }\end{DoxyParamCaption})}
+
+
+
+Check if {\bfseries{this}} entry represents a {\itshape joined} parameter and requires extra scrutiny. 
+
+Return value parameter lists allow overlapping entries if one of the overlapping entries is a {\itshape joined} parameter. In this case the return value recovery logic needs to know what portion(s) of the joined parameter are overlapped. This method sets flags on {\bfseries{this}} to indicate the overlap. 
+\begin{DoxyParams}{Parameters}
+{\em entry} & is the full parameter list to check for overlaps with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamEntry_afa742398e87fda08bc9cfaa69304c4be}\label{classParamEntry_afa742398e87fda08bc9cfaa69304c4be}} 
+\index{ParamEntry@{ParamEntry}!getAddrBySlot@{getAddrBySlot}}
+\index{getAddrBySlot@{getAddrBySlot}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{getAddrBySlot()}{getAddrBySlot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Param\+Entry\+::get\+Addr\+By\+Slot (\begin{DoxyParamCaption}\item[{int4 \&}]{slotnum,  }\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the storage address assigned when allocating a parameter of a given size. 
+
+Assume {\bfseries{slotnum}} slots have already been assigned and increment {\bfseries{slotnum}} by the number of slots used. Return an invalid address if the size is too small or if there are not enough slots left. 
+\begin{DoxyParams}{Parameters}
+{\em slotnum} & is a reference to used slots (which will be updated) \\
+\hline
+{\em sz} & is the size of the parameter to allocated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the address of the new parameter (or an invalid address) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamEntry_a8725ae536c3a2eb5747df143eee4a552}\label{classParamEntry_a8725ae536c3a2eb5747df143eee4a552}} 
+\index{ParamEntry@{ParamEntry}!getContainer@{getContainer}}
+\index{getContainer@{getContainer}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{getContainer()}{getContainer()}}
+{\footnotesize\ttfamily bool Param\+Entry\+::get\+Container (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the containing memory range. 
+
+Pass back the \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} (space,offset,size) of the parameter that would contain the given memory range. If {\bfseries{this}} contains the range and is {\itshape exclusive}, just pass back {\bfseries{this}} memory range. Otherwise the passed back range will depend on alignment. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given range \\
+\hline
+{\em sz} & is the size of the given range in bytes \\
+\hline
+{\em res} & is the reference to \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} that will be passed back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the given range is contained at all 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamEntry_af5f3ce2b0cce7b2400a14ab3abc37cd9}\label{classParamEntry_af5f3ce2b0cce7b2400a14ab3abc37cd9}} 
+\index{ParamEntry@{ParamEntry}!getSlot@{getSlot}}
+\index{getSlot@{getSlot}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{getSlot()}{getSlot()}}
+{\footnotesize\ttfamily int4 Param\+Entry\+::get\+Slot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{skip }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the {\itshape slot} occupied by a specific address. 
+
+For {\itshape non-\/exclusive} entries, the memory range can be divided up into {\bfseries{slots}}, which are chunks that take up a full alignment. I.\+e. for an entry with alignment 4, slot 0 is bytes 0-\/3 of the range, slot 1 is bytes 4-\/7, etc. Assuming the given address is contained in {\bfseries{this}} entry, and we {\bfseries{skip}} ahead a number of bytes, return the {\itshape slot} associated with that byte. N\+O\+TE\+: its important that the given address has already been checked for containment. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em skip} & is the number of bytes to skip ahead \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the slot index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamEntry_ad2394315fdaceeb41f3b67f31f0ef01e}\label{classParamEntry_ad2394315fdaceeb41f3b67f31f0ef01e}} 
+\index{ParamEntry@{ParamEntry}!justifiedContain@{justifiedContain}}
+\index{justifiedContain@{justifiedContain}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{justifiedContain()}{justifiedContain()}}
+{\footnotesize\ttfamily int4 Param\+Entry\+::justified\+Contain (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Calculate endian aware containment. 
+
+Check if the given memory range is contained in {\bfseries{this}}. If it is contained, return the endian aware offset of the containment. I.\+e. if the least significant byte of the given range falls on the least significant byte of the {\bfseries{this}}, return 0. If it intersects the second least significant, return 1, etc. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given memory range \\
+\hline
+{\em sz} & is the size of the given memory range in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the endian aware alignment or -\/1 if the given range isn\textquotesingle{}t contained 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamEntry_a53c2087cab53baf85ca84cf830146cd4}\label{classParamEntry_a53c2087cab53baf85ca84cf830146cd4}} 
+\index{ParamEntry@{ParamEntry}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ParamEntry@{ParamEntry}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Param\+Entry\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage,  }\item[{bool}]{normalstack }\end{DoxyParamCaption})}
+
+
+
+Restore the entry from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$pentry$>$ element \\
+\hline
+{\em manage} & is a manager to resolve address space references \\
+\hline
+{\em normalstack} & is {\bfseries{true}} if the parameters should be allocated from the front of the range \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,78 @@
+\hypertarget{database_8hh}{}\doxysection{database.\+hh File Reference}
+\label{database_8hh}\index{database.hh@{database.hh}}
+
+
+\mbox{\hyperlink{classSymbol}{Symbol}} and \mbox{\hyperlink{classScope}{Scope}} objects for the decompiler.  
+
+
+{\ttfamily \#include \char`\"{}variable.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}partmap.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rangemap.\+hh\char`\"{}}\newline
+Include dependency graph for database.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{database_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{database_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}
+\begin{DoxyCompactList}\small\item\em A storage location for a particular \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSymbolEntry_1_1EntryInitData}{Symbol\+Entry\+::\+Entry\+Init\+Data}}
+\begin{DoxyCompactList}\small\item\em Initialization data for a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} to facilitate a rangemap. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort}{Symbol\+Entry\+::\+Entry\+Subsort}}
+\begin{DoxyCompactList}\small\item\em Class for sub-\/sorting different \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects at the same address. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSymbol}{Symbol}}
+\begin{DoxyCompactList}\small\item\em The base class for a symbol in a symbol table or scope. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classFunctionSymbol}{Function\+Symbol}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classSymbol}{Symbol}} representing an executable function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classSymbol}{Symbol}} that holds {\bfseries{equate}} information for a constant. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classSymbol}{Symbol}} that labels code internal to a function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}}
+\begin{DoxyCompactList}\small\item\em A function \mbox{\hyperlink{classSymbol}{Symbol}} referring to an external location. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSymbolCompareName}{Symbol\+Compare\+Name}}
+\begin{DoxyCompactList}\small\item\em Comparator for sorting \mbox{\hyperlink{classSymbol}{Symbol}} objects by name. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMapIterator}{Map\+Iterator}}
+\begin{DoxyCompactList}\small\item\em An iterator over \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects in multiple address spaces. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classScope}{Scope}}
+\begin{DoxyCompactList}\small\item\em A collection of \mbox{\hyperlink{classSymbol}{Symbol}} objects within a single (namespace or functional) scope. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classScopeInternal}{Scope\+Internal}}
+\begin{DoxyCompactList}\small\item\em An in-\/memory implementation of the \mbox{\hyperlink{classScope}{Scope}} interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classScopeMapper}{Scope\+Mapper}}
+\begin{DoxyCompactList}\small\item\em An \mbox{\hyperlink{classAddress}{Address}} range associated with the symbol \mbox{\hyperlink{classScope}{Scope}} that owns it. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDatabase}{Database}}
+\begin{DoxyCompactList}\small\item\em A manager for symbol scopes for a whole executable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}\label{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}} 
+typedef \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$ \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}}
+\begin{DoxyCompactList}\small\item\em A rangemap of \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{database_8hh_a6ed1db9b39a7f86a7a00b392bbe3f0d1}\label{database_8hh_a6ed1db9b39a7f86a7a00b392bbe3f0d1}} 
+typedef set$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$, \mbox{\hyperlink{classSymbolCompareName}{Symbol\+Compare\+Name}} $>$ \mbox{\hyperlink{database_8hh_a6ed1db9b39a7f86a7a00b392bbe3f0d1}{Symbol\+Name\+Tree}}
+\begin{DoxyCompactList}\small\item\em A set of \mbox{\hyperlink{classSymbol}{Symbol}} objects sorted by name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{database_8hh_a41b5ded5068e42fce5a6703ff374b192}\label{database_8hh_a41b5ded5068e42fce5a6703ff374b192}} 
+typedef map$<$ uint8, \mbox{\hyperlink{classScope}{Scope}} $\ast$ $>$ \mbox{\hyperlink{database_8hh_a41b5ded5068e42fce5a6703ff374b192}{Scope\+Map}}
+\begin{DoxyCompactList}\small\item\em A map from id to \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{database_8hh_ada192c66697381e90aa3ab34196f9ad7}\label{database_8hh_ada192c66697381e90aa3ab34196f9ad7}} 
+typedef \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \mbox{\hyperlink{classScopeMapper}{Scope\+Mapper}} $>$ \mbox{\hyperlink{database_8hh_ada192c66697381e90aa3ab34196f9ad7}{Scope\+Resolve}}
+\begin{DoxyCompactList}\small\item\em A map from address to the owning \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classSymbol}{Symbol}} and \mbox{\hyperlink{classScope}{Scope}} objects for the decompiler. 
+
+These implement the main symbol table, with support for symbols, local and global scopes, namespaces etc. Search can be by name or the address of the \mbox{\hyperlink{classSymbol}{Symbol}} storage location. 

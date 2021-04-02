@@ -1,0 +1,134 @@
+\hypertarget{classGuardRecord}{}\doxysection{Guard\+Record Class Reference}
+\label{classGuardRecord}\index{GuardRecord@{GuardRecord}}
+
+
+A (putative) switch variable \mbox{\hyperlink{classVarnode}{Varnode}} and a constraint imposed by a C\+B\+R\+A\+N\+CH.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGuardRecord_a4938d6a2071abd0e8caf0a5b2a108a6d}{Guard\+Record}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$b\+Op, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$r\+Op, int4 path, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&rng, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classGuardRecord_ab7999653314e91a17845f7f8eb92a3ec}{value\+Match}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$base\+Vn2, int4 bits\+Preserved2) const
+\begin{DoxyCompactList}\small\item\em Determine if {\bfseries{this}} guard applies to the given \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int4 \mbox{\hyperlink{classGuardRecord_a7bb09d1f9a8bb6ccfa85a6a9de7c38fb}{one\+Off\+Match}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op1, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op2)
+\begin{DoxyCompactList}\small\item\em Return 1 if the two given Pcode\+Ops produce exactly the same value, 0 if otherwise. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classGuardRecord_ab47dfd559924d4ad57006a1b3870fc34}{quasi\+Copy}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, int4 \&bits\+Preserved)
+\begin{DoxyCompactList}\small\item\em Compute the source of a quasi-\/\+C\+O\+PY chain for the given \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A (putative) switch variable \mbox{\hyperlink{classVarnode}{Varnode}} and a constraint imposed by a C\+B\+R\+A\+N\+CH. 
+
+The record constrains a specific \mbox{\hyperlink{classVarnode}{Varnode}}. If the associated C\+B\+R\+A\+N\+CH is followed along the path that reaches the switch\textquotesingle{}s B\+R\+A\+N\+C\+H\+I\+ND, then we have an explicit description of the possible values the \mbox{\hyperlink{classVarnode}{Varnode}} can hold. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGuardRecord_a4938d6a2071abd0e8caf0a5b2a108a6d}\label{classGuardRecord_a4938d6a2071abd0e8caf0a5b2a108a6d}} 
+\index{GuardRecord@{GuardRecord}!GuardRecord@{GuardRecord}}
+\index{GuardRecord@{GuardRecord}!GuardRecord@{GuardRecord}}
+\doxysubsubsection{\texorpdfstring{GuardRecord()}{GuardRecord()}}
+{\footnotesize\ttfamily Guard\+Record\+::\+Guard\+Record (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{b\+Op,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{r\+Op,  }\item[{int4}]{path,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{rng,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b\+Op} & is the C\+B\+R\+A\+N\+CH {\itshape guarding} the switch \\
+\hline
+{\em r\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} immediately reading the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em path} & is the specific branch to take from the C\+B\+R\+A\+N\+CH to reach the switch \\
+\hline
+{\em rng} & is the range of values causing the switch path to be taken \\
+\hline
+{\em v} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value controlling the C\+B\+R\+A\+N\+CH \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGuardRecord_a7bb09d1f9a8bb6ccfa85a6a9de7c38fb}\label{classGuardRecord_a7bb09d1f9a8bb6ccfa85a6a9de7c38fb}} 
+\index{GuardRecord@{GuardRecord}!oneOffMatch@{oneOffMatch}}
+\index{oneOffMatch@{oneOffMatch}!GuardRecord@{GuardRecord}}
+\doxysubsubsection{\texorpdfstring{oneOffMatch()}{oneOffMatch()}}
+{\footnotesize\ttfamily int4 Guard\+Record\+::one\+Off\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op1,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return 1 if the two given Pcode\+Ops produce exactly the same value, 0 if otherwise. 
+
+We up through only one level of \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} calculation and only for certain binary ops where the second parameter is a constant. 
+\begin{DoxyParams}{Parameters}
+{\em op1} & is the first given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to test \\
+\hline
+{\em op2} & is the second given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the same value is produced, 0 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGuardRecord_ab47dfd559924d4ad57006a1b3870fc34}\label{classGuardRecord_ab47dfd559924d4ad57006a1b3870fc34}} 
+\index{GuardRecord@{GuardRecord}!quasiCopy@{quasiCopy}}
+\index{quasiCopy@{quasiCopy}!GuardRecord@{GuardRecord}}
+\doxysubsubsection{\texorpdfstring{quasiCopy()}{quasiCopy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Guard\+Record\+::quasi\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{int4 \&}]{bits\+Preserved }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute the source of a quasi-\/\+C\+O\+PY chain for the given \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+A value is a {\bfseries{quasi-\/copy}} if a sequence of Pcode\+Ops producing it always hold the value as the least significant bits of their output \mbox{\hyperlink{classVarnode}{Varnode}}, but the sequence may put other non-\/zero values in the upper bits. This method computes the earliest ancestor \mbox{\hyperlink{classVarnode}{Varnode}} for which the given \mbox{\hyperlink{classVarnode}{Varnode}} can be viewed as a quasi-\/copy. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em bits\+Preserved} & will hold the number of least significant bits preserved by the sequence \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the earliest source of the quasi-\/copy, which may just be the given \mbox{\hyperlink{classVarnode}{Varnode}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classGuardRecord_ab7999653314e91a17845f7f8eb92a3ec}\label{classGuardRecord_ab7999653314e91a17845f7f8eb92a3ec}} 
+\index{GuardRecord@{GuardRecord}!valueMatch@{valueMatch}}
+\index{valueMatch@{valueMatch}!GuardRecord@{GuardRecord}}
+\doxysubsubsection{\texorpdfstring{valueMatch()}{valueMatch()}}
+{\footnotesize\ttfamily int4 Guard\+Record\+::value\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{base\+Vn2,  }\item[{int4}]{bits\+Preserved2 }\end{DoxyParamCaption}) const}
+
+
+
+Determine if {\bfseries{this}} guard applies to the given \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+The guard applies if we know the given \mbox{\hyperlink{classVarnode}{Varnode}} holds the same value as the \mbox{\hyperlink{classVarnode}{Varnode}} attached to the guard. So we return\+:
+\begin{DoxyItemize}
+\item 0, if the two Varnodes do not clearly hold the same value.
+\item 1, if the two Varnodes clearly hold the same value.
+\item 2, if the two \mbox{\hyperlink{classVarnode}{Varnode}} clearly hold the same value, pending no writes between their defining op.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn2} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} being tested against {\bfseries{this}} guard \\
+\hline
+{\em base\+Vn2} & is the earliest \mbox{\hyperlink{classVarnode}{Varnode}} from which the given \mbox{\hyperlink{classVarnode}{Varnode}} is quasi-\/copied. \\
+\hline
+{\em bits\+Preserved2} & is the number of potentially non-\/zero bits in the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching code 0, 1, or 2 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

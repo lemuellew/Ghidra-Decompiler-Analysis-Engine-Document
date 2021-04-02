@@ -1,0 +1,103 @@
+\hypertarget{classActionDeadCode}{}\doxysection{Action\+Dead\+Code Class Reference}
+\label{classActionDeadCode}\index{ActionDeadCode@{ActionDeadCode}}
+
+
+Dead code removal. Eliminate {\itshape dead} p-\/code ops.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Dead\+Code\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classActionDeadCode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Dead\+Code\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classActionDeadCode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionDeadCode_a2c1a4dac2eab0a2a6979c073def75fc3}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionDeadCode_a8fc0f3220ac7b0fef4613ba3666d9af9}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Dead code removal. Eliminate {\itshape dead} p-\/code ops. 
+
+This is a very fine grained algorithm, it detects usage of individual bits within the \mbox{\hyperlink{classVarnode}{Varnode}}, not just use of the \mbox{\hyperlink{classVarnode}{Varnode}} itself. Each \mbox{\hyperlink{classVarnode}{Varnode}} has a {\itshape consumed} word, which indicates if a bit in the \mbox{\hyperlink{classVarnode}{Varnode}} is being used, and it has two flags layed out as follows\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a623c7c3682639480ce5868861b9f8be8}{Varnode\+::lisconsume}} = varnode is in the working list
+\item \mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900aaaa10f65253aaec3d24b78d7bc342d64}{Varnode\+::vacconsume}} = vacuously used bit there is a path from the varnode through assignment op outputs down to a varnode that is used
+\end{DoxyItemize}
+
+The algorithm works by back propagating the {\itshape consumed} value up from the output of the op to its inputs, starting with a set of seed Varnodes which are marked as completely used (function inputs, branch conditions, ...) For each propagation the particular op being passed through can transform the \char`\"{}bit usage\char`\"{} vector of the output to obtain the input. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionDeadCode_a8fc0f3220ac7b0fef4613ba3666d9af9}\label{classActionDeadCode_a8fc0f3220ac7b0fef4613ba3666d9af9}} 
+\index{ActionDeadCode@{ActionDeadCode}!apply@{apply}}
+\index{apply@{apply}!ActionDeadCode@{ActionDeadCode}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Dead\+Code\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionDeadCode_a2c1a4dac2eab0a2a6979c073def75fc3}\label{classActionDeadCode_a2c1a4dac2eab0a2a6979c073def75fc3}} 
+\index{ActionDeadCode@{ActionDeadCode}!clone@{clone}}
+\index{clone@{clone}!ActionDeadCode@{ActionDeadCode}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Dead\+Code\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

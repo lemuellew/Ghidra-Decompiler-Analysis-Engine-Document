@@ -1,0 +1,102 @@
+\hypertarget{space_8hh}{}\doxysection{space.\+hh File Reference}
+\label{space_8hh}\index{space.hh@{space.hh}}
+
+
+Classes for describing address spaces.  
+
+
+{\ttfamily \#include \char`\"{}error.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xml.\+hh\char`\"{}}\newline
+Include dependency graph for space.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{space_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{space_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}
+\begin{DoxyCompactList}\small\item\em A region where processor data is stored. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classConstantSpace}{Constant\+Space}}
+\begin{DoxyCompactList}\small\item\em Special \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} for representing constants during analysis. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classOtherSpace}{Other\+Space}}
+\begin{DoxyCompactList}\small\item\em Special \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} for special/user-\/defined address spaces. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classUniqueSpace}{Unique\+Space}}
+\begin{DoxyCompactList}\small\item\em The pool of temporary storage registers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJoinSpace}{Join\+Space}}
+\begin{DoxyCompactList}\small\item\em The pool of logically joined variables. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classOverlaySpace}{Overlay\+Space}}
+\begin{DoxyCompactList}\small\item\em An overlay space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}} \{ \newline
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231a3ae8eb421cb8d460bc939657402d970a}{I\+P\+T\+R\+\_\+\+C\+O\+N\+S\+T\+A\+NT}} = 0, 
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231ac6a759a590195b56c099150c63cdd7b2}{I\+P\+T\+R\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR}} = 1, 
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231aebea73c9a75ffad2803a312d021932b5}{I\+P\+T\+R\+\_\+\+S\+P\+A\+C\+E\+B\+A\+SE}} = 2, 
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231a1eef2cfc279c246cc7ea0387d8c0aa66}{I\+P\+T\+R\+\_\+\+I\+N\+T\+E\+R\+N\+AL}} = 3, 
+\newline
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231a01bf4d06e504bf92eabbfd633e5c74c0}{I\+P\+T\+R\+\_\+\+F\+S\+P\+EC}} = 4, 
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231ad644dc33b71c7d421fcd0fb2003407c7}{I\+P\+T\+R\+\_\+\+I\+OP}} = 5, 
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231a67805851c12bd1477c2a748e53e45f9c}{I\+P\+T\+R\+\_\+\+J\+O\+IN}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em Fundemental address space types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes for describing address spaces. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231}} 
+\index{space.hh@{space.hh}!spacetype@{spacetype}}
+\index{spacetype@{spacetype}!space.hh@{space.hh}}
+\doxysubsubsection{\texorpdfstring{spacetype}{spacetype}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}}}
+
+
+
+Fundemental address space types. 
+
+Every address space must be one of the following core types \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPTR\_CONSTANT@{IPTR\_CONSTANT}!space.hh@{space.hh}}\index{space.hh@{space.hh}!IPTR\_CONSTANT@{IPTR\_CONSTANT}}}\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231a3ae8eb421cb8d460bc939657402d970a}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231a3ae8eb421cb8d460bc939657402d970a}} 
+I\+P\+T\+R\+\_\+\+C\+O\+N\+S\+T\+A\+NT&Special space to represent constants. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPTR\_PROCESSOR@{IPTR\_PROCESSOR}!space.hh@{space.hh}}\index{space.hh@{space.hh}!IPTR\_PROCESSOR@{IPTR\_PROCESSOR}}}\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231ac6a759a590195b56c099150c63cdd7b2}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231ac6a759a590195b56c099150c63cdd7b2}} 
+I\+P\+T\+R\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR&Normal spaces modelled by processor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPTR\_SPACEBASE@{IPTR\_SPACEBASE}!space.hh@{space.hh}}\index{space.hh@{space.hh}!IPTR\_SPACEBASE@{IPTR\_SPACEBASE}}}\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231aebea73c9a75ffad2803a312d021932b5}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231aebea73c9a75ffad2803a312d021932b5}} 
+I\+P\+T\+R\+\_\+\+S\+P\+A\+C\+E\+B\+A\+SE&addresses = offsets off of base register \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPTR\_INTERNAL@{IPTR\_INTERNAL}!space.hh@{space.hh}}\index{space.hh@{space.hh}!IPTR\_INTERNAL@{IPTR\_INTERNAL}}}\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231a1eef2cfc279c246cc7ea0387d8c0aa66}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231a1eef2cfc279c246cc7ea0387d8c0aa66}} 
+I\+P\+T\+R\+\_\+\+I\+N\+T\+E\+R\+N\+AL&Internally managed temporary space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPTR\_FSPEC@{IPTR\_FSPEC}!space.hh@{space.hh}}\index{space.hh@{space.hh}!IPTR\_FSPEC@{IPTR\_FSPEC}}}\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231a01bf4d06e504bf92eabbfd633e5c74c0}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231a01bf4d06e504bf92eabbfd633e5c74c0}} 
+I\+P\+T\+R\+\_\+\+F\+S\+P\+EC&Special internal \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} reference. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPTR\_IOP@{IPTR\_IOP}!space.hh@{space.hh}}\index{space.hh@{space.hh}!IPTR\_IOP@{IPTR\_IOP}}}\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231ad644dc33b71c7d421fcd0fb2003407c7}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231ad644dc33b71c7d421fcd0fb2003407c7}} 
+I\+P\+T\+R\+\_\+\+I\+OP&Special internal \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} reference. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IPTR\_JOIN@{IPTR\_JOIN}!space.hh@{space.hh}}\index{space.hh@{space.hh}!IPTR\_JOIN@{IPTR\_JOIN}}}\mbox{\Hypertarget{space_8hh_a1a83535cca68b7ca3f25bfad70262231a67805851c12bd1477c2a748e53e45f9c}\label{space_8hh_a1a83535cca68b7ca3f25bfad70262231a67805851c12bd1477c2a748e53e45f9c}} 
+I\+P\+T\+R\+\_\+\+J\+O\+IN&Special virtual space to represent split variables. \\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,154 @@
+\hypertarget{classCodeDataAnalysis}{}\doxysection{Code\+Data\+Analysis Class Reference}
+\label{classCodeDataAnalysis}\index{CodeDataAnalysis@{CodeDataAnalysis}}
+
+
+Inheritance diagram for Code\+Data\+Analysis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classCodeDataAnalysis__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code\+Data\+Analysis\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCodeDataAnalysis__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a0d201fd15ac961362b9dc8b51134bea3}\label{classCodeDataAnalysis_a0d201fd15ac961362b9dc8b51134bea3}} 
+void {\bfseries init} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_aa8cc98d84537294fa40b2f6dd9dce67c}\label{classCodeDataAnalysis_aa8cc98d84537294fa40b2f6dd9dce67c}} 
+void {\bfseries push\+Taint\+Address} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_af81c1c8ff3416ae4487a9d81eb0c1df3}\label{classCodeDataAnalysis_af81c1c8ff3416ae4487a9d81eb0c1df3}} 
+void {\bfseries process\+Taint} (void)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_aa6c8fe296a63965974a3cc279e1a7c65}\label{classCodeDataAnalysis_aa6c8fe296a63965974a3cc279e1a7c65}} 
+\mbox{\hyperlink{classAddress}{Address}} {\bfseries commit\+Code\+Vec} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, vector$<$ \mbox{\hyperlink{classCodeUnit}{Code\+Unit}} $>$ \&codevec, map$<$ \mbox{\hyperlink{structAddrLink}{Addr\+Link}}, uint4 $>$ \&fromto\+\_\+vec)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a8f2c1a7e1a417f0333a5974afdc0e995}\label{classCodeDataAnalysis_a8f2c1a7e1a417f0333a5974afdc0e995}} 
+void {\bfseries clear\+Hit\+By} (void)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a0a06f9379e9589429827bd9aa4cd8b0a}\label{classCodeDataAnalysis_a0a06f9379e9589429827bd9aa4cd8b0a}} 
+void {\bfseries clear\+Cross\+Refs} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&endaddr)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_afa5b4f6f0ba4c12e7700fbf5738c32e7}\label{classCodeDataAnalysis_afa5b4f6f0ba4c12e7700fbf5738c32e7}} 
+void {\bfseries clear\+Code\+Units} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&endaddr)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a67d42a5bdfb0801cb8ae03e4d8c5b021}\label{classCodeDataAnalysis_a67d42a5bdfb0801cb8ae03e4d8c5b021}} 
+void {\bfseries add\+Target} (const string \&nm, const \mbox{\hyperlink{classAddress}{Address}} \&addr, uint4 mask)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a1f9e8eeaba902f353013deeb95ccf20c}\label{classCodeDataAnalysis_a1f9e8eeaba902f353013deeb95ccf20c}} 
+int4 {\bfseries get\+Num\+Targets} (void) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_adee07d792d5bf97891fb5d79c3c44d3a}\label{classCodeDataAnalysis_adee07d792d5bf97891fb5d79c3c44d3a}} 
+\mbox{\hyperlink{classAddress}{Address}} {\bfseries disassemble\+Block} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&endaddr)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a723b35a19d5263fbcc3ed8b31e244758}\label{classCodeDataAnalysis_a723b35a19d5263fbcc3ed8b31e244758}} 
+void {\bfseries disassemble\+Range} (const \mbox{\hyperlink{classRange}{Range}} \&range)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a150d37b82ebb1e11dea740e5b0d370d5}\label{classCodeDataAnalysis_a150d37b82ebb1e11dea740e5b0d370d5}} 
+void {\bfseries disassemble\+Range\+List} (const \mbox{\hyperlink{classRangeList}{Range\+List}} \&rangelist)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_ae2dec2b15124c18ebc197f1e21efe357}\label{classCodeDataAnalysis_ae2dec2b15124c18ebc197f1e21efe357}} 
+void {\bfseries find\+Not\+Code\+Units} (void)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_acfa3dd51339107e25b206a6b7f5fd3ab}\label{classCodeDataAnalysis_acfa3dd51339107e25b206a6b7f5fd3ab}} 
+void {\bfseries mark\+Fallthru\+Hits} (void)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a1ac3f1a95c3c0ad7a59e15d1027f9909}\label{classCodeDataAnalysis_a1ac3f1a95c3c0ad7a59e15d1027f9909}} 
+void {\bfseries mark\+Cross\+Hits} (void)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_aa393f0d01fea19b3249d4a282bd17b52}\label{classCodeDataAnalysis_aa393f0d01fea19b3249d4a282bd17b52}} 
+void {\bfseries add\+Target\+Hit} (const \mbox{\hyperlink{classAddress}{Address}} \&codeaddr, uintb targethit)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_ad565b8a13360e457de73216e3556b583}\label{classCodeDataAnalysis_ad565b8a13360e457de73216e3556b583}} 
+void {\bfseries resolve\+Thunk\+Hit} (const \mbox{\hyperlink{classAddress}{Address}} \&codeaddr, uintb targethit)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a0e11a53182ac0d58d9fc3d9e8231e61e}\label{classCodeDataAnalysis_a0e11a53182ac0d58d9fc3d9e8231e61e}} 
+void {\bfseries find\+Unlinked} (void)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_ab41f0acf673f7cff1aac362a5be63899}\label{classCodeDataAnalysis_ab41f0acf673f7cff1aac362a5be63899}} 
+bool {\bfseries check\+Errant\+Start} (map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{classCodeUnit}{Code\+Unit}} $>$\+::iterator iter)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a0c1f590455ec5bdd79d45bfe73b0a640}\label{classCodeDataAnalysis_a0c1f590455ec5bdd79d45bfe73b0a640}} 
+bool {\bfseries repair\+Jump} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 max)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_ad069e36b39959763921b330663387d3c}\label{classCodeDataAnalysis_ad069e36b39959763921b330663387d3c}} 
+void {\bfseries find\+Off\+Cut} (void)
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_ac296d58998c63e13db49b6164dabc21d}\label{classCodeDataAnalysis_ac296d58998c63e13db49b6164dabc21d}} 
+\mbox{\hyperlink{classAddress}{Address}} {\bfseries find\+Function\+Start} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a22b2269201919435d22089b292976e56}\label{classCodeDataAnalysis_a22b2269201919435d22089b292976e56}} 
+const list$<$ \mbox{\hyperlink{classTargetHit}{Target\+Hit}} $>$ \& {\bfseries get\+Target\+Hits} (void) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a6bbc01214c5235583b79a2e9f014bfbf}\label{classCodeDataAnalysis_a6bbc01214c5235583b79a2e9f014bfbf}} 
+void {\bfseries dump\+Model\+Hits} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a0bc5f3f9fe210f9602025884b41a39aa}\label{classCodeDataAnalysis_a0bc5f3f9fe210f9602025884b41a39aa}} 
+void {\bfseries dump\+Cross\+Refs} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a4929ff0dbefe9f019e29f675d2a8d16e}\label{classCodeDataAnalysis_a4929ff0dbefe9f019e29f675d2a8d16e}} 
+void {\bfseries dump\+Function\+Starts} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a1817d772abce6c94e56ce48ba36b9058}\label{classCodeDataAnalysis_a1817d772abce6c94e56ce48ba36b9058}} 
+void {\bfseries dump\+Unlinked} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_af1e3bf0ac6da27639cfcd8cb22f931d6}\label{classCodeDataAnalysis_af1e3bf0ac6da27639cfcd8cb22f931d6}} 
+void {\bfseries dump\+Target\+Hits} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_af2376b45db9a51691d61a95d07220786}\label{classCodeDataAnalysis_af2376b45db9a51691d61a95d07220786}} 
+void {\bfseries run\+Model} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a1f4e342373fe3b26b02fc9cc07fc4cde}\label{classCodeDataAnalysis_a1f4e342373fe3b26b02fc9cc07fc4cde}} 
+int4 {\bfseries alignment}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a3c42ba4de31cfbe754538420bc1c3281}\label{classCodeDataAnalysis_a3c42ba4de31cfbe754538420bc1c3281}} 
+\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ {\bfseries glb}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a9ae1dd22443a06992d53129be1e97404}\label{classCodeDataAnalysis_a9ae1dd22443a06992d53129be1e97404}} 
+\mbox{\hyperlink{classDisassemblyEngine}{Disassembly\+Engine}} {\bfseries disengine}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a626bdcd7e8956d51c4ea0ed0c1473a40}\label{classCodeDataAnalysis_a626bdcd7e8956d51c4ea0ed0c1473a40}} 
+\mbox{\hyperlink{classRangeList}{Range\+List}} {\bfseries modelhits}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_abbf92545b2c660b34199932f22d74523}\label{classCodeDataAnalysis_abbf92545b2c660b34199932f22d74523}} 
+map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{classCodeUnit}{Code\+Unit}} $>$ {\bfseries codeunit}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_aa4095aa8e677214f3a6b7abe817d24f4}\label{classCodeDataAnalysis_aa4095aa8e677214f3a6b7abe817d24f4}} 
+map$<$ \mbox{\hyperlink{structAddrLink}{Addr\+Link}}, uint4 $>$ {\bfseries fromto\+\_\+crossref}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_ac284b65ea4121cecbeeac54fdb466cee}\label{classCodeDataAnalysis_ac284b65ea4121cecbeeac54fdb466cee}} 
+map$<$ \mbox{\hyperlink{structAddrLink}{Addr\+Link}}, uint4 $>$ {\bfseries tofrom\+\_\+crossref}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_aeaaace760ea39195437919ece684c69c}\label{classCodeDataAnalysis_aeaaace760ea39195437919ece684c69c}} 
+list$<$ map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{classCodeUnit}{Code\+Unit}} $>$\+::iterator $>$ {\bfseries taintlist}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a3d2f7273689a3802d8b2aa615c6352a5}\label{classCodeDataAnalysis_a3d2f7273689a3802d8b2aa615c6352a5}} 
+list$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ {\bfseries unlinkedstarts}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_aae3eb34a130a61c4b6ddfb688a10ac3d}\label{classCodeDataAnalysis_aae3eb34a130a61c4b6ddfb688a10ac3d}} 
+list$<$ \mbox{\hyperlink{classTargetHit}{Target\+Hit}} $>$ {\bfseries targethits}
+\item 
+\mbox{\Hypertarget{classCodeDataAnalysis_a07bd461ce70fb7e87a8f8e62378ca857}\label{classCodeDataAnalysis_a07bd461ce70fb7e87a8f8e62378ca857}} 
+map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{structTargetFeature}{Target\+Feature}} $>$ {\bfseries targets}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+codedata.\+hh\item 
+codedata.\+cc\end{DoxyCompactItemize}

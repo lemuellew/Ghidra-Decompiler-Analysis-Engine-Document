@@ -1,0 +1,67 @@
+\hypertarget{classSplitFlow}{}\doxysection{Split\+Flow Class Reference}
+\label{classSplitFlow}\index{SplitFlow@{SplitFlow}}
+
+
+Class for splitting up Varnodes that hold 2 logical variables.  
+
+
+
+
+{\ttfamily \#include $<$subflow.\+hh$>$}
+
+
+
+Inheritance diagram for Split\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classSplitFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Split\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classSplitFlow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSplitFlow_abc987d8fcdd199c3407968af7295a182}\label{classSplitFlow_abc987d8fcdd199c3407968af7295a182}} 
+\mbox{\hyperlink{classSplitFlow_abc987d8fcdd199c3407968af7295a182}{Split\+Flow}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$root, int4 low\+Size)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSplitFlow_a45e3612033f7082f63af36a551f64917}{do\+Trace}} (void)
+\begin{DoxyCompactList}\small\item\em Trace split through data-\/flow, constructing transform. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for splitting up Varnodes that hold 2 logical variables. 
+
+Starting from a {\itshape root} \mbox{\hyperlink{classVarnode}{Varnode}} provided to the constructor, {\bfseries{this}} class looks for data-\/flow that consistently holds 2 logical values in a single \mbox{\hyperlink{classVarnode}{Varnode}}. If \mbox{\hyperlink{classSplitFlow_a45e3612033f7082f63af36a551f64917}{do\+Trace()}} returns {\bfseries{true}}, a consistent view has been created and invoking \mbox{\hyperlink{classTransformManager_a2dcee2b69511dfb160421566ad1e9ce8}{apply()}} will split all Varnodes and Pcode\+Ops involved in the data-\/flow into their logical pieces. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSplitFlow_a45e3612033f7082f63af36a551f64917}\label{classSplitFlow_a45e3612033f7082f63af36a551f64917}} 
+\index{SplitFlow@{SplitFlow}!doTrace@{doTrace}}
+\index{doTrace@{doTrace}!SplitFlow@{SplitFlow}}
+\doxysubsubsection{\texorpdfstring{doTrace()}{doTrace()}}
+{\footnotesize\ttfamily bool Split\+Flow\+::do\+Trace (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Trace split through data-\/flow, constructing transform. 
+
+Push the logical split around, setting up the explicit transforms as we go. If at any point, the split cannot be naturally pushed, return {\bfseries{false}}. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a full transform has been constructed that can perform the split 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{subflow_8hh}{subflow.\+hh}}\item 
+subflow.\+cc\end{DoxyCompactItemize}

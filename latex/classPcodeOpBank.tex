@@ -1,0 +1,297 @@
+\hypertarget{classPcodeOpBank}{}\doxysection{Pcode\+Op\+Bank Class Reference}
+\label{classPcodeOpBank}\index{PcodeOpBank@{PcodeOpBank}}
+
+
+Container class for Pcode\+Ops associated with a single function.  
+
+
+
+
+{\ttfamily \#include $<$op.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeOpBank_a75aac7c9c8c0c73002fbd6352e41f67b}\label{classPcodeOpBank_a75aac7c9c8c0c73002fbd6352e41f67b}} 
+void \mbox{\hyperlink{classPcodeOpBank_a75aac7c9c8c0c73002fbd6352e41f67b}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all Pcode\+Ops from {\bfseries{this}} container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOpBank_a99a5d552174bddb89036c1755708b9aa}{create}} (int4 inputs, const \mbox{\hyperlink{classAddress}{Address}} \&pc)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} with at a given \mbox{\hyperlink{classAddress}{Address}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOpBank_a472c7fb8eea24665358e78977bc73245}{create}} (int4 inputs, const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&sq)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} with a given sequence number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpBank_a1d447e7dcaeab2fd89e0a3dd8454b77d}{destroy}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Destroy/retire the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_aafab3087c0f8176d83088c66bc56f6b0}\label{classPcodeOpBank_aafab3087c0f8176d83088c66bc56f6b0}} 
+void \mbox{\hyperlink{classPcodeOpBank_aafab3087c0f8176d83088c66bc56f6b0}{destroy\+Dead}} (void)
+\begin{DoxyCompactList}\small\item\em Destroy/retire all Pcode\+Ops in the {\itshape dead} list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpBank_a66328024453859527245d5143755adc6}{change\+Opcode}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classTypeOp}{Type\+Op}} $\ast$newopc)
+\begin{DoxyCompactList}\small\item\em Change the op-\/code for the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpBank_ae9b41955863d0ff9deaabb27e02429be}{mark\+Alive}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Mark the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as {\itshape alive}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpBank_ad4e924e79e478b3f867a4da3ba6d6c56}{mark\+Dead}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Mark the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as {\itshape dead}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpBank_aa1387fcf35d7e84e888f07c4cb167d65}{insert\+After\+Dead}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$prev)
+\begin{DoxyCompactList}\small\item\em Insert the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} after a point in the {\itshape dead} list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpBank_a64514bb8cab2719f46a03dfe9c7b7a59}{move\+Sequence\+Dead}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$firstop, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$lastop, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$prev)
+\begin{DoxyCompactList}\small\item\em Move a sequence of Pcode\+Ops to a point in the {\itshape dead} list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpBank_a796a007be1c71e561124c9cd2298e2a5}{mark\+Incidental\+Copy}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$firstop, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$lastop)
+\begin{DoxyCompactList}\small\item\em Mark any C\+O\+PY ops in the given range as {\itshape incidental}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOpBank_a12b06dc13326ce0291125b9dd11fadee}{target}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Find the first executing \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} for a target address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOpBank_a6c9ca53e38a2c3c81dbfde410e33fd02}{find\+Op}} (const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&num) const
+\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} by sequence number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOpBank_a3635f3c0e2910ce4d0af3eae0b6da22c}{fallthru}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} considered a {\itshape fallthru} of the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_ad92b658064cce0c096d1d2d2e19547b1}\label{classPcodeOpBank_ad92b658064cce0c096d1d2d2e19547b1}} 
+Pcode\+Op\+Tree\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_ad92b658064cce0c096d1d2d2e19547b1}{begin\+All}} (void) const
+\begin{DoxyCompactList}\small\item\em Start of all Pcode\+Ops in sequence number order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_aa651dcad6047a32b0e46423f96c80016}\label{classPcodeOpBank_aa651dcad6047a32b0e46423f96c80016}} 
+Pcode\+Op\+Tree\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_aa651dcad6047a32b0e46423f96c80016}{end\+All}} (void) const
+\begin{DoxyCompactList}\small\item\em End of all Pcode\+Ops in sequence number order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_aa5c89c7f2fbad97596cef0e46b4f3a8e}\label{classPcodeOpBank_aa5c89c7f2fbad97596cef0e46b4f3a8e}} 
+Pcode\+Op\+Tree\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_aa5c89c7f2fbad97596cef0e46b4f3a8e}{begin}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Start of all Pcode\+Ops at one \mbox{\hyperlink{classAddress}{Address}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_a5275bd8fcaaed9b6c3f00a3301a63d52}\label{classPcodeOpBank_a5275bd8fcaaed9b6c3f00a3301a63d52}} 
+Pcode\+Op\+Tree\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_a5275bd8fcaaed9b6c3f00a3301a63d52}{end}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em End of all Pcode\+Ops at one \mbox{\hyperlink{classAddress}{Address}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_a6c299f27d8d5aafd64fdd91324cddc24}\label{classPcodeOpBank_a6c299f27d8d5aafd64fdd91324cddc24}} 
+list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_a6c299f27d8d5aafd64fdd91324cddc24}{begin\+Alive}} (void) const
+\begin{DoxyCompactList}\small\item\em Start of all Pcode\+Ops marked as {\itshape alive}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_a4aa1fc23069148cd4004c5217d9ffaff}\label{classPcodeOpBank_a4aa1fc23069148cd4004c5217d9ffaff}} 
+list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_a4aa1fc23069148cd4004c5217d9ffaff}{end\+Alive}} (void) const
+\begin{DoxyCompactList}\small\item\em End of all Pcode\+Ops marked as {\itshape alive}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_a11c4847402571c3bc56dce8adb4df2ea}\label{classPcodeOpBank_a11c4847402571c3bc56dce8adb4df2ea}} 
+list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_a11c4847402571c3bc56dce8adb4df2ea}{begin\+Dead}} (void) const
+\begin{DoxyCompactList}\small\item\em Start of all Pcode\+Ops marked as {\itshape dead}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_a4827b640a1414da1049f7ee59460f71c}\label{classPcodeOpBank_a4827b640a1414da1049f7ee59460f71c}} 
+list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_a4827b640a1414da1049f7ee59460f71c}{end\+Dead}} (void) const
+\begin{DoxyCompactList}\small\item\em End of all Pcode\+Ops marked as {\itshape dead}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_aea81ae2f9b0e176090a6b9f54107bc54}\label{classPcodeOpBank_aea81ae2f9b0e176090a6b9f54107bc54}} 
+list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_aea81ae2f9b0e176090a6b9f54107bc54}{begin}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc) const
+\begin{DoxyCompactList}\small\item\em Start of all Pcode\+Ops sharing the given op-\/code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOpBank_a25064445ec0c3929d233a86515e7b058}\label{classPcodeOpBank_a25064445ec0c3929d233a86515e7b058}} 
+list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPcodeOpBank_a25064445ec0c3929d233a86515e7b058}{end}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc) const
+\begin{DoxyCompactList}\small\item\em End of all Pcode\+Ops sharing the given op-\/code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container class for Pcode\+Ops associated with a single function. 
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects are maintained under multiple different sorting criteria to facilitate quick access in various situations. The main sort (Pcode\+Op\+Tree) is by sequence number (\mbox{\hyperlink{classSeqNum}{Seq\+Num}}). Pcode\+Ops are also grouped into {\itshape alive} and {\itshape dead} lists to distinguish between raw p-\/code ops and those that are fully linked into control-\/flow. Several lists group Pcode\+Ops with important op-\/codes (like S\+T\+O\+RE and R\+E\+T\+U\+RN). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeOpBank_a66328024453859527245d5143755adc6}\label{classPcodeOpBank_a66328024453859527245d5143755adc6}} 
+\index{PcodeOpBank@{PcodeOpBank}!changeOpcode@{changeOpcode}}
+\index{changeOpcode@{changeOpcode}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{changeOpcode()}{changeOpcode()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Bank\+::change\+Opcode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classTypeOp}{Type\+Op}} $\ast$}]{newopc }\end{DoxyParamCaption})}
+
+
+
+Change the op-\/code for the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is assigned the new op-\/code, which may involve moving it between the internal op-\/code specific lists. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to change \\
+\hline
+{\em newopc} & is the new op-\/code object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpBank_a99a5d552174bddb89036c1755708b9aa}\label{classPcodeOpBank_a99a5d552174bddb89036c1755708b9aa}} 
+\index{PcodeOpBank@{PcodeOpBank}!create@{create}}
+\index{create@{create}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Pcode\+Op\+Bank\+::create (\begin{DoxyParamCaption}\item[{int4}]{inputs,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{pc }\end{DoxyParamCaption})}
+
+
+
+Create a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} with at a given \mbox{\hyperlink{classAddress}{Address}}. 
+
+A new \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is allocated with the indicated number of input slots, which start out empty. A sequence number is assigned, and the op is added to the end of the {\itshape dead} list. 
+\begin{DoxyParams}{Parameters}
+{\em inputs} & is the number of input slots \\
+\hline
+{\em pc} & is the \mbox{\hyperlink{classAddress}{Address}} to associate with the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly allocated \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpBank_a472c7fb8eea24665358e78977bc73245}\label{classPcodeOpBank_a472c7fb8eea24665358e78977bc73245}} 
+\index{PcodeOpBank@{PcodeOpBank}!create@{create}}
+\index{create@{create}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Pcode\+Op\+Bank\+::create (\begin{DoxyParamCaption}\item[{int4}]{inputs,  }\item[{const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&}]{sq }\end{DoxyParamCaption})}
+
+
+
+Create a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} with a given sequence number. 
+
+A new \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is allocated with the indicated number of input slots and the specific sequence number, suitable for cloning and restoring from X\+ML. The op is added to the end of the {\itshape dead} list. 
+\begin{DoxyParams}{Parameters}
+{\em inputs} & is the number of input slots \\
+\hline
+{\em sq} & is the specified sequence number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly allocated \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpBank_a1d447e7dcaeab2fd89e0a3dd8454b77d}\label{classPcodeOpBank_a1d447e7dcaeab2fd89e0a3dd8454b77d}} 
+\index{PcodeOpBank@{PcodeOpBank}!destroy@{destroy}}
+\index{destroy@{destroy}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Bank\+::destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+Destroy/retire the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+The given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is removed from all internal lists and added to a final {\itshape deadandgone} list. The memory is not reclaimed until the whole container is destroyed, in case pointer references still exist. These will all still be marked as {\itshape dead}. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to destroy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpBank_a3635f3c0e2910ce4d0af3eae0b6da22c}\label{classPcodeOpBank_a3635f3c0e2910ce4d0af3eae0b6da22c}} 
+\index{PcodeOpBank@{PcodeOpBank}!fallthru@{fallthru}}
+\index{fallthru@{fallthru}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{fallthru()}{fallthru()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Pcode\+Op\+Bank\+::fallthru (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Find the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} considered a {\itshape fallthru} of the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+The term {\itshape fallthru} in this context refers to p-\/code {\itshape not} assembly instructions. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the fallthru \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpBank_a6c9ca53e38a2c3c81dbfde410e33fd02}\label{classPcodeOpBank_a6c9ca53e38a2c3c81dbfde410e33fd02}} 
+\index{PcodeOpBank@{PcodeOpBank}!findOp@{findOp}}
+\index{findOp@{findOp}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{findOp()}{findOp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Pcode\+Op\+Bank\+::find\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&}]{num }\end{DoxyParamCaption}) const}
+
+
+
+Find a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} by sequence number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & is the given sequence number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} (or N\+U\+LL) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpBank_aa1387fcf35d7e84e888f07c4cb167d65}\label{classPcodeOpBank_aa1387fcf35d7e84e888f07c4cb167d65}} 
+\index{PcodeOpBank@{PcodeOpBank}!insertAfterDead@{insertAfterDead}}
+\index{insertAfterDead@{insertAfterDead}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{insertAfterDead()}{insertAfterDead()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Bank\+::insert\+After\+Dead (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{prev }\end{DoxyParamCaption})}
+
+
+
+Insert the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} after a point in the {\itshape dead} list. 
+
+The op is moved to right after a specified op in the {\itshape dead} list. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to move \\
+\hline
+{\em prev} & is the specified op in the {\itshape dead} list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpBank_ae9b41955863d0ff9deaabb27e02429be}\label{classPcodeOpBank_ae9b41955863d0ff9deaabb27e02429be}} 
+\index{PcodeOpBank@{PcodeOpBank}!markAlive@{markAlive}}
+\index{markAlive@{markAlive}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{markAlive()}{markAlive()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Bank\+::mark\+Alive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+Mark the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as {\itshape alive}. 
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is moved out of the {\itshape dead} list into the {\itshape alive} list. The Pcode\+Op\+::is\+Dead() method will now return {\bfseries{false}}. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to mark \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpBank_ad4e924e79e478b3f867a4da3ba6d6c56}\label{classPcodeOpBank_ad4e924e79e478b3f867a4da3ba6d6c56}} 
+\index{PcodeOpBank@{PcodeOpBank}!markDead@{markDead}}
+\index{markDead@{markDead}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{markDead()}{markDead()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Bank\+::mark\+Dead (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+Mark the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as {\itshape dead}. 
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is moved out of the {\itshape alive} list into the {\itshape dead} list. The Pcode\+Op\+::is\+Dead() method will now return {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to mark \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpBank_a796a007be1c71e561124c9cd2298e2a5}\label{classPcodeOpBank_a796a007be1c71e561124c9cd2298e2a5}} 
+\index{PcodeOpBank@{PcodeOpBank}!markIncidentalCopy@{markIncidentalCopy}}
+\index{markIncidentalCopy@{markIncidentalCopy}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{markIncidentalCopy()}{markIncidentalCopy()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Bank\+::mark\+Incidental\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{firstop,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{lastop }\end{DoxyParamCaption})}
+
+
+
+Mark any C\+O\+PY ops in the given range as {\itshape incidental}. 
+
+Incidental C\+O\+P\+Ys are not considered active use of parameter passing Varnodes by parameter analysis algorithms. 
+\begin{DoxyParams}{Parameters}
+{\em firstop} & is the start of the range of incidental C\+O\+PY ops \\
+\hline
+{\em lastop} & is the end of the range of incidental C\+O\+PY ops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpBank_a64514bb8cab2719f46a03dfe9c7b7a59}\label{classPcodeOpBank_a64514bb8cab2719f46a03dfe9c7b7a59}} 
+\index{PcodeOpBank@{PcodeOpBank}!moveSequenceDead@{moveSequenceDead}}
+\index{moveSequenceDead@{moveSequenceDead}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{moveSequenceDead()}{moveSequenceDead()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Bank\+::move\+Sequence\+Dead (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{firstop,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{lastop,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{prev }\end{DoxyParamCaption})}
+
+
+
+Move a sequence of Pcode\+Ops to a point in the {\itshape dead} list. 
+
+The point is right after a provided op. All ops must be in the {\itshape dead} list. 
+\begin{DoxyParams}{Parameters}
+{\em firstop} & is the first \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} in the sequence to be moved \\
+\hline
+{\em lastop} & is the last \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} in the sequence to be moved \\
+\hline
+{\em prev} & is the provided point to move to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpBank_a12b06dc13326ce0291125b9dd11fadee}\label{classPcodeOpBank_a12b06dc13326ce0291125b9dd11fadee}} 
+\index{PcodeOpBank@{PcodeOpBank}!target@{target}}
+\index{target@{target}!PcodeOpBank@{PcodeOpBank}}
+\doxysubsubsection{\texorpdfstring{target()}{target()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Pcode\+Op\+Bank\+::target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Find the first executing \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} for a target address. 
+
+Find the first \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} at or after the given \mbox{\hyperlink{classAddress}{Address}} assuming they have not yet been broken up into basic blocks. Take into account delay slots. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given \mbox{\hyperlink{classAddress}{Address}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the targeted \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} (or N\+U\+LL) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{op_8hh}{op.\+hh}}\item 
+op.\+cc\end{DoxyCompactItemize}

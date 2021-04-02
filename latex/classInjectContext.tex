@@ -1,0 +1,97 @@
+\hypertarget{classInjectContext}{}\doxysection{Inject\+Context Class Reference}
+\label{classInjectContext}\index{InjectContext@{InjectContext}}
+
+
+Context needed to emit a p-\/code injection as a full set of p-\/code operations.  
+
+
+
+
+{\ttfamily \#include $<$pcodeinject.\+hh$>$}
+
+
+
+Inheritance diagram for Inject\+Context\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classInjectContext__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Inject\+Context\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInjectContext__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classInjectContext_a85884d6d9e18996f0b03aa10a4e11be6}{save\+Xml}} (ostream \&s) const =0
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} context to an X\+ML stream as a $<$context$>$ tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInjectContext_a12f2e51d1fa6e5bc5d5eb88bfc3e0522}\label{classInjectContext_a12f2e51d1fa6e5bc5d5eb88bfc3e0522}} 
+\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classInjectContext_a12f2e51d1fa6e5bc5d5eb88bfc3e0522}{glb}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classArchitecture}{Architecture}} associated with the injection. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectContext_ab42964a9a9f4ec747a1734b553898ff0}\label{classInjectContext_ab42964a9a9f4ec747a1734b553898ff0}} 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classInjectContext_ab42964a9a9f4ec747a1734b553898ff0}{baseaddr}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAddress}{Address}} of instruction causing inject. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectContext_a202c30189f3ea69e9fa7b107809a7691}\label{classInjectContext_a202c30189f3ea69e9fa7b107809a7691}} 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classInjectContext_a202c30189f3ea69e9fa7b107809a7691}{nextaddr}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAddress}{Address}} of following instruction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectContext_a472f5669e9817cd95cd91ea36572da1f}\label{classInjectContext_a472f5669e9817cd95cd91ea36572da1f}} 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classInjectContext_a472f5669e9817cd95cd91ea36572da1f}{calladdr}}
+\begin{DoxyCompactList}\small\item\em If the instruction being injected is a call, this is the address being called. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectContext_af71647d43b614664d77f20747f115702}\label{classInjectContext_af71647d43b614664d77f20747f115702}} 
+vector$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $>$ \mbox{\hyperlink{classInjectContext_af71647d43b614664d77f20747f115702}{inputlist}}
+\begin{DoxyCompactList}\small\item\em Storage location for input parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectContext_a9304de2b8553f6bee836cd2ba7cdc187}\label{classInjectContext_a9304de2b8553f6bee836cd2ba7cdc187}} 
+vector$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $>$ \mbox{\hyperlink{classInjectContext_a9304de2b8553f6bee836cd2ba7cdc187}{output}}
+\begin{DoxyCompactList}\small\item\em Storage location for output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Context needed to emit a p-\/code injection as a full set of p-\/code operations. 
+
+P-\/code injection works by passing a pre-\/built template of p-\/code operations (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}}) to an emitter (\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}}), which makes the final resolution S\+L\+E\+I\+GH concepts like {\itshape inst\+\_\+next} to concrete Varnodes. This class contains the context dependent data to resolve\+:
+\begin{DoxyItemize}
+\item inst\+\_\+start -- the address where the injection occurs
+\item inst\+\_\+next -- the address of the instruction following (the instruction being injected)
+\item inst\+\_\+dest -- Original destination of C\+A\+LL being injected
+\item inst\+\_\+ref -- Target of reference on injected instruction
+\item $<$input$>$ -- Input \mbox{\hyperlink{classVarnode}{Varnode}} of the injection referenced by name
+\item $<$output$>$ -- Output \mbox{\hyperlink{classVarnode}{Varnode}} of the injection referenced by name 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInjectContext_a85884d6d9e18996f0b03aa10a4e11be6}\label{classInjectContext_a85884d6d9e18996f0b03aa10a4e11be6}} 
+\index{InjectContext@{InjectContext}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!InjectContext@{InjectContext}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily virtual void Inject\+Context\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Save {\bfseries{this}} context to an X\+ML stream as a $<$context$>$ tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classInjectContextGhidra_a32151798bd5739d2afecf9f0824de4e8}{Inject\+Context\+Ghidra}}, and \mbox{\hyperlink{classInjectContextSleigh_a5f54348510c2aa5002d93d3fbf0c645a}{Inject\+Context\+Sleigh}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcodeinject_8hh}{pcodeinject.\+hh}}\end{DoxyCompactItemize}

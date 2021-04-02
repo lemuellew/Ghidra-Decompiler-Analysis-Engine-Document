@@ -1,0 +1,62 @@
+\hypertarget{classIfcForcegoto}{}\doxysection{Ifc\+Forcegoto Class Reference}
+\label{classIfcForcegoto}\index{IfcForcegoto@{IfcForcegoto}}
+
+
+Force a branch to be an unstructured {\bfseries{goto\+:}} {\ttfamily force goto $<$branchaddr$>$ $<$targetaddr$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Forcegoto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcForcegoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Forcegoto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcForcegoto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcForcegoto_a5241453f234330ace35c00d319acd944}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Force a branch to be an unstructured {\bfseries{goto\+:}} {\ttfamily force goto $<$branchaddr$>$ $<$targetaddr$>$} 
+
+Create an override that forces the decompiler to treat the specified branch as unstructured. The branch will be modeled as a {\bfseries{goto}} statement. The branch is specified by first providing the address of the branching instruction, then the destination address. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcForcegoto_a5241453f234330ace35c00d319acd944}\label{classIfcForcegoto_a5241453f234330ace35c00d319acd944}} 
+\index{IfcForcegoto@{IfcForcegoto}!execute@{execute}}
+\index{execute@{execute}!IfcForcegoto@{IfcForcegoto}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Forcegoto\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,503 @@
+\hypertarget{opcodes_8hh}{}\doxysection{opcodes.\+hh File Reference}
+\label{opcodes_8hh}\index{opcodes.hh@{opcodes.hh}}
+
+
+All the individual p-\/code operations.  
+
+
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for opcodes.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{opcodes_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{opcodes_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \{ \newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a36a10374a26740a58b5625f340f6ffad}{C\+P\+U\+I\+\_\+\+C\+O\+PY}} = 1, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad76724dd2fcd9df1dca7e09e6427f10f}{C\+P\+U\+I\+\_\+\+L\+O\+AD}} = 2, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a14ab8d826af51873faa33b33e2bbc5fb}{C\+P\+U\+I\+\_\+\+S\+T\+O\+RE}} = 3, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a8e04ce6913869e8db2eaf101ae59ed9e}{C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+CH}} = 4, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a16130945560323d4b28ead4387094444}{C\+P\+U\+I\+\_\+\+C\+B\+R\+A\+N\+CH}} = 5, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac9526d56fc1c9dc6dc1f98c05729281a}{C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND}} = 6, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a50235a7bf50bada36dff73ff740c34d0}{C\+P\+U\+I\+\_\+\+C\+A\+LL}} = 7, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a500b63ecb17a75652c705bfab98bc8e5}{C\+P\+U\+I\+\_\+\+C\+A\+L\+L\+I\+ND}} = 8, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a7a2b625788b1d23eda50975b6baf7efb}{C\+P\+U\+I\+\_\+\+C\+A\+L\+L\+O\+T\+H\+ER}} = 9, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af2f97499d0b08f223110ad8f59353b44}{C\+P\+U\+I\+\_\+\+R\+E\+T\+U\+RN}} = 10, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7abfca59d2db4cdc6126afa1d60e4aba51}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+E\+Q\+U\+AL}} = 11, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a82aa9ec8e7933e35b09e963cd87c2f30}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL}} = 12, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a05aafda58e54690ae841c3642e3b82}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+L\+E\+SS}} = 13, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a49d2a9e93a7a397287ea70f8d6c6a132}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+L\+E\+S\+S\+E\+Q\+U\+AL}} = 14, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9fd7576d8174c8e8ad99a71b1bed2518}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+SS}} = 15, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2c6c583f14722fee36325c926280cbcc}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL}} = 16, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a778868cfa2191f9621f632672e596702}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+Z\+E\+XT}} = 17, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5fc7131a25cd3887d2ceabf181fa5b8a}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+E\+XT}} = 18, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab13948fae3194faced3994780ca08061}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+DD}} = 19, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab961ca0fee94c23c4c68ad7e2219eb76}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+UB}} = 20, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a34b508b278aa7ad06b5f4412686d556a}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+C\+A\+R\+RY}} = 21, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9d009bae29ddce29680b522c7c5262c6}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+C\+A\+R\+RY}} = 22, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a130fb0f2aef7c9525d957efd807f0c0e}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW}} = 23, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a1f734178571b170516bef2c6370ccb65}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+2\+C\+O\+MP}} = 24, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9c0fdedf10c1c592fac2b5d9506fd7d1}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+N\+E\+G\+A\+TE}} = 25, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a57325d4a11a85e526c5292c8aa6dd5e1}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+X\+OR}} = 26, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ae3942b7ee09733bcf388c575eb4b60cc}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+ND}} = 27, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a3a89afc53cea68202d80ef9fc683eef9}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+OR}} = 28, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a057239d4bbf6b3ffc8fb2dae68ebc2d9}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+FT}} = 29, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aaf220264eb8b109f50d4986eb6c5d3ca}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+I\+G\+HT}} = 30, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac499e9c9aa80f99bb51ea4792e4a770a}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+R\+I\+G\+HT}} = 31, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af4e88fc0408c2594dae2615b093aa68b}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+M\+U\+LT}} = 32, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a38ec2a73a5be638f2b7c0e28753800c6}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+D\+IV}} = 33, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a79114630f338eb1f7981f4dbac24cb60}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+D\+IV}} = 34, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7abd32745cfc7da476c8ecc9a6c0dbfa03}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+EM}} = 35, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a931c04bd86e504fddb73a80e9e2a9d88}{C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+R\+EM}} = 36, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a837d13895aa43a15cfc0ab7274237080}{C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE}} = 37, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5b643eae5eb11ed82a24824f0f95cbda}{C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+X\+OR}} = 38, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a40c57f047989281be90f40d4acc83d66}{C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+A\+ND}} = 39, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a54a6e76c456fb2f580b2118f20be407e}{C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+OR}} = 40, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a07754146f173d59512a1d2df0c5afe0c}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+E\+Q\+U\+AL}} = 41, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2cba42d99e353c916ce2e8ec2f094a40}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL}} = 42, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7afa6867281ab22667367e684d3e5d5f4e}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+L\+E\+SS}} = 43, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac8b1ba1ca38b32b57eb8939c9d9d087f}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL}} = 44, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2832ab38c22a958068640d83314b7aa6}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+AN}} = 46, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7adda2cf75b28cc922eb7c98a73c7f52c0}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+A\+DD}} = 47, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a0736fe93f55b50513a969c9403ce0f}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+D\+IV}} = 48, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a31b993d1b210255c90306c5253fdb7f6}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+M\+U\+LT}} = 49, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad99c56e45d45e1b405f9ba5d3fadcc44}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+S\+UB}} = 50, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a51d26f25c64bd9a9cf3cd7caaaf92b2c}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+EG}} = 51, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a8c28845dbb4e140c5225a27b2bc999}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+A\+BS}} = 52, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0ae2b4db2d21aa9fc438f7017bd174a4}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+S\+Q\+RT}} = 53, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2fd5fa2cce0871ff743a532f778f33a1}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+I\+N\+T2\+F\+L\+O\+AT}} = 54, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aab409a4f8049204cbe5be65787497842}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT}} = 55, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a6a5722455afc241a3628add3b41efc73}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+T\+R\+U\+NC}} = 56, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a4db96873fdb4d248df39cb0db9520c0a}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+C\+E\+IL}} = 57, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a4d3f1b7b6743fe7d9f448961aa623196}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+OR}} = 58, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7acf38a393024ddf5b2d6e59c114a7fd60}{C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+R\+O\+U\+ND}} = 59, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a108d223da48e77fa181637fc3e75d9e8}{C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL}} = 60, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aa89e33b07a26ca7d26b54315e45c8424}{C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT}} = 61, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a69a387d1e0b510d027e69bdde8f03caa}{C\+P\+U\+I\+\_\+\+P\+I\+E\+CE}} = 62, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2f366ca905ed81c22e500d5de37de366}{C\+P\+U\+I\+\_\+\+S\+U\+B\+P\+I\+E\+CE}} = 63, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab83bb63150022cfa8faab94c521b0a38}{C\+P\+U\+I\+\_\+\+C\+A\+ST}} = 64, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a148cdebda954b28dbd249f8ad3f32142}{C\+P\+U\+I\+\_\+\+P\+T\+R\+A\+DD}} = 65, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7acd169003bfcb2e8dde0cb2dc1f534449}{C\+P\+U\+I\+\_\+\+P\+T\+R\+S\+UB}} = 66, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab67fab74923ce6c8be1c2254b9afb4f9}{C\+P\+U\+I\+\_\+\+S\+E\+G\+M\+E\+N\+T\+OP}} = 67, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5d4235f59c3d4320bae86e84f0cc9f62}{C\+P\+U\+I\+\_\+\+C\+P\+O\+O\+L\+R\+EF}} = 68, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a980255c6f8e1cd7c7c7b035554292735}{C\+P\+U\+I\+\_\+\+N\+EW}} = 69, 
+\newline
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af93778bb88ce786e2d648747fcd67f0d}{C\+P\+U\+I\+\_\+\+I\+N\+S\+E\+RT}} = 70, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a8fb27eb1de1eadda6670d63acc43aac5}{C\+P\+U\+I\+\_\+\+E\+X\+T\+R\+A\+CT}} = 71, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad58c827656d59391b1ab2d1e20a48618}{C\+P\+U\+I\+\_\+\+P\+O\+P\+C\+O\+U\+NT}} = 72, 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2541f47ee1b8f18543c5749b49cada91}{C\+P\+U\+I\+\_\+\+M\+AX}} = 73
+ \}
+\begin{DoxyCompactList}\small\item\em The op-\/code defining a specific p-\/code operation (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \mbox{\hyperlink{opcodes_8hh_af739d367233d5c761457f782e249ce7a}{get\+\_\+opname}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc)
+\begin{DoxyCompactList}\small\item\em Convert an Op\+Code to the name as a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{opcodes_8hh_a2cd84b54da8ccadc300e0338206c6a9a}{get\+\_\+opcode}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Convert a name string to the matching Op\+Code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{opcodes_8hh_aef6d0ca050c58ba0cc5f3a52c9182fec}{get\+\_\+booleanflip}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, bool \&reorder)
+\begin{DoxyCompactList}\small\item\em Get the complementary Op\+Code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All the individual p-\/code operations. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}} 
+\index{opcodes.hh@{opcodes.hh}!OpCode@{OpCode}}
+\index{OpCode@{OpCode}!opcodes.hh@{opcodes.hh}}
+\doxysubsubsection{\texorpdfstring{OpCode}{OpCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}
+
+
+
+The op-\/code defining a specific p-\/code operation (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}) 
+
+These break up into categories\+:
+\begin{DoxyItemize}
+\item Branching operations
+\item Load and Store
+\item Comparison operations
+\item Arithmetic operations
+\item Logical operations
+\item Extension and truncation operations 
+\end{DoxyItemize}\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_COPY@{CPUI\_COPY}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_COPY@{CPUI\_COPY}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a36a10374a26740a58b5625f340f6ffad}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a36a10374a26740a58b5625f340f6ffad}} 
+C\+P\+U\+I\+\_\+\+C\+O\+PY&Copy one operand to another. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_LOAD@{CPUI\_LOAD}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_LOAD@{CPUI\_LOAD}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad76724dd2fcd9df1dca7e09e6427f10f}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad76724dd2fcd9df1dca7e09e6427f10f}} 
+C\+P\+U\+I\+\_\+\+L\+O\+AD&Load from a pointer into a specified address space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_STORE@{CPUI\_STORE}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_STORE@{CPUI\_STORE}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a14ab8d826af51873faa33b33e2bbc5fb}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a14ab8d826af51873faa33b33e2bbc5fb}} 
+C\+P\+U\+I\+\_\+\+S\+T\+O\+RE&Store at a pointer into a specified address space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_BRANCH@{CPUI\_BRANCH}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_BRANCH@{CPUI\_BRANCH}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a8e04ce6913869e8db2eaf101ae59ed9e}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a8e04ce6913869e8db2eaf101ae59ed9e}} 
+C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+CH&Always branch. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_CBRANCH@{CPUI\_CBRANCH}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_CBRANCH@{CPUI\_CBRANCH}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a16130945560323d4b28ead4387094444}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a16130945560323d4b28ead4387094444}} 
+C\+P\+U\+I\+\_\+\+C\+B\+R\+A\+N\+CH&Conditional branch. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_BRANCHIND@{CPUI\_BRANCHIND}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_BRANCHIND@{CPUI\_BRANCHIND}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac9526d56fc1c9dc6dc1f98c05729281a}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac9526d56fc1c9dc6dc1f98c05729281a}} 
+C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND&Indirect branch (jumptable) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_CALL@{CPUI\_CALL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_CALL@{CPUI\_CALL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a50235a7bf50bada36dff73ff740c34d0}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a50235a7bf50bada36dff73ff740c34d0}} 
+C\+P\+U\+I\+\_\+\+C\+A\+LL&Call to an absolute address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_CALLIND@{CPUI\_CALLIND}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_CALLIND@{CPUI\_CALLIND}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a500b63ecb17a75652c705bfab98bc8e5}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a500b63ecb17a75652c705bfab98bc8e5}} 
+C\+P\+U\+I\+\_\+\+C\+A\+L\+L\+I\+ND&Call through an indirect address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_CALLOTHER@{CPUI\_CALLOTHER}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_CALLOTHER@{CPUI\_CALLOTHER}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a7a2b625788b1d23eda50975b6baf7efb}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a7a2b625788b1d23eda50975b6baf7efb}} 
+C\+P\+U\+I\+\_\+\+C\+A\+L\+L\+O\+T\+H\+ER&User-\/defined operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_RETURN@{CPUI\_RETURN}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_RETURN@{CPUI\_RETURN}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af2f97499d0b08f223110ad8f59353b44}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af2f97499d0b08f223110ad8f59353b44}} 
+C\+P\+U\+I\+\_\+\+R\+E\+T\+U\+RN&Return from subroutine. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_EQUAL@{CPUI\_INT\_EQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_EQUAL@{CPUI\_INT\_EQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7abfca59d2db4cdc6126afa1d60e4aba51}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7abfca59d2db4cdc6126afa1d60e4aba51}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+E\+Q\+U\+AL&Integer comparison, equality (==) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_NOTEQUAL@{CPUI\_INT\_NOTEQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_NOTEQUAL@{CPUI\_INT\_NOTEQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a82aa9ec8e7933e35b09e963cd87c2f30}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a82aa9ec8e7933e35b09e963cd87c2f30}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL&Integer comparison, in-\/equality (!=) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SLESS@{CPUI\_INT\_SLESS}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SLESS@{CPUI\_INT\_SLESS}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a05aafda58e54690ae841c3642e3b82}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a05aafda58e54690ae841c3642e3b82}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+L\+E\+SS&Integer comparison, signed less-\/than ($<$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SLESSEQUAL@{CPUI\_INT\_SLESSEQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SLESSEQUAL@{CPUI\_INT\_SLESSEQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a49d2a9e93a7a397287ea70f8d6c6a132}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a49d2a9e93a7a397287ea70f8d6c6a132}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+L\+E\+S\+S\+E\+Q\+U\+AL&Integer comparison, signed less-\/than-\/or-\/equal ($<$=) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_LESS@{CPUI\_INT\_LESS}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_LESS@{CPUI\_INT\_LESS}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9fd7576d8174c8e8ad99a71b1bed2518}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9fd7576d8174c8e8ad99a71b1bed2518}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+SS&Integer comparison, unsigned less-\/than ($<$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_LESSEQUAL@{CPUI\_INT\_LESSEQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_LESSEQUAL@{CPUI\_INT\_LESSEQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2c6c583f14722fee36325c926280cbcc}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2c6c583f14722fee36325c926280cbcc}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL&Integer comparison, unsigned less-\/than-\/or-\/equal ($<$=) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_ZEXT@{CPUI\_INT\_ZEXT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_ZEXT@{CPUI\_INT\_ZEXT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a778868cfa2191f9621f632672e596702}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a778868cfa2191f9621f632672e596702}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+Z\+E\+XT&Zero extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SEXT@{CPUI\_INT\_SEXT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SEXT@{CPUI\_INT\_SEXT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5fc7131a25cd3887d2ceabf181fa5b8a}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5fc7131a25cd3887d2ceabf181fa5b8a}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+E\+XT&Sign extension. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_ADD@{CPUI\_INT\_ADD}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_ADD@{CPUI\_INT\_ADD}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab13948fae3194faced3994780ca08061}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab13948fae3194faced3994780ca08061}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+DD&Addition, signed or unsigned (+) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SUB@{CPUI\_INT\_SUB}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SUB@{CPUI\_INT\_SUB}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab961ca0fee94c23c4c68ad7e2219eb76}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab961ca0fee94c23c4c68ad7e2219eb76}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+UB&Subtraction, signed or unsigned (-\/) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_CARRY@{CPUI\_INT\_CARRY}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_CARRY@{CPUI\_INT\_CARRY}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a34b508b278aa7ad06b5f4412686d556a}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a34b508b278aa7ad06b5f4412686d556a}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+C\+A\+R\+RY&Test for unsigned carry. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SCARRY@{CPUI\_INT\_SCARRY}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SCARRY@{CPUI\_INT\_SCARRY}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9d009bae29ddce29680b522c7c5262c6}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9d009bae29ddce29680b522c7c5262c6}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+C\+A\+R\+RY&Test for signed carry. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SBORROW@{CPUI\_INT\_SBORROW}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SBORROW@{CPUI\_INT\_SBORROW}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a130fb0f2aef7c9525d957efd807f0c0e}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a130fb0f2aef7c9525d957efd807f0c0e}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW&Test for signed borrow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_2COMP@{CPUI\_INT\_2COMP}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_2COMP@{CPUI\_INT\_2COMP}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a1f734178571b170516bef2c6370ccb65}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a1f734178571b170516bef2c6370ccb65}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+2\+C\+O\+MP&Twos complement. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_NEGATE@{CPUI\_INT\_NEGATE}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_NEGATE@{CPUI\_INT\_NEGATE}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9c0fdedf10c1c592fac2b5d9506fd7d1}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a9c0fdedf10c1c592fac2b5d9506fd7d1}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+N\+E\+G\+A\+TE&Logical/bitwise negation ($\sim$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_XOR@{CPUI\_INT\_XOR}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_XOR@{CPUI\_INT\_XOR}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a57325d4a11a85e526c5292c8aa6dd5e1}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a57325d4a11a85e526c5292c8aa6dd5e1}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+X\+OR&Logical/bitwise exclusive-\/or ($^\wedge$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_AND@{CPUI\_INT\_AND}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_AND@{CPUI\_INT\_AND}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ae3942b7ee09733bcf388c575eb4b60cc}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ae3942b7ee09733bcf388c575eb4b60cc}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+ND&Logical/bitwise and (\&) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_OR@{CPUI\_INT\_OR}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_OR@{CPUI\_INT\_OR}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a3a89afc53cea68202d80ef9fc683eef9}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a3a89afc53cea68202d80ef9fc683eef9}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+OR&Logical/bitwise or ($\vert$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_LEFT@{CPUI\_INT\_LEFT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_LEFT@{CPUI\_INT\_LEFT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a057239d4bbf6b3ffc8fb2dae68ebc2d9}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a057239d4bbf6b3ffc8fb2dae68ebc2d9}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+FT&Left shift ($<$$<$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_RIGHT@{CPUI\_INT\_RIGHT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_RIGHT@{CPUI\_INT\_RIGHT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aaf220264eb8b109f50d4986eb6c5d3ca}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aaf220264eb8b109f50d4986eb6c5d3ca}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+I\+G\+HT&Right shift, logical ($>$$>$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SRIGHT@{CPUI\_INT\_SRIGHT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SRIGHT@{CPUI\_INT\_SRIGHT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac499e9c9aa80f99bb51ea4792e4a770a}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac499e9c9aa80f99bb51ea4792e4a770a}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+R\+I\+G\+HT&Right shift, arithmetic ($>$$>$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_MULT@{CPUI\_INT\_MULT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_MULT@{CPUI\_INT\_MULT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af4e88fc0408c2594dae2615b093aa68b}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af4e88fc0408c2594dae2615b093aa68b}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+M\+U\+LT&Integer multiplication, signed and unsigned ($\ast$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_DIV@{CPUI\_INT\_DIV}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_DIV@{CPUI\_INT\_DIV}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a38ec2a73a5be638f2b7c0e28753800c6}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a38ec2a73a5be638f2b7c0e28753800c6}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+D\+IV&Integer division, unsigned (/) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SDIV@{CPUI\_INT\_SDIV}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SDIV@{CPUI\_INT\_SDIV}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a79114630f338eb1f7981f4dbac24cb60}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a79114630f338eb1f7981f4dbac24cb60}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+D\+IV&Integer division, signed (/) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_REM@{CPUI\_INT\_REM}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_REM@{CPUI\_INT\_REM}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7abd32745cfc7da476c8ecc9a6c0dbfa03}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7abd32745cfc7da476c8ecc9a6c0dbfa03}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+EM&Remainder/modulo, unsigned (\%) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INT\_SREM@{CPUI\_INT\_SREM}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INT\_SREM@{CPUI\_INT\_SREM}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a931c04bd86e504fddb73a80e9e2a9d88}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a931c04bd86e504fddb73a80e9e2a9d88}} 
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+R\+EM&Remainder/modulo, signed (\%) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_BOOL\_NEGATE@{CPUI\_BOOL\_NEGATE}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_BOOL\_NEGATE@{CPUI\_BOOL\_NEGATE}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a837d13895aa43a15cfc0ab7274237080}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a837d13895aa43a15cfc0ab7274237080}} 
+C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE&Boolean negate (!) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_BOOL\_XOR@{CPUI\_BOOL\_XOR}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_BOOL\_XOR@{CPUI\_BOOL\_XOR}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5b643eae5eb11ed82a24824f0f95cbda}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5b643eae5eb11ed82a24824f0f95cbda}} 
+C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+X\+OR&Boolean exclusive-\/or ($^\wedge$$^\wedge$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_BOOL\_AND@{CPUI\_BOOL\_AND}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_BOOL\_AND@{CPUI\_BOOL\_AND}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a40c57f047989281be90f40d4acc83d66}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a40c57f047989281be90f40d4acc83d66}} 
+C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+A\+ND&Boolean and (\&\&) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_BOOL\_OR@{CPUI\_BOOL\_OR}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_BOOL\_OR@{CPUI\_BOOL\_OR}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a54a6e76c456fb2f580b2118f20be407e}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a54a6e76c456fb2f580b2118f20be407e}} 
+C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+OR&Boolean or ($\vert$$\vert$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_EQUAL@{CPUI\_FLOAT\_EQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_EQUAL@{CPUI\_FLOAT\_EQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a07754146f173d59512a1d2df0c5afe0c}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a07754146f173d59512a1d2df0c5afe0c}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+E\+Q\+U\+AL&Floating-\/point comparison, equality (==) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_NOTEQUAL@{CPUI\_FLOAT\_NOTEQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_NOTEQUAL@{CPUI\_FLOAT\_NOTEQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2cba42d99e353c916ce2e8ec2f094a40}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2cba42d99e353c916ce2e8ec2f094a40}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL&Floating-\/point comparison, in-\/equality (!=) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_LESS@{CPUI\_FLOAT\_LESS}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_LESS@{CPUI\_FLOAT\_LESS}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7afa6867281ab22667367e684d3e5d5f4e}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7afa6867281ab22667367e684d3e5d5f4e}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+L\+E\+SS&Floating-\/point comparison, less-\/than ($<$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_LESSEQUAL@{CPUI\_FLOAT\_LESSEQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_LESSEQUAL@{CPUI\_FLOAT\_LESSEQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac8b1ba1ca38b32b57eb8939c9d9d087f}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ac8b1ba1ca38b32b57eb8939c9d9d087f}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL&Floating-\/point comparison, less-\/than-\/or-\/equal ($<$=) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_NAN@{CPUI\_FLOAT\_NAN}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_NAN@{CPUI\_FLOAT\_NAN}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2832ab38c22a958068640d83314b7aa6}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2832ab38c22a958068640d83314b7aa6}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+AN&Not-\/a-\/number test (NaN) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_ADD@{CPUI\_FLOAT\_ADD}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_ADD@{CPUI\_FLOAT\_ADD}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7adda2cf75b28cc922eb7c98a73c7f52c0}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7adda2cf75b28cc922eb7c98a73c7f52c0}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+A\+DD&Floating-\/point addition (+) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_DIV@{CPUI\_FLOAT\_DIV}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_DIV@{CPUI\_FLOAT\_DIV}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a0736fe93f55b50513a969c9403ce0f}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a0736fe93f55b50513a969c9403ce0f}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+D\+IV&Floating-\/point division (/) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_MULT@{CPUI\_FLOAT\_MULT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_MULT@{CPUI\_FLOAT\_MULT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a31b993d1b210255c90306c5253fdb7f6}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a31b993d1b210255c90306c5253fdb7f6}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+M\+U\+LT&Floating-\/point multiplication ($\ast$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_SUB@{CPUI\_FLOAT\_SUB}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_SUB@{CPUI\_FLOAT\_SUB}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad99c56e45d45e1b405f9ba5d3fadcc44}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad99c56e45d45e1b405f9ba5d3fadcc44}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+S\+UB&Floating-\/point subtraction (-\/) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_NEG@{CPUI\_FLOAT\_NEG}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_NEG@{CPUI\_FLOAT\_NEG}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a51d26f25c64bd9a9cf3cd7caaaf92b2c}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a51d26f25c64bd9a9cf3cd7caaaf92b2c}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+EG&Floating-\/point negation (-\/) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_ABS@{CPUI\_FLOAT\_ABS}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_ABS@{CPUI\_FLOAT\_ABS}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a8c28845dbb4e140c5225a27b2bc999}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0a8c28845dbb4e140c5225a27b2bc999}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+A\+BS&Floating-\/point absolute value (abs) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_SQRT@{CPUI\_FLOAT\_SQRT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_SQRT@{CPUI\_FLOAT\_SQRT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0ae2b4db2d21aa9fc438f7017bd174a4}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a0ae2b4db2d21aa9fc438f7017bd174a4}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+S\+Q\+RT&Floating-\/point square root (sqrt) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_INT2FLOAT@{CPUI\_FLOAT\_INT2FLOAT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_INT2FLOAT@{CPUI\_FLOAT\_INT2FLOAT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2fd5fa2cce0871ff743a532f778f33a1}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2fd5fa2cce0871ff743a532f778f33a1}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+I\+N\+T2\+F\+L\+O\+AT&Convert an integer to a floating-\/point. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_FLOAT2FLOAT@{CPUI\_FLOAT\_FLOAT2FLOAT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_FLOAT2FLOAT@{CPUI\_FLOAT\_FLOAT2FLOAT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aab409a4f8049204cbe5be65787497842}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aab409a4f8049204cbe5be65787497842}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT&Convert between different floating-\/point sizes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_TRUNC@{CPUI\_FLOAT\_TRUNC}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_TRUNC@{CPUI\_FLOAT\_TRUNC}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a6a5722455afc241a3628add3b41efc73}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a6a5722455afc241a3628add3b41efc73}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+T\+R\+U\+NC&Round towards zero. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_CEIL@{CPUI\_FLOAT\_CEIL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_CEIL@{CPUI\_FLOAT\_CEIL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a4db96873fdb4d248df39cb0db9520c0a}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a4db96873fdb4d248df39cb0db9520c0a}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+C\+E\+IL&Round towards +infinity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_FLOOR@{CPUI\_FLOAT\_FLOOR}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_FLOOR@{CPUI\_FLOAT\_FLOOR}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a4d3f1b7b6743fe7d9f448961aa623196}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a4d3f1b7b6743fe7d9f448961aa623196}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+OR&Round towards -\/infinity. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_FLOAT\_ROUND@{CPUI\_FLOAT\_ROUND}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_FLOAT\_ROUND@{CPUI\_FLOAT\_ROUND}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7acf38a393024ddf5b2d6e59c114a7fd60}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7acf38a393024ddf5b2d6e59c114a7fd60}} 
+C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+R\+O\+U\+ND&Round towards nearest. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_MULTIEQUAL@{CPUI\_MULTIEQUAL}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_MULTIEQUAL@{CPUI\_MULTIEQUAL}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a108d223da48e77fa181637fc3e75d9e8}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a108d223da48e77fa181637fc3e75d9e8}} 
+C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL&Phi-\/node operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INDIRECT@{CPUI\_INDIRECT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INDIRECT@{CPUI\_INDIRECT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aa89e33b07a26ca7d26b54315e45c8424}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7aa89e33b07a26ca7d26b54315e45c8424}} 
+C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT&Copy with an indirect effect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_PIECE@{CPUI\_PIECE}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_PIECE@{CPUI\_PIECE}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a69a387d1e0b510d027e69bdde8f03caa}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a69a387d1e0b510d027e69bdde8f03caa}} 
+C\+P\+U\+I\+\_\+\+P\+I\+E\+CE&Concatenate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_SUBPIECE@{CPUI\_SUBPIECE}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_SUBPIECE@{CPUI\_SUBPIECE}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2f366ca905ed81c22e500d5de37de366}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2f366ca905ed81c22e500d5de37de366}} 
+C\+P\+U\+I\+\_\+\+S\+U\+B\+P\+I\+E\+CE&Truncate. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_CAST@{CPUI\_CAST}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_CAST@{CPUI\_CAST}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab83bb63150022cfa8faab94c521b0a38}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab83bb63150022cfa8faab94c521b0a38}} 
+C\+P\+U\+I\+\_\+\+C\+A\+ST&Cast from one data-\/type to another. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_PTRADD@{CPUI\_PTRADD}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_PTRADD@{CPUI\_PTRADD}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a148cdebda954b28dbd249f8ad3f32142}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a148cdebda954b28dbd249f8ad3f32142}} 
+C\+P\+U\+I\+\_\+\+P\+T\+R\+A\+DD&Index into an array (\mbox{[}\mbox{]}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_PTRSUB@{CPUI\_PTRSUB}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_PTRSUB@{CPUI\_PTRSUB}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7acd169003bfcb2e8dde0cb2dc1f534449}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7acd169003bfcb2e8dde0cb2dc1f534449}} 
+C\+P\+U\+I\+\_\+\+P\+T\+R\+S\+UB&Drill down to a sub-\/field (-\/$>$) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_SEGMENTOP@{CPUI\_SEGMENTOP}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_SEGMENTOP@{CPUI\_SEGMENTOP}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab67fab74923ce6c8be1c2254b9afb4f9}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ab67fab74923ce6c8be1c2254b9afb4f9}} 
+C\+P\+U\+I\+\_\+\+S\+E\+G\+M\+E\+N\+T\+OP&Look-\/up a {\itshape segmented} address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_CPOOLREF@{CPUI\_CPOOLREF}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_CPOOLREF@{CPUI\_CPOOLREF}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5d4235f59c3d4320bae86e84f0cc9f62}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a5d4235f59c3d4320bae86e84f0cc9f62}} 
+C\+P\+U\+I\+\_\+\+C\+P\+O\+O\+L\+R\+EF&Recover a value from the {\itshape constant} {\itshape pool}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_NEW@{CPUI\_NEW}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_NEW@{CPUI\_NEW}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a980255c6f8e1cd7c7c7b035554292735}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a980255c6f8e1cd7c7c7b035554292735}} 
+C\+P\+U\+I\+\_\+\+N\+EW&Allocate a new object (new) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_INSERT@{CPUI\_INSERT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_INSERT@{CPUI\_INSERT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af93778bb88ce786e2d648747fcd67f0d}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7af93778bb88ce786e2d648747fcd67f0d}} 
+C\+P\+U\+I\+\_\+\+I\+N\+S\+E\+RT&Insert a bit-\/range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_EXTRACT@{CPUI\_EXTRACT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_EXTRACT@{CPUI\_EXTRACT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a8fb27eb1de1eadda6670d63acc43aac5}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a8fb27eb1de1eadda6670d63acc43aac5}} 
+C\+P\+U\+I\+\_\+\+E\+X\+T\+R\+A\+CT&Extract a bit-\/range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_POPCOUNT@{CPUI\_POPCOUNT}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_POPCOUNT@{CPUI\_POPCOUNT}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad58c827656d59391b1ab2d1e20a48618}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7ad58c827656d59391b1ab2d1e20a48618}} 
+C\+P\+U\+I\+\_\+\+P\+O\+P\+C\+O\+U\+NT&Count the 1-\/bits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CPUI\_MAX@{CPUI\_MAX}!opcodes.hh@{opcodes.hh}}\index{opcodes.hh@{opcodes.hh}!CPUI\_MAX@{CPUI\_MAX}}}\mbox{\Hypertarget{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2541f47ee1b8f18543c5749b49cada91}\label{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7a2541f47ee1b8f18543c5749b49cada91}} 
+C\+P\+U\+I\+\_\+\+M\+AX&Value indicating the end of the op-\/code values. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{opcodes_8hh_aef6d0ca050c58ba0cc5f3a52c9182fec}\label{opcodes_8hh_aef6d0ca050c58ba0cc5f3a52c9182fec}} 
+\index{opcodes.hh@{opcodes.hh}!get\_booleanflip@{get\_booleanflip}}
+\index{get\_booleanflip@{get\_booleanflip}!opcodes.hh@{opcodes.hh}}
+\doxysubsubsection{\texorpdfstring{get\_booleanflip()}{get\_booleanflip()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} get\+\_\+booleanflip (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{bool \&}]{reorder }\end{DoxyParamCaption})}
+
+
+
+Get the complementary Op\+Code. 
+
+Every comparison operation has a complementary form that produces the opposite output on the same inputs. Set {\bfseries{reorder}} to true if the complimentary operation involves reordering the input parameters. 
+\begin{DoxyParams}{Parameters}
+{\em opc} & is the Op\+Code to complement \\
+\hline
+{\em reorder} & is set to {\bfseries{true}} if the inputs need to be reordered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the complementary Op\+Code or C\+P\+U\+I\+\_\+\+M\+AX if not given a comparison operation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{opcodes_8hh_a2cd84b54da8ccadc300e0338206c6a9a}\label{opcodes_8hh_a2cd84b54da8ccadc300e0338206c6a9a}} 
+\index{opcodes.hh@{opcodes.hh}!get\_opcode@{get\_opcode}}
+\index{get\_opcode@{get\_opcode}!opcodes.hh@{opcodes.hh}}
+\doxysubsubsection{\texorpdfstring{get\_opcode()}{get\_opcode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} get\+\_\+opcode (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})}
+
+
+
+Convert a name string to the matching Op\+Code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of an operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding Op\+Code value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{opcodes_8hh_af739d367233d5c761457f782e249ce7a}\label{opcodes_8hh_af739d367233d5c761457f782e249ce7a}} 
+\index{opcodes.hh@{opcodes.hh}!get\_opname@{get\_opname}}
+\index{get\_opname@{get\_opname}!opcodes.hh@{opcodes.hh}}
+\doxysubsubsection{\texorpdfstring{get\_opname()}{get\_opname()}}
+{\footnotesize\ttfamily const char$\ast$ get\+\_\+opname (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc }\end{DoxyParamCaption})}
+
+
+
+Convert an Op\+Code to the name as a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opc} & is an Op\+Code value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the operation as a string 
+\end{DoxyReturn}

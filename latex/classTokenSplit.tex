@@ -1,0 +1,876 @@
+\hypertarget{classTokenSplit}{}\doxysection{Token\+Split Class Reference}
+\label{classTokenSplit}\index{TokenSplit@{TokenSplit}}
+
+
+A token/command object in the pretty printing stream.  
+
+
+
+
+{\ttfamily \#include $<$prettyprint.\+hh$>$}
+
+
+
+Collaboration diagram for Token\+Split\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTokenSplit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27}{printclass}} \{ \newline
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ab75cba5d0c08183b29c7226b9b97ed2b}{begin}}, 
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27adfbbf6dfc921844654921d549aab536b}{end}}, 
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a4d25da3d7ec0cef2a7f6fa82eb8795da}{tokenstring}}, 
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27aa9c226ab1cee1446b1be74b0baa63498}{tokenbreak}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a01f1afd1e4d9ccf22fa52bf598b4b4e5}{begin\+\_\+indent}}, 
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a98ade3d33900bc1a1aacfe589772b290}{end\+\_\+indent}}, 
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ae3719eaa47fda41f46a0470d0d8def0d}{begin\+\_\+comment}}, 
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ac1bd59c1c32cac1a2cb2b9fb51cfcad4}{end\+\_\+comment}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a2ed330d522435896667f4ad331388b0f}{ignore}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enumeration denoting the general class of a token. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77}{tag\+\_\+type}} \{ \newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a7c52f2334bbeb49c47b6fa0c1ed44a7f}{docu\+\_\+b}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a2f4fe296083a7e45c239bf9c2b45b8af}{docu\+\_\+e}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aff9aa373391ee3b1fadae8bbe7974ed5}{func\+\_\+b}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa0cef4c52ac00c50a697a360e5b584d1}{func\+\_\+e}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa8a58f1517b2f01c404b0f852468a482}{bloc\+\_\+b}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ad6343d815c37c829103856b294b1b95b}{bloc\+\_\+e}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa87f5200451637ddd314a571ac4cc8e6}{rtyp\+\_\+b}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a66fe7931547f29254eaea0d6717cd5f6}{rtyp\+\_\+e}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77abb7b2bfda0cffd64b9e6985be54ab0bf}{vard\+\_\+b}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a68cfae69a541a210beb6ec414d10632d}{vard\+\_\+e}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af6440c5e7e8b8e57f26fdac2d1d465de}{stat\+\_\+b}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af540834a4a599fd4dac75fc96c4936b4}{stat\+\_\+e}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a6f8cba66518046705e4cbdb183179cf5}{prot\+\_\+b}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a3c4eef6502385b1b3c4aee1f60d2d008}{prot\+\_\+e}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a6a0816ed7356181fc61a8e16ecd841b2}{vari\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77adf8a7fe51a8d0df505008b137e6768a0}{op\+\_\+t}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a4cdfad38ebc4d1d18853673694c54901}{fnam\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a2dae0cc4e9ac16ed0200ce257e71b6bb}{type\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a71a88cca1e4f0e0bad119316a4c102ec}{field\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aab85bf9737648d3223be8425b7e2726f}{comm\+\_\+t}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77afd14085868635e05a47df93ec0c90f97}{label\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af5801ae704be82359df770a1e940ec48}{synt\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a52c5478191206c18b8a89044f7ce8c0f}{opar\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a0d82571ef9e92f0c5959cac88e3ce275}{cpar\+\_\+t}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ab9b2df3b848ce23c55cddfab300e862c}{oinv\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a71fd13903fe80c23b41b53b1d4767b54}{cinv\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ab16805e40568780051050c201d041c78}{spac\+\_\+t}}, 
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ad2121dca729793a532ed26d2e2ad7478}{bump\+\_\+t}}, 
+\newline
+\mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a7fd50cbc18c4d424e2eedd52c916b89a}{line\+\_\+t}}
+ \}
+\begin{DoxyCompactList}\small\item\em The exhaustive list of possible token types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int4 \mbox{\hyperlink{classTokenSplit_a512f5438d3d735ae7ba82dca9afc882c}{begin\+Document}} (void)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}begin document\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_acf7d7054bbd3afe3c8d609484fec0e9e}{end\+Document}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end document\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_a53510d715ff1109c33f75226e429d8e7}{begin\+Function}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}begin function body\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a1be7d58dbc149fc75b6467e3c02ddb65}{end\+Function}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end function body\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_ae7fb2a1b9de2cf7fd1348dca6177a07b}{begin\+Block}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}begin control-\/flow element\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_ab68c64d47f6d2456c645af28d9200425}{end\+Block}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end control-\/flow element\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_a2e4f04db795faf9a88e4e575744c65eb}{begin\+Return\+Type}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}begin return type declaration\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a50c3b76f86a75f425879ceba2589b843}{end\+Return\+Type}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end return type declaration\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_a45ce997b26f444d7ddb42e57693f2907}{begin\+Var\+Decl}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}begin variable declaration\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a6d5be5e7d3d58556488edb57a9ffb74e}{end\+Var\+Decl}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end variable declaration\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_a09b86fe5f1a6f82681ae9b508969cf77}{begin\+Statement}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}begin source code statement\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a33dd0d763dc8042bc3fca66fddff0b9b}{end\+Statement}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end source code statement\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_a1b95fd9e440ec5036959e32667561885}{begin\+Func\+Proto}} (void)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}begin function prototype declaration\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a326e6e6c122f24b053e0653c9f18ac79}{end\+Func\+Proto}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end function prototype declaration\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a62826b72072c3b314d73db6b74d6c408}{tag\+Variable}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$v, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Create a variable identifier token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a84352935d3d283ca1c83c08c79ae4d30}{tag\+Op}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Create an operator token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a55215c1471c0be925a2008b73169b56b}{tag\+Func\+Name}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h, const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Create a function identifier token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a52bc265405c6aba947a400a4d2964981}{tag\+Type}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h, const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$\mbox{\hyperlink{classTokenSplit_a8966907dba26ba691ffec5cde4676958}{ct}})
+\begin{DoxyCompactList}\small\item\em Create a data-\/type identifier token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a5185f9c1ceae7c9b9c51f023b56f9287}{tag\+Field}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h, const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$\mbox{\hyperlink{classTokenSplit_a8966907dba26ba691ffec5cde4676958}{ct}}, int4 o)
+\begin{DoxyCompactList}\small\item\em Create an identifier for a field within a structured data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a5f1af6fb8cc5fab53f74701885d0d0f6}{tag\+Comment}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h, const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$s, uintb o)
+\begin{DoxyCompactList}\small\item\em Create a comment string in the generated source code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a64a5177d3cc95301fc5008b8d5ff0c0e}{tag\+Label}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h, const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$s, uintb o)
+\begin{DoxyCompactList}\small\item\em Create a code label identifier token. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a7418693a38259f2b48837c7bb9b147a4}{print}} (const char $\ast$str, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} h)
+\begin{DoxyCompactList}\small\item\em Create a token for other (more unusual) syntax in source code. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a5dcdb16c6b0aafe649f1615a93c2ee1c}{open\+Paren}} (char o, int4 id)
+\begin{DoxyCompactList}\small\item\em Create an open parenthesis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a713ced640b138dbe6931c2eb5dd7ddbe}{close\+Paren}} (char c, int4 id)
+\begin{DoxyCompactList}\small\item\em Create a close parenthesis. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_a467d591af196f9a606dd50586775f7d4}{open\+Group}} (void)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}start a printing group\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_af01c0522ada54a8d777e6b9a1b840794}{close\+Group}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end a printing group\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_abc86a21025a728d2dbe050fe22b9570b}{start\+Indent}} (int4 bump)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}start a new indent level\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_af12160b7112cf50e7e537c22ddf76860}{stop\+Indent}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end an indent level\char`\"{} command. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTokenSplit_a64074d483f92a724cf846c4893b1c1c7}{start\+Comment}} (void)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}start a comment block\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_ac93137757a2cc85219ef8cd5fb994a6c}{stop\+Comment}} (int4 id)
+\begin{DoxyCompactList}\small\item\em Create an \char`\"{}end a comment block\char`\"{} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_a2aa41522a98675a88eda3dc730e1ab1c}{spaces}} (int4 num, int4 bump)
+\begin{DoxyCompactList}\small\item\em Create a whitespace token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTokenSplit_a8723540e91b976c88ad9eadabc9ae54c}\label{classTokenSplit_a8723540e91b976c88ad9eadabc9ae54c}} 
+void \mbox{\hyperlink{classTokenSplit_a8723540e91b976c88ad9eadabc9ae54c}{tag\+Line}} (void)
+\begin{DoxyCompactList}\small\item\em Create a line break token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTokenSplit_aa61bb2fa64ac1ebce6982bfb173a4bf5}\label{classTokenSplit_aa61bb2fa64ac1ebce6982bfb173a4bf5}} 
+void \mbox{\hyperlink{classTokenSplit_aa61bb2fa64ac1ebce6982bfb173a4bf5}{tag\+Line}} (int4 indent)
+\begin{DoxyCompactList}\small\item\em Create a line break token with special indentation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTokenSplit_aac6f66bf872fe4f04c8f3b44cf4efb9e}{print}} (\mbox{\hyperlink{classEmitXml}{Emit\+Xml}} $\ast$emit) const
+\begin{DoxyCompactList}\small\item\em Send {\bfseries{this}} token to emitter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A token/command object in the pretty printing stream. 
+
+The pretty printing algorithm (see \mbox{\hyperlink{classEmitPrettyPrint}{Emit\+Pretty\+Print}}) works on the stream of tokens, constituting the content actually being output, plus additional embedded commands made up begin/end or open/close pairs that delimit the (hierarchy of) groups of tokens that should be printed as a unit. Instances of this class represent all the possible elements of this stream.
+
+All instances exhibit a broad {\itshape printclass} that generally reflects whether the token is one of the begin/end delimiters or is actual content. Instances also have a {\itshape tag\+\_\+type} that indicate the specific function of the token within the stream, which mirror the begin/end/open/close/tag methods on the emitter classes (\mbox{\hyperlink{classEmitXml}{Emit\+Xml}}). 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27}} 
+\index{TokenSplit@{TokenSplit}!printclass@{printclass}}
+\index{printclass@{printclass}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{printclass}{printclass}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classTokenSplit_a995222ab6b324567b96a04b69e9bca27}{Token\+Split\+::printclass}}}
+
+
+
+An enumeration denoting the general class of a token. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin@{begin}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!begin@{begin}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ab75cba5d0c08183b29c7226b9b97ed2b}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ab75cba5d0c08183b29c7226b9b97ed2b}} 
+begin&A token that starts a printing group. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end@{end}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!end@{end}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27adfbbf6dfc921844654921d549aab536b}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27adfbbf6dfc921844654921d549aab536b}} 
+end&A token that ends a printing group. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tokenstring@{tokenstring}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!tokenstring@{tokenstring}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a4d25da3d7ec0cef2a7f6fa82eb8795da}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a4d25da3d7ec0cef2a7f6fa82eb8795da}} 
+tokenstring&A token representing actual content. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tokenbreak@{tokenbreak}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!tokenbreak@{tokenbreak}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27aa9c226ab1cee1446b1be74b0baa63498}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27aa9c226ab1cee1446b1be74b0baa63498}} 
+tokenbreak&White space (where line breaks can be inserted) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\_indent@{begin\_indent}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!begin\_indent@{begin\_indent}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a01f1afd1e4d9ccf22fa52bf598b4b4e5}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a01f1afd1e4d9ccf22fa52bf598b4b4e5}} 
+begin\+\_\+indent&Start of a new nesting level. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_indent@{end\_indent}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!end\_indent@{end\_indent}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a98ade3d33900bc1a1aacfe589772b290}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a98ade3d33900bc1a1aacfe589772b290}} 
+end\+\_\+indent&End of a nesting level. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{begin\_comment@{begin\_comment}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!begin\_comment@{begin\_comment}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ae3719eaa47fda41f46a0470d0d8def0d}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ae3719eaa47fda41f46a0470d0d8def0d}} 
+begin\+\_\+comment&Start of a comment block. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{end\_comment@{end\_comment}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!end\_comment@{end\_comment}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ac1bd59c1c32cac1a2cb2b9fb51cfcad4}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27ac1bd59c1c32cac1a2cb2b9fb51cfcad4}} 
+end\+\_\+comment&End of a comment block. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ignore@{ignore}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!ignore@{ignore}}}\mbox{\Hypertarget{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a2ed330d522435896667f4ad331388b0f}\label{classTokenSplit_a995222ab6b324567b96a04b69e9bca27a2ed330d522435896667f4ad331388b0f}} 
+ignore&Mark-\/up that doesn\textquotesingle{}t affect pretty printing. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77}} 
+\index{TokenSplit@{TokenSplit}!tag\_type@{tag\_type}}
+\index{tag\_type@{tag\_type}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tag\_type}{tag\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77}{Token\+Split\+::tag\+\_\+type}}}
+
+
+
+The exhaustive list of possible token types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{docu\_b@{docu\_b}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!docu\_b@{docu\_b}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a7c52f2334bbeb49c47b6fa0c1ed44a7f}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a7c52f2334bbeb49c47b6fa0c1ed44a7f}} 
+docu\+\_\+b&Start of a document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{docu\_e@{docu\_e}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!docu\_e@{docu\_e}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a2f4fe296083a7e45c239bf9c2b45b8af}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a2f4fe296083a7e45c239bf9c2b45b8af}} 
+docu\+\_\+e&End of a document. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{func\_b@{func\_b}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!func\_b@{func\_b}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aff9aa373391ee3b1fadae8bbe7974ed5}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aff9aa373391ee3b1fadae8bbe7974ed5}} 
+func\+\_\+b&Start of a function body. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{func\_e@{func\_e}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!func\_e@{func\_e}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa0cef4c52ac00c50a697a360e5b584d1}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa0cef4c52ac00c50a697a360e5b584d1}} 
+func\+\_\+e&End of a function body. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bloc\_b@{bloc\_b}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!bloc\_b@{bloc\_b}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa8a58f1517b2f01c404b0f852468a482}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa8a58f1517b2f01c404b0f852468a482}} 
+bloc\+\_\+b&Start of a control-\/flow section. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bloc\_e@{bloc\_e}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!bloc\_e@{bloc\_e}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ad6343d815c37c829103856b294b1b95b}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ad6343d815c37c829103856b294b1b95b}} 
+bloc\+\_\+e&End of a control-\/flow section. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rtyp\_b@{rtyp\_b}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!rtyp\_b@{rtyp\_b}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa87f5200451637ddd314a571ac4cc8e6}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aa87f5200451637ddd314a571ac4cc8e6}} 
+rtyp\+\_\+b&Start of a return type declaration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rtyp\_e@{rtyp\_e}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!rtyp\_e@{rtyp\_e}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a66fe7931547f29254eaea0d6717cd5f6}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a66fe7931547f29254eaea0d6717cd5f6}} 
+rtyp\+\_\+e&End of a return type declaration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vard\_b@{vard\_b}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!vard\_b@{vard\_b}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77abb7b2bfda0cffd64b9e6985be54ab0bf}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77abb7b2bfda0cffd64b9e6985be54ab0bf}} 
+vard\+\_\+b&Start of a variable declaration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vard\_e@{vard\_e}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!vard\_e@{vard\_e}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a68cfae69a541a210beb6ec414d10632d}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a68cfae69a541a210beb6ec414d10632d}} 
+vard\+\_\+e&End of a variable declaration. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stat\_b@{stat\_b}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!stat\_b@{stat\_b}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af6440c5e7e8b8e57f26fdac2d1d465de}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af6440c5e7e8b8e57f26fdac2d1d465de}} 
+stat\+\_\+b&Start of a statement. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stat\_e@{stat\_e}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!stat\_e@{stat\_e}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af540834a4a599fd4dac75fc96c4936b4}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af540834a4a599fd4dac75fc96c4936b4}} 
+stat\+\_\+e&End of a statement. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prot\_b@{prot\_b}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!prot\_b@{prot\_b}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a6f8cba66518046705e4cbdb183179cf5}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a6f8cba66518046705e4cbdb183179cf5}} 
+prot\+\_\+b&Start of a function prototype. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prot\_e@{prot\_e}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!prot\_e@{prot\_e}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a3c4eef6502385b1b3c4aee1f60d2d008}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a3c4eef6502385b1b3c4aee1f60d2d008}} 
+prot\+\_\+e&End of a function prototype. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vari\_t@{vari\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!vari\_t@{vari\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a6a0816ed7356181fc61a8e16ecd841b2}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a6a0816ed7356181fc61a8e16ecd841b2}} 
+vari\+\_\+t&A variable identifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{op\_t@{op\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!op\_t@{op\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77adf8a7fe51a8d0df505008b137e6768a0}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77adf8a7fe51a8d0df505008b137e6768a0}} 
+op\+\_\+t&An operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fnam\_t@{fnam\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!fnam\_t@{fnam\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a4cdfad38ebc4d1d18853673694c54901}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a4cdfad38ebc4d1d18853673694c54901}} 
+fnam\+\_\+t&A function identifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{type\_t@{type\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!type\_t@{type\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a2dae0cc4e9ac16ed0200ce257e71b6bb}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a2dae0cc4e9ac16ed0200ce257e71b6bb}} 
+type\+\_\+t&A data-\/type identifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{field\_t@{field\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!field\_t@{field\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a71a88cca1e4f0e0bad119316a4c102ec}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a71a88cca1e4f0e0bad119316a4c102ec}} 
+field\+\_\+t&A field name for a structured data-\/type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{comm\_t@{comm\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!comm\_t@{comm\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aab85bf9737648d3223be8425b7e2726f}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77aab85bf9737648d3223be8425b7e2726f}} 
+comm\+\_\+t&Part of a comment block. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{label\_t@{label\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!label\_t@{label\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77afd14085868635e05a47df93ec0c90f97}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77afd14085868635e05a47df93ec0c90f97}} 
+label\+\_\+t&A code label. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{synt\_t@{synt\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!synt\_t@{synt\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af5801ae704be82359df770a1e940ec48}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77af5801ae704be82359df770a1e940ec48}} 
+synt\+\_\+t&Other unspecified syntax. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{opar\_t@{opar\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!opar\_t@{opar\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a52c5478191206c18b8a89044f7ce8c0f}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a52c5478191206c18b8a89044f7ce8c0f}} 
+opar\+\_\+t&Open parenthesis. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cpar\_t@{cpar\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!cpar\_t@{cpar\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a0d82571ef9e92f0c5959cac88e3ce275}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a0d82571ef9e92f0c5959cac88e3ce275}} 
+cpar\+\_\+t&Close parenthesis. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{oinv\_t@{oinv\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!oinv\_t@{oinv\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ab9b2df3b848ce23c55cddfab300e862c}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ab9b2df3b848ce23c55cddfab300e862c}} 
+oinv\+\_\+t&Start of an arbitrary (invisible) grouping. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cinv\_t@{cinv\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!cinv\_t@{cinv\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a71fd13903fe80c23b41b53b1d4767b54}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a71fd13903fe80c23b41b53b1d4767b54}} 
+cinv\+\_\+t&End of an arbitrary (invisible) grouping. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spac\_t@{spac\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!spac\_t@{spac\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ab16805e40568780051050c201d041c78}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ab16805e40568780051050c201d041c78}} 
+spac\+\_\+t&White space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bump\_t@{bump\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!bump\_t@{bump\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ad2121dca729793a532ed26d2e2ad7478}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77ad2121dca729793a532ed26d2e2ad7478}} 
+bump\+\_\+t&Required line break. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{line\_t@{line\_t}!TokenSplit@{TokenSplit}}\index{TokenSplit@{TokenSplit}!line\_t@{line\_t}}}\mbox{\Hypertarget{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a7fd50cbc18c4d424e2eedd52c916b89a}\label{classTokenSplit_aeb8df0fee5549b7698495e5b408acc77a7fd50cbc18c4d424e2eedd52c916b89a}} 
+line\+\_\+t&Required line break with one-\/time indent level. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTokenSplit_ae7fb2a1b9de2cf7fd1348dca6177a07b}\label{classTokenSplit_ae7fb2a1b9de2cf7fd1348dca6177a07b}} 
+\index{TokenSplit@{TokenSplit}!beginBlock@{beginBlock}}
+\index{beginBlock@{beginBlock}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{beginBlock()}{beginBlock()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::begin\+Block (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}begin control-\/flow element\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & is the block structure object associated with the section \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the section 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_a512f5438d3d735ae7ba82dca9afc882c}\label{classTokenSplit_a512f5438d3d735ae7ba82dca9afc882c}} 
+\index{TokenSplit@{TokenSplit}!beginDocument@{beginDocument}}
+\index{beginDocument@{beginDocument}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{beginDocument()}{beginDocument()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::begin\+Document (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}begin document\char`\"{} command. 
+
+\begin{DoxyReturn}{Returns}
+an id associated with the document 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_a1b95fd9e440ec5036959e32667561885}\label{classTokenSplit_a1b95fd9e440ec5036959e32667561885}} 
+\index{TokenSplit@{TokenSplit}!beginFuncProto@{beginFuncProto}}
+\index{beginFuncProto@{beginFuncProto}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{beginFuncProto()}{beginFuncProto()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::begin\+Func\+Proto (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}begin function prototype declaration\char`\"{} command. 
+
+\begin{DoxyReturn}{Returns}
+an id associated with the prototype 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_a53510d715ff1109c33f75226e429d8e7}\label{classTokenSplit_a53510d715ff1109c33f75226e429d8e7}} 
+\index{TokenSplit@{TokenSplit}!beginFunction@{beginFunction}}
+\index{beginFunction@{beginFunction}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{beginFunction()}{beginFunction()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::begin\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}begin function body\char`\"{} command. 
+
+\begin{DoxyReturn}{Returns}
+an id associated with the function body 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_a2e4f04db795faf9a88e4e575744c65eb}\label{classTokenSplit_a2e4f04db795faf9a88e4e575744c65eb}} 
+\index{TokenSplit@{TokenSplit}!beginReturnType@{beginReturnType}}
+\index{beginReturnType@{beginReturnType}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{beginReturnType()}{beginReturnType()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::begin\+Return\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}begin return type declaration\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & (if non-\/null) is the storage location for the return value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the return type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_a09b86fe5f1a6f82681ae9b508969cf77}\label{classTokenSplit_a09b86fe5f1a6f82681ae9b508969cf77}} 
+\index{TokenSplit@{TokenSplit}!beginStatement@{beginStatement}}
+\index{beginStatement@{beginStatement}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{beginStatement()}{beginStatement()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::begin\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}begin source code statement\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & is the root p-\/code operation of the statement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the statement 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_a45ce997b26f444d7ddb42e57693f2907}\label{classTokenSplit_a45ce997b26f444d7ddb42e57693f2907}} 
+\index{TokenSplit@{TokenSplit}!beginVarDecl@{beginVarDecl}}
+\index{beginVarDecl@{beginVarDecl}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{beginVarDecl()}{beginVarDecl()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::begin\+Var\+Decl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}begin variable declaration\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the symbol being declared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the declaration 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_af01c0522ada54a8d777e6b9a1b840794}\label{classTokenSplit_af01c0522ada54a8d777e6b9a1b840794}} 
+\index{TokenSplit@{TokenSplit}!closeGroup@{closeGroup}}
+\index{closeGroup@{closeGroup}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{closeGroup()}{closeGroup()}}
+{\footnotesize\ttfamily void Token\+Split\+::close\+Group (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end a printing group\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the group (as returned by open\+Group) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a713ced640b138dbe6931c2eb5dd7ddbe}\label{classTokenSplit_a713ced640b138dbe6931c2eb5dd7ddbe}} 
+\index{TokenSplit@{TokenSplit}!closeParen@{closeParen}}
+\index{closeParen@{closeParen}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{closeParen()}{closeParen()}}
+{\footnotesize\ttfamily void Token\+Split\+::close\+Paren (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a close parenthesis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & is the close parenthesis character to emit \\
+\hline
+{\em id} & is the id associated with the matching open parenthesis (as returned by open\+Paren) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_ab68c64d47f6d2456c645af28d9200425}\label{classTokenSplit_ab68c64d47f6d2456c645af28d9200425}} 
+\index{TokenSplit@{TokenSplit}!endBlock@{endBlock}}
+\index{endBlock@{endBlock}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{endBlock()}{endBlock()}}
+{\footnotesize\ttfamily void Token\+Split\+::end\+Block (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end control-\/flow element\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the section (as returned by begin\+Block) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_acf7d7054bbd3afe3c8d609484fec0e9e}\label{classTokenSplit_acf7d7054bbd3afe3c8d609484fec0e9e}} 
+\index{TokenSplit@{TokenSplit}!endDocument@{endDocument}}
+\index{endDocument@{endDocument}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{endDocument()}{endDocument()}}
+{\footnotesize\ttfamily void Token\+Split\+::end\+Document (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end document\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the document (as returned by begin\+Document) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a326e6e6c122f24b053e0653c9f18ac79}\label{classTokenSplit_a326e6e6c122f24b053e0653c9f18ac79}} 
+\index{TokenSplit@{TokenSplit}!endFuncProto@{endFuncProto}}
+\index{endFuncProto@{endFuncProto}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{endFuncProto()}{endFuncProto()}}
+{\footnotesize\ttfamily void Token\+Split\+::end\+Func\+Proto (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end function prototype declaration\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the prototype (as returned by begin\+Func\+Proto) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a1be7d58dbc149fc75b6467e3c02ddb65}\label{classTokenSplit_a1be7d58dbc149fc75b6467e3c02ddb65}} 
+\index{TokenSplit@{TokenSplit}!endFunction@{endFunction}}
+\index{endFunction@{endFunction}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{endFunction()}{endFunction()}}
+{\footnotesize\ttfamily void Token\+Split\+::end\+Function (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end function body\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the function body (as returned by begin\+Function) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a50c3b76f86a75f425879ceba2589b843}\label{classTokenSplit_a50c3b76f86a75f425879ceba2589b843}} 
+\index{TokenSplit@{TokenSplit}!endReturnType@{endReturnType}}
+\index{endReturnType@{endReturnType}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{endReturnType()}{endReturnType()}}
+{\footnotesize\ttfamily void Token\+Split\+::end\+Return\+Type (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end return type declaration\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the return type (as returned by begin\+Return\+Type) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a33dd0d763dc8042bc3fca66fddff0b9b}\label{classTokenSplit_a33dd0d763dc8042bc3fca66fddff0b9b}} 
+\index{TokenSplit@{TokenSplit}!endStatement@{endStatement}}
+\index{endStatement@{endStatement}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{endStatement()}{endStatement()}}
+{\footnotesize\ttfamily void Token\+Split\+::end\+Statement (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end source code statement\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the statement (as returned by begin\+Statement) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a6d5be5e7d3d58556488edb57a9ffb74e}\label{classTokenSplit_a6d5be5e7d3d58556488edb57a9ffb74e}} 
+\index{TokenSplit@{TokenSplit}!endVarDecl@{endVarDecl}}
+\index{endVarDecl@{endVarDecl}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{endVarDecl()}{endVarDecl()}}
+{\footnotesize\ttfamily void Token\+Split\+::end\+Var\+Decl (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end variable declaration\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the declaration (as returned by begin\+Var\+Decl) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a467d591af196f9a606dd50586775f7d4}\label{classTokenSplit_a467d591af196f9a606dd50586775f7d4}} 
+\index{TokenSplit@{TokenSplit}!openGroup@{openGroup}}
+\index{openGroup@{openGroup}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{openGroup()}{openGroup()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::open\+Group (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}start a printing group\char`\"{} command. 
+
+\begin{DoxyReturn}{Returns}
+an id associated with the group 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_a5dcdb16c6b0aafe649f1615a93c2ee1c}\label{classTokenSplit_a5dcdb16c6b0aafe649f1615a93c2ee1c}} 
+\index{TokenSplit@{TokenSplit}!openParen@{openParen}}
+\index{openParen@{openParen}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{openParen()}{openParen()}}
+{\footnotesize\ttfamily void Token\+Split\+::open\+Paren (\begin{DoxyParamCaption}\item[{char}]{o,  }\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an open parenthesis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o} & is the open parenthesis character to emit \\
+\hline
+{\em id} & is an id to associate with the parenthesis \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a7418693a38259f2b48837c7bb9b147a4}\label{classTokenSplit_a7418693a38259f2b48837c7bb9b147a4}} 
+\index{TokenSplit@{TokenSplit}!print@{print}}
+\index{print@{print}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Token\+Split\+::print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a token for other (more unusual) syntax in source code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & is the character data of the syntax being emitted \\
+\hline
+{\em h} & indicates how the syntax should be highlighted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_aac6f66bf872fe4f04c8f3b44cf4efb9e}\label{classTokenSplit_aac6f66bf872fe4f04c8f3b44cf4efb9e}} 
+\index{TokenSplit@{TokenSplit}!print@{print}}
+\index{print@{print}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Token\+Split\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmitXml}{Emit\+Xml}} $\ast$}]{emit }\end{DoxyParamCaption}) const}
+
+
+
+Send {\bfseries{this}} token to emitter. 
+
+Emit markup or content corresponding to {\bfseries{this}} token on a low-\/level emitter. The A\+PI method matching the token type is called, feeding it content contained in the object. 
+\begin{DoxyParams}{Parameters}
+{\em emit} & is the low-\/level emitter to output to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a2aa41522a98675a88eda3dc730e1ab1c}\label{classTokenSplit_a2aa41522a98675a88eda3dc730e1ab1c}} 
+\index{TokenSplit@{TokenSplit}!spaces@{spaces}}
+\index{spaces@{spaces}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{spaces()}{spaces()}}
+{\footnotesize\ttfamily void Token\+Split\+::spaces (\begin{DoxyParamCaption}\item[{int4}]{num,  }\item[{int4}]{bump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a whitespace token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & is the number of space characters to emit \\
+\hline
+{\em bump} & is the number of characters to indent if the spaces force a line break \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a64074d483f92a724cf846c4893b1c1c7}\label{classTokenSplit_a64074d483f92a724cf846c4893b1c1c7}} 
+\index{TokenSplit@{TokenSplit}!startComment@{startComment}}
+\index{startComment@{startComment}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{startComment()}{startComment()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::start\+Comment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}start a comment block\char`\"{} command. 
+
+\begin{DoxyReturn}{Returns}
+an id associated with the comment block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_abc86a21025a728d2dbe050fe22b9570b}\label{classTokenSplit_abc86a21025a728d2dbe050fe22b9570b}} 
+\index{TokenSplit@{TokenSplit}!startIndent@{startIndent}}
+\index{startIndent@{startIndent}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{startIndent()}{startIndent()}}
+{\footnotesize\ttfamily int4 Token\+Split\+::start\+Indent (\begin{DoxyParamCaption}\item[{int4}]{bump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a \char`\"{}start a new indent level\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bump} & the number of additional characters to indent \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the nesting 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTokenSplit_ac93137757a2cc85219ef8cd5fb994a6c}\label{classTokenSplit_ac93137757a2cc85219ef8cd5fb994a6c}} 
+\index{TokenSplit@{TokenSplit}!stopComment@{stopComment}}
+\index{stopComment@{stopComment}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{stopComment()}{stopComment()}}
+{\footnotesize\ttfamily void Token\+Split\+::stop\+Comment (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end a comment block\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the block (as returned by start\+Comment) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_af12160b7112cf50e7e537c22ddf76860}\label{classTokenSplit_af12160b7112cf50e7e537c22ddf76860}} 
+\index{TokenSplit@{TokenSplit}!stopIndent@{stopIndent}}
+\index{stopIndent@{stopIndent}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{stopIndent()}{stopIndent()}}
+{\footnotesize\ttfamily void Token\+Split\+::stop\+Indent (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an \char`\"{}end an indent level\char`\"{} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the nesting (as returned by start\+Indent) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a5f1af6fb8cc5fab53f74701885d0d0f6}\label{classTokenSplit_a5f1af6fb8cc5fab53f74701885d0d0f6}} 
+\index{TokenSplit@{TokenSplit}!tagComment@{tagComment}}
+\index{tagComment@{tagComment}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tagComment()}{tagComment()}}
+{\footnotesize\ttfamily void Token\+Split\+::tag\+Comment (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h,  }\item[{const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{s,  }\item[{uintb}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a comment string in the generated source code. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the comment \\
+\hline
+{\em h} & indicates how the comment should be highlighted \\
+\hline
+{\em s} & is the address space of the address where the comment is attached \\
+\hline
+{\em o} & is the offset of the address where the comment is attached \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a5185f9c1ceae7c9b9c51f023b56f9287}\label{classTokenSplit_a5185f9c1ceae7c9b9c51f023b56f9287}} 
+\index{TokenSplit@{TokenSplit}!tagField@{tagField}}
+\index{tagField@{tagField}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tagField()}{tagField()}}
+{\footnotesize\ttfamily void Token\+Split\+::tag\+Field (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h,  }\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{int4}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an identifier for a field within a structured data-\/type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em h} & indicates how the identifier should be highlighted \\
+\hline
+{\em ct} & is the data-\/type associated with the field \\
+\hline
+{\em o} & is the (byte) offset of the field within its structured data-\/type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a55215c1471c0be925a2008b73169b56b}\label{classTokenSplit_a55215c1471c0be925a2008b73169b56b}} 
+\index{TokenSplit@{TokenSplit}!tagFuncName@{tagFuncName}}
+\index{tagFuncName@{tagFuncName}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tagFuncName()}{tagFuncName()}}
+{\footnotesize\ttfamily void Token\+Split\+::tag\+Func\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h,  }\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a function identifier token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em h} & indicates how the identifier should be highlighted \\
+\hline
+{\em f} & is the function \\
+\hline
+{\em o} & is the C\+A\+LL operation associated within the syntax tree or null for a declaration \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a64a5177d3cc95301fc5008b8d5ff0c0e}\label{classTokenSplit_a64a5177d3cc95301fc5008b8d5ff0c0e}} 
+\index{TokenSplit@{TokenSplit}!tagLabel@{tagLabel}}
+\index{tagLabel@{tagLabel}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tagLabel()}{tagLabel()}}
+{\footnotesize\ttfamily void Token\+Split\+::tag\+Label (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h,  }\item[{const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{s,  }\item[{uintb}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a code label identifier token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data of the label \\
+\hline
+{\em h} & indicates how the label should be highlighted \\
+\hline
+{\em s} & is the address space of the code address being labeled \\
+\hline
+{\em o} & is the offset of the code address being labeled \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a84352935d3d283ca1c83c08c79ae4d30}\label{classTokenSplit_a84352935d3d283ca1c83c08c79ae4d30}} 
+\index{TokenSplit@{TokenSplit}!tagOp@{tagOp}}
+\index{tagOp@{tagOp}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tagOp()}{tagOp()}}
+{\footnotesize\ttfamily void Token\+Split\+::tag\+Op (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an operator token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the emitted representation \\
+\hline
+{\em h} & indicates how the token should be highlighted \\
+\hline
+{\em o} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} object associated with the operation with the syntax tree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a52bc265405c6aba947a400a4d2964981}\label{classTokenSplit_a52bc265405c6aba947a400a4d2964981}} 
+\index{TokenSplit@{TokenSplit}!tagType@{tagType}}
+\index{tagType@{tagType}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tagType()}{tagType()}}
+{\footnotesize\ttfamily void Token\+Split\+::tag\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h,  }\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a data-\/type identifier token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em h} & indicates how the identifier should be highlighted \\
+\hline
+{\em ct} & is the data-\/type description object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTokenSplit_a62826b72072c3b314d73db6b74d6c408}\label{classTokenSplit_a62826b72072c3b314d73db6b74d6c408}} 
+\index{TokenSplit@{TokenSplit}!tagVariable@{tagVariable}}
+\index{tagVariable@{tagVariable}!TokenSplit@{TokenSplit}}
+\doxysubsubsection{\texorpdfstring{tagVariable()}{tagVariable()}}
+{\footnotesize\ttfamily void Token\+Split\+::tag\+Variable (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}}}]{h,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{v,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a variable identifier token. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em h} & indicates how the identifier should be highlighted \\
+\hline
+{\em v} & is the \mbox{\hyperlink{classVarnode}{Varnode}} representing the variable within the syntax tree \\
+\hline
+{\em o} & is a p-\/code operation related to the use of the variable (may be null) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{prettyprint_8hh}{prettyprint.\+hh}}\item 
+prettyprint.\+cc\end{DoxyCompactItemize}

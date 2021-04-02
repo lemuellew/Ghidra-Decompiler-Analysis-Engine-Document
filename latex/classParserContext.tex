@@ -1,0 +1,113 @@
+\hypertarget{classParserContext}{}\doxysection{Parser\+Context Class Reference}
+\label{classParserContext}\index{ParserContext@{ParserContext}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParserContext_aa80b0aff260390f32fc1950107de8b00}\label{classParserContext_aa80b0aff260390f32fc1950107de8b00}} 
+enum \{ {\bfseries uninitialized} = 0, 
+{\bfseries disassembly} = 1, 
+{\bfseries pcode} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParserContext_a1f9d9209341ee399159bef431641eb08}\label{classParserContext_a1f9d9209341ee399159bef431641eb08}} 
+{\bfseries Parser\+Context} (\mbox{\hyperlink{classContextCache}{Context\+Cache}} $\ast$ccache)
+\item 
+\mbox{\Hypertarget{classParserContext_a48bb82379ee3ff25a90e420a45506b20}\label{classParserContext_a48bb82379ee3ff25a90e420a45506b20}} 
+uint1 $\ast$ {\bfseries get\+Buffer} (void)
+\item 
+\mbox{\Hypertarget{classParserContext_ac8c76cf5ca381b1aedff9adb6334547c}\label{classParserContext_ac8c76cf5ca381b1aedff9adb6334547c}} 
+void {\bfseries initialize} (int4 maxstate, int4 maxparam, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\item 
+\mbox{\Hypertarget{classParserContext_a092b001f0511b580e0fed894baf20036}\label{classParserContext_a092b001f0511b580e0fed894baf20036}} 
+int4 {\bfseries get\+Parser\+State} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_a49b8c4b331d6dad48a146c0675bf08c6}\label{classParserContext_a49b8c4b331d6dad48a146c0675bf08c6}} 
+void {\bfseries set\+Parser\+State} (int4 st)
+\item 
+\mbox{\Hypertarget{classParserContext_aeadc3c9beab067825f0f0c0a25618f84}\label{classParserContext_aeadc3c9beab067825f0f0c0a25618f84}} 
+void {\bfseries deallocate\+State} (\mbox{\hyperlink{classParserWalkerChange}{Parser\+Walker\+Change}} \&walker)
+\item 
+\mbox{\Hypertarget{classParserContext_a93151174575222516e445bd6a06cb93c}\label{classParserContext_a93151174575222516e445bd6a06cb93c}} 
+void {\bfseries allocate\+Operand} (int4 i, \mbox{\hyperlink{classParserWalkerChange}{Parser\+Walker\+Change}} \&walker)
+\item 
+\mbox{\Hypertarget{classParserContext_a2806900c8b222d21f106031876b72e8e}\label{classParserContext_a2806900c8b222d21f106031876b72e8e}} 
+void {\bfseries set\+Addr} (const \mbox{\hyperlink{classAddress}{Address}} \&ad)
+\item 
+\mbox{\Hypertarget{classParserContext_ae9a4db4a509177c0797092372dfaabcb}\label{classParserContext_ae9a4db4a509177c0797092372dfaabcb}} 
+void {\bfseries set\+Naddr} (const \mbox{\hyperlink{classAddress}{Address}} \&ad)
+\item 
+\mbox{\Hypertarget{classParserContext_a804dc3663f33ae4a4ffb7278e7225546}\label{classParserContext_a804dc3663f33ae4a4ffb7278e7225546}} 
+void {\bfseries set\+Calladdr} (const \mbox{\hyperlink{classAddress}{Address}} \&ad)
+\item 
+\mbox{\Hypertarget{classParserContext_a26c3fe0af432d556742152f7049dfcb9}\label{classParserContext_a26c3fe0af432d556742152f7049dfcb9}} 
+void {\bfseries add\+Commit} (\mbox{\hyperlink{classTripleSymbol}{Triple\+Symbol}} $\ast$sym, int4 num, uintm mask, bool flow, \mbox{\hyperlink{structConstructState}{Construct\+State}} $\ast$point)
+\item 
+\mbox{\Hypertarget{classParserContext_ab1b9f2de6217feb73966e15ef89ab4f4}\label{classParserContext_ab1b9f2de6217feb73966e15ef89ab4f4}} 
+void {\bfseries clear\+Commits} (void)
+\item 
+\mbox{\Hypertarget{classParserContext_aa08843c5d8fb8267069a83120b77bed5}\label{classParserContext_aa08843c5d8fb8267069a83120b77bed5}} 
+void {\bfseries apply\+Commits} (void)
+\item 
+\mbox{\Hypertarget{classParserContext_a6e19b91b26906e6678f1065d9118da05}\label{classParserContext_a6e19b91b26906e6678f1065d9118da05}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Addr} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_aecef32b0b498d6dcb78ca223f2737061}\label{classParserContext_aecef32b0b498d6dcb78ca223f2737061}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Naddr} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_a85ee6aa4678230479716fbecb6be31cf}\label{classParserContext_a85ee6aa4678230479716fbecb6be31cf}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Dest\+Addr} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_a98d90338dd2a0605dc74a220fa0a1eb7}\label{classParserContext_a98d90338dd2a0605dc74a220fa0a1eb7}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Ref\+Addr} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_adf3c2cc3d08bbb0da16f307629566942}\label{classParserContext_adf3c2cc3d08bbb0da16f307629566942}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries get\+Cur\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_a9dd73c7794a457c62b25d733e8825161}\label{classParserContext_a9dd73c7794a457c62b25d733e8825161}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries get\+Const\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_a5112f754f6655d02c1515a6667e9328e}\label{classParserContext_a5112f754f6655d02c1515a6667e9328e}} 
+uintm {\bfseries get\+Instruction\+Bytes} (int4 byteoff, int4 numbytes, uint4 off) const
+\item 
+\mbox{\Hypertarget{classParserContext_a9f3ffbc9719247bd2ef63636eff6b0d3}\label{classParserContext_a9f3ffbc9719247bd2ef63636eff6b0d3}} 
+uintm {\bfseries get\+Context\+Bytes} (int4 byteoff, int4 numbytes) const
+\item 
+\mbox{\Hypertarget{classParserContext_abe5d087584325bdb7f435bc2b15da64c}\label{classParserContext_abe5d087584325bdb7f435bc2b15da64c}} 
+uintm {\bfseries get\+Instruction\+Bits} (int4 startbit, int4 size, uint4 off) const
+\item 
+\mbox{\Hypertarget{classParserContext_aa501230fbe7d667d8453f5ccc8d4f8f0}\label{classParserContext_aa501230fbe7d667d8453f5ccc8d4f8f0}} 
+uintm {\bfseries get\+Context\+Bits} (int4 startbit, int4 size) const
+\item 
+\mbox{\Hypertarget{classParserContext_a1242790851c096298227efeab13a2df0}\label{classParserContext_a1242790851c096298227efeab13a2df0}} 
+void {\bfseries set\+Context\+Word} (int4 i, uintm val, uintm mask)
+\item 
+\mbox{\Hypertarget{classParserContext_af07fe028f5e411bdb414b1683bd4c3b6}\label{classParserContext_af07fe028f5e411bdb414b1683bd4c3b6}} 
+void {\bfseries load\+Context} (void)
+\item 
+\mbox{\Hypertarget{classParserContext_a9771627b94baf35822436ae402cce979}\label{classParserContext_a9771627b94baf35822436ae402cce979}} 
+int4 {\bfseries get\+Length} (void) const
+\item 
+\mbox{\Hypertarget{classParserContext_a86fae2fe1c96a52c234b8b4533e4687e}\label{classParserContext_a86fae2fe1c96a52c234b8b4533e4687e}} 
+void {\bfseries set\+Delay\+Slot} (int4 val)
+\item 
+\mbox{\Hypertarget{classParserContext_a8a6526b4b2c1d0ee6cfee2cd5935dcbc}\label{classParserContext_a8a6526b4b2c1d0ee6cfee2cd5935dcbc}} 
+int4 {\bfseries get\+Delay\+Slot} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParserContext_a556db40b9849665da81ef5456e1d45c0}\label{classParserContext_a556db40b9849665da81ef5456e1d45c0}} 
+class {\bfseries Parser\+Walker}
+\item 
+\mbox{\Hypertarget{classParserContext_ac7f0ef2000854fe3bbf14fe58f7d3f1d}\label{classParserContext_ac7f0ef2000854fe3bbf14fe58f7d3f1d}} 
+class {\bfseries Parser\+Walker\+Change}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+context.\+hh\item 
+context.\+cc\end{DoxyCompactItemize}

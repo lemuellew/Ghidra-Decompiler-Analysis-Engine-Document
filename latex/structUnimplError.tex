@@ -1,0 +1,80 @@
+\hypertarget{structUnimplError}{}\doxysection{Unimpl\+Error Struct Reference}
+\label{structUnimplError}\index{UnimplError@{UnimplError}}
+
+
+Exception for encountering unimplemented pcode.  
+
+
+
+
+{\ttfamily \#include $<$translate.\+hh$>$}
+
+
+
+Inheritance diagram for Unimpl\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{structUnimplError__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Unimpl\+Error\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{structUnimplError__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structUnimplError_aeb883947877420388b4bd020074b2569}{Unimpl\+Error}} (const string \&s, int4 l)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int4 \mbox{\hyperlink{structUnimplError_aa20932cfe081be954491dad23f4f056e}{instruction\+\_\+length}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Exception for encountering unimplemented pcode. 
+
+This error is thrown when a particular machine instruction cannot be translated into pcode. This particular error means that the particular instruction being decoded was valid, but the system doesn\textquotesingle{}t know how to represent it in pcode. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structUnimplError_aeb883947877420388b4bd020074b2569}\label{structUnimplError_aeb883947877420388b4bd020074b2569}} 
+\index{UnimplError@{UnimplError}!UnimplError@{UnimplError}}
+\index{UnimplError@{UnimplError}!UnimplError@{UnimplError}}
+\doxysubsubsection{\texorpdfstring{UnimplError()}{UnimplError()}}
+{\footnotesize\ttfamily Unimpl\+Error\+::\+Unimpl\+Error (\begin{DoxyParamCaption}\item[{const string \&}]{s,  }\item[{int4}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is a more verbose description of the error \\
+\hline
+{\em l} & is the length (in bytes) of the unimplemented instruction \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structUnimplError_aa20932cfe081be954491dad23f4f056e}\label{structUnimplError_aa20932cfe081be954491dad23f4f056e}} 
+\index{UnimplError@{UnimplError}!instruction\_length@{instruction\_length}}
+\index{instruction\_length@{instruction\_length}!UnimplError@{UnimplError}}
+\doxysubsubsection{\texorpdfstring{instruction\_length}{instruction\_length}}
+{\footnotesize\ttfamily int4 Unimpl\+Error\+::instruction\+\_\+length}
+
+Number of bytes in the unimplemented instruction 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{translate_8hh}{translate.\+hh}}\end{DoxyCompactItemize}

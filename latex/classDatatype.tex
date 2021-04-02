@@ -1,0 +1,482 @@
+\hypertarget{classDatatype}{}\doxysection{Datatype Class Reference}
+\label{classDatatype}\index{Datatype@{Datatype}}
+
+
+The base datatype class for the decompiler.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hh$>$}
+
+
+
+Inheritance diagram for Datatype\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDatatype__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDatatype_adfdb65c6dc4d64cafc7e042003f183ef}\label{classDatatype_adfdb65c6dc4d64cafc7e042003f183ef}} 
+\mbox{\hyperlink{classDatatype_adfdb65c6dc4d64cafc7e042003f183ef}{Datatype}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op)
+\begin{DoxyCompactList}\small\item\em Construct the base data-\/type copying low-\/level properties of another. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDatatype_a29369e9251cfb318325b48f715f2aa7f}\label{classDatatype_a29369e9251cfb318325b48f715f2aa7f}} 
+\mbox{\hyperlink{classDatatype_a29369e9251cfb318325b48f715f2aa7f}{Datatype}} (int4 s, \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} m)
+\begin{DoxyCompactList}\small\item\em Construct the base data-\/type providing size and meta-\/type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDatatype_ada9a0a6dfa2e5fdc91fc81b71c0b5890}\label{classDatatype_ada9a0a6dfa2e5fdc91fc81b71c0b5890}} 
+\mbox{\hyperlink{classDatatype_ada9a0a6dfa2e5fdc91fc81b71c0b5890}{Datatype}} (int4 s, \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} m, const string \&n)
+\begin{DoxyCompactList}\small\item\em Construct the base data-\/type providing size, meta-\/type, and name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatatype_a41df5e7d8e84acbdc6acb80eccb8d993}{has\+Same\+Variable\+Base}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct) const
+\begin{DoxyCompactList}\small\item\em Are these the same variable length data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDatatype_a034a9b665df1a06f17fd3dfe61e7bf41}{print\+Raw}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a description of the type to stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classDatatype_ac310ccfdc47d145f10699fa1e14e73b4}{get\+Sub\+Type}} (uintb off, uintb $\ast$newoff) const
+\begin{DoxyCompactList}\small\item\em Recover component data-\/type one-\/level down. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classDatatype_acbb33e15f39ba19fff6235defd7a6412}{nearest\+Arrayed\+Component\+Forward}} (uintb off, uintb $\ast$newoff, int4 $\ast$el\+Size) const
+\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classDatatype_aa1e841435c9b1b3200c542e8ed72277c}{nearest\+Arrayed\+Component\+Backward}} (uintb off, uintb $\ast$newoff, int4 $\ast$el\+Size) const
+\item 
+virtual int4 \mbox{\hyperlink{classDatatype_a4d5a102b2d909180c3080fdb55d7b305}{compare}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op, int4 level) const
+\begin{DoxyCompactList}\small\item\em Compare for functional equivalence. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classDatatype_ab26e4ca2c3091d3c5a34b4fbd7be76ae}{compare\+Dependency}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op) const
+\begin{DoxyCompactList}\small\item\em Compare for storage in tree structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDatatype_a6bd032d91f40efe36841adc85b3ff0ec}\label{classDatatype_a6bd032d91f40efe36841adc85b3ff0ec}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classDatatype_a6bd032d91f40efe36841adc85b3ff0ec}{clone}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Clone the data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDatatype_a33339824f1c50d4354952296070c3902}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize the data-\/type to X\+ML. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classDatatype_afe6320b7283935c90721e26b8e0f7202}{type\+Order\+Bool}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op) const
+\begin{DoxyCompactList}\small\item\em Order {\bfseries{this}} with -\/op-\/, treating {\itshape bool} data-\/type as special. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatatype_a27dc7495a59adaca34b83366a963fd45}{save\+Xml\+Basic}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save basic data-\/type properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDatatype_aa29b0b69af8ed3be7dc573e4a1e355a5}{save\+Xml\+Ref}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write an X\+ML reference of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDatatype_afeb0cf4316bd7d7942e5f6928ab596ee}{is\+Ptrsub\+Matching}} (uintb offset) const
+\begin{DoxyCompactList}\small\item\em Is this data-\/type suitable as input to a C\+P\+U\+I\+\_\+\+P\+T\+R\+S\+UB op. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca8efcece19aae42262429fbf59330a2c7}{coretype}} = 1, 
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca291f711994553cf2ed3b2188536cf862}{chartype}} = 2, 
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcac49f33c823aed43744eb7b5ab70d48cb}{enumtype}} = 4, 
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcaab21c62169d90a130a09bd0df16a82b9}{poweroftwo}} = 8, 
+\newline
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca5e1e1035b8236663c0fae4a61ec72512}{utf16}} = 16, 
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcad201af95657b98f2835a7a3bf12c7d4c}{utf32}} = 32, 
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcadb3bd443e2c976a3add73a7f8fe3dd44}{opaque\+\_\+string}} = 64, 
+\mbox{\hyperlink{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca10212791964f9bfc9413faab7031080b}{variable\+\_\+length}} = 128
+ \}
+\begin{DoxyCompactList}\small\item\em Boolean properties of datatypes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDatatype_afeb70488c52d024b293d5198c98b3f49}{restore\+Xml\+Basic}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover basic data-\/type properties. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDatatype_aed882ae693a31a64d56fffb9abdaa575}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typegrp)
+\begin{DoxyCompactList}\small\item\em Restore data-\/type from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint8 \mbox{\hyperlink{classDatatype_a4733a0e51a359ad324583d06824b5b92}{hash\+Name}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Produce a data-\/type id by hashing the type name. \end{DoxyCompactList}\item 
+static uint8 \mbox{\hyperlink{classDatatype_a0089e0e5057fe9c8caa1011d15ac22d9}{hash\+Size}} (uint8 \mbox{\hyperlink{classDatatype_ac2bb702c6067fae98d7c0257e928d5a1}{id}}, int4 \mbox{\hyperlink{classDatatype_a14476d90cd8993852b349b621876b292}{size}})
+\begin{DoxyCompactList}\small\item\em Reversibly hash size into id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDatatype_a14476d90cd8993852b349b621876b292}\label{classDatatype_a14476d90cd8993852b349b621876b292}} 
+int4 \mbox{\hyperlink{classDatatype_a14476d90cd8993852b349b621876b292}{size}}
+\begin{DoxyCompactList}\small\item\em Size (of variable holding a value of this type) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDatatype_a66d6613a73e69cd4665c90441c4613b3}\label{classDatatype_a66d6613a73e69cd4665c90441c4613b3}} 
+string \mbox{\hyperlink{classDatatype_a66d6613a73e69cd4665c90441c4613b3}{name}}
+\begin{DoxyCompactList}\small\item\em Name of type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDatatype_a79a16cdae5aff36880bee9122889a0b9}\label{classDatatype_a79a16cdae5aff36880bee9122889a0b9}} 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} \mbox{\hyperlink{classDatatype_a79a16cdae5aff36880bee9122889a0b9}{metatype}}
+\begin{DoxyCompactList}\small\item\em Meta-\/type -\/ type disregarding size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDatatype_a82e59a9379488b5afdae69817c0955fb}\label{classDatatype_a82e59a9379488b5afdae69817c0955fb}} 
+uint4 \mbox{\hyperlink{classDatatype_a82e59a9379488b5afdae69817c0955fb}{flags}}
+\begin{DoxyCompactList}\small\item\em Boolean properties of the type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDatatype_ac2bb702c6067fae98d7c0257e928d5a1}\label{classDatatype_ac2bb702c6067fae98d7c0257e928d5a1}} 
+uint8 \mbox{\hyperlink{classDatatype_ac2bb702c6067fae98d7c0257e928d5a1}{id}}
+\begin{DoxyCompactList}\small\item\em A unique id for the type (or 0 if an id is not assigned) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDatatype_ac8c1945d0a63785e78b3e09a13226ed6}\label{classDatatype_ac8c1945d0a63785e78b3e09a13226ed6}} 
+class {\bfseries Type\+Factory}
+\item 
+\mbox{\Hypertarget{classDatatype_a86b144569a3593304a32cb5aae3fa3f6}\label{classDatatype_a86b144569a3593304a32cb5aae3fa3f6}} 
+struct {\bfseries Datatype\+Compare}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base datatype class for the decompiler. 
+
+Used for symbols, function prototypes, type propagation etc. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfc}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfc}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Boolean properties of datatypes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{coretype@{coretype}!Datatype@{Datatype}}\index{Datatype@{Datatype}!coretype@{coretype}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca8efcece19aae42262429fbf59330a2c7}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca8efcece19aae42262429fbf59330a2c7}} 
+coretype&This is a basic type which will never be redefined. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{chartype@{chartype}!Datatype@{Datatype}}\index{Datatype@{Datatype}!chartype@{chartype}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca291f711994553cf2ed3b2188536cf862}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca291f711994553cf2ed3b2188536cf862}} 
+chartype&A\+S\+C\+II character data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{enumtype@{enumtype}!Datatype@{Datatype}}\index{Datatype@{Datatype}!enumtype@{enumtype}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcac49f33c823aed43744eb7b5ab70d48cb}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcac49f33c823aed43744eb7b5ab70d48cb}} 
+enumtype&An enumeration type (as well as an integer) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{poweroftwo@{poweroftwo}!Datatype@{Datatype}}\index{Datatype@{Datatype}!poweroftwo@{poweroftwo}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcaab21c62169d90a130a09bd0df16a82b9}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcaab21c62169d90a130a09bd0df16a82b9}} 
+poweroftwo&An enumeration type where all values are of 2$^\wedge$$^\wedge$n form. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{utf16@{utf16}!Datatype@{Datatype}}\index{Datatype@{Datatype}!utf16@{utf16}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca5e1e1035b8236663c0fae4a61ec72512}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca5e1e1035b8236663c0fae4a61ec72512}} 
+utf16&16-\/bit wide chars in unicode U\+T\+F16 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{utf32@{utf32}!Datatype@{Datatype}}\index{Datatype@{Datatype}!utf32@{utf32}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcad201af95657b98f2835a7a3bf12c7d4c}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcad201af95657b98f2835a7a3bf12c7d4c}} 
+utf32&32-\/bit wide chars in unicode U\+T\+F32 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{opaque\_string@{opaque\_string}!Datatype@{Datatype}}\index{Datatype@{Datatype}!opaque\_string@{opaque\_string}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcadb3bd443e2c976a3add73a7f8fe3dd44}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfcadb3bd443e2c976a3add73a7f8fe3dd44}} 
+opaque\+\_\+string&Structure that should be treated as a string. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{variable\_length@{variable\_length}!Datatype@{Datatype}}\index{Datatype@{Datatype}!variable\_length@{variable\_length}}}\mbox{\Hypertarget{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca10212791964f9bfc9413faab7031080b}\label{classDatatype_a2ee7c7a96e14bfa1c1f39bf2c857acfca10212791964f9bfc9413faab7031080b}} 
+variable\+\_\+length&May be other structures with same name different lengths. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDatatype_a4d5a102b2d909180c3080fdb55d7b305}\label{classDatatype_a4d5a102b2d909180c3080fdb55d7b305}} 
+\index{Datatype@{Datatype}!compare@{compare}}
+\index{compare@{compare}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int4 Datatype\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op,  }\item[{int4}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for functional equivalence. 
+
+0 (equality) means the data-\/types are functionally equivalent (even if names differ) Smaller types come earlier. More specific types come earlier. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+{\em level} & is maximum level to descend when recursively comparing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeSpacebase_a1ec8296bec1fe983feba0dff1cd78b41}{Type\+Spacebase}}, \mbox{\hyperlink{classTypeCode_a96f56d57d3c88430321564e01dc1ad90}{Type\+Code}}, \mbox{\hyperlink{classTypeStruct_a7f06b400a7d74394512a9f67ec925310}{Type\+Struct}}, \mbox{\hyperlink{classTypeEnum_acf43c87e14ab5b8e128fb35d86059bc5}{Type\+Enum}}, \mbox{\hyperlink{classTypeArray_a25246a42499f1bc0f9a6c8c5f8224c74}{Type\+Array}}, and \mbox{\hyperlink{classTypePointer_aba4a7c8c334a37a2225ec32c7328e402}{Type\+Pointer}}.
+
+\mbox{\Hypertarget{classDatatype_ab26e4ca2c3091d3c5a34b4fbd7be76ae}\label{classDatatype_ab26e4ca2c3091d3c5a34b4fbd7be76ae}} 
+\index{Datatype@{Datatype}!compareDependency@{compareDependency}}
+\index{compareDependency@{compareDependency}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{compareDependency()}{compareDependency()}}
+{\footnotesize\ttfamily int4 Datatype\+::compare\+Dependency (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for storage in tree structure. 
+
+Ordering of data-\/types for the main \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} container. Comparison only goes down one-\/level in the component structure, before just comparing pointers. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeSpacebase_ae0bea6eed65dda9a50999bf664c70c3d}{Type\+Spacebase}}, \mbox{\hyperlink{classTypeCode_a486209b2c4c2efe517f9b5e6a566592e}{Type\+Code}}, \mbox{\hyperlink{classTypeStruct_a12078b87b7fbc0f2ed5cb01ee5c61050}{Type\+Struct}}, \mbox{\hyperlink{classTypeEnum_a593a6c9e7b9c3db7bbb3f590d8f3f202}{Type\+Enum}}, \mbox{\hyperlink{classTypeArray_a10550a6f660c7c7a4f06ca00eae2319f}{Type\+Array}}, and \mbox{\hyperlink{classTypePointer_a20dfb07c24c08242c21ae856508197fe}{Type\+Pointer}}.
+
+\mbox{\Hypertarget{classDatatype_ac310ccfdc47d145f10699fa1e14e73b4}\label{classDatatype_ac310ccfdc47d145f10699fa1e14e73b4}} 
+\index{Datatype@{Datatype}!getSubType@{getSubType}}
+\index{getSubType@{getSubType}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{getSubType()}{getSubType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Datatype\+::get\+Sub\+Type (\begin{DoxyParamCaption}\item[{uintb}]{off,  }\item[{uintb $\ast$}]{newoff }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover component data-\/type one-\/level down. 
+
+Given an offset into {\bfseries{this}} data-\/type, return the component data-\/type at that offset. Also, pass back a \char`\"{}renormalized\char`\"{} offset suitable for recursize \mbox{\hyperlink{classDatatype_ac310ccfdc47d145f10699fa1e14e73b4}{get\+Sub\+Type()}} calls\+: i.\+e. if the original offset hits the exact start of the sub-\/type, 0 is passed back. If there is no valid component data-\/type at the offset, return N\+U\+LL and pass back the original offset 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the offset into {\bfseries{this}} data-\/type \\
+\hline
+{\em newoff} & is a pointer to the passed-\/back offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the component data-\/type or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeSpacebase_a0dc2b2f9eadee2b8c79e2403a9c908fe}{Type\+Spacebase}}, \mbox{\hyperlink{classTypeCode_aadf597df057fcdc89000bbd8cffefa83}{Type\+Code}}, \mbox{\hyperlink{classTypeStruct_abf638d0fc1902b030f0134c5152a3818}{Type\+Struct}}, and \mbox{\hyperlink{classTypeArray_a47579d472b40e0cdf7ecb95da258e870}{Type\+Array}}.
+
+\mbox{\Hypertarget{classDatatype_a4733a0e51a359ad324583d06824b5b92}\label{classDatatype_a4733a0e51a359ad324583d06824b5b92}} 
+\index{Datatype@{Datatype}!hashName@{hashName}}
+\index{hashName@{hashName}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{hashName()}{hashName()}}
+{\footnotesize\ttfamily uint8 Datatype\+::hash\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Produce a data-\/type id by hashing the type name. 
+
+If a type id is explicitly provided for a data-\/type, this routine is used to produce an id based on a hash of the name. I\+Ds produced this way will have their sign-\/bit set to distinguish it from other I\+Ds. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the type name to be hashed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatatype_a0089e0e5057fe9c8caa1011d15ac22d9}\label{classDatatype_a0089e0e5057fe9c8caa1011d15ac22d9}} 
+\index{Datatype@{Datatype}!hashSize@{hashSize}}
+\index{hashSize@{hashSize}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{hashSize()}{hashSize()}}
+{\footnotesize\ttfamily uint8 Datatype\+::hash\+Size (\begin{DoxyParamCaption}\item[{uint8}]{id,  }\item[{int4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Reversibly hash size into id. 
+
+This allows I\+Ds for variable length structures to be uniquefied based on size. A base ID is given and a size of the specific instance. A unique ID is returned. The hashing is reversible by feeding the output ID back into this function with the same size. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the given ID to (de)uniquify \\
+\hline
+{\em size} & is the instance size of the structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (de)uniquified id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatatype_a41df5e7d8e84acbdc6acb80eccb8d993}\label{classDatatype_a41df5e7d8e84acbdc6acb80eccb8d993}} 
+\index{Datatype@{Datatype}!hasSameVariableBase@{hasSameVariableBase}}
+\index{hasSameVariableBase@{hasSameVariableBase}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{hasSameVariableBase()}{hasSameVariableBase()}}
+{\footnotesize\ttfamily bool Datatype\+::has\+Same\+Variable\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption}) const}
+
+
+
+Are these the same variable length data-\/type. 
+
+If {\bfseries{this}} and the other given data-\/type are both variable length and come from the the same base data-\/type, return {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the other given data-\/type to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if they are the same variable length data-\/type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatatype_afeb0cf4316bd7d7942e5f6928ab596ee}\label{classDatatype_afeb0cf4316bd7d7942e5f6928ab596ee}} 
+\index{Datatype@{Datatype}!isPtrsubMatching@{isPtrsubMatching}}
+\index{isPtrsubMatching@{isPtrsubMatching}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{isPtrsubMatching()}{isPtrsubMatching()}}
+{\footnotesize\ttfamily bool Datatype\+::is\+Ptrsub\+Matching (\begin{DoxyParamCaption}\item[{uintb}]{offset }\end{DoxyParamCaption}) const}
+
+
+
+Is this data-\/type suitable as input to a C\+P\+U\+I\+\_\+\+P\+T\+R\+S\+UB op. 
+
+A C\+P\+U\+I\+\_\+\+P\+T\+R\+S\+UB must act on a pointer data-\/type where the given offset addresses a component. Perform this check. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is the given offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} is a suitable P\+T\+R\+S\+UB data-\/type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDatatype_aa1e841435c9b1b3200c542e8ed72277c}\label{classDatatype_aa1e841435c9b1b3200c542e8ed72277c}} 
+\index{Datatype@{Datatype}!nearestArrayedComponentBackward@{nearestArrayedComponentBackward}}
+\index{nearestArrayedComponentBackward@{nearestArrayedComponentBackward}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{nearestArrayedComponentBackward()}{nearestArrayedComponentBackward()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Datatype\+::nearest\+Arrayed\+Component\+Backward (\begin{DoxyParamCaption}\item[{uintb}]{off,  }\item[{uintb $\ast$}]{newoff,  }\item[{int4 $\ast$}]{el\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Find the first component data-\/type before the given offset that is (or contains) an array, and pass back the difference between the component\textquotesingle{}s start and the given offset. Return the component data-\/type or null if no array is found. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the given offset into {\bfseries{this}} data-\/type \\
+\hline
+{\em newoff} & is used to pass back the offset difference \\
+\hline
+{\em el\+Size} & is used to pass back the array element size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the component data-\/type or null 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeSpacebase_a6b3aaaba6c04120223dcf83e4907ce09}{Type\+Spacebase}}, and \mbox{\hyperlink{classTypeStruct_ac09ae52ad2e4b3abf92ffc60a6b49210}{Type\+Struct}}.
+
+\mbox{\Hypertarget{classDatatype_acbb33e15f39ba19fff6235defd7a6412}\label{classDatatype_acbb33e15f39ba19fff6235defd7a6412}} 
+\index{Datatype@{Datatype}!nearestArrayedComponentForward@{nearestArrayedComponentForward}}
+\index{nearestArrayedComponentForward@{nearestArrayedComponentForward}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{nearestArrayedComponentForward()}{nearestArrayedComponentForward()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Datatype\+::nearest\+Arrayed\+Component\+Forward (\begin{DoxyParamCaption}\item[{uintb}]{off,  }\item[{uintb $\ast$}]{newoff,  }\item[{int4 $\ast$}]{el\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Find the first component data-\/type after the given offset that is (or contains) an array, and pass back the difference between the component\textquotesingle{}s start and the given offset. Return the component data-\/type or null if no array is found. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the given offset into {\bfseries{this}} data-\/type \\
+\hline
+{\em newoff} & is used to pass back the offset difference \\
+\hline
+{\em el\+Size} & is used to pass back the array element size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the component data-\/type or null 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeSpacebase_aa950d549a31d301649943b65d520276d}{Type\+Spacebase}}, and \mbox{\hyperlink{classTypeStruct_a7edba8d806148f847f7363b05899fe96}{Type\+Struct}}.
+
+\mbox{\Hypertarget{classDatatype_a034a9b665df1a06f17fd3dfe61e7bf41}\label{classDatatype_a034a9b665df1a06f17fd3dfe61e7bf41}} 
+\index{Datatype@{Datatype}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Datatype\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a description of the type to stream. 
+
+Print a raw description of the type to stream. Intended for debugging. Not intended to produce parsable C. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeCode_a1e8d400271941042d3dcb8402876ce02}{Type\+Code}}, \mbox{\hyperlink{classTypeArray_a16a9d1e80de3beda0a101b7942dc1f77}{Type\+Array}}, and \mbox{\hyperlink{classTypePointer_a0aece76a1fd245a58d75136ca81fca1b}{Type\+Pointer}}.
+
+\mbox{\Hypertarget{classDatatype_aed882ae693a31a64d56fffb9abdaa575}\label{classDatatype_aed882ae693a31a64d56fffb9abdaa575}} 
+\index{Datatype@{Datatype}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Datatype\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Restore data-\/type from X\+ML. 
+
+Restore a \mbox{\hyperlink{classDatatype}{Datatype}} object from an X\+ML element 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+{\em typegrp} & is the underlying \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} that will hold the new object \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeCode_a8b721a26b30c296fe2510738601e3333}{Type\+Code}}, \mbox{\hyperlink{classTypeStruct_af2b09832da8420f6da67382a4e2d9f0e}{Type\+Struct}}, \mbox{\hyperlink{classTypeEnum_a1bd4dc88f4ea0b58b4b164b4b5f4f5e5}{Type\+Enum}}, \mbox{\hyperlink{classTypeArray_a3f933b477f4089344f7a58ef67aa6ee1}{Type\+Array}}, \mbox{\hyperlink{classTypePointer_a8f62fbff5e735eb8ad562878bc5efed7}{Type\+Pointer}}, and \mbox{\hyperlink{classTypeUnicode_a3158417117649e59ffe402137c22bb67}{Type\+Unicode}}.
+
+\mbox{\Hypertarget{classDatatype_afeb70488c52d024b293d5198c98b3f49}\label{classDatatype_afeb70488c52d024b293d5198c98b3f49}} 
+\index{Datatype@{Datatype}!restoreXmlBasic@{restoreXmlBasic}}
+\index{restoreXmlBasic@{restoreXmlBasic}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{restoreXmlBasic()}{restoreXmlBasic()}}
+{\footnotesize\ttfamily void Datatype\+::restore\+Xml\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Recover basic data-\/type properties. 
+
+Restore the basic properties (name,size,id) of a data-\/type from an X\+ML element Properties are read from the attributes of the element 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatatype_a33339824f1c50d4354952296070c3902}\label{classDatatype_a33339824f1c50d4354952296070c3902}} 
+\index{Datatype@{Datatype}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Datatype\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize the data-\/type to X\+ML. 
+
+Write out a formal description of the data-\/type as an X\+ML $<$type$>$ tag. For composite data-\/types, the description goes down one level, describing the component types only by reference. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeSpacebase_a6540d83aa3ef2daf7bddeba9a0552c8f}{Type\+Spacebase}}, \mbox{\hyperlink{classTypeCode_a6d47db2c7cf2a968b49cbac59de182d7}{Type\+Code}}, \mbox{\hyperlink{classTypeStruct_a5284d41a9de3664a4e08ed8649164873}{Type\+Struct}}, \mbox{\hyperlink{classTypeEnum_a2ad6a825a5a0a83687814c79ec71ebc4}{Type\+Enum}}, \mbox{\hyperlink{classTypeArray_a05c4cd5b16947bdc35e53094099c44bc}{Type\+Array}}, \mbox{\hyperlink{classTypePointer_adee39f5a617b1133d7a701cda30d154b}{Type\+Pointer}}, \mbox{\hyperlink{classTypeVoid_a4c29213947ce96b7899e5c8102ec54dc}{Type\+Void}}, \mbox{\hyperlink{classTypeUnicode_a4dada4691cd95b817fc6a0bd99031cd6}{Type\+Unicode}}, and \mbox{\hyperlink{classTypeChar_a29dadba593626c5de123934a5dcbe894}{Type\+Char}}.
+
+\mbox{\Hypertarget{classDatatype_a27dc7495a59adaca34b83366a963fd45}\label{classDatatype_a27dc7495a59adaca34b83366a963fd45}} 
+\index{Datatype@{Datatype}!saveXmlBasic@{saveXmlBasic}}
+\index{saveXmlBasic@{saveXmlBasic}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{saveXmlBasic()}{saveXmlBasic()}}
+{\footnotesize\ttfamily void Datatype\+::save\+Xml\+Basic (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save basic data-\/type properties. 
+
+Write out basic data-\/type properties (name,size,id) as X\+ML attributes. This routine presumes the initial tag is already written to the stream. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatatype_aa29b0b69af8ed3be7dc573e4a1e355a5}\label{classDatatype_aa29b0b69af8ed3be7dc573e4a1e355a5}} 
+\index{Datatype@{Datatype}!saveXmlRef@{saveXmlRef}}
+\index{saveXmlRef@{saveXmlRef}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{saveXmlRef()}{saveXmlRef()}}
+{\footnotesize\ttfamily void Datatype\+::save\+Xml\+Ref (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Write an X\+ML reference of {\bfseries{this}} to stream. 
+
+Write a simple reference to {\bfseries{this}} data-\/type as an X\+ML $<$typeref$>$ tag, which only encodes the name and id. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDatatype_afe6320b7283935c90721e26b8e0f7202}\label{classDatatype_afe6320b7283935c90721e26b8e0f7202}} 
+\index{Datatype@{Datatype}!typeOrderBool@{typeOrderBool}}
+\index{typeOrderBool@{typeOrderBool}!Datatype@{Datatype}}
+\doxysubsubsection{\texorpdfstring{typeOrderBool()}{typeOrderBool()}}
+{\footnotesize\ttfamily int4 Datatype\+::type\+Order\+Bool (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Order {\bfseries{this}} with -\/op-\/, treating {\itshape bool} data-\/type as special. 
+
+Order data-\/types, with special handling of the {\itshape bool} data-\/type. Data-\/types are compared using the normal ordering, but {\itshape bool} is ordered after all other data-\/types. A return value of 0 indicates the data-\/types are the same, -\/1 indicates that {\bfseries{this}} is prefered (ordered earlier), and 1 indicates {\bfseries{this}} is ordered later. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the other data-\/type to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1, 0, or 1 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hh}{type.\+hh}}\item 
+type.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,120 @@
+\hypertarget{classRawBinaryArchitectureCapability}{}\doxysection{Raw\+Binary\+Architecture\+Capability Class Reference}
+\label{classRawBinaryArchitectureCapability}\index{RawBinaryArchitectureCapability@{RawBinaryArchitectureCapability}}
+
+
+Extension point for building an \mbox{\hyperlink{classArchitecture}{Architecture}} that reads in raw images.  
+
+
+
+
+{\ttfamily \#include $<$raw\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Raw\+Binary\+Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classRawBinaryArchitectureCapability__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Raw\+Binary\+Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classRawBinaryArchitectureCapability__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classRawBinaryArchitectureCapability_a69e87f1ba9b72c89b74981b168074062}{build\+Architecture}} (const string \&filename, const string \&target, ostream $\ast$estream)
+\begin{DoxyCompactList}\small\item\em Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classRawBinaryArchitectureCapability_aef426ad157b2f6b9130159322e2a2465}{is\+File\+Match}} (const string \&filename) const
+\begin{DoxyCompactList}\small\item\em Determine if this extension can handle this file. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classRawBinaryArchitectureCapability_ad26a1a35fec33c5952a3f499dc0e43db}{is\+Xml\+Match}} (\mbox{\hyperlink{classDocument}{Document}} $\ast$doc) const
+\begin{DoxyCompactList}\small\item\em Determine is this extension can handle this X\+ML document. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Extension point for building an \mbox{\hyperlink{classArchitecture}{Architecture}} that reads in raw images. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRawBinaryArchitectureCapability_a69e87f1ba9b72c89b74981b168074062}\label{classRawBinaryArchitectureCapability_a69e87f1ba9b72c89b74981b168074062}} 
+\index{RawBinaryArchitectureCapability@{RawBinaryArchitectureCapability}!buildArchitecture@{buildArchitecture}}
+\index{buildArchitecture@{buildArchitecture}!RawBinaryArchitectureCapability@{RawBinaryArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{buildArchitecture()}{buildArchitecture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ Raw\+Binary\+Architecture\+Capability\+::build\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{filename,  }\item[{const string \&}]{target,  }\item[{ostream $\ast$}]{estream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. 
+
+This is implemented by each separate extension. The method is handed a {\itshape filename} and possibly external target information and must build the \mbox{\hyperlink{classArchitecture}{Architecture}} object, initializing all the major subcomponents, using just this info. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the path to the executable file to examine \\
+\hline
+{\em target} & if non-\/empty is a language id string \\
+\hline
+{\em estream} & is an output stream for error messages \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_a42e418206c4bcd9c0bc86d8ddfbf03e0}{Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classRawBinaryArchitectureCapability_aef426ad157b2f6b9130159322e2a2465}\label{classRawBinaryArchitectureCapability_aef426ad157b2f6b9130159322e2a2465}} 
+\index{RawBinaryArchitectureCapability@{RawBinaryArchitectureCapability}!isFileMatch@{isFileMatch}}
+\index{isFileMatch@{isFileMatch}!RawBinaryArchitectureCapability@{RawBinaryArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isFileMatch()}{isFileMatch()}}
+{\footnotesize\ttfamily bool Raw\+Binary\+Architecture\+Capability\+::is\+File\+Match (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determine if this extension can handle this file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to examine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} is {\bfseries{this}} extension is suitable for analyzing the file 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_aa3d4fed15e42f3e853851babaf379376}{Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classRawBinaryArchitectureCapability_ad26a1a35fec33c5952a3f499dc0e43db}\label{classRawBinaryArchitectureCapability_ad26a1a35fec33c5952a3f499dc0e43db}} 
+\index{RawBinaryArchitectureCapability@{RawBinaryArchitectureCapability}!isXmlMatch@{isXmlMatch}}
+\index{isXmlMatch@{isXmlMatch}!RawBinaryArchitectureCapability@{RawBinaryArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isXmlMatch()}{isXmlMatch()}}
+{\footnotesize\ttfamily bool Raw\+Binary\+Architecture\+Capability\+::is\+Xml\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocument}{Document}} $\ast$}]{doc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determine is this extension can handle this X\+ML document. 
+
+If a file to analyze is X\+ML based, this method examines the X\+ML parse to determine if {\bfseries{this}} extension can understand the document 
+\begin{DoxyParams}{Parameters}
+{\em doc} & is the parsed X\+ML document \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} extension understands the X\+ML 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_a653243b342d480273e0f04f7194094b8}{Architecture\+Capability}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{raw__arch_8hh}{raw\+\_\+arch.\+hh}}\item 
+raw\+\_\+arch.\+cc\end{DoxyCompactItemize}

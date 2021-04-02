@@ -1,0 +1,86 @@
+\hypertarget{structBlockEdge}{}\doxysection{Block\+Edge Struct Reference}
+\label{structBlockEdge}\index{BlockEdge@{BlockEdge}}
+
+
+A control-\/flow edge between blocks (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}})  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Collaboration diagram for Block\+Edge\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{structBlockEdge__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structBlockEdge_a2ab8ffe65ffd12f7fa0e682395549fc4}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save the edge to an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structBlockEdge_ab1e094751e834170c101f2a29302572a}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classBlockMap}{Block\+Map}} \&resolver)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} edge from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structBlockEdge_a8e5e3a0500c81abaa9fcaf1360227076}\label{structBlockEdge_a8e5e3a0500c81abaa9fcaf1360227076}} 
+uint4 \mbox{\hyperlink{structBlockEdge_a8e5e3a0500c81abaa9fcaf1360227076}{label}}
+\begin{DoxyCompactList}\small\item\em Label of the edge. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structBlockEdge_a993d5aa765b4ffd516f8e59cefbbe470}\label{structBlockEdge_a993d5aa765b4ffd516f8e59cefbbe470}} 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{structBlockEdge_a993d5aa765b4ffd516f8e59cefbbe470}{point}}
+\begin{DoxyCompactList}\small\item\em Other end of the edge. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structBlockEdge_aa4ed5e4c15bd9596cd02347a8c7c9d9f}\label{structBlockEdge_aa4ed5e4c15bd9596cd02347a8c7c9d9f}} 
+int4 \mbox{\hyperlink{structBlockEdge_aa4ed5e4c15bd9596cd02347a8c7c9d9f}{reverse\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Index for edge coming other way. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A control-\/flow edge between blocks (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}}) 
+
+The edge is owned by the source block and can have \mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3}{Flow\+Block\+::edge\+\_\+flags}} labels applied to it. The {\bfseries{point}} indicates the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} at the other end from the source block. N\+O\+TE\+: The control-\/flow direction of the edge can only be determined from context, whether the edge is in the incoming or outgoing edge list. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structBlockEdge_ab1e094751e834170c101f2a29302572a}\label{structBlockEdge_ab1e094751e834170c101f2a29302572a}} 
+\index{BlockEdge@{BlockEdge}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!BlockEdge@{BlockEdge}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Block\+Edge\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classBlockMap}{Block\+Map}} \&}]{resolver }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} edge from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the $<$edge$>$ tag \\
+\hline
+{\em resolver} & is used to cross-\/reference the edge\textquotesingle{}s \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} endpoints \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structBlockEdge_a2ab8ffe65ffd12f7fa0e682395549fc4}\label{structBlockEdge_a2ab8ffe65ffd12f7fa0e682395549fc4}} 
+\index{BlockEdge@{BlockEdge}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!BlockEdge@{BlockEdge}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Block\+Edge\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save the edge to an X\+ML stream. 
+
+The edge is saved assuming we already know what block we are in 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

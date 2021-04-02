@@ -1,0 +1,240 @@
+\hypertarget{classrangemap}{}\doxysection{rangemap$<$ \+\_\+recordtype $>$ Class Template Reference}
+\label{classrangemap}\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+
+
+An interval map container.  
+
+
+
+
+{\ttfamily \#include $<$rangemap.\+hh$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classrangemap_1_1PartIterator}{Part\+Iterator}}
+\begin{DoxyCompactList}\small\item\em An iterator into the interval map container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}\label{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}} 
+typedef \+\_\+recordtype\+::linetype \mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}
+\begin{DoxyCompactList}\small\item\em Integer data-\/type defining the linear domain. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrangemap_aeef55d9063b5d89e075229fad91ea631}\label{classrangemap_aeef55d9063b5d89e075229fad91ea631}} 
+typedef \+\_\+recordtype\+::subsorttype \mbox{\hyperlink{classrangemap_aeef55d9063b5d89e075229fad91ea631}{subsorttype}}
+\begin{DoxyCompactList}\small\item\em The data-\/type used for subsorting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrangemap_a995e3cdf45bcbbb27c59982353b2256b}\label{classrangemap_a995e3cdf45bcbbb27c59982353b2256b}} 
+typedef \+\_\+recordtype\+::inittype \mbox{\hyperlink{classrangemap_a995e3cdf45bcbbb27c59982353b2256b}{inittype}}
+\begin{DoxyCompactList}\small\item\em The data-\/type containing initialization data for records. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}\label{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}} 
+typedef \mbox{\hyperlink{classrangemap_1_1PartIterator}{Part\+Iterator}} \mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em The main sub-\/range iterator data-\/type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ \mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}}, \mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} $>$ \mbox{\hyperlink{classrangemap_a1a9e4bf2a0972dd23183e55bd3f40f49}{find}} (\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} a) const
+\begin{DoxyCompactList}\small\item\em Find sub-\/ranges intersecting the given boundary point. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}}, \mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} $>$ \mbox{\hyperlink{classrangemap_abb505277cefe8819c7100b5fb5a4deb5}{find}} (\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} a, const \mbox{\hyperlink{classrangemap_aeef55d9063b5d89e075229fad91ea631}{subsorttype}} \&subsort1, const \mbox{\hyperlink{classrangemap_aeef55d9063b5d89e075229fad91ea631}{subsorttype}} \&subsort2) const
+\begin{DoxyCompactList}\small\item\em Find sub-\/ranges intersecting given boundary point, and between given {\itshape subsorts}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} \mbox{\hyperlink{classrangemap_a5a8199e25902361de6c5450eec8ef57f}{find\+\_\+begin}} (\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} point) const
+\begin{DoxyCompactList}\small\item\em Find beginning of sub-\/ranges that contain the given boundary point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} \mbox{\hyperlink{classrangemap_a27e05fd2cf05d136b2c337e9e7bc595c}{find\+\_\+end}} (\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} point) const
+\begin{DoxyCompactList}\small\item\em Find ending of sub-\/ranges that contain the given boundary point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} \mbox{\hyperlink{classrangemap_a69c6328ba555fbb5382307ea9a2d9ca9}{find\+\_\+overlap}} (\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} point, \mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} end) const
+\begin{DoxyCompactList}\small\item\em Find first record overlapping given interval. \end{DoxyCompactList}\item 
+std\+::list$<$ \+\_\+recordtype $>$\+::iterator \mbox{\hyperlink{classrangemap_a076c3184225982a98757fd376b2cb6a5}{insert}} (const \mbox{\hyperlink{classrangemap_a995e3cdf45bcbbb27c59982353b2256b}{inittype}} \&data, \mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} a, \mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}} b)
+\begin{DoxyCompactList}\small\item\em Insert a new record into the container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classrangemap_a4acc95dca04c2140d28b0eca719e017d}{erase}} (typename std\+::list$<$ \+\_\+recordtype $>$\+::iterator v)
+\begin{DoxyCompactList}\small\item\em Erase a given record from the container. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classrangemap_a5c92c4941f0220511dcb911c0b223211}\label{classrangemap_a5c92c4941f0220511dcb911c0b223211}} 
+void \mbox{\hyperlink{classrangemap_a5c92c4941f0220511dcb911c0b223211}{erase}} (\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} iter)
+\begin{DoxyCompactList}\small\item\em Erase a record given an iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+recordtype$>$\newline
+class rangemap$<$ \+\_\+recordtype $>$}
+
+An interval map container. 
+
+A container for records occupying (possibly overlapping) intervals. I.\+e. a map from a linear ordered domain to (multiple) records. The {\bfseries{recordtype}} is the main object in the container, it must support\+:
+\begin{DoxyItemize}
+\item recordtype(inittype,linetype,linetype) a constructor taking 3 parameters
+\item get\+First() beginning of range
+\item get\+Last() end of range (inclusive)
+\item get\+Subsort() retrieve the subsorttype object (see below)
+\end{DoxyItemize}
+
+The {\bfseries{recordtype}} must define data-\/types\+:
+\begin{DoxyItemize}
+\item linetype
+\item subsorttype
+\item inittype
+\end{DoxyItemize}
+
+{\bfseries{linetype}} is the data-\/type of elements in the linear domain. It must support\+:
+\begin{DoxyItemize}
+\item $<$,$<$= Comparisons
+\item ==,!= Equality
+\item + $<$constant$>$ Addition of integers
+\item -\/ $<$constant$>$ Subtraction of integers
+\end{DoxyItemize}
+
+{\bfseries{subsorttype}} describes how overlapping intervals can be sub-\/sorted. It must support\+:
+\begin{DoxyItemize}
+\item $<$
+\item subsorttype({\bfseries{false}}) constructor with {\bfseries{false}} produces a minimal value
+\item subsorttype({\bfseries{true}}) constructor with {\bfseries{true}} produces a maximal value
+\item copy constructor
+\end{DoxyItemize}
+
+{\bfseries{inittype}} is extra initialization data for the {\bfseries{recordtype}} 
+
+The main interval map is implemented as a {\itshape multiset} of disjoint sub-\/ranges mapping to the {\bfseries{recordtype}} objects. After deduping the sub-\/ranges form the common refinement of all the possibly overlapping {\bfseries{recordtype}} ranges. A sub-\/range is duplicated for each distinct {\bfseries{recordtype}} that overlaps that sub-\/range. The sub-\/range multiset is updated with every insertion or deletion of {\bfseries{recordtype}} objects into the container, which may insert new or delete existing boundary points separating the disjoint subranges. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrangemap_a4acc95dca04c2140d28b0eca719e017d}\label{classrangemap_a4acc95dca04c2140d28b0eca719e017d}} 
+\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}!erase@{erase}}
+\index{erase@{erase}!rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+recordtype $>$ \\
+void \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::erase (\begin{DoxyParamCaption}\item[{typename std\+::list$<$ \+\_\+recordtype $>$\+::iterator}]{v }\end{DoxyParamCaption})}
+
+
+
+Erase a given record from the container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & is the iterator to the record to be erased \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classrangemap_a1a9e4bf2a0972dd23183e55bd3f40f49}\label{classrangemap_a1a9e4bf2a0972dd23183e55bd3f40f49}} 
+\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}!find@{find}}
+\index{find@{find}!rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+recordtype $>$ \\
+std\+::pair$<$ typename \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}}, typename \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} $>$ \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Find sub-\/ranges intersecting the given boundary point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & is the given boundary point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+begin/end iterators over all intersecting sub-\/ranges 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrangemap_abb505277cefe8819c7100b5fb5a4deb5}\label{classrangemap_abb505277cefe8819c7100b5fb5a4deb5}} 
+\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}!find@{find}}
+\index{find@{find}!rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename \+\_\+recordtype $>$ \\
+std\+::pair$<$ typename \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}}, typename \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} $>$ \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{point,  }\item[{const \mbox{\hyperlink{classrangemap_aeef55d9063b5d89e075229fad91ea631}{subsorttype}} \&}]{sub1,  }\item[{const \mbox{\hyperlink{classrangemap_aeef55d9063b5d89e075229fad91ea631}{subsorttype}} \&}]{sub2 }\end{DoxyParamCaption}) const}
+
+
+
+Find sub-\/ranges intersecting given boundary point, and between given {\itshape subsorts}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & is the given boundary point \\
+\hline
+{\em sub1} & is the starting subsort \\
+\hline
+{\em sub2} & is the ending subsort \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+begin/end iterators over all intersecting and bounded sub-\/ranges 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrangemap_a5a8199e25902361de6c5450eec8ef57f}\label{classrangemap_a5a8199e25902361de6c5450eec8ef57f}} 
+\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}!find\_begin@{find\_begin}}
+\index{find\_begin@{find\_begin}!rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+\doxysubsubsection{\texorpdfstring{find\_begin()}{find\_begin()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+recordtype $>$ \\
+\mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::find\+\_\+begin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Find beginning of sub-\/ranges that contain the given boundary point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & is the given boundary point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+iterator to first sub-\/range of intersects the boundary point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrangemap_a27e05fd2cf05d136b2c337e9e7bc595c}\label{classrangemap_a27e05fd2cf05d136b2c337e9e7bc595c}} 
+\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}!find\_end@{find\_end}}
+\index{find\_end@{find\_end}!rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+\doxysubsubsection{\texorpdfstring{find\_end()}{find\_end()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+recordtype $>$ \\
+\mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::find\+\_\+end (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Find ending of sub-\/ranges that contain the given boundary point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & is the given boundary point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+iterator to first sub-\/range after that does not intersect the boundary point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrangemap_a69c6328ba555fbb5382307ea9a2d9ca9}\label{classrangemap_a69c6328ba555fbb5382307ea9a2d9ca9}} 
+\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}!find\_overlap@{find\_overlap}}
+\index{find\_overlap@{find\_overlap}!rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+\doxysubsubsection{\texorpdfstring{find\_overlap()}{find\_overlap()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+recordtype $>$ \\
+\mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::\mbox{\hyperlink{classrangemap_affa7462e68d053d3a066fe0b8d46a99d}{const\+\_\+iterator}} \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::find\+\_\+overlap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{point,  }\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{end }\end{DoxyParamCaption}) const}
+
+
+
+Find first record overlapping given interval. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & is the start of interval to test \\
+\hline
+{\em end} & is the end of the interval to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+iterator to first sub-\/range of an intersecting record (or {\bfseries{end}}) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classrangemap_a076c3184225982a98757fd376b2cb6a5}\label{classrangemap_a076c3184225982a98757fd376b2cb6a5}} 
+\index{rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}!insert@{insert}}
+\index{insert@{insert}!rangemap$<$ \_recordtype $>$@{rangemap$<$ \_recordtype $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+recordtype $>$ \\
+std\+::list$<$ \+\_\+recordtype $>$\+::iterator \mbox{\hyperlink{classrangemap}{rangemap}}$<$ \+\_\+recordtype $>$\+::insert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classrangemap_a995e3cdf45bcbbb27c59982353b2256b}{inittype}} \&}]{data,  }\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{a,  }\item[{\mbox{\hyperlink{classrangemap_a54c8f7622f9af4c4232d764cf9ed11fa}{linetype}}}]{b }\end{DoxyParamCaption})}
+
+
+
+Insert a new record into the container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is other initialization data for the new record \\
+\hline
+{\em a} & is the start of the range occupied by the new record \\
+\hline
+{\em b} & is the (inclusive) end of the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an iterator to the new record 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rangemap_8hh}{rangemap.\+hh}}\end{DoxyCompactItemize}

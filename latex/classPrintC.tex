@@ -1,0 +1,1848 @@
+\hypertarget{classPrintC}{}\doxysection{PrintC Class Reference}
+\label{classPrintC}\index{PrintC@{PrintC}}
+
+
+The c-\/language token emitter.  
+
+
+
+
+{\ttfamily \#include $<$printc.\+hh$>$}
+
+
+
+Inheritance diagram for PrintC\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classPrintC__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for PrintC\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrintC__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPrintC_afd4f48f7193a4586ad4b6a01c8f60bc9}{PrintC}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, const string \&nm=\char`\"{}c-\/language\char`\"{})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aa32db6b69872787014bbb1a620973ea9}\label{classPrintC_aa32db6b69872787014bbb1a620973ea9}} 
+virtual void \mbox{\hyperlink{classPrintC_aa32db6b69872787014bbb1a620973ea9}{reset\+Defaults}} (void)
+\begin{DoxyCompactList}\small\item\em Set printing options to their default value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_abbafadf839747f44eca5cb9f30d2bd3c}\label{classPrintC_abbafadf839747f44eca5cb9f30d2bd3c}} 
+virtual void \mbox{\hyperlink{classPrintC_abbafadf839747f44eca5cb9f30d2bd3c}{adjust\+Type\+Operators}} (void)
+\begin{DoxyCompactList}\small\item\em Set basic data-\/type information for p-\/code operators. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a8798b0408fa3386c91f9df92f63cbd15}{set\+Comment\+Style}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Set the way comments are displayed in decompiler output. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a6511933f0b8fd3f2fef8aa3920aa9de6}{doc\+Type\+Definitions}} (const \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$typegrp)
+\begin{DoxyCompactList}\small\item\em Emit definitions of data-\/types. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a3ba75e33a923a30e5fe29b8201855749}\label{classPrintC_a3ba75e33a923a30e5fe29b8201855749}} 
+virtual void \mbox{\hyperlink{classPrintC_a3ba75e33a923a30e5fe29b8201855749}{doc\+All\+Globals}} (void)
+\begin{DoxyCompactList}\small\item\em Emit declarations of global variables. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a380029e0d567ee29b38225d6f6612b9c}{doc\+Single\+Global}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)
+\begin{DoxyCompactList}\small\item\em Emit the declaration for a single (global) \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a7a3890c28908f1229f8e94e0239fe0ea}{doc\+Function}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Emit the declaration (and body) of a function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a41db7dd22ab2045a63adb7cd5ad1cfdb}\label{classPrintC_a41db7dd22ab2045a63adb7cd5ad1cfdb}} 
+virtual void \mbox{\hyperlink{classPrintC_a41db7dd22ab2045a63adb7cd5ad1cfdb}{emit\+Block\+Basic}} (const \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$bb)
+\begin{DoxyCompactList}\small\item\em Emit statements in a basic block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a44433ba4a36eb79bf55d717b209d0a86}\label{classPrintC_a44433ba4a36eb79bf55d717b209d0a86}} 
+virtual void \mbox{\hyperlink{classPrintC_a44433ba4a36eb79bf55d717b209d0a86}{emit\+Block\+Graph}} (const \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit (an unspecified) list of blocks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a63589b8489cd26e45c2d01a76554999b}\label{classPrintC_a63589b8489cd26e45c2d01a76554999b}} 
+virtual void \mbox{\hyperlink{classPrintC_a63589b8489cd26e45c2d01a76554999b}{emit\+Block\+Copy}} (const \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a basic block (with any labels) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aa63448aa07e17951dd81712dac58e6d9}\label{classPrintC_aa63448aa07e17951dd81712dac58e6d9}} 
+virtual void \mbox{\hyperlink{classPrintC_aa63448aa07e17951dd81712dac58e6d9}{emit\+Block\+Goto}} (const \mbox{\hyperlink{classBlockGoto}{Block\+Goto}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a block ending with a goto statement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a0481482a247761069d030f40242e667a}\label{classPrintC_a0481482a247761069d030f40242e667a}} 
+virtual void \mbox{\hyperlink{classPrintC_a0481482a247761069d030f40242e667a}{emit\+Block\+Ls}} (const \mbox{\hyperlink{classBlockList}{Block\+List}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a sequence of blocks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a9ecd552720351716158ab4f5085d950e}\label{classPrintC_a9ecd552720351716158ab4f5085d950e}} 
+virtual void \mbox{\hyperlink{classPrintC_a9ecd552720351716158ab4f5085d950e}{emit\+Block\+Condition}} (const \mbox{\hyperlink{classBlockCondition}{Block\+Condition}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a conditional statement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a8ec57580fdf84a0f9cff9d3e27c62254}\label{classPrintC_a8ec57580fdf84a0f9cff9d3e27c62254}} 
+virtual void \mbox{\hyperlink{classPrintC_a8ec57580fdf84a0f9cff9d3e27c62254}{emit\+Block\+If}} (const \mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit an if/else style construct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ac5165196d7d30a2cb5659af710d17bf3}\label{classPrintC_ac5165196d7d30a2cb5659af710d17bf3}} 
+virtual void \mbox{\hyperlink{classPrintC_ac5165196d7d30a2cb5659af710d17bf3}{emit\+Block\+While\+Do}} (const \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a loop structure, check at top. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a57f431ca467a67aceba4e755e87af6b1}\label{classPrintC_a57f431ca467a67aceba4e755e87af6b1}} 
+virtual void \mbox{\hyperlink{classPrintC_a57f431ca467a67aceba4e755e87af6b1}{emit\+Block\+Do\+While}} (const \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a loop structure, check at bottom. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a895370c4d12dff0e264bef9ad63fe926}\label{classPrintC_a895370c4d12dff0e264bef9ad63fe926}} 
+virtual void \mbox{\hyperlink{classPrintC_a895370c4d12dff0e264bef9ad63fe926}{emit\+Block\+Inf\+Loop}} (const \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit an infinite loop structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a5325157c245650f118d7b57c08000f2a}\label{classPrintC_a5325157c245650f118d7b57c08000f2a}} 
+virtual void \mbox{\hyperlink{classPrintC_a5325157c245650f118d7b57c08000f2a}{emit\+Block\+Switch}} (const \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a switch structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a60fa8313562ee222929335f6dd5d0183}\label{classPrintC_a60fa8313562ee222929335f6dd5d0183}} 
+virtual void \mbox{\hyperlink{classPrintC_a60fa8313562ee222929335f6dd5d0183}{op\+Copy}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a C\+O\+PY operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a263dc1f6686e7792bcdd29006aaaac4a}\label{classPrintC_a263dc1f6686e7792bcdd29006aaaac4a}} 
+virtual void \mbox{\hyperlink{classPrintC_a263dc1f6686e7792bcdd29006aaaac4a}{op\+Load}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a L\+O\+AD operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ab75e8802e935da6fc54a023e03c4e5e7}\label{classPrintC_ab75e8802e935da6fc54a023e03c4e5e7}} 
+virtual void \mbox{\hyperlink{classPrintC_ab75e8802e935da6fc54a023e03c4e5e7}{op\+Store}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a S\+T\+O\+RE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a621532e1c7ee910a405e4229af440fe8}\label{classPrintC_a621532e1c7ee910a405e4229af440fe8}} 
+virtual void \mbox{\hyperlink{classPrintC_a621532e1c7ee910a405e4229af440fe8}{op\+Branch}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a B\+R\+A\+N\+CH operator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a2987b80bf701c0c300d672d920a36162}{op\+Cbranch}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\item 
+\mbox{\Hypertarget{classPrintC_a12483a33c61014df2e565295a7705470}\label{classPrintC_a12483a33c61014df2e565295a7705470}} 
+virtual void \mbox{\hyperlink{classPrintC_a12483a33c61014df2e565295a7705470}{op\+Branchind}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a B\+R\+A\+N\+C\+H\+I\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aa03349d27cfe1d81e6e3854cd0eb9252}\label{classPrintC_aa03349d27cfe1d81e6e3854cd0eb9252}} 
+virtual void \mbox{\hyperlink{classPrintC_aa03349d27cfe1d81e6e3854cd0eb9252}{op\+Call}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+LL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ad6fc72a7fd707785bd06ac9c6496153b}\label{classPrintC_ad6fc72a7fd707785bd06ac9c6496153b}} 
+virtual void \mbox{\hyperlink{classPrintC_ad6fc72a7fd707785bd06ac9c6496153b}{op\+Callind}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+L\+L\+I\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_abbb7090206096f88016bf1cf4ea8a234}\label{classPrintC_abbb7090206096f88016bf1cf4ea8a234}} 
+virtual void \mbox{\hyperlink{classPrintC_abbb7090206096f88016bf1cf4ea8a234}{op\+Callother}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+L\+L\+O\+T\+H\+ER operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aee706d2e639807a35d0a1c161f3da137}\label{classPrintC_aee706d2e639807a35d0a1c161f3da137}} 
+virtual void \mbox{\hyperlink{classPrintC_aee706d2e639807a35d0a1c161f3da137}{op\+Constructor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, bool with\+New)
+\begin{DoxyCompactList}\small\item\em Emit an operator constructing an object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a07f096ed92e4254ae0595a7beff314e1}\label{classPrintC_a07f096ed92e4254ae0595a7beff314e1}} 
+virtual void \mbox{\hyperlink{classPrintC_a07f096ed92e4254ae0595a7beff314e1}{op\+Return}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a R\+E\+T\+U\+RN operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ad49c66c871316b8f5c5bf00106a78fcf}\label{classPrintC_ad49c66c871316b8f5c5bf00106a78fcf}} 
+virtual void \mbox{\hyperlink{classPrintC_ad49c66c871316b8f5c5bf00106a78fcf}{op\+Int\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ab3549a10d3642acc700ec596a82afee9}\label{classPrintC_ab3549a10d3642acc700ec596a82afee9}} 
+virtual void \mbox{\hyperlink{classPrintC_ab3549a10d3642acc700ec596a82afee9}{op\+Int\+Not\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a067aae27ca81cdc2f8510be48bac6028}\label{classPrintC_a067aae27ca81cdc2f8510be48bac6028}} 
+virtual void \mbox{\hyperlink{classPrintC_a067aae27ca81cdc2f8510be48bac6028}{op\+Int\+Sless}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+L\+E\+SS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a049e9df6ff521b22fdf0147808b7cb19}\label{classPrintC_a049e9df6ff521b22fdf0147808b7cb19}} 
+virtual void \mbox{\hyperlink{classPrintC_a049e9df6ff521b22fdf0147808b7cb19}{op\+Int\+Sless\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+L\+E\+S\+S\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ae9e6662b76b5ce215c9c6f9974d04ead}\label{classPrintC_ae9e6662b76b5ce215c9c6f9974d04ead}} 
+virtual void \mbox{\hyperlink{classPrintC_ae9e6662b76b5ce215c9c6f9974d04ead}{op\+Int\+Less}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+L\+E\+SS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a96fea2829e7c21a7959d3f8590c2ce2f}\label{classPrintC_a96fea2829e7c21a7959d3f8590c2ce2f}} 
+virtual void \mbox{\hyperlink{classPrintC_a96fea2829e7c21a7959d3f8590c2ce2f}{op\+Int\+Less\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a9b601c82cb6bad6ebdb80d34682310ad}\label{classPrintC_a9b601c82cb6bad6ebdb80d34682310ad}} 
+virtual void \mbox{\hyperlink{classPrintC_a9b601c82cb6bad6ebdb80d34682310ad}{op\+Int\+Zext}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+Z\+E\+XT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ae3f49b90adb52ab783ee4c6aad66ca06}\label{classPrintC_ae3f49b90adb52ab783ee4c6aad66ca06}} 
+virtual void \mbox{\hyperlink{classPrintC_ae3f49b90adb52ab783ee4c6aad66ca06}{op\+Int\+Sext}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+E\+XT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2e8f8722bdcb706f9bff0e877ad6e8c7}\label{classPrintC_a2e8f8722bdcb706f9bff0e877ad6e8c7}} 
+virtual void \mbox{\hyperlink{classPrintC_a2e8f8722bdcb706f9bff0e877ad6e8c7}{op\+Int\+Add}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+A\+DD operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a3bb1f53fd2da51d91bb5b034dddfff04}\label{classPrintC_a3bb1f53fd2da51d91bb5b034dddfff04}} 
+virtual void \mbox{\hyperlink{classPrintC_a3bb1f53fd2da51d91bb5b034dddfff04}{op\+Int\+Sub}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+UB operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a5c6c0fccc19cb1d15357de996887ddaa}\label{classPrintC_a5c6c0fccc19cb1d15357de996887ddaa}} 
+virtual void \mbox{\hyperlink{classPrintC_a5c6c0fccc19cb1d15357de996887ddaa}{op\+Int\+Carry}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+C\+A\+R\+RY operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a4b0b3a4df12ddf2842a3dfd94f45cf4d}\label{classPrintC_a4b0b3a4df12ddf2842a3dfd94f45cf4d}} 
+virtual void \mbox{\hyperlink{classPrintC_a4b0b3a4df12ddf2842a3dfd94f45cf4d}{op\+Int\+Scarry}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+C\+A\+R\+RY operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a81b06c00f916331d34451e6f28b51906}\label{classPrintC_a81b06c00f916331d34451e6f28b51906}} 
+virtual void \mbox{\hyperlink{classPrintC_a81b06c00f916331d34451e6f28b51906}{op\+Int\+Sborrow}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a82aeb4e5dce60f09dd0a5b23793e4295}\label{classPrintC_a82aeb4e5dce60f09dd0a5b23793e4295}} 
+virtual void \mbox{\hyperlink{classPrintC_a82aeb4e5dce60f09dd0a5b23793e4295}{op\+Int2\+Comp}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+2\+C\+O\+MP operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a24e90cef3b03bf46f437afc3d69dced9}\label{classPrintC_a24e90cef3b03bf46f437afc3d69dced9}} 
+virtual void \mbox{\hyperlink{classPrintC_a24e90cef3b03bf46f437afc3d69dced9}{op\+Int\+Negate}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+N\+E\+G\+A\+TE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ada671bc89f1ea2d1d118cdd1e417fb98}\label{classPrintC_ada671bc89f1ea2d1d118cdd1e417fb98}} 
+virtual void \mbox{\hyperlink{classPrintC_ada671bc89f1ea2d1d118cdd1e417fb98}{op\+Int\+Xor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+X\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2d7c81981f07fd7164919ae0edf01799}\label{classPrintC_a2d7c81981f07fd7164919ae0edf01799}} 
+virtual void \mbox{\hyperlink{classPrintC_a2d7c81981f07fd7164919ae0edf01799}{op\+Int\+And}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+A\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_af143418493c3e113a5f5c297ea03b17e}\label{classPrintC_af143418493c3e113a5f5c297ea03b17e}} 
+virtual void \mbox{\hyperlink{classPrintC_af143418493c3e113a5f5c297ea03b17e}{op\+Int\+Or}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a130d01539058cdab8274bb10a2d5e74e}\label{classPrintC_a130d01539058cdab8274bb10a2d5e74e}} 
+virtual void \mbox{\hyperlink{classPrintC_a130d01539058cdab8274bb10a2d5e74e}{op\+Int\+Left}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+L\+E\+FT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a5bde1e28e184cb9b0c4b0e8db7862bf0}\label{classPrintC_a5bde1e28e184cb9b0c4b0e8db7862bf0}} 
+virtual void \mbox{\hyperlink{classPrintC_a5bde1e28e184cb9b0c4b0e8db7862bf0}{op\+Int\+Right}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+R\+I\+G\+HT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a8e9846476c8c441759f901a6412c03c9}\label{classPrintC_a8e9846476c8c441759f901a6412c03c9}} 
+virtual void \mbox{\hyperlink{classPrintC_a8e9846476c8c441759f901a6412c03c9}{op\+Int\+Sright}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+R\+I\+G\+HT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ac3585351e69db562ef82fab6790afefa}\label{classPrintC_ac3585351e69db562ef82fab6790afefa}} 
+virtual void \mbox{\hyperlink{classPrintC_ac3585351e69db562ef82fab6790afefa}{op\+Int\+Mult}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+M\+U\+LT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a73bee065168f4a48c49579963010ce1b}\label{classPrintC_a73bee065168f4a48c49579963010ce1b}} 
+virtual void \mbox{\hyperlink{classPrintC_a73bee065168f4a48c49579963010ce1b}{op\+Int\+Div}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+D\+IV operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ac373e04258e37c67178aeb5572a1218f}\label{classPrintC_ac373e04258e37c67178aeb5572a1218f}} 
+virtual void \mbox{\hyperlink{classPrintC_ac373e04258e37c67178aeb5572a1218f}{op\+Int\+Sdiv}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+D\+IV operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a4319557567a7814b2d32121e58f440ef}\label{classPrintC_a4319557567a7814b2d32121e58f440ef}} 
+virtual void \mbox{\hyperlink{classPrintC_a4319557567a7814b2d32121e58f440ef}{op\+Int\+Rem}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+R\+EM operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a65d837d2abf7b899e802983b2150b451}\label{classPrintC_a65d837d2abf7b899e802983b2150b451}} 
+virtual void \mbox{\hyperlink{classPrintC_a65d837d2abf7b899e802983b2150b451}{op\+Int\+Srem}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+R\+EM operator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a418083c5e374bc1acd6be75bb95971d9}{op\+Bool\+Negate}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\item 
+\mbox{\Hypertarget{classPrintC_a3b5013210b6200df98455c01cba37636}\label{classPrintC_a3b5013210b6200df98455c01cba37636}} 
+virtual void \mbox{\hyperlink{classPrintC_a3b5013210b6200df98455c01cba37636}{op\+Bool\+Xor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a B\+O\+O\+L\+\_\+\+X\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_af238033b0aebde872f986043b141a9f2}\label{classPrintC_af238033b0aebde872f986043b141a9f2}} 
+virtual void \mbox{\hyperlink{classPrintC_af238033b0aebde872f986043b141a9f2}{op\+Bool\+And}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a B\+O\+O\+L\+\_\+\+A\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aecfc193178d986a69d3b9ae7db1de6ed}\label{classPrintC_aecfc193178d986a69d3b9ae7db1de6ed}} 
+virtual void \mbox{\hyperlink{classPrintC_aecfc193178d986a69d3b9ae7db1de6ed}{op\+Bool\+Or}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a B\+O\+O\+L\+\_\+\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a56af03e4793db92a146fb1b014a563a0}\label{classPrintC_a56af03e4793db92a146fb1b014a563a0}} 
+virtual void \mbox{\hyperlink{classPrintC_a56af03e4793db92a146fb1b014a563a0}{op\+Float\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ad3242b648f6bf515baccfb83c194e186}\label{classPrintC_ad3242b648f6bf515baccfb83c194e186}} 
+virtual void \mbox{\hyperlink{classPrintC_ad3242b648f6bf515baccfb83c194e186}{op\+Float\+Not\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_af7ce33437e0a4e1b82bbd8c5cf094ee0}\label{classPrintC_af7ce33437e0a4e1b82bbd8c5cf094ee0}} 
+virtual void \mbox{\hyperlink{classPrintC_af7ce33437e0a4e1b82bbd8c5cf094ee0}{op\+Float\+Less}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+L\+E\+SS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a35bdafb62ff66b128a1db2979c826740}\label{classPrintC_a35bdafb62ff66b128a1db2979c826740}} 
+virtual void \mbox{\hyperlink{classPrintC_a35bdafb62ff66b128a1db2979c826740}{op\+Float\+Less\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ad673439c7ef41ca0566f435d97e6bfbf}\label{classPrintC_ad673439c7ef41ca0566f435d97e6bfbf}} 
+virtual void \mbox{\hyperlink{classPrintC_ad673439c7ef41ca0566f435d97e6bfbf}{op\+Float\+Nan}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+N\+AN operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a94141c6f1c6b5aac87fb33c585f1df7c}\label{classPrintC_a94141c6f1c6b5aac87fb33c585f1df7c}} 
+virtual void \mbox{\hyperlink{classPrintC_a94141c6f1c6b5aac87fb33c585f1df7c}{op\+Float\+Add}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+A\+DD operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_acfca0f711977658edff4f9c2a258f6fe}\label{classPrintC_acfca0f711977658edff4f9c2a258f6fe}} 
+virtual void \mbox{\hyperlink{classPrintC_acfca0f711977658edff4f9c2a258f6fe}{op\+Float\+Div}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+D\+IV operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ad1ca85eeef332f0af132add7d87f6d64}\label{classPrintC_ad1ca85eeef332f0af132add7d87f6d64}} 
+virtual void \mbox{\hyperlink{classPrintC_ad1ca85eeef332f0af132add7d87f6d64}{op\+Float\+Mult}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+M\+U\+LT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_adaae48280fb9643ac943acff6f484f27}\label{classPrintC_adaae48280fb9643ac943acff6f484f27}} 
+virtual void \mbox{\hyperlink{classPrintC_adaae48280fb9643ac943acff6f484f27}{op\+Float\+Sub}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+S\+UB operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a92f39888157b3a1695207e4978db9754}\label{classPrintC_a92f39888157b3a1695207e4978db9754}} 
+virtual void \mbox{\hyperlink{classPrintC_a92f39888157b3a1695207e4978db9754}{op\+Float\+Neg}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+N\+EG operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a1ca4918cf0ad64762607901fcbedebc6}\label{classPrintC_a1ca4918cf0ad64762607901fcbedebc6}} 
+virtual void \mbox{\hyperlink{classPrintC_a1ca4918cf0ad64762607901fcbedebc6}{op\+Float\+Abs}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+A\+BS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a57f5e81ff43685a4c6f4dda04c39e792}\label{classPrintC_a57f5e81ff43685a4c6f4dda04c39e792}} 
+virtual void \mbox{\hyperlink{classPrintC_a57f5e81ff43685a4c6f4dda04c39e792}{op\+Float\+Sqrt}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+S\+Q\+RT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a042bf6eb6b670d668597a81c0aba5938}\label{classPrintC_a042bf6eb6b670d668597a81c0aba5938}} 
+virtual void \mbox{\hyperlink{classPrintC_a042bf6eb6b670d668597a81c0aba5938}{op\+Float\+Int2\+Float}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+I\+N\+T2\+F\+L\+O\+AT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aa1108124c08e3412dd455dad8e4825e9}\label{classPrintC_aa1108124c08e3412dd455dad8e4825e9}} 
+virtual void \mbox{\hyperlink{classPrintC_aa1108124c08e3412dd455dad8e4825e9}{op\+Float\+Float2\+Float}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ac0c565dff86b4adec2ba53d1f3e1409b}\label{classPrintC_ac0c565dff86b4adec2ba53d1f3e1409b}} 
+virtual void \mbox{\hyperlink{classPrintC_ac0c565dff86b4adec2ba53d1f3e1409b}{op\+Float\+Trunc}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+T\+R\+U\+NC operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a3a5b6a34c7a409acff8bbeb04735b8d1}\label{classPrintC_a3a5b6a34c7a409acff8bbeb04735b8d1}} 
+virtual void \mbox{\hyperlink{classPrintC_a3a5b6a34c7a409acff8bbeb04735b8d1}{op\+Float\+Ceil}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+C\+E\+IL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a20f64d93540004a560f632bdc65ef8b9}\label{classPrintC_a20f64d93540004a560f632bdc65ef8b9}} 
+virtual void \mbox{\hyperlink{classPrintC_a20f64d93540004a560f632bdc65ef8b9}{op\+Float\+Floor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2aad6c07d0554baab8dfffc3cd18ef99}\label{classPrintC_a2aad6c07d0554baab8dfffc3cd18ef99}} 
+virtual void \mbox{\hyperlink{classPrintC_a2aad6c07d0554baab8dfffc3cd18ef99}{op\+Float\+Round}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+R\+O\+U\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ae84a85e7b884c91e4e96739d159c2b61}\label{classPrintC_ae84a85e7b884c91e4e96739d159c2b61}} 
+virtual void \mbox{\hyperlink{classPrintC_ae84a85e7b884c91e4e96739d159c2b61}{op\+Multiequal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a M\+U\+L\+T\+I\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_abb10837d3ba1eea3582bceeb48b682c0}\label{classPrintC_abb10837d3ba1eea3582bceeb48b682c0}} 
+virtual void \mbox{\hyperlink{classPrintC_abb10837d3ba1eea3582bceeb48b682c0}{op\+Indirect}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+D\+I\+R\+E\+CT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aed941322ca9a2b52903de41d31724fbd}\label{classPrintC_aed941322ca9a2b52903de41d31724fbd}} 
+virtual void \mbox{\hyperlink{classPrintC_aed941322ca9a2b52903de41d31724fbd}{op\+Piece}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a P\+I\+E\+CE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a30d7ef1704516edbe3e014e86efad5cc}\label{classPrintC_a30d7ef1704516edbe3e014e86efad5cc}} 
+virtual void \mbox{\hyperlink{classPrintC_a30d7ef1704516edbe3e014e86efad5cc}{op\+Subpiece}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a S\+U\+B\+P\+I\+E\+CE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a7f9b5d8494d9596574bf1eb5f0fb805f}\label{classPrintC_a7f9b5d8494d9596574bf1eb5f0fb805f}} 
+virtual void \mbox{\hyperlink{classPrintC_a7f9b5d8494d9596574bf1eb5f0fb805f}{op\+Cast}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+ST operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a874943e6cf1f05650dca821959252182}\label{classPrintC_a874943e6cf1f05650dca821959252182}} 
+virtual void \mbox{\hyperlink{classPrintC_a874943e6cf1f05650dca821959252182}{op\+Ptradd}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a P\+T\+R\+A\+DD operator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_ab1393c30ad5d4f636caff4c0d032b5cd}{op\+Ptrsub}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\item 
+virtual void \mbox{\hyperlink{classPrintC_a3a890f58a0ef3db04c0920e4351c5227}{op\+Segment\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\item 
+\mbox{\Hypertarget{classPrintC_a2f6a00b628fe40bde90f5e82bf503979}\label{classPrintC_a2f6a00b628fe40bde90f5e82bf503979}} 
+virtual void \mbox{\hyperlink{classPrintC_a2f6a00b628fe40bde90f5e82bf503979}{op\+Cpool\+Ref\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a C\+P\+O\+O\+L\+R\+EF operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2eaf61f8c432d655a8ade65c5dd65983}\label{classPrintC_a2eaf61f8c432d655a8ade65c5dd65983}} 
+virtual void \mbox{\hyperlink{classPrintC_a2eaf61f8c432d655a8ade65c5dd65983}{op\+New\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a N\+EW operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a649016cb5cd710730738992a98ce23da}\label{classPrintC_a649016cb5cd710730738992a98ce23da}} 
+virtual void \mbox{\hyperlink{classPrintC_a649016cb5cd710730738992a98ce23da}{op\+Insert\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit an I\+N\+S\+E\+RT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a436067a752c00f2c399b98bb8132fa03}\label{classPrintC_a436067a752c00f2c399b98bb8132fa03}} 
+virtual void \mbox{\hyperlink{classPrintC_a436067a752c00f2c399b98bb8132fa03}{op\+Extract\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit an E\+X\+T\+R\+A\+CT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a53fb8ce1c85034d8d44c03c6b7e63dd9}\label{classPrintC_a53fb8ce1c85034d8d44c03c6b7e63dd9}} 
+virtual void \mbox{\hyperlink{classPrintC_a53fb8ce1c85034d8d44c03c6b7e63dd9}{op\+Popcount\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a P\+O\+P\+C\+O\+U\+NT operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPrintC_a18fa1574b22c87e7ef25e4a0b99284ac}{build\+Type\+Stack}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, vector$<$ const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&typestack)
+\begin{DoxyCompactList}\small\item\em Prepare to push components of a data-\/type declaration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_aae46702bfe38061e0c0563f7a8a20d82}{push\+Prototype\+Inputs}} (const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$proto)
+\begin{DoxyCompactList}\small\item\em Push input parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a3a87936f8d64b5c5f98c462e6d923bf7}{push\+Symbol\+Scope}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$symbol)
+\begin{DoxyCompactList}\small\item\em Push tokens resolving a symbol\textquotesingle{}s scope. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a744acecb2184355d207cae696d82c629}{emit\+Symbol\+Scope}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$symbol)
+\begin{DoxyCompactList}\small\item\em Emit tokens resolving a symbol\textquotesingle{}s scope. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a0b96904bf7b1ecfb6b254c51707ae21a}{push\+Type\+Start}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, bool noident)
+\begin{DoxyCompactList}\small\item\em Push part of a data-\/type declaration onto the R\+PN stack, up to the identifier. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a45d0e43f9f4e91353db9aeb4c053deaa}{push\+Type\+End}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Push the tail ends of a data-\/type declaration onto the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a735ddb9bb724110dbd9d1e3b5e381b6d}{push\+Bool\+Constant}} (uintb val, const \mbox{\hyperlink{classTypeBase}{Type\+Base}} $\ast$ct, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a {\bfseries{true}} or {\bfseries{false}} token to the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_aefb75360529072c8623858fd8c909ca3}{push\+Char\+Constant}} (uintb val, const \mbox{\hyperlink{classTypeChar}{Type\+Char}} $\ast$ct, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a single character constant to the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a70078a4551cf53bafcb44360afd2f027}{push\+Enum\+Constant}} (uintb val, const \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$ct, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push an enumerated value to the R\+PN stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintC_ac3096b61ae4a7d0e78200fa946c54a95}{push\+Ptr\+Char\+Constant}} (uintb val, const \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ct, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Attempt to push a quoted string representing a given constant pointer onto the R\+PN stack. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPrintC_a60411f32d6cb0b986eb1f1f39296a529}{push\+Ptr\+Code\+Constant}} (uintb val, const \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ct, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Attempt to push a function name representing a constant pointer onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintC_a3ccbcccc1706e4d29930ac2fdeadc19a}{do\+Emit\+Wide\+Char\+Prefix}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this language requires a prefix when expressing {\itshape wide} characters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPrintC_adb5d1d809d390a69943576628118b83b}{check\+Array\+Deref}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Determine whether a L\+O\+A\+D/\+S\+T\+O\+RE expression requires pointer \textquotesingle{}$\ast$\textquotesingle{} syntax. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a680ec03cb56eb70c13c4d1ee261cdda9}{emit\+Struct\+Definition}} (const \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Emit the definition of a {\itshape structure} data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_acbe0fabc1fd91b959cfb892fc4149df7}{emit\+Enum\+Definition}} (const \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Emit the definition of an {\itshape enumeration} data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a037bdd9a25c0bb21308609afde6452d3}{emit\+Prototype\+Output}} (const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$proto, const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Emit the output data-\/type of a function prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a316a42f523295a421f9d40f0b3fcf92e}{emit\+Prototype\+Inputs}} (const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$proto)
+\begin{DoxyCompactList}\small\item\em Emit the input data-\/types of a function prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a7d048e59d4632ce57b87398378a6538c}{emit\+Global\+Var\+Decls\+Recursive}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$\mbox{\hyperlink{classPrintC_ad83977328e9bfa4f33276563a4306d3e}{scope}})
+\begin{DoxyCompactList}\small\item\em Emit variable declarations for all global symbols under given scope. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a344e10d6f5f8b2b2fda6dc627e1b3c94}{emit\+Local\+Var\+Decls}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Emit variable declarations for a function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a790cee3e0a91933b641ccf0433868ef1}{emit\+Statement}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$inst)
+\begin{DoxyCompactList}\small\item\em Emit a statement in the body of a function. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPrintC_aa1189e40787980076c6827bb4e20fbef}{emit\+Inplace\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Attempt to emit an expression rooted at an {\itshape in-\/place} operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_afd7a9bbef5548e06712bd84e130b89f8}{emit\+Goto\+Statement}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl, const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$exp\+\_\+bl, uint4 type)
+\begin{DoxyCompactList}\small\item\em Emit a statement representing an unstructured branch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_afe955f74fd15f96204c3060ea22ea080}{emit\+Switch\+Case}} (int4 casenum, const \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} $\ast$switchbl)
+\begin{DoxyCompactList}\small\item\em Emit labels for a {\itshape case} block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_ac8dc5f836c6c487956b03a55a9d8241f}{emit\+Label}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit a formal label for a given control-\/flow block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_ad237ae57af8296e4575fd083972c5b21}{emit\+Label\+Statement}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit any required label statement for a given basic block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a949cd93dbebadf75fad1befc87776285}{emit\+Any\+Label\+Statement}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit any required label statement for a given control-\/flow block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a010382bb95568ebcab6281ad284c0427}{emit\+Comment\+Group}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$inst)
+\begin{DoxyCompactList}\small\item\em Emit comments associated with a given statement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a5fde7cd9ec3d7c0ec145f0b7980bd88a}{emit\+Comment\+Block\+Tree}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit any comments under the given control-\/flow subtree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a1fe6d706578ca30a11d508fba6b1ac2e}{emit\+Comment\+Func\+Header}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Emit comments in the given function\textquotesingle{}s header. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a3a07307c0fc1551ce4012b9293fca03b}{emit\+For\+Loop}} (const \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Emit block as a {\itshape for} loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a436588b5fb6b79a094c61db84eff9297}{op\+Func}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a {\itshape functional} expression based on the given p-\/code op to the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a58330f960ce5acf171b06bde584b5c4a}{op\+Type\+Cast}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push the given p-\/code op using type-\/cast syntax to the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintC_a79a16c5f9ba7ebd9b977295ca109831f}{op\+Hidden\+Func}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push the given p-\/code op as a hidden token. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPrintC_afc265bd5d43fdffde4a6f74aeae47ac8}{print\+Character\+Constant}} (ostream \&s, const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$char\+Type) const
+\begin{DoxyCompactList}\small\item\em Print a quoted (unicode) string at the given address. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classPrintC_aa393e1cc060bd9a5e385d9dbc490f198}{get\+Hidden\+This\+Slot}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$fc)
+\begin{DoxyCompactList}\small\item\em Get position of \char`\"{}this\char`\"{} pointer needing to be hidden. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2dbad31453ec256539861adfc7b08816}\label{classPrintC_a2dbad31453ec256539861adfc7b08816}} 
+void \mbox{\hyperlink{classPrintC_a2dbad31453ec256539861adfc7b08816}{reset\+Defaults\+PrintC}} (void)
+\begin{DoxyCompactList}\small\item\em Set default values for options specific to \mbox{\hyperlink{classPrintC}{PrintC}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a3db658db938d08395a6e54d3b1c7a372}{push\+Constant}} (uintb val, const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a constant onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintC_ae236127c4e6ea51836f881210aa59ec5}{push\+Equate}} (uintb val, int4 sz, const \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} $\ast$sym, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a constant marked up by and \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a234b95d9f3fdb8a79eeff02eb4acbca3}{push\+Annotation}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push an address which is not in the normal data-\/flow. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a22e493008d4ba06482b42fe1875be235}{push\+Symbol}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a specific \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a5d9f2db7f218e2e994b741940155db52}{push\+Unnamed\+Location}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push an address as a substitute for a \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a0e8ab66b834858fbace8fd20357b5a63}{push\+Partial\+Symbol}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, int4 off, int4 sz, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype)
+\begin{DoxyCompactList}\small\item\em Push a variable that represents only part of a symbol onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_aaa8e530589a3d446db8f76b9a211f0fa}{push\+Mismatch\+Symbol}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, int4 off, int4 sz, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push an identifier for a variable that mismatches with its \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_aa85a02ccc13756ecac61350ffd409e80}{push\+\_\+integer}} (uintb val, int4 sz, bool sign, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a constant with an integer data-\/type to the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a5770972840193a1f118925fbb92fa4b2}{push\+\_\+float}} (uintb val, int4 sz, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a constant with a floating-\/point data-\/type to the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a56fdbb426ff8dda0d3dd29901f09ead1}{print\+Unicode}} (ostream \&s, int4 onechar) const
+\begin{DoxyCompactList}\small\item\em Print a single unicode character as a {\itshape character} {\itshape constant} for the high-\/level language. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a210e44709553449b4d03596f137dfb10}{push\+Type}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Push a data-\/type name onto the R\+PN expression stack. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classPrintC_af262dab8c2593fce9a9bceac82a8eb9c}{generic\+Function\+Name}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Create a generic function name base on the entry point address. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classPrintC_a9be29ae351e163eeead58aeb5eb5720b}{generic\+Type\+Name}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Generate a generic name for an unnamed data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a23d8dc013a41698d5168665451b356f6}{emit\+Expression}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a full expression. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_ae05bed1958ac3b694bdeda2897e6a1ff}{emit\+Var\+Decl}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)
+\begin{DoxyCompactList}\small\item\em Emit a variable declaration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a56fd9b353cd343909b2700fe42875885}{emit\+Var\+Decl\+Statement}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)
+\begin{DoxyCompactList}\small\item\em Emit a variable declaration statement. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintC_af3fcfeca02664799789cf4042956ee26}{emit\+Scope\+Var\+Decls}} (const \mbox{\hyperlink{classScope}{Scope}} $\ast$\mbox{\hyperlink{classPrintC_ad83977328e9bfa4f33276563a4306d3e}{scope}}, int4 cat)
+\begin{DoxyCompactList}\small\item\em Emit all the variable declarations for a given scope. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a38f45bf42a0b28ed731eb036636d0a11}{emit\+Function\+Declaration}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Emit a function declaration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintC_a36b4db5295cfb6eb9a9d93b36b2a5cc8}{emit\+Type\+Definition}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Emit the definition of the given data-\/type. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintC_ad1f1099f49b4169948682a34c5b9f9cb}{check\+Print\+Negation}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Check whether a given boolean \mbox{\hyperlink{classVarnode}{Varnode}} can be printed in negated form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPrintC_a3c9c17128122dfdad309f994fe2f3864}\label{classPrintC_a3c9c17128122dfdad309f994fe2f3864}} 
+bool \mbox{\hyperlink{classPrintC_a3c9c17128122dfdad309f994fe2f3864}{option\+\_\+\+N\+U\+LL}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if we should emit N\+U\+LL keyword. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a71501a4855f612214c23eb5d9ae584ae}\label{classPrintC_a71501a4855f612214c23eb5d9ae584ae}} 
+bool \mbox{\hyperlink{classPrintC_a71501a4855f612214c23eb5d9ae584ae}{option\+\_\+inplace\+\_\+ops}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if we should use \textquotesingle{}+=\textquotesingle{} \textquotesingle{}\&=\textquotesingle{} etc. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aa95a4d17b93d7d1f2cf29d013613a5ad}\label{classPrintC_aa95a4d17b93d7d1f2cf29d013613a5ad}} 
+bool \mbox{\hyperlink{classPrintC_aa95a4d17b93d7d1f2cf29d013613a5ad}{option\+\_\+convention}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if we should print calling convention. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_af2d3e095bea7152010bc849ec310525f}\label{classPrintC_af2d3e095bea7152010bc849ec310525f}} 
+bool \mbox{\hyperlink{classPrintC_af2d3e095bea7152010bc849ec310525f}{option\+\_\+nocasts}}
+\begin{DoxyCompactList}\small\item\em Don\textquotesingle{}t print a cast if {\bfseries{true}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a8186b352ba2ddb4fa4623b23079e018d}\label{classPrintC_a8186b352ba2ddb4fa4623b23079e018d}} 
+bool \mbox{\hyperlink{classPrintC_a8186b352ba2ddb4fa4623b23079e018d}{option\+\_\+unplaced}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if we should display unplaced comments. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a3852c6b4cb0aad9e115620cae8174c97}\label{classPrintC_a3852c6b4cb0aad9e115620cae8174c97}} 
+bool \mbox{\hyperlink{classPrintC_a3852c6b4cb0aad9e115620cae8174c97}{option\+\_\+hide\+\_\+exts}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if we should hide implied extension operations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a1bf3bef78d048160d91639467b0c9278}\label{classPrintC_a1bf3bef78d048160d91639467b0c9278}} 
+string \mbox{\hyperlink{classPrintC_a1bf3bef78d048160d91639467b0c9278}{null\+Token}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classToken}{Token}} to use for \textquotesingle{}null\textquotesingle{}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a3092383bb59a303a37820b33ddc02183}\label{classPrintC_a3092383bb59a303a37820b33ddc02183}} 
+\mbox{\hyperlink{classCommentSorter}{Comment\+Sorter}} \mbox{\hyperlink{classPrintC_a3092383bb59a303a37820b33ddc02183}{commsorter}}
+\begin{DoxyCompactList}\small\item\em Container/organizer for comments in the current function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPrintC_a0168445c49991a481c9dca33d2c60489}\label{classPrintC_a0168445c49991a481c9dca33d2c60489}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a0168445c49991a481c9dca33d2c60489}{hidden}} = \{ \char`\"{}\char`\"{}, 1, 70, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa86a1590d561a983af8ef6271a75a82e8}{Op\+Token\+::hiddenfunction}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em Hidden functional (that may force parentheses) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ad83977328e9bfa4f33276563a4306d3e}\label{classPrintC_ad83977328e9bfa4f33276563a4306d3e}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ad83977328e9bfa4f33276563a4306d3e}{scope}} = \{ \char`\"{}\+::\char`\"{}, 2, 70, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The sub-\/scope/namespace operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_acd4bf9c86c5ffd796e010a71bcb697ae}\label{classPrintC_acd4bf9c86c5ffd796e010a71bcb697ae}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_acd4bf9c86c5ffd796e010a71bcb697ae}{object\+\_\+member}} = \{ \char`\"{}.\char`\"{}, 2, 66, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape member} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aaafaaab6d0d2d93fde816c824be3d432}\label{classPrintC_aaafaaab6d0d2d93fde816c824be3d432}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_aaafaaab6d0d2d93fde816c824be3d432}{pointer\+\_\+member}} = \{ \char`\"{}-\/$>$\char`\"{}, 2, 66, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape points} {\itshape to} {\itshape member} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aff37c9f618ad0e52ae8e117fa950563e}\label{classPrintC_aff37c9f618ad0e52ae8e117fa950563e}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_aff37c9f618ad0e52ae8e117fa950563e}{subscript}} = \{ \char`\"{}\mbox{[}$\,$\mbox{]}\char`\"{}, 2, 66, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa82a30068870b08542e958e828d6464fa}{Op\+Token\+::postsurround}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The array subscript operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a808485afc527ab6629ad9193fe0db7f6}\label{classPrintC_a808485afc527ab6629ad9193fe0db7f6}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a808485afc527ab6629ad9193fe0db7f6}{function\+\_\+call}} = \{ \char`\"{}()\char`\"{}, 2, 66, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa82a30068870b08542e958e828d6464fa}{Op\+Token\+::postsurround}}, 0, 10, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape function} {\itshape call} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a176b30b5cecd9879b0dadd0dcc628068}\label{classPrintC_a176b30b5cecd9879b0dadd0dcc628068}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a176b30b5cecd9879b0dadd0dcc628068}{bitwise\+\_\+not}} = \{ \char`\"{}$\sim$\char`\"{}, 1, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{Op\+Token\+::unary\+\_\+prefix}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape bitwise} {\itshape negate} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a643d3b211527b727681fab774516d19c}\label{classPrintC_a643d3b211527b727681fab774516d19c}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a643d3b211527b727681fab774516d19c}{boolean\+\_\+not}} = \{ \char`\"{}!\char`\"{}, 1, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{Op\+Token\+::unary\+\_\+prefix}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape boolean} {\itshape not} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ac432b442df9751d73278efcb58c666b8}\label{classPrintC_ac432b442df9751d73278efcb58c666b8}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ac432b442df9751d73278efcb58c666b8}{unary\+\_\+minus}} = \{ \char`\"{}-\/\char`\"{}, 1, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{Op\+Token\+::unary\+\_\+prefix}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape unary} {\itshape minus} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aa8b66477d2689e307a2fc49fd74d31c0}\label{classPrintC_aa8b66477d2689e307a2fc49fd74d31c0}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_aa8b66477d2689e307a2fc49fd74d31c0}{unary\+\_\+plus}} = \{ \char`\"{}+\char`\"{}, 1, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{Op\+Token\+::unary\+\_\+prefix}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape unary} {\itshape plus} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a649c182bea1361be38d072a5c0cd4ec4}\label{classPrintC_a649c182bea1361be38d072a5c0cd4ec4}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a649c182bea1361be38d072a5c0cd4ec4}{addressof}} = \{ \char`\"{}\&\char`\"{}, 1, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{Op\+Token\+::unary\+\_\+prefix}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape address} {\itshape of} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a7d63db28ddbeb25416eeb5b5abffdf13}\label{classPrintC_a7d63db28ddbeb25416eeb5b5abffdf13}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a7d63db28ddbeb25416eeb5b5abffdf13}{dereference}} = \{ \char`\"{}$\ast$\char`\"{}, 1, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{Op\+Token\+::unary\+\_\+prefix}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape pointer} {\itshape dereference} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a62507aae00282b4100905ce34bedaab8}\label{classPrintC_a62507aae00282b4100905ce34bedaab8}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a62507aae00282b4100905ce34bedaab8}{typecast}} = \{ \char`\"{}()\char`\"{}, 2, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa883dcb2236a61ce30b67ac1da8b817b8}{Op\+Token\+::presurround}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape type} {\itshape cast} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ac4833401177651caf676e8e136ba35f1}\label{classPrintC_ac4833401177651caf676e8e136ba35f1}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ac4833401177651caf676e8e136ba35f1}{multiply}} = \{ \char`\"{}$\ast$\char`\"{}, 2, 54, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape multiplication} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a28bc4b767b118dfad5f43aaadb10eaf4}\label{classPrintC_a28bc4b767b118dfad5f43aaadb10eaf4}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a28bc4b767b118dfad5f43aaadb10eaf4}{divide}} = \{ \char`\"{}/\char`\"{}, 2, 54, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape division} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_abcaccebfae7e0ddc773839bf7418a2ac}\label{classPrintC_abcaccebfae7e0ddc773839bf7418a2ac}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_abcaccebfae7e0ddc773839bf7418a2ac}{modulo}} = \{ \char`\"{}\%\char`\"{}, 2, 54, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape modulo} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a17d2d8af95be1fddc38c0bf50be81793}\label{classPrintC_a17d2d8af95be1fddc38c0bf50be81793}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a17d2d8af95be1fddc38c0bf50be81793}{binary\+\_\+plus}} = \{ \char`\"{}+\char`\"{}, 2, 50, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape binary} {\itshape addition} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a3e8face6aa64fd484de1a532f837db5b}\label{classPrintC_a3e8face6aa64fd484de1a532f837db5b}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a3e8face6aa64fd484de1a532f837db5b}{binary\+\_\+minus}} = \{ \char`\"{}-\/\char`\"{}, 2, 50, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape binary} {\itshape subtraction} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a49158efdd9a95cc787de8e7fb499b621}\label{classPrintC_a49158efdd9a95cc787de8e7fb499b621}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a49158efdd9a95cc787de8e7fb499b621}{shift\+\_\+left}} = \{ \char`\"{}$<$$<$\char`\"{}, 2, 46, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape left} {\itshape shift} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ac6a0bf963ec7eeb61a71e5e74f2ec803}\label{classPrintC_ac6a0bf963ec7eeb61a71e5e74f2ec803}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ac6a0bf963ec7eeb61a71e5e74f2ec803}{shift\+\_\+right}} = \{ \char`\"{}$>$$>$\char`\"{}, 2, 46, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape right} {\itshape shift} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_aaa5c9e85be9eed977814d3193cf6e091}\label{classPrintC_aaa5c9e85be9eed977814d3193cf6e091}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_aaa5c9e85be9eed977814d3193cf6e091}{shift\+\_\+sright}} = \{ \char`\"{}$>$$>$\char`\"{}, 2, 46, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The signed {\itshape right} {\itshape shift} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2ce89de69cae922cb42cf0ee12c6dd84}\label{classPrintC_a2ce89de69cae922cb42cf0ee12c6dd84}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a2ce89de69cae922cb42cf0ee12c6dd84}{less\+\_\+than}} = \{ \char`\"{}$<$\char`\"{}, 2, 42, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape less} {\itshape than} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a22c98035ceb2682d83cbd0e2aa088c95}\label{classPrintC_a22c98035ceb2682d83cbd0e2aa088c95}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a22c98035ceb2682d83cbd0e2aa088c95}{less\+\_\+equal}} = \{ \char`\"{}$<$=\char`\"{}, 2, 42, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape less} {\itshape than} {\itshape or} {\itshape equal} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a707432f4ffaa366edf116e973e541924}\label{classPrintC_a707432f4ffaa366edf116e973e541924}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a707432f4ffaa366edf116e973e541924}{greater\+\_\+than}} = \{ \char`\"{}$>$\char`\"{}, 2, 42, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape greater} {\itshape than} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a6fa9b5b5fb7f70d5cd9c5de657a37a42}\label{classPrintC_a6fa9b5b5fb7f70d5cd9c5de657a37a42}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a6fa9b5b5fb7f70d5cd9c5de657a37a42}{greater\+\_\+equal}} = \{ \char`\"{}$>$=\char`\"{}, 2, 42, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape greater} {\itshape than} {\itshape or} {\itshape equal} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a9c4f177aa95f33e2a9d4c2f35eb9f10e}\label{classPrintC_a9c4f177aa95f33e2a9d4c2f35eb9f10e}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a9c4f177aa95f33e2a9d4c2f35eb9f10e}{equal}} = \{ \char`\"{}==\char`\"{}, 2, 38, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape equal} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a115f90343fffd0f9bb3645b078fa98f8}\label{classPrintC_a115f90343fffd0f9bb3645b078fa98f8}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a115f90343fffd0f9bb3645b078fa98f8}{not\+\_\+equal}} = \{ \char`\"{}!=\char`\"{}, 2, 38, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape not} {\itshape equal} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a86216e1cf58cbe570445e93e3adc64ac}\label{classPrintC_a86216e1cf58cbe570445e93e3adc64ac}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a86216e1cf58cbe570445e93e3adc64ac}{bitwise\+\_\+and}} = \{ \char`\"{}\&\char`\"{}, 2, 34, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape logical} {\itshape and} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a78decc2f4f0fdfb6ddc0dd505e4ddc71}\label{classPrintC_a78decc2f4f0fdfb6ddc0dd505e4ddc71}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a78decc2f4f0fdfb6ddc0dd505e4ddc71}{bitwise\+\_\+xor}} = \{ \char`\"{}$^\wedge$\char`\"{}, 2, 30, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape logical} {\itshape xor} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ae8c841b464ec7c570db628387d17ba23}\label{classPrintC_ae8c841b464ec7c570db628387d17ba23}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ae8c841b464ec7c570db628387d17ba23}{bitwise\+\_\+or}} = \{ \char`\"{}$\vert$\char`\"{}, 2, 26, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape logical} {\itshape or} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a1d27aadfb5e25d1f65cc9af856dd0566}\label{classPrintC_a1d27aadfb5e25d1f65cc9af856dd0566}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a1d27aadfb5e25d1f65cc9af856dd0566}{boolean\+\_\+and}} = \{ \char`\"{}\&\&\char`\"{}, 2, 22, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape boolean} {\itshape and} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ae664fd2b1cbfba34687c8b51a984ffec}\label{classPrintC_ae664fd2b1cbfba34687c8b51a984ffec}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ae664fd2b1cbfba34687c8b51a984ffec}{boolean\+\_\+or}} = \{ \char`\"{}$\vert$$\vert$\char`\"{}, 2, 18, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape boolean} {\itshape or} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a7793af3839014ca8952d53f153ebe65a}\label{classPrintC_a7793af3839014ca8952d53f153ebe65a}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a7793af3839014ca8952d53f153ebe65a}{boolean\+\_\+xor}} = \{ \char`\"{}$^\wedge$$^\wedge$\char`\"{}, 2, 20, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape boolean} {\itshape xor} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2d38a1553e6270e9940922c549411eae}\label{classPrintC_a2d38a1553e6270e9940922c549411eae}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a2d38a1553e6270e9940922c549411eae}{assignment}} = \{ \char`\"{}=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape assignment} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a1a77d4f930e5b2a7ef0a4e89d5cb6945}\label{classPrintC_a1a77d4f930e5b2a7ef0a4e89d5cb6945}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a1a77d4f930e5b2a7ef0a4e89d5cb6945}{comma}} = \{ \char`\"{},\char`\"{}, 2, 2, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape comma} operator (for parameter lists) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_af0b5719ea9e507609137db7749ef8aef}\label{classPrintC_af0b5719ea9e507609137db7749ef8aef}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_af0b5719ea9e507609137db7749ef8aef}{new\+\_\+op}} = \{ \char`\"{}\char`\"{}, 2, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa07bc235399849635f28ca7caaaebb1a4}{Op\+Token\+::space}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape new} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ad5eb49438746692a23338c6a7815a83e}\label{classPrintC_ad5eb49438746692a23338c6a7815a83e}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ad5eb49438746692a23338c6a7815a83e}{multequal}} = \{ \char`\"{}$\ast$=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape multiplication} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a4a6ff1f6d6449a198b2cecfe4bf4f925}\label{classPrintC_a4a6ff1f6d6449a198b2cecfe4bf4f925}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a4a6ff1f6d6449a198b2cecfe4bf4f925}{divequal}} = \{ \char`\"{}/=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape division} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a0b244f1e62f37ce148448b07190beae6}\label{classPrintC_a0b244f1e62f37ce148448b07190beae6}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a0b244f1e62f37ce148448b07190beae6}{remequal}} = \{ \char`\"{}\%=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape modulo} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2e154fb55cfe918759ac64fb0df9e44e}\label{classPrintC_a2e154fb55cfe918759ac64fb0df9e44e}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a2e154fb55cfe918759ac64fb0df9e44e}{plusequal}} = \{ \char`\"{}+=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape addition} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ab4764b02a9d4c06c3b76ccd7ea690618}\label{classPrintC_ab4764b02a9d4c06c3b76ccd7ea690618}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ab4764b02a9d4c06c3b76ccd7ea690618}{minusequal}} = \{ \char`\"{}-\/=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape subtraction} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ae97ed02c69f5fa9654ca613804444a3a}\label{classPrintC_ae97ed02c69f5fa9654ca613804444a3a}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ae97ed02c69f5fa9654ca613804444a3a}{leftequal}} = \{ \char`\"{}$<$$<$=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape left} {\itshape shift} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a6f50c852d70d9da7e4fc76cf695b45c1}\label{classPrintC_a6f50c852d70d9da7e4fc76cf695b45c1}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a6f50c852d70d9da7e4fc76cf695b45c1}{rightequal}} = \{ \char`\"{}$>$$>$=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape right} {\itshape shift} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a5a70496101762ba761af28c874820f51}\label{classPrintC_a5a70496101762ba761af28c874820f51}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a5a70496101762ba761af28c874820f51}{andequal}} = \{ \char`\"{}\&=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape logical} {\itshape and} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a12b7e89b9bb491b2fdf7dbf82f02dd47}\label{classPrintC_a12b7e89b9bb491b2fdf7dbf82f02dd47}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a12b7e89b9bb491b2fdf7dbf82f02dd47}{orequal}} = \{ \char`\"{}$\vert$=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape logical} {\itshape or} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_ab40738c4131f50cbd0f65215ab00c008}\label{classPrintC_ab40738c4131f50cbd0f65215ab00c008}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_ab40738c4131f50cbd0f65215ab00c008}{xorequal}} = \{ \char`\"{}$^\wedge$=\char`\"{}, 2, 14, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 1, 5, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape in-\/place} {\itshape logical} {\itshape xor} operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a2f5109e6fdfdf2ab4d6b30749a2311a2}\label{classPrintC_a2f5109e6fdfdf2ab4d6b30749a2311a2}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a2f5109e6fdfdf2ab4d6b30749a2311a2}{type\+\_\+expr\+\_\+space}} = \{ \char`\"{}\char`\"{}, 2, 10, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa07bc235399849635f28ca7caaaebb1a4}{Op\+Token\+::space}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em Type declaration involving a space (identifier or adornment) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_afb18c444eb771f284d723e780dd5521b}\label{classPrintC_afb18c444eb771f284d723e780dd5521b}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_afb18c444eb771f284d723e780dd5521b}{type\+\_\+expr\+\_\+nospace}} = \{ \char`\"{}\char`\"{}, 2, 10, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa07bc235399849635f28ca7caaaebb1a4}{Op\+Token\+::space}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em Type declaration with no space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a569fcb3559048223bde66129130376a5}\label{classPrintC_a569fcb3559048223bde66129130376a5}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a569fcb3559048223bde66129130376a5}{ptr\+\_\+expr}} = \{ \char`\"{}$\ast$\char`\"{}, 1, 62, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{Op\+Token\+::unary\+\_\+prefix}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em Pointer adornment for a type declaration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a4e61d18c5dc768e42f9be42619d63b37}\label{classPrintC_a4e61d18c5dc768e42f9be42619d63b37}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a4e61d18c5dc768e42f9be42619d63b37}{array\+\_\+expr}} = \{ \char`\"{}\mbox{[}$\,$\mbox{]}\char`\"{}, 2, 66, false, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa82a30068870b08542e958e828d6464fa}{Op\+Token\+::postsurround}}, 1, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em Array adornment for a type declaration. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintC_a5b018e8ef4c8150a9f9981efef4e3c80}\label{classPrintC_a5b018e8ef4c8150a9f9981efef4e3c80}} 
+static \mbox{\hyperlink{classOpToken}{Op\+Token}} \mbox{\hyperlink{classPrintC_a5b018e8ef4c8150a9f9981efef4e3c80}{enum\+\_\+cat}} = \{ \char`\"{}$\vert$\char`\"{}, 2, 26, true, \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{Op\+Token\+::binary}}, 0, 0, (\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$)0 \}
+\begin{DoxyCompactList}\small\item\em The {\itshape concatenation} operator for enumerated values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The c-\/language token emitter. 
+
+The c-\/language specific rules for emitting\+:
+\begin{DoxyItemize}
+\item expressions
+\item statements
+\item function prototypes
+\item variable declarations
+\item if/else structures
+\item loop structures
+\item etc. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPrintC_afd4f48f7193a4586ad4b6a01c8f60bc9}\label{classPrintC_afd4f48f7193a4586ad4b6a01c8f60bc9}} 
+\index{PrintC@{PrintC}!PrintC@{PrintC}}
+\index{PrintC@{PrintC}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{PrintC()}{PrintC()}}
+{\footnotesize\ttfamily Print\+C\+::\+PrintC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g,  }\item[{const string \&}]{nm = {\ttfamily \char`\"{}c-\/language\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} owning this c-\/language emitter \\
+\hline
+{\em nm} & is the name assigned to this emitter \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrintC_a18fa1574b22c87e7ef25e4a0b99284ac}\label{classPrintC_a18fa1574b22c87e7ef25e4a0b99284ac}} 
+\index{PrintC@{PrintC}!buildTypeStack@{buildTypeStack}}
+\index{buildTypeStack@{buildTypeStack}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{buildTypeStack()}{buildTypeStack()}}
+{\footnotesize\ttfamily void Print\+C\+::build\+Type\+Stack (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{vector$<$ const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&}]{typestack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Prepare to push components of a data-\/type declaration. 
+
+Push nested components of a data-\/type declaration onto a stack, so we can access it bottom up 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the data-\/type being emitted \\
+\hline
+{\em typestack} & will hold the sub-\/types involved in the displaying the declaration \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_adb5d1d809d390a69943576628118b83b}\label{classPrintC_adb5d1d809d390a69943576628118b83b}} 
+\index{PrintC@{PrintC}!checkArrayDeref@{checkArrayDeref}}
+\index{checkArrayDeref@{checkArrayDeref}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{checkArrayDeref()}{checkArrayDeref()}}
+{\footnotesize\ttfamily bool Print\+C\+::check\+Array\+Deref (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determine whether a L\+O\+A\+D/\+S\+T\+O\+RE expression requires pointer \textquotesingle{}$\ast$\textquotesingle{} syntax. 
+
+An expression involving a L\+O\+AD or S\+T\+O\+RE can sometimes be emitted using {\itshape array} syntax (or {\itshape field} {\itshape member} syntax). This method determines if this kind of syntax is appropriate or if a \textquotesingle{}$\ast$\textquotesingle{} operator is required. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the root of the pointer expression (feeding into L\+O\+AD or S\+T\+O\+RE) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{false}} if \textquotesingle{}$\ast$\textquotesingle{} syntax is required, {\bfseries{true}} if some other syntax is used 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_ad1f1099f49b4169948682a34c5b9f9cb}\label{classPrintC_ad1f1099f49b4169948682a34c5b9f9cb}} 
+\index{PrintC@{PrintC}!checkPrintNegation@{checkPrintNegation}}
+\index{checkPrintNegation@{checkPrintNegation}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{checkPrintNegation()}{checkPrintNegation()}}
+{\footnotesize\ttfamily bool Print\+C\+::check\+Print\+Negation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check whether a given boolean \mbox{\hyperlink{classVarnode}{Varnode}} can be printed in negated form. 
+
+In many situations a boolean value can be inverted by flipping the operator token producing it to a complementary token. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given boolean \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the value can be easily inverted 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a5ce2d6fc0fee85cdc030732d3825b154}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a7a3890c28908f1229f8e94e0239fe0ea}\label{classPrintC_a7a3890c28908f1229f8e94e0239fe0ea}} 
+\index{PrintC@{PrintC}!docFunction@{docFunction}}
+\index{docFunction@{docFunction}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{docFunction()}{docFunction()}}
+{\footnotesize\ttfamily void Print\+C\+::doc\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Emit the declaration (and body) of a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function to emit \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a93ebbf4cf20c65236ffca078fd5cbc21}{Print\+Language}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classPrintJava_ae80041003ebe279b2109aa3fd0197143}{Print\+Java}}.
+
+\mbox{\Hypertarget{classPrintC_a380029e0d567ee29b38225d6f6612b9c}\label{classPrintC_a380029e0d567ee29b38225d6f6612b9c}} 
+\index{PrintC@{PrintC}!docSingleGlobal@{docSingleGlobal}}
+\index{docSingleGlobal@{docSingleGlobal}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{docSingleGlobal()}{docSingleGlobal()}}
+{\footnotesize\ttfamily void Print\+C\+::doc\+Single\+Global (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Emit the declaration for a single (global) \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} to declare \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a2139aedceedf891b5702c0da1d905f08}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a6511933f0b8fd3f2fef8aa3920aa9de6}\label{classPrintC_a6511933f0b8fd3f2fef8aa3920aa9de6}} 
+\index{PrintC@{PrintC}!docTypeDefinitions@{docTypeDefinitions}}
+\index{docTypeDefinitions@{docTypeDefinitions}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{docTypeDefinitions()}{docTypeDefinitions()}}
+{\footnotesize\ttfamily void Print\+C\+::doc\+Type\+Definitions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Emit definitions of data-\/types. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em typegrp} & is the container for the data-\/types that should be defined \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_aea8fdf499dc7cba307e6cf513ed0ccab}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a3ccbcccc1706e4d29930ac2fdeadc19a}\label{classPrintC_a3ccbcccc1706e4d29930ac2fdeadc19a}} 
+\index{PrintC@{PrintC}!doEmitWideCharPrefix@{doEmitWideCharPrefix}}
+\index{doEmitWideCharPrefix@{doEmitWideCharPrefix}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{doEmitWideCharPrefix()}{doEmitWideCharPrefix()}}
+{\footnotesize\ttfamily bool Print\+C\+::do\+Emit\+Wide\+Char\+Prefix (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Return {\bfseries{true}} if this language requires a prefix when expressing {\itshape wide} characters. 
+
+The c-\/language standard requires that strings (and character constants) made up of {\itshape wide} character elements have an \textquotesingle{}L\textquotesingle{} prefix added before the quote characters. Other related languages may not do this. Having this as a virtual method lets derived languages to tailor their strings while still using the basic \mbox{\hyperlink{classPrintC}{PrintC}} functionality \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a prefix should be printed 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classPrintJava_a4f4aba29ed21a74bafe52eb5cc3fe904}{Print\+Java}}.
+
+\mbox{\Hypertarget{classPrintC_a949cd93dbebadf75fad1befc87776285}\label{classPrintC_a949cd93dbebadf75fad1befc87776285}} 
+\index{PrintC@{PrintC}!emitAnyLabelStatement@{emitAnyLabelStatement}}
+\index{emitAnyLabelStatement@{emitAnyLabelStatement}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitAnyLabelStatement()}{emitAnyLabelStatement()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Any\+Label\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit any required label statement for a given control-\/flow block. 
+
+The block does not have to be a basic block. This routine finds the entry basic block and prints any necessary labels for that. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given control-\/flow block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a5fde7cd9ec3d7c0ec145f0b7980bd88a}\label{classPrintC_a5fde7cd9ec3d7c0ec145f0b7980bd88a}} 
+\index{PrintC@{PrintC}!emitCommentBlockTree@{emitCommentBlockTree}}
+\index{emitCommentBlockTree@{emitCommentBlockTree}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitCommentBlockTree()}{emitCommentBlockTree()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Comment\+Block\+Tree (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit any comments under the given control-\/flow subtree. 
+
+With the control-\/flow hierarchy, print any comments associated with basic blocks in the specified subtree. Used where statements from multiple basic blocks are printed on one line and a normal comment would get printed in the middle of this line. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the root of the control-\/flow subtree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a1fe6d706578ca30a11d508fba6b1ac2e}\label{classPrintC_a1fe6d706578ca30a11d508fba6b1ac2e}} 
+\index{PrintC@{PrintC}!emitCommentFuncHeader@{emitCommentFuncHeader}}
+\index{emitCommentFuncHeader@{emitCommentFuncHeader}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitCommentFuncHeader()}{emitCommentFuncHeader()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Comment\+Func\+Header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit comments in the given function\textquotesingle{}s header. 
+
+Collect all comment lines marked as {\itshape header} for the function and emit them with the appropriate delimiters. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the given function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a010382bb95568ebcab6281ad284c0427}\label{classPrintC_a010382bb95568ebcab6281ad284c0427}} 
+\index{PrintC@{PrintC}!emitCommentGroup@{emitCommentGroup}}
+\index{emitCommentGroup@{emitCommentGroup}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitCommentGroup()}{emitCommentGroup()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Comment\+Group (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit comments associated with a given statement. 
+
+Collect any comment lines the sorter has associated with a statement rooted at a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and emit them using appropriate delimiters 
+\begin{DoxyParams}{Parameters}
+{\em inst} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_acbe0fabc1fd91b959cfb892fc4149df7}\label{classPrintC_acbe0fabc1fd91b959cfb892fc4149df7}} 
+\index{PrintC@{PrintC}!emitEnumDefinition@{emitEnumDefinition}}
+\index{emitEnumDefinition@{emitEnumDefinition}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitEnumDefinition()}{emitEnumDefinition()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Enum\+Definition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit the definition of an {\itshape enumeration} data-\/type. 
+
+Print all the named values making up the data-\/type, using the {\bfseries{enum}} keyword 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the enumerated data-\/type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a23d8dc013a41698d5168665451b356f6}\label{classPrintC_a23d8dc013a41698d5168665451b356f6}} 
+\index{PrintC@{PrintC}!emitExpression@{emitExpression}}
+\index{emitExpression@{emitExpression}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitExpression()}{emitExpression()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Expression (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Emit a full expression. 
+
+This can be an assignment statement, if the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} has an output \mbox{\hyperlink{classVarnode}{Varnode}}, or it can be a statement with no left-\/hand side. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} performing the final operation of the expression \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_aeb6f62b1d73a32173240647b6953f80e}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a3a07307c0fc1551ce4012b9293fca03b}\label{classPrintC_a3a07307c0fc1551ce4012b9293fca03b}} 
+\index{PrintC@{PrintC}!emitForLoop@{emitForLoop}}
+\index{emitForLoop@{emitForLoop}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitForLoop()}{emitForLoop()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+For\+Loop (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} $\ast$}]{bl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit block as a {\itshape for} loop. 
+
+Print the loop using the keyword {\itshape for}, followed by a semicolon separated
+\begin{DoxyItemize}
+\item Initializer statement
+\item Condition statment
+\item Iterate statement
+\end{DoxyItemize}
+
+Then print the body of the loop \mbox{\Hypertarget{classPrintC_a38f45bf42a0b28ed731eb036636d0a11}\label{classPrintC_a38f45bf42a0b28ed731eb036636d0a11}} 
+\index{PrintC@{PrintC}!emitFunctionDeclaration@{emitFunctionDeclaration}}
+\index{emitFunctionDeclaration@{emitFunctionDeclaration}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitFunctionDeclaration()}{emitFunctionDeclaration()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Function\+Declaration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Emit a function declaration. 
+
+This prints the formal defining prototype for a function. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the \mbox{\hyperlink{classFuncdata}{Funcdata}} object representing the function to be emitted \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a591f782041b30d6d0caf65dcbdd88c78}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a7d048e59d4632ce57b87398378a6538c}\label{classPrintC_a7d048e59d4632ce57b87398378a6538c}} 
+\index{PrintC@{PrintC}!emitGlobalVarDeclsRecursive@{emitGlobalVarDeclsRecursive}}
+\index{emitGlobalVarDeclsRecursive@{emitGlobalVarDeclsRecursive}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitGlobalVarDeclsRecursive()}{emitGlobalVarDeclsRecursive()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Global\+Var\+Decls\+Recursive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit variable declarations for all global symbols under given scope. 
+
+For the given scope and all of its children that are not {\itshape function} scopes, emit a variable declaration for each symbol. 
+\begin{DoxyParams}{Parameters}
+{\em scope} & is the given scope \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_afd7a9bbef5548e06712bd84e130b89f8}\label{classPrintC_afd7a9bbef5548e06712bd84e130b89f8}} 
+\index{PrintC@{PrintC}!emitGotoStatement@{emitGotoStatement}}
+\index{emitGotoStatement@{emitGotoStatement}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitGotoStatement()}{emitGotoStatement()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Goto\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl,  }\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{exp\+\_\+bl,  }\item[{uint4}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit a statement representing an unstructured branch. 
+
+Given the type of unstructured branch, with source and destination blocks, construct a statement with the appropriate c-\/language keyword ({\bfseries{goto}}, {\bfseries{break}}, {\bfseries{continue}}) representing a control-\/flow branch between the blocks. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the source block \\
+\hline
+{\em exp\+\_\+bl} & is the destination block (which may provide a label) \\
+\hline
+{\em type} & is the given type of the branch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_aa1189e40787980076c6827bb4e20fbef}\label{classPrintC_aa1189e40787980076c6827bb4e20fbef}} 
+\index{PrintC@{PrintC}!emitInplaceOp@{emitInplaceOp}}
+\index{emitInplaceOp@{emitInplaceOp}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitInplaceOp()}{emitInplaceOp()}}
+{\footnotesize\ttfamily bool Print\+C\+::emit\+Inplace\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Attempt to emit an expression rooted at an {\itshape in-\/place} operator. 
+
+Check that the given p-\/code op has an {\itshape in-\/place} token form and if the first input and the output are references to the same variable. If so, emit the expression using the {\itshape in-\/place} token. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the expression was emitted (as in-\/place), or {\bfseries{false}} if not emitted at all 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_ac8dc5f836c6c487956b03a55a9d8241f}\label{classPrintC_ac8dc5f836c6c487956b03a55a9d8241f}} 
+\index{PrintC@{PrintC}!emitLabel@{emitLabel}}
+\index{emitLabel@{emitLabel}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitLabel()}{emitLabel()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Label (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit a formal label for a given control-\/flow block. 
+
+Check for an explicit label that has been registered with the basic block. Otherwise, construct a generic label based on the entry address of the block. Emit the label as a single token. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_ad237ae57af8296e4575fd083972c5b21}\label{classPrintC_ad237ae57af8296e4575fd083972c5b21}} 
+\index{PrintC@{PrintC}!emitLabelStatement@{emitLabelStatement}}
+\index{emitLabelStatement@{emitLabelStatement}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitLabelStatement()}{emitLabelStatement()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Label\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit any required label statement for a given basic block. 
+
+If the basic block is the destination of a {\bfseries{goto}} statement, emit a label for the block followed by the \textquotesingle{}\+:\textquotesingle{} terminator. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given control-\/flow block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a344e10d6f5f8b2b2fda6dc627e1b3c94}\label{classPrintC_a344e10d6f5f8b2b2fda6dc627e1b3c94}} 
+\index{PrintC@{PrintC}!emitLocalVarDecls@{emitLocalVarDecls}}
+\index{emitLocalVarDecls@{emitLocalVarDecls}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitLocalVarDecls()}{emitLocalVarDecls()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Local\+Var\+Decls (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit variable declarations for a function. 
+
+A formal variable declaration is emitted for every symbol in the given function scope. I.\+e. all local variables are declared. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function being emitted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a316a42f523295a421f9d40f0b3fcf92e}\label{classPrintC_a316a42f523295a421f9d40f0b3fcf92e}} 
+\index{PrintC@{PrintC}!emitPrototypeInputs@{emitPrototypeInputs}}
+\index{emitPrototypeInputs@{emitPrototypeInputs}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitPrototypeInputs()}{emitPrototypeInputs()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Prototype\+Inputs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$}]{proto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit the input data-\/types of a function prototype. 
+
+This emits the individual type declarations of the input parameters to the function as a comma separated list. 
+\begin{DoxyParams}{Parameters}
+{\em proto} & is the given prototype of the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a037bdd9a25c0bb21308609afde6452d3}\label{classPrintC_a037bdd9a25c0bb21308609afde6452d3}} 
+\index{PrintC@{PrintC}!emitPrototypeOutput@{emitPrototypeOutput}}
+\index{emitPrototypeOutput@{emitPrototypeOutput}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitPrototypeOutput()}{emitPrototypeOutput()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Prototype\+Output (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$}]{proto,  }\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit the output data-\/type of a function prototype. 
+
+In C, when printing a function prototype, the function\textquotesingle{}s output data-\/type is displayed first as a type declaration, where the function name acts as the declaration\textquotesingle{}s identifier. This method emits the declaration in preparation for this. 
+\begin{DoxyParams}{Parameters}
+{\em proto} & is the function prototype object \\
+\hline
+{\em fd} & is the (optional) \mbox{\hyperlink{classFuncdata}{Funcdata}} object providing additional meta-\/data about the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_af3fcfeca02664799789cf4042956ee26}\label{classPrintC_af3fcfeca02664799789cf4042956ee26}} 
+\index{PrintC@{PrintC}!emitScopeVarDecls@{emitScopeVarDecls}}
+\index{emitScopeVarDecls@{emitScopeVarDecls}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitScopeVarDecls()}{emitScopeVarDecls()}}
+{\footnotesize\ttfamily bool Print\+C\+::emit\+Scope\+Var\+Decls (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classScope}{Scope}} $\ast$}]{scope,  }\item[{int4}]{cat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Emit all the variable declarations for a given scope. 
+
+A subset of all variables can be declared by specifying a category, 0 for parameters, -\/1 for everything. 
+\begin{DoxyParams}{Parameters}
+{\em scope} & is the given \mbox{\hyperlink{classScope}{Scope}} \\
+\hline
+{\em cat} & is the category of variable to declare \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a84affe778545c950190a9d7d3edbf6e5}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a790cee3e0a91933b641ccf0433868ef1}\label{classPrintC_a790cee3e0a91933b641ccf0433868ef1}} 
+\index{PrintC@{PrintC}!emitStatement@{emitStatement}}
+\index{emitStatement@{emitStatement}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitStatement()}{emitStatement()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{inst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit a statement in the body of a function. 
+
+This emits an entire statement rooted at a given operation. All associated expressions on the right-\/hand and left-\/hand sides are recursively emitted. Depending on the current printing properties, the statement is usually terminated with \textquotesingle{};\textquotesingle{} character. 
+\begin{DoxyParams}{Parameters}
+{\em inst} & is the given root \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} of the statement \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a680ec03cb56eb70c13c4d1ee261cdda9}\label{classPrintC_a680ec03cb56eb70c13c4d1ee261cdda9}} 
+\index{PrintC@{PrintC}!emitStructDefinition@{emitStructDefinition}}
+\index{emitStructDefinition@{emitStructDefinition}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitStructDefinition()}{emitStructDefinition()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Struct\+Definition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit the definition of a {\itshape structure} data-\/type. 
+
+Print all the components making up the data-\/type, using the {\bfseries{struct}} keyword 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the structure data-\/type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_afe955f74fd15f96204c3060ea22ea080}\label{classPrintC_afe955f74fd15f96204c3060ea22ea080}} 
+\index{PrintC@{PrintC}!emitSwitchCase@{emitSwitchCase}}
+\index{emitSwitchCase@{emitSwitchCase}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitSwitchCase()}{emitSwitchCase()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Switch\+Case (\begin{DoxyParamCaption}\item[{int4}]{casenum,  }\item[{const \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} $\ast$}]{switchbl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit labels for a {\itshape case} block. 
+
+Given a {\itshape switch} block and an index indicating a particular {\itshape case} block, look up all the labels associated with that {\itshape case} and emit them using formal labels with the {\bfseries{case}} keyword and a \textquotesingle{}\+:\textquotesingle{} terminator. 
+\begin{DoxyParams}{Parameters}
+{\em casenum} & is the given index of the {\itshape case} block \\
+\hline
+{\em switchbl} & is the root block of the switch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a744acecb2184355d207cae696d82c629}\label{classPrintC_a744acecb2184355d207cae696d82c629}} 
+\index{PrintC@{PrintC}!emitSymbolScope@{emitSymbolScope}}
+\index{emitSymbolScope@{emitSymbolScope}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitSymbolScope()}{emitSymbolScope()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Symbol\+Scope (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit tokens resolving a symbol\textquotesingle{}s scope. 
+
+Emit the elements of the given symbol\textquotesingle{}s namespace path that distinguish it within the current scope. 
+\begin{DoxyParams}{Parameters}
+{\em symbol} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a36b4db5295cfb6eb9a9d93b36b2a5cc8}\label{classPrintC_a36b4db5295cfb6eb9a9d93b36b2a5cc8}} 
+\index{PrintC@{PrintC}!emitTypeDefinition@{emitTypeDefinition}}
+\index{emitTypeDefinition@{emitTypeDefinition}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitTypeDefinition()}{emitTypeDefinition()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Type\+Definition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Emit the definition of the given data-\/type. 
+
+This is currently limited to a \textquotesingle{}struct\textquotesingle{} or \textquotesingle{}enum\textquotesingle{} definitions. The definition is emitted so that name associated with data-\/type object will be associated with the definition (in anything that parses it) 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the given data-\/type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_ae05bed1958ac3b694bdeda2897e6a1ff}\label{classPrintC_ae05bed1958ac3b694bdeda2897e6a1ff}} 
+\index{PrintC@{PrintC}!emitVarDecl@{emitVarDecl}}
+\index{emitVarDecl@{emitVarDecl}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitVarDecl()}{emitVarDecl()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Var\+Decl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Emit a variable declaration. 
+
+This can be part of a full a statement, or just the declaration of a function parameter 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} to be declared \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a2007b92c662e0261310d2bbac3bfe4f1}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a56fd9b353cd343909b2700fe42875885}\label{classPrintC_a56fd9b353cd343909b2700fe42875885}} 
+\index{PrintC@{PrintC}!emitVarDeclStatement@{emitVarDeclStatement}}
+\index{emitVarDeclStatement@{emitVarDeclStatement}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{emitVarDeclStatement()}{emitVarDeclStatement()}}
+{\footnotesize\ttfamily void Print\+C\+::emit\+Var\+Decl\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Emit a variable declaration statement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} to be declared \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_ab8d65e75ede43bc2f14b926bba89d7ae}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_af262dab8c2593fce9a9bceac82a8eb9c}\label{classPrintC_af262dab8c2593fce9a9bceac82a8eb9c}} 
+\index{PrintC@{PrintC}!genericFunctionName@{genericFunctionName}}
+\index{genericFunctionName@{genericFunctionName}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{genericFunctionName()}{genericFunctionName()}}
+{\footnotesize\ttfamily string Print\+C\+::generic\+Function\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Create a generic function name base on the entry point address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the entry point address of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_a9be29ae351e163eeead58aeb5eb5720b}\label{classPrintC_a9be29ae351e163eeead58aeb5eb5720b}} 
+\index{PrintC@{PrintC}!genericTypeName@{genericTypeName}}
+\index{genericTypeName@{genericTypeName}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{genericTypeName()}{genericTypeName()}}
+{\footnotesize\ttfamily string Print\+C\+::generic\+Type\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Generate a generic name for an unnamed data-\/type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the given data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the generated name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_aa393e1cc060bd9a5e385d9dbc490f198}\label{classPrintC_aa393e1cc060bd9a5e385d9dbc490f198}} 
+\index{PrintC@{PrintC}!getHiddenThisSlot@{getHiddenThisSlot}}
+\index{getHiddenThisSlot@{getHiddenThisSlot}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{getHiddenThisSlot()}{getHiddenThisSlot()}}
+{\footnotesize\ttfamily int4 Print\+C\+::get\+Hidden\+This\+Slot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$}]{fc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get position of \char`\"{}this\char`\"{} pointer needing to be hidden. 
+
+For the given C\+A\+LL op, if a \char`\"{}this\char`\"{} pointer exists and needs to be hidden because of the print configuration, return the \mbox{\hyperlink{classVarnode}{Varnode}} slot corresponding to the \char`\"{}this\char`\"{}. Otherwise return -\/1. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given C\+A\+LL \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em fc} & is the function prototype corresponding to the C\+A\+LL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \char`\"{}this\char`\"{} \mbox{\hyperlink{classVarnode}{Varnode}} slot or -\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_a418083c5e374bc1acd6be75bb95971d9}\label{classPrintC_a418083c5e374bc1acd6be75bb95971d9}} 
+\index{PrintC@{PrintC}!opBoolNegate@{opBoolNegate}}
+\index{opBoolNegate@{opBoolNegate}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{opBoolNegate()}{opBoolNegate()}}
+{\footnotesize\ttfamily void Print\+C\+::op\+Bool\+Negate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Print the B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE but check for opportunities to flip the next operator instead 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a443b37c54859a1932712f9d63534c6c7}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a2987b80bf701c0c300d672d920a36162}\label{classPrintC_a2987b80bf701c0c300d672d920a36162}} 
+\index{PrintC@{PrintC}!opCbranch@{opCbranch}}
+\index{opCbranch@{opCbranch}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{opCbranch()}{opCbranch()}}
+{\footnotesize\ttfamily void Print\+C\+::op\+Cbranch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Print the branching condition\+:
+\begin{DoxyItemize}
+\item If it is the first condition, print {\bfseries{if}} 
+\item If there is no block structure, print {\bfseries{goto}} 
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the C\+B\+R\+A\+N\+CH \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a4e48bbb4698901688261bdbc244d0ca4}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a436588b5fb6b79a094c61db84eff9297}\label{classPrintC_a436588b5fb6b79a094c61db84eff9297}} 
+\index{PrintC@{PrintC}!opFunc@{opFunc}}
+\index{opFunc@{opFunc}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{opFunc()}{opFunc()}}
+{\footnotesize\ttfamily void Print\+C\+::op\+Func (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push a {\itshape functional} expression based on the given p-\/code op to the R\+PN stack. 
+
+This is used for expression that require functional syntax, where the name of the function is the name of the operator. The inputs to the p-\/code op form the roots of the comma separated list of {\itshape parameters} within the syntax. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a79a16c5f9ba7ebd9b977295ca109831f}\label{classPrintC_a79a16c5f9ba7ebd9b977295ca109831f}} 
+\index{PrintC@{PrintC}!opHiddenFunc@{opHiddenFunc}}
+\index{opHiddenFunc@{opHiddenFunc}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{opHiddenFunc()}{opHiddenFunc()}}
+{\footnotesize\ttfamily void Print\+C\+::op\+Hidden\+Func (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push the given p-\/code op as a hidden token. 
+
+The syntax represents the given op using a function with one input, where the function name is not printed. The input expression is simply printed without adornment inside the larger expression, with one minor difference. The hidden operator protects against confusing evaluation order between the operators inside and outside the hidden function. If both the inside and outside operators are the same associative token, the hidden token makes sure the inner expression is surrounded with parentheses. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_ab1393c30ad5d4f636caff4c0d032b5cd}\label{classPrintC_ab1393c30ad5d4f636caff4c0d032b5cd}} 
+\index{PrintC@{PrintC}!opPtrsub@{opPtrsub}}
+\index{opPtrsub@{opPtrsub}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{opPtrsub()}{opPtrsub()}}
+{\footnotesize\ttfamily void Print\+C\+::op\+Ptrsub (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+We need to distinguish between the following cases\+:
+\begin{DoxyItemize}
+\item ptr-\/$>$ struct spacebase or array
+\item valueoption on/off (from below)
+\item valueflex yes/no (can we turn valueoption above?)
+\end{DoxyItemize}
+
+Then the printing breaks up into the following table\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        val flex   |   val flex   |   val flex   |   val flex}
+\DoxyCodeLine{        off  yes       off   no        on  yes        on   no}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{struct  }\&( ).name      \&( )-\/>name     ( ).name       ( )-\/>name}
+\DoxyCodeLine{spcbase n/a            \&name          n/a            name}
+\DoxyCodeLine{array   ( )            *( )           ( )[0]         *( )[0]}
+\end{DoxyCode}
+ The \textquotesingle{}\&\textquotesingle{} is dropped if the output type is an array 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the P\+T\+R\+S\+UB \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a9b0fca3c2bc867ff10572c0c42cb8c1e}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a3a890f58a0ef3db04c0920e4351c5227}\label{classPrintC_a3a890f58a0ef3db04c0920e4351c5227}} 
+\index{PrintC@{PrintC}!opSegmentOp@{opSegmentOp}}
+\index{opSegmentOp@{opSegmentOp}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{opSegmentOp()}{opSegmentOp()}}
+{\footnotesize\ttfamily void Print\+C\+::op\+Segment\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+\begin{DoxyItemize}
+\item slot 0 is the spaceid constant
+\item slot 1 is the segment, we could conceivably try to annotate the segment here
+\item slot 2 is the pointer we are really interested in printing
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the S\+E\+G\+M\+E\+N\+T\+OP \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_aec7fd98583552538d0d7c52e70512371}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a58330f960ce5acf171b06bde584b5c4a}\label{classPrintC_a58330f960ce5acf171b06bde584b5c4a}} 
+\index{PrintC@{PrintC}!opTypeCast@{opTypeCast}}
+\index{opTypeCast@{opTypeCast}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{opTypeCast()}{opTypeCast()}}
+{\footnotesize\ttfamily void Print\+C\+::op\+Type\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push the given p-\/code op using type-\/cast syntax to the R\+PN stack. 
+
+The syntax represents the given op using a standard c-\/language cast. The data-\/type being cast to is obtained from the output variable of the op. The input expression is also recursively pushed. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_afc265bd5d43fdffde4a6f74aeae47ac8}\label{classPrintC_afc265bd5d43fdffde4a6f74aeae47ac8}} 
+\index{PrintC@{PrintC}!printCharacterConstant@{printCharacterConstant}}
+\index{printCharacterConstant@{printCharacterConstant}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{printCharacterConstant()}{printCharacterConstant()}}
+{\footnotesize\ttfamily bool Print\+C\+::print\+Character\+Constant (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{char\+Type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Print a quoted (unicode) string at the given address. 
+
+Data for the string is obtained directly from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. The bytes are checked for appropriate unicode encoding and the presence of a terminator. If all these checks pass, the string is emitted. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream to print to \\
+\hline
+{\em addr} & is the address of the string data within the \mbox{\hyperlink{classLoadImage}{Load\+Image}} \\
+\hline
+{\em char\+Type} & is the underlying character data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a proper string was found and printed to the stream 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_a56fdbb426ff8dda0d3dd29901f09ead1}\label{classPrintC_a56fdbb426ff8dda0d3dd29901f09ead1}} 
+\index{PrintC@{PrintC}!printUnicode@{printUnicode}}
+\index{printUnicode@{printUnicode}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{printUnicode()}{printUnicode()}}
+{\footnotesize\ttfamily void Print\+C\+::print\+Unicode (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{onechar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Print a single unicode character as a {\itshape character} {\itshape constant} for the high-\/level language. 
+
+For most languages, this prints the character surrounded by single quotes. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em onechar} & is the unicode code point of the character to print \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_acfc5f922cf2befcad9b38ef1d55c35e3}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a5770972840193a1f118925fbb92fa4b2}\label{classPrintC_a5770972840193a1f118925fbb92fa4b2}} 
+\index{PrintC@{PrintC}!push\_float@{push\_float}}
+\index{push\_float@{push\_float}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{push\_float()}{push\_float()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+\_\+float (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push a constant with a floating-\/point data-\/type to the R\+PN stack. 
+
+The encoding is drawn from the underlying \mbox{\hyperlink{classTranslate}{Translate}} object, and the print properties are checked for formatting overrides. In any case, a format is decided upon, and the constant is pushed as a single token. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the given encoded floating-\/point value \\
+\hline
+{\em sz} & is the size (in bytes) of the encoded value \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_aa85a02ccc13756ecac61350ffd409e80}\label{classPrintC_aa85a02ccc13756ecac61350ffd409e80}} 
+\index{PrintC@{PrintC}!push\_integer@{push\_integer}}
+\index{push\_integer@{push\_integer}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{push\_integer()}{push\_integer()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+\_\+integer (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{sz,  }\item[{bool}]{sign,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push a constant with an integer data-\/type to the R\+PN stack. 
+
+Various checks are made to see if the integer should be printed as an {\itshape equate} symbol or if there is other overriding information about what format it should be printed in. In any case, a final determination of the format is made and the integer is pushed as a single token. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the given integer value \\
+\hline
+{\em sz} & is the size (in bytes) to associate with the integer \\
+\hline
+{\em sign} & is set to {\bfseries{true}} if the integer should be treated as a signed value \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a234b95d9f3fdb8a79eeff02eb4acbca3}\label{classPrintC_a234b95d9f3fdb8a79eeff02eb4acbca3}} 
+\index{PrintC@{PrintC}!pushAnnotation@{pushAnnotation}}
+\index{pushAnnotation@{pushAnnotation}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushAnnotation()}{pushAnnotation()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Annotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push an address which is not in the normal data-\/flow. 
+
+The given \mbox{\hyperlink{classVarnode}{Varnode}} is treated as an address, which may or may not have a symbol name. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the annotation \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} which takes the annotation as input \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a08b82dcc9073756390dbee98a85d9a95}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a735ddb9bb724110dbd9d1e3b5e381b6d}\label{classPrintC_a735ddb9bb724110dbd9d1e3b5e381b6d}} 
+\index{PrintC@{PrintC}!pushBoolConstant@{pushBoolConstant}}
+\index{pushBoolConstant@{pushBoolConstant}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushBoolConstant()}{pushBoolConstant()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Bool\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classTypeBase}{Type\+Base}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push a {\bfseries{true}} or {\bfseries{false}} token to the R\+PN stack. 
+
+A single Atom representing the boolean value is emitted 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the boolean value (non-\/zero for {\bfseries{true}}) \\
+\hline
+{\em ct} & is the data-\/type associated with the value \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_aefb75360529072c8623858fd8c909ca3}\label{classPrintC_aefb75360529072c8623858fd8c909ca3}} 
+\index{PrintC@{PrintC}!pushCharConstant@{pushCharConstant}}
+\index{pushCharConstant@{pushCharConstant}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushCharConstant()}{pushCharConstant()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Char\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classTypeChar}{Type\+Char}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push a single character constant to the R\+PN stack. 
+
+For C, a character constant is usually emitted as the character in single quotes. Handle unicode, wide characters, etc. Characters come in with the compiler\textquotesingle{}s raw encoding. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the constant value \\
+\hline
+{\em ct} & is data-\/type attached to the value \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a3db658db938d08395a6e54d3b1c7a372}\label{classPrintC_a3db658db938d08395a6e54d3b1c7a372}} 
+\index{PrintC@{PrintC}!pushConstant@{pushConstant}}
+\index{pushConstant@{pushConstant}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushConstant()}{pushConstant()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push a constant onto the R\+PN stack. 
+
+The value is ultimately emitted based on its data-\/type and other associated mark-\/up 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the value of the constant \\
+\hline
+{\em ct} & is the data-\/type of the constant \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the constant (optional) \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the constant (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a1ef3fe4265a8f0abdb72f90ce3cb9944}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a70078a4551cf53bafcb44360afd2f027}\label{classPrintC_a70078a4551cf53bafcb44360afd2f027}} 
+\index{PrintC@{PrintC}!pushEnumConstant@{pushEnumConstant}}
+\index{pushEnumConstant@{pushEnumConstant}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushEnumConstant()}{pushEnumConstant()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Enum\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push an enumerated value to the R\+PN stack. 
+
+Handle cases where the value is built out of multiple named elements of the enumeration or where the value cannot be expressed using named elements 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the enumerated value being pushed \\
+\hline
+{\em ct} & is the enumerated data-\/type attached to the value \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_ae236127c4e6ea51836f881210aa59ec5}\label{classPrintC_ae236127c4e6ea51836f881210aa59ec5}} 
+\index{PrintC@{PrintC}!pushEquate@{pushEquate}}
+\index{pushEquate@{pushEquate}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushEquate()}{pushEquate()}}
+{\footnotesize\ttfamily bool Print\+C\+::push\+Equate (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} $\ast$}]{sym,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push a constant marked up by and \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} onto the R\+PN stack. 
+
+The equate may substitute a name or force a conversion for the constant 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the value of the constant \\
+\hline
+{\em sz} & is the number of bytes to use for the encoding \\
+\hline
+{\em sym} & is the \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} that marks up the constant \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the constant (optional) \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the constant (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_ad90b2dc069614a6ad24ca8d73345ab74}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_aaa8e530589a3d446db8f76b9a211f0fa}\label{classPrintC_aaa8e530589a3d446db8f76b9a211f0fa}} 
+\index{PrintC@{PrintC}!pushMismatchSymbol@{pushMismatchSymbol}}
+\index{pushMismatchSymbol@{pushMismatchSymbol}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushMismatchSymbol()}{pushMismatchSymbol()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Mismatch\+Symbol (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push an identifier for a variable that mismatches with its \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+This happens when a \mbox{\hyperlink{classVarnode}{Varnode}} overlaps, but is not contained by a \mbox{\hyperlink{classSymbol}{Symbol}}. This most commonly happens when the size of a \mbox{\hyperlink{classSymbol}{Symbol}} is unknown 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the overlapped symbol \\
+\hline
+{\em off} & is the byte offset of the variable relative to the symbol \\
+\hline
+{\em sz} & is the size of the variable in bytes \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} representing the variable \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a934e29f1d48b8b1c1a80218018f9e6a3}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a0e8ab66b834858fbace8fd20357b5a63}\label{classPrintC_a0e8ab66b834858fbace8fd20357b5a63}} 
+\index{PrintC@{PrintC}!pushPartialSymbol@{pushPartialSymbol}}
+\index{pushPartialSymbol@{pushPartialSymbol}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushPartialSymbol()}{pushPartialSymbol()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Partial\+Symbol (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push a variable that represents only part of a symbol onto the R\+PN stack. 
+
+Generally {\itshape member} syntax specifying a field within a structure gets emitted. 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the root \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em off} & is the byte offset, within the \mbox{\hyperlink{classSymbol}{Symbol}}, of the partial variable \\
+\hline
+{\em sz} & is the number of bytes in the partial variable \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the partial value \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associate with the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em outtype} & is the data-\/type expected by expression using the partial variable \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a918310a27fdef5cde48b3fe6e4c7999f}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_aae46702bfe38061e0c0563f7a8a20d82}\label{classPrintC_aae46702bfe38061e0c0563f7a8a20d82}} 
+\index{PrintC@{PrintC}!pushPrototypeInputs@{pushPrototypeInputs}}
+\index{pushPrototypeInputs@{pushPrototypeInputs}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushPrototypeInputs()}{pushPrototypeInputs()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Prototype\+Inputs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$}]{proto }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push input parameters. 
+
+Push the comma separated list of data-\/type declarations onto the R\+PN stack as part of emitting a given function prototype 
+\begin{DoxyParams}{Parameters}
+{\em proto} & is the given function prototype \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_ac3096b61ae4a7d0e78200fa946c54a95}\label{classPrintC_ac3096b61ae4a7d0e78200fa946c54a95}} 
+\index{PrintC@{PrintC}!pushPtrCharConstant@{pushPtrCharConstant}}
+\index{pushPtrCharConstant@{pushPtrCharConstant}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushPtrCharConstant()}{pushPtrCharConstant()}}
+{\footnotesize\ttfamily bool Print\+C\+::push\+Ptr\+Char\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Attempt to push a quoted string representing a given constant pointer onto the R\+PN stack. 
+
+Check if the constant pointer refers to character data that can be emitted as a quoted string. If so push the string, if not return {\bfseries{false}} to indicate a token was not pushed 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the value of the given constant pointer \\
+\hline
+{\em ct} & is the pointer data-\/type attached to the value \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a quoted string was pushed to the R\+PN stack 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_a60411f32d6cb0b986eb1f1f39296a529}\label{classPrintC_a60411f32d6cb0b986eb1f1f39296a529}} 
+\index{PrintC@{PrintC}!pushPtrCodeConstant@{pushPtrCodeConstant}}
+\index{pushPtrCodeConstant@{pushPtrCodeConstant}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushPtrCodeConstant()}{pushPtrCodeConstant()}}
+{\footnotesize\ttfamily bool Print\+C\+::push\+Ptr\+Code\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Attempt to push a function name representing a constant pointer onto the R\+PN stack. 
+
+Given the pointer value, try to look up the function at that address and push the function\textquotesingle{}s name as a single Atom. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the given constant pointer value \\
+\hline
+{\em ct} & is the pointer data-\/type attached to the value \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the value \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a name was pushed to the R\+PN stack, return {\bfseries{false}} otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintC_a22e493008d4ba06482b42fe1875be235}\label{classPrintC_a22e493008d4ba06482b42fe1875be235}} 
+\index{PrintC@{PrintC}!pushSymbol@{pushSymbol}}
+\index{pushSymbol@{pushSymbol}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushSymbol()}{pushSymbol()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Symbol (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push a specific \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the \mbox{\hyperlink{classSymbol}{Symbol}} value \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a481c41c176f1b5edea4e984997243f43}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a3a87936f8d64b5c5f98c462e6d923bf7}\label{classPrintC_a3a87936f8d64b5c5f98c462e6d923bf7}} 
+\index{PrintC@{PrintC}!pushSymbolScope@{pushSymbolScope}}
+\index{pushSymbolScope@{pushSymbolScope}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushSymbolScope()}{pushSymbolScope()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Symbol\+Scope (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{symbol }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push tokens resolving a symbol\textquotesingle{}s scope. 
+
+Calculate what elements of a given symbol\textquotesingle{}s namespace path are necessary to distinguish it within the current scope. Then print these elements. 
+\begin{DoxyParams}{Parameters}
+{\em symbol} & is the given symbol \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintC_a210e44709553449b4d03596f137dfb10}\label{classPrintC_a210e44709553449b4d03596f137dfb10}} 
+\index{PrintC@{PrintC}!pushType@{pushType}}
+\index{pushType@{pushType}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushType()}{pushType()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push a data-\/type name onto the R\+PN expression stack. 
+
+The data-\/type is generally emitted as if for a cast. 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the data-\/type to push \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a4bd65e5a27a60ab1b5590673c6396a4f}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a45d0e43f9f4e91353db9aeb4c053deaa}\label{classPrintC_a45d0e43f9f4e91353db9aeb4c053deaa}} 
+\index{PrintC@{PrintC}!pushTypeEnd@{pushTypeEnd}}
+\index{pushTypeEnd@{pushTypeEnd}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushTypeEnd()}{pushTypeEnd()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Type\+End (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push the tail ends of a data-\/type declaration onto the R\+PN stack. 
+
+Because the front-\/ends were pushed on base-\/type -\/$>$ final-\/modifier, the tail-\/ends are pushed on final-\/modifier -\/$>$ base-\/type. The tail-\/ends amount to
+\begin{DoxyItemize}
+\item array subscripts . \mbox{[} \# \mbox{]} and
+\item function parameters . ( paramlist )
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the data-\/type being pushed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPrintJava_a64718e3b689e9e895f4c6124f8538075}{Print\+Java}}.
+
+\mbox{\Hypertarget{classPrintC_a0b96904bf7b1ecfb6b254c51707ae21a}\label{classPrintC_a0b96904bf7b1ecfb6b254c51707ae21a}} 
+\index{PrintC@{PrintC}!pushTypeStart@{pushTypeStart}}
+\index{pushTypeStart@{pushTypeStart}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushTypeStart()}{pushTypeStart()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Type\+Start (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{bool}]{noident }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push part of a data-\/type declaration onto the R\+PN stack, up to the identifier. 
+
+Store off array sizes for printing after the identifier 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the data-\/type to push \\
+\hline
+{\em noident} & is {\bfseries{true}} if an identifier will not be pushed as part of the declaration \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPrintJava_af82e5ca143891ea052778b1ed234d3e0}{Print\+Java}}.
+
+\mbox{\Hypertarget{classPrintC_a5d9f2db7f218e2e994b741940155db52}\label{classPrintC_a5d9f2db7f218e2e994b741940155db52}} 
+\index{PrintC@{PrintC}!pushUnnamedLocation@{pushUnnamedLocation}}
+\index{pushUnnamedLocation@{pushUnnamedLocation}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{pushUnnamedLocation()}{pushUnnamedLocation()}}
+{\footnotesize\ttfamily void Print\+C\+::push\+Unnamed\+Location (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Push an address as a substitute for a \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. 
+
+If there is no \mbox{\hyperlink{classSymbol}{Symbol}} or other name source for an explicit variable, this method is used to print something to represent the variable based on its storage address. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the storage address \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} representing the variable (if present) \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the variable \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_a16ffa214e32d7815a1350752a0113796}{Print\+Language}}.
+
+\mbox{\Hypertarget{classPrintC_a8798b0408fa3386c91f9df92f63cbd15}\label{classPrintC_a8798b0408fa3386c91f9df92f63cbd15}} 
+\index{PrintC@{PrintC}!setCommentStyle@{setCommentStyle}}
+\index{setCommentStyle@{setCommentStyle}!PrintC@{PrintC}}
+\doxysubsubsection{\texorpdfstring{setCommentStyle()}{setCommentStyle()}}
+{\footnotesize\ttfamily void Print\+C\+::set\+Comment\+Style (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the way comments are displayed in decompiler output. 
+
+This method can either be provided a formal name or a {\itshape sample} of the initial delimiter, then it will choose from among the schemes it knows 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the configuration description \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPrintLanguage_aa9f7b4fbc646531cfe3f9ad571f04ab1}{Print\+Language}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{printc_8hh}{printc.\+hh}}\item 
+printc.\+cc\end{DoxyCompactItemize}

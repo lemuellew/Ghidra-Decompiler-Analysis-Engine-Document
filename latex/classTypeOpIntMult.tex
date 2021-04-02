@@ -1,0 +1,101 @@
+\hypertarget{classTypeOpIntMult}{}\doxysection{Type\+Op\+Int\+Mult Class Reference}
+\label{classTypeOpIntMult}\index{TypeOpIntMult@{TypeOpIntMult}}
+
+
+Information about the I\+N\+T\+\_\+\+M\+U\+LT op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Int\+Mult\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classTypeOpIntMult__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Int\+Mult\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpIntMult__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpIntMult_af60bccdb3e89c94b5f435e0509d4bb51}\label{classTypeOpIntMult_af60bccdb3e89c94b5f435e0509d4bb51}} 
+\mbox{\hyperlink{classTypeOpIntMult_af60bccdb3e89c94b5f435e0509d4bb51}{Type\+Op\+Int\+Mult}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpIntMult_a17c0c9d7d7f6adae6bed734b888876ec}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpIntMult_abb986ab298da31068ac30163e6755e18}{get\+Output\+Token}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$cast\+Strategy) const
+\begin{DoxyCompactList}\small\item\em Find the data-\/type of the output that would be assigned by a compiler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the I\+N\+T\+\_\+\+M\+U\+LT op-\/code. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpIntMult_abb986ab298da31068ac30163e6755e18}\label{classTypeOpIntMult_abb986ab298da31068ac30163e6755e18}} 
+\index{TypeOpIntMult@{TypeOpIntMult}!getOutputToken@{getOutputToken}}
+\index{getOutputToken@{getOutputToken}!TypeOpIntMult@{TypeOpIntMult}}
+\doxysubsubsection{\texorpdfstring{getOutputToken()}{getOutputToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Int\+Mult\+::get\+Output\+Token (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$}]{cast\+Strategy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the data-\/type of the output that would be assigned by a compiler. 
+
+Calculate the actual data-\/type of the output for a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as would be assigned by a C compiler parsing a grammar containing this op. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em cast\+Strategy} & is the current casting strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a7150ac93bb03a993735c829deb5237e7}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpIntMult_a17c0c9d7d7f6adae6bed734b888876ec}\label{classTypeOpIntMult_a17c0c9d7d7f6adae6bed734b888876ec}} 
+\index{TypeOpIntMult@{TypeOpIntMult}!push@{push}}
+\index{push@{push}!TypeOpIntMult@{TypeOpIntMult}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Int\+Mult\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

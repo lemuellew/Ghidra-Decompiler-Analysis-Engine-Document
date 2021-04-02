@@ -1,0 +1,645 @@
+\hypertarget{classEmitNoXml}{}\doxysection{Emit\+No\+Xml Class Reference}
+\label{classEmitNoXml}\index{EmitNoXml@{EmitNoXml}}
+
+
+A trivial emitter that outputs syntax straight to the stream.  
+
+
+
+
+{\ttfamily \#include $<$prettyprint.\+hh$>$}
+
+
+
+Inheritance diagram for Emit\+No\+Xml\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classEmitNoXml__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Emit\+No\+Xml\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classEmitNoXml__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_ac2cedec116ad98013fe4d7c00b230793}{begin\+Document}} (void)
+\begin{DoxyCompactList}\small\item\em Begin a whole document of output. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a453ae349735a6e890eb8ccf3bce4a965}{end\+Document}} (int4 id)
+\begin{DoxyCompactList}\small\item\em End a whole document of output. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_ad06515c4f61b81ee45404871780e17a0}{begin\+Function}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Begin a whole declaration and body of a function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a1d592e201a320b55d3924aa676d0b1b6}{end\+Function}} (int4 id)
+\begin{DoxyCompactList}\small\item\em End a whole declaration and body of a function. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_ab2c5370c53fdbba7630f10249d933355}{begin\+Block}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Begin a control-\/flow element. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_ad9520b535d33c3501331078dbb97351b}{end\+Block}} (int4 id)
+\begin{DoxyCompactList}\small\item\em End a control-\/flow element. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a3b6ea3b42908f2d7e6e18ece69d24273}{tag\+Line}} (int4 indent)
+\begin{DoxyCompactList}\small\item\em Force a line break and indent level. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_a6f9c0d9a1be5e530a503fbc1e7b79687}{begin\+Return\+Type}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Begin a return type declaration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a6183514c884bc929fbcde10449db6096}{end\+Return\+Type}} (int4 id)
+\begin{DoxyCompactList}\small\item\em End a return type declaration. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_a5d3a356f62dc06efc46b35fc969323ae}{begin\+Var\+Decl}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)
+\begin{DoxyCompactList}\small\item\em Begin a variable declaration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_ae6d306b10be8c8dfc62cea71ab2272b9}{end\+Var\+Decl}} (int4 id)
+\begin{DoxyCompactList}\small\item\em End a variable declaration. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_a7c1115232ea297625c223fa6237f420f}{begin\+Statement}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Begin a source code statement. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a8b7a4a5484ac357c962cb427c760def6}{end\+Statement}} (int4 id)
+\begin{DoxyCompactList}\small\item\em End a source code statement. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_a3ae360f835420fdb0972a9d883012252}{begin\+Func\+Proto}} (void)
+\begin{DoxyCompactList}\small\item\em Begin a function prototype declaration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_ae874ec5e673fd74f9770f90212a4e451}{end\+Func\+Proto}} (int4 id)
+\begin{DoxyCompactList}\small\item\em End a function prototype declaration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a478e999ba828155338487ba81e97a2be}{tag\+Variable}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a variable token. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a419f21215356676e31f3a9002377f09f}{tag\+Op}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit an operation token. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_aad2220b0821197edc142a17e031e1b80}{tag\+Func\+Name}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl, const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Emit a function identifier. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a9060c9d3fb766c230300186f8eb9b6e6}{tag\+Type}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl, const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Emit a data-\/type identifier. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_aa7afe6c48fea19d04d718305d909716f}{tag\+Field}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl, const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, int4 off)
+\begin{DoxyCompactList}\small\item\em Emit an identifier for a field within a structured data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a740eebfd037ace753caa1b98d23f3899}{tag\+Comment}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl, const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb off)
+\begin{DoxyCompactList}\small\item\em Emit a comment string as part of the generated source code. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a9284368eb73de667624814d4d879dfa9}{tag\+Label}} (const char $\ast$ptr, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl, const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb off)
+\begin{DoxyCompactList}\small\item\em Emit a code label identifier. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a86cb933b199d3d3cd8823087c1fc1404}{print}} (const char $\ast$str, \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}} hl=\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864facf637f33b975ebd31bda638a66d5b052}{no\+\_\+color}})
+\begin{DoxyCompactList}\small\item\em Emit other (more unusual) syntax as part of source code generation. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classEmitNoXml_a9a41693087659b738ccdeadaa16d886b}{open\+Paren}} (char o, int4 id=0)
+\begin{DoxyCompactList}\small\item\em Emit an open parenthesis. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmitNoXml_a7554f4a6b9b246c34a3c4febd99c740c}{close\+Paren}} (char c, int4 id)
+\begin{DoxyCompactList}\small\item\em Emit a close parenthesis. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classEmitNoXml_a9344bd2b72587387d09737738b5fe05f}{emits\+Xml}} (void) const
+\begin{DoxyCompactList}\small\item\em Determine if {\bfseries{this}} is an X\+ML markup emitter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A trivial emitter that outputs syntax straight to the stream. 
+
+This emitter does neither pretty printing nor X\+ML markup. It dumps any tokens straight to the final output stream. It can be used as the low-\/level back-\/end for \mbox{\hyperlink{classEmitPrettyPrint}{Emit\+Pretty\+Print}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmitNoXml_ab2c5370c53fdbba7630f10249d933355}\label{classEmitNoXml_ab2c5370c53fdbba7630f10249d933355}} 
+\index{EmitNoXml@{EmitNoXml}!beginBlock@{beginBlock}}
+\index{beginBlock@{beginBlock}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{beginBlock()}{beginBlock()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::begin\+Block (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Begin a control-\/flow element. 
+
+Inform the emitter that a new control-\/flow section is starting. This is a source code unit usually surrounded with curly braces \textquotesingle{}\{\textquotesingle{} and \textquotesingle{}\}\textquotesingle{}. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the block structure object associated with the section \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the section 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_ad6cc09d4dfde00428eae8d556cd0fe72}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_ac2cedec116ad98013fe4d7c00b230793}\label{classEmitNoXml_ac2cedec116ad98013fe4d7c00b230793}} 
+\index{EmitNoXml@{EmitNoXml}!beginDocument@{beginDocument}}
+\index{beginDocument@{beginDocument}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{beginDocument()}{beginDocument()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::begin\+Document (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Begin a whole document of output. 
+
+Inform the emitter that generation of the source code document has begun \begin{DoxyReturn}{Returns}
+an id associated with the document 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a9a4891144e0743f2b10faa32e6d34181}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a3ae360f835420fdb0972a9d883012252}\label{classEmitNoXml_a3ae360f835420fdb0972a9d883012252}} 
+\index{EmitNoXml@{EmitNoXml}!beginFuncProto@{beginFuncProto}}
+\index{beginFuncProto@{beginFuncProto}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{beginFuncProto()}{beginFuncProto()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::begin\+Func\+Proto (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Begin a function prototype declaration. 
+
+Inform the emitter that a function prototype is starting. \begin{DoxyReturn}{Returns}
+an id associated with the prototype 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_acaf7a29dd1eb427f20e99dccf3581f59}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_ad06515c4f61b81ee45404871780e17a0}\label{classEmitNoXml_ad06515c4f61b81ee45404871780e17a0}} 
+\index{EmitNoXml@{EmitNoXml}!beginFunction@{beginFunction}}
+\index{beginFunction@{beginFunction}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{beginFunction()}{beginFunction()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::begin\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Begin a whole declaration and body of a function. 
+
+Inform the emitter that generation of a function body has begun \begin{DoxyReturn}{Returns}
+an id associated with the function body 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_acff5f33b9ab6a4a036688160c98c0aa9}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a6f9c0d9a1be5e530a503fbc1e7b79687}\label{classEmitNoXml_a6f9c0d9a1be5e530a503fbc1e7b79687}} 
+\index{EmitNoXml@{EmitNoXml}!beginReturnType@{beginReturnType}}
+\index{beginReturnType@{beginReturnType}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{beginReturnType()}{beginReturnType()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::begin\+Return\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Begin a return type declaration. 
+
+Inform the emitter that generation of a function\textquotesingle{}s return type is starting. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & (if non-\/null) is the storage location for the return value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the return type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_ac0216ea06080892db047c720a38ba304}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a7c1115232ea297625c223fa6237f420f}\label{classEmitNoXml_a7c1115232ea297625c223fa6237f420f}} 
+\index{EmitNoXml@{EmitNoXml}!beginStatement@{beginStatement}}
+\index{beginStatement@{beginStatement}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{beginStatement()}{beginStatement()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::begin\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Begin a source code statement. 
+
+Inform the emitter that a source code statement is beginning. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the root p-\/code operation of the statement \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the statement 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a597d30a7231fa323c2bdef9afc8160aa}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a5d3a356f62dc06efc46b35fc969323ae}\label{classEmitNoXml_a5d3a356f62dc06efc46b35fc969323ae}} 
+\index{EmitNoXml@{EmitNoXml}!beginVarDecl@{beginVarDecl}}
+\index{beginVarDecl@{beginVarDecl}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{beginVarDecl()}{beginVarDecl()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::begin\+Var\+Decl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Begin a variable declaration. 
+
+Inform the emitter that a variable declaration has started. 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the symbol being declared \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the declaration 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a039212bc4a27cf56f1c70acd4d4623b6}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a7554f4a6b9b246c34a3c4febd99c740c}\label{classEmitNoXml_a7554f4a6b9b246c34a3c4febd99c740c}} 
+\index{EmitNoXml@{EmitNoXml}!closeParen@{closeParen}}
+\index{closeParen@{closeParen}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{closeParen()}{closeParen()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::close\+Paren (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit a close parenthesis. 
+
+This method emits the parenthesis character itself and ends the printing unit that was started by the matching open parenthesis. 
+\begin{DoxyParams}{Parameters}
+{\em c} & is the close parenthesis character to emit \\
+\hline
+{\em id} & is the id associated with the matching open parenthesis (as returned by open\+Paren) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a3442a3f23a65cfcf073d57cf64733493}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a9344bd2b72587387d09737738b5fe05f}\label{classEmitNoXml_a9344bd2b72587387d09737738b5fe05f}} 
+\index{EmitNoXml@{EmitNoXml}!emitsXml@{emitsXml}}
+\index{emitsXml@{emitsXml}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{emitsXml()}{emitsXml()}}
+{\footnotesize\ttfamily virtual bool Emit\+No\+Xml\+::emits\+Xml (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Determine if {\bfseries{this}} is an X\+ML markup emitter. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} produces an X\+ML markup of its emitted source code 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_ad73a5d828fc7cd70f1e9ec1e6afad1fa}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_ad9520b535d33c3501331078dbb97351b}\label{classEmitNoXml_ad9520b535d33c3501331078dbb97351b}} 
+\index{EmitNoXml@{EmitNoXml}!endBlock@{endBlock}}
+\index{endBlock@{endBlock}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{endBlock()}{endBlock()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::end\+Block (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+End a control-\/flow element. 
+
+Inform the emitter that a control-\/flow section is ending. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the section (as returned by begin\+Block) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a935b2c6ff63356ee30fa050c2b301bde}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a453ae349735a6e890eb8ccf3bce4a965}\label{classEmitNoXml_a453ae349735a6e890eb8ccf3bce4a965}} 
+\index{EmitNoXml@{EmitNoXml}!endDocument@{endDocument}}
+\index{endDocument@{endDocument}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{endDocument()}{endDocument()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::end\+Document (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+End a whole document of output. 
+
+Inform the emitter that generation of the source code document is finished 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the document (as returned by begin\+Document) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a8f2e7a4f2cd9fee90bed1eb966414424}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_ae874ec5e673fd74f9770f90212a4e451}\label{classEmitNoXml_ae874ec5e673fd74f9770f90212a4e451}} 
+\index{EmitNoXml@{EmitNoXml}!endFuncProto@{endFuncProto}}
+\index{endFuncProto@{endFuncProto}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{endFuncProto()}{endFuncProto()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::end\+Func\+Proto (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+End a function prototype declaration. 
+
+Inform the emitter that a function prototype is ending. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the prototype (as returned by begin\+Func\+Proto) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a0c1fad40b58e0a977f69ed80fb6f3bc8}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a1d592e201a320b55d3924aa676d0b1b6}\label{classEmitNoXml_a1d592e201a320b55d3924aa676d0b1b6}} 
+\index{EmitNoXml@{EmitNoXml}!endFunction@{endFunction}}
+\index{endFunction@{endFunction}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{endFunction()}{endFunction()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::end\+Function (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+End a whole declaration and body of a function. 
+
+Inform the emitter that generation of a function body has ended 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the function body (as returned by begin\+Function) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_ac1cfefc98a7cfbfa0c479cac8a1e2a71}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a6183514c884bc929fbcde10449db6096}\label{classEmitNoXml_a6183514c884bc929fbcde10449db6096}} 
+\index{EmitNoXml@{EmitNoXml}!endReturnType@{endReturnType}}
+\index{endReturnType@{endReturnType}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{endReturnType()}{endReturnType()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::end\+Return\+Type (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+End a return type declaration. 
+
+Inform the emitter that generation of a function\textquotesingle{}s return type is ending. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the return type (as returned by begin\+Return\+Type) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_af7f778b3b2111e793d6ffd73017209f9}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a8b7a4a5484ac357c962cb427c760def6}\label{classEmitNoXml_a8b7a4a5484ac357c962cb427c760def6}} 
+\index{EmitNoXml@{EmitNoXml}!endStatement@{endStatement}}
+\index{endStatement@{endStatement}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{endStatement()}{endStatement()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::end\+Statement (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+End a source code statement. 
+
+Inform the emitter that a source code statement is ending. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the statement (as returned by begin\+Statement) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a179b45bd8929a464f8fbc622de96f399}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_ae6d306b10be8c8dfc62cea71ab2272b9}\label{classEmitNoXml_ae6d306b10be8c8dfc62cea71ab2272b9}} 
+\index{EmitNoXml@{EmitNoXml}!endVarDecl@{endVarDecl}}
+\index{endVarDecl@{endVarDecl}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{endVarDecl()}{endVarDecl()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::end\+Var\+Decl (\begin{DoxyParamCaption}\item[{int4}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+End a variable declaration. 
+
+Inform the emitter that a variable declaration has ended. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id associated with the declaration (as returned by begin\+Var\+Decl) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a8700bdf9d4e073ae392ef722f53ceb45}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a9a41693087659b738ccdeadaa16d886b}\label{classEmitNoXml_a9a41693087659b738ccdeadaa16d886b}} 
+\index{EmitNoXml@{EmitNoXml}!openParen@{openParen}}
+\index{openParen@{openParen}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{openParen()}{openParen()}}
+{\footnotesize\ttfamily virtual int4 Emit\+No\+Xml\+::open\+Paren (\begin{DoxyParamCaption}\item[{char}]{o,  }\item[{int4}]{id = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit an open parenthesis. 
+
+This method emits the parenthesis character itself and also starts a printing unit of the source code being surrounded by the parentheses. 
+\begin{DoxyParams}{Parameters}
+{\em o} & is the open parenthesis character to emit \\
+\hline
+{\em id} & is an id to associate with the parenthesis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an id associated with the parenthesis 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a4f7e781436dde8754ae5f52c9c5edc47}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a86cb933b199d3d3cd8823087c1fc1404}\label{classEmitNoXml_a86cb933b199d3d3cd8823087c1fc1404}} 
+\index{EmitNoXml@{EmitNoXml}!print@{print}}
+\index{print@{print}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl = {\ttfamily \mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864facf637f33b975ebd31bda638a66d5b052}{no\+\_\+color}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit other (more unusual) syntax as part of source code generation. 
+
+This method is used to emit syntax not covered by the other methods, such as spaces, semi-\/colons, braces, and other punctuation. 
+\begin{DoxyParams}{Parameters}
+{\em str} & is the character data of the syntax being emitted \\
+\hline
+{\em hl} & indicates how the syntax should be highlighted \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a287234536199377d46179762127875ac}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a740eebfd037ace753caa1b98d23f3899}\label{classEmitNoXml_a740eebfd037ace753caa1b98d23f3899}} 
+\index{EmitNoXml@{EmitNoXml}!tagComment@{tagComment}}
+\index{tagComment@{tagComment}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagComment()}{tagComment()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Comment (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl,  }\item[{const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit a comment string as part of the generated source code. 
+
+Individual comments can be broken up and emitted using multiple calls to this method, but ultimately the comment delimiters and the body of the comment are both emitted with this method, which may provide addition markup. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the comment \\
+\hline
+{\em hl} & indicates how the comment should be highlighted \\
+\hline
+{\em spc} & is the address space of the address where the comment is attached \\
+\hline
+{\em off} & is the offset of the address where the comment is attached \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a428017b98649ae577c5cde259af566eb}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_aa7afe6c48fea19d04d718305d909716f}\label{classEmitNoXml_aa7afe6c48fea19d04d718305d909716f}} 
+\index{EmitNoXml@{EmitNoXml}!tagField@{tagField}}
+\index{tagField@{tagField}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagField()}{tagField()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Field (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl,  }\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{int4}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit an identifier for a field within a structured data-\/type. 
+
+A string representing an individual component of a structured data-\/type is emitted, possibly with additional markup. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em hl} & indicates how the identifier should be highlighted \\
+\hline
+{\em ct} & is the data-\/type associated with the field \\
+\hline
+{\em o} & is the (byte) offset of the field within its structured data-\/type \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a2494b76d6f02bd0848af3f72b8def6e3}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_aad2220b0821197edc142a17e031e1b80}\label{classEmitNoXml_aad2220b0821197edc142a17e031e1b80}} 
+\index{EmitNoXml@{EmitNoXml}!tagFuncName@{tagFuncName}}
+\index{tagFuncName@{tagFuncName}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagFuncName()}{tagFuncName()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Func\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl,  }\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit a function identifier. 
+
+An identifier string representing the symbol name of the function is emitted, possible with additional markup. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em hl} & indicates how the identifier should be highlighted \\
+\hline
+{\em fd} & is the function \\
+\hline
+{\em op} & is the C\+A\+LL operation associated within the syntax tree or null for a declaration \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a735e928e65b3dbd028803b6a46262732}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a9284368eb73de667624814d4d879dfa9}\label{classEmitNoXml_a9284368eb73de667624814d4d879dfa9}} 
+\index{EmitNoXml@{EmitNoXml}!tagLabel@{tagLabel}}
+\index{tagLabel@{tagLabel}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagLabel()}{tagLabel()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Label (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl,  }\item[{const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit a code label identifier. 
+
+A string describing a control-\/flow destination, as appropriate for the source language is output, possibly with additional markup. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data of the label \\
+\hline
+{\em hl} & indicates how the label should be highlighted \\
+\hline
+{\em spc} & is the address space of the code address being labeled \\
+\hline
+{\em off} & is the offset of the code address being labeled \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a647841bd4102de3af8ca0f8dd734ac6b}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a3b6ea3b42908f2d7e6e18ece69d24273}\label{classEmitNoXml_a3b6ea3b42908f2d7e6e18ece69d24273}} 
+\index{EmitNoXml@{EmitNoXml}!tagLine@{tagLine}}
+\index{tagLine@{tagLine}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagLine()}{tagLine()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Line (\begin{DoxyParamCaption}\item[{int4}]{indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Force a line break and indent level. 
+
+Tell the emitter that a new line is desired at a specific indent level. The indent level is overridden only for the line, then it returns to its previous value. 
+\begin{DoxyParams}{Parameters}
+{\em indent} & is the desired indent level for the new line \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_afb2b27a85e75136cf66d143d2dd502ae}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a419f21215356676e31f3a9002377f09f}\label{classEmitNoXml_a419f21215356676e31f3a9002377f09f}} 
+\index{EmitNoXml@{EmitNoXml}!tagOp@{tagOp}}
+\index{tagOp@{tagOp}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagOp()}{tagOp()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Op (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit an operation token. 
+
+The string representing the operation as appropriate for the source language is emitted, possibly with additional markup. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the emitted representation \\
+\hline
+{\em hl} & indicates how the token should be highlighted \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} object associated with the operation with the syntax tree \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a66f5a32fa62561f08d29e725d20c0596}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a9060c9d3fb766c230300186f8eb9b6e6}\label{classEmitNoXml_a9060c9d3fb766c230300186f8eb9b6e6}} 
+\index{EmitNoXml@{EmitNoXml}!tagType@{tagType}}
+\index{tagType@{tagType}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagType()}{tagType()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl,  }\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit a data-\/type identifier. 
+
+A string representing the name of a data-\/type, as appropriate for the source language is emitted, possibly with additional markup. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em hl} & indicates how the identifier should be highlighted \\
+\hline
+{\em ct} & is the data-\/type description object \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_a30a2ad299f5d55cde6ea94b2589c4dd7}{Emit\+Xml}}.
+
+\mbox{\Hypertarget{classEmitNoXml_a478e999ba828155338487ba81e97a2be}\label{classEmitNoXml_a478e999ba828155338487ba81e97a2be}} 
+\index{EmitNoXml@{EmitNoXml}!tagVariable@{tagVariable}}
+\index{tagVariable@{tagVariable}!EmitNoXml@{EmitNoXml}}
+\doxysubsubsection{\texorpdfstring{tagVariable()}{tagVariable()}}
+{\footnotesize\ttfamily virtual void Emit\+No\+Xml\+::tag\+Variable (\begin{DoxyParamCaption}\item[{const char $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{syntax\+\_\+highlight}}}]{hl,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit a variable token. 
+
+An identifier string representing the variable is output, possibly with additional markup. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the character data for the identifier \\
+\hline
+{\em hl} & indicates how the identifier should be highlighted \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} representing the variable within the syntax tree \\
+\hline
+{\em op} & is a p-\/code operation related to the use of the variable (may be null) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classEmitXml_aeac0d9e1327c3aa1bd2e3fe42e3a1824}{Emit\+Xml}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{prettyprint_8hh}{prettyprint.\+hh}}\end{DoxyCompactItemize}

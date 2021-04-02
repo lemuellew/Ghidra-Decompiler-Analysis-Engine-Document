@@ -1,0 +1,81 @@
+\hypertarget{classSleighSymbol}{}\doxysection{Sleigh\+Symbol Class Reference}
+\label{classSleighSymbol}\index{SleighSymbol@{SleighSymbol}}
+
+
+Inheritance diagram for Sleigh\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSleighSymbol__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighSymbol_aba70f7f332fd63488c5ec4bd7807db41}\label{classSleighSymbol_aba70f7f332fd63488c5ec4bd7807db41}} 
+enum {\bfseries symbol\+\_\+type} \{ \newline
+{\bfseries space\+\_\+symbol}, 
+{\bfseries token\+\_\+symbol}, 
+{\bfseries userop\+\_\+symbol}, 
+{\bfseries value\+\_\+symbol}, 
+\newline
+{\bfseries valuemap\+\_\+symbol}, 
+{\bfseries name\+\_\+symbol}, 
+{\bfseries varnode\+\_\+symbol}, 
+{\bfseries varnodelist\+\_\+symbol}, 
+\newline
+{\bfseries operand\+\_\+symbol}, 
+{\bfseries start\+\_\+symbol}, 
+{\bfseries end\+\_\+symbol}, 
+{\bfseries subtable\+\_\+symbol}, 
+\newline
+{\bfseries macro\+\_\+symbol}, 
+{\bfseries section\+\_\+symbol}, 
+{\bfseries bitrange\+\_\+symbol}, 
+{\bfseries context\+\_\+symbol}, 
+\newline
+{\bfseries epsilon\+\_\+symbol}, 
+{\bfseries label\+\_\+symbol}, 
+{\bfseries dummy\+\_\+symbol}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighSymbol_ad4f8681f0822c11b46633a7202ebd0e9}\label{classSleighSymbol_ad4f8681f0822c11b46633a7202ebd0e9}} 
+{\bfseries Sleigh\+Symbol} (const string \&nm)
+\item 
+\mbox{\Hypertarget{classSleighSymbol_a0a833d55302c4e1cfd77a7726b72a04a}\label{classSleighSymbol_a0a833d55302c4e1cfd77a7726b72a04a}} 
+const string \& {\bfseries get\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classSleighSymbol_a48557f9371e94c4940c682720e9c81c1}\label{classSleighSymbol_a48557f9371e94c4940c682720e9c81c1}} 
+uintm {\bfseries get\+Id} (void) const
+\item 
+\mbox{\Hypertarget{classSleighSymbol_a2f6e5903e461084c29f95ea024883950}\label{classSleighSymbol_a2f6e5903e461084c29f95ea024883950}} 
+virtual symbol\+\_\+type {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classSleighSymbol_ac501be7c584bc0568c29fb95910962e9}\label{classSleighSymbol_ac501be7c584bc0568c29fb95910962e9}} 
+virtual void {\bfseries save\+Xml\+Header} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classSleighSymbol_addbcd83dac8157f1af67b21e560f4607}\label{classSleighSymbol_addbcd83dac8157f1af67b21e560f4607}} 
+void {\bfseries restore\+Xml\+Header} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\item 
+\mbox{\Hypertarget{classSleighSymbol_a83c9a32d16419d2277c5b9d542e1cf13}\label{classSleighSymbol_a83c9a32d16419d2277c5b9d542e1cf13}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classSleighSymbol_accaec1696f99366fb0e089a7fceb56a3}\label{classSleighSymbol_accaec1696f99366fb0e089a7fceb56a3}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classSleighBase}{Sleigh\+Base}} $\ast$trans)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighSymbol_ac1b80bc52166901e909169b2657de45f}\label{classSleighSymbol_ac1b80bc52166901e909169b2657de45f}} 
+class {\bfseries Symbol\+Table}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghsymbol.\+hh\item 
+slghsymbol.\+cc\end{DoxyCompactItemize}

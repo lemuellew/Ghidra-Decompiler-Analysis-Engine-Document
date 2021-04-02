@@ -1,0 +1,48 @@
+\hypertarget{structVarnodeCompareDefLoc}{}\doxysection{Varnode\+Compare\+Def\+Loc Struct Reference}
+\label{structVarnodeCompareDefLoc}\index{VarnodeCompareDefLoc@{VarnodeCompareDefLoc}}
+
+
+Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by definition then location.  
+
+
+
+
+{\ttfamily \#include $<$varnode.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structVarnodeCompareDefLoc_a05647c5663f7fedb15a7de0555fa66fe}{operator()}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$a, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$b) const
+\begin{DoxyCompactList}\small\item\em Functional comparison operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by definition then location. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structVarnodeCompareDefLoc_a05647c5663f7fedb15a7de0555fa66fe}\label{structVarnodeCompareDefLoc_a05647c5663f7fedb15a7de0555fa66fe}} 
+\index{VarnodeCompareDefLoc@{VarnodeCompareDefLoc}!operator()@{operator()}}
+\index{operator()@{operator()}!VarnodeCompareDefLoc@{VarnodeCompareDefLoc}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Varnode\+Compare\+Def\+Loc\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Functional comparison operator. 
+
+Compare by definition then by location. This is different than the standard ordering but we still allow multiple identical frees. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+{\em b} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\bfseries{a}} occurs earlier than {\bfseries{b}} 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varnode_8hh}{varnode.\+hh}}\item 
+varnode.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\hypertarget{classParserWalker}{}\doxysection{Parser\+Walker Class Reference}
+\label{classParserWalker}\index{ParserWalker@{ParserWalker}}
+
+
+Inheritance diagram for Parser\+Walker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classParserWalker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Parser\+Walker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{classParserWalker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParserWalker_a2409e0f0840b4361c256315b5e537344}\label{classParserWalker_a2409e0f0840b4361c256315b5e537344}} 
+{\bfseries Parser\+Walker} (const \mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$c)
+\item 
+\mbox{\Hypertarget{classParserWalker_a683f36ca664f0cbab7f6125084c00de8}\label{classParserWalker_a683f36ca664f0cbab7f6125084c00de8}} 
+{\bfseries Parser\+Walker} (const \mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$c, const \mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$cross)
+\item 
+\mbox{\Hypertarget{classParserWalker_a3468c4fffb0a6ab229883ac9769e46f2}\label{classParserWalker_a3468c4fffb0a6ab229883ac9769e46f2}} 
+const \mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$ {\bfseries get\+Parser\+Context} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a63fb34fd3dee860df4b182351dd935b0}\label{classParserWalker_a63fb34fd3dee860df4b182351dd935b0}} 
+void {\bfseries base\+State} (void)
+\item 
+\mbox{\Hypertarget{classParserWalker_a917b2a69e5a2d62857666389d95bf757}\label{classParserWalker_a917b2a69e5a2d62857666389d95bf757}} 
+void {\bfseries set\+Out\+Of\+Band\+State} (\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ct, int4 index, \mbox{\hyperlink{structConstructState}{Construct\+State}} $\ast$tempstate, const \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&otherwalker)
+\item 
+\mbox{\Hypertarget{classParserWalker_aea8bce30faf92826fd7e6ba1512fb66f}\label{classParserWalker_aea8bce30faf92826fd7e6ba1512fb66f}} 
+bool {\bfseries is\+State} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a0935e6c14cfdcb9657a440cef7ee40ef}\label{classParserWalker_a0935e6c14cfdcb9657a440cef7ee40ef}} 
+void {\bfseries push\+Operand} (int4 i)
+\item 
+\mbox{\Hypertarget{classParserWalker_a086ef7fa7018c8133d93df96a9dde6d9}\label{classParserWalker_a086ef7fa7018c8133d93df96a9dde6d9}} 
+void {\bfseries pop\+Operand} (void)
+\item 
+\mbox{\Hypertarget{classParserWalker_add81e215f1dd3cdc87f6d9e78de818ad}\label{classParserWalker_add81e215f1dd3cdc87f6d9e78de818ad}} 
+uint4 {\bfseries get\+Offset} (int4 i) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a3d8f48e605938ba8faef8a92cb816b4f}\label{classParserWalker_a3d8f48e605938ba8faef8a92cb816b4f}} 
+\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ {\bfseries get\+Constructor} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_abf73ef90d42aeea7f3e9fb96eb9ad08e}\label{classParserWalker_abf73ef90d42aeea7f3e9fb96eb9ad08e}} 
+int4 {\bfseries get\+Operand} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a29772169263a35683724c03d90372734}\label{classParserWalker_a29772169263a35683724c03d90372734}} 
+\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \& {\bfseries get\+Parent\+Handle} (void)
+\item 
+\mbox{\Hypertarget{classParserWalker_af3212cb092a2501f0a16bf4ef9618cdb}\label{classParserWalker_af3212cb092a2501f0a16bf4ef9618cdb}} 
+const \mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \& {\bfseries get\+Fixed\+Handle} (int4 i) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a6af3a4ebd3a69f52ebcae2dd197ffd11}\label{classParserWalker_a6af3a4ebd3a69f52ebcae2dd197ffd11}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries get\+Cur\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_ab353bd7e91219577f2d9aff400e84c80}\label{classParserWalker_ab353bd7e91219577f2d9aff400e84c80}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries get\+Const\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a3a5e36992af804c2ece1febb3d0e6691}\label{classParserWalker_a3a5e36992af804c2ece1febb3d0e6691}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Addr} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a32fdda0fe14a36c08a4740550e40c0ea}\label{classParserWalker_a32fdda0fe14a36c08a4740550e40c0ea}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Naddr} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a0ddbb5961570e22d45fe72d33d86ffe6}\label{classParserWalker_a0ddbb5961570e22d45fe72d33d86ffe6}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Ref\+Addr} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a8593ab995c8656e789b3b6aa933a4147}\label{classParserWalker_a8593ab995c8656e789b3b6aa933a4147}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& {\bfseries get\+Dest\+Addr} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a77de14662fd97ff54b79b510dcdd7f1d}\label{classParserWalker_a77de14662fd97ff54b79b510dcdd7f1d}} 
+int4 {\bfseries get\+Length} (void) const
+\item 
+\mbox{\Hypertarget{classParserWalker_ad986695377d62eeb98db856c34db6aa7}\label{classParserWalker_ad986695377d62eeb98db856c34db6aa7}} 
+uintm {\bfseries get\+Instruction\+Bytes} (int4 byteoff, int4 numbytes) const
+\item 
+\mbox{\Hypertarget{classParserWalker_a630fe457e1473666fcad37cbba63b9a5}\label{classParserWalker_a630fe457e1473666fcad37cbba63b9a5}} 
+uintm {\bfseries get\+Context\+Bytes} (int4 byteoff, int4 numbytes) const
+\item 
+\mbox{\Hypertarget{classParserWalker_af78d60807ac439bf2af102516f257cc8}\label{classParserWalker_af78d60807ac439bf2af102516f257cc8}} 
+uintm {\bfseries get\+Instruction\+Bits} (int4 startbit, int4 size) const
+\item 
+\mbox{\Hypertarget{classParserWalker_ae38ea0339696eeeec219b3d36d35e5ac}\label{classParserWalker_ae38ea0339696eeeec219b3d36d35e5ac}} 
+uintm {\bfseries get\+Context\+Bits} (int4 startbit, int4 size) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParserWalker_a78afa504d43d46dfc72b5796222e518c}\label{classParserWalker_a78afa504d43d46dfc72b5796222e518c}} 
+\mbox{\hyperlink{structConstructState}{Construct\+State}} $\ast$ {\bfseries point}
+\item 
+\mbox{\Hypertarget{classParserWalker_a13ed53797769d934b958c01005401847}\label{classParserWalker_a13ed53797769d934b958c01005401847}} 
+int4 {\bfseries depth}
+\item 
+\mbox{\Hypertarget{classParserWalker_acbc73bc7057a259a7e605f2075291fdf}\label{classParserWalker_acbc73bc7057a259a7e605f2075291fdf}} 
+int4 {\bfseries breadcrumb} \mbox{[}32\mbox{]}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+context.\+hh\item 
+context.\+cc\end{DoxyCompactItemize}

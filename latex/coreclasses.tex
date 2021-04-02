@@ -1,0 +1,264 @@
+\hypertarget{coreclasses_coreintro}{}\doxysection{Introduction}\label{coreclasses_coreintro}
+The decompiler attempts to translate from low-\/level representations of computer programs into high-\/level representations. Thus it needs to model concepts from both the low-\/level machine hardware domain and from the high-\/level software programming domain.
+
+Understanding the classes within the source code that implement these models provides the quickest inroad into obtaining an overall understanding of the code.
+
+We list all these fundemental classes here, loosely grouped as follows. There is one set of classes that describe the {\itshape Syntax} {\itshape Trees}, which are built up from the original p-\/code, and transformed during the decompiler\textquotesingle{}s simplification process. The {\itshape Translation} classes do the actual building of the syntax trees from binary executables, and the {\itshape Transformation} classes do the actual work of transforming the syntax trees. Finally there is the {\itshape High-\/level} classes, which for the decompiler represents recovered information, describing familiar software development concepts, like datatypes, prototypes, symbols, variables, etc.
+
+{\bfseries{Syntax}} {\bfseries{Trees}} 
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}
+\begin{DoxyItemize}
+\item A place within the reverse engineering model where data can be stored. The typical address spaces are {\bfseries{ram}}, modeling the main databus of a processor, and {\bfseries{register}}, modeling a processors on board registers. Data is stored a byte at a time at {\bfseries{offsets}} within the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}.
+\end{DoxyItemize}
+\item \mbox{\hyperlink{classAddress}{Address}}
+\begin{DoxyItemize}
+\item An \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} and an offset within the space forms the \mbox{\hyperlink{classAddress}{Address}} of the byte at that offset.
+\end{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode}{Varnode}}
+\begin{DoxyItemize}
+\item A contiguous set of bytes, given by an \mbox{\hyperlink{classAddress}{Address}} and a size, encoding a single value in the model. In terms of S\+SA syntax tree, a \mbox{\hyperlink{classVarnode}{Varnode}} is also a node in the tree.
+\end{DoxyItemize}
+\item \mbox{\hyperlink{classSeqNum}{Seq\+Num}}
+\begin{DoxyItemize}
+\item A {\itshape sequence} {\itshape number} that extends \mbox{\hyperlink{classAddress}{Address}} for distinguishing Pcode\+Ops describing a single instruction.
+\item \mbox{\hyperlink{coreclasses_classseqnum}{Overview of Seq\+Num}}
+\end{DoxyItemize}
+\item \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\begin{DoxyItemize}
+\item A single {\itshape p-\/code} operation. A single machine instruction is translated into (possibly several) operations in this Register Transfer Language.
+\item \mbox{\hyperlink{coreclasses_classpcodeop}{Overview of Pcode\+Op}}
+\end{DoxyItemize}
+\item \mbox{\hyperlink{classBlockBasic}{Block\+Basic}}
+\begin{DoxyItemize}
+\item A maximal sequence of p-\/code operations that always executes from the first \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the last.
+\item \mbox{\hyperlink{coreclasses_classblockbasic}{Overview of Block\+Basic}}
+\end{DoxyItemize}
+\item \mbox{\hyperlink{classFuncdata}{Funcdata}}
+\begin{DoxyItemize}
+\item The root object holding all information about a function, including\+: the p-\/code syntax tree, prototype, and local symbol information.
+\item \mbox{\hyperlink{coreclasses_classfuncdata}{Overview of Funcdata}}
+\end{DoxyItemize}
+\end{DoxyItemize}{\bfseries{Translation}} 
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{coreclasses_classloadimage}{Load\+Image}}
+\item \mbox{\hyperlink{coreclasses_classtranslate}{Translate}}
+\end{DoxyItemize}
+
+{\bfseries{Transformation}} 
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{coreclasses_classaction}{Action}}
+\item \mbox{\hyperlink{coreclasses_classrule}{Rule}}
+\end{DoxyItemize}
+
+{\bfseries{High-\/level}} {\bfseries{Representation}} 
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{coreclasses_classdatatype}{Datatype}}
+\item \mbox{\hyperlink{coreclasses_classtypefactory}{Type\+Factory}}
+\item \mbox{\hyperlink{coreclasses_classhighvariable}{High\+Variable}}
+\item \mbox{\hyperlink{coreclasses_classfuncproto}{Func\+Proto}}
+\item \mbox{\hyperlink{coreclasses_classcallspecs}{Func\+Call\+Specs}}
+\item \mbox{\hyperlink{coreclasses_classsymbol}{Symbol}}
+\item \mbox{\hyperlink{coreclasses_classsymbolentry}{Symbol\+Entry}}
+\item \mbox{\hyperlink{coreclasses_classscope}{Scope}}
+\item \mbox{\hyperlink{coreclasses_classdatabase}{Database}}
+\end{DoxyItemize}\hypertarget{coreclasses_classseqnum}{}\doxysection{Overview of Seq\+Num}\label{coreclasses_classseqnum}
+A sequence number is a form of extended address for multiple p-\/code operations that may be associated with the same address. There is a normal \mbox{\hyperlink{classAddress}{Address}} field. There is a {\bfseries{time}} field which is a static value, determined when an operation is created, that guarantees the uniqueness of the \mbox{\hyperlink{classSeqNum}{Seq\+Num}}. There is also an {\bfseries{order}} field which preserves order information about operations within a basic block. This value may change if the syntax tree is manipulated.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classAddress}{Address}} \& getAddr();          \textcolor{comment}{// get the Address field}}
+\DoxyCodeLine{uintm     getTime();          \textcolor{comment}{// get the time field}}
+\DoxyCodeLine{uintm     getOrder();         \textcolor{comment}{// get the order field}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classpcodeop}{}\doxysection{Overview of Pcode\+Op}\label{coreclasses_classpcodeop}
+A single operation in the p-\/code language. It has, at most, one \mbox{\hyperlink{classVarnode}{Varnode}} output, and some number of \mbox{\hyperlink{classVarnode}{Varnode}} inputs. The inputs are operated on depending on the opcode of the instruction, producing the output.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{OpCode}}       code();             \textcolor{comment}{// get the opcode for this op}}
+\DoxyCodeLine{\mbox{\hyperlink{classAddress}{Address}} \&    getAddr();          \textcolor{comment}{// get Address of the associated processor instruction}}
+\DoxyCodeLine{                                 \textcolor{comment}{// which generated this op.}}
+\DoxyCodeLine{\mbox{\hyperlink{classSeqNum}{SeqNum}} \&     getSeqNum();        \textcolor{comment}{// get the full unique identifier for this op}}
+\DoxyCodeLine{int4         numInput();         \textcolor{comment}{// get number of Varnode inputs to this op}}
+\DoxyCodeLine{\mbox{\hyperlink{classVarnode}{Varnode}} *    getOut();           \textcolor{comment}{// get Varnode output}}
+\DoxyCodeLine{\mbox{\hyperlink{classVarnode}{Varnode}} *    getIn(int4 i);      \textcolor{comment}{// get (one of the) Varnode inputs}}
+\DoxyCodeLine{\mbox{\hyperlink{classBlockBasic}{BlockBasic}} * getParent();        \textcolor{comment}{// get basic block containing this op}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}         isDead();           \textcolor{comment}{// op may no longer be in syntax tree}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}         isCall();           \textcolor{comment}{// various categories of op}}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}         isBranch();}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}         isBoolOutput();}
+\end{DoxyCode}
+\hypertarget{coreclasses_classblockbasic}{}\doxysection{Overview of Block\+Basic}\label{coreclasses_classblockbasic}
+A sequence of Pcode\+Ops with a single path of execution.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int4         sizeOut();         \textcolor{comment}{// get number of paths flowing out of this block}}
+\DoxyCodeLine{int4         sizeIn();          \textcolor{comment}{// get number of paths flowing into this block}}
+\DoxyCodeLine{\mbox{\hyperlink{classBlockBasic}{BlockBasic}} *getIn(int4 i)       \textcolor{comment}{// get (one of the) blocks flowing into this}}
+\DoxyCodeLine{\mbox{\hyperlink{classBlockBasic}{BlockBasic}} *getOut(int4 i)      \textcolor{comment}{// get (one of the) blocks flowing out of this}}
+\DoxyCodeLine{\mbox{\hyperlink{classSeqNum}{SeqNum}} \&    getStart();         \textcolor{comment}{// get SeqNum of first operation in block}}
+\DoxyCodeLine{\mbox{\hyperlink{classSeqNum}{SeqNum}} \&    getStop();          \textcolor{comment}{// get SeqNum of last operation in block}}
+\DoxyCodeLine{\mbox{\hyperlink{classBlockBasic}{BlockBasic}} *getImmedDom();      \textcolor{comment}{// get immediate dominator block}}
+\DoxyCodeLine{}
+\DoxyCodeLine{iterator    beginOp();          \textcolor{comment}{// get iterator to first PcodeOp in block}}
+\DoxyCodeLine{iterator    endOp();}
+\end{DoxyCode}
+\hypertarget{coreclasses_classfuncdata}{}\doxysection{Overview of Funcdata}\label{coreclasses_classfuncdata}
+This is a container for the sytax tree associated with a single {\itshape function} and all other function specific data. It has an associated start address, function prototype, and local scope.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{string} \&       getName();           \textcolor{comment}{// get name of function}}
+\DoxyCodeLine{\mbox{\hyperlink{classAddress}{Address}} \&      getAddress();        \textcolor{comment}{// get Address of function's entry point}}
+\DoxyCodeLine{int4           numCalls();          \textcolor{comment}{// number of subfunctions called by this function}}
+\DoxyCodeLine{\mbox{\hyperlink{classFuncCallSpecs}{FuncCallSpecs}} *getCallSpecs(int4 i); \textcolor{comment}{// get specs for one of the subfunctions}}
+\DoxyCodeLine{\mbox{\hyperlink{classBlockGraph}{BlockGraph}} \&   getBasicBlocks();    \textcolor{comment}{// get the collection of basic blocks}}
+\DoxyCodeLine{}
+\DoxyCodeLine{iterator       beginLoc(\mbox{\hyperlink{classAddress}{Address}} \&);                     \textcolor{comment}{// Search for Varnodes in tree}}
+\DoxyCodeLine{iterator       beginLoc(int4,\mbox{\hyperlink{classAddress}{Address}} \&);                 \textcolor{comment}{// based on the Varnode's address}}
+\DoxyCodeLine{iterator       beginLoc(int4,\mbox{\hyperlink{classAddress}{Address}} \&,\mbox{\hyperlink{classAddress}{Address}} \&,uintm);}
+\DoxyCodeLine{iterator       beginDef(uint4,\mbox{\hyperlink{classAddress}{Address}} \&);               \textcolor{comment}{// Search for Varnode based on the}}
+\DoxyCodeLine{                                                        \textcolor{comment}{// address of its defining operation}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classloadimage}{}\doxysection{Load\+Image}\label{coreclasses_classloadimage}
+\hypertarget{coreclasses_classaction}{}\doxysection{Action}\label{coreclasses_classaction}
+\hypertarget{coreclasses_classrule}{}\doxysection{Rule}\label{coreclasses_classrule}
+\hypertarget{coreclasses_classtranslate}{}\doxysection{Translate}\label{coreclasses_classtranslate}
+Decodes machine instructions and can produce p-\/code.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int4  oneInstruction(\mbox{\hyperlink{classPcodeEmit}{PcodeEmit}} \&,\mbox{\hyperlink{classAddress}{Address}} \&) \textcolor{keyword}{const};   \textcolor{comment}{// produce pcode for one instruction}}
+\DoxyCodeLine{\textcolor{keywordtype}{void} printAssembly(ostream \&,int4,\mbox{\hyperlink{classAddress}{Address}} \&) \textcolor{keyword}{const};  \textcolor{comment}{// print the assembly for one instruction}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classdatatype}{}\doxysection{Datatype}\label{coreclasses_classdatatype}
+Many objects have an associated \mbox{\hyperlink{classDatatype}{Datatype}}, including Varnodes, Symbols, and Func\+Protos. A \mbox{\hyperlink{classDatatype}{Datatype}} is built to resemble the type systems of common high-\/level languages like C or Java.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\_metatype}} getMetatype();     \textcolor{comment}{// categorize type as VOID, UNKNOWN,}}
+\DoxyCodeLine{                                 \textcolor{comment}{// INT, UINT, BOOL, CODE, FLOAT,}}
+\DoxyCodeLine{                                 \textcolor{comment}{// PTR, ARRAY, STRUCT}}
+\DoxyCodeLine{\textcolor{keywordtype}{string} \&      getName();         \textcolor{comment}{// get name of the type}}
+\DoxyCodeLine{int4          getSize();         \textcolor{comment}{// get number of bytes encoding this type}}
+\end{DoxyCode}
+
+
+There are base types (in varying sizes) as returned by get\+Metatype.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{enum} \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\_metatype}} \{}
+\DoxyCodeLine{  \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa84de340fe64164ed0dcf473aad846961}{TYPE\_VOID}},       \textcolor{comment}{// void type}}
+\DoxyCodeLine{  \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa64599dea7071bc28732936e0bfddff3e}{TYPE\_UNKNOWN}},    \textcolor{comment}{// unknown type}}
+\DoxyCodeLine{  \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa4fcd4421533bb21c827865bdbac4fef9}{TYPE\_INT}},        \textcolor{comment}{// signed integer}}
+\DoxyCodeLine{  \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61faba807ad7d41a3ac08fd4a71e9e013192}{TYPE\_UINT}},       \textcolor{comment}{// unsigned integer}}
+\DoxyCodeLine{  \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa3e0f738756c5205d71c69d955603f46c}{TYPE\_BOOL}},       \textcolor{comment}{// boolean}}
+\DoxyCodeLine{  \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa88922d1c65a64d2f39ebaba3411aa057}{TYPE\_CODE}},       \textcolor{comment}{// function data}}
+\DoxyCodeLine{  \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa19a0a402d33a2e049e91ea9e37e90c2f}{TYPE\_FLOAT}},      \textcolor{comment}{// floating point}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+Then these can be used to build compound types, with pointer, array, and structure qualifiers.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classTypePointer}{TypePointer}} : \textcolor{keyword}{public} \mbox{\hyperlink{classDatatype}{Datatype}}  \{  \textcolor{comment}{// pointer to (some other type)}}
+\DoxyCodeLine{  \mbox{\hyperlink{classDatatype}{Datatype}} *getBase();                  \textcolor{comment}{// get Datatype being pointed to}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classTypeArray}{TypeArray}} : \textcolor{keyword}{public} \mbox{\hyperlink{classDatatype}{Datatype}} \{     \textcolor{comment}{// array of (some other type)}}
+\DoxyCodeLine{  \mbox{\hyperlink{classDatatype}{Datatype}} *getBase();                  \textcolor{comment}{// get Datatype of array element}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classTypeStruct}{TypeStruct}} : \textcolor{keyword}{public} \mbox{\hyperlink{classDatatype}{Datatype}} \{    \textcolor{comment}{// structure with fields of (some other types)}}
+\DoxyCodeLine{  \mbox{\hyperlink{structTypeField}{TypeField}} *\mbox{\hyperlink{classTypeStruct_aebb450d9b8d2ad526b35ff135d5640a1}{getField}}(int4,int4,int4 *);   \textcolor{comment}{// get Datatype of a field}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+\hypertarget{coreclasses_classtypefactory}{}\doxysection{Type\+Factory}\label{coreclasses_classtypefactory}
+This is a container for Datatypes.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} *findByName(\textcolor{keywordtype}{string} \&);                 \textcolor{comment}{// find a Datatype by name}}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} *getTypeVoid();                        \textcolor{comment}{// retrieve common types}}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} *getTypeChar();}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} *getBase(int4 size,\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\_metatype}});}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} *getTypePointer(int4,\mbox{\hyperlink{classDatatype}{Datatype}} *,uint4);   \textcolor{comment}{// get a pointer to another type}}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} *getTypeArray(int4,\mbox{\hyperlink{classDatatype}{Datatype}} *);         \textcolor{comment}{// get an array of another type}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classhighvariable}{}\doxysection{High\+Variable}\label{coreclasses_classhighvariable}
+A single high-\/level variable can move in and out of various memory locations and registers during the course of its lifetime. A \mbox{\hyperlink{classHighVariable}{High\+Variable}} encapsulates this concept. It is a collection of (low-\/level) Varnodes, all of which are used to store data for one high-\/level variable.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{int4       numInstances();      \textcolor{comment}{// get number of different Varnodes associated}}
+\DoxyCodeLine{                                \textcolor{comment}{// with this variable.}}
+\DoxyCodeLine{\mbox{\hyperlink{classVarnode}{Varnode}} *  getInstance(int4);    \textcolor{comment}{// get (one of the) Varnodes associated with}}
+\DoxyCodeLine{                                \textcolor{comment}{// this variable.}}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} * getType();           \textcolor{comment}{// get Datatype of this variable}}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbol}{Symbol}} *   getSymbol();         \textcolor{comment}{// get Symbol associated with this variable}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classfuncproto}{}\doxysection{Func\+Proto}\label{coreclasses_classfuncproto}
+\hypertarget{coreclasses_classcallspecs}{}\doxysection{Func\+Call\+Specs}\label{coreclasses_classcallspecs}
+\hypertarget{coreclasses_classsymbol}{}\doxysection{Symbol}\label{coreclasses_classsymbol}
+A particular symbol used for describing memory in the model. This behaves like a normal (high-\/level language) symbol. It lives in a scope, has a name, and has a \mbox{\hyperlink{classDatatype}{Datatype}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{string} \&      getName();        \textcolor{comment}{// get the name of the symbol}}
+\DoxyCodeLine{\mbox{\hyperlink{classDatatype}{Datatype}} *    getType();        \textcolor{comment}{// get the Datatype of the symbol}}
+\DoxyCodeLine{\mbox{\hyperlink{classScope}{Scope}} *       getScope();       \textcolor{comment}{// get the scope containing the symbol}}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbolEntry}{SymbolEntry}} * getFirstWholeMap(); \textcolor{comment}{// get the (first) SymbolEntry associated}}
+\DoxyCodeLine{                                \textcolor{comment}{// with this symbol}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classsymbolentry}{}\doxysection{Symbol\+Entry}\label{coreclasses_classsymbolentry}
+This associates a memory location with a particular symbol, i.\+e. it {\itshape maps} the symbol to memory. Its, in theory, possible to have more than one \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} associated with a \mbox{\hyperlink{classSymbol}{Symbol}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classAddress}{Address}} \&   getAddr();         \textcolor{comment}{// get Address of memory location}}
+\DoxyCodeLine{int4        getSize();         \textcolor{comment}{// get size of memory location}}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbol}{Symbol}} *    getSymbol();       \textcolor{comment}{// get Symbol associated with location}}
+\DoxyCodeLine{\mbox{\hyperlink{classRangeList}{RangeList}} \& getUseLimit();     \textcolor{comment}{// get range of code addresses for which}}
+\DoxyCodeLine{                               \textcolor{comment}{// this mapping applies}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classscope}{}\doxysection{Scope}\label{coreclasses_classscope}
+This is a container for symbols.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbolEntry}{SymbolEntry}} *findAddr(\mbox{\hyperlink{classAddress}{Address}} \&,\mbox{\hyperlink{classAddress}{Address}} \&);          \textcolor{comment}{// find a Symbol by address}}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbolEntry}{SymbolEntry}} *findContainer(\mbox{\hyperlink{classAddress}{Address}} \&,int4,\mbox{\hyperlink{classAddress}{Address}} \&); \textcolor{comment}{// find containing symbol}}
+\DoxyCodeLine{\mbox{\hyperlink{classFuncdata}{Funcdata}} *   findFunction(\mbox{\hyperlink{classAddress}{Address}} \&);                \textcolor{comment}{// find a function by entry address}}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbol}{Symbol}} *     findByName(\textcolor{keywordtype}{string} \&);                   \textcolor{comment}{// find a Symbol by name}}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbolEntry}{SymbolEntry}} *queryByAddr(\mbox{\hyperlink{classAddress}{Address}} \&,\mbox{\hyperlink{classAddress}{Address}} \&);       \textcolor{comment}{// search for symbols across multiple scopes}}
+\DoxyCodeLine{\mbox{\hyperlink{classSymbolEntry}{SymbolEntry}} *queryContainer(\mbox{\hyperlink{classAddress}{Address}} \&,int4,\mbox{\hyperlink{classAddress}{Address}} \&);}
+\DoxyCodeLine{\mbox{\hyperlink{classFuncdata}{Funcdata}} *   queryFunction(\mbox{\hyperlink{classAddress}{Address}} \&);}
+\DoxyCodeLine{\mbox{\hyperlink{classScope}{Scope}} *      discoverScope(\mbox{\hyperlink{classAddress}{Address}} \&,int4,\mbox{\hyperlink{classAddress}{Address}} \&); \textcolor{comment}{// discover scope of an address}}
+\DoxyCodeLine{\textcolor{keywordtype}{string} \&     getName();                              \textcolor{comment}{// get name of scope}}
+\DoxyCodeLine{\mbox{\hyperlink{classScope}{Scope}} *      getParent();                            \textcolor{comment}{// get parent scope}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classdatabase}{}\doxysection{Database}\label{coreclasses_classdatabase}
+This is the container for Scopes.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classScope}{Scope}} *getGlobalScope();                \textcolor{comment}{// get the root/global scope}}
+\DoxyCodeLine{\mbox{\hyperlink{classScope}{Scope}} *resolveScope(\textcolor{keywordtype}{string} \&,\mbox{\hyperlink{classScope}{Scope}} *);  \textcolor{comment}{// resolve a scope by name}}
+\end{DoxyCode}
+\hypertarget{coreclasses_classarchitecture}{}\doxysection{Architecture}\label{coreclasses_classarchitecture}
+This is the repository for all information about a particular processor and executable. It holds the symbol table, the processor translator, the load image, the type database, and the transform engine.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classArchitecture}{Architecture}} \{}
+\DoxyCodeLine{  \mbox{\hyperlink{classDatabase}{Database}} *     \mbox{\hyperlink{classArchitecture_ab426c9baa9013d9826041a4083e844ef}{symboltab}};   \textcolor{comment}{// the symbol table}}
+\DoxyCodeLine{  \mbox{\hyperlink{classTranslate}{Translate}} *    \mbox{\hyperlink{classArchitecture_a81f2db17fdc609a7d1cedbc0a2eb7753}{translate}};   \textcolor{comment}{// the processor translator}}
+\DoxyCodeLine{  \mbox{\hyperlink{classLoadImage}{LoadImage}} *    \mbox{\hyperlink{classArchitecture_a344b1348ed8f0bbe0d050e7038bb290d}{loader}};      \textcolor{comment}{// the executable loadimage}}
+\DoxyCodeLine{  \mbox{\hyperlink{classActionDatabase}{ActionDatabase}} \mbox{\hyperlink{classArchitecture_a4cbe1c5d170cb2a4d359765b97fef26f}{allacts}};     \textcolor{comment}{// transforms which can be performed}}
+\DoxyCodeLine{  \mbox{\hyperlink{classTypeFactory}{TypeFactory}} *  \mbox{\hyperlink{classArchitecture_a8225ba7bd6ac802660e03ee793289dd1}{types}};       \textcolor{comment}{// the Datatype database}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+ 

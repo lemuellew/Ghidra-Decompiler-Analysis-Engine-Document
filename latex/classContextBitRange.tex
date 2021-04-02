@@ -1,0 +1,89 @@
+\hypertarget{classContextBitRange}{}\doxysection{Context\+Bit\+Range Class Reference}
+\label{classContextBitRange}\index{ContextBitRange@{ContextBitRange}}
+
+
+Description of a context variable within the disassembly context {\itshape blob}.  
+
+
+
+
+{\ttfamily \#include $<$globalcontext.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classContextBitRange_ae4e8074485bbd3561ecbbb2e18787931}{Context\+Bit\+Range}} (int4 sbit, int4 ebit)
+\begin{DoxyCompactList}\small\item\em Construct a context value given an absolute bit range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextBitRange_a9aa57773da860d022bd8b1b2e59d1790}{set\+Value}} (uintm $\ast$vec, uintm val) const
+\begin{DoxyCompactList}\small\item\em Set {\bfseries{this}} value within a given context blob. \end{DoxyCompactList}\item 
+uintm \mbox{\hyperlink{classContextBitRange_a1086e19201eadfc91d14a589d07edab9}{get\+Value}} (const uintm $\ast$vec) const
+\begin{DoxyCompactList}\small\item\em Retrieve {\bfseries{this}} value from a given context blob. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Description of a context variable within the disassembly context {\itshape blob}. 
+
+Disassembly context is stored as individual (integer) values packed into a sequence of words. This class represents the info for encoding or decoding a single value within this sequence. A value is a contiguous range of bits within one context word. Size can range from 1 bit up to the size of a word. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classContextBitRange_ae4e8074485bbd3561ecbbb2e18787931}\label{classContextBitRange_ae4e8074485bbd3561ecbbb2e18787931}} 
+\index{ContextBitRange@{ContextBitRange}!ContextBitRange@{ContextBitRange}}
+\index{ContextBitRange@{ContextBitRange}!ContextBitRange@{ContextBitRange}}
+\doxysubsubsection{\texorpdfstring{ContextBitRange()}{ContextBitRange()}}
+{\footnotesize\ttfamily Context\+Bit\+Range\+::\+Context\+Bit\+Range (\begin{DoxyParamCaption}\item[{int4}]{sbit,  }\item[{int4}]{ebit }\end{DoxyParamCaption})}
+
+
+
+Construct a context value given an absolute bit range. 
+
+Bits within the whole context blob are labeled starting with 0 as the most significant bit in the first word in the sequence. The new context value must be contained within a single word. 
+\begin{DoxyParams}{Parameters}
+{\em sbit} & is the starting (most significant) bit of the new value \\
+\hline
+{\em ebit} & is the ending (least significant) bit of the new value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classContextBitRange_a1086e19201eadfc91d14a589d07edab9}\label{classContextBitRange_a1086e19201eadfc91d14a589d07edab9}} 
+\index{ContextBitRange@{ContextBitRange}!getValue@{getValue}}
+\index{getValue@{getValue}!ContextBitRange@{ContextBitRange}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily uintm Context\+Bit\+Range\+::get\+Value (\begin{DoxyParamCaption}\item[{const uintm $\ast$}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve {\bfseries{this}} value from a given context blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & is the given context blob (as an array of uintm words) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the recovered integer value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextBitRange_a9aa57773da860d022bd8b1b2e59d1790}\label{classContextBitRange_a9aa57773da860d022bd8b1b2e59d1790}} 
+\index{ContextBitRange@{ContextBitRange}!setValue@{setValue}}
+\index{setValue@{setValue}!ContextBitRange@{ContextBitRange}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Context\+Bit\+Range\+::set\+Value (\begin{DoxyParamCaption}\item[{uintm $\ast$}]{vec,  }\item[{uintm}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set {\bfseries{this}} value within a given context blob. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & is the given context blob to alter (as an array of uintm words) \\
+\hline
+{\em val} & is the integer value to set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globalcontext_8hh}{globalcontext.\+hh}}\item 
+globalcontext.\+cc\end{DoxyCompactItemize}

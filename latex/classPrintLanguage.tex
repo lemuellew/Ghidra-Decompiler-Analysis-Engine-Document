@@ -1,0 +1,1434 @@
+\hypertarget{classPrintLanguage}{}\doxysection{Print\+Language Class Reference}
+\label{classPrintLanguage}\index{PrintLanguage@{PrintLanguage}}
+
+
+The base class A\+PI for emitting a high-\/level language.  
+
+
+
+
+{\ttfamily \#include $<$printlanguage.\+hh$>$}
+
+
+
+Inheritance diagram for Print\+Language\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classPrintLanguage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Print\+Language\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPrintLanguage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}}
+\begin{DoxyCompactList}\small\item\em A single non-\/operator token emitted by the decompiler. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPrintLanguage_1_1NodePending}{Node\+Pending}}
+\begin{DoxyCompactList}\small\item\em A pending data-\/flow node; waiting to be placed on the reverse polish notation stack. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish}{Reverse\+Polish}}
+\begin{DoxyCompactList}\small\item\em An entry on the reverse polish notation (R\+PN) stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269}{modifiers}} \{ \newline
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a7170201e8c6e2eefcabcf85d0182cac2}{force\+\_\+hex}} = 1, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a50308b78401f2aa9647f8d71b00b3552}{force\+\_\+dec}} = 2, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269ae75b4b74c4f1d2d3b624349c23ad602e}{bestfit}} = 4, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a18b90bd796baab2c799459c65defd682}{force\+\_\+scinote}} = 8, 
+\newline
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a74bdd76c4c97a0dcd5f1b908e87c54e2}{force\+\_\+pointer}} = 0x10, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a52f9725e16e79a9812b83983a5146c01}{print\+\_\+load\+\_\+value}} = 0x20, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269ab148b4aa4e2dd609c76cc04dd140eba4}{print\+\_\+store\+\_\+value}} = 0x40, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a631f8c824aaa0f47b483c9a7f2c09213}{no\+\_\+branch}} = 0x80, 
+\newline
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a5026346af5658b4b62dfa2a04bb7f5f0}{only\+\_\+branch}} = 0x100, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a9fe025b86ec8bdf375401e884efc7f58}{comma\+\_\+separate}} = 0x200, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a73f7e1ce9722a739f3023564e16ef043}{flat}} = 0x400, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269aebdcd0dfe2b3d01502597c52926ff9a6}{falsebranch}} = 0x800, 
+\newline
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a0ef9b13712c52f80da3fe7df7845eb18}{nofallthru}} = 0x1000, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a470060c58b994f361e4910462f8ae910}{negatetoken}} = 0x2000, 
+\mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a7510abf575fe8def455286bf22e9c39b}{hide\+\_\+thisparam}} = 0x4000
+ \}
+\begin{DoxyCompactList}\small\item\em Possible context sensitive modifiers to how tokens get emitted. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473e}{tagtype}} \{ \newline
+\mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473eaddd629c83c51527561462924e5504226}{syntax}}, 
+\mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea7cc77f281b540b484e1e0d3cb9f9e004}{vartoken}}, 
+\mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473eab3619991e28b93165b751728fb2d6f93}{functoken}}, 
+\mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea1325fc9e031d2f8cada78bfb2ad9d6f5}{optoken}}, 
+\newline
+\mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea6eeff0a2aa7ccc11cc4a909ab43a285c}{typetoken}}, 
+\mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea2eb4b5fe22ef38198d067d6801ddb357}{fieldtoken}}, 
+\mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea7bd17915e6ff44d2184e03d1b38cd7a8}{blanktoken}}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible types of \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82}{namespace\+\_\+strategy}} \{ \mbox{\hyperlink{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82ab439a8595b620909041972026b1a6575}{M\+I\+N\+I\+M\+A\+L\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES}} = 0, 
+\mbox{\hyperlink{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82a72410e93fd471da81c38b9205a23555d}{N\+O\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES}} = 1, 
+\mbox{\hyperlink{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82a05922c45d9667bd8d8e346ef7f13ddfa}{A\+L\+L\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Strategies for displaying namespace tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPrintLanguage_a43e6e04dbeaba98bf571dc089831a2fc}{Print\+Language}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, const string \&nm)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a38c51536214ec4125e43d2eeb0d454cf}\label{classPrintLanguage_a38c51536214ec4125e43d2eeb0d454cf}} 
+virtual \mbox{\hyperlink{classPrintLanguage_a38c51536214ec4125e43d2eeb0d454cf}{$\sim$\+Print\+Language}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_a3fff2b3ce27f87722011688cd3ba19d6}{set\+Line\+Comment\+Indent}} (int4 val)
+\begin{DoxyCompactList}\small\item\em Set the number of characters to indent comment lines. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_aeb989b6e336308e202e82035595443fb}{set\+Comment\+Delimeter}} (const string \&start, const string \&stop, bool usecommentfill)
+\begin{DoxyCompactList}\small\item\em Establish comment delimiters for the language. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_abec94ce8a6a2afb7daa0cc6bd6b222d8}{set\+X\+ML}} (bool val)
+\begin{DoxyCompactList}\small\item\em Set whether the low-\/level emitter, emits X\+ML markup. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_ae42187493b3b0458b84868ad55104f50}{set\+Flat}} (bool val)
+\begin{DoxyCompactList}\small\item\em Set whether nesting code structure should be emitted. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_afe7b69e9583dfd99d310d7fbcb447986}\label{classPrintLanguage_afe7b69e9583dfd99d310d7fbcb447986}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_afe7b69e9583dfd99d310d7fbcb447986}{adjust\+Type\+Operators}} (void)=0
+\begin{DoxyCompactList}\small\item\em Set basic data-\/type information for p-\/code operators. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a32b48abc4f91099d0e2db1ce98b199a6}\label{classPrintLanguage_a32b48abc4f91099d0e2db1ce98b199a6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a32b48abc4f91099d0e2db1ce98b199a6}{reset\+Defaults}} (void)
+\begin{DoxyCompactList}\small\item\em Set printing options to their default value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_abfe1a661666d149f042b3240740da5f1}\label{classPrintLanguage_abfe1a661666d149f042b3240740da5f1}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_abfe1a661666d149f042b3240740da5f1}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the R\+PN stack and the low-\/level emitter. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_af001882863a1a4a2abefd75e8db5e593}{set\+Integer\+Format}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Set the default integer format. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_aa9f7b4fbc646531cfe3f9ad571f04ab1}{set\+Comment\+Style}} (const string \&nm)=0
+\begin{DoxyCompactList}\small\item\em Set the way comments are displayed in decompiler output. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_aea8fdf499dc7cba307e6cf513ed0ccab}{doc\+Type\+Definitions}} (const \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$typegrp)=0
+\begin{DoxyCompactList}\small\item\em Emit definitions of data-\/types. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a3fbbabf7a0a2f67e02b49d895db04fa9}\label{classPrintLanguage_a3fbbabf7a0a2f67e02b49d895db04fa9}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a3fbbabf7a0a2f67e02b49d895db04fa9}{doc\+All\+Globals}} (void)=0
+\begin{DoxyCompactList}\small\item\em Emit declarations of global variables. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a2139aedceedf891b5702c0da1d905f08}{doc\+Single\+Global}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)=0
+\begin{DoxyCompactList}\small\item\em Emit the declaration for a single (global) \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a93ebbf4cf20c65236ffca078fd5cbc21}{doc\+Function}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)=0
+\begin{DoxyCompactList}\small\item\em Emit the declaration (and body) of a function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a70818723a04d7855897a309284349b03}\label{classPrintLanguage_a70818723a04d7855897a309284349b03}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a70818723a04d7855897a309284349b03}{emit\+Block\+Basic}} (const \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$bb)=0
+\begin{DoxyCompactList}\small\item\em Emit statements in a basic block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a94a1ee0bbfd7e9791439307d9d5f0a84}\label{classPrintLanguage_a94a1ee0bbfd7e9791439307d9d5f0a84}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a94a1ee0bbfd7e9791439307d9d5f0a84}{emit\+Block\+Graph}} (const \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit (an unspecified) list of blocks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a64fafed976ae9f3e847ceba8459c51e0}\label{classPrintLanguage_a64fafed976ae9f3e847ceba8459c51e0}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a64fafed976ae9f3e847ceba8459c51e0}{emit\+Block\+Copy}} (const \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit a basic block (with any labels) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a12683efc57bffe42726244416e519990}\label{classPrintLanguage_a12683efc57bffe42726244416e519990}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a12683efc57bffe42726244416e519990}{emit\+Block\+Goto}} (const \mbox{\hyperlink{classBlockGoto}{Block\+Goto}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit a block ending with a goto statement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a91b60be4c3dac2b8cc2f36467493d8e6}\label{classPrintLanguage_a91b60be4c3dac2b8cc2f36467493d8e6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a91b60be4c3dac2b8cc2f36467493d8e6}{emit\+Block\+Ls}} (const \mbox{\hyperlink{classBlockList}{Block\+List}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit a sequence of blocks. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a2c7e3165cd19c1949aaeeb08d4d4c576}\label{classPrintLanguage_a2c7e3165cd19c1949aaeeb08d4d4c576}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a2c7e3165cd19c1949aaeeb08d4d4c576}{emit\+Block\+Condition}} (const \mbox{\hyperlink{classBlockCondition}{Block\+Condition}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit a conditional statement. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a33097042b2594c6397b3ced31a3f31b2}\label{classPrintLanguage_a33097042b2594c6397b3ced31a3f31b2}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a33097042b2594c6397b3ced31a3f31b2}{emit\+Block\+If}} (const \mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit an if/else style construct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a642b7bac95ba3e7627f89cbc87ea0dc7}\label{classPrintLanguage_a642b7bac95ba3e7627f89cbc87ea0dc7}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a642b7bac95ba3e7627f89cbc87ea0dc7}{emit\+Block\+While\+Do}} (const \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit a loop structure, check at top. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a43bee19adc9bc933d1bd5845d614dc74}\label{classPrintLanguage_a43bee19adc9bc933d1bd5845d614dc74}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a43bee19adc9bc933d1bd5845d614dc74}{emit\+Block\+Do\+While}} (const \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit a loop structure, check at bottom. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a2d573f9f0fc1714e084829228f35580b}\label{classPrintLanguage_a2d573f9f0fc1714e084829228f35580b}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a2d573f9f0fc1714e084829228f35580b}{emit\+Block\+Inf\+Loop}} (const \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit an infinite loop structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_afac6d491a5ca9e72580c74bbf87a0968}\label{classPrintLanguage_afac6d491a5ca9e72580c74bbf87a0968}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_afac6d491a5ca9e72580c74bbf87a0968}{emit\+Block\+Switch}} (const \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} $\ast$bl)=0
+\begin{DoxyCompactList}\small\item\em Emit a switch structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ab74b566887307a0b84d7a391f8500c36}\label{classPrintLanguage_ab74b566887307a0b84d7a391f8500c36}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ab74b566887307a0b84d7a391f8500c36}{op\+Copy}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a C\+O\+PY operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a0541c75a6e336c48f2a52318eee7a49c}\label{classPrintLanguage_a0541c75a6e336c48f2a52318eee7a49c}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a0541c75a6e336c48f2a52318eee7a49c}{op\+Load}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a L\+O\+AD operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a138cf7e68730a9f70b9177fe156afb68}\label{classPrintLanguage_a138cf7e68730a9f70b9177fe156afb68}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a138cf7e68730a9f70b9177fe156afb68}{op\+Store}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a S\+T\+O\+RE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a051bb5694c4e0ed5378a22464d2f36b3}\label{classPrintLanguage_a051bb5694c4e0ed5378a22464d2f36b3}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a051bb5694c4e0ed5378a22464d2f36b3}{op\+Branch}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a B\+R\+A\+N\+CH operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a4e48bbb4698901688261bdbc244d0ca4}\label{classPrintLanguage_a4e48bbb4698901688261bdbc244d0ca4}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a4e48bbb4698901688261bdbc244d0ca4}{op\+Cbranch}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a C\+B\+R\+A\+N\+CH operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a68e40449487d9d6b315afe8808e8c986}\label{classPrintLanguage_a68e40449487d9d6b315afe8808e8c986}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a68e40449487d9d6b315afe8808e8c986}{op\+Branchind}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a B\+R\+A\+N\+C\+H\+I\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_afa93e63c2334402972bb2c783f5b4602}\label{classPrintLanguage_afa93e63c2334402972bb2c783f5b4602}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_afa93e63c2334402972bb2c783f5b4602}{op\+Call}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+LL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a8b91670d8a37457a07ed8319df8c1ac1}\label{classPrintLanguage_a8b91670d8a37457a07ed8319df8c1ac1}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a8b91670d8a37457a07ed8319df8c1ac1}{op\+Callind}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+L\+L\+I\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ab7d4d8c977097d8fe7fd24e303c48270}\label{classPrintLanguage_ab7d4d8c977097d8fe7fd24e303c48270}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ab7d4d8c977097d8fe7fd24e303c48270}{op\+Callother}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+L\+L\+O\+T\+H\+ER operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a22939be1cb4a9b4e53121092b7be26b6}\label{classPrintLanguage_a22939be1cb4a9b4e53121092b7be26b6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a22939be1cb4a9b4e53121092b7be26b6}{op\+Constructor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, bool with\+New)=0
+\begin{DoxyCompactList}\small\item\em Emit an operator constructing an object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a4e33d6fcb515f8cee76f11f95b114fa7}\label{classPrintLanguage_a4e33d6fcb515f8cee76f11f95b114fa7}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a4e33d6fcb515f8cee76f11f95b114fa7}{op\+Return}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a R\+E\+T\+U\+RN operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a0cf69e63256fafc5572d32b02f901726}\label{classPrintLanguage_a0cf69e63256fafc5572d32b02f901726}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a0cf69e63256fafc5572d32b02f901726}{op\+Int\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a3800049255780c9456a1fe6cd347b24a}\label{classPrintLanguage_a3800049255780c9456a1fe6cd347b24a}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a3800049255780c9456a1fe6cd347b24a}{op\+Int\+Not\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a1c7cb915cd2bd60997c8224e5ec37e63}\label{classPrintLanguage_a1c7cb915cd2bd60997c8224e5ec37e63}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a1c7cb915cd2bd60997c8224e5ec37e63}{op\+Int\+Sless}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+L\+E\+SS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a5fe4cbf51689ac47f02e620cb1c6836f}\label{classPrintLanguage_a5fe4cbf51689ac47f02e620cb1c6836f}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a5fe4cbf51689ac47f02e620cb1c6836f}{op\+Int\+Sless\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+L\+E\+S\+S\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ab11ed4ec37d646195cff04addc0f4c6a}\label{classPrintLanguage_ab11ed4ec37d646195cff04addc0f4c6a}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ab11ed4ec37d646195cff04addc0f4c6a}{op\+Int\+Less}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+L\+E\+SS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ae2e7c8d4088eb6d611f447b6e693a7c6}\label{classPrintLanguage_ae2e7c8d4088eb6d611f447b6e693a7c6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ae2e7c8d4088eb6d611f447b6e693a7c6}{op\+Int\+Less\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a80c623cc6ca31c42789e01a8ef66ee8e}\label{classPrintLanguage_a80c623cc6ca31c42789e01a8ef66ee8e}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a80c623cc6ca31c42789e01a8ef66ee8e}{op\+Int\+Zext}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+Z\+E\+XT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a5cceb4768790751cacc2e2ec82198eab}\label{classPrintLanguage_a5cceb4768790751cacc2e2ec82198eab}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a5cceb4768790751cacc2e2ec82198eab}{op\+Int\+Sext}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+E\+XT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a01509fa3449a4a4e0229f40a5915ae53}\label{classPrintLanguage_a01509fa3449a4a4e0229f40a5915ae53}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a01509fa3449a4a4e0229f40a5915ae53}{op\+Int\+Add}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+A\+DD operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ada09308d7a740766d29d832cb9c76604}\label{classPrintLanguage_ada09308d7a740766d29d832cb9c76604}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ada09308d7a740766d29d832cb9c76604}{op\+Int\+Sub}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+UB operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ab471f38d9e9e670b5d6bfed6b865e98e}\label{classPrintLanguage_ab471f38d9e9e670b5d6bfed6b865e98e}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ab471f38d9e9e670b5d6bfed6b865e98e}{op\+Int\+Carry}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+C\+A\+R\+RY operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ac6d54c23989123b330452edd9d6e84ec}\label{classPrintLanguage_ac6d54c23989123b330452edd9d6e84ec}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ac6d54c23989123b330452edd9d6e84ec}{op\+Int\+Scarry}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+C\+A\+R\+RY operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a78c175bfef08ad70c5698d0db9730a90}\label{classPrintLanguage_a78c175bfef08ad70c5698d0db9730a90}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a78c175bfef08ad70c5698d0db9730a90}{op\+Int\+Sborrow}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a21789c608fa86d8dbc60cca0ccfda05b}\label{classPrintLanguage_a21789c608fa86d8dbc60cca0ccfda05b}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a21789c608fa86d8dbc60cca0ccfda05b}{op\+Int2\+Comp}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+2\+C\+O\+MP operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a28ef70bb6dafb1f1e21ff51765752db4}\label{classPrintLanguage_a28ef70bb6dafb1f1e21ff51765752db4}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a28ef70bb6dafb1f1e21ff51765752db4}{op\+Int\+Negate}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+N\+E\+G\+A\+TE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_abbd4458cd060ba8ae3b7f86f6564064a}\label{classPrintLanguage_abbd4458cd060ba8ae3b7f86f6564064a}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_abbd4458cd060ba8ae3b7f86f6564064a}{op\+Int\+Xor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+X\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a2bd9013ef031f9dc2ccc17deede33684}\label{classPrintLanguage_a2bd9013ef031f9dc2ccc17deede33684}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a2bd9013ef031f9dc2ccc17deede33684}{op\+Int\+And}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+A\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a008ba65682d1dd60d653621a43d63328}\label{classPrintLanguage_a008ba65682d1dd60d653621a43d63328}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a008ba65682d1dd60d653621a43d63328}{op\+Int\+Or}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a5cf7ee355d760052ba0f132ed58a279f}\label{classPrintLanguage_a5cf7ee355d760052ba0f132ed58a279f}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a5cf7ee355d760052ba0f132ed58a279f}{op\+Int\+Left}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+L\+E\+FT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a13f99f2f75725675daa0ded3e00c4121}\label{classPrintLanguage_a13f99f2f75725675daa0ded3e00c4121}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a13f99f2f75725675daa0ded3e00c4121}{op\+Int\+Right}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+R\+I\+G\+HT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a0c9ce4f054dcfd8a5d1be8b05076729b}\label{classPrintLanguage_a0c9ce4f054dcfd8a5d1be8b05076729b}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a0c9ce4f054dcfd8a5d1be8b05076729b}{op\+Int\+Sright}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+R\+I\+G\+HT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a519d0c3b0cc1e091e51e6b59adb452d5}\label{classPrintLanguage_a519d0c3b0cc1e091e51e6b59adb452d5}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a519d0c3b0cc1e091e51e6b59adb452d5}{op\+Int\+Mult}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+M\+U\+LT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_afe8a6dd704e76339b37605b3cef60f37}\label{classPrintLanguage_afe8a6dd704e76339b37605b3cef60f37}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_afe8a6dd704e76339b37605b3cef60f37}{op\+Int\+Div}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+D\+IV operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a9bb29a6a7227951ec3f9c2fa5075ed80}\label{classPrintLanguage_a9bb29a6a7227951ec3f9c2fa5075ed80}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a9bb29a6a7227951ec3f9c2fa5075ed80}{op\+Int\+Sdiv}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+D\+IV operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a80adcf4e190a962a1eb961f35be47056}\label{classPrintLanguage_a80adcf4e190a962a1eb961f35be47056}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a80adcf4e190a962a1eb961f35be47056}{op\+Int\+Rem}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+R\+EM operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_adbf84f28076f2a4c0fbf198c8b3d8ae2}\label{classPrintLanguage_adbf84f28076f2a4c0fbf198c8b3d8ae2}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_adbf84f28076f2a4c0fbf198c8b3d8ae2}{op\+Int\+Srem}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+T\+\_\+\+S\+R\+EM operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a443b37c54859a1932712f9d63534c6c7}\label{classPrintLanguage_a443b37c54859a1932712f9d63534c6c7}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a443b37c54859a1932712f9d63534c6c7}{op\+Bool\+Negate}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_afec915abc4e783221b53658b8fda0bf6}\label{classPrintLanguage_afec915abc4e783221b53658b8fda0bf6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_afec915abc4e783221b53658b8fda0bf6}{op\+Bool\+Xor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a B\+O\+O\+L\+\_\+\+X\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a43e714904628588b0dca6b08213b5c9c}\label{classPrintLanguage_a43e714904628588b0dca6b08213b5c9c}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a43e714904628588b0dca6b08213b5c9c}{op\+Bool\+And}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a B\+O\+O\+L\+\_\+\+A\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ab15187334bfeb10b3a3ca9a63e4278a2}\label{classPrintLanguage_ab15187334bfeb10b3a3ca9a63e4278a2}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ab15187334bfeb10b3a3ca9a63e4278a2}{op\+Bool\+Or}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a B\+O\+O\+L\+\_\+\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a9de53fd1d0e80e9d7e745126d14f4023}\label{classPrintLanguage_a9de53fd1d0e80e9d7e745126d14f4023}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a9de53fd1d0e80e9d7e745126d14f4023}{op\+Float\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ac689ee69b58dcfe142ff14b6ab753d06}\label{classPrintLanguage_ac689ee69b58dcfe142ff14b6ab753d06}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ac689ee69b58dcfe142ff14b6ab753d06}{op\+Float\+Not\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a2ea5d38b6215f83008aba64ae55371b1}\label{classPrintLanguage_a2ea5d38b6215f83008aba64ae55371b1}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a2ea5d38b6215f83008aba64ae55371b1}{op\+Float\+Less}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+L\+E\+SS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a9450ff7a8ee019118079bd227af91483}\label{classPrintLanguage_a9450ff7a8ee019118079bd227af91483}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a9450ff7a8ee019118079bd227af91483}{op\+Float\+Less\+Equal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a96631272c629a096d9d7c30c340ffbd5}\label{classPrintLanguage_a96631272c629a096d9d7c30c340ffbd5}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a96631272c629a096d9d7c30c340ffbd5}{op\+Float\+Nan}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+N\+AN operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a71d89b7be2f9785be3599e7c27e322aa}\label{classPrintLanguage_a71d89b7be2f9785be3599e7c27e322aa}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a71d89b7be2f9785be3599e7c27e322aa}{op\+Float\+Add}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+A\+DD operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a78dabff7a3be91653fa6326e40232004}\label{classPrintLanguage_a78dabff7a3be91653fa6326e40232004}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a78dabff7a3be91653fa6326e40232004}{op\+Float\+Div}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+D\+IV operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_aa2b82ec672aec190c8acc2f0068ed3b7}\label{classPrintLanguage_aa2b82ec672aec190c8acc2f0068ed3b7}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_aa2b82ec672aec190c8acc2f0068ed3b7}{op\+Float\+Mult}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+M\+U\+LT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a09e42786482d085bba0ec7b1bb982f37}\label{classPrintLanguage_a09e42786482d085bba0ec7b1bb982f37}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a09e42786482d085bba0ec7b1bb982f37}{op\+Float\+Sub}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+S\+UB operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ae56bbe89c7352d7ff664c8eced363a16}\label{classPrintLanguage_ae56bbe89c7352d7ff664c8eced363a16}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ae56bbe89c7352d7ff664c8eced363a16}{op\+Float\+Neg}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+N\+EG operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a01ada804030f8515265a841bec6b25d6}\label{classPrintLanguage_a01ada804030f8515265a841bec6b25d6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a01ada804030f8515265a841bec6b25d6}{op\+Float\+Abs}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+A\+BS operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ad144b5d7a2a98298b166b924881d38ca}\label{classPrintLanguage_ad144b5d7a2a98298b166b924881d38ca}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ad144b5d7a2a98298b166b924881d38ca}{op\+Float\+Sqrt}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+S\+Q\+RT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_aae2e1fb650183391f86ea87a910c9862}\label{classPrintLanguage_aae2e1fb650183391f86ea87a910c9862}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_aae2e1fb650183391f86ea87a910c9862}{op\+Float\+Int2\+Float}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+I\+N\+T2\+F\+L\+O\+AT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a1ec6425a6c6d6313f571289c95292d22}\label{classPrintLanguage_a1ec6425a6c6d6313f571289c95292d22}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a1ec6425a6c6d6313f571289c95292d22}{op\+Float\+Float2\+Float}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a13a25f26678ca8199d44d56ebfccead6}\label{classPrintLanguage_a13a25f26678ca8199d44d56ebfccead6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a13a25f26678ca8199d44d56ebfccead6}{op\+Float\+Trunc}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+T\+R\+U\+NC operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_aacc8041344fce73f799fab35c82dbbb6}\label{classPrintLanguage_aacc8041344fce73f799fab35c82dbbb6}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_aacc8041344fce73f799fab35c82dbbb6}{op\+Float\+Ceil}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+C\+E\+IL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_accd41c616f41e17fc96d38144c9b5f31}\label{classPrintLanguage_accd41c616f41e17fc96d38144c9b5f31}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_accd41c616f41e17fc96d38144c9b5f31}{op\+Float\+Floor}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+OR operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a57b93ce74fa6048679c7d6e8fcbf8e92}\label{classPrintLanguage_a57b93ce74fa6048679c7d6e8fcbf8e92}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a57b93ce74fa6048679c7d6e8fcbf8e92}{op\+Float\+Round}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a F\+L\+O\+A\+T\+\_\+\+R\+O\+U\+ND operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a3e2ad92e5b51a8880650fda48cc45a7e}\label{classPrintLanguage_a3e2ad92e5b51a8880650fda48cc45a7e}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a3e2ad92e5b51a8880650fda48cc45a7e}{op\+Multiequal}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a M\+U\+L\+T\+I\+E\+Q\+U\+AL operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_aeff48b36b2178b9aeccfea5c087f7a29}\label{classPrintLanguage_aeff48b36b2178b9aeccfea5c087f7a29}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_aeff48b36b2178b9aeccfea5c087f7a29}{op\+Indirect}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a I\+N\+D\+I\+R\+E\+CT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ae266748e07c985f9bf39c224bb9322e0}\label{classPrintLanguage_ae266748e07c985f9bf39c224bb9322e0}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ae266748e07c985f9bf39c224bb9322e0}{op\+Piece}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a P\+I\+E\+CE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a2ef0d6edea37fda486f27c341c319811}\label{classPrintLanguage_a2ef0d6edea37fda486f27c341c319811}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a2ef0d6edea37fda486f27c341c319811}{op\+Subpiece}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a S\+U\+B\+P\+I\+E\+CE operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_aa2797e634c8b55609b712fd96ea51385}\label{classPrintLanguage_aa2797e634c8b55609b712fd96ea51385}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_aa2797e634c8b55609b712fd96ea51385}{op\+Cast}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a C\+A\+ST operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a312cfe46529c9d64e84be1c39860ff6e}\label{classPrintLanguage_a312cfe46529c9d64e84be1c39860ff6e}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a312cfe46529c9d64e84be1c39860ff6e}{op\+Ptradd}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a P\+T\+R\+A\+DD operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a9b0fca3c2bc867ff10572c0c42cb8c1e}\label{classPrintLanguage_a9b0fca3c2bc867ff10572c0c42cb8c1e}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a9b0fca3c2bc867ff10572c0c42cb8c1e}{op\+Ptrsub}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a P\+T\+R\+S\+UB operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_aec7fd98583552538d0d7c52e70512371}\label{classPrintLanguage_aec7fd98583552538d0d7c52e70512371}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_aec7fd98583552538d0d7c52e70512371}{op\+Segment\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a S\+E\+G\+M\+E\+N\+T\+OP operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a73b1e5b866866966de555918d3324684}\label{classPrintLanguage_a73b1e5b866866966de555918d3324684}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a73b1e5b866866966de555918d3324684}{op\+Cpool\+Ref\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a C\+P\+O\+O\+L\+R\+EF operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a3974aa87aca2662a5fbe2e910ab763c7}\label{classPrintLanguage_a3974aa87aca2662a5fbe2e910ab763c7}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a3974aa87aca2662a5fbe2e910ab763c7}{op\+New\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a N\+EW operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a21846675b4d416718364b9b5052a1195}\label{classPrintLanguage_a21846675b4d416718364b9b5052a1195}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_a21846675b4d416718364b9b5052a1195}{op\+Insert\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit an I\+N\+S\+E\+RT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ab4af4a3eb5039563c0872d889a3211a2}\label{classPrintLanguage_ab4af4a3eb5039563c0872d889a3211a2}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_ab4af4a3eb5039563c0872d889a3211a2}{op\+Extract\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit an E\+X\+T\+R\+A\+CT operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_af8429075dbefaf4e40399fc0876aabec}\label{classPrintLanguage_af8429075dbefaf4e40399fc0876aabec}} 
+virtual void \mbox{\hyperlink{classPrintLanguage_af8429075dbefaf4e40399fc0876aabec}{op\+Popcount\+Op}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a P\+O\+P\+C\+O\+U\+NT operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int4 \mbox{\hyperlink{classPrintLanguage_ae49714ea4a8560619b0a71850c2ca3c1}{most\+Natural\+Base}} (uintb val)
+\begin{DoxyCompactList}\small\item\em Determine the most natural base for an integer. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classPrintLanguage_a32d76e94f94642915cfa67191de38a8a}{format\+Binary}} (ostream \&s, uintb val)
+\begin{DoxyCompactList}\small\item\em Print a number in binary form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPrintLanguage_a2f80f78f12dc9c88010ca720dccc9621}\label{classPrintLanguage_a2f80f78f12dc9c88010ca720dccc9621}} 
+void \mbox{\hyperlink{classPrintLanguage_a2f80f78f12dc9c88010ca720dccc9621}{pop\+Scope}} (void)
+\begin{DoxyCompactList}\small\item\em Pop to the previous symbol scope. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_abe1affc823865f4379d27121c39e5880}{push\+Op}} (const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$tok, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push an operator token onto the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_abeb8a9774fbf1dcb700be292a7e10be8}{push\+Atom}} (const \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} \&atom)
+\begin{DoxyCompactList}\small\item\em Push a variable token onto the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_a5979bdf12bfe420ae6bba713bc3d7faf}{push\+Vn\+Implied}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, uint4 m)
+\begin{DoxyCompactList}\small\item\em Push an implied variable onto the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_a6ec07b77be217d86b77ec5fec2919b08}{push\+Vn\+Explicit}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push an explicit variable onto the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_a955ef5ecf066b283738b23abe925f67c}{push\+Vn\+L\+HS}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a variable as the left-\/hand side of an expression. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPrintLanguage_aebcaeed17efc40f4fcb45390292ff6ef}{parentheses}} (const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$op2)
+\begin{DoxyCompactList}\small\item\em Determine if the given token should be emitted in its own parenthetic expression. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_a61cfb2515689f57d3d3b5895b52ef078}{emit\+Op}} (const \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish}{Reverse\+Polish}} \&entry)
+\begin{DoxyCompactList}\small\item\em Send an operator token from the R\+PN to the emitter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_ad5077f844d4095c52594fc946893db87}{emit\+Atom}} (const \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} \&atom)
+\begin{DoxyCompactList}\small\item\em Send an variable token from the R\+PN to the emitter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPrintLanguage_a846d6e68f8bbdde7cf6a442d2ce5fc16}{escape\+Character\+Data}} (ostream \&s, const uint1 $\ast$buf, int4 count, int4 charsize, bool bigend) const
+\begin{DoxyCompactList}\small\item\em Emit a byte buffer to the stream as unicode characters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_a193f787ccd9f5466a7b97feb084687d6}{recurse}} (void)
+\begin{DoxyCompactList}\small\item\em Emit from the R\+PN stack as much as possible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_a685bceb682b22e22470d649e0d4c3308}{op\+Binary}} (const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$tok, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a binary operator onto the R\+PN stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrintLanguage_aff68af4415bc2cc51d86240c9427bd87}{op\+Unary}} (const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$tok, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Push a unary operator onto the R\+PN stack. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_adadac66bfdaddbc2d56989f5a6eb8393}\label{classPrintLanguage_adadac66bfdaddbc2d56989f5a6eb8393}} 
+void \mbox{\hyperlink{classPrintLanguage_adadac66bfdaddbc2d56989f5a6eb8393}{reset\+Defaults\+Internal}} (void)
+\begin{DoxyCompactList}\small\item\em Reset options to default for \mbox{\hyperlink{classPrintLanguage}{Print\+Language}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_acfc5f922cf2befcad9b38ef1d55c35e3}{print\+Unicode}} (ostream \&s, int4 onechar) const =0
+\begin{DoxyCompactList}\small\item\em Print a single unicode character as a {\itshape character} {\itshape constant} for the high-\/level language. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a4bd65e5a27a60ab1b5590673c6396a4f}{push\+Type}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)=0
+\begin{DoxyCompactList}\small\item\em Push a data-\/type name onto the R\+PN expression stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a1ef3fe4265a8f0abdb72f90ce3cb9944}{push\+Constant}} (uintb val, const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Push a constant onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintLanguage_ad90b2dc069614a6ad24ca8d73345ab74}{push\+Equate}} (uintb val, int4 sz, const \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} $\ast$sym, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Push a constant marked up by and \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a08b82dcc9073756390dbee98a85d9a95}{push\+Annotation}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Push an address which is not in the normal data-\/flow. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a481c41c176f1b5edea4e984997243f43}{push\+Symbol}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Push a specific \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a16ffa214e32d7815a1350752a0113796}{push\+Unnamed\+Location}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Push an address as a substitute for a \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a918310a27fdef5cde48b3fe6e4c7999f}{push\+Partial\+Symbol}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, int4 off, int4 sz, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype)=0
+\begin{DoxyCompactList}\small\item\em Push a variable that represents only part of a symbol onto the R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a934e29f1d48b8b1c1a80218018f9e6a3}{push\+Mismatch\+Symbol}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, int4 off, int4 sz, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Push an identifier for a variable that mismatches with its \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_ae98ff6bbfded046b5177d9c6e728b99b}{emit\+Line\+Comment}} (int4 indent, const \mbox{\hyperlink{classComment}{Comment}} $\ast$comm)
+\begin{DoxyCompactList}\small\item\em Emit a comment line. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a2007b92c662e0261310d2bbac3bfe4f1}{emit\+Var\+Decl}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)=0
+\begin{DoxyCompactList}\small\item\em Emit a variable declaration. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_ab8d65e75ede43bc2f14b926bba89d7ae}{emit\+Var\+Decl\+Statement}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)=0
+\begin{DoxyCompactList}\small\item\em Emit a variable declaration statement. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintLanguage_a84affe778545c950190a9d7d3edbf6e5}{emit\+Scope\+Var\+Decls}} (const \mbox{\hyperlink{classScope}{Scope}} $\ast$scope, int4 cat)=0
+\begin{DoxyCompactList}\small\item\em Emit all the variable declarations for a given scope. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_aeb6f62b1d73a32173240647b6953f80e}{emit\+Expression}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Emit a full expression. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPrintLanguage_a591f782041b30d6d0caf65dcbdd88c78}{emit\+Function\+Declaration}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)=0
+\begin{DoxyCompactList}\small\item\em Emit a function declaration. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classPrintLanguage_a5ce2d6fc0fee85cdc030732d3825b154}{check\+Print\+Negation}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)=0
+\begin{DoxyCompactList}\small\item\em Check whether a given boolean \mbox{\hyperlink{classVarnode}{Varnode}} can be printed in negated form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classPrintLanguage_a4438c48a32bb84170fe5736e4f13267b}{unicode\+Needs\+Escape}} (int4 codepoint)
+\begin{DoxyCompactList}\small\item\em Determine if the given codepoint needs to be escaped. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPrintLanguage_a0100461bfbb13d149ce623cb0a82e99f}\label{classPrintLanguage_a0100461bfbb13d149ce623cb0a82e99f}} 
+\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classPrintLanguage_a0100461bfbb13d149ce623cb0a82e99f}{glb}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classArchitecture}{Architecture}} owning the language emitter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a2e64a7ab6efee810e6f28127acfa3db7}\label{classPrintLanguage_a2e64a7ab6efee810e6f28127acfa3db7}} 
+const \mbox{\hyperlink{classScope}{Scope}} $\ast$ \mbox{\hyperlink{classPrintLanguage_a2e64a7ab6efee810e6f28127acfa3db7}{curscope}}
+\begin{DoxyCompactList}\small\item\em The current symbol scope. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_abb49ca98bdc4f3d655362031987ab6db}\label{classPrintLanguage_abb49ca98bdc4f3d655362031987ab6db}} 
+\mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$ \mbox{\hyperlink{classPrintLanguage_abb49ca98bdc4f3d655362031987ab6db}{cast\+Strategy}}
+\begin{DoxyCompactList}\small\item\em The strategy for emitting explicit {\itshape case} operations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a448d008089a47944ef6b07b4892faa7f}\label{classPrintLanguage_a448d008089a47944ef6b07b4892faa7f}} 
+\mbox{\hyperlink{classEmitXml}{Emit\+Xml}} $\ast$ \mbox{\hyperlink{classPrintLanguage_a448d008089a47944ef6b07b4892faa7f}{emit}}
+\begin{DoxyCompactList}\small\item\em The low-\/level token emitter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a9c87a425ce241ce1b47ca8305de2fdc0}\label{classPrintLanguage_a9c87a425ce241ce1b47ca8305de2fdc0}} 
+uint4 \mbox{\hyperlink{classPrintLanguage_a9c87a425ce241ce1b47ca8305de2fdc0}{mods}}
+\begin{DoxyCompactList}\small\item\em Currently active printing modifications. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a4bb9049299d4bf3932bb5422a1706a66}\label{classPrintLanguage_a4bb9049299d4bf3932bb5422a1706a66}} 
+uint4 \mbox{\hyperlink{classPrintLanguage_a4bb9049299d4bf3932bb5422a1706a66}{instr\+\_\+comment\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of instruction comments to display. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_ad1857510f16a26544c2c8a23b9a86a22}\label{classPrintLanguage_ad1857510f16a26544c2c8a23b9a86a22}} 
+uint4 \mbox{\hyperlink{classPrintLanguage_ad1857510f16a26544c2c8a23b9a86a22}{head\+\_\+comment\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of header comments to display. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPrintLanguage_a0ad818b7bb4070d1409f562c9598b694}\label{classPrintLanguage_a0ad818b7bb4070d1409f562c9598b694}} 
+\mbox{\hyperlink{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82}{namespace\+\_\+strategy}} \mbox{\hyperlink{classPrintLanguage_a0ad818b7bb4070d1409f562c9598b694}{namespc\+\_\+strategy}}
+\begin{DoxyCompactList}\small\item\em How should namespace tokens be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class A\+PI for emitting a high-\/level language. 
+
+Instances of this object are responsible for converting a function\textquotesingle{}s (transformed) data-\/flow graph into the final stream of tokens of a high-\/level source code language. There a few main entry points including\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classPrintLanguage_a93ebbf4cf20c65236ffca078fd5cbc21}{doc\+Function()}}
+\item \mbox{\hyperlink{classPrintLanguage_a3fbbabf7a0a2f67e02b49d895db04fa9}{doc\+All\+Globals()}}
+\item \mbox{\hyperlink{classPrintLanguage_aea8fdf499dc7cba307e6cf513ed0ccab}{doc\+Type\+Definitions()}}
+\end{DoxyItemize}
+
+The system is responsible for printing\+:
+\begin{DoxyItemize}
+\item Control-\/flow structures
+\item Expressions
+\item Type declarations
+\item Function prototypes
+\item Comments
+\end{DoxyItemize}
+
+As part of all this printing, the system is also responsible for
+\begin{DoxyItemize}
+\item Emitting integers, floats, and character constants
+\item Placing parentheses within expressions to properly represent data-\/flow
+\item Deciding whether {\itshape cast} operations need an explicit cast token
+\item Indenting and line wrapping
+\end{DoxyItemize}
+
+To accomplish this, the A\+PI is broken up into three sections. The first section are the main entry point \textquotesingle{}doc\textquotesingle{} methods. The second section are \textquotesingle{}emit\textquotesingle{} methods, which are responsible for printing a representation of a particular high-\/level code construct. The third section are \textquotesingle{}push\textquotesingle{} and \textquotesingle{}op\textquotesingle{} methods, which are responsible for walking expression trees. The order in which tokens are emitted for an expression is determined by a Reverse Polish Notation (R\+PN) stack, that the \textquotesingle{}push\textquotesingle{} methods manipulate. Operators and variables are {\itshape pushed} onto this stack and are ultimately {\itshape emitted} in the correct order.
+
+The base class provides a generic {\itshape printing} {\itshape modifications} stack and a {\itshape symbol} {\itshape scope} stack to provide a printing context mechanism for derived classes. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269}} 
+\index{PrintLanguage@{PrintLanguage}!modifiers@{modifiers}}
+\index{modifiers@{modifiers}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{modifiers}{modifiers}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269}{Print\+Language\+::modifiers}}}
+
+
+
+Possible context sensitive modifiers to how tokens get emitted. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_hex@{force\_hex}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!force\_hex@{force\_hex}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a7170201e8c6e2eefcabcf85d0182cac2}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a7170201e8c6e2eefcabcf85d0182cac2}} 
+force\+\_\+hex&Force printing of hex. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_dec@{force\_dec}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!force\_dec@{force\_dec}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a50308b78401f2aa9647f8d71b00b3552}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a50308b78401f2aa9647f8d71b00b3552}} 
+force\+\_\+dec&Force printing of dec. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bestfit@{bestfit}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!bestfit@{bestfit}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269ae75b4b74c4f1d2d3b624349c23ad602e}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269ae75b4b74c4f1d2d3b624349c23ad602e}} 
+bestfit&Decide on most aesthetic form. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_scinote@{force\_scinote}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!force\_scinote@{force\_scinote}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a18b90bd796baab2c799459c65defd682}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a18b90bd796baab2c799459c65defd682}} 
+force\+\_\+scinote&Force scientific notation for floats. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_pointer@{force\_pointer}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!force\_pointer@{force\_pointer}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a74bdd76c4c97a0dcd5f1b908e87c54e2}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a74bdd76c4c97a0dcd5f1b908e87c54e2}} 
+force\+\_\+pointer&Force \textquotesingle{}$\ast$\textquotesingle{} notation for pointers. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{print\_load\_value@{print\_load\_value}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!print\_load\_value@{print\_load\_value}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a52f9725e16e79a9812b83983a5146c01}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a52f9725e16e79a9812b83983a5146c01}} 
+print\+\_\+load\+\_\+value&Hide pointer deref for load with other ops. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{print\_store\_value@{print\_store\_value}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!print\_store\_value@{print\_store\_value}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269ab148b4aa4e2dd609c76cc04dd140eba4}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269ab148b4aa4e2dd609c76cc04dd140eba4}} 
+print\+\_\+store\+\_\+value&Hide pointer deref for store with other ops. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{no\_branch@{no\_branch}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!no\_branch@{no\_branch}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a631f8c824aaa0f47b483c9a7f2c09213}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a631f8c824aaa0f47b483c9a7f2c09213}} 
+no\+\_\+branch&Do not print branch instruction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{only\_branch@{only\_branch}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!only\_branch@{only\_branch}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a5026346af5658b4b62dfa2a04bb7f5f0}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a5026346af5658b4b62dfa2a04bb7f5f0}} 
+only\+\_\+branch&Print only the branch instruction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{comma\_separate@{comma\_separate}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!comma\_separate@{comma\_separate}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a9fe025b86ec8bdf375401e884efc7f58}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a9fe025b86ec8bdf375401e884efc7f58}} 
+comma\+\_\+separate&Statements within condition. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{flat@{flat}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!flat@{flat}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a73f7e1ce9722a739f3023564e16ef043}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a73f7e1ce9722a739f3023564e16ef043}} 
+flat&Do not print block structure. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{falsebranch@{falsebranch}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!falsebranch@{falsebranch}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269aebdcd0dfe2b3d01502597c52926ff9a6}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269aebdcd0dfe2b3d01502597c52926ff9a6}} 
+falsebranch&Print the false branch (for flat) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nofallthru@{nofallthru}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!nofallthru@{nofallthru}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a0ef9b13712c52f80da3fe7df7845eb18}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a0ef9b13712c52f80da3fe7df7845eb18}} 
+nofallthru&Fall-\/thru no longer exists. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{negatetoken@{negatetoken}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!negatetoken@{negatetoken}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a470060c58b994f361e4910462f8ae910}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a470060c58b994f361e4910462f8ae910}} 
+negatetoken&Print the token representing the negation of current token. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hide\_thisparam@{hide\_thisparam}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!hide\_thisparam@{hide\_thisparam}}}\mbox{\Hypertarget{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a7510abf575fe8def455286bf22e9c39b}\label{classPrintLanguage_a7c9f9ee37d2fcd1f6d48a188c0a82269a7510abf575fe8def455286bf22e9c39b}} 
+hide\+\_\+thisparam&Do not print the \textquotesingle{}this\textquotesingle{} parameter in argument lists. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82}\label{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82}} 
+\index{PrintLanguage@{PrintLanguage}!namespace\_strategy@{namespace\_strategy}}
+\index{namespace\_strategy@{namespace\_strategy}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{namespace\_strategy}{namespace\_strategy}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82}{Print\+Language\+::namespace\+\_\+strategy}}}
+
+
+
+Strategies for displaying namespace tokens. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MINIMAL\_NAMESPACES@{MINIMAL\_NAMESPACES}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!MINIMAL\_NAMESPACES@{MINIMAL\_NAMESPACES}}}\mbox{\Hypertarget{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82ab439a8595b620909041972026b1a6575}\label{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82ab439a8595b620909041972026b1a6575}} 
+M\+I\+N\+I\+M\+A\+L\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES&(default) Print just enough namespace info to fully resolve symbol \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_NAMESPACES@{NO\_NAMESPACES}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!NO\_NAMESPACES@{NO\_NAMESPACES}}}\mbox{\Hypertarget{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82a72410e93fd471da81c38b9205a23555d}\label{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82a72410e93fd471da81c38b9205a23555d}} 
+N\+O\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES&Never print namespace information. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALL\_NAMESPACES@{ALL\_NAMESPACES}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!ALL\_NAMESPACES@{ALL\_NAMESPACES}}}\mbox{\Hypertarget{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82a05922c45d9667bd8d8e346ef7f13ddfa}\label{classPrintLanguage_aaa1b21c8cff3cf130aa6b95ea1339c82a05922c45d9667bd8d8e346ef7f13ddfa}} 
+A\+L\+L\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+ES&Always print all namespace information. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473e}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473e}} 
+\index{PrintLanguage@{PrintLanguage}!tagtype@{tagtype}}
+\index{tagtype@{tagtype}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{tagtype}{tagtype}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classPrintLanguage_a7102f70f47777d8b17af52c5157c473e}{Print\+Language\+::tagtype}}}
+
+
+
+Possible types of \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{syntax@{syntax}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!syntax@{syntax}}}\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473eaddd629c83c51527561462924e5504226}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473eaddd629c83c51527561462924e5504226}} 
+syntax&Emit atom as syntax. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vartoken@{vartoken}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!vartoken@{vartoken}}}\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea7cc77f281b540b484e1e0d3cb9f9e004}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea7cc77f281b540b484e1e0d3cb9f9e004}} 
+vartoken&Emit atom as variable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{functoken@{functoken}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!functoken@{functoken}}}\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473eab3619991e28b93165b751728fb2d6f93}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473eab3619991e28b93165b751728fb2d6f93}} 
+functoken&Emit atom as function name. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{optoken@{optoken}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!optoken@{optoken}}}\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea1325fc9e031d2f8cada78bfb2ad9d6f5}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea1325fc9e031d2f8cada78bfb2ad9d6f5}} 
+optoken&Emit atom as operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{typetoken@{typetoken}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!typetoken@{typetoken}}}\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea6eeff0a2aa7ccc11cc4a909ab43a285c}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea6eeff0a2aa7ccc11cc4a909ab43a285c}} 
+typetoken&Emit atom as operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fieldtoken@{fieldtoken}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!fieldtoken@{fieldtoken}}}\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea2eb4b5fe22ef38198d067d6801ddb357}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea2eb4b5fe22ef38198d067d6801ddb357}} 
+fieldtoken&Emit atom as structure field. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{blanktoken@{blanktoken}!PrintLanguage@{PrintLanguage}}\index{PrintLanguage@{PrintLanguage}!blanktoken@{blanktoken}}}\mbox{\Hypertarget{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea7bd17915e6ff44d2184e03d1b38cd7a8}\label{classPrintLanguage_a7102f70f47777d8b17af52c5157c473ea7bd17915e6ff44d2184e03d1b38cd7a8}} 
+blanktoken&For anonymous types. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPrintLanguage_a43e6e04dbeaba98bf571dc089831a2fc}\label{classPrintLanguage_a43e6e04dbeaba98bf571dc089831a2fc}} 
+\index{PrintLanguage@{PrintLanguage}!PrintLanguage@{PrintLanguage}}
+\index{PrintLanguage@{PrintLanguage}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{PrintLanguage()}{PrintLanguage()}}
+{\footnotesize\ttfamily Print\+Language\+::\+Print\+Language (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g,  }\item[{const string \&}]{nm }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} that owns and will use this \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} \\
+\hline
+{\em nm} & is the formal name of the language \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrintLanguage_a5ce2d6fc0fee85cdc030732d3825b154}\label{classPrintLanguage_a5ce2d6fc0fee85cdc030732d3825b154}} 
+\index{PrintLanguage@{PrintLanguage}!checkPrintNegation@{checkPrintNegation}}
+\index{checkPrintNegation@{checkPrintNegation}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{checkPrintNegation()}{checkPrintNegation()}}
+{\footnotesize\ttfamily virtual bool Print\+Language\+::check\+Print\+Negation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Check whether a given boolean \mbox{\hyperlink{classVarnode}{Varnode}} can be printed in negated form. 
+
+In many situations a boolean value can be inverted by flipping the operator token producing it to a complementary token. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given boolean \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the value can be easily inverted 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_ad1f1099f49b4169948682a34c5b9f9cb}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a93ebbf4cf20c65236ffca078fd5cbc21}\label{classPrintLanguage_a93ebbf4cf20c65236ffca078fd5cbc21}} 
+\index{PrintLanguage@{PrintLanguage}!docFunction@{docFunction}}
+\index{docFunction@{docFunction}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{docFunction()}{docFunction()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::doc\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Emit the declaration (and body) of a function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function to emit \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a7a3890c28908f1229f8e94e0239fe0ea}{PrintC}}, and \mbox{\hyperlink{classPrintJava_ae80041003ebe279b2109aa3fd0197143}{Print\+Java}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a2139aedceedf891b5702c0da1d905f08}\label{classPrintLanguage_a2139aedceedf891b5702c0da1d905f08}} 
+\index{PrintLanguage@{PrintLanguage}!docSingleGlobal@{docSingleGlobal}}
+\index{docSingleGlobal@{docSingleGlobal}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{docSingleGlobal()}{docSingleGlobal()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::doc\+Single\+Global (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Emit the declaration for a single (global) \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} to declare \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a380029e0d567ee29b38225d6f6612b9c}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_aea8fdf499dc7cba307e6cf513ed0ccab}\label{classPrintLanguage_aea8fdf499dc7cba307e6cf513ed0ccab}} 
+\index{PrintLanguage@{PrintLanguage}!docTypeDefinitions@{docTypeDefinitions}}
+\index{docTypeDefinitions@{docTypeDefinitions}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{docTypeDefinitions()}{docTypeDefinitions()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::doc\+Type\+Definitions (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Emit definitions of data-\/types. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em typegrp} & is the container for the data-\/types that should be defined \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a6511933f0b8fd3f2fef8aa3920aa9de6}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_ad5077f844d4095c52594fc946893db87}\label{classPrintLanguage_ad5077f844d4095c52594fc946893db87}} 
+\index{PrintLanguage@{PrintLanguage}!emitAtom@{emitAtom}}
+\index{emitAtom@{emitAtom}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitAtom()}{emitAtom()}}
+{\footnotesize\ttfamily void Print\+Language\+::emit\+Atom (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} \&}]{atom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Send an variable token from the R\+PN to the emitter. 
+
+Send the given \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} to the low-\/level emitter, marking it up according to its type 
+\begin{DoxyParams}{Parameters}
+{\em atom} & is the given \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} to emit \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_aeb6f62b1d73a32173240647b6953f80e}\label{classPrintLanguage_aeb6f62b1d73a32173240647b6953f80e}} 
+\index{PrintLanguage@{PrintLanguage}!emitExpression@{emitExpression}}
+\index{emitExpression@{emitExpression}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitExpression()}{emitExpression()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::emit\+Expression (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Emit a full expression. 
+
+This can be an assignment statement, if the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} has an output \mbox{\hyperlink{classVarnode}{Varnode}}, or it can be a statement with no left-\/hand side. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} performing the final operation of the expression \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a23d8dc013a41698d5168665451b356f6}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a591f782041b30d6d0caf65dcbdd88c78}\label{classPrintLanguage_a591f782041b30d6d0caf65dcbdd88c78}} 
+\index{PrintLanguage@{PrintLanguage}!emitFunctionDeclaration@{emitFunctionDeclaration}}
+\index{emitFunctionDeclaration@{emitFunctionDeclaration}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitFunctionDeclaration()}{emitFunctionDeclaration()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::emit\+Function\+Declaration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Emit a function declaration. 
+
+This prints the formal defining prototype for a function. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the \mbox{\hyperlink{classFuncdata}{Funcdata}} object representing the function to be emitted \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a38f45bf42a0b28ed731eb036636d0a11}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_ae98ff6bbfded046b5177d9c6e728b99b}\label{classPrintLanguage_ae98ff6bbfded046b5177d9c6e728b99b}} 
+\index{PrintLanguage@{PrintLanguage}!emitLineComment@{emitLineComment}}
+\index{emitLineComment@{emitLineComment}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitLineComment()}{emitLineComment()}}
+{\footnotesize\ttfamily void Print\+Language\+::emit\+Line\+Comment (\begin{DoxyParamCaption}\item[{int4}]{indent,  }\item[{const \mbox{\hyperlink{classComment}{Comment}} $\ast$}]{comm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Emit a comment line. 
+
+The comment will get emitted as a single line using the high-\/level language\textquotesingle{}s delimiters with the given indent level 
+\begin{DoxyParams}{Parameters}
+{\em indent} & is the number of characters to indent \\
+\hline
+{\em comm} & is the \mbox{\hyperlink{classComment}{Comment}} object containing the character data and associated markup info \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a61cfb2515689f57d3d3b5895b52ef078}\label{classPrintLanguage_a61cfb2515689f57d3d3b5895b52ef078}} 
+\index{PrintLanguage@{PrintLanguage}!emitOp@{emitOp}}
+\index{emitOp@{emitOp}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitOp()}{emitOp()}}
+{\footnotesize\ttfamily void Print\+Language\+::emit\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish}{Reverse\+Polish}} \&}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Send an operator token from the R\+PN to the emitter. 
+
+An \mbox{\hyperlink{classOpToken}{Op\+Token}} directly from the R\+PN is sent to the low-\/level emitter, resolving any final spacing or parentheses. 
+\begin{DoxyParams}{Parameters}
+{\em entry} & is the R\+PN entry to be emitted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a84affe778545c950190a9d7d3edbf6e5}\label{classPrintLanguage_a84affe778545c950190a9d7d3edbf6e5}} 
+\index{PrintLanguage@{PrintLanguage}!emitScopeVarDecls@{emitScopeVarDecls}}
+\index{emitScopeVarDecls@{emitScopeVarDecls}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitScopeVarDecls()}{emitScopeVarDecls()}}
+{\footnotesize\ttfamily virtual bool Print\+Language\+::emit\+Scope\+Var\+Decls (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classScope}{Scope}} $\ast$}]{scope,  }\item[{int4}]{cat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Emit all the variable declarations for a given scope. 
+
+A subset of all variables can be declared by specifying a category, 0 for parameters, -\/1 for everything. 
+\begin{DoxyParams}{Parameters}
+{\em scope} & is the given \mbox{\hyperlink{classScope}{Scope}} \\
+\hline
+{\em cat} & is the category of variable to declare \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_af3fcfeca02664799789cf4042956ee26}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a2007b92c662e0261310d2bbac3bfe4f1}\label{classPrintLanguage_a2007b92c662e0261310d2bbac3bfe4f1}} 
+\index{PrintLanguage@{PrintLanguage}!emitVarDecl@{emitVarDecl}}
+\index{emitVarDecl@{emitVarDecl}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitVarDecl()}{emitVarDecl()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::emit\+Var\+Decl (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Emit a variable declaration. 
+
+This can be part of a full a statement, or just the declaration of a function parameter 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} to be declared \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_ae05bed1958ac3b694bdeda2897e6a1ff}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_ab8d65e75ede43bc2f14b926bba89d7ae}\label{classPrintLanguage_ab8d65e75ede43bc2f14b926bba89d7ae}} 
+\index{PrintLanguage@{PrintLanguage}!emitVarDeclStatement@{emitVarDeclStatement}}
+\index{emitVarDeclStatement@{emitVarDeclStatement}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{emitVarDeclStatement()}{emitVarDeclStatement()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::emit\+Var\+Decl\+Statement (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Emit a variable declaration statement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} to be declared \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a56fd9b353cd343909b2700fe42875885}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a846d6e68f8bbdde7cf6a442d2ce5fc16}\label{classPrintLanguage_a846d6e68f8bbdde7cf6a442d2ce5fc16}} 
+\index{PrintLanguage@{PrintLanguage}!escapeCharacterData@{escapeCharacterData}}
+\index{escapeCharacterData@{escapeCharacterData}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{escapeCharacterData()}{escapeCharacterData()}}
+{\footnotesize\ttfamily bool Print\+Language\+::escape\+Character\+Data (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const uint1 $\ast$}]{buf,  }\item[{int4}]{count,  }\item[{int4}]{charsize,  }\item[{bool}]{bigend }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit a byte buffer to the stream as unicode characters. 
+
+Characters are emitted until we reach a terminator character or {\bfseries{count}} bytes is consumed. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em buf} & is the byte buffer \\
+\hline
+{\em count} & is the maximum number of bytes to consume \\
+\hline
+{\em charsize} & is 1 for U\+T\+F8, 2 for U\+T\+F16, or 4 for U\+T\+F32 \\
+\hline
+{\em bigend} & is {\bfseries{true}} for a big endian encoding of U\+TF elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if we reach a terminator character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintLanguage_a32d76e94f94642915cfa67191de38a8a}\label{classPrintLanguage_a32d76e94f94642915cfa67191de38a8a}} 
+\index{PrintLanguage@{PrintLanguage}!formatBinary@{formatBinary}}
+\index{formatBinary@{formatBinary}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{formatBinary()}{formatBinary()}}
+{\footnotesize\ttfamily void Print\+Language\+::format\+Binary (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print a number in binary form. 
+
+Print a string a \textquotesingle{}0\textquotesingle{} and \textquotesingle{}1\textquotesingle{} characters representing the given value 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em val} & is the given value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_ae49714ea4a8560619b0a71850c2ca3c1}\label{classPrintLanguage_ae49714ea4a8560619b0a71850c2ca3c1}} 
+\index{PrintLanguage@{PrintLanguage}!mostNaturalBase@{mostNaturalBase}}
+\index{mostNaturalBase@{mostNaturalBase}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{mostNaturalBase()}{mostNaturalBase()}}
+{\footnotesize\ttfamily int4 Print\+Language\+::most\+Natural\+Base (\begin{DoxyParamCaption}\item[{uintb}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determine the most natural base for an integer. 
+
+Count \textquotesingle{}0\textquotesingle{} and \textquotesingle{}9\textquotesingle{} digits base 10. Count \textquotesingle{}0\textquotesingle{} and \textquotesingle{}f\textquotesingle{} digits base 16. The highest count is the preferred base. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the given integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+10 for decimal or 16 for hexidecimal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintLanguage_a685bceb682b22e22470d649e0d4c3308}\label{classPrintLanguage_a685bceb682b22e22470d649e0d4c3308}} 
+\index{PrintLanguage@{PrintLanguage}!opBinary@{opBinary}}
+\index{opBinary@{opBinary}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{opBinary()}{opBinary()}}
+{\footnotesize\ttfamily void Print\+Language\+::op\+Binary (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$}]{tok,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push a binary operator onto the R\+PN stack. 
+
+Push an operator onto the stack that has a normal binary format. Both of its input expressions are also pushed. 
+\begin{DoxyParams}{Parameters}
+{\em tok} & is the operator token to push \\
+\hline
+{\em op} & is the associated \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_aff68af4415bc2cc51d86240c9427bd87}\label{classPrintLanguage_aff68af4415bc2cc51d86240c9427bd87}} 
+\index{PrintLanguage@{PrintLanguage}!opUnary@{opUnary}}
+\index{opUnary@{opUnary}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{opUnary()}{opUnary()}}
+{\footnotesize\ttfamily void Print\+Language\+::op\+Unary (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$}]{tok,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push a unary operator onto the R\+PN stack. 
+
+Push an operator onto the stack that has a normal unary format. Its input expression is also pushed. 
+\begin{DoxyParams}{Parameters}
+{\em tok} & is the operator token to push \\
+\hline
+{\em op} & is the associated \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_aebcaeed17efc40f4fcb45390292ff6ef}\label{classPrintLanguage_aebcaeed17efc40f4fcb45390292ff6ef}} 
+\index{PrintLanguage@{PrintLanguage}!parentheses@{parentheses}}
+\index{parentheses@{parentheses}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{parentheses()}{parentheses()}}
+{\footnotesize\ttfamily bool Print\+Language\+::parentheses (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$}]{op2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Determine if the given token should be emitted in its own parenthetic expression. 
+
+The token at the top of the stack is being emitted. Check if its input expression, ending with the given operator token, needs to be surrounded by parentheses to convey the proper meaning. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the input token to {\bfseries{this}} operator \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{op2}} (as input to {\bfseries{this}}) should be parenthesized 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPrintLanguage_acfc5f922cf2befcad9b38ef1d55c35e3}\label{classPrintLanguage_acfc5f922cf2befcad9b38ef1d55c35e3}} 
+\index{PrintLanguage@{PrintLanguage}!printUnicode@{printUnicode}}
+\index{printUnicode@{printUnicode}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{printUnicode()}{printUnicode()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::print\+Unicode (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{onechar }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Print a single unicode character as a {\itshape character} {\itshape constant} for the high-\/level language. 
+
+For most languages, this prints the character surrounded by single quotes. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em onechar} & is the unicode code point of the character to print \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a56fdbb426ff8dda0d3dd29901f09ead1}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a08b82dcc9073756390dbee98a85d9a95}\label{classPrintLanguage_a08b82dcc9073756390dbee98a85d9a95}} 
+\index{PrintLanguage@{PrintLanguage}!pushAnnotation@{pushAnnotation}}
+\index{pushAnnotation@{pushAnnotation}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushAnnotation()}{pushAnnotation()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::push\+Annotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push an address which is not in the normal data-\/flow. 
+
+The given \mbox{\hyperlink{classVarnode}{Varnode}} is treated as an address, which may or may not have a symbol name. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the annotation \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} which takes the annotation as input \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a234b95d9f3fdb8a79eeff02eb4acbca3}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_abeb8a9774fbf1dcb700be292a7e10be8}\label{classPrintLanguage_abeb8a9774fbf1dcb700be292a7e10be8}} 
+\index{PrintLanguage@{PrintLanguage}!pushAtom@{pushAtom}}
+\index{pushAtom@{pushAtom}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushAtom()}{pushAtom()}}
+{\footnotesize\ttfamily void Print\+Language\+::push\+Atom (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} \&}]{atom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push a variable token onto the R\+PN stack. 
+
+Push a single token (an \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}}) onto the R\+PN stack. This may trigger some amount of the R\+PN stack to get emitted, depending on what was pushed previously. The \textquotesingle{}emit\textquotesingle{} routines are called, popping off as much as possible. 
+\begin{DoxyParams}{Parameters}
+{\em atom} & is the token to be pushed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a1ef3fe4265a8f0abdb72f90ce3cb9944}\label{classPrintLanguage_a1ef3fe4265a8f0abdb72f90ce3cb9944}} 
+\index{PrintLanguage@{PrintLanguage}!pushConstant@{pushConstant}}
+\index{pushConstant@{pushConstant}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushConstant()}{pushConstant()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::push\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push a constant onto the R\+PN stack. 
+
+The value is ultimately emitted based on its data-\/type and other associated mark-\/up 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the value of the constant \\
+\hline
+{\em ct} & is the data-\/type of the constant \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the constant (optional) \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the constant (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a3db658db938d08395a6e54d3b1c7a372}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_ad90b2dc069614a6ad24ca8d73345ab74}\label{classPrintLanguage_ad90b2dc069614a6ad24ca8d73345ab74}} 
+\index{PrintLanguage@{PrintLanguage}!pushEquate@{pushEquate}}
+\index{pushEquate@{pushEquate}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushEquate()}{pushEquate()}}
+{\footnotesize\ttfamily virtual bool Print\+Language\+::push\+Equate (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} $\ast$}]{sym,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push a constant marked up by and \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} onto the R\+PN stack. 
+
+The equate may substitute a name or force a conversion for the constant 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the value of the constant \\
+\hline
+{\em sz} & is the number of bytes to use for the encoding \\
+\hline
+{\em sym} & is the \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} that marks up the constant \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the constant (optional) \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the constant (optional) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_ae236127c4e6ea51836f881210aa59ec5}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a934e29f1d48b8b1c1a80218018f9e6a3}\label{classPrintLanguage_a934e29f1d48b8b1c1a80218018f9e6a3}} 
+\index{PrintLanguage@{PrintLanguage}!pushMismatchSymbol@{pushMismatchSymbol}}
+\index{pushMismatchSymbol@{pushMismatchSymbol}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushMismatchSymbol()}{pushMismatchSymbol()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::push\+Mismatch\+Symbol (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push an identifier for a variable that mismatches with its \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+This happens when a \mbox{\hyperlink{classVarnode}{Varnode}} overlaps, but is not contained by a \mbox{\hyperlink{classSymbol}{Symbol}}. This most commonly happens when the size of a \mbox{\hyperlink{classSymbol}{Symbol}} is unknown 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the overlapped symbol \\
+\hline
+{\em off} & is the byte offset of the variable relative to the symbol \\
+\hline
+{\em sz} & is the size of the variable in bytes \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} representing the variable \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_aaa8e530589a3d446db8f76b9a211f0fa}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_abe1affc823865f4379d27121c39e5880}\label{classPrintLanguage_abe1affc823865f4379d27121c39e5880}} 
+\index{PrintLanguage@{PrintLanguage}!pushOp@{pushOp}}
+\index{pushOp@{pushOp}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushOp()}{pushOp()}}
+{\footnotesize\ttfamily void Print\+Language\+::push\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$}]{tok,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push an operator token onto the R\+PN stack. 
+
+This generally will recursively push an entire expression onto the R\+PN stack, up to \mbox{\hyperlink{classVarnode}{Varnode}} objects marked as {\itshape explicit}, and will decide token order and parenthesis placement. As the ordering gets resolved, some amount of the expression may get emitted. 
+\begin{DoxyParams}{Parameters}
+{\em tok} & is the operator token to push \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the token \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a918310a27fdef5cde48b3fe6e4c7999f}\label{classPrintLanguage_a918310a27fdef5cde48b3fe6e4c7999f}} 
+\index{PrintLanguage@{PrintLanguage}!pushPartialSymbol@{pushPartialSymbol}}
+\index{pushPartialSymbol@{pushPartialSymbol}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushPartialSymbol()}{pushPartialSymbol()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::push\+Partial\+Symbol (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push a variable that represents only part of a symbol onto the R\+PN stack. 
+
+Generally {\itshape member} syntax specifying a field within a structure gets emitted. 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the root \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em off} & is the byte offset, within the \mbox{\hyperlink{classSymbol}{Symbol}}, of the partial variable \\
+\hline
+{\em sz} & is the number of bytes in the partial variable \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the partial value \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associate with the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em outtype} & is the data-\/type expected by expression using the partial variable \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a0e8ab66b834858fbace8fd20357b5a63}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a481c41c176f1b5edea4e984997243f43}\label{classPrintLanguage_a481c41c176f1b5edea4e984997243f43}} 
+\index{PrintLanguage@{PrintLanguage}!pushSymbol@{pushSymbol}}
+\index{pushSymbol@{pushSymbol}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushSymbol()}{pushSymbol()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::push\+Symbol (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push a specific \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the \mbox{\hyperlink{classSymbol}{Symbol}} value \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a22e493008d4ba06482b42fe1875be235}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a4bd65e5a27a60ab1b5590673c6396a4f}\label{classPrintLanguage_a4bd65e5a27a60ab1b5590673c6396a4f}} 
+\index{PrintLanguage@{PrintLanguage}!pushType@{pushType}}
+\index{pushType@{pushType}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushType()}{pushType()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::push\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push a data-\/type name onto the R\+PN expression stack. 
+
+The data-\/type is generally emitted as if for a cast. 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the data-\/type to push \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a210e44709553449b4d03596f137dfb10}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a16ffa214e32d7815a1350752a0113796}\label{classPrintLanguage_a16ffa214e32d7815a1350752a0113796}} 
+\index{PrintLanguage@{PrintLanguage}!pushUnnamedLocation@{pushUnnamedLocation}}
+\index{pushUnnamedLocation@{pushUnnamedLocation}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushUnnamedLocation()}{pushUnnamedLocation()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::push\+Unnamed\+Location (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Push an address as a substitute for a \mbox{\hyperlink{classSymbol}{Symbol}} onto the R\+PN stack. 
+
+If there is no \mbox{\hyperlink{classSymbol}{Symbol}} or other name source for an explicit variable, this method is used to print something to represent the variable based on its storage address. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the storage address \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} representing the variable (if present) \\
+\hline
+{\em op} & is a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the variable \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a5d9f2db7f218e2e994b741940155db52}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_a6ec07b77be217d86b77ec5fec2919b08}\label{classPrintLanguage_a6ec07b77be217d86b77ec5fec2919b08}} 
+\index{PrintLanguage@{PrintLanguage}!pushVnExplicit@{pushVnExplicit}}
+\index{pushVnExplicit@{pushVnExplicit}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushVnExplicit()}{pushVnExplicit()}}
+{\footnotesize\ttfamily void Print\+Language\+::push\+Vn\+Explicit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push an explicit variable onto the R\+PN stack. 
+
+This method pushes a given \mbox{\hyperlink{classVarnode}{Varnode}} as a {\bfseries{leaf}} of the current expression. It decides how the \mbox{\hyperlink{classVarnode}{Varnode}} should get emitted, as a symbol, constant, etc., and then pushes the resulting leaf \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} onto the stack. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given explicit \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} incorporating the \mbox{\hyperlink{classVarnode}{Varnode}} into the current expression \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a5979bdf12bfe420ae6bba713bc3d7faf}\label{classPrintLanguage_a5979bdf12bfe420ae6bba713bc3d7faf}} 
+\index{PrintLanguage@{PrintLanguage}!pushVnImplied@{pushVnImplied}}
+\index{pushVnImplied@{pushVnImplied}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushVnImplied()}{pushVnImplied()}}
+{\footnotesize\ttfamily void Print\+Language\+::push\+Vn\+Implied (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{uint4}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push an implied variable onto the R\+PN stack. 
+
+For a given implied \mbox{\hyperlink{classVarnode}{Varnode}}, the entire expression producing it is recursively pushed onto the R\+PN stack.
+
+When calling this method multiple times to push \mbox{\hyperlink{classVarnode}{Varnode}} inputs for a single p-\/code op, the inputs must be pushed in reverse order. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given implied \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em op} & is \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} taking the \mbox{\hyperlink{classVarnode}{Varnode}} as input \\
+\hline
+{\em m} & is the set of printing modifications to apply for this sub-\/expression \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a955ef5ecf066b283738b23abe925f67c}\label{classPrintLanguage_a955ef5ecf066b283738b23abe925f67c}} 
+\index{PrintLanguage@{PrintLanguage}!pushVnLHS@{pushVnLHS}}
+\index{pushVnLHS@{pushVnLHS}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{pushVnLHS()}{pushVnLHS()}}
+{\footnotesize\ttfamily void Print\+Language\+::push\+Vn\+L\+HS (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Push a variable as the left-\/hand side of an expression. 
+
+The given \mbox{\hyperlink{classVarnode}{Varnode}} will ultimately be emitted as an explicit variable on the left-\/hand side of an {\itshape assignment} statement. As with \mbox{\hyperlink{classPrintLanguage_a6ec07b77be217d86b77ec5fec2919b08}{push\+Vn\+Explicit()}}, this method decides how the \mbox{\hyperlink{classVarnode}{Varnode}} will be emitted and pushes the resulting \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Atom}} onto the R\+PN stack. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given L\+SH \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} which produces the \mbox{\hyperlink{classVarnode}{Varnode}} as an output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a193f787ccd9f5466a7b97feb084687d6}\label{classPrintLanguage_a193f787ccd9f5466a7b97feb084687d6}} 
+\index{PrintLanguage@{PrintLanguage}!recurse@{recurse}}
+\index{recurse@{recurse}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{recurse()}{recurse()}}
+{\footnotesize\ttfamily void Print\+Language\+::recurse (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Emit from the R\+PN stack as much as possible. 
+
+Any complete sub-\/expressions that are still on the R\+PN will get emitted. \mbox{\Hypertarget{classPrintLanguage_aeb989b6e336308e202e82035595443fb}\label{classPrintLanguage_aeb989b6e336308e202e82035595443fb}} 
+\index{PrintLanguage@{PrintLanguage}!setCommentDelimeter@{setCommentDelimeter}}
+\index{setCommentDelimeter@{setCommentDelimeter}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{setCommentDelimeter()}{setCommentDelimeter()}}
+{\footnotesize\ttfamily void Print\+Language\+::set\+Comment\+Delimeter (\begin{DoxyParamCaption}\item[{const string \&}]{start,  }\item[{const string \&}]{stop,  }\item[{bool}]{usecommentfill }\end{DoxyParamCaption})}
+
+
+
+Establish comment delimiters for the language. 
+
+By default, comments are indicated in the high-\/level language by preceding them with a specific sequence of delimiter characters, and optionally by ending the comment with another set of delimiter characters. 
+\begin{DoxyParams}{Parameters}
+{\em start} & is the initial sequence of characters delimiting a comment \\
+\hline
+{\em stop} & if not empty is the sequence delimiting the end of the comment \\
+\hline
+{\em usecommentfill} & is {\bfseries{true}} if the delimiter needs to be emitted after every line break \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_aa9f7b4fbc646531cfe3f9ad571f04ab1}\label{classPrintLanguage_aa9f7b4fbc646531cfe3f9ad571f04ab1}} 
+\index{PrintLanguage@{PrintLanguage}!setCommentStyle@{setCommentStyle}}
+\index{setCommentStyle@{setCommentStyle}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{setCommentStyle()}{setCommentStyle()}}
+{\footnotesize\ttfamily virtual void Print\+Language\+::set\+Comment\+Style (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the way comments are displayed in decompiler output. 
+
+This method can either be provided a formal name or a {\itshape sample} of the initial delimiter, then it will choose from among the schemes it knows 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the configuration description \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPrintC_a8798b0408fa3386c91f9df92f63cbd15}{PrintC}}.
+
+\mbox{\Hypertarget{classPrintLanguage_ae42187493b3b0458b84868ad55104f50}\label{classPrintLanguage_ae42187493b3b0458b84868ad55104f50}} 
+\index{PrintLanguage@{PrintLanguage}!setFlat@{setFlat}}
+\index{setFlat@{setFlat}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{setFlat()}{setFlat()}}
+{\footnotesize\ttfamily void Print\+Language\+::set\+Flat (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Set whether nesting code structure should be emitted. 
+
+Emitting formal code structuring can be turned off, causing all control-\/flow to be represented as {\itshape goto} statements and {\itshape labels}. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} if no code structuring should be emitted \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_af001882863a1a4a2abefd75e8db5e593}\label{classPrintLanguage_af001882863a1a4a2abefd75e8db5e593}} 
+\index{PrintLanguage@{PrintLanguage}!setIntegerFormat@{setIntegerFormat}}
+\index{setIntegerFormat@{setIntegerFormat}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{setIntegerFormat()}{setIntegerFormat()}}
+{\footnotesize\ttfamily void Print\+Language\+::set\+Integer\+Format (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the default integer format. 
+
+This determines how integers are displayed by default. Possible values are \char`\"{}hex\char`\"{} and \char`\"{}dec\char`\"{} to force a given format, or \char`\"{}best\char`\"{} can be used to let the decompiler select what it thinks best for each individual integer. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is \char`\"{}hex\char`\"{}, \char`\"{}dec\char`\"{}, or \char`\"{}best\char`\"{} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a3fff2b3ce27f87722011688cd3ba19d6}\label{classPrintLanguage_a3fff2b3ce27f87722011688cd3ba19d6}} 
+\index{PrintLanguage@{PrintLanguage}!setLineCommentIndent@{setLineCommentIndent}}
+\index{setLineCommentIndent@{setLineCommentIndent}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{setLineCommentIndent()}{setLineCommentIndent()}}
+{\footnotesize\ttfamily void Print\+Language\+::set\+Line\+Comment\+Indent (\begin{DoxyParamCaption}\item[{int4}]{val }\end{DoxyParamCaption})}
+
+
+
+Set the number of characters to indent comment lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is the number of characters \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_abec94ce8a6a2afb7daa0cc6bd6b222d8}\label{classPrintLanguage_abec94ce8a6a2afb7daa0cc6bd6b222d8}} 
+\index{PrintLanguage@{PrintLanguage}!setXML@{setXML}}
+\index{setXML@{setXML}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{setXML()}{setXML()}}
+{\footnotesize\ttfamily void Print\+Language\+::set\+X\+ML (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Set whether the low-\/level emitter, emits X\+ML markup. 
+
+Tell the emitter whether to emit just the raw tokens or if output is in X\+ML format with additional mark-\/up on the raw tokens. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} for X\+ML mark-\/up \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPrintLanguage_a4438c48a32bb84170fe5736e4f13267b}\label{classPrintLanguage_a4438c48a32bb84170fe5736e4f13267b}} 
+\index{PrintLanguage@{PrintLanguage}!unicodeNeedsEscape@{unicodeNeedsEscape}}
+\index{unicodeNeedsEscape@{unicodeNeedsEscape}!PrintLanguage@{PrintLanguage}}
+\doxysubsubsection{\texorpdfstring{unicodeNeedsEscape()}{unicodeNeedsEscape()}}
+{\footnotesize\ttfamily bool Print\+Language\+::unicode\+Needs\+Escape (\begin{DoxyParamCaption}\item[{int4}]{codepoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Determine if the given codepoint needs to be escaped. 
+
+Separate unicode characters that can be clearly emitted in a source code string (letters, numbers, punctuation, symbols) from characters that are better represented in source code with an escape sequence (control characters, unusual spaces, separators, private use characters etc. 
+\begin{DoxyParams}{Parameters}
+{\em codepoint} & is the given unicode codepoint to categorize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the codepoint needs to be escaped 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{printlanguage_8hh}{printlanguage.\+hh}}\item 
+printlanguage.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\hypertarget{varnode_8hh}{}\doxysection{varnode.\+hh File Reference}
+\label{varnode_8hh}\index{varnode.hh@{varnode.hh}}
+
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classVarnodeBank}{Varnode\+Bank}} classes.  
+
+
+{\ttfamily \#include \char`\"{}pcoderaw.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cover.\+hh\char`\"{}}\newline
+Include dependency graph for varnode.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{varnode_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{varnode_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structVarnodeCompareLocDef}{Varnode\+Compare\+Loc\+Def}}
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by location then definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structVarnodeCompareDefLoc}{Varnode\+Compare\+Def\+Loc}}
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by definition then location. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classVarnode}{Varnode}}
+\begin{DoxyCompactList}\small\item\em A low-\/level variable or contiguous set of bytes described by an \mbox{\hyperlink{classAddress}{Address}} and a size. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classVarnodeBank}{Varnode\+Bank}}
+\begin{DoxyCompactList}\small\item\em A container for \mbox{\hyperlink{classVarnode}{Varnode}} objects from a specific function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{varnode_8hh_a0c764dbc00f376e51070e39a84ff6bc8}\label{varnode_8hh_a0c764dbc00f376e51070e39a84ff6bc8}} 
+typedef set$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$, \mbox{\hyperlink{structVarnodeCompareLocDef}{Varnode\+Compare\+Loc\+Def}} $>$ \mbox{\hyperlink{varnode_8hh_a0c764dbc00f376e51070e39a84ff6bc8}{Varnode\+Loc\+Set}}
+\begin{DoxyCompactList}\small\item\em A set of Varnodes sorted by location (then by definition) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{varnode_8hh_abf628bb127fd09a80a956b3fd54e61ff}\label{varnode_8hh_abf628bb127fd09a80a956b3fd54e61ff}} 
+typedef set$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$, \mbox{\hyperlink{structVarnodeCompareDefLoc}{Varnode\+Compare\+Def\+Loc}} $>$ \mbox{\hyperlink{varnode_8hh_abf628bb127fd09a80a956b3fd54e61ff}{Varnode\+Def\+Set}}
+\begin{DoxyCompactList}\small\item\em A set of Varnodes sorted by definition (then location) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{varnode_8hh_a4fd41aa3b524032766add2e4bdd5cd5c}{contiguous\+\_\+test}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2)
+\begin{DoxyCompactList}\small\item\em Test if Varnodes are pieces of a whole. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{varnode_8hh_a242908161787e2bdd0d8fbfb2069f8d9}{find\+Contiguous\+Whole}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2)
+\begin{DoxyCompactList}\small\item\em Retrieve the whole \mbox{\hyperlink{classVarnode}{Varnode}} given pieces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classVarnodeBank}{Varnode\+Bank}} classes. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{varnode_8hh_a4fd41aa3b524032766add2e4bdd5cd5c}\label{varnode_8hh_a4fd41aa3b524032766add2e4bdd5cd5c}} 
+\index{varnode.hh@{varnode.hh}!contiguous\_test@{contiguous\_test}}
+\index{contiguous\_test@{contiguous\_test}!varnode.hh@{varnode.hh}}
+\doxysubsubsection{\texorpdfstring{contiguous\_test()}{contiguous\_test()}}
+{\footnotesize\ttfamily bool contiguous\+\_\+test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2 }\end{DoxyParamCaption})}
+
+
+
+Test if Varnodes are pieces of a whole. 
+
+Return true if {\bfseries{vn1}} contains the high part and {\bfseries{vn2}} the low part of what was(is) a single value. 
+\begin{DoxyParams}{Parameters}
+{\em vn1} & is the putative high \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em vn2} & is the putative low \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if they are pieces of a whole 
+\end{DoxyReturn}
+\mbox{\Hypertarget{varnode_8hh_a242908161787e2bdd0d8fbfb2069f8d9}\label{varnode_8hh_a242908161787e2bdd0d8fbfb2069f8d9}} 
+\index{varnode.hh@{varnode.hh}!findContiguousWhole@{findContiguousWhole}}
+\index{findContiguousWhole@{findContiguousWhole}!varnode.hh@{varnode.hh}}
+\doxysubsubsection{\texorpdfstring{findContiguousWhole()}{findContiguousWhole()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}}$\ast$ find\+Contiguous\+Whole (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2 }\end{DoxyParamCaption})}
+
+
+
+Retrieve the whole \mbox{\hyperlink{classVarnode}{Varnode}} given pieces. 
+
+Assuming vn1,vn2 has passed the \mbox{\hyperlink{varnode_8hh_a4fd41aa3b524032766add2e4bdd5cd5c}{contiguous\+\_\+test()}}, return the \mbox{\hyperlink{classVarnode}{Varnode}} containing the whole value. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the underlying function \\
+\hline
+{\em vn1} & is the high \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em vn2} & is the low \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the whole \mbox{\hyperlink{classVarnode}{Varnode}} 
+\end{DoxyReturn}

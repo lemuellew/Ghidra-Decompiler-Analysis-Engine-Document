@@ -1,0 +1,141 @@
+\hypertarget{classIfcPrintInputs}{}\doxysection{Ifc\+Print\+Inputs Class Reference}
+\label{classIfcPrintInputs}\index{IfcPrintInputs@{IfcPrintInputs}}
+
+
+Print info about the current function\textquotesingle{}s input Varnodes\+: {\ttfamily print inputs}  
+
+
+
+
+Inheritance diagram for Ifc\+Print\+Inputs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcPrintInputs__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Print\+Inputs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcPrintInputs__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcPrintInputs_af7467e8aed2fa56fb8e909461e022842}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classIfcPrintInputs_aced3ef0c582cc765666d263df049e0b6}{non\+Trivial\+Use}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Check for non-\/trivial use of given \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classIfcPrintInputs_afd9a7b94676d6e3b974c99befdb07b02}{check\+Restore}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Check if a \mbox{\hyperlink{classVarnode}{Varnode}} is {\itshape restored} to its original input value. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classIfcPrintInputs_ae706b81cc3e18febfbb08ce347fdf05b}{find\+Restore}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Check if storage is {\itshape restored}. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classIfcPrintInputs_a3267c55a046623290cbaa6b40baef96e}{print}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, ostream \&s)
+\begin{DoxyCompactList}\small\item\em Print information about function inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Print info about the current function\textquotesingle{}s input Varnodes\+: {\ttfamily print inputs} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcPrintInputs_afd9a7b94676d6e3b974c99befdb07b02}\label{classIfcPrintInputs_afd9a7b94676d6e3b974c99befdb07b02}} 
+\index{IfcPrintInputs@{IfcPrintInputs}!checkRestore@{checkRestore}}
+\index{checkRestore@{checkRestore}!IfcPrintInputs@{IfcPrintInputs}}
+\doxysubsubsection{\texorpdfstring{checkRestore()}{checkRestore()}}
+{\footnotesize\ttfamily int4 Ifc\+Print\+Inputs\+::check\+Restore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if a \mbox{\hyperlink{classVarnode}{Varnode}} is {\itshape restored} to its original input value. 
+
+Look for any value flowing into the \mbox{\hyperlink{classVarnode}{Varnode}} coming from anything other than an input \mbox{\hyperlink{classVarnode}{Varnode}} with the same storage. The value can flow through a C\+O\+PY, C\+A\+ST, I\+N\+D\+I\+R\+E\+CT, or M\+U\+L\+T\+I\+E\+Q\+U\+AL 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if \mbox{\hyperlink{classVarnode}{Varnode}} is restored, 1 otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIfcPrintInputs_af7467e8aed2fa56fb8e909461e022842}\label{classIfcPrintInputs_af7467e8aed2fa56fb8e909461e022842}} 
+\index{IfcPrintInputs@{IfcPrintInputs}!execute@{execute}}
+\index{execute@{execute}!IfcPrintInputs@{IfcPrintInputs}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Print\+Inputs\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfcPrintInputs_ae706b81cc3e18febfbb08ce347fdf05b}\label{classIfcPrintInputs_ae706b81cc3e18febfbb08ce347fdf05b}} 
+\index{IfcPrintInputs@{IfcPrintInputs}!findRestore@{findRestore}}
+\index{findRestore@{findRestore}!IfcPrintInputs@{IfcPrintInputs}}
+\doxysubsubsection{\texorpdfstring{findRestore()}{findRestore()}}
+{\footnotesize\ttfamily bool Ifc\+Print\+Inputs\+::find\+Restore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if storage is {\itshape restored}. 
+
+For the given storage location, check that it is {\itshape restored} from its original input value. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given storage location \\
+\hline
+{\em fd} & is the function being analyzed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfcPrintInputs_aced3ef0c582cc765666d263df049e0b6}\label{classIfcPrintInputs_aced3ef0c582cc765666d263df049e0b6}} 
+\index{IfcPrintInputs@{IfcPrintInputs}!nonTrivialUse@{nonTrivialUse}}
+\index{nonTrivialUse@{nonTrivialUse}!IfcPrintInputs@{IfcPrintInputs}}
+\doxysubsubsection{\texorpdfstring{nonTrivialUse()}{nonTrivialUse()}}
+{\footnotesize\ttfamily bool Ifc\+Print\+Inputs\+::non\+Trivial\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check for non-\/trivial use of given \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+The use is non-\/trivial if it can be traced to any p-\/code operation except a C\+O\+PY, C\+A\+ST, I\+N\+D\+I\+R\+E\+CT, or M\+U\+L\+T\+I\+E\+Q\+U\+AL. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there is a non-\/trivial use 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIfcPrintInputs_a3267c55a046623290cbaa6b40baef96e}\label{classIfcPrintInputs_a3267c55a046623290cbaa6b40baef96e}} 
+\index{IfcPrintInputs@{IfcPrintInputs}!print@{print}}
+\index{print@{print}!IfcPrintInputs@{IfcPrintInputs}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Ifc\+Print\+Inputs\+::print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{ostream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print information about function inputs. 
+
+For each input \mbox{\hyperlink{classVarnode}{Varnode}}, print information about the \mbox{\hyperlink{classVarnode}{Varnode}}, any explicit symbol it represents, and info about how the value is used. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function \\
+\hline
+{\em s} & is the output stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

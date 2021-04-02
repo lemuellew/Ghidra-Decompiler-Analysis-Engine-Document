@@ -1,0 +1,185 @@
+\hypertarget{typeop_8hh}{}\doxysection{typeop.\+hh File Reference}
+\label{typeop_8hh}\index{typeop.hh@{typeop.hh}}
+
+
+Data-\/type and behavior information associated with specific p-\/code op-\/codes.  
+
+
+{\ttfamily \#include \char`\"{}cpool.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}variable.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}opbehavior.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}printlanguage.\+hh\char`\"{}}\newline
+Include dependency graph for typeop.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typeop_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{typeop_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTypeOp}{Type\+Op}}
+\begin{DoxyCompactList}\small\item\em Associate data-\/type and behavior information with a specific p-\/code op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpBinary}{Type\+Op\+Binary}}
+\begin{DoxyCompactList}\small\item\em A generic binary operator\+: two inputs and one output. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpUnary}{Type\+Op\+Unary}}
+\begin{DoxyCompactList}\small\item\em A generic unary operator\+: one input and one output. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFunc}{Type\+Op\+Func}}
+\begin{DoxyCompactList}\small\item\em A generic functional operator. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpCopy}{Type\+Op\+Copy}}
+\begin{DoxyCompactList}\small\item\em Information about the C\+O\+PY op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpLoad}{Type\+Op\+Load}}
+\begin{DoxyCompactList}\small\item\em Information about the L\+O\+AD op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpStore}{Type\+Op\+Store}}
+\begin{DoxyCompactList}\small\item\em Information about the S\+T\+O\+RE op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpBranch}{Type\+Op\+Branch}}
+\begin{DoxyCompactList}\small\item\em Information about the B\+R\+A\+N\+CH op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpCbranch}{Type\+Op\+Cbranch}}
+\begin{DoxyCompactList}\small\item\em Information about the C\+B\+R\+A\+N\+CH op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpBranchind}{Type\+Op\+Branchind}}
+\begin{DoxyCompactList}\small\item\em Information about the B\+R\+A\+N\+C\+H\+I\+ND op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpCall}{Type\+Op\+Call}}
+\begin{DoxyCompactList}\small\item\em Information about the C\+A\+LL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpCallind}{Type\+Op\+Callind}}
+\begin{DoxyCompactList}\small\item\em Information about the C\+A\+L\+L\+I\+ND op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpCallother}{Type\+Op\+Callother}}
+\begin{DoxyCompactList}\small\item\em Information about the C\+A\+L\+L\+O\+T\+H\+ER op-\/code (user defined p-\/code operations) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpReturn}{Type\+Op\+Return}}
+\begin{DoxyCompactList}\small\item\em Information about the R\+E\+T\+U\+RN op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpEqual}{Type\+Op\+Equal}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpNotEqual}{Type\+Op\+Not\+Equal}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSless}{Type\+Op\+Int\+Sless}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+L\+E\+SS op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSlessEqual}{Type\+Op\+Int\+Sless\+Equal}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntLess}{Type\+Op\+Int\+Less}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+L\+E\+SS op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntLessEqual}{Type\+Op\+Int\+Less\+Equal}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntZext}{Type\+Op\+Int\+Zext}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+Z\+E\+XT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSext}{Type\+Op\+Int\+Sext}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+E\+XT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntAdd}{Type\+Op\+Int\+Add}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+A\+DD op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSub}{Type\+Op\+Int\+Sub}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+UB op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntCarry}{Type\+Op\+Int\+Carry}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+C\+A\+R\+RY op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntScarry}{Type\+Op\+Int\+Scarry}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+C\+A\+R\+RY op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSborrow}{Type\+Op\+Int\+Sborrow}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpInt2Comp}{Type\+Op\+Int2\+Comp}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+2\+C\+O\+MP op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntNegate}{Type\+Op\+Int\+Negate}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+N\+E\+G\+A\+TE op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntXor}{Type\+Op\+Int\+Xor}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+X\+OR op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntAnd}{Type\+Op\+Int\+And}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+A\+ND op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntOr}{Type\+Op\+Int\+Or}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+OR op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntLeft}{Type\+Op\+Int\+Left}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+L\+E\+FT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntRight}{Type\+Op\+Int\+Right}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+R\+I\+G\+HT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSright}{Type\+Op\+Int\+Sright}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+R\+I\+G\+HT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntMult}{Type\+Op\+Int\+Mult}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+M\+U\+LT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntDiv}{Type\+Op\+Int\+Div}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+D\+IV op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSdiv}{Type\+Op\+Int\+Sdiv}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+D\+IV op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntRem}{Type\+Op\+Int\+Rem}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+R\+EM op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIntSrem}{Type\+Op\+Int\+Srem}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+T\+\_\+\+S\+R\+EM op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpBoolNegate}{Type\+Op\+Bool\+Negate}}
+\begin{DoxyCompactList}\small\item\em Information about the B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpBoolXor}{Type\+Op\+Bool\+Xor}}
+\begin{DoxyCompactList}\small\item\em Information about the B\+O\+O\+L\+\_\+\+X\+OR op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpBoolAnd}{Type\+Op\+Bool\+And}}
+\begin{DoxyCompactList}\small\item\em Information about the B\+O\+O\+L\+\_\+\+A\+ND op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpBoolOr}{Type\+Op\+Bool\+Or}}
+\begin{DoxyCompactList}\small\item\em Information about the B\+O\+O\+L\+\_\+\+OR op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatEqual}{Type\+Op\+Float\+Equal}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatNotEqual}{Type\+Op\+Float\+Not\+Equal}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatLess}{Type\+Op\+Float\+Less}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+L\+E\+SS op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatLessEqual}{Type\+Op\+Float\+Less\+Equal}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatNan}{Type\+Op\+Float\+Nan}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+N\+AN op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatAdd}{Type\+Op\+Float\+Add}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+A\+DD op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatDiv}{Type\+Op\+Float\+Div}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+D\+IV op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatMult}{Type\+Op\+Float\+Mult}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+M\+U\+LT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatSub}{Type\+Op\+Float\+Sub}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+S\+UB op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatNeg}{Type\+Op\+Float\+Neg}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+N\+EG op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatAbs}{Type\+Op\+Float\+Abs}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+A\+BS op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatSqrt}{Type\+Op\+Float\+Sqrt}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+S\+Q\+RT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatInt2Float}{Type\+Op\+Float\+Int2\+Float}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+I\+N\+T2\+F\+L\+O\+AT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatFloat2Float}{Type\+Op\+Float\+Float2\+Float}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatTrunc}{Type\+Op\+Float\+Trunc}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+T\+R\+U\+NC op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatCeil}{Type\+Op\+Float\+Ceil}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+C\+E\+IL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatFloor}{Type\+Op\+Float\+Floor}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+OR op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpFloatRound}{Type\+Op\+Float\+Round}}
+\begin{DoxyCompactList}\small\item\em Information about the F\+L\+O\+A\+T\+\_\+\+R\+O\+U\+ND op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpMulti}{Type\+Op\+Multi}}
+\begin{DoxyCompactList}\small\item\em Information about the M\+U\+L\+T\+I\+E\+Q\+U\+AL op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpIndirect}{Type\+Op\+Indirect}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+D\+I\+R\+E\+CT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpPiece}{Type\+Op\+Piece}}
+\begin{DoxyCompactList}\small\item\em Information about the P\+I\+E\+CE op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpSubpiece}{Type\+Op\+Subpiece}}
+\begin{DoxyCompactList}\small\item\em Information about the S\+U\+B\+P\+I\+E\+CE op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpCast}{Type\+Op\+Cast}}
+\begin{DoxyCompactList}\small\item\em Information about the C\+A\+ST op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpPtradd}{Type\+Op\+Ptradd}}
+\begin{DoxyCompactList}\small\item\em Information about the P\+T\+R\+A\+DD op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpPtrsub}{Type\+Op\+Ptrsub}}
+\begin{DoxyCompactList}\small\item\em Information about the P\+T\+R\+S\+UB op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpSegment}{Type\+Op\+Segment}}
+\begin{DoxyCompactList}\small\item\em Information about the S\+E\+G\+M\+E\+N\+T\+OP op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpCpoolref}{Type\+Op\+Cpoolref}}
+\begin{DoxyCompactList}\small\item\em Information about the C\+P\+O\+O\+L\+R\+EF op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpNew}{Type\+Op\+New}}
+\begin{DoxyCompactList}\small\item\em Information about the N\+EW op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpInsert}{Type\+Op\+Insert}}
+\begin{DoxyCompactList}\small\item\em Information about the I\+N\+S\+E\+RT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpExtract}{Type\+Op\+Extract}}
+\begin{DoxyCompactList}\small\item\em Information about the E\+X\+T\+R\+A\+CT op-\/code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeOpPopcount}{Type\+Op\+Popcount}}
+\begin{DoxyCompactList}\small\item\em Information about the P\+O\+P\+C\+O\+U\+NT op-\/code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data-\/type and behavior information associated with specific p-\/code op-\/codes. 
+

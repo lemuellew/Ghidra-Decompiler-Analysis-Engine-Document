@@ -1,0 +1,335 @@
+\hypertarget{classBlockBasic}{}\doxysection{Block\+Basic Class Reference}
+\label{classBlockBasic}\index{BlockBasic@{BlockBasic}}
+
+
+A basic block for p-\/code operations.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+Basic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classBlockBasic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+Basic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classBlockBasic__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classBlockBasic_aa77fad87efbfd970ca34b8fc71283be1}{get\+Entry\+Addr}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the address of the (original) first operation to execute. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockBasic_a779d71352d86f6af4342b419713c03d5}\label{classBlockBasic_a779d71352d86f6af4342b419713c03d5}} 
+virtual \mbox{\hyperlink{classAddress}{Address}} {\bfseries get\+Start} (void) const
+\item 
+\mbox{\Hypertarget{classBlockBasic_af9fb755c152296c5f3110e9dc0f51bd3}\label{classBlockBasic_af9fb755c152296c5f3110e9dc0f51bd3}} 
+virtual \mbox{\hyperlink{classAddress}{Address}} {\bfseries get\+Stop} (void) const
+\item 
+\mbox{\Hypertarget{classBlockBasic_aeb3a61f4e372495d0644f56c5c20f974}\label{classBlockBasic_aeb3a61f4e372495d0644f56c5c20f974}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classBlockBasic_a1456fa3eb84ffa14650ff6e216eaa43d}\label{classBlockBasic_a1456fa3eb84ffa14650ff6e216eaa43d}} 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries sub\+Block} (int4 i) const
+\item 
+\mbox{\Hypertarget{classBlockBasic_aec6c3cb9b136472b012a6d39e516efaa}\label{classBlockBasic_aec6c3cb9b136472b012a6d39e516efaa}} 
+virtual void {\bfseries save\+Xml\+Body} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classBlockBasic_ae2147a1a73714a1592dfb3e43821c3ef}{restore\+Xml\+Body}} (List\+::const\+\_\+iterator \&iter, List\+::const\+\_\+iterator enditer, \mbox{\hyperlink{classBlockMap}{Block\+Map}} \&resolver)
+\begin{DoxyCompactList}\small\item\em Restore details about {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockBasic_a5a0f22c6bd8b164e787dc6a6d756952a}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockBasic_a5981c3195bd4c3fd7be7e750a580bbca}\label{classBlockBasic_a5981c3195bd4c3fd7be7e750a580bbca}} 
+virtual void {\bfseries print\+Raw} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classBlockBasic_a0b163426cb08cdecdcdd7305ecc6381e}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockBasic_ad0ca2052c33af69cce69198ebfac27d1}\label{classBlockBasic_ad0ca2052c33af69cce69198ebfac27d1}} 
+virtual const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries get\+Exit\+Leaf} (void) const
+\item 
+\mbox{\Hypertarget{classBlockBasic_a42c5313d7980138d098e184b249b6415}\label{classBlockBasic_a42c5313d7980138d098e184b249b6415}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ {\bfseries last\+Op} (void) const
+\item 
+virtual bool \mbox{\hyperlink{classBlockBasic_aa15eaf687397a3b73da57abbb061a04c}{negate\+Condition}} (bool toporbottom)
+\begin{DoxyCompactList}\small\item\em Flip the condition computed by {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockBasic_a22d7b010455f00b1bb1ff5efb3d00550}{get\+Split\+Point}} (void)
+\begin{DoxyCompactList}\small\item\em Get the leaf splitting block. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classBlockBasic_a7f864c14ab60a19ffb492b86f98f29c7}{flip\+In\+Place\+Test}} (vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&fliplist) const
+\begin{DoxyCompactList}\small\item\em Test normalizing the conditional branch in {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockBasic_a2949ef4a8d42f16c696fd24ba2ecb58c}{flip\+In\+Place\+Execute}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the flip to normalize conditional branch executed by {\bfseries{this}} block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockBasic_ad9dc5c967ac739b462614c1b75f93c22}\label{classBlockBasic_ad9dc5c967ac739b462614c1b75f93c22}} 
+virtual bool {\bfseries is\+Complex} (void) const
+\item 
+bool \mbox{\hyperlink{classBlockBasic_a71442a96a2278c3b88c8027f4b1444c9}{unblocked\+Multi}} (int4 outslot) const
+\begin{DoxyCompactList}\small\item\em Check if {\bfseries{this}} block can be removed without introducing inconsistencies. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlockBasic_a889777af9024df726d21540187277edd}{has\+Only\+Markers}} (void) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} block contain only M\+U\+L\+T\+I\+E\+Q\+U\+AL and I\+N\+D\+I\+R\+E\+CT ops. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBlockBasic_a08e48137d2fd9fb3faa9c299516b9581}{is\+Do\+Nothing}} (void) const
+\begin{DoxyCompactList}\small\item\em Should {\bfseries{this}} block should be removed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classBlockBasic_aa6121743b8e601f2eca7f396b413b35f}{no\+Intervening\+Statement}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$first, int4 path, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$last)
+\begin{DoxyCompactList}\small\item\em Check if there is meaningful activity between two branch instructions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockBasic_a16ade990887167c11c41cb88121bb449}\label{classBlockBasic_a16ade990887167c11c41cb88121bb449}} 
+class {\bfseries Funcdata}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A basic block for p-\/code operations. 
+
+A {\bfseries{basic}} {\bfseries{block}} is a maximal sequence of p-\/code operations (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}) that, within the context of a function, always execute starting with the first operation in sequence through in order to the last operation. Any decision points in the control flow of a function manifest as branching operations (B\+R\+A\+N\+CH, C\+B\+R\+A\+N\+CH, B\+R\+A\+N\+C\+H\+I\+ND) that necessarily occur as the last operation in a basic block.
+
+Every \mbox{\hyperlink{classFuncdata}{Funcdata}} object implements the control-\/flow graph of the underlying function using \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} objects as the underlying nodes of the graph. The decompiler structures code by making a copy of this graph and then overlaying a hierarchy of structured nodes on top of it.
+
+The block also keeps track of the original range of addresses of instructions constituting the block. As decompiler transformations progress, the set of addresses associated with the current set of Pcode\+Ops my migrate away from this original range. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockBasic_a0b163426cb08cdecdcdd7305ecc6381e}\label{classBlockBasic_a0b163426cb08cdecdcdd7305ecc6381e}} 
+\index{BlockBasic@{BlockBasic}!emit@{emit}}
+\index{emit@{emit}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+Basic\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a9baddec2635c95a5ac9019d6b21d3eab}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockBasic_a2949ef4a8d42f16c696fd24ba2ecb58c}\label{classBlockBasic_a2949ef4a8d42f16c696fd24ba2ecb58c}} 
+\index{BlockBasic@{BlockBasic}!flipInPlaceExecute@{flipInPlaceExecute}}
+\index{flipInPlaceExecute@{flipInPlaceExecute}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{flipInPlaceExecute()}{flipInPlaceExecute()}}
+{\footnotesize\ttfamily void Block\+Basic\+::flip\+In\+Place\+Execute (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the flip to normalize conditional branch executed by {\bfseries{this}} block. 
+
+This reverses the outgoing edge order in the right basic blocks, but does not modify the instructions directly. 
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockBasic_a7f864c14ab60a19ffb492b86f98f29c7}\label{classBlockBasic_a7f864c14ab60a19ffb492b86f98f29c7}} 
+\index{BlockBasic@{BlockBasic}!flipInPlaceTest@{flipInPlaceTest}}
+\index{flipInPlaceTest@{flipInPlaceTest}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{flipInPlaceTest()}{flipInPlaceTest()}}
+{\footnotesize\ttfamily int4 Block\+Basic\+::flip\+In\+Place\+Test (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&}]{fliplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Test normalizing the conditional branch in {\bfseries{this}}. 
+
+Find the set of \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects that need to be adjusted to flip the condition {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} calculates.
+
+Return\+:
+\begin{DoxyItemize}
+\item 0 if the flip would normalize the condition
+\item 1 if the flip doesn\textquotesingle{}t affect normalization of the condition
+\item 2 if the flip produces an unnormalized condition 
+\begin{DoxyParams}{Parameters}
+{\em fliplist} & will contain the Pcode\+Ops that need to be adjusted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the condition will be normalized, 1 or 2 otherwise 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockBasic_aa77fad87efbfd970ca34b8fc71283be1}\label{classBlockBasic_aa77fad87efbfd970ca34b8fc71283be1}} 
+\index{BlockBasic@{BlockBasic}!getEntryAddr@{getEntryAddr}}
+\index{getEntryAddr@{getEntryAddr}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{getEntryAddr()}{getEntryAddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Block\+Basic\+::get\+Entry\+Addr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the address of the (original) first operation to execute. 
+
+This relies slightly on {\itshape normal} semantics\+: when instructions {\itshape fall-\/thru} during execution, the associated address increases. \begin{DoxyReturn}{Returns}
+the address of the original entry point instruction for {\bfseries{this}} block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockBasic_a22d7b010455f00b1bb1ff5efb3d00550}\label{classBlockBasic_a22d7b010455f00b1bb1ff5efb3d00550}} 
+\index{BlockBasic@{BlockBasic}!getSplitPoint@{getSplitPoint}}
+\index{getSplitPoint@{getSplitPoint}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{getSplitPoint()}{getSplitPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Basic\+::get\+Split\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf splitting block. 
+
+If {\bfseries{this}} block ends with a conditional branch, return the deepest component block that performs the split. This component needs to be able to perform \mbox{\hyperlink{classBlockBasic_a7f864c14ab60a19ffb492b86f98f29c7}{flip\+In\+Place\+Test()}} and \mbox{\hyperlink{classBlockBasic_a2949ef4a8d42f16c696fd24ba2ecb58c}{flip\+In\+Place\+Execute()}} \begin{DoxyReturn}{Returns}
+the component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} or N\+U\+LL if this doesn\textquotesingle{}t end in a conditional branch 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a20996aacbad259e2e4a7bb0c72482335}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockBasic_a889777af9024df726d21540187277edd}\label{classBlockBasic_a889777af9024df726d21540187277edd}} 
+\index{BlockBasic@{BlockBasic}!hasOnlyMarkers@{hasOnlyMarkers}}
+\index{hasOnlyMarkers@{hasOnlyMarkers}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{hasOnlyMarkers()}{hasOnlyMarkers()}}
+{\footnotesize\ttfamily bool Block\+Basic\+::has\+Only\+Markers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Does {\bfseries{this}} block contain only M\+U\+L\+T\+I\+E\+Q\+U\+AL and I\+N\+D\+I\+R\+E\+CT ops. 
+
+This is a crucial test for whether {\bfseries{this}} block is doing anything substantial or is a candidate for removal. Even blocks that \char`\"{}do nothing\char`\"{} have some kind of branch and placeholder operations (M\+U\+L\+T\+I\+E\+Q\+U\+AL and I\+N\+D\+I\+R\+E\+CT) for data flowing through the block. This tests if there is any other operation going on. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there only M\+U\+L\+T\+I\+E\+Q\+U\+AL, I\+N\+D\+I\+R\+E\+CT, and branch operations in {\bfseries{this}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockBasic_a08e48137d2fd9fb3faa9c299516b9581}\label{classBlockBasic_a08e48137d2fd9fb3faa9c299516b9581}} 
+\index{BlockBasic@{BlockBasic}!isDoNothing@{isDoNothing}}
+\index{isDoNothing@{isDoNothing}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{isDoNothing()}{isDoNothing()}}
+{\footnotesize\ttfamily bool Block\+Basic\+::is\+Do\+Nothing (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Should {\bfseries{this}} block should be removed. 
+
+Check if {\bfseries{this}} block is doing anything useful. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the block does nothing and should be removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockBasic_aa15eaf687397a3b73da57abbb061a04c}\label{classBlockBasic_aa15eaf687397a3b73da57abbb061a04c}} 
+\index{BlockBasic@{BlockBasic}!negateCondition@{negateCondition}}
+\index{negateCondition@{negateCondition}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{negateCondition()}{negateCondition()}}
+{\footnotesize\ttfamily bool Block\+Basic\+::negate\+Condition (\begin{DoxyParamCaption}\item[{bool}]{toporbottom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Flip the condition computed by {\bfseries{this}}. 
+
+Flip the order of outgoing edges (at least). This should also affect the original op causing the condition. Note\+: we don\textquotesingle{}t have to flip at all levels of the hierarchy only at the top and at the bottom 
+\begin{DoxyParams}{Parameters}
+{\em toporbottom} & is {\bfseries{true}} if {\bfseries{this}} is the top outermost block of the hierarchy getting negated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made to data-\/flow 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_ae0f8a479ae1548280ff0b4f45bc08dc3}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockBasic_aa6121743b8e601f2eca7f396b413b35f}\label{classBlockBasic_aa6121743b8e601f2eca7f396b413b35f}} 
+\index{BlockBasic@{BlockBasic}!noInterveningStatement@{noInterveningStatement}}
+\index{noInterveningStatement@{noInterveningStatement}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{noInterveningStatement()}{noInterveningStatement()}}
+{\footnotesize\ttfamily bool Block\+Basic\+::no\+Intervening\+Statement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{first,  }\item[{int4}]{path,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if there is meaningful activity between two branch instructions. 
+
+The first branch is assumed to be a C\+B\+R\+A\+N\+CH one edge of which flows into the other branch. The flow can be through 1 or 2 blocks. If either block performs an operation other than M\+U\+L\+T\+I\+E\+Q\+U\+AL, I\+N\+D\+I\+R\+E\+CT (or the branch), then return {\bfseries{false}}. 
+\begin{DoxyParams}{Parameters}
+{\em first} & is the C\+B\+R\+A\+N\+CH operation \\
+\hline
+{\em path} & is the index of the edge to follow to the other branch \\
+\hline
+{\em last} & is the other branch operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there is no meaningful activity 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockBasic_a5a0f22c6bd8b164e787dc6a6d756952a}\label{classBlockBasic_a5a0f22c6bd8b164e787dc6a6d756952a}} 
+\index{BlockBasic@{BlockBasic}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+Basic\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockBasic_ae2147a1a73714a1592dfb3e43821c3ef}\label{classBlockBasic_ae2147a1a73714a1592dfb3e43821c3ef}} 
+\index{BlockBasic@{BlockBasic}!restoreXmlBody@{restoreXmlBody}}
+\index{restoreXmlBody@{restoreXmlBody}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{restoreXmlBody()}{restoreXmlBody()}}
+{\footnotesize\ttfamily void Block\+Basic\+::restore\+Xml\+Body (\begin{DoxyParamCaption}\item[{List\+::const\+\_\+iterator \&}]{iter,  }\item[{List\+::const\+\_\+iterator}]{enditer,  }\item[{\mbox{\hyperlink{classBlockMap}{Block\+Map}} \&}]{resolver }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore details about {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iter} & is an iterator to X\+ML elements containing component tags etc. \\
+\hline
+{\em enditer} & marks the end of the X\+ML tags \\
+\hline
+{\em resolver} & is used to recover \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects based on X\+ML references \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_aea33ed5d172e8486557198c2e18c88ae}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockBasic_a71442a96a2278c3b88c8027f4b1444c9}\label{classBlockBasic_a71442a96a2278c3b88c8027f4b1444c9}} 
+\index{BlockBasic@{BlockBasic}!unblockedMulti@{unblockedMulti}}
+\index{unblockedMulti@{unblockedMulti}!BlockBasic@{BlockBasic}}
+\doxysubsubsection{\texorpdfstring{unblockedMulti()}{unblockedMulti()}}
+{\footnotesize\ttfamily bool Block\+Basic\+::unblocked\+Multi (\begin{DoxyParamCaption}\item[{int4}]{outslot }\end{DoxyParamCaption}) const}
+
+
+
+Check if {\bfseries{this}} block can be removed without introducing inconsistencies. 
+
+Does removing this block leads to redundant M\+U\+L\+T\+I\+E\+Q\+U\+AL entries which are inconsistent. A M\+U\+L\+T\+I\+E\+Q\+U\+AL can hide an implied copy, in which case {\bfseries{this}} block is actually doing something and shouldn\textquotesingle{}t be removed. 
+\begin{DoxyParams}{Parameters}
+{\em outslot} & is the index of the outblock that {\bfseries{this}} is getting collapsed to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is no implied C\+O\+PY 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

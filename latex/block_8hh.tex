@@ -1,0 +1,62 @@
+\hypertarget{block_8hh}{}\doxysection{block.\+hh File Reference}
+\label{block_8hh}\index{block.hh@{block.hh}}
+
+
+Classes related to {\itshape basic} {\itshape blocks} and control-\/flow structuring.  
+
+
+{\ttfamily \#include \char`\"{}jumptable.\+hh\char`\"{}}\newline
+Include dependency graph for block.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{block_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{block_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBlockEdge}{Block\+Edge}}
+\begin{DoxyCompactList}\small\item\em A control-\/flow edge between blocks (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}}) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}
+\begin{DoxyCompactList}\small\item\em Description of a control-\/flow block containing Pcode\+Ops. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}
+\begin{DoxyCompactList}\small\item\em A control-\/flow block built out of sub-\/components. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockBasic}{Block\+Basic}}
+\begin{DoxyCompactList}\small\item\em A basic block for p-\/code operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}
+\begin{DoxyCompactList}\small\item\em This class is used to mirror the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} objects in the fixed control-\/flow graph for a function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockGoto}{Block\+Goto}}
+\begin{DoxyCompactList}\small\item\em A block that terminates with an unstructured (goto) branch to another block. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}}
+\begin{DoxyCompactList}\small\item\em A block with multiple edges out, at least one of which is an unstructured (goto) branch. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockList}{Block\+List}}
+\begin{DoxyCompactList}\small\item\em A series of blocks that execute in sequence. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockCondition}{Block\+Condition}}
+\begin{DoxyCompactList}\small\item\em Two conditional blocks combined into one conditional using B\+O\+O\+L\+\_\+\+A\+ND or B\+O\+O\+L\+\_\+\+OR. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockIf}{Block\+If}}
+\begin{DoxyCompactList}\small\item\em A basic \char`\"{}if\char`\"{} block. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}}
+\begin{DoxyCompactList}\small\item\em A loop structure where the condition is checked at the top. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}}
+\begin{DoxyCompactList}\small\item\em A loop structure where the condition is checked at the bottom. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}}
+\begin{DoxyCompactList}\small\item\em An infinite loop structure. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}}
+\begin{DoxyCompactList}\small\item\em A structured {\itshape switch} construction. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBlockMap}{Block\+Map}}
+\begin{DoxyCompactList}\small\item\em Helper class for resolving cross-\/references while deserializing \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes related to {\itshape basic} {\itshape blocks} and control-\/flow structuring. 
+

@@ -1,0 +1,48 @@
+\hypertarget{comment_8hh}{}\doxysection{comment.\+hh File Reference}
+\label{comment_8hh}\index{comment.hh@{comment.hh}}
+
+
+A database interface for high-\/level language comments.  
+
+
+{\ttfamily \#include \char`\"{}address.\+hh\char`\"{}}\newline
+Include dependency graph for comment.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{comment_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{comment_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classComment}{Comment}}
+\begin{DoxyCompactList}\small\item\em A comment attached to a specific function and code address. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structCommentOrder}{Comment\+Order}}
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{classComment}{Comment}} pointers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCommentDatabase}{Comment\+Database}}
+\begin{DoxyCompactList}\small\item\em An interface to a container of comments. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCommentDatabaseInternal}{Comment\+Database\+Internal}}
+\begin{DoxyCompactList}\small\item\em An in-\/memory implementation of the \mbox{\hyperlink{classCommentDatabase}{Comment\+Database}} A\+PI. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classCommentSorter}{Comment\+Sorter}}
+\begin{DoxyCompactList}\small\item\em A class for sorting comments into and within basic blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{comment_8hh_ae1761d5e0f74b5d5ced1d74ec869cc73}\label{comment_8hh_ae1761d5e0f74b5d5ced1d74ec869cc73}} 
+typedef set$<$ \mbox{\hyperlink{classComment}{Comment}} $\ast$, \mbox{\hyperlink{structCommentOrder}{Comment\+Order}} $>$ \mbox{\hyperlink{comment_8hh_ae1761d5e0f74b5d5ced1d74ec869cc73}{Comment\+Set}}
+\begin{DoxyCompactList}\small\item\em A set of comments sorted by function and address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A database interface for high-\/level language comments. 
+

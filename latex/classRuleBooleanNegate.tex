@@ -1,0 +1,113 @@
+\hypertarget{classRuleBooleanNegate}{}\doxysection{Rule\+Boolean\+Negate Class Reference}
+\label{classRuleBooleanNegate}\index{RuleBooleanNegate@{RuleBooleanNegate}}
+
+
+Simplify comparisons with boolean values\+: {\ttfamily V == false =$>$ !V, V == true =$>$ V}  
+
+
+
+
+Inheritance diagram for Rule\+Boolean\+Negate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classRuleBooleanNegate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Boolean\+Negate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classRuleBooleanNegate__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRuleBooleanNegate_ad833fb025b67547a2da6df4ab5674ce1}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRuleBooleanNegate_af6db5a859074d99716ce46daae31329c}{get\+Op\+List}} (vector$<$ uint4 $>$ \&oplist) const
+\begin{DoxyCompactList}\small\item\em List of op codes this rule operates on. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRuleBooleanNegate_a8c8aa1437392ae57f49b56f314233bab}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Simplify comparisons with boolean values\+: {\ttfamily V == false =$>$ !V, V == true =$>$ V} 
+
+Works with both I\+N\+T\+\_\+\+E\+Q\+U\+AL and I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL. Both sides of the comparison must be boolean values. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRuleBooleanNegate_a8c8aa1437392ae57f49b56f314233bab}\label{classRuleBooleanNegate_a8c8aa1437392ae57f49b56f314233bab}} 
+\index{RuleBooleanNegate@{RuleBooleanNegate}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RuleBooleanNegate@{RuleBooleanNegate}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Boolean\+Negate\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRuleBooleanNegate_ad833fb025b67547a2da6df4ab5674ce1}\label{classRuleBooleanNegate_ad833fb025b67547a2da6df4ab5674ce1}} 
+\index{RuleBooleanNegate@{RuleBooleanNegate}!clone@{clone}}
+\index{clone@{clone}!RuleBooleanNegate@{RuleBooleanNegate}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Boolean\+Negate\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+\mbox{\Hypertarget{classRuleBooleanNegate_af6db5a859074d99716ce46daae31329c}\label{classRuleBooleanNegate_af6db5a859074d99716ce46daae31329c}} 
+\index{RuleBooleanNegate@{RuleBooleanNegate}!getOpList@{getOpList}}
+\index{getOpList@{getOpList}!RuleBooleanNegate@{RuleBooleanNegate}}
+\doxysubsubsection{\texorpdfstring{getOpList()}{getOpList()}}
+{\footnotesize\ttfamily void Rule\+Boolean\+Negate\+::get\+Op\+List (\begin{DoxyParamCaption}\item[{vector$<$ uint4 $>$ \&}]{oplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List of op codes this rule operates on. 
+
+Populate the given array with all possible Op\+Codes this \mbox{\hyperlink{classRule}{Rule}} might apply to. By default, this method returns all possible Op\+Codes 
+\begin{DoxyParams}{Parameters}
+{\em oplist} & is the array to populate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4023bfc7825de0ab866790551856d10e}{Rule}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

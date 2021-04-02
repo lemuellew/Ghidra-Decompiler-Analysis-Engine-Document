@@ -1,0 +1,156 @@
+\hypertarget{classParamListStandardOut}{}\doxysection{Param\+List\+Standard\+Out Class Reference}
+\label{classParamListStandardOut}\index{ParamListStandardOut@{ParamListStandardOut}}
+
+
+A standard model for passing back return values from a function.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Param\+List\+Standard\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classParamListStandardOut__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Param\+List\+Standard\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classParamListStandardOut__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParamListStandardOut_a8d0f947ba2b94e2921712114d986f74f}\label{classParamListStandardOut_a8d0f947ba2b94e2921712114d986f74f}} 
+virtual uint4 \mbox{\hyperlink{classParamListStandardOut_a8d0f947ba2b94e2921712114d986f74f}{get\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the type of parameter list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListStandardOut_af50fd192a944d885223b263e5c31a69e}{assign\+Map}} (const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&proto, bool isinput, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typefactory, vector$<$ \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} $>$ \&res) const
+\begin{DoxyCompactList}\small\item\em Given list of data-\/types, map the list positions to storage locations. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListStandardOut_aab2d6055785c4e98b3a8c4e1b70f86be}{fillin\+Map}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Given an unordered list of storage locations, calculate a function prototype. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classParamListStandardOut_a9c8b1c882536296945ff816d9e3f3600}{possible\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size) const
+\begin{DoxyCompactList}\small\item\em Does the given storage location make sense as a parameter. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListStandardOut_a6ca5a4b571dad6ad5378afda6ac84e0c}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage, vector$<$ \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} $>$ \&effectlist, bool normalstack)
+\begin{DoxyCompactList}\small\item\em Restore the model from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandardOut_acec6ec68623556e54bdf42a61c20ea0e}\label{classParamListStandardOut_acec6ec68623556e54bdf42a61c20ea0e}} 
+virtual \mbox{\hyperlink{classParamList}{Param\+List}} $\ast$ \mbox{\hyperlink{classParamListStandardOut_acec6ec68623556e54bdf42a61c20ea0e}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone this parameter list model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A standard model for passing back return values from a function. 
+
+This models a resource list of potential storage locations for a return value, at most 1 of which will be chosen for a given function. Order only matters in that the first \mbox{\hyperlink{classParamEntry}{Param\+Entry}} that fits is used. If no entry fits, the return value is converted to a pointer data-\/type, storage allocation is attempted again, and the return value is marked as a {\itshape hidden} return parameter to inform the input model. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParamListStandardOut_af50fd192a944d885223b263e5c31a69e}\label{classParamListStandardOut_af50fd192a944d885223b263e5c31a69e}} 
+\index{ParamListStandardOut@{ParamListStandardOut}!assignMap@{assignMap}}
+\index{assignMap@{assignMap}!ParamListStandardOut@{ParamListStandardOut}}
+\doxysubsubsection{\texorpdfstring{assignMap()}{assignMap()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+Out\+::assign\+Map (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&}]{proto,  }\item[{bool}]{isinput,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typefactory,  }\item[{vector$<$ \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} $>$ \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given list of data-\/types, map the list positions to storage locations. 
+
+If we know the function prototype, recover how parameters are actually stored using the model. 
+\begin{DoxyParams}{Parameters}
+{\em proto} & is the ordered list of data-\/types \\
+\hline
+{\em isinput} & is {\bfseries{true}} for the input prototype, {\bfseries{false}} for output prototype \\
+\hline
+{\em typefactory} & is the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} (for constructing pointers) \\
+\hline
+{\em res} & will contain the storage locations corresponding to the datatypes \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classParamListStandard_a4819bb8291e202e3d11737d586878525}{Param\+List\+Standard}}.
+
+\mbox{\Hypertarget{classParamListStandardOut_aab2d6055785c4e98b3a8c4e1b70f86be}\label{classParamListStandardOut_aab2d6055785c4e98b3a8c4e1b70f86be}} 
+\index{ParamListStandardOut@{ParamListStandardOut}!fillinMap@{fillinMap}}
+\index{fillinMap@{fillinMap}!ParamListStandardOut@{ParamListStandardOut}}
+\doxysubsubsection{\texorpdfstring{fillinMap()}{fillinMap()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+Out\+::fillin\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given an unordered list of storage locations, calculate a function prototype. 
+
+A list of input (or output) trials is given, which may have holes, invalid inputs etc. Decide on the formal ordered parameter list. Trials within the \mbox{\hyperlink{classParamActive}{Param\+Active}} are added, removed, or reordered as needed. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the given list of trials \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classParamListStandard_a7fa7043f5c6bba995e2ea716ca16ccaf}{Param\+List\+Standard}}.
+
+\mbox{\Hypertarget{classParamListStandardOut_a9c8b1c882536296945ff816d9e3f3600}\label{classParamListStandardOut_a9c8b1c882536296945ff816d9e3f3600}} 
+\index{ParamListStandardOut@{ParamListStandardOut}!possibleParam@{possibleParam}}
+\index{possibleParam@{possibleParam}!ParamListStandardOut@{ParamListStandardOut}}
+\doxysubsubsection{\texorpdfstring{possibleParam()}{possibleParam()}}
+{\footnotesize\ttfamily bool Param\+List\+Standard\+Out\+::possible\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Does the given storage location make sense as a parameter. 
+
+Within {\bfseries{this}} model, decide if the storage location can be considered a parameter. 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the storage location \\
+\hline
+{\em size} & is the number of bytes in the storage location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the location can be a parameter 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classParamListStandard_a22a2afd938c503357fac9d330eb89858}{Param\+List\+Standard}}.
+
+\mbox{\Hypertarget{classParamListStandardOut_a6ca5a4b571dad6ad5378afda6ac84e0c}\label{classParamListStandardOut_a6ca5a4b571dad6ad5378afda6ac84e0c}} 
+\index{ParamListStandardOut@{ParamListStandardOut}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ParamListStandardOut@{ParamListStandardOut}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+Out\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage,  }\item[{vector$<$ \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} $>$ \&}]{effectlist,  }\item[{bool}]{normalstack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the model from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$input$>$ or $<$output$>$ element \\
+\hline
+{\em manage} & is used to resolve references to address spaces \\
+\hline
+{\em effectlist} & is a container collecting Effect\+Records across all parameters \\
+\hline
+{\em normalstack} & is {\bfseries{true}} if parameters are pushed on the stack in the normal order \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classParamListStandard_a7dc8219ff6422f4e23d12643b68eb100}{Param\+List\+Standard}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

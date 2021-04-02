@@ -1,0 +1,52 @@
+\hypertarget{classConstraintOpcode}{}\doxysection{Constraint\+Opcode Class Reference}
+\label{classConstraintOpcode}\index{ConstraintOpcode@{ConstraintOpcode}}
+
+
+Inheritance diagram for Constraint\+Opcode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classConstraintOpcode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constraint\+Opcode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classConstraintOpcode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstraintOpcode_a2debc0873db698c985ac75f422bf35f0}\label{classConstraintOpcode_a2debc0873db698c985ac75f422bf35f0}} 
+{\bfseries Constraint\+Opcode} (int4 ind, const vector$<$ \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} $>$ \&o)
+\item 
+\mbox{\Hypertarget{classConstraintOpcode_a8fc20418a32489ad2485e01a853ea98b}\label{classConstraintOpcode_a8fc20418a32489ad2485e01a853ea98b}} 
+const vector$<$ \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} $>$ \& {\bfseries get\+Op\+Codes} (void) const
+\item 
+\mbox{\Hypertarget{classConstraintOpcode_aaa3bc0e6cc446941be344459b962e2b6}\label{classConstraintOpcode_aaa3bc0e6cc446941be344459b962e2b6}} 
+virtual \mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$ {\bfseries clone} (void) const
+\item 
+\mbox{\Hypertarget{classConstraintOpcode_adab0b976a316fe14cfd1f6169a2d6fe3}\label{classConstraintOpcode_adab0b976a316fe14cfd1f6169a2d6fe3}} 
+virtual bool {\bfseries step} (\mbox{\hyperlink{classUnifyState}{Unify\+State}} \&state)
+\item 
+\mbox{\Hypertarget{classConstraintOpcode_a99d5a920f6260d33be99fd2b2ea40bc1}\label{classConstraintOpcode_a99d5a920f6260d33be99fd2b2ea40bc1}} 
+virtual void {\bfseries collect\+Types} (vector$<$ \mbox{\hyperlink{classUnifyDatatype}{Unify\+Datatype}} $>$ \&typelist) const
+\item 
+\mbox{\Hypertarget{classConstraintOpcode_a8216f50f387c229d3c7bbf50ce717aed}\label{classConstraintOpcode_a8216f50f387c229d3c7bbf50ce717aed}} 
+virtual int4 {\bfseries get\+Base\+Index} (void) const
+\item 
+\mbox{\Hypertarget{classConstraintOpcode_a4ae4b3306f7bf7fa9fb55bd142a7cf47}\label{classConstraintOpcode_a4ae4b3306f7bf7fa9fb55bd142a7cf47}} 
+virtual void {\bfseries print} (ostream \&s, \mbox{\hyperlink{classUnifyCPrinter}{Unify\+C\+Printer}} \&printstate) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+unify.\+hh\end{DoxyCompactItemize}

@@ -1,0 +1,47 @@
+\hypertarget{classSymbolCompareName}{}\doxysection{Symbol\+Compare\+Name Class Reference}
+\label{classSymbolCompareName}\index{SymbolCompareName@{SymbolCompareName}}
+
+
+Comparator for sorting \mbox{\hyperlink{classSymbol}{Symbol}} objects by name.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSymbolCompareName_ab3567b038314fbbb1e18f8b6537705f7}{operator()}} (const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym1, const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym2) const
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{classSymbol}{Symbol}} pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Comparator for sorting \mbox{\hyperlink{classSymbol}{Symbol}} objects by name. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSymbolCompareName_ab3567b038314fbbb1e18f8b6537705f7}\label{classSymbolCompareName_ab3567b038314fbbb1e18f8b6537705f7}} 
+\index{SymbolCompareName@{SymbolCompareName}!operator()@{operator()}}
+\index{operator()@{operator()}!SymbolCompareName@{SymbolCompareName}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Symbol\+Compare\+Name\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym1,  }\item[{const \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare two \mbox{\hyperlink{classSymbol}{Symbol}} pointers. 
+
+Compare based on name. Use the deduplication id on the symbols if necessary 
+\begin{DoxyParams}{Parameters}
+{\em sym1} & is the first \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em sym2} & is the second \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the first is ordered before the second 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\end{DoxyCompactItemize}

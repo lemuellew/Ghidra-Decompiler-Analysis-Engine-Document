@@ -1,0 +1,150 @@
+\hypertarget{classIfaceDecompData}{}\doxysection{Iface\+Decomp\+Data Class Reference}
+\label{classIfaceDecompData}\index{IfaceDecompData@{IfaceDecompData}}
+
+
+Common data shared by decompiler commands.  
+
+
+
+
+{\ttfamily \#include $<$ifacedecomp.\+hh$>$}
+
+
+
+Inheritance diagram for Iface\+Decomp\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classIfaceDecompData__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Iface\+Decomp\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfaceDecompData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceDecompData_abe1506740923a97939ace2445d351b45}\label{classIfaceDecompData_abe1506740923a97939ace2445d351b45}} 
+void {\bfseries store\+Prototype\+Pieces} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd\+\_\+in, \mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} pp\+\_\+in)
+\item 
+\mbox{\Hypertarget{classIfaceDecompData_af70c37173793122de0725e227c5f84a8}\label{classIfaceDecompData_af70c37173793122de0725e227c5f84a8}} 
+\mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} {\bfseries find\+Prototype\+Pieces} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd\+\_\+in)
+\item 
+\mbox{\Hypertarget{classIfaceDecompData_ad05817ffc163460e94cf21dbb481c805}\label{classIfaceDecompData_ad05817ffc163460e94cf21dbb481c805}} 
+\mbox{\hyperlink{classIfaceDecompData_ad05817ffc163460e94cf21dbb481c805}{Iface\+Decomp\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceDecompData_aa9e9dee772349d1b5d83cb120c4899f9}\label{classIfaceDecompData_aa9e9dee772349d1b5d83cb120c4899f9}} 
+void \mbox{\hyperlink{classIfaceDecompData_aa9e9dee772349d1b5d83cb120c4899f9}{allocate\+Call\+Graph}} (void)
+\begin{DoxyCompactList}\small\item\em Allocate the call-\/graph object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceDecompData_aa1909a91f347f8925d2932da078b20bf}{abort\+Function}} (ostream \&s)
+\begin{DoxyCompactList}\small\item\em Clear references to current function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceDecompData_a23c95a500eccef410cbe4049b2d3cce3}\label{classIfaceDecompData_a23c95a500eccef410cbe4049b2d3cce3}} 
+void \mbox{\hyperlink{classIfaceDecompData_a23c95a500eccef410cbe4049b2d3cce3}{clear\+Architecture}} (void)
+\begin{DoxyCompactList}\small\item\em Free all resources for the current architecture/program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceDecompData_a7f572f8b244a6743a266237901e73e0a}{follow\+Flow}} (ostream \&s, int4 size)
+\begin{DoxyCompactList}\small\item\em Generate raw p-\/code for the current function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classIfaceDecompData_a038d6a7a6571f67c0afc2f58378531c6}{read\+Varnode}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read a varnode from the given stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceDecompData_a6448c8594d5fc954dd79f896f449e058}\label{classIfaceDecompData_a6448c8594d5fc954dd79f896f449e058}} 
+\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ \mbox{\hyperlink{classIfaceDecompData_a6448c8594d5fc954dd79f896f449e058}{fd}}
+\begin{DoxyCompactList}\small\item\em Current function active in the console. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceDecompData_ade09ccf947ddb5fda8f76dc9260337ec}\label{classIfaceDecompData_ade09ccf947ddb5fda8f76dc9260337ec}} 
+\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classIfaceDecompData_ade09ccf947ddb5fda8f76dc9260337ec}{conf}}
+\begin{DoxyCompactList}\small\item\em Current architecture/program active in the console. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceDecompData_a89cdc94ddcd59bc2d70db51c0a4d5419}\label{classIfaceDecompData_a89cdc94ddcd59bc2d70db51c0a4d5419}} 
+\mbox{\hyperlink{classCallGraph}{Call\+Graph}} $\ast$ \mbox{\hyperlink{classIfaceDecompData_a89cdc94ddcd59bc2d70db51c0a4d5419}{cgraph}}
+\begin{DoxyCompactList}\small\item\em Call-\/graph information for the program. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceDecompData_ad29fbdde2fc92deabfb3eaeac2425d41}\label{classIfaceDecompData_ad29fbdde2fc92deabfb3eaeac2425d41}} 
+map$<$ \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$, \mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} $>$ {\bfseries prototype\+Pieces}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common data shared by decompiler commands. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfaceDecompData_aa1909a91f347f8925d2932da078b20bf}\label{classIfaceDecompData_aa1909a91f347f8925d2932da078b20bf}} 
+\index{IfaceDecompData@{IfaceDecompData}!abortFunction@{abortFunction}}
+\index{abortFunction@{abortFunction}!IfaceDecompData@{IfaceDecompData}}
+\doxysubsubsection{\texorpdfstring{abortFunction()}{abortFunction()}}
+{\footnotesize\ttfamily void Iface\+Decomp\+Data\+::abort\+Function (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Clear references to current function. 
+
+This is called if a command throws a low-\/level error. It clears any analysis on the function, sets the current function to null, and issues a warning. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write the warning to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceDecompData_a7f572f8b244a6743a266237901e73e0a}\label{classIfaceDecompData_a7f572f8b244a6743a266237901e73e0a}} 
+\index{IfaceDecompData@{IfaceDecompData}!followFlow@{followFlow}}
+\index{followFlow@{followFlow}!IfaceDecompData@{IfaceDecompData}}
+\doxysubsubsection{\texorpdfstring{followFlow()}{followFlow()}}
+{\footnotesize\ttfamily void Iface\+Decomp\+Data\+::follow\+Flow (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Generate raw p-\/code for the current function. 
+
+Follow flow from the entry point of the function and generate the raw p-\/code ops for all instructions, up to {\itshape return} instructions. If a {\itshape size} in bytes is provided, it bounds the memory region where flow can be followed. Otherwise, a zero {\itshape size} allows unbounded flow tracing. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is a output stream for reporting function details or errors \\
+\hline
+{\em size} & (if non-\/zero) is the maximum number of bytes to disassemble \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceDecompData_a038d6a7a6571f67c0afc2f58378531c6}\label{classIfaceDecompData_a038d6a7a6571f67c0afc2f58378531c6}} 
+\index{IfaceDecompData@{IfaceDecompData}!readVarnode@{readVarnode}}
+\index{readVarnode@{readVarnode}!IfaceDecompData@{IfaceDecompData}}
+\doxysubsubsection{\texorpdfstring{readVarnode()}{readVarnode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Iface\+Decomp\+Data\+::read\+Varnode (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Read a varnode from the given stream. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} is selected from the {\itshape current} function. It is specified as a storage location with info about its defining p-\/code in parantheses.
+\begin{DoxyItemize}
+\item {\ttfamily E\+AX(r0x10000\+:0x65)}
+\item {\ttfamily E\+CX(i)}
+\item {\ttfamily r0x10001000\+:4(\+:0x96)}
+\item {\ttfamily u0x00001100\+:1(\+:0x102)}
+\item {\ttfamily \#0x1(0x10205\+:0x27)}
+\end{DoxyItemize}
+
+The storage address space is given as the {\itshape short-\/cut} character followed by the address offset. For register spaces, the name of the register can be given instead of the offset. After the offset, a size can be specified with a \textquotesingle{}\+:\textquotesingle{} followed by the size in bytes. If size is not provided and there is no register name, a default word size is assigned based on the address space.
+
+The defining p-\/code op is specified either as\+:
+\begin{DoxyItemize}
+\item An address and sequence number\+: {\ttfamily E\+AX(r0x10000\+:0x65)}
+\item Just a sequence number\+: {\ttfamily E\+AX(\+:0x65)} or
+\item An \char`\"{}i\char`\"{} token for inputs\+: {\ttfamily E\+AX(i)}
+\end{DoxyItemize}
+
+For a constant \mbox{\hyperlink{classVarnode}{Varnode}}, the storage offset is the actual value of the constant, and the p-\/code address and sequence number must both be present and specify the p-\/code op that {\itshape reads} the constant. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given input stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classVarnode}{Varnode}} object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\hypertarget{classActionDefaultParams}{}\doxysection{Action\+Default\+Params Class Reference}
+\label{classActionDefaultParams}\index{ActionDefaultParams@{ActionDefaultParams}}
+
+
+Find a prototype for each sub-\/function.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Default\+Params\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classActionDefaultParams__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Default\+Params\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classActionDefaultParams__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionDefaultParams_ab1eaa217e71047b924bf0decd2f067a1}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionDefaultParams_a32f4c196d02d9f86c66749b9bf5d2247}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Find a prototype for each sub-\/function. 
+
+This loads prototype information, if it exists for each sub-\/function. If no explicit prototype exists, a default is selected. If the prototype model specifies {\itshape uponreturn} injection, the p-\/code is injected at this time. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionDefaultParams_a32f4c196d02d9f86c66749b9bf5d2247}\label{classActionDefaultParams_a32f4c196d02d9f86c66749b9bf5d2247}} 
+\index{ActionDefaultParams@{ActionDefaultParams}!apply@{apply}}
+\index{apply@{apply}!ActionDefaultParams@{ActionDefaultParams}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Default\+Params\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionDefaultParams_ab1eaa217e71047b924bf0decd2f067a1}\label{classActionDefaultParams_ab1eaa217e71047b924bf0decd2f067a1}} 
+\index{ActionDefaultParams@{ActionDefaultParams}!clone@{clone}}
+\index{clone@{clone}!ActionDefaultParams@{ActionDefaultParams}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Default\+Params\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

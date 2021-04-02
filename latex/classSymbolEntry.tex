@@ -1,0 +1,260 @@
+\hypertarget{classSymbolEntry}{}\doxysection{Symbol\+Entry Class Reference}
+\label{classSymbolEntry}\index{SymbolEntry@{SymbolEntry}}
+
+
+A storage location for a particular \mbox{\hyperlink{classSymbol}{Symbol}}.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classSymbolEntry_1_1EntryInitData}{Entry\+Init\+Data}}
+\begin{DoxyCompactList}\small\item\em Initialization data for a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} to facilitate a rangemap. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort}{Entry\+Subsort}}
+\begin{DoxyCompactList}\small\item\em Class for sub-\/sorting different \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects at the same address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSymbolEntry_a314b03465bd3849ffe266057d69a7e37}\label{classSymbolEntry_a314b03465bd3849ffe266057d69a7e37}} 
+typedef uintb \mbox{\hyperlink{classSymbolEntry_a314b03465bd3849ffe266057d69a7e37}{linetype}}
+\begin{DoxyCompactList}\small\item\em The linear element for a rangemap of \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbolEntry_a3163188293595446b1f1dafccab7df15}\label{classSymbolEntry_a3163188293595446b1f1dafccab7df15}} 
+typedef \mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort}{Entry\+Subsort}} \mbox{\hyperlink{classSymbolEntry_a3163188293595446b1f1dafccab7df15}{subsorttype}}
+\begin{DoxyCompactList}\small\item\em The sub-\/sort object for a rangemap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbolEntry_adca9545cc0e46b574a9cf9fbb44cfca8}\label{classSymbolEntry_adca9545cc0e46b574a9cf9fbb44cfca8}} 
+typedef \mbox{\hyperlink{classSymbolEntry_1_1EntryInitData}{Entry\+Init\+Data}} \mbox{\hyperlink{classSymbolEntry_adca9545cc0e46b574a9cf9fbb44cfca8}{inittype}}
+\begin{DoxyCompactList}\small\item\em Initialization data for a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} in a rangemap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSymbolEntry_acbfb51774c6a5420406f0b8612fee614}{Symbol\+Entry}} (const \mbox{\hyperlink{classSymbolEntry_1_1EntryInitData}{Entry\+Init\+Data}} \&data, uintb a, uintb b)
+\begin{DoxyCompactList}\small\item\em Fully initialize {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbolEntry_a1233239187212ed427a718aae75e524c}{Symbol\+Entry}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 exfl, uint8 h, int4 off, int4 sz, const \mbox{\hyperlink{classRangeList}{Range\+List}} \&rnglist)
+\begin{DoxyCompactList}\small\item\em Construct a dynamic \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}. \end{DoxyCompactList}\item 
+uint4 \mbox{\hyperlink{classSymbolEntry_a2a9a19cc7c6bfa573fd244bcc061a4a4}{get\+All\+Flags}} (void) const
+\begin{DoxyCompactList}\small\item\em Get all \mbox{\hyperlink{classVarnode}{Varnode}} flags for {\bfseries{this}} storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbolEntry_a3163188293595446b1f1dafccab7df15}{subsorttype}} \mbox{\hyperlink{classSymbolEntry_afb88a4dae96af6bb42c0bd0434d7e756}{get\+Subsort}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the sub-\/sort object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSymbolEntry_a389ffcfb36cee3c49b63fdac6be92bee}{in\+Use}} (const \mbox{\hyperlink{classAddress}{Address}} \&usepoint) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} storage valid for the given code address. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbolEntry_a856e7005f430c40b54c97ee886476e8a}\label{classSymbolEntry_a856e7005f430c40b54c97ee886476e8a}} 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classSymbolEntry_a856e7005f430c40b54c97ee886476e8a}{get\+First\+Use\+Address}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the first code address where {\bfseries{this}} storage is valid. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbolEntry_a8e2a7fd30276da3672340e5424aadad9}\label{classSymbolEntry_a8e2a7fd30276da3672340e5424aadad9}} 
+bool \mbox{\hyperlink{classSymbolEntry_a8e2a7fd30276da3672340e5424aadad9}{is\+Addr\+Tied}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} storage address tied. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSymbolEntry_a9a4d4c566e91765896e49a4d565e077e}{update\+Type}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Update a \mbox{\hyperlink{classVarnode}{Varnode}} data-\/type from {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classSymbolEntry_a84cb58373a0e587c0698396a65f3a9b9}{get\+Sized\+Type}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz) const
+\begin{DoxyCompactList}\small\item\em Get the data-\/type associated with (a piece of) {\bfseries{this}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbolEntry_a0d46ff3d3aef03da78bd7dfd595bd852}{print\+Entry}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump a description of {\bfseries{this}} to a stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbolEntry_a4d81d9bb16fee6c63a169680073dd28b}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} to an X\+ML stream. \end{DoxyCompactList}\item 
+List\+::const\+\_\+iterator \mbox{\hyperlink{classSymbolEntry_a6117b39bc8d1a12e3cba724dab6dff3f}{restore\+Xml}} (List\+::const\+\_\+iterator iter, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSymbolEntry_a921193447f6e42f596ac0a7694b02830}\label{classSymbolEntry_a921193447f6e42f596ac0a7694b02830}} 
+class {\bfseries Scope}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A storage location for a particular \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+Where a \mbox{\hyperlink{classSymbol}{Symbol}} is stored, as a byte address and a size, is of particular importance to the decompiler. This class encapsulates this storage meta-\/data. A single \mbox{\hyperlink{classSymbol}{Symbol}} split across multiple storage locations is supported by the {\bfseries{offset}} and {\bfseries{size}} fields. The {\bfseries{hash}} field supports {\itshape dynamic} storage, where a \mbox{\hyperlink{classSymbol}{Symbol}} is represented by a constant or a temporary register. In this case, storage must be tied to the particular p-\/code operators using the value.
+
+A particular memory address does {\bfseries{not}} have to represent the symbol across all code. Storage may get recycled for different Symbols at different points in the code. The {\bfseries{uselimit}} object defines the range of instruction addresses over which a particular memory address does represent a \mbox{\hyperlink{classSymbol}{Symbol}}, with the convention that an empty {\bfseries{uselimit}} indicates the storage holds the \mbox{\hyperlink{classSymbol}{Symbol}} across {\itshape all} code. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSymbolEntry_acbfb51774c6a5420406f0b8612fee614}\label{classSymbolEntry_acbfb51774c6a5420406f0b8612fee614}} 
+\index{SymbolEntry@{SymbolEntry}!SymbolEntry@{SymbolEntry}}
+\index{SymbolEntry@{SymbolEntry}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{SymbolEntry()}{SymbolEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Symbol\+Entry\+::\+Symbol\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbolEntry_1_1EntryInitData}{Entry\+Init\+Data}} \&}]{data,  }\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption})}
+
+
+
+Fully initialize {\bfseries{this}}. 
+
+Establish the boundary offsets and fill in additional data 
+\begin{DoxyParams}{Parameters}
+{\em data} & contains the raw initialization data \\
+\hline
+{\em a} & is the starting offset of the entry \\
+\hline
+{\em b} & is the ending offset of the entry \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbolEntry_a1233239187212ed427a718aae75e524c}\label{classSymbolEntry_a1233239187212ed427a718aae75e524c}} 
+\index{SymbolEntry@{SymbolEntry}!SymbolEntry@{SymbolEntry}}
+\index{SymbolEntry@{SymbolEntry}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{SymbolEntry()}{SymbolEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Symbol\+Entry\+::\+Symbol\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{uint4}]{exfl,  }\item[{uint8}]{h,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{rnglist }\end{DoxyParamCaption})}
+
+
+
+Construct a dynamic \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}. 
+
+This is used specifically for {\itshape dynamic} \mbox{\hyperlink{classSymbol}{Symbol}} objects, where the storage location is attached to a temporary register or a constant. The main address field ({\bfseries{addr}}) is set to {\itshape invalid}, and the {\bfseries{hash}} becomes the primary location information. 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the underlying \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em exfl} & are the \mbox{\hyperlink{classVarnode}{Varnode}} flags associated with the storage location \\
+\hline
+{\em h} & is the the hash \\
+\hline
+{\em off} & if the offset into the \mbox{\hyperlink{classSymbol}{Symbol}} for this (piece of) storage \\
+\hline
+{\em sz} & is the size in bytes of this (piece of) storage \\
+\hline
+{\em rnglist} & is the set of code addresses where {\bfseries{this}} \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} represents the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSymbolEntry_a2a9a19cc7c6bfa573fd244bcc061a4a4}\label{classSymbolEntry_a2a9a19cc7c6bfa573fd244bcc061a4a4}} 
+\index{SymbolEntry@{SymbolEntry}!getAllFlags@{getAllFlags}}
+\index{getAllFlags@{getAllFlags}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{getAllFlags()}{getAllFlags()}}
+{\footnotesize\ttfamily uint4 Symbol\+Entry\+::get\+All\+Flags (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get all \mbox{\hyperlink{classVarnode}{Varnode}} flags for {\bfseries{this}} storage. 
+
+Retrieve the (union of) \mbox{\hyperlink{classVarnode}{Varnode}} flags specific to the \mbox{\hyperlink{classSymbol}{Symbol}} and specific to {\bfseries{this}} storage. \begin{DoxyReturn}{Returns}
+all \mbox{\hyperlink{classVarnode}{Varnode}} flags that apply 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbolEntry_a84cb58373a0e587c0698396a65f3a9b9}\label{classSymbolEntry_a84cb58373a0e587c0698396a65f3a9b9}} 
+\index{SymbolEntry@{SymbolEntry}!getSizedType@{getSizedType}}
+\index{getSizedType@{getSizedType}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{getSizedType()}{getSizedType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Symbol\+Entry\+::get\+Sized\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{inaddr,  }\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Get the data-\/type associated with (a piece of) {\bfseries{this}}. 
+
+Return the data-\/type that matches the given size and address within {\bfseries{this}} storage. N\+U\+LL is returned if there is no valid sub-\/type matching the size. 
+\begin{DoxyParams}{Parameters}
+{\em inaddr} & is the given address \\
+\hline
+{\em sz} & is the given size (in bytes) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching data-\/type or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbolEntry_afb88a4dae96af6bb42c0bd0434d7e756}\label{classSymbolEntry_afb88a4dae96af6bb42c0bd0434d7e756}} 
+\index{SymbolEntry@{SymbolEntry}!getSubsort@{getSubsort}}
+\index{getSubsort@{getSubsort}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{getSubsort()}{getSubsort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry_a3163188293595446b1f1dafccab7df15}{Symbol\+Entry\+::subsorttype}} Symbol\+Entry\+::get\+Subsort (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the sub-\/sort object. 
+
+Get data used to sub-\/sort entries (in a rangemap) at the same address \begin{DoxyReturn}{Returns}
+the sub-\/sort object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbolEntry_a389ffcfb36cee3c49b63fdac6be92bee}\label{classSymbolEntry_a389ffcfb36cee3c49b63fdac6be92bee}} 
+\index{SymbolEntry@{SymbolEntry}!inUse@{inUse}}
+\index{inUse@{inUse}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{inUse()}{inUse()}}
+{\footnotesize\ttfamily bool Symbol\+Entry\+::in\+Use (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption}) const}
+
+
+
+Is {\bfseries{this}} storage valid for the given code address. 
+
+This storage location may only hold the \mbox{\hyperlink{classSymbol}{Symbol}} value for a limited portion of the code. 
+\begin{DoxyParams}{Parameters}
+{\em usepoint} & is the given code address to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} storage is valid at the given address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbolEntry_a0d46ff3d3aef03da78bd7dfd595bd852}\label{classSymbolEntry_a0d46ff3d3aef03da78bd7dfd595bd852}} 
+\index{SymbolEntry@{SymbolEntry}!printEntry@{printEntry}}
+\index{printEntry@{printEntry}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{printEntry()}{printEntry()}}
+{\footnotesize\ttfamily void Symbol\+Entry\+::print\+Entry (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Dump a description of {\bfseries{this}} to a stream. 
+
+Give a contained one-\/line description of {\bfseries{this}} storage, suitable for a debug console 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbolEntry_a6117b39bc8d1a12e3cba724dab6dff3f}\label{classSymbolEntry_a6117b39bc8d1a12e3cba724dab6dff3f}} 
+\index{SymbolEntry@{SymbolEntry}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily List\+::const\+\_\+iterator Symbol\+Entry\+::restore\+Xml (\begin{DoxyParamCaption}\item[{List\+::const\+\_\+iterator}]{iter,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} from an X\+ML stream. 
+
+Given an iterator to children of a $<$mapsym$>$ tag, restore the storage address (or the hash if the symbol is dynamic) and the {\bfseries{uselimit}} describing the valid range of code addresses, then advance the iterator to the next tag. 
+\begin{DoxyParams}{Parameters}
+{\em iter} & is the iterator pointing to the address or hash tag \\
+\hline
+{\em manage} & is an address space manager for constructing \mbox{\hyperlink{classAddress}{Address}} objects \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the advanced iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbolEntry_a4d81d9bb16fee6c63a169680073dd28b}\label{classSymbolEntry_a4d81d9bb16fee6c63a169680073dd28b}} 
+\index{SymbolEntry@{SymbolEntry}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Symbol\+Entry\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save {\bfseries{this}} to an X\+ML stream. 
+
+This writes tags internal to the $<$mapsym$>$ tag associated with the \mbox{\hyperlink{classSymbol}{Symbol}}. It outputs the address tag (or the $<$hash$>$ tag for dynamic symbols) and a $<$rangelist$>$ tag associated with the {\bfseries{uselimit}}. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbolEntry_a9a4d4c566e91765896e49a4d565e077e}\label{classSymbolEntry_a9a4d4c566e91765896e49a4d565e077e}} 
+\index{SymbolEntry@{SymbolEntry}!updateType@{updateType}}
+\index{updateType@{updateType}!SymbolEntry@{SymbolEntry}}
+\doxysubsubsection{\texorpdfstring{updateType()}{updateType()}}
+{\footnotesize\ttfamily bool Symbol\+Entry\+::update\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const}
+
+
+
+Update a \mbox{\hyperlink{classVarnode}{Varnode}} data-\/type from {\bfseries{this}}. 
+
+If the \mbox{\hyperlink{classSymbol}{Symbol}} associated with {\bfseries{this}} is type-\/locked, change the given \mbox{\hyperlink{classVarnode}{Varnode}}\textquotesingle{}s attached data-\/type to match the \mbox{\hyperlink{classSymbol}{Symbol}} 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the data-\/type was changed 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

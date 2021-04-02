@@ -1,0 +1,261 @@
+\hypertarget{classContentHandler}{}\doxysection{Content\+Handler Class Reference}
+\label{classContentHandler}\index{ContentHandler@{ContentHandler}}
+
+
+The S\+AX interface for parsing X\+ML documents.  
+
+
+
+
+{\ttfamily \#include $<$xml.\+hh$>$}
+
+
+
+Inheritance diagram for Content\+Handler\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classContentHandler__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classContentHandler_aceaa6046b41a125ee4718fdbb009b859}\label{classContentHandler_aceaa6046b41a125ee4718fdbb009b859}} 
+virtual void \mbox{\hyperlink{classContentHandler_aceaa6046b41a125ee4718fdbb009b859}{set\+Document\+Locator}} (\mbox{\hyperlink{xml_8hh_ad34bc338f5e298a1993320898263b741}{Locator}} locator)=0
+\begin{DoxyCompactList}\small\item\em Set the Locator object for documents. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classContentHandler_a7f68f6c0e6f33654c3be999a8da17138}\label{classContentHandler_a7f68f6c0e6f33654c3be999a8da17138}} 
+virtual void \mbox{\hyperlink{classContentHandler_a7f68f6c0e6f33654c3be999a8da17138}{start\+Document}} (void)=0
+\begin{DoxyCompactList}\small\item\em Start processing a new X\+ML document. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classContentHandler_a21fb351a3987017008caafcc2c60834b}\label{classContentHandler_a21fb351a3987017008caafcc2c60834b}} 
+virtual void \mbox{\hyperlink{classContentHandler_a21fb351a3987017008caafcc2c60834b}{end\+Document}} (void)=0
+\begin{DoxyCompactList}\small\item\em End processing for the current X\+ML document. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classContentHandler_ac6e945ce50f644015db0d3045465c2ca}\label{classContentHandler_ac6e945ce50f644015db0d3045465c2ca}} 
+virtual void \mbox{\hyperlink{classContentHandler_ac6e945ce50f644015db0d3045465c2ca}{start\+Prefix\+Mapping}} (const string \&prefix, const string \&uri)=0
+\begin{DoxyCompactList}\small\item\em Start a new prefix to namespace U\+RI mapping. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classContentHandler_a8eb3c33c544eca57340d7dd61396f399}\label{classContentHandler_a8eb3c33c544eca57340d7dd61396f399}} 
+virtual void \mbox{\hyperlink{classContentHandler_a8eb3c33c544eca57340d7dd61396f399}{end\+Prefix\+Mapping}} (const string \&prefix)=0
+\begin{DoxyCompactList}\small\item\em Finish the current prefix. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_a77a58836917fd32b56230151f6d6966e}{start\+Element}} (const string \&namespace\+U\+RI, const string \&local\+Name, const string \&qualified\+Name, const \mbox{\hyperlink{classAttributes}{Attributes}} \&atts)=0
+\begin{DoxyCompactList}\small\item\em Callback indicating a new X\+ML element has started. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_a83a93a2fec8354b96e7ea462e65545af}{end\+Element}} (const string \&namespace\+U\+RI, const string \&local\+Name, const string \&qualified\+Name)=0
+\begin{DoxyCompactList}\small\item\em Callback indicating parsing of the current X\+ML element is finished. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_a546761acfc0e8cc5fe72bbceaccf9f9e}{characters}} (const char $\ast$text, int4 start, int4 length)=0
+\begin{DoxyCompactList}\small\item\em Callback with raw characters to be inserted in the current X\+ML element. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_a3158c975bb26ff02b941954cb4764da9}{ignorable\+Whitespace}} (const char $\ast$text, int4 start, int4 length)=0
+\begin{DoxyCompactList}\small\item\em Callback with whitespace character data for the current X\+ML element. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_a4b01bbac0e89948eb931c30f826db443}{set\+Version}} (const string \&version)=0
+\begin{DoxyCompactList}\small\item\em Set the X\+ML version as specified by the current document. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_ae8ed0998c2723da7740738811573542e}{set\+Encoding}} (const string \&encoding)=0
+\begin{DoxyCompactList}\small\item\em Set the character encoding as specified by the current document. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_a6b3929cb92630d4535b63f6470ff3020}{processing\+Instruction}} (const string \&target, const string \&data)=0
+\begin{DoxyCompactList}\small\item\em Callback for a formal {\itshape processing} {\itshape instruction} seen in the current document. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_a5d5a40349d86c051c980c1e81cf7ab4c}{skipped\+Entity}} (const string \&name)=0
+\begin{DoxyCompactList}\small\item\em Callback for an X\+ML entity skipped by the parser. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContentHandler_aec6be0bfc55eda76da189b718a92d3a9}{set\+Error}} (const string \&errmsg)=0
+\begin{DoxyCompactList}\small\item\em Callback for handling an error condition during X\+ML parsing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The S\+AX interface for parsing X\+ML documents. 
+
+This is the formal interface for handling the low-\/level string pieces of an X\+ML document as they are scanned by the parser. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classContentHandler_a546761acfc0e8cc5fe72bbceaccf9f9e}\label{classContentHandler_a546761acfc0e8cc5fe72bbceaccf9f9e}} 
+\index{ContentHandler@{ContentHandler}!characters@{characters}}
+\index{characters@{characters}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{characters()}{characters()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::characters (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{int4}]{start,  }\item[{int4}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback with raw characters to be inserted in the current X\+ML element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & is an array of character data being inserted. \\
+\hline
+{\em start} & is the first character within the array to insert. \\
+\hline
+{\em length} & is the number of characters to insert. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_a7e4ab80bff00428be2fce9cea97c53bd}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_a83a93a2fec8354b96e7ea462e65545af}\label{classContentHandler_a83a93a2fec8354b96e7ea462e65545af}} 
+\index{ContentHandler@{ContentHandler}!endElement@{endElement}}
+\index{endElement@{endElement}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{endElement()}{endElement()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::end\+Element (\begin{DoxyParamCaption}\item[{const string \&}]{namespace\+U\+RI,  }\item[{const string \&}]{local\+Name,  }\item[{const string \&}]{qualified\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback indicating parsing of the current X\+ML element is finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em namespace\+U\+RI} & is the namespace to which the element belongs \\
+\hline
+{\em local\+Name} & is the local name of the new element \\
+\hline
+{\em qualified\+Name} & is the fully qualified name of the element. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_ac5a58b5cc4ec48e0805f472672f3e73b}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_a3158c975bb26ff02b941954cb4764da9}\label{classContentHandler_a3158c975bb26ff02b941954cb4764da9}} 
+\index{ContentHandler@{ContentHandler}!ignorableWhitespace@{ignorableWhitespace}}
+\index{ignorableWhitespace@{ignorableWhitespace}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{ignorableWhitespace()}{ignorableWhitespace()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::ignorable\+Whitespace (\begin{DoxyParamCaption}\item[{const char $\ast$}]{text,  }\item[{int4}]{start,  }\item[{int4}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback with whitespace character data for the current X\+ML element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & is an array of character data that can be inserted. \\
+\hline
+{\em start} & is the first character within the array to insert. \\
+\hline
+{\em length} & is the number of characters to insert. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_a9364537779e9dd81b59f3572343d3207}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_a6b3929cb92630d4535b63f6470ff3020}\label{classContentHandler_a6b3929cb92630d4535b63f6470ff3020}} 
+\index{ContentHandler@{ContentHandler}!processingInstruction@{processingInstruction}}
+\index{processingInstruction@{processingInstruction}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{processingInstruction()}{processingInstruction()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::processing\+Instruction (\begin{DoxyParamCaption}\item[{const string \&}]{target,  }\item[{const string \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback for a formal {\itshape processing} {\itshape instruction} seen in the current document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & is the target instruction to process \\
+\hline
+{\em data} & is (optional) character data for the instruction \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_aca0bd5378ea9bc32f218b47be7202b00}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_ae8ed0998c2723da7740738811573542e}\label{classContentHandler_ae8ed0998c2723da7740738811573542e}} 
+\index{ContentHandler@{ContentHandler}!setEncoding@{setEncoding}}
+\index{setEncoding@{setEncoding}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{setEncoding()}{setEncoding()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::set\+Encoding (\begin{DoxyParamCaption}\item[{const string \&}]{encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the character encoding as specified by the current document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoding} & is the parsed encoding string \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_a9cd7a58c26881b5301d6f0b04f9a1c7f}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_aec6be0bfc55eda76da189b718a92d3a9}\label{classContentHandler_aec6be0bfc55eda76da189b718a92d3a9}} 
+\index{ContentHandler@{ContentHandler}!setError@{setError}}
+\index{setError@{setError}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{setError()}{setError()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::set\+Error (\begin{DoxyParamCaption}\item[{const string \&}]{errmsg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback for handling an error condition during X\+ML parsing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em errmsg} & is a message describing the error condition \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_a2e7990443435013045fc5fc5ae363492}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_a4b01bbac0e89948eb931c30f826db443}\label{classContentHandler_a4b01bbac0e89948eb931c30f826db443}} 
+\index{ContentHandler@{ContentHandler}!setVersion@{setVersion}}
+\index{setVersion@{setVersion}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{setVersion()}{setVersion()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::set\+Version (\begin{DoxyParamCaption}\item[{const string \&}]{version }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the X\+ML version as specified by the current document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em version} & is the parsed version string \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_ab16dcd42f1f701b5f892f2d68ff6d4df}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_a5d5a40349d86c051c980c1e81cf7ab4c}\label{classContentHandler_a5d5a40349d86c051c980c1e81cf7ab4c}} 
+\index{ContentHandler@{ContentHandler}!skippedEntity@{skippedEntity}}
+\index{skippedEntity@{skippedEntity}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{skippedEntity()}{skippedEntity()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::skipped\+Entity (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback for an X\+ML entity skipped by the parser. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the entity being skipped \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_a4255e1d0d2663ac73b752ee1c82de371}{Tree\+Handler}}.
+
+\mbox{\Hypertarget{classContentHandler_a77a58836917fd32b56230151f6d6966e}\label{classContentHandler_a77a58836917fd32b56230151f6d6966e}} 
+\index{ContentHandler@{ContentHandler}!startElement@{startElement}}
+\index{startElement@{startElement}!ContentHandler@{ContentHandler}}
+\doxysubsubsection{\texorpdfstring{startElement()}{startElement()}}
+{\footnotesize\ttfamily virtual void Content\+Handler\+::start\+Element (\begin{DoxyParamCaption}\item[{const string \&}]{namespace\+U\+RI,  }\item[{const string \&}]{local\+Name,  }\item[{const string \&}]{qualified\+Name,  }\item[{const \mbox{\hyperlink{classAttributes}{Attributes}} \&}]{atts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Callback indicating a new X\+ML element has started. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em namespace\+U\+RI} & is the namespace to which the new element belongs \\
+\hline
+{\em local\+Name} & is the local name of the new element \\
+\hline
+{\em qualified\+Name} & is the fully qualified name of the new element \\
+\hline
+{\em atts} & is the set of (previously parsed) attributes to attach to the new element \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTreeHandler_a4651fa11df87a2aa4155eebf433184c3}{Tree\+Handler}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{xml_8hh}{xml.\+hh}}\end{DoxyCompactItemize}

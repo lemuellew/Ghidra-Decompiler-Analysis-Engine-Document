@@ -1,0 +1,83 @@
+\hypertarget{classJumpValues}{}\doxysection{Jump\+Values Class Reference}
+\label{classJumpValues}\index{JumpValues@{JumpValues}}
+
+
+An iterator over values a switch variable can take.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+
+
+Inheritance diagram for Jump\+Values\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classJumpValues__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJumpValues_a8a7cbd3dad9ae70992f122c5da0b43ea}\label{classJumpValues_a8a7cbd3dad9ae70992f122c5da0b43ea}} 
+virtual void \mbox{\hyperlink{classJumpValues_a8a7cbd3dad9ae70992f122c5da0b43ea}{truncate}} (int4 nm)=0
+\begin{DoxyCompactList}\small\item\em Truncate the number of values to the given number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_abe5edd38ba4e0e00f68e1d5932f338bc}\label{classJumpValues_abe5edd38ba4e0e00f68e1d5932f338bc}} 
+virtual uintb \mbox{\hyperlink{classJumpValues_abe5edd38ba4e0e00f68e1d5932f338bc}{get\+Size}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Return the number of values the variables can take. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_a870c42f3098324112496fdb03572cf3a}\label{classJumpValues_a870c42f3098324112496fdb03572cf3a}} 
+virtual bool \mbox{\hyperlink{classJumpValues_a870c42f3098324112496fdb03572cf3a}{contains}} (uintb val) const =0
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the given value is in the set of possible values. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpValues_a9de7071bd67d3507636128fe2c537f71}{initialize\+For\+Reading}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Initialize {\bfseries{this}} for iterating over the set of possible values. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_a2533b15a8ced06d9785f3a20164c1ec8}\label{classJumpValues_a2533b15a8ced06d9785f3a20164c1ec8}} 
+virtual bool \mbox{\hyperlink{classJumpValues_a2533b15a8ced06d9785f3a20164c1ec8}{next}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Advance the iterator, return {\bfseries{true}} if there is another value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_a152463d975b9364369d2036dafd59303}\label{classJumpValues_a152463d975b9364369d2036dafd59303}} 
+virtual uintb \mbox{\hyperlink{classJumpValues_a152463d975b9364369d2036dafd59303}{get\+Value}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get the current value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_a6505dbaeb1e61b7d60aff3e9f1947941}\label{classJumpValues_a6505dbaeb1e61b7d60aff3e9f1947941}} 
+virtual \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classJumpValues_a6505dbaeb1e61b7d60aff3e9f1947941}{get\+Start\+Varnode}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classVarnode}{Varnode}} associated with the current value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_a1b1beeebd8a33f7710f30c495f130993}\label{classJumpValues_a1b1beeebd8a33f7710f30c495f130993}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classJumpValues_a1b1beeebd8a33f7710f30c495f130993}{get\+Start\+Op}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the current value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_a7cd231f94b261ef9a426619cae01d764}\label{classJumpValues_a7cd231f94b261ef9a426619cae01d764}} 
+virtual bool \mbox{\hyperlink{classJumpValues_a7cd231f94b261ef9a426619cae01d764}{is\+Reversible}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the current value can be reversed to get a label. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpValues_adfe4b22f78bedc2e90488a820dd86d3e}\label{classJumpValues_adfe4b22f78bedc2e90488a820dd86d3e}} 
+virtual \mbox{\hyperlink{classJumpValues}{Jump\+Values}} $\ast$ \mbox{\hyperlink{classJumpValues_adfe4b22f78bedc2e90488a820dd86d3e}{clone}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Clone {\bfseries{this}} iterator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An iterator over values a switch variable can take. 
+
+This iterator is intended to provide the start value for emulation of a jump-\/table model to obtain the associated jump-\/table destination. Each value can be associated with a starting \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} in the function being emulated, via \mbox{\hyperlink{classJumpValues_a6505dbaeb1e61b7d60aff3e9f1947941}{get\+Start\+Varnode()}} and \mbox{\hyperlink{classJumpValues_a1b1beeebd8a33f7710f30c495f130993}{get\+Start\+Op()}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpValues_a9de7071bd67d3507636128fe2c537f71}\label{classJumpValues_a9de7071bd67d3507636128fe2c537f71}} 
+\index{JumpValues@{JumpValues}!initializeForReading@{initializeForReading}}
+\index{initializeForReading@{initializeForReading}!JumpValues@{JumpValues}}
+\doxysubsubsection{\texorpdfstring{initializeForReading()}{initializeForReading()}}
+{\footnotesize\ttfamily virtual bool Jump\+Values\+::initialize\+For\+Reading (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initialize {\bfseries{this}} for iterating over the set of possible values. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are any values to iterate over 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classJumpValuesRangeDefault_aa179eae73d98e8ce8f7fee639ef078ae}{Jump\+Values\+Range\+Default}}, and \mbox{\hyperlink{classJumpValuesRange_a92e0970fd19cd188a82078752a10948d}{Jump\+Values\+Range}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\end{DoxyCompactItemize}

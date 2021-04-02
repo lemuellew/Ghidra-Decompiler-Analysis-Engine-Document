@@ -1,0 +1,101 @@
+\hypertarget{classTransformVar}{}\doxysection{Transform\+Var Class Reference}
+\label{classTransformVar}\index{TransformVar@{TransformVar}}
+
+
+Placeholder node for \mbox{\hyperlink{classVarnode}{Varnode}} that will exist after a transform is applied to a function.  
+
+
+
+
+{\ttfamily \#include $<$transform.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fceaf93e6d56f3a396cd2bb909cfd59787ef}{piece}} = 1, 
+\mbox{\hyperlink{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcead92cfc29e07634ffad06b3f373467377}{preexisting}} = 2, 
+\mbox{\hyperlink{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea296f62d3ba08dc3c5b472075fe52ea34}{normal\+\_\+temp}} = 3, 
+\mbox{\hyperlink{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea0ec108d3356556a26824712841971db7}{piece\+\_\+temp}} = 4, 
+\newline
+\mbox{\hyperlink{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea79e8cdc21f9b31d25e87be2561141cee}{constant}} = 5, 
+\mbox{\hyperlink{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcead8a30e5396cf141edefd438b653be127}{constant\+\_\+iop}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em Types of replacement Varnodes. \end{DoxyCompactList}\item 
+enum \{ \mbox{\hyperlink{classTransformVar_ac33887fb94a0725835cedcaf19722de0a1b28193bb86c4269aeecd1d54a23c843}{split\+\_\+terminator}} = 1, 
+\mbox{\hyperlink{classTransformVar_ac33887fb94a0725835cedcaf19722de0aaa4613a0a936f7a5904f897f712240aa}{input\+\_\+duplicate}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for a \mbox{\hyperlink{classTransformVar}{Transform\+Var}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTransformVar_a7999b6671fa3688562935ff84de182de}\label{classTransformVar_a7999b6671fa3688562935ff84de182de}} 
+class {\bfseries Transform\+Manager}
+\item 
+\mbox{\Hypertarget{classTransformVar_a31e8e11e28a484358c3c84993ddbd0ea}\label{classTransformVar_a31e8e11e28a484358c3c84993ddbd0ea}} 
+class {\bfseries Transform\+Op}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Placeholder node for \mbox{\hyperlink{classVarnode}{Varnode}} that will exist after a transform is applied to a function. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fce}\label{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fce}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Types of replacement Varnodes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{piece@{piece}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!piece@{piece}}}\mbox{\Hypertarget{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fceaf93e6d56f3a396cd2bb909cfd59787ef}\label{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fceaf93e6d56f3a396cd2bb909cfd59787ef}} 
+piece&New \mbox{\hyperlink{classVarnode}{Varnode}} is a piece of an original \mbox{\hyperlink{classVarnode}{Varnode}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{preexisting@{preexisting}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!preexisting@{preexisting}}}\mbox{\Hypertarget{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcead92cfc29e07634ffad06b3f373467377}\label{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcead92cfc29e07634ffad06b3f373467377}} 
+preexisting&\mbox{\hyperlink{classVarnode}{Varnode}} preexisted in the original data-\/flow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{normal\_temp@{normal\_temp}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!normal\_temp@{normal\_temp}}}\mbox{\Hypertarget{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea296f62d3ba08dc3c5b472075fe52ea34}\label{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea296f62d3ba08dc3c5b472075fe52ea34}} 
+normal\+\_\+temp&A new temporary (unique space) \mbox{\hyperlink{classVarnode}{Varnode}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{piece\_temp@{piece\_temp}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!piece\_temp@{piece\_temp}}}\mbox{\Hypertarget{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea0ec108d3356556a26824712841971db7}\label{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea0ec108d3356556a26824712841971db7}} 
+piece\+\_\+temp&A temporary representing a piece of an original \mbox{\hyperlink{classVarnode}{Varnode}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{constant@{constant}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!constant@{constant}}}\mbox{\Hypertarget{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea79e8cdc21f9b31d25e87be2561141cee}\label{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcea79e8cdc21f9b31d25e87be2561141cee}} 
+constant&A new constant \mbox{\hyperlink{classVarnode}{Varnode}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{constant\_iop@{constant\_iop}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!constant\_iop@{constant\_iop}}}\mbox{\Hypertarget{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcead8a30e5396cf141edefd438b653be127}\label{classTransformVar_a6875b828695b07e6a3f19e4ab0c90fcead8a30e5396cf141edefd438b653be127}} 
+constant\+\_\+iop&Special iop constant encoding a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} reference. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classTransformVar_ac33887fb94a0725835cedcaf19722de0}\label{classTransformVar_ac33887fb94a0725835cedcaf19722de0}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Flags for a \mbox{\hyperlink{classTransformVar}{Transform\+Var}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{split\_terminator@{split\_terminator}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!split\_terminator@{split\_terminator}}}\mbox{\Hypertarget{classTransformVar_ac33887fb94a0725835cedcaf19722de0a1b28193bb86c4269aeecd1d54a23c843}\label{classTransformVar_ac33887fb94a0725835cedcaf19722de0a1b28193bb86c4269aeecd1d54a23c843}} 
+split\+\_\+terminator&The last (most significant piece) of a split array. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{input\_duplicate@{input\_duplicate}!TransformVar@{TransformVar}}\index{TransformVar@{TransformVar}!input\_duplicate@{input\_duplicate}}}\mbox{\Hypertarget{classTransformVar_ac33887fb94a0725835cedcaf19722de0aaa4613a0a936f7a5904f897f712240aa}\label{classTransformVar_ac33887fb94a0725835cedcaf19722de0aaa4613a0a936f7a5904f897f712240aa}} 
+input\+\_\+duplicate&This is a piece of an input that has already been visited. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{transform_8hh}{transform.\+hh}}\item 
+transform.\+cc\end{DoxyCompactItemize}

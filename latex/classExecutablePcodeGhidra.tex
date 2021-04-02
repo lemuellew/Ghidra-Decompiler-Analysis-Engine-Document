@@ -1,0 +1,97 @@
+\hypertarget{classExecutablePcodeGhidra}{}\doxysection{Executable\+Pcode\+Ghidra Class Reference}
+\label{classExecutablePcodeGhidra}\index{ExecutablePcodeGhidra@{ExecutablePcodeGhidra}}
+
+
+A {\itshape p-\/code} {\itshape script} that uses a Ghidra client to generate the p-\/code ops.  
+
+
+
+
+{\ttfamily \#include $<$inject\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Executable\+Pcode\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classExecutablePcodeGhidra__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Executable\+Pcode\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{classExecutablePcodeGhidra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classExecutablePcodeGhidra_a07e851fbbb950eed2b1d3005e0cedeef}\label{classExecutablePcodeGhidra_a07e851fbbb950eed2b1d3005e0cedeef}} 
+\mbox{\hyperlink{classExecutablePcodeGhidra_a07e851fbbb950eed2b1d3005e0cedeef}{Executable\+Pcode\+Ghidra}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, const string \&src, const string \&nm)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classExecutablePcodeGhidra_a51caea71fd7a73b67c1d6e36754ad2a7}{inject}} (\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&context, \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&emit) const
+\item 
+virtual void \mbox{\hyperlink{classExecutablePcodeGhidra_a428bdbe98c4d715c72100ed91d2035c8}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} payload from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classExecutablePcodeGhidra_a3bd44f4e622300a02e80b482cb31c3ea}\label{classExecutablePcodeGhidra_a3bd44f4e622300a02e80b482cb31c3ea}} 
+virtual void \mbox{\hyperlink{classExecutablePcodeGhidra_a3bd44f4e622300a02e80b482cb31c3ea}{print\+Template}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print the p-\/code ops of the injection to a stream (for debugging) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A {\itshape p-\/code} {\itshape script} that uses a Ghidra client to generate the p-\/code ops. 
+
+The $<$body$>$ section of any p-\/code script encountered in .cspec or .pspec files is ignored. Instead the emulator is initialized by fetching compiled p-\/code from the Ghidra client. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classExecutablePcodeGhidra_a51caea71fd7a73b67c1d6e36754ad2a7}\label{classExecutablePcodeGhidra_a51caea71fd7a73b67c1d6e36754ad2a7}} 
+\index{ExecutablePcodeGhidra@{ExecutablePcodeGhidra}!inject@{inject}}
+\index{inject@{inject}!ExecutablePcodeGhidra@{ExecutablePcodeGhidra}}
+\doxysubsubsection{\texorpdfstring{inject()}{inject()}}
+{\footnotesize\ttfamily void Executable\+Pcode\+Ghidra\+::inject (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&}]{context,  }\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&}]{emit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Perform the injection of {\bfseries{this}} payload into data-\/flow.
+
+P-\/code operations representing {\bfseries{this}} payload are copied into the controlling analysis context. The provided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object dictates exactly where the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and \mbox{\hyperlink{classVarnode}{Varnode}} objects are inserted and to what container. An \mbox{\hyperlink{classInjectContext}{Inject\+Context}} object specifies how placeholder elements become concrete Varnodes in the appropriate context. 
+\begin{DoxyParams}{Parameters}
+{\em context} & is the provided Inject\+Conject object \\
+\hline
+{\em emit} & is the provovided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInjectPayload_aca9c322377f54e8e45c9a79e44ce0ff9}{Inject\+Payload}}.
+
+\mbox{\Hypertarget{classExecutablePcodeGhidra_a428bdbe98c4d715c72100ed91d2035c8}\label{classExecutablePcodeGhidra_a428bdbe98c4d715c72100ed91d2035c8}} 
+\index{ExecutablePcodeGhidra@{ExecutablePcodeGhidra}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ExecutablePcodeGhidra@{ExecutablePcodeGhidra}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Executable\+Pcode\+Ghidra\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} payload from an X\+ML stream. 
+
+The base class version of this method restores from a $<$pcode$>$ tag. Derived classes may restore from a parent tag and then invoke the base class method. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classInjectPayload_a19811abba789abc6bc1d3b2322709255}{Inject\+Payload}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{inject__ghidra_8hh}{inject\+\_\+ghidra.\+hh}}\item 
+inject\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

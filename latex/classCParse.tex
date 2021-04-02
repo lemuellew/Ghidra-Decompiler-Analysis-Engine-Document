@@ -1,0 +1,139 @@
+\hypertarget{classCParse}{}\doxysection{C\+Parse Class Reference}
+\label{classCParse}\index{CParse@{CParse}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCParse_a1947271b9b0eeb3dd3573744e763d593}\label{classCParse_a1947271b9b0eeb3dd3573744e763d593}} 
+enum \{ \newline
+{\bfseries f\+\_\+typedef} = 1, 
+{\bfseries f\+\_\+extern} = 2, 
+{\bfseries f\+\_\+static} = 4, 
+{\bfseries f\+\_\+auto} = 8, 
+\newline
+{\bfseries f\+\_\+register} = 16, 
+{\bfseries f\+\_\+const} = 32, 
+{\bfseries f\+\_\+restrict} = 64, 
+{\bfseries f\+\_\+volatile} = 128, 
+\newline
+{\bfseries f\+\_\+inline} = 256, 
+{\bfseries f\+\_\+struct} = 512, 
+{\bfseries f\+\_\+union} = 1024, 
+{\bfseries f\+\_\+enum} = 2048
+ \}
+\item 
+\mbox{\Hypertarget{classCParse_ab61ba0d16bc340a4d59d247a357c09ad}\label{classCParse_ab61ba0d16bc340a4d59d247a357c09ad}} 
+enum \{ {\bfseries doc\+\_\+declaration}, 
+{\bfseries doc\+\_\+parameter\+\_\+declaration}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCParse_ac70e0b56ec51d0e8dcd58b210524c6e3}\label{classCParse_ac70e0b56ec51d0e8dcd58b210524c6e3}} 
+{\bfseries C\+Parse} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, int4 maxbuf)
+\item 
+\mbox{\Hypertarget{classCParse_a31d28fe36d46c4a203e5fc919f85bc89}\label{classCParse_a31d28fe36d46c4a203e5fc919f85bc89}} 
+void {\bfseries clear} (void)
+\item 
+\mbox{\Hypertarget{classCParse_ab325e2223a1206b438386607e5ecab95}\label{classCParse_ab325e2223a1206b438386607e5ecab95}} 
+vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$ {\bfseries merge\+Spec\+Dec\+Vec} (\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$spec)
+\item 
+\mbox{\Hypertarget{classCParse_adaed833481c161b677c5ab50f0188e34}\label{classCParse_adaed833481c161b677c5ab50f0188e34}} 
+vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$ {\bfseries merge\+Spec\+Dec\+Vec} (\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$spec, vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$declist)
+\item 
+\mbox{\Hypertarget{classCParse_a8e286434a8b67b27a6237b52ec616f4b}\label{classCParse_a8e286434a8b67b27a6237b52ec616f4b}} 
+\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ {\bfseries merge\+Spec\+Dec} (\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$spec)
+\item 
+\mbox{\Hypertarget{classCParse_a4027e5c4bd75189278762b2be6aa001d}\label{classCParse_a4027e5c4bd75189278762b2be6aa001d}} 
+\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ {\bfseries merge\+Spec\+Dec} (\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$spec, \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$dec)
+\item 
+\mbox{\Hypertarget{classCParse_a5cad324ecbc6d0a9779bb2315b94ca05}\label{classCParse_a5cad324ecbc6d0a9779bb2315b94ca05}} 
+\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$ {\bfseries add\+Specifier} (\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$spec, string $\ast$str)
+\item 
+\mbox{\Hypertarget{classCParse_af89a088cf4482806721a6ec67d349ba4}\label{classCParse_af89a088cf4482806721a6ec67d349ba4}} 
+\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$ {\bfseries add\+Type\+Specifier} (\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$spec, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$tp)
+\item 
+\mbox{\Hypertarget{classCParse_a85cbf28b1791f9e99c50f90baa280fdb}\label{classCParse_a85cbf28b1791f9e99c50f90baa280fdb}} 
+\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$ {\bfseries add\+Func\+Specifier} (\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$spec, string $\ast$str)
+\item 
+\mbox{\Hypertarget{classCParse_a96873e399bbb894b2fd2a8f651c5c8f6}\label{classCParse_a96873e399bbb894b2fd2a8f651c5c8f6}} 
+\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ {\bfseries merge\+Pointer} (vector$<$ uint4 $>$ $\ast$ptr, \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$dec)
+\item 
+\mbox{\Hypertarget{classCParse_afa2b367a32436d3d24c6fdfe7d12890e}\label{classCParse_afa2b367a32436d3d24c6fdfe7d12890e}} 
+\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ {\bfseries new\+Declarator} (string $\ast$str)
+\item 
+\mbox{\Hypertarget{classCParse_aae7ee2e54f1b0bfa9f85081bf535992c}\label{classCParse_aae7ee2e54f1b0bfa9f85081bf535992c}} 
+\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ {\bfseries new\+Declarator} (void)
+\item 
+\mbox{\Hypertarget{classCParse_aa4bb47547847bec4722d844c3ff83b64}\label{classCParse_aa4bb47547847bec4722d844c3ff83b64}} 
+\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} $\ast$ {\bfseries new\+Specifier} (void)
+\item 
+\mbox{\Hypertarget{classCParse_ad0b3a68a1d4c31a8cfc0a6ed22e83229}\label{classCParse_ad0b3a68a1d4c31a8cfc0a6ed22e83229}} 
+vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$ {\bfseries new\+Vec\+Declarator} (void)
+\item 
+\mbox{\Hypertarget{classCParse_adf9a6474742d0acff43c1759869c7520}\label{classCParse_adf9a6474742d0acff43c1759869c7520}} 
+vector$<$ uint4 $>$ $\ast$ {\bfseries new\+Pointer} (void)
+\item 
+\mbox{\Hypertarget{classCParse_a590061e439353e36697762c55513b5d6}\label{classCParse_a590061e439353e36697762c55513b5d6}} 
+\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ {\bfseries new\+Array} (\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$dec, uint4 flags, uintb $\ast$num)
+\item 
+\mbox{\Hypertarget{classCParse_a87dfefea740964bd83cf23d7eb4313fb}\label{classCParse_a87dfefea740964bd83cf23d7eb4313fb}} 
+\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ {\bfseries new\+Func} (\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$dec, vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$declist)
+\item 
+\mbox{\Hypertarget{classCParse_a3490898d52255f4780743ae58134891f}\label{classCParse_a3490898d52255f4780743ae58134891f}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries new\+Struct} (const string \&ident, vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$declist)
+\item 
+\mbox{\Hypertarget{classCParse_a656fb2147b3bff1fd851c5c10078d678}\label{classCParse_a656fb2147b3bff1fd851c5c10078d678}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries old\+Struct} (const string \&ident)
+\item 
+\mbox{\Hypertarget{classCParse_ac3414fc2db6d45be1e18ec99ce660d0c}\label{classCParse_ac3414fc2db6d45be1e18ec99ce660d0c}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries new\+Union} (const string \&ident, vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$declist)
+\item 
+\mbox{\Hypertarget{classCParse_a83182d23d642640aaeff476b48d14b45}\label{classCParse_a83182d23d642640aaeff476b48d14b45}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries old\+Union} (const string \&ident)
+\item 
+\mbox{\Hypertarget{classCParse_a4f9b01397f57987ef3e0b898b562912f}\label{classCParse_a4f9b01397f57987ef3e0b898b562912f}} 
+\mbox{\hyperlink{structEnumerator}{Enumerator}} $\ast$ {\bfseries new\+Enumerator} (const string \&ident)
+\item 
+\mbox{\Hypertarget{classCParse_af713699809d69e09a602a170b6cfa88c}\label{classCParse_af713699809d69e09a602a170b6cfa88c}} 
+\mbox{\hyperlink{structEnumerator}{Enumerator}} $\ast$ {\bfseries new\+Enumerator} (const string \&ident, uintb val)
+\item 
+\mbox{\Hypertarget{classCParse_a63ad3f63fa9e106aa0ebfb8313e40fca}\label{classCParse_a63ad3f63fa9e106aa0ebfb8313e40fca}} 
+vector$<$ \mbox{\hyperlink{structEnumerator}{Enumerator}} $\ast$ $>$ $\ast$ {\bfseries new\+Vec\+Enumerator} (void)
+\item 
+\mbox{\Hypertarget{classCParse_abddad0f04a159aacf7d69f2a73ce5486}\label{classCParse_abddad0f04a159aacf7d69f2a73ce5486}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries new\+Enum} (const string \&ident, vector$<$ \mbox{\hyperlink{structEnumerator}{Enumerator}} $\ast$ $>$ $\ast$vecenum)
+\item 
+\mbox{\Hypertarget{classCParse_a0e318a55d6c909a2edf35018b6e3f4e3}\label{classCParse_a0e318a55d6c909a2edf35018b6e3f4e3}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries old\+Enum} (const string \&ident)
+\item 
+\mbox{\Hypertarget{classCParse_afeb074247c8851b2b06e912964e7cc30}\label{classCParse_afeb074247c8851b2b06e912964e7cc30}} 
+uint4 {\bfseries convert\+Flag} (string $\ast$str)
+\item 
+\mbox{\Hypertarget{classCParse_a2b275d0adfbf23c3d6241f3cd52dc7a3}\label{classCParse_a2b275d0adfbf23c3d6241f3cd52dc7a3}} 
+void {\bfseries clear\+Allocation} (void)
+\item 
+\mbox{\Hypertarget{classCParse_a70098c876c6832ab7f05670eb1d99b37}\label{classCParse_a70098c876c6832ab7f05670eb1d99b37}} 
+int4 {\bfseries lex} (void)
+\item 
+\mbox{\Hypertarget{classCParse_ae38f99d869ad987da0d5bbf2725f8ad9}\label{classCParse_ae38f99d869ad987da0d5bbf2725f8ad9}} 
+bool {\bfseries parse\+File} (const string \&filename, uint4 doctype)
+\item 
+\mbox{\Hypertarget{classCParse_a98fdd0bf6732406e9ba9b7b52ff1315f}\label{classCParse_a98fdd0bf6732406e9ba9b7b52ff1315f}} 
+bool {\bfseries parse\+Stream} (istream \&s, uint4 doctype)
+\item 
+\mbox{\Hypertarget{classCParse_a7541bb4f0e8b8eb2cf95b744f61fa219}\label{classCParse_a7541bb4f0e8b8eb2cf95b744f61fa219}} 
+const string \& {\bfseries get\+Error} (void) const
+\item 
+\mbox{\Hypertarget{classCParse_a0174a660f08394d7735f5699ce969cd5}\label{classCParse_a0174a660f08394d7735f5699ce969cd5}} 
+void {\bfseries set\+Result\+Declarations} (vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$val)
+\item 
+\mbox{\Hypertarget{classCParse_a6bfe0c19992dba09ecdd7aeda385ab38}\label{classCParse_a6bfe0c19992dba09ecdd7aeda385ab38}} 
+vector$<$ \mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} $\ast$ $>$ $\ast$ {\bfseries get\+Result\+Declarations} (void)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+grammar.\+hh\item 
+grammar.\+cc\end{DoxyCompactItemize}

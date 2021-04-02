@@ -1,0 +1,71 @@
+\hypertarget{classFlushNative}{}\doxysection{Flush\+Native Class Reference}
+\label{classFlushNative}\index{FlushNative@{FlushNative}}
+
+
+Command to {\bfseries{flush}} all symbols associated with a Program (executable)  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Flush\+Native\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classFlushNative__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Flush\+Native\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlushNative__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classFlushNative_a92fb03dcd3fb080a2033442403cde93c}{raw\+Action}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the action of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFlushNative_a055504c13f53d5647e26054e3ff82ff0}\label{classFlushNative_a055504c13f53d5647e26054e3ff82ff0}} 
+int4 \mbox{\hyperlink{classFlushNative_a055504c13f53d5647e26054e3ff82ff0}{res}}
+\begin{DoxyCompactList}\small\item\em Success status returned to the client (0=success) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to {\bfseries{flush}} all symbols associated with a Program (executable) 
+
+Clear out any \mbox{\hyperlink{classSymbol}{Symbol}}, \mbox{\hyperlink{classScope}{Scope}}, \mbox{\hyperlink{classDatatype}{Datatype}}, and \mbox{\hyperlink{classFuncdata}{Funcdata}} objects that have accumulated in the symbol table. This lets the decompiler keep a light-\/weight sync between its view of symbols and the Ghidra client\textquotesingle{}s. Subsequent decompilation will simply (re)fetch any symbols as needed. The command expects a single string parameter encoding the id of the program to flush. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFlushNative_a92fb03dcd3fb080a2033442403cde93c}\label{classFlushNative_a92fb03dcd3fb080a2033442403cde93c}} 
+\index{FlushNative@{FlushNative}!rawAction@{rawAction}}
+\index{rawAction@{rawAction}!FlushNative@{FlushNative}}
+\doxysubsubsection{\texorpdfstring{rawAction()}{rawAction()}}
+{\footnotesize\ttfamily void Flush\+Native\+::raw\+Action (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the action of the command. 
+
+Configuration is assumed to have happened, and {\bfseries{this}} object can immediately begin examining and manipulating data under the active \mbox{\hyperlink{classArchitecture}{Architecture}} object to perform the command. 
+
+Implements \mbox{\hyperlink{classGhidraCommand_a7d1a5cfedfd8f1d05161d27627302716}{Ghidra\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

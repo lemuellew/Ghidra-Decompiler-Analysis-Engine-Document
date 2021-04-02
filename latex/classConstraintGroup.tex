@@ -1,0 +1,79 @@
+\hypertarget{classConstraintGroup}{}\doxysection{Constraint\+Group Class Reference}
+\label{classConstraintGroup}\index{ConstraintGroup@{ConstraintGroup}}
+
+
+Inheritance diagram for Constraint\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classConstraintGroup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constraint\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classConstraintGroup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstraintGroup_ac29f72431489687d61ae3d7fa93e82f6}\label{classConstraintGroup_ac29f72431489687d61ae3d7fa93e82f6}} 
+\mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$ {\bfseries get\+Constraint} (int4 slot) const
+\item 
+\mbox{\Hypertarget{classConstraintGroup_ac9d8bca453351a7318fd3ed48b123032}\label{classConstraintGroup_ac9d8bca453351a7318fd3ed48b123032}} 
+void {\bfseries add\+Constraint} (\mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$a)
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a54444c67c89e955b1f6b9d1c8ab2da1f}\label{classConstraintGroup_a54444c67c89e955b1f6b9d1c8ab2da1f}} 
+int4 {\bfseries num\+Constraints} (void) const
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a01c6e43bddd0906eae93f915db6375d4}\label{classConstraintGroup_a01c6e43bddd0906eae93f915db6375d4}} 
+void {\bfseries delete\+Constraint} (int4 slot)
+\item 
+\mbox{\Hypertarget{classConstraintGroup_aa0d8ef99e07e7a207381515ed9d87ac3}\label{classConstraintGroup_aa0d8ef99e07e7a207381515ed9d87ac3}} 
+void {\bfseries merge\+In} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a7121c0ef41bb59e28305e5ddb3c80f35}\label{classConstraintGroup_a7121c0ef41bb59e28305e5ddb3c80f35}} 
+virtual \mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$ {\bfseries clone} (void) const
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a96670ed925bd7fa0146f091baf31e3b2}\label{classConstraintGroup_a96670ed925bd7fa0146f091baf31e3b2}} 
+virtual void {\bfseries initialize} (\mbox{\hyperlink{classUnifyState}{Unify\+State}} \&state)
+\item 
+\mbox{\Hypertarget{classConstraintGroup_aeb75604b690052150d7a94392677dd20}\label{classConstraintGroup_aeb75604b690052150d7a94392677dd20}} 
+virtual bool {\bfseries step} (\mbox{\hyperlink{classUnifyState}{Unify\+State}} \&state)
+\item 
+\mbox{\Hypertarget{classConstraintGroup_ac1b507b8c2e1f0f458fdaa474fc58bc1}\label{classConstraintGroup_ac1b507b8c2e1f0f458fdaa474fc58bc1}} 
+virtual void {\bfseries collect\+Types} (vector$<$ \mbox{\hyperlink{classUnifyDatatype}{Unify\+Datatype}} $>$ \&typelist) const
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a2dd52e0b06da735d9ce96f053dfb6bf2}\label{classConstraintGroup_a2dd52e0b06da735d9ce96f053dfb6bf2}} 
+virtual void {\bfseries build\+Traverse\+State} (\mbox{\hyperlink{classUnifyState}{Unify\+State}} \&state)
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a89e8251b6b4ed3c291cf1503531fac20}\label{classConstraintGroup_a89e8251b6b4ed3c291cf1503531fac20}} 
+virtual void {\bfseries set\+Id} (int4 \&id)
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a50158935682afb1c1838a2d284f18ed4}\label{classConstraintGroup_a50158935682afb1c1838a2d284f18ed4}} 
+virtual int4 {\bfseries get\+Base\+Index} (void) const
+\item 
+\mbox{\Hypertarget{classConstraintGroup_abd3b88e44acf00941042c9a29d4d32fb}\label{classConstraintGroup_abd3b88e44acf00941042c9a29d4d32fb}} 
+virtual void {\bfseries print} (ostream \&s, \mbox{\hyperlink{classUnifyCPrinter}{Unify\+C\+Printer}} \&printstate) const
+\item 
+\mbox{\Hypertarget{classConstraintGroup_adf801a2e01c28608fcf7c19305cbb08b}\label{classConstraintGroup_adf801a2e01c28608fcf7c19305cbb08b}} 
+virtual void {\bfseries remove\+Dummy} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstraintGroup_a218d57fd50d3fadda182398b09c59715}\label{classConstraintGroup_a218d57fd50d3fadda182398b09c59715}} 
+vector$<$ \mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$ $>$ {\bfseries constraintlist}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+unify.\+hh\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\hypertarget{classBlockMap}{}\doxysection{Block\+Map Class Reference}
+\label{classBlockMap}\index{BlockMap@{BlockMap}}
+
+
+Helper class for resolving cross-\/references while deserializing \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} objects.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockMap_a4f9c51fe087f6ec59af2c970b2ac2198}\label{classBlockMap_a4f9c51fe087f6ec59af2c970b2ac2198}} 
+\mbox{\hyperlink{classBlockMap_a4f9c51fe087f6ec59af2c970b2ac2198}{Block\+Map}} (const \mbox{\hyperlink{classBlockMap}{Block\+Map}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockMap_af56f54d880b34ee2097765f1eb2cbf8e}\label{classBlockMap_af56f54d880b34ee2097765f1eb2cbf8e}} 
+void \mbox{\hyperlink{classBlockMap_af56f54d880b34ee2097765f1eb2cbf8e}{sort\+List}} (void)
+\begin{DoxyCompactList}\small\item\em Sort the list of \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockMap_abc5d592bf94c4e29c6a0efbcd1890883}{find\+Level\+Block}} (int4 index) const
+\begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} matching the given index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockMap_a9fd04bc95c56621511ecbcbdbbcfbcaa}{create\+Block}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} of the named type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class for resolving cross-\/references while deserializing \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} objects. 
+
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects are serialized with their associated {\bfseries{index}} value and edges are serialized with the indices of the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} end-\/points. During deserialization, this class maintains a list of \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects sorted by index and then looks up the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} matching a given index as edges specify them. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockMap_a9fd04bc95c56621511ecbcbdbbcfbcaa}\label{classBlockMap_a9fd04bc95c56621511ecbcbdbbcfbcaa}} 
+\index{BlockMap@{BlockMap}!createBlock@{createBlock}}
+\index{createBlock@{createBlock}!BlockMap@{BlockMap}}
+\doxysubsubsection{\texorpdfstring{createBlock()}{createBlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Map\+::create\+Block (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Create a \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} of the named type. 
+
+Given the name of a block (deserialized from a $<$bhead$>$ tag), build the corresponding type of block. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the block type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new instance of the named \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockMap_abc5d592bf94c4e29c6a0efbcd1890883}\label{classBlockMap_abc5d592bf94c4e29c6a0efbcd1890883}} 
+\index{BlockMap@{BlockMap}!findLevelBlock@{findLevelBlock}}
+\index{findLevelBlock@{findLevelBlock}!BlockMap@{BlockMap}}
+\doxysubsubsection{\texorpdfstring{findLevelBlock()}{findLevelBlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}$\ast$ Block\+Map\+::find\+Level\+Block (\begin{DoxyParamCaption}\item[{int4}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Find the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} matching the given index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & is the given index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} matching the index 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

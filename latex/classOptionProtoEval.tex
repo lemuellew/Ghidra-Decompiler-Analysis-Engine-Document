@@ -1,0 +1,75 @@
+\hypertarget{classOptionProtoEval}{}\doxysection{Option\+Proto\+Eval Class Reference}
+\label{classOptionProtoEval}\index{OptionProtoEval@{OptionProtoEval}}
+
+
+Set the prototype model to use when evaluating the parameters of the {\itshape current} function.  
+
+
+
+
+Inheritance diagram for Option\+Proto\+Eval\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classOptionProtoEval__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Option\+Proto\+Eval\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classOptionProtoEval__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classOptionProtoEval_a8fd059a29b0abecc4e5f3a9e55661621}{apply}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb, const string \&p1, const string \&p2, const string \&p3) const
+\begin{DoxyCompactList}\small\item\em Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Set the prototype model to use when evaluating the parameters of the {\itshape current} function. 
+
+The first parameter gives the name of the prototype model. The string \char`\"{}default\char`\"{} can be given to refer to the format {\itshape default} model for the architecture. The specified model is used to evaluate parameters of the function actively being decompiled, which may be distinct from the model used to evaluate sub-\/functions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptionProtoEval_a8fd059a29b0abecc4e5f3a9e55661621}\label{classOptionProtoEval_a8fd059a29b0abecc4e5f3a9e55661621}} 
+\index{OptionProtoEval@{OptionProtoEval}!apply@{apply}}
+\index{apply@{apply}!OptionProtoEval@{OptionProtoEval}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily string Option\+Proto\+Eval\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb,  }\item[{const string \&}]{p1,  }\item[{const string \&}]{p2,  }\item[{const string \&}]{p3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+This method is overloaded by the different Option classes to provide possible configuration of different parts of the \mbox{\hyperlink{classArchitecture}{Architecture}}. The user can provide up to three optional parameters to tailor a specific type of configuration. The method returns a confirmation/failure message as feedback. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} being configured \\
+\hline
+{\em p1} & is the first optional configuration string \\
+\hline
+{\em p2} & is the second optional configuration string \\
+\hline
+{\em p3} & is the third optional configuration string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a confirmation/failure message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{Arch\+Option}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

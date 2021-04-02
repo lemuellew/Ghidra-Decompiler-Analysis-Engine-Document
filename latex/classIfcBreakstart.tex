@@ -1,0 +1,62 @@
+\hypertarget{classIfcBreakstart}{}\doxysection{Ifc\+Breakstart Class Reference}
+\label{classIfcBreakstart}\index{IfcBreakstart@{IfcBreakstart}}
+
+
+Set a break point at the start of an \mbox{\hyperlink{classAction}{Action}}\+: {\ttfamily break start $<$actionname$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Breakstart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcBreakstart__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Breakstart\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcBreakstart__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcBreakstart_a501a27b150ccb020030d0b0156890353}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Set a break point at the start of an \mbox{\hyperlink{classAction}{Action}}\+: {\ttfamily break start $<$actionname$>$} 
+
+The break point can be on either an \mbox{\hyperlink{classAction}{Action}} or a \mbox{\hyperlink{classRule}{Rule}}. The name can specify partial path information to distinguish the Action/\+Rule. The breakpoint causes the decompilation process to stop and return control to the console just before the Action/\+Rule would have executed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcBreakstart_a501a27b150ccb020030d0b0156890353}\label{classIfcBreakstart_a501a27b150ccb020030d0b0156890353}} 
+\index{IfcBreakstart@{IfcBreakstart}!execute@{execute}}
+\index{execute@{execute}!IfcBreakstart@{IfcBreakstart}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Breakstart\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

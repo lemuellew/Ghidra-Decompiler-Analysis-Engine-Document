@@ -1,0 +1,290 @@
+\hypertarget{classMemoryState}{}\doxysection{Memory\+State Class Reference}
+\label{classMemoryState}\index{MemoryState@{MemoryState}}
+
+
+All storage/state for a pcode machine.  
+
+
+
+
+{\ttfamily \#include $<$memstate.\+hh$>$}
+
+
+
+Collaboration diagram for Memory\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classMemoryState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryState_a99b4d8fc22d89ffdcaaef799ffaf7909}{Memory\+State}} (\mbox{\hyperlink{classTranslate}{Translate}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em A constructor for \mbox{\hyperlink{classMemoryState}{Memory\+State}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTranslate}{Translate}} $\ast$ \mbox{\hyperlink{classMemoryState_aefbe63d695c36756cbc16d09bea76677}{get\+Translate}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classTranslate}{Translate}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryState_ad1c31dbc7de2dfb6926537c7f9166e92}{set\+Memory\+Bank}} (\mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} $\ast$bank)
+\begin{DoxyCompactList}\small\item\em Map a memory bank into the state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} $\ast$ \mbox{\hyperlink{classMemoryState_abf51909f3b3b47db085f754680445b62}{get\+Memory\+Bank}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc) const
+\begin{DoxyCompactList}\small\item\em Get a memory bank associated with a particular space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryState_af4abdf013cacfaa4cfbe223f3893a76a}{set\+Value}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb off, int4 size, uintb cval)
+\begin{DoxyCompactList}\small\item\em Set a value on the memory state. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classMemoryState_ae4d10a6ac34ebd96017915c5b6a39375}{get\+Value}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb off, int4 size) const
+\begin{DoxyCompactList}\small\item\em Retrieve a memory value from the memory state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryState_aec6679949faa142792307fee30506512}{set\+Value}} (const string \&nm, uintb cval)
+\begin{DoxyCompactList}\small\item\em Set a value on a named register in the memory state. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classMemoryState_af9ec8f86ed75b9b2f57c3351951ce5b1}{get\+Value}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Retrieve a value from a named register in the memory state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryState_a9ec71816b195b33524214f82651a99cd}{set\+Value}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$vn, uintb cval)
+\begin{DoxyCompactList}\small\item\em Set value on a given {\bfseries{varnode}}. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classMemoryState_a9b0f55b9ff7e228fd09e0b550e8479f2}{get\+Value}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Get a value from a {\bfseries{varnode}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryState_ab8ea70436398ce942b25366b71b26506}{get\+Chunk}} (uint1 $\ast$res, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb off, int4 size) const
+\begin{DoxyCompactList}\small\item\em Get a chunk of data from memory state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryState_aa8d03c2a848a00090098b75f1fe877e1}{set\+Chunk}} (const uint1 $\ast$val, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb off, int4 size)
+\begin{DoxyCompactList}\small\item\em Set a chunk of data from memory state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMemoryState_a5ca981e0a6790657297a29da282c343b}\label{classMemoryState_a5ca981e0a6790657297a29da282c343b}} 
+\mbox{\hyperlink{classTranslate}{Translate}} $\ast$ \mbox{\hyperlink{classMemoryState_a5ca981e0a6790657297a29da282c343b}{trans}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classArchitecture}{Architecture}} information about memory spaces. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMemoryState_a2731beff27c773def592922b2f71d76d}\label{classMemoryState_a2731beff27c773def592922b2f71d76d}} 
+vector$<$ \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} $\ast$ $>$ \mbox{\hyperlink{classMemoryState_a2731beff27c773def592922b2f71d76d}{memspace}}
+\begin{DoxyCompactList}\small\item\em Memory banks associated with each address space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All storage/state for a pcode machine. 
+
+Every piece of information in a pcode machine is representable as a triple (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}},offset,size). This class allows getting and setting of all state information of this form. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMemoryState_a99b4d8fc22d89ffdcaaef799ffaf7909}\label{classMemoryState_a99b4d8fc22d89ffdcaaef799ffaf7909}} 
+\index{MemoryState@{MemoryState}!MemoryState@{MemoryState}}
+\index{MemoryState@{MemoryState}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{MemoryState()}{MemoryState()}}
+{\footnotesize\ttfamily Memory\+State\+::\+Memory\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A constructor for \mbox{\hyperlink{classMemoryState}{Memory\+State}}. 
+
+The \mbox{\hyperlink{classMemoryState}{Memory\+State}} needs a \mbox{\hyperlink{classTranslate}{Translate}} object in order to be able to convert register names into varnodes 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the translator \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryState_ab8ea70436398ce942b25366b71b26506}\label{classMemoryState_ab8ea70436398ce942b25366b71b26506}} 
+\index{MemoryState@{MemoryState}!getChunk@{getChunk}}
+\index{getChunk@{getChunk}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{getChunk()}{getChunk()}}
+{\footnotesize\ttfamily void Memory\+State\+::get\+Chunk (\begin{DoxyParamCaption}\item[{uint1 $\ast$}]{res,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{off,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Get a chunk of data from memory state. 
+
+This is the main interface for reading a range of bytes from the Memory\+Sate. The \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} associated with the address space of the query is looked up and the request is forwarded to the get\+Chunk method on the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}}. If there is no registered \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} or some other error, an exception is thrown 
+\begin{DoxyParams}{Parameters}
+{\em res} & is a pointer to the result buffer for storing retrieved bytes \\
+\hline
+{\em spc} & is the desired address space \\
+\hline
+{\em off} & is the starting offset of the byte range being queried \\
+\hline
+{\em size} & is the number of bytes being queried \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryState_abf51909f3b3b47db085f754680445b62}\label{classMemoryState_abf51909f3b3b47db085f754680445b62}} 
+\index{MemoryState@{MemoryState}!getMemoryBank@{getMemoryBank}}
+\index{getMemoryBank@{getMemoryBank}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{getMemoryBank()}{getMemoryBank()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} $\ast$ Memory\+State\+::get\+Memory\+Bank (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption}) const}
+
+
+
+Get a memory bank associated with a particular space. 
+
+Any \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} that has been registered with this \mbox{\hyperlink{classMemoryState}{Memory\+State}} can be retrieved via this method if the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}}\textquotesingle{}s associated address space is known. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space of the desired \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} or {\bfseries{null}} if no bank is associated with {\itshape spc}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryState_aefbe63d695c36756cbc16d09bea76677}\label{classMemoryState_aefbe63d695c36756cbc16d09bea76677}} 
+\index{MemoryState@{MemoryState}!getTranslate@{getTranslate}}
+\index{getTranslate@{getTranslate}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{getTranslate()}{getTranslate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTranslate}{Translate}} $\ast$ Memory\+State\+::get\+Translate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the \mbox{\hyperlink{classTranslate}{Translate}} object. 
+
+Retrieve the actual pcode translator being used by this machine state \begin{DoxyReturn}{Returns}
+a pointer to the \mbox{\hyperlink{classTranslate}{Translate}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryState_ae4d10a6ac34ebd96017915c5b6a39375}\label{classMemoryState_ae4d10a6ac34ebd96017915c5b6a39375}} 
+\index{MemoryState@{MemoryState}!getValue@{getValue}}
+\index{getValue@{getValue}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily uintb Memory\+State\+::get\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{off,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve a memory value from the memory state. 
+
+This is the main interface for reading values from the \mbox{\hyperlink{classMemoryState}{Memory\+State}}. If there is no registered \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} for the desired address space, or if there is some other error, an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space being queried \\
+\hline
+{\em off} & is the offset of the value being queried \\
+\hline
+{\em size} & is the number of bytes to query \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the queried value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryState_af9ec8f86ed75b9b2f57c3351951ce5b1}\label{classMemoryState_af9ec8f86ed75b9b2f57c3351951ce5b1}} 
+\index{MemoryState@{MemoryState}!getValue@{getValue}}
+\index{getValue@{getValue}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily uintb Memory\+State\+::get\+Value (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve a value from a named register in the memory state. 
+
+This is a convenience method for reading registers by name. Any register name known to the \mbox{\hyperlink{classTranslate}{Translate}} object can be used as a read location. The associated address space, offset, and size is looked up and automatically passed to the main get\+Value routine. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value associated with that register 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryState_a9b0f55b9ff7e228fd09e0b550e8479f2}\label{classMemoryState_a9b0f55b9ff7e228fd09e0b550e8479f2}} 
+\index{MemoryState@{MemoryState}!getValue@{getValue}}
+\index{getValue@{getValue}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily uintb Memory\+State\+::get\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{vn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a value from a {\bfseries{varnode}}. 
+
+A convenience method for reading a value directly from a varnode rather than querying for the offset and space 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is a pointer to the varnode to be read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value read from the varnode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryState_aa8d03c2a848a00090098b75f1fe877e1}\label{classMemoryState_aa8d03c2a848a00090098b75f1fe877e1}} 
+\index{MemoryState@{MemoryState}!setChunk@{setChunk}}
+\index{setChunk@{setChunk}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{setChunk()}{setChunk()}}
+{\footnotesize\ttfamily void Memory\+State\+::set\+Chunk (\begin{DoxyParamCaption}\item[{const uint1 $\ast$}]{val,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{off,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Set a chunk of data from memory state. 
+
+This is the main interface for setting values for a range of bytes in the \mbox{\hyperlink{classMemoryState}{Memory\+State}}. The \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} associated with the desired address space is looked up and the write is forwarded to the set\+Chunk method on the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}}. If there is no registered \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} or some other error, an exception is throw. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is a pointer to the byte values to be written into the \mbox{\hyperlink{classMemoryState}{Memory\+State}} \\
+\hline
+{\em spc} & is the address space being written \\
+\hline
+{\em off} & is the starting offset of the range being written \\
+\hline
+{\em size} & is the number of bytes to write \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryState_ad1c31dbc7de2dfb6926537c7f9166e92}\label{classMemoryState_ad1c31dbc7de2dfb6926537c7f9166e92}} 
+\index{MemoryState@{MemoryState}!setMemoryBank@{setMemoryBank}}
+\index{setMemoryBank@{setMemoryBank}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{setMemoryBank()}{setMemoryBank()}}
+{\footnotesize\ttfamily void Memory\+State\+::set\+Memory\+Bank (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} $\ast$}]{bank }\end{DoxyParamCaption})}
+
+
+
+Map a memory bank into the state. 
+
+Memory\+Banks associated with specific address spaces must be registers with this \mbox{\hyperlink{classMemoryState}{Memory\+State}} via this method. Each address space that will be used during emulation must be registered separately. The \mbox{\hyperlink{classMemoryState}{Memory\+State}} object does {\itshape not} assume responsibility for freeing the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} 
+\begin{DoxyParams}{Parameters}
+{\em bank} & is a pointer to the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} to be registered \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryState_af4abdf013cacfaa4cfbe223f3893a76a}\label{classMemoryState_af4abdf013cacfaa4cfbe223f3893a76a}} 
+\index{MemoryState@{MemoryState}!setValue@{setValue}}
+\index{setValue@{setValue}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Memory\+State\+::set\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{off,  }\item[{int4}]{size,  }\item[{uintb}]{cval }\end{DoxyParamCaption})}
+
+
+
+Set a value on the memory state. 
+
+This is the main interface for writing values to the \mbox{\hyperlink{classMemoryState}{Memory\+State}}. If there is no registered \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} for the desired address space, or if there is some other error, an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space to write to \\
+\hline
+{\em off} & is the offset where the value should be written \\
+\hline
+{\em size} & is the number of bytes to be written \\
+\hline
+{\em cval} & is the value to be written \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryState_aec6679949faa142792307fee30506512}\label{classMemoryState_aec6679949faa142792307fee30506512}} 
+\index{MemoryState@{MemoryState}!setValue@{setValue}}
+\index{setValue@{setValue}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Memory\+State\+::set\+Value (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{uintb}]{cval }\end{DoxyParamCaption})}
+
+
+
+Set a value on a named register in the memory state. 
+
+This is a convenience method for setting registers by name. Any register name known to the \mbox{\hyperlink{classTranslate}{Translate}} object can be used as a write location. The associated address space, offset, and size is looked up and automatically passed to the main set\+Value routine. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the register \\
+\hline
+{\em cval} & is the value to write to the register \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryState_a9ec71816b195b33524214f82651a99cd}\label{classMemoryState_a9ec71816b195b33524214f82651a99cd}} 
+\index{MemoryState@{MemoryState}!setValue@{setValue}}
+\index{setValue@{setValue}!MemoryState@{MemoryState}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Memory\+State\+::set\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{vn,  }\item[{uintb}]{cval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set value on a given {\bfseries{varnode}}. 
+
+A convenience method for setting a value directly on a varnode rather than breaking out the components 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is a pointer to the varnode to be written \\
+\hline
+{\em cval} & is the value to write into the varnode \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{memstate_8hh}{memstate.\+hh}}\item 
+memstate.\+cc\end{DoxyCompactItemize}

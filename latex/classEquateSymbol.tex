@@ -1,0 +1,113 @@
+\hypertarget{classEquateSymbol}{}\doxysection{Equate\+Symbol Class Reference}
+\label{classEquateSymbol}\index{EquateSymbol@{EquateSymbol}}
+
+
+A \mbox{\hyperlink{classSymbol}{Symbol}} that holds {\bfseries{equate}} information for a constant.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+
+
+Inheritance diagram for Equate\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classEquateSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Equate\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEquateSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classEquateSymbol_a0e6f232ba80f3b57f66add5315881a4b}{is\+Value\+Close}} (uintb op2\+Value, int4 size) const
+\begin{DoxyCompactList}\small\item\em Is the given value similar to {\bfseries{this}} equate. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEquateSymbol_ac116a5483c48693a6c252687c0319739}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEquateSymbol_ab4aa7cdacdd28777f82bf0be1ad55454}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classSymbol}{Symbol}} that holds {\bfseries{equate}} information for a constant. 
+
+This is a symbol that labels a constant. It can either replace the constant\textquotesingle{}s token with the symbol name, or it can force a conversion in the emitted format of the constant. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEquateSymbol_a0e6f232ba80f3b57f66add5315881a4b}\label{classEquateSymbol_a0e6f232ba80f3b57f66add5315881a4b}} 
+\index{EquateSymbol@{EquateSymbol}!isValueClose@{isValueClose}}
+\index{isValueClose@{isValueClose}!EquateSymbol@{EquateSymbol}}
+\doxysubsubsection{\texorpdfstring{isValueClose()}{isValueClose()}}
+{\footnotesize\ttfamily bool Equate\+Symbol\+::is\+Value\+Close (\begin{DoxyParamCaption}\item[{uintb}]{op2\+Value,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Is the given value similar to {\bfseries{this}} equate. 
+
+An \mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} should survive certain kinds of transforms during decompilation, such as negation, twos-\/complementing, adding or subtracting 1. Return {\bfseries{true}} if the given value looks like a transform of this type relative to the underlying value of {\bfseries{this}} equate. 
+\begin{DoxyParams}{Parameters}
+{\em op2\+Value} & is the given value \\
+\hline
+{\em size} & is the number of bytes of precision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if it is a transformed form 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEquateSymbol_ab4aa7cdacdd28777f82bf0be1ad55454}\label{classEquateSymbol_ab4aa7cdacdd28777f82bf0be1ad55454}} 
+\index{EquateSymbol@{EquateSymbol}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!EquateSymbol@{EquateSymbol}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Equate\+Symbol\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML tag of the symbol \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a3266a5752c208bdfa5a28e792de67604}{Symbol}}.
+
+\mbox{\Hypertarget{classEquateSymbol_ac116a5483c48693a6c252687c0319739}\label{classEquateSymbol_ac116a5483c48693a6c252687c0319739}} 
+\index{EquateSymbol@{EquateSymbol}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!EquateSymbol@{EquateSymbol}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Equate\+Symbol\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a0ef928814feb0a17fe95d006340eb499}{Symbol}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

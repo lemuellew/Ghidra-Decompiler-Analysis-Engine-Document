@@ -1,0 +1,132 @@
+\hypertarget{classPcodeCompile}{}\doxysection{Pcode\+Compile Class Reference}
+\label{classPcodeCompile}\index{PcodeCompile@{PcodeCompile}}
+
+
+Inheritance diagram for Pcode\+Compile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classPcodeCompile__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a746f0ac6a335a91f591230ad280b1aae}\label{classPcodeCompile_a746f0ac6a335a91f591230ad280b1aae}} 
+virtual const \mbox{\hyperlink{classLocation}{Location}} $\ast$ {\bfseries get\+Location} (\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$sym) const =0
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a68a9d435d1e3d7796a390c82d604265d}\label{classPcodeCompile_a68a9d435d1e3d7796a390c82d604265d}} 
+virtual void {\bfseries report\+Error} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)=0
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a03dd8af73ad92fded9015ca2848dd619}\label{classPcodeCompile_a03dd8af73ad92fded9015ca2848dd619}} 
+virtual void {\bfseries report\+Warning} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)=0
+\item 
+\mbox{\Hypertarget{classPcodeCompile_ae395a68b9a0223d0ecbcc02c33c209b6}\label{classPcodeCompile_ae395a68b9a0223d0ecbcc02c33c209b6}} 
+void {\bfseries reset\+Label\+Count} (void)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_af7985f4e76ed0efc5c9aa9dbe6d0a218}\label{classPcodeCompile_af7985f4e76ed0efc5c9aa9dbe6d0a218}} 
+void {\bfseries set\+Default\+Space} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_af7e8818253a38675b526406dde5a4e6e}\label{classPcodeCompile_af7e8818253a38675b526406dde5a4e6e}} 
+void {\bfseries set\+Constant\+Space} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a18b718ada4ad4122a2fe7da86490df92}\label{classPcodeCompile_a18b718ada4ad4122a2fe7da86490df92}} 
+void {\bfseries set\+Unique\+Space} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_adfc1e533f15be38cb5169f00bc4d0f2f}\label{classPcodeCompile_adfc1e533f15be38cb5169f00bc4d0f2f}} 
+void {\bfseries set\+Enforce\+Local\+Key} (bool val)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_ac881af99317cc5deeea0a581c3915248}\label{classPcodeCompile_ac881af99317cc5deeea0a581c3915248}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries get\+Default\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a94818a38c3750f1e25e83936a734b953}\label{classPcodeCompile_a94818a38c3750f1e25e83936a734b953}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries get\+Constant\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a376e7dc6da993a0a5ebc0ea372add1af}\label{classPcodeCompile_a376e7dc6da993a0a5ebc0ea372add1af}} 
+\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$ {\bfseries build\+Temporary} (void)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a2398d38e48c70e73eab926baf160f2d0}\label{classPcodeCompile_a2398d38e48c70e73eab926baf160f2d0}} 
+\mbox{\hyperlink{classLabelSymbol}{Label\+Symbol}} $\ast$ {\bfseries define\+Label} (string $\ast$name)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a838d3e556360e1fd8f365453165a0cda}\label{classPcodeCompile_a838d3e556360e1fd8f365453165a0cda}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries place\+Label} (\mbox{\hyperlink{classLabelSymbol}{Label\+Symbol}} $\ast$sym)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_ac43f27f167fc5fdc1bb3531346dc6797}\label{classPcodeCompile_ac43f27f167fc5fdc1bb3531346dc6797}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries new\+Output} (bool uses\+Local\+Key, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$rhs, string $\ast$varname, uint4 size=0)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a6c0c8bb263b71750d0772e6c599ed59b}\label{classPcodeCompile_a6c0c8bb263b71750d0772e6c599ed59b}} 
+void {\bfseries new\+Local\+Definition} (string $\ast$varname, uint4 size=0)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_ac653b660ec1b9cf01d6f8e84f916db99}\label{classPcodeCompile_ac653b660ec1b9cf01d6f8e84f916db99}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+Op} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a7631ae95d4326f458cfea9825bd2f1af}\label{classPcodeCompile_a7631ae95d4326f458cfea9825bd2f1af}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+Op} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn1, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn2)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_ae446c23b3e9630fe67512e572dcfbb73}\label{classPcodeCompile_ae446c23b3e9630fe67512e572dcfbb73}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+Op\+Out} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$outvn, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn1, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn2)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a65b6f2be619a063a46c3727a2de1215d}\label{classPcodeCompile_a65b6f2be619a063a46c3727a2de1215d}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+Op\+Out\+Unary} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$outvn, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a0d195a0f919ee62221a5c01bbfbe713c}\label{classPcodeCompile_a0d195a0f919ee62221a5c01bbfbe713c}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries create\+Op\+No\+Out} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_aa8af8519a707c8922ad4eda925a6500e}\label{classPcodeCompile_aa8af8519a707c8922ad4eda925a6500e}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries create\+Op\+No\+Out} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn1, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$vn2)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a7579aea93806ec664ec710caa1c7538b}\label{classPcodeCompile_a7579aea93806ec664ec710caa1c7538b}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries create\+Op\+Const} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, uintb val)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a1731825ce7ddacbdfacb59416a3876c1}\label{classPcodeCompile_a1731825ce7ddacbdfacb59416a3876c1}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+Load} (\mbox{\hyperlink{structStarQuality}{Star\+Quality}} $\ast$qual, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ptr)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a4a695c299bec6d0142fa28c988dadb5f}\label{classPcodeCompile_a4a695c299bec6d0142fa28c988dadb5f}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries create\+Store} (\mbox{\hyperlink{structStarQuality}{Star\+Quality}} $\ast$qual, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ptr, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$val)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a7eff95e3fafefc24d8b6891dc272751a}\label{classPcodeCompile_a7eff95e3fafefc24d8b6891dc272751a}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+User\+Op} (\mbox{\hyperlink{classUserOpSymbol}{User\+Op\+Symbol}} $\ast$sym, vector$<$ \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ $>$ $\ast$param)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_ac76e5f48d5549b256163fa382b979462}\label{classPcodeCompile_ac76e5f48d5549b256163fa382b979462}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries create\+User\+Op\+No\+Out} (\mbox{\hyperlink{classUserOpSymbol}{User\+Op\+Symbol}} $\ast$sym, vector$<$ \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ $>$ $\ast$param)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_aef3dea1541f9dc0c120ac7f232c0e078}\label{classPcodeCompile_aef3dea1541f9dc0c120ac7f232c0e078}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+Variadic} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, vector$<$ \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ $>$ $\ast$param)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a2f916c4254dca29203c7cb530d35cae8}\label{classPcodeCompile_a2f916c4254dca29203c7cb530d35cae8}} 
+void {\bfseries append\+Op} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$res, uintb constval, int4 constsz)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_ab334954dd18986dfe6623b905f540c13}\label{classPcodeCompile_ab334954dd18986dfe6623b905f540c13}} 
+\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$ {\bfseries build\+Truncated\+Varnode} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$basevn, uint4 bitoffset, uint4 numbits)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a2ba1215fdd8b357164b6271282f1f808}\label{classPcodeCompile_a2ba1215fdd8b357164b6271282f1f808}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries assign\+Bit\+Range} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vn, uint4 bitoffset, uint4 numbits, \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$rhs)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a0f46346dc8f300f3ae8fe0b0f7b65e79}\label{classPcodeCompile_a0f46346dc8f300f3ae8fe0b0f7b65e79}} 
+\mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ {\bfseries create\+Bit\+Range} (\mbox{\hyperlink{classSpecificSymbol}{Specific\+Symbol}} $\ast$sym, uint4 bitoffset, uint4 numbits)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a31003fa38370385ed889845d9616ba15}\label{classPcodeCompile_a31003fa38370385ed889845d9616ba15}} 
+\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$ {\bfseries address\+Of} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$var, uint4 size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a620eb9c557b3c38ff57f958211065938}\label{classPcodeCompile_a620eb9c557b3c38ff57f958211065938}} 
+static void {\bfseries force\+\_\+size} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vt, const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&size, const vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ \&ops)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_afe5eba410aa5edfb8ba083cc3f31da2b}\label{classPcodeCompile_afe5eba410aa5edfb8ba083cc3f31da2b}} 
+static void {\bfseries match\+Size} (int4 j, \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$op, bool inputonly, const vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ \&ops)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a7844bb12a59ed9998354ed9328e18f90}\label{classPcodeCompile_a7844bb12a59ed9998354ed9328e18f90}} 
+static void {\bfseries fillin\+Zero} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$op, const vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ \&ops)
+\item 
+\mbox{\Hypertarget{classPcodeCompile_a107dd115ba53b9158a0c76b6a2368c52}\label{classPcodeCompile_a107dd115ba53b9158a0c76b6a2368c52}} 
+static bool {\bfseries propagate\+Size} (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$ct)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+pcodecompile.\+hh\item 
+pcodecompile.\+cc\end{DoxyCompactItemize}

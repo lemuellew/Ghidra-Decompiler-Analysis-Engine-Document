@@ -1,0 +1,68 @@
+\hypertarget{classOperandValue}{}\doxysection{Operand\+Value Class Reference}
+\label{classOperandValue}\index{OperandValue@{OperandValue}}
+
+
+Inheritance diagram for Operand\+Value\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classOperandValue__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Operand\+Value\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classOperandValue__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOperandValue_ae835ffc9c50d120bd13dbc4b098f5eaa}\label{classOperandValue_ae835ffc9c50d120bd13dbc4b098f5eaa}} 
+{\bfseries Operand\+Value} (int4 ind, \mbox{\hyperlink{classConstructor}{Constructor}} $\ast$c)
+\item 
+\mbox{\Hypertarget{classOperandValue_aeaca8cd698f9e9d722c0d4bbb6e53953}\label{classOperandValue_aeaca8cd698f9e9d722c0d4bbb6e53953}} 
+void {\bfseries change\+Index} (int4 newind)
+\item 
+\mbox{\Hypertarget{classOperandValue_ac5edba5396509e93a2c4b9940189f8e2}\label{classOperandValue_ac5edba5396509e93a2c4b9940189f8e2}} 
+bool {\bfseries is\+Constructor\+Relative} (void) const
+\item 
+\mbox{\Hypertarget{classOperandValue_ade99629239e3381551cf0872c6ed31e4}\label{classOperandValue_ade99629239e3381551cf0872c6ed31e4}} 
+const string \& {\bfseries get\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classOperandValue_ab0c4823f1e2e5f9a26a403dce82f4310}\label{classOperandValue_ab0c4823f1e2e5f9a26a403dce82f4310}} 
+virtual \mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} {\bfseries gen\+Pattern} (intb val) const
+\item 
+\mbox{\Hypertarget{classOperandValue_ad483d53c77f85d1042bbb05749c07a20}\label{classOperandValue_ad483d53c77f85d1042bbb05749c07a20}} 
+virtual \mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} {\bfseries gen\+Min\+Pattern} (const vector$<$ \mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} $>$ \&ops) const
+\item 
+\mbox{\Hypertarget{classOperandValue_a5e43ba8332983fb0268dac1ce7903f19}\label{classOperandValue_a5e43ba8332983fb0268dac1ce7903f19}} 
+virtual intb {\bfseries get\+Value} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classOperandValue_a76d6f76e74edfb71ce1cd126c44a3788}\label{classOperandValue_a76d6f76e74edfb71ce1cd126c44a3788}} 
+virtual intb {\bfseries get\+Sub\+Value} (const vector$<$ intb $>$ \&replace, int4 \&listpos) const
+\item 
+\mbox{\Hypertarget{classOperandValue_a5be26ae272c87ca0e0bbbc52c627c62a}\label{classOperandValue_a5be26ae272c87ca0e0bbbc52c627c62a}} 
+virtual intb {\bfseries min\+Value} (void) const
+\item 
+\mbox{\Hypertarget{classOperandValue_af085d3749d762be4f5e30339c063a009}\label{classOperandValue_af085d3749d762be4f5e30339c063a009}} 
+virtual intb {\bfseries max\+Value} (void) const
+\item 
+\mbox{\Hypertarget{classOperandValue_a106fcb5ccb3fd95a0d97efffd622bc5d}\label{classOperandValue_a106fcb5ccb3fd95a0d97efffd622bc5d}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classOperandValue_a65387cdd12b8e6135bd9899c76dd2f39}\label{classOperandValue_a65387cdd12b8e6135bd9899c76dd2f39}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghpatexpress.\+hh\item 
+slghpatexpress.\+cc\end{DoxyCompactItemize}

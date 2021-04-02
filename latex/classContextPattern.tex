@@ -1,0 +1,71 @@
+\hypertarget{classContextPattern}{}\doxysection{Context\+Pattern Class Reference}
+\label{classContextPattern}\index{ContextPattern@{ContextPattern}}
+
+
+Inheritance diagram for Context\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classContextPattern__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Context\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classContextPattern__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classContextPattern_a2b3f651f71bc240b9eabc99e0aa41b52}\label{classContextPattern_a2b3f651f71bc240b9eabc99e0aa41b52}} 
+{\bfseries Context\+Pattern} (\mbox{\hyperlink{classPatternBlock}{Pattern\+Block}} $\ast$mv)
+\item 
+\mbox{\Hypertarget{classContextPattern_aed7d47ba0d1e4c2e028f6c04fec131da}\label{classContextPattern_aed7d47ba0d1e4c2e028f6c04fec131da}} 
+\mbox{\hyperlink{classPatternBlock}{Pattern\+Block}} $\ast$ {\bfseries get\+Block} (void)
+\item 
+\mbox{\Hypertarget{classContextPattern_a42838644f963d9b251c0d221c20c8116}\label{classContextPattern_a42838644f963d9b251c0d221c20c8116}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries simplify\+Clone} (void) const
+\item 
+\mbox{\Hypertarget{classContextPattern_acc26908cd60dbce4c4e13afed17036ba}\label{classContextPattern_acc26908cd60dbce4c4e13afed17036ba}} 
+virtual void {\bfseries shift\+Instruction} (int4 sa)
+\item 
+\mbox{\Hypertarget{classContextPattern_aa80ff4baf1fae14a7e5cd744d1409620}\label{classContextPattern_aa80ff4baf1fae14a7e5cd744d1409620}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+Or} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classContextPattern_acffa2b64552acaf8824b2093119f9eca}\label{classContextPattern_acffa2b64552acaf8824b2093119f9eca}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+And} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classContextPattern_a6fb24df62ecafb88fb1a41e8b710ab62}\label{classContextPattern_a6fb24df62ecafb88fb1a41e8b710ab62}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries common\+Sub\+Pattern} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classContextPattern_ae9007dafab8003fbde577e75813000d1}\label{classContextPattern_ae9007dafab8003fbde577e75813000d1}} 
+virtual bool {\bfseries is\+Match} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classContextPattern_aa3a3b46175e110b361f342ad411a2c80}\label{classContextPattern_aa3a3b46175e110b361f342ad411a2c80}} 
+virtual bool {\bfseries always\+True} (void) const
+\item 
+\mbox{\Hypertarget{classContextPattern_a61a99b63f09aed4e7a18933eba517b90}\label{classContextPattern_a61a99b63f09aed4e7a18933eba517b90}} 
+virtual bool {\bfseries always\+False} (void) const
+\item 
+\mbox{\Hypertarget{classContextPattern_addfef0aa6b03d6d6c3cce66bd64b903d}\label{classContextPattern_addfef0aa6b03d6d6c3cce66bd64b903d}} 
+virtual bool {\bfseries always\+Instruction\+True} (void) const
+\item 
+\mbox{\Hypertarget{classContextPattern_a405d7ca6e777696895091684d1debfd8}\label{classContextPattern_a405d7ca6e777696895091684d1debfd8}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classContextPattern_a0a49308ce8b3b8b66226f78911f5d0ec}\label{classContextPattern_a0a49308ce8b3b8b66226f78911f5d0ec}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghpattern.\+hh\item 
+slghpattern.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,70 @@
+\hypertarget{classInjectContextGhidra}{}\doxysection{Inject\+Context\+Ghidra Class Reference}
+\label{classInjectContextGhidra}\index{InjectContextGhidra@{InjectContextGhidra}}
+
+
+An injection context that can be serialized and sent to the Ghidra client.  
+
+
+
+
+{\ttfamily \#include $<$inject\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Inject\+Context\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classInjectContextGhidra__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Inject\+Context\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInjectContextGhidra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classInjectContextGhidra_a32151798bd5739d2afecf9f0824de4e8}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} context to an X\+ML stream as a $<$context$>$ tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An injection context that can be serialized and sent to the Ghidra client. 
+
+This adds the capability to wrap up the context data in $<$context$>$ X\+ML tag that can then be forwarded to the Ghidra client. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInjectContextGhidra_a32151798bd5739d2afecf9f0824de4e8}\label{classInjectContextGhidra_a32151798bd5739d2afecf9f0824de4e8}} 
+\index{InjectContextGhidra@{InjectContextGhidra}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!InjectContextGhidra@{InjectContextGhidra}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Inject\+Context\+Ghidra\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save {\bfseries{this}} context to an X\+ML stream as a $<$context$>$ tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInjectContext_a85884d6d9e18996f0b03aa10a4e11be6}{Inject\+Context}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{inject__ghidra_8hh}{inject\+\_\+ghidra.\+hh}}\item 
+inject\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

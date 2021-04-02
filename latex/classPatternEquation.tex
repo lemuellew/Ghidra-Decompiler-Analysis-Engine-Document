@@ -1,0 +1,58 @@
+\hypertarget{classPatternEquation}{}\doxysection{Pattern\+Equation Class Reference}
+\label{classPatternEquation}\index{PatternEquation@{PatternEquation}}
+
+
+Inheritance diagram for Pattern\+Equation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPatternEquation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pattern\+Equation\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classPatternEquation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPatternEquation_a99e0416a51f10f4291087173a321dc55}\label{classPatternEquation_a99e0416a51f10f4291087173a321dc55}} 
+const \mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} \& {\bfseries get\+Token\+Pattern} (void) const
+\item 
+\mbox{\Hypertarget{classPatternEquation_a9838e5bfe5b6013c99567628a6364bfd}\label{classPatternEquation_a9838e5bfe5b6013c99567628a6364bfd}} 
+virtual void {\bfseries gen\+Pattern} (const vector$<$ \mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} $>$ \&ops) const =0
+\item 
+\mbox{\Hypertarget{classPatternEquation_a16e885a945df91e3daf2dea6394ae6f2}\label{classPatternEquation_a16e885a945df91e3daf2dea6394ae6f2}} 
+virtual bool {\bfseries resolve\+Operand\+Left} (\mbox{\hyperlink{structOperandResolve}{Operand\+Resolve}} \&state) const =0
+\item 
+\mbox{\Hypertarget{classPatternEquation_a944d7114e5d5b6876352e555cc060829}\label{classPatternEquation_a944d7114e5d5b6876352e555cc060829}} 
+virtual void {\bfseries operand\+Order} (\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ct, vector$<$ \mbox{\hyperlink{classOperandSymbol}{Operand\+Symbol}} $\ast$ $>$ \&order) const
+\item 
+\mbox{\Hypertarget{classPatternEquation_a1c5807ba6c66f6c089d9fcc39140f187}\label{classPatternEquation_a1c5807ba6c66f6c089d9fcc39140f187}} 
+void {\bfseries lay\+Claim} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPatternEquation_ab810cb4b0638eb2d9413a3d17af56c11}\label{classPatternEquation_ab810cb4b0638eb2d9413a3d17af56c11}} 
+static void {\bfseries release} (\mbox{\hyperlink{classPatternEquation}{Pattern\+Equation}} $\ast$pateq)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPatternEquation_a1ee30230dcc5e8a9afbb2021e4286986}\label{classPatternEquation_a1ee30230dcc5e8a9afbb2021e4286986}} 
+\mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} {\bfseries resultpattern}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghpatexpress.\+hh\item 
+slghpatexpress.\+cc\end{DoxyCompactItemize}

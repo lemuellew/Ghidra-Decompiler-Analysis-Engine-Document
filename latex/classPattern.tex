@@ -1,0 +1,59 @@
+\hypertarget{classPattern}{}\doxysection{Pattern Class Reference}
+\label{classPattern}\index{Pattern@{Pattern}}
+
+
+Inheritance diagram for Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPattern__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPattern_a9c2c1383d7f836f8af237a03e463d94d}\label{classPattern_a9c2c1383d7f836f8af237a03e463d94d}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries simplify\+Clone} (void) const =0
+\item 
+\mbox{\Hypertarget{classPattern_a8a84c1487128e33cdc27c2069eb4c02a}\label{classPattern_a8a84c1487128e33cdc27c2069eb4c02a}} 
+virtual void {\bfseries shift\+Instruction} (int4 sa)=0
+\item 
+\mbox{\Hypertarget{classPattern_a130c23bfea1cb4a1c6e83edf9e2503d3}\label{classPattern_a130c23bfea1cb4a1c6e83edf9e2503d3}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+Or} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const =0
+\item 
+\mbox{\Hypertarget{classPattern_a960f3e000e2642c452fe11f5b55a9589}\label{classPattern_a960f3e000e2642c452fe11f5b55a9589}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+And} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const =0
+\item 
+\mbox{\Hypertarget{classPattern_a54daed6fc84146ad309a25dfa8a68052}\label{classPattern_a54daed6fc84146ad309a25dfa8a68052}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries common\+Sub\+Pattern} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const =0
+\item 
+\mbox{\Hypertarget{classPattern_a2a85729a1c78a4905bd6ee1d11ea59d5}\label{classPattern_a2a85729a1c78a4905bd6ee1d11ea59d5}} 
+virtual bool {\bfseries is\+Match} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const =0
+\item 
+\mbox{\Hypertarget{classPattern_acc63885639671e7813c6308d3c425ab2}\label{classPattern_acc63885639671e7813c6308d3c425ab2}} 
+virtual int4 {\bfseries num\+Disjoint} (void) const =0
+\item 
+\mbox{\Hypertarget{classPattern_a0404a3a426d9ed2afddde9c9c67f2f14}\label{classPattern_a0404a3a426d9ed2afddde9c9c67f2f14}} 
+virtual \mbox{\hyperlink{classDisjointPattern}{Disjoint\+Pattern}} $\ast$ {\bfseries get\+Disjoint} (int4 i) const =0
+\item 
+\mbox{\Hypertarget{classPattern_ab1527189c63b797a70c23047c033d35f}\label{classPattern_ab1527189c63b797a70c23047c033d35f}} 
+virtual bool {\bfseries always\+True} (void) const =0
+\item 
+\mbox{\Hypertarget{classPattern_ab7e66817fda44ad29954c8cfcb9c9266}\label{classPattern_ab7e66817fda44ad29954c8cfcb9c9266}} 
+virtual bool {\bfseries always\+False} (void) const =0
+\item 
+\mbox{\Hypertarget{classPattern_a62dd2f6b8bbb33279586739924ba4fa9}\label{classPattern_a62dd2f6b8bbb33279586739924ba4fa9}} 
+virtual bool {\bfseries always\+Instruction\+True} (void) const =0
+\item 
+\mbox{\Hypertarget{classPattern_a1ad6c2ad66849318427095662b718fa9}\label{classPattern_a1ad6c2ad66849318427095662b718fa9}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const =0
+\item 
+\mbox{\Hypertarget{classPattern_aaa8fb2873854fb42d944fa8876102bb5}\label{classPattern_aaa8fb2873854fb42d944fa8876102bb5}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)=0
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+slghpattern.\+hh\end{DoxyCompactItemize}

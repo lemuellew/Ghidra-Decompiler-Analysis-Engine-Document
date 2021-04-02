@@ -1,0 +1,157 @@
+\hypertarget{classRuleCompile}{}\doxysection{Rule\+Compile Class Reference}
+\label{classRuleCompile}\index{RuleCompile@{RuleCompile}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRuleCompile_ad0760d49eda50a9551f31aa97448bb1b}\label{classRuleCompile_ad0760d49eda50a9551f31aa97448bb1b}} 
+void {\bfseries rule\+Error} (const char $\ast$s)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a7bcbc0231f0c9110abcbf84dd3ebfdde}\label{classRuleCompile_a7bcbc0231f0c9110abcbf84dd3ebfdde}} 
+int4 {\bfseries num\+Errors} (void) const
+\item 
+\mbox{\Hypertarget{classRuleCompile_ae6102d7e485017165cdd2333000421d4}\label{classRuleCompile_ae6102d7e485017165cdd2333000421d4}} 
+int4 {\bfseries get\+Line\+No} (void)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a5ccc1ddf66ab1cf55260f990e08afed5}\label{classRuleCompile_a5ccc1ddf66ab1cf55260f990e08afed5}} 
+void {\bfseries set\+Full\+Rule} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$full)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a7c48f3aef8d9b3f23b9d75dffe6c17d2}\label{classRuleCompile_a7c48f3aef8d9b3f23b9d75dffe6c17d2}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries get\+Rule} (void)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a2bb6af56107e7650098501eb07c781b7}\label{classRuleCompile_a2bb6af56107e7650098501eb07c781b7}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries release\+Rule} (void)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a0d39f7eaaaa68df15841953c7d41b2e9}\label{classRuleCompile_a0d39f7eaaaa68df15841953c7d41b2e9}} 
+const map$<$ string, int4 $>$ \& {\bfseries get\+Name\+Map} (void) const
+\item 
+\mbox{\Hypertarget{classRuleCompile_a8dbf0ff983dd5ddc3aecf4e581950613}\label{classRuleCompile_a8dbf0ff983dd5ddc3aecf4e581950613}} 
+int4 {\bfseries find\+Identifier} (string $\ast$nm)
+\item 
+\mbox{\Hypertarget{classRuleCompile_ab895d216723fb6395c91605265475b35}\label{classRuleCompile_ab895d216723fb6395c91605265475b35}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries new\+Op} (int4 id)
+\item 
+\mbox{\Hypertarget{classRuleCompile_aa7a93b1504c557085a0bc20404a9fa0e}\label{classRuleCompile_aa7a93b1504c557085a0bc20404a9fa0e}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries new\+Varnode} (int4 id)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a98f4708162d55acb64b962958eadef9e}\label{classRuleCompile_a98f4708162d55acb64b962958eadef9e}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries new\+Const} (int4 id)
+\item 
+\mbox{\Hypertarget{classRuleCompile_ae37bf9b34cbade3a2575269cc020ac95}\label{classRuleCompile_ae37bf9b34cbade3a2575269cc020ac95}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Copy} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 opid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a0700b701969b6c7a11ad4894468bb503}\label{classRuleCompile_a0700b701969b6c7a11ad4894468bb503}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Input} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int8 $\ast$slot, int4 varid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a13d09bbd5d5ac72fa2b6b05068f6d101}\label{classRuleCompile_a13d09bbd5d5ac72fa2b6b05068f6d101}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Input\+Any} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 varid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a67d75997f4902ef6db8719a44a7a0617}\label{classRuleCompile_a67d75997f4902ef6db8719a44a7a0617}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Input\+Const\+Val} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int8 $\ast$slot, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$rhs)
+\item 
+\mbox{\Hypertarget{classRuleCompile_aa260ec5e4713a9c56086260609a8a835}\label{classRuleCompile_aa260ec5e4713a9c56086260609a8a835}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Output} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 varid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a45977afd1a9c72061ff1ac31fb3dd60c}\label{classRuleCompile_a45977afd1a9c72061ff1ac31fb3dd60c}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries var\+Copy} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 varid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_ab8273a9c72b40019fade0814a0ebd44d}\label{classRuleCompile_ab8273a9c72b40019fade0814a0ebd44d}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries var\+Const} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ex, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$sz)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a1c85da41f18b2470001e5b7c6aced831}\label{classRuleCompile_a1c85da41f18b2470001e5b7c6aced831}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries var\+Def} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 opid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a4fa11cc8b559d659200a8b00715ec463}\label{classRuleCompile_a4fa11cc8b559d659200a8b00715ec463}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries var\+Descend} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 opid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a76c72454129a3e8e7113fa8621859789}\label{classRuleCompile_a76c72454129a3e8e7113fa8621859789}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries var\+Unique\+Descend} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 opid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a5c0c4bcdc62212e9125fbaf7ce2601f9}\label{classRuleCompile_a5c0c4bcdc62212e9125fbaf7ce2601f9}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Code\+Constraint} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, vector$<$ \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} $>$ $\ast$oplist)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a6faf8d2d0465b5ef1ffb6d2542a0761e}\label{classRuleCompile_a6faf8d2d0465b5ef1ffb6d2542a0761e}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Compare\+Constraint} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 opid, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a5d24deccb7cae2c48208d9243fd515aa}\label{classRuleCompile_a5d24deccb7cae2c48208d9243fd515aa}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries var\+Compare\+Constraint} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 varid, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a360879b09fea5254d7944eb59b78dc30}\label{classRuleCompile_a360879b09fea5254d7944eb59b78dc30}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries const\+Compare\+Constraint} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 constid, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a4ea7474b9e16215ca00f88843508173f}\label{classRuleCompile_a4ea7474b9e16215ca00f88843508173f}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries const\+Named\+Expression} (int4 id, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$expr)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a2e1496d9829f01a64a34e5736f927f3d}\label{classRuleCompile_a2e1496d9829f01a64a34e5736f927f3d}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries empty\+Group} (void)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a48ab97e984ab674b19362ab9c9e59d0b}\label{classRuleCompile_a48ab97e984ab674b19362ab9c9e59d0b}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries empty\+Or\+Group} (void)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a34a7af61d06f01e5dbc7e4bf5f30f474}\label{classRuleCompile_a34a7af61d06f01e5dbc7e4bf5f30f474}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries merge\+Groups} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$a, \mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a3f191e9f060a35b14439e6caa7711d7b}\label{classRuleCompile_a3f191e9f060a35b14439e6caa7711d7b}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries add\+Or} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, \mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$newor)
+\item 
+\mbox{\Hypertarget{classRuleCompile_aec1c991988bbafa96067c6109f27b0ef}\label{classRuleCompile_aec1c991988bbafa96067c6109f27b0ef}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries op\+Creation} (int4 newid, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} oc, bool iafter, int4 oldid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a9d9f2cbff620d790c8191f083d4db853}\label{classRuleCompile_a9d9f2cbff620d790c8191f083d4db853}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries new\+Unique\+Out} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, int4 varid, int4 sz)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a8072d7258a0b79881a1c74214116ced5}\label{classRuleCompile_a8072d7258a0b79881a1c74214116ced5}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries new\+Set\+Input} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$slot, int4 varid)
+\item 
+\mbox{\Hypertarget{classRuleCompile_aa7dbcd1052efbe84d398c17727774678}\label{classRuleCompile_aa7dbcd1052efbe84d398c17727774678}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries new\+Set\+Input\+Const\+Val} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$slot, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$val, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$sz)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a53a18194e1f9ee8d2fb24fcba183e8be}\label{classRuleCompile_a53a18194e1f9ee8d2fb24fcba183e8be}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries remove\+Input} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$slot)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a0290843922cab1369f388010434b5e3e}\label{classRuleCompile_a0290843922cab1369f388010434b5e3e}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries new\+Set\+Opcode} (\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$base, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a4098cd7d4e0fa4af52720ccdace68b47}\label{classRuleCompile_a4098cd7d4e0fa4af52720ccdace68b47}} 
+\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries boolean\+Constraint} (bool ist, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$expr)
+\item 
+\mbox{\Hypertarget{classRuleCompile_af99400d6175cae9961d251db5d0d00d3}\label{classRuleCompile_af99400d6175cae9961d251db5d0d00d3}} 
+\mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ {\bfseries const\+Named} (int4 id)
+\item 
+\mbox{\Hypertarget{classRuleCompile_aaf62e66036b0f83ed603279396bbfbd4}\label{classRuleCompile_aaf62e66036b0f83ed603279396bbfbd4}} 
+\mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ {\bfseries const\+Absolute} (int8 $\ast$val)
+\item 
+\mbox{\Hypertarget{classRuleCompile_adade34d2e9ce838fc0e171791e5412d8}\label{classRuleCompile_adade34d2e9ce838fc0e171791e5412d8}} 
+\mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ {\bfseries const\+Binary\+Expression} (\mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ex1, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ex2)
+\item 
+\mbox{\Hypertarget{classRuleCompile_ad7d6091a6d7a959be5c715cb8a0b7458}\label{classRuleCompile_ad7d6091a6d7a959be5c715cb8a0b7458}} 
+\mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ {\bfseries const\+Varnode\+Size} (int4 varindex)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a64508b1420ade3674b744828f8774059}\label{classRuleCompile_a64508b1420ade3674b744828f8774059}} 
+\mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} $\ast$ {\bfseries dot\+Identifier} (int4 id, string $\ast$str)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a38d561337771aa620c8bb1fd26f3f12b}\label{classRuleCompile_a38d561337771aa620c8bb1fd26f3f12b}} 
+int4 {\bfseries next\+Token} (void)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a1dcd477a86a0d2d7d1d695124c929dae}\label{classRuleCompile_a1dcd477a86a0d2d7d1d695124c929dae}} 
+void {\bfseries set\+Error\+Stream} (ostream \&t)
+\item 
+\mbox{\Hypertarget{classRuleCompile_ae0d2eee31ed53f1364f3f26aae2c94b1}\label{classRuleCompile_ae0d2eee31ed53f1364f3f26aae2c94b1}} 
+void {\bfseries run} (istream \&s, bool debug)
+\item 
+\mbox{\Hypertarget{classRuleCompile_a7331ae343b99b61b6c11b8060c362a4e}\label{classRuleCompile_a7331ae343b99b61b6c11b8060c362a4e}} 
+void {\bfseries post\+Process} (void)
+\item 
+\mbox{\Hypertarget{classRuleCompile_af9a583f4be2f91cf257b018c2e08b480}\label{classRuleCompile_af9a583f4be2f91cf257b018c2e08b480}} 
+int4 {\bfseries post\+Process\+Rule} (vector$<$ \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} $>$ \&opcodelist)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRuleCompile_a01438d844a28a2e64afc725ce97d0b5b}\label{classRuleCompile_a01438d844a28a2e64afc725ce97d0b5b}} 
+static \mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} $\ast$ {\bfseries build\+Unifyer} (const string \&rule, const vector$<$ string $>$ \&idlist, vector$<$ int4 $>$ \&res)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rulecompile.\+hh\end{DoxyCompactItemize}

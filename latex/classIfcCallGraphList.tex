@@ -1,0 +1,83 @@
+\hypertarget{classIfcCallGraphList}{}\doxysection{Ifc\+Call\+Graph\+List Class Reference}
+\label{classIfcCallGraphList}\index{IfcCallGraphList@{IfcCallGraphList}}
+
+
+List all functions in {\itshape leaf} order\+: {\ttfamily callgraph list}  
+
+
+
+
+Inheritance diagram for Ifc\+Call\+Graph\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcCallGraphList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Call\+Graph\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcCallGraphList__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcCallGraphList_ac481079688c06e5250db1b8ea81e8cc7}{execute}} (istream \&s)
+\item 
+virtual void \mbox{\hyperlink{classIfcCallGraphList_aa7250e67ebde654dd6792caf88186f6c}{iteration\+Callback}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Perform the per-\/function aspect of {\bfseries{this}} command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+List all functions in {\itshape leaf} order\+: {\ttfamily callgraph list} 
+
+The existing call-\/graph is walked, displaying function names to the console. Child functions are displayed before their parents. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcCallGraphList_ac481079688c06e5250db1b8ea81e8cc7}\label{classIfcCallGraphList_ac481079688c06e5250db1b8ea81e8cc7}} 
+\index{IfcCallGraphList@{IfcCallGraphList}!execute@{execute}}
+\index{execute@{execute}!IfcCallGraphList@{IfcCallGraphList}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Graph\+List\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfcCallGraphList_aa7250e67ebde654dd6792caf88186f6c}\label{classIfcCallGraphList_aa7250e67ebde654dd6792caf88186f6c}} 
+\index{IfcCallGraphList@{IfcCallGraphList}!iterationCallback@{iterationCallback}}
+\index{iterationCallback@{iterationCallback}!IfcCallGraphList@{IfcCallGraphList}}
+\doxysubsubsection{\texorpdfstring{iterationCallback()}{iterationCallback()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Graph\+List\+::iteration\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the per-\/function aspect of {\bfseries{this}} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the particular function to operate on \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}{Iface\+Decomp\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

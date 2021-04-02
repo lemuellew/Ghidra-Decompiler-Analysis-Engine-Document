@@ -1,0 +1,61 @@
+\hypertarget{classGrammarToken}{}\doxysection{Grammar\+Token Class Reference}
+\label{classGrammarToken}\index{GrammarToken@{GrammarToken}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGrammarToken_a6fa571c70fb12b02f824b88ca371397b}\label{classGrammarToken_a6fa571c70fb12b02f824b88ca371397b}} 
+enum \{ \newline
+{\bfseries openparen} = 0x28, 
+{\bfseries closeparen} = 0x29, 
+{\bfseries star} = 0x2a, 
+{\bfseries comma} = 0x2c, 
+\newline
+{\bfseries semicolon} = 0x3b, 
+{\bfseries openbracket} = 0x5b, 
+{\bfseries closebracket} = 0x5d, 
+{\bfseries openbrace} = 0x7b, 
+\newline
+{\bfseries closebrace} = 0x7d, 
+{\bfseries badtoken} = 0x100, 
+{\bfseries endoffile} = 0x101, 
+{\bfseries dotdotdot} = 0x102, 
+\newline
+{\bfseries integer} = 0x103, 
+{\bfseries charconstant} = 0x104, 
+{\bfseries identifier} = 0x105, 
+{\bfseries stringval} = 0x106
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGrammarToken_a79430edcb770d6cfe7e5b5b879e34feb}\label{classGrammarToken_a79430edcb770d6cfe7e5b5b879e34feb}} 
+uint4 {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classGrammarToken_a69d5c6bd5a21ce2d08a3c7152cf1042f}\label{classGrammarToken_a69d5c6bd5a21ce2d08a3c7152cf1042f}} 
+uintb {\bfseries get\+Integer} (void) const
+\item 
+\mbox{\Hypertarget{classGrammarToken_a977abb111592f4f323826e9ded98b125}\label{classGrammarToken_a977abb111592f4f323826e9ded98b125}} 
+string $\ast$ {\bfseries get\+String} (void) const
+\item 
+\mbox{\Hypertarget{classGrammarToken_adf9f3d1a7dec07c74cd17bf47b3860fa}\label{classGrammarToken_adf9f3d1a7dec07c74cd17bf47b3860fa}} 
+int4 {\bfseries get\+Line\+No} (void) const
+\item 
+\mbox{\Hypertarget{classGrammarToken_a44af9bd3befd865332ea8361a14a559e}\label{classGrammarToken_a44af9bd3befd865332ea8361a14a559e}} 
+int4 {\bfseries get\+Col\+No} (void) const
+\item 
+\mbox{\Hypertarget{classGrammarToken_abb2087b33e420d4cdbd10478b58a7021}\label{classGrammarToken_abb2087b33e420d4cdbd10478b58a7021}} 
+int4 {\bfseries get\+File\+Num} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGrammarToken_a3c6f83bd2b0fb98fea9b533d020c0af4}\label{classGrammarToken_a3c6f83bd2b0fb98fea9b533d020c0af4}} 
+class {\bfseries Grammar\+Lexer}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+grammar.\+hh\item 
+grammar.\+cc\end{DoxyCompactItemize}

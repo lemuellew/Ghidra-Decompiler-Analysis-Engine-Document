@@ -1,0 +1,69 @@
+\hypertarget{classIfcParseLine}{}\doxysection{Ifc\+Parse\+Line Class Reference}
+\label{classIfcParseLine}\index{IfcParseLine@{IfcParseLine}}
+
+
+Parse a line of C syntax\+: {\ttfamily parse line ...}  
+
+
+
+
+Inheritance diagram for Ifc\+Parse\+Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcParseLine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Parse\+Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcParseLine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcParseLine_ad1c74b89106a1f71511e80766f389de7}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Parse a line of C syntax\+: {\ttfamily parse line ...} 
+
+The line can contain a declaration either a data-\/type or a function prototype\+:
+\begin{DoxyItemize}
+\item {\ttfamily parse line typedef int4 $\ast$specialint;}
+\item {\ttfamily parse line struct mystruct \{ int4 a; int4 b; \}}
+\item {\ttfamily parse line extern void myfunc(int4 a,int4 b);}
+\end{DoxyItemize}
+
+Data-\/types go straight into the program. For a prototype, the function symbol must already exist. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcParseLine_ad1c74b89106a1f71511e80766f389de7}\label{classIfcParseLine_ad1c74b89106a1f71511e80766f389de7}} 
+\index{IfcParseLine@{IfcParseLine}!execute@{execute}}
+\index{execute@{execute}!IfcParseLine@{IfcParseLine}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Parse\+Line\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

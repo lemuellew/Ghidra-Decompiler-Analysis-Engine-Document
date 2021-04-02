@@ -1,0 +1,107 @@
+\hypertarget{classIfaceCodeDataCommand}{}\doxysection{Iface\+Code\+Data\+Command Class Reference}
+\label{classIfaceCodeDataCommand}\index{IfaceCodeDataCommand@{IfaceCodeDataCommand}}
+
+
+Inheritance diagram for Iface\+Code\+Data\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfaceCodeDataCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Iface\+Code\+Data\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfaceCodeDataCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfaceCodeDataCommand_a778193a98c1a977a3635e63eb15a26d0}{set\+Data}} (\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$root, \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Associate a specific data object with this command. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classIfaceCodeDataCommand_abfa633dd19e5672b125425a9541c94d3}{get\+Module}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the formal module name to which this command belongs. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$ \mbox{\hyperlink{classIfaceCodeDataCommand_a1ab8f8101f822cb726bca9e326fd5980}{create\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Create a specialized data object for {\bfseries{this}} command (and its module) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceCodeDataCommand_a8bc924bbcfedad566608dfda1ff4432c}\label{classIfaceCodeDataCommand_a8bc924bbcfedad566608dfda1ff4432c}} 
+\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$ {\bfseries status}
+\item 
+\mbox{\Hypertarget{classIfaceCodeDataCommand_a81a5f766c3d62c3979a32b5ebb25360b}\label{classIfaceCodeDataCommand_a81a5f766c3d62c3979a32b5ebb25360b}} 
+\mbox{\hyperlink{classIfaceDecompData}{Iface\+Decomp\+Data}} $\ast$ {\bfseries dcp}
+\item 
+\mbox{\Hypertarget{classIfaceCodeDataCommand_a9b39ac61629b38576d8aabb5b17fdd4f}\label{classIfaceCodeDataCommand_a9b39ac61629b38576d8aabb5b17fdd4f}} 
+\mbox{\hyperlink{classCodeDataAnalysis}{Code\+Data\+Analysis}} $\ast$ {\bfseries codedata}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfaceCodeDataCommand_a1ab8f8101f822cb726bca9e326fd5980}\label{classIfaceCodeDataCommand_a1ab8f8101f822cb726bca9e326fd5980}} 
+\index{IfaceCodeDataCommand@{IfaceCodeDataCommand}!createData@{createData}}
+\index{createData@{createData}!IfaceCodeDataCommand@{IfaceCodeDataCommand}}
+\doxysubsubsection{\texorpdfstring{createData()}{createData()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classIfaceData}{Iface\+Data}}$\ast$ Iface\+Code\+Data\+Command\+::create\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Create a specialized data object for {\bfseries{this}} command (and its module) 
+
+This method is only called once per module \begin{DoxyReturn}{Returns}
+the newly created data object for the module 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_a908e484baf6e090b46ceb2ccaea8139d}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfaceCodeDataCommand_abfa633dd19e5672b125425a9541c94d3}\label{classIfaceCodeDataCommand_abfa633dd19e5672b125425a9541c94d3}} 
+\index{IfaceCodeDataCommand@{IfaceCodeDataCommand}!getModule@{getModule}}
+\index{getModule@{getModule}!IfaceCodeDataCommand@{IfaceCodeDataCommand}}
+\doxysubsubsection{\texorpdfstring{getModule()}{getModule()}}
+{\footnotesize\ttfamily virtual string Iface\+Code\+Data\+Command\+::get\+Module (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the formal module name to which this command belongs. 
+
+Commands in the same module share data through their registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object \begin{DoxyReturn}{Returns}
+the formal module name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_a06f9500f4b0a0e3cf14010cf133502d5}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfaceCodeDataCommand_a778193a98c1a977a3635e63eb15a26d0}\label{classIfaceCodeDataCommand_a778193a98c1a977a3635e63eb15a26d0}} 
+\index{IfaceCodeDataCommand@{IfaceCodeDataCommand}!setData@{setData}}
+\index{setData@{setData}!IfaceCodeDataCommand@{IfaceCodeDataCommand}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void Iface\+Code\+Data\+Command\+::set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Associate a specific data object with this command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & is the interface object this command is registered with \\
+\hline
+{\em data} & is the data object the command should use \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_ad0a0ba80d392ef1346c43283a8c3ca90}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+codedata.\+hh\item 
+codedata.\+cc\end{DoxyCompactItemize}

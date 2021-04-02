@@ -1,0 +1,249 @@
+\hypertarget{classHeritage}{}\doxysection{Heritage Class Reference}
+\label{classHeritage}\index{Heritage@{Heritage}}
+
+
+Manage the construction of Static Single Assignment (S\+SA) form.  
+
+
+
+
+{\ttfamily \#include $<$heritage.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHeritage_a9241f6a476085c88c540e34a44c5f197}{Heritage}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classHeritage_a0a0dc0ad60e23c2901675abf1e1371ac}{heritage\+Pass}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Get the pass number when the given address was heritaged. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classHeritage_ad5576d24243e351ea478fe5b1174370b}{num\+Heritage\+Passes}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc) const
+\begin{DoxyCompactList}\small\item\em Get the number times heritage was performed for the given address space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeritage_abbcd7a583bd605db1177b9c2e0be599f}{seen\+Dead\+Code}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\begin{DoxyCompactList}\small\item\em Inform system of dead code removal in given space. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classHeritage_a4f3d2a0674635a527b72ff6b96774f33}{get\+Dead\+Code\+Delay}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc) const
+\begin{DoxyCompactList}\small\item\em Get pass delay for heritaging the given space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeritage_a8377c55d2b77f230779ad43e341e6a29}{set\+Dead\+Code\+Delay}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, int4 delay)
+\begin{DoxyCompactList}\small\item\em Set delay for a specific space. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHeritage_a664720f99b5b26c63a5f0349f4a83a0c}{dead\+Removal\+Allowed}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if it is {\itshape safe} to remove dead code. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHeritage_a2bbf92b2085d45de9f3920824a51786c}{dead\+Removal\+Allowed\+Seen}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\begin{DoxyCompactList}\small\item\em Check if dead code removal is safe and mark that removal has happened. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeritage_a7cca3fa6fe1e5d6241ca3e0f0a29af42}{build\+Info\+List}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize information for each space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeritage_a7cdea4058aa42f91bbdb5a9b3171950f}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Reset all analysis of heritage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeritage_ad710084ce475a863e5d5d800300e3fd8}{heritage}} (void)
+\begin{DoxyCompactList}\small\item\em Perform one pass of heritage. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classLoadGuard}{Load\+Guard}} $\ast$ \mbox{\hyperlink{classHeritage_a425d5e59cc68cde4a744d2a1dcddcb2a}{get\+Store\+Guard}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Get \mbox{\hyperlink{classLoadGuard}{Load\+Guard}} record associated with given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manage the construction of Static Single Assignment (S\+SA) form. 
+
+With a specific function (\mbox{\hyperlink{classFuncdata}{Funcdata}}), this class links the \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects into the formal data-\/flow graph structure, S\+SA form. The full structure can be built over multiple passes. In particular, this allows register data-\/flow to be analyzed first, and then stack locations can be discovered and promoted to first-\/class Varnodes in a second pass.
+
+Varnodes for which it is not known whether they are written to by a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} are referred to as {\bfseries{free}}. The method \mbox{\hyperlink{classHeritage_ad710084ce475a863e5d5d800300e3fd8}{heritage()}} performs a {\itshape single} {\itshape pass} of constructing S\+SA form, collecting any {\itshape eligible} free Varnodes for the pass and linking them in to the data-\/flow. A \mbox{\hyperlink{classVarnode}{Varnode}} is considered eligible for a given pass generally based on its address space (see \mbox{\hyperlink{classHeritageInfo}{Heritage\+Info}}), which is the main method for delaying linking for stack locations until they are all discovered. In principle a \mbox{\hyperlink{classVarnode}{Varnode}} can be discovered very late and still get linked in on a subsequent pass. Linking causes Varnodes to gain new descendant Pcode\+Ops, which has impact on dead code elimination (see \mbox{\hyperlink{classLocationMap}{Location\+Map}}).
+
+The two big aspects of S\+SA construction are phi-\/node placement, performed by place\+Multiequals(), and the {\itshape renaming} algorithm, performed by rename(). The various guard$\ast$ methods are concerned with labeling analyzing data-\/flow across function calls, S\+T\+O\+RE, and L\+O\+AD operations.
+
+The phi-\/node placement algorithm is from (preprint?) \char`\"{}\+The Static Single Assignment Form and its Computation\char`\"{} by Gianfranco Bilardi and Keshav Pingali, July 22, 1999
+
+The renaming algorithm taken from \char`\"{}\+Efficiently computing static single assignment form and the
+ control dependence graph.\char`\"{} R. Cytron, J. Ferrante, B. K. Rosen, M. N. Wegman, and F. K. Zadeck A\+CM Transactions on Programming Languages and Systems, 13(4)\+:451-\/490, October 1991 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHeritage_a9241f6a476085c88c540e34a44c5f197}\label{classHeritage_a9241f6a476085c88c540e34a44c5f197}} 
+\index{Heritage@{Heritage}!Heritage@{Heritage}}
+\index{Heritage@{Heritage}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{Heritage()}{Heritage()}}
+{\footnotesize\ttfamily Heritage\+::\+Heritage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+Instantiate the heritage manager for a particular function. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHeritage_a7cca3fa6fe1e5d6241ca3e0f0a29af42}\label{classHeritage_a7cca3fa6fe1e5d6241ca3e0f0a29af42}} 
+\index{Heritage@{Heritage}!buildInfoList@{buildInfoList}}
+\index{buildInfoList@{buildInfoList}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{buildInfoList()}{buildInfoList()}}
+{\footnotesize\ttfamily void Heritage\+::build\+Info\+List (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize information for each space. 
+
+This is called once to initialize {\bfseries{this}} class in preparation for doing the heritage passes. An information structure is allocated and mapped to each address space. \mbox{\Hypertarget{classHeritage_a7cdea4058aa42f91bbdb5a9b3171950f}\label{classHeritage_a7cdea4058aa42f91bbdb5a9b3171950f}} 
+\index{Heritage@{Heritage}!clear@{clear}}
+\index{clear@{clear}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Heritage\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reset all analysis of heritage. 
+
+Reset all analysis as if no heritage passes have yet taken place for the function. This does not directly affect Varnodes and Pcode\+Ops in the underlying \mbox{\hyperlink{classFuncdata}{Funcdata}}. \mbox{\Hypertarget{classHeritage_a664720f99b5b26c63a5f0349f4a83a0c}\label{classHeritage_a664720f99b5b26c63a5f0349f4a83a0c}} 
+\index{Heritage@{Heritage}!deadRemovalAllowed@{deadRemovalAllowed}}
+\index{deadRemovalAllowed@{deadRemovalAllowed}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{deadRemovalAllowed()}{deadRemovalAllowed()}}
+{\footnotesize\ttfamily bool Heritage\+::dead\+Removal\+Allowed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if it is {\itshape safe} to remove dead code. 
+
+Check if the required number of passes have transpired to allow removal of dead Varnodes in the given address space. If allowed, presumably no new Varnodes will be generated for the space. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if dead code removal is allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeritage_a2bbf92b2085d45de9f3920824a51786c}\label{classHeritage_a2bbf92b2085d45de9f3920824a51786c}} 
+\index{Heritage@{Heritage}!deadRemovalAllowedSeen@{deadRemovalAllowedSeen}}
+\index{deadRemovalAllowedSeen@{deadRemovalAllowedSeen}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{deadRemovalAllowedSeen()}{deadRemovalAllowedSeen()}}
+{\footnotesize\ttfamily bool Heritage\+::dead\+Removal\+Allowed\+Seen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption})}
+
+
+
+Check if dead code removal is safe and mark that removal has happened. 
+
+A convenience function combining \mbox{\hyperlink{classHeritage_a664720f99b5b26c63a5f0349f4a83a0c}{dead\+Removal\+Allowed()}} and \mbox{\hyperlink{classHeritage_abbcd7a583bd605db1177b9c2e0be599f}{seen\+Dead\+Code()}}. Return {\bfseries{true}} if it is {\itshape safe} to remove dead code, and, if so, also inform the system that dead code has happened for the given space. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if dead code removal is allowed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeritage_a4f3d2a0674635a527b72ff6b96774f33}\label{classHeritage_a4f3d2a0674635a527b72ff6b96774f33}} 
+\index{Heritage@{Heritage}!getDeadCodeDelay@{getDeadCodeDelay}}
+\index{getDeadCodeDelay@{getDeadCodeDelay}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{getDeadCodeDelay()}{getDeadCodeDelay()}}
+{\footnotesize\ttfamily int4 Heritage\+::get\+Dead\+Code\+Delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption}) const}
+
+
+
+Get pass delay for heritaging the given space. 
+
+Linking in Varnodes can be delayed for specific address spaces (to make sure all Varnodes for the space have been generated. Return the number of {\itshape passes} to delay for the given space. 0 means no delay. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of passes heritage is delayed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeritage_a425d5e59cc68cde4a744d2a1dcddcb2a}\label{classHeritage_a425d5e59cc68cde4a744d2a1dcddcb2a}} 
+\index{Heritage@{Heritage}!getStoreGuard@{getStoreGuard}}
+\index{getStoreGuard@{getStoreGuard}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{getStoreGuard()}{getStoreGuard()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classLoadGuard}{Load\+Guard}} $\ast$ Heritage\+::get\+Store\+Guard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Get \mbox{\hyperlink{classLoadGuard}{Load\+Guard}} record associated with given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the associated \mbox{\hyperlink{classLoadGuard}{Load\+Guard}} or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeritage_ad710084ce475a863e5d5d800300e3fd8}\label{classHeritage_ad710084ce475a863e5d5d800300e3fd8}} 
+\index{Heritage@{Heritage}!heritage@{heritage}}
+\index{heritage@{heritage}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{heritage()}{heritage()}}
+{\footnotesize\ttfamily void Heritage\+::heritage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Perform one pass of heritage. 
+
+From any address space that is active for this pass, free Varnodes are collected and then fully integrated into S\+SA form. Reads are connected to writes, inputs are identified, and phi-\/nodes are placed. \mbox{\Hypertarget{classHeritage_a0a0dc0ad60e23c2901675abf1e1371ac}\label{classHeritage_a0a0dc0ad60e23c2901675abf1e1371ac}} 
+\index{Heritage@{Heritage}!heritagePass@{heritagePass}}
+\index{heritagePass@{heritagePass}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{heritagePass()}{heritagePass()}}
+{\footnotesize\ttfamily int4 Heritage\+::heritage\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the pass number when the given address was heritaged. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pass number or -\/1 if the address has not been heritaged 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeritage_ad5576d24243e351ea478fe5b1174370b}\label{classHeritage_ad5576d24243e351ea478fe5b1174370b}} 
+\index{Heritage@{Heritage}!numHeritagePasses@{numHeritagePasses}}
+\index{numHeritagePasses@{numHeritagePasses}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{numHeritagePasses()}{numHeritagePasses()}}
+{\footnotesize\ttfamily int4 Heritage\+::num\+Heritage\+Passes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption}) const}
+
+
+
+Get the number times heritage was performed for the given address space. 
+
+A negative number indicates the number of passes to wait before the first heritage will occur. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of heritage passes performed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHeritage_abbcd7a583bd605db1177b9c2e0be599f}\label{classHeritage_abbcd7a583bd605db1177b9c2e0be599f}} 
+\index{Heritage@{Heritage}!seenDeadCode@{seenDeadCode}}
+\index{seenDeadCode@{seenDeadCode}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{seenDeadCode()}{seenDeadCode()}}
+{\footnotesize\ttfamily void Heritage\+::seen\+Dead\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption})}
+
+
+
+Inform system of dead code removal in given space. 
+
+Record that Varnodes have been removed from the given space so that we can tell if there is any new heritage {\itshape after} the dead code removal. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given address space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHeritage_a8377c55d2b77f230779ad43e341e6a29}\label{classHeritage_a8377c55d2b77f230779ad43e341e6a29}} 
+\index{Heritage@{Heritage}!setDeadCodeDelay@{setDeadCodeDelay}}
+\index{setDeadCodeDelay@{setDeadCodeDelay}!Heritage@{Heritage}}
+\doxysubsubsection{\texorpdfstring{setDeadCodeDelay()}{setDeadCodeDelay()}}
+{\footnotesize\ttfamily void Heritage\+::set\+Dead\+Code\+Delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{int4}]{delay }\end{DoxyParamCaption})}
+
+
+
+Set delay for a specific space. 
+
+Set the number of heritage passes that are skipped before allowing dead code removal for Varnodes in the given address space (to make sure all Varnodes have been linked in before deciding what is dead). 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given address space \\
+\hline
+{\em delay} & is the number of passes to delay \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{heritage_8hh}{heritage.\+hh}}\item 
+heritage.\+cc\end{DoxyCompactItemize}

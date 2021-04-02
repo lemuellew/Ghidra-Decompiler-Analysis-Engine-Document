@@ -1,0 +1,163 @@
+\hypertarget{classCoverBlock}{}\doxysection{Cover\+Block Class Reference}
+\label{classCoverBlock}\index{CoverBlock@{CoverBlock}}
+
+
+The topological scope of a variable within a basic block.  
+
+
+
+
+{\ttfamily \#include $<$cover.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int4 \mbox{\hyperlink{classCoverBlock_a26da4f088471ccf7e896fa2e7f657444}{intersect}} (const \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compute intersection with another \mbox{\hyperlink{classCoverBlock}{Cover\+Block}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCoverBlock_abdea54abaa486a9cdfc03e083aaabb65}{contain}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$point) const
+\begin{DoxyCompactList}\small\item\em Check containment of given point. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCoverBlock_ad8f60860ed4169e0f574d4e1ebc1b779}{boundary}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$point) const
+\begin{DoxyCompactList}\small\item\em Characterize given point as boundary. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCoverBlock_ad686102d99fec796c67db2778d9981e5}{merge}} (const \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \&op2)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMerge}{Merge}} another \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} into {\bfseries{this}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCoverBlock_a58f570ab514cdabc3b9671cdb08911e7}{print}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump a description to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uintm \mbox{\hyperlink{classCoverBlock_ad0e8085aae35a181fd4c1666f53429ee}{get\+U\+Index}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Get the comparison index for a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The topological scope of a variable within a basic block. 
+
+Within a basic block, the topological scope of a variable can be considered a contiguous range of p-\/code operations. This range can be described with a {\itshape start} and {\itshape stop} \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} object, indicating all p-\/code operations between the two inclusive. The {\itshape start} and {\itshape stop} may hold special encodings meaning\+:
+\begin{DoxyItemize}
+\item From the beginning of the block
+\item To the end of the block 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCoverBlock_ad8f60860ed4169e0f574d4e1ebc1b779}\label{classCoverBlock_ad8f60860ed4169e0f574d4e1ebc1b779}} 
+\index{CoverBlock@{CoverBlock}!boundary@{boundary}}
+\index{boundary@{boundary}!CoverBlock@{CoverBlock}}
+\doxysubsubsection{\texorpdfstring{boundary()}{boundary()}}
+{\footnotesize\ttfamily int4 Cover\+Block\+::boundary (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Characterize given point as boundary. 
+
+Return\+:
+\begin{DoxyItemize}
+\item 0 if point not on boundary
+\item 1 if on tail
+\item 2 if on the defining point
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the characterization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCoverBlock_abdea54abaa486a9cdfc03e083aaabb65}\label{classCoverBlock_abdea54abaa486a9cdfc03e083aaabb65}} 
+\index{CoverBlock@{CoverBlock}!contain@{contain}}
+\index{contain@{contain}!CoverBlock@{CoverBlock}}
+\doxysubsubsection{\texorpdfstring{contain()}{contain()}}
+{\footnotesize\ttfamily bool Cover\+Block\+::contain (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Check containment of given point. 
+
+If the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} or boundary point is contained in {\bfseries{this}} range, return true. 
+\begin{DoxyParams}{Parameters}
+{\em point} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the point is contained 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCoverBlock_ad0e8085aae35a181fd4c1666f53429ee}\label{classCoverBlock_ad0e8085aae35a181fd4c1666f53429ee}} 
+\index{CoverBlock@{CoverBlock}!getUIndex@{getUIndex}}
+\index{getUIndex@{getUIndex}!CoverBlock@{CoverBlock}}
+\doxysubsubsection{\texorpdfstring{getUIndex()}{getUIndex()}}
+{\footnotesize\ttfamily uintm Cover\+Block\+::get\+U\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the comparison index for a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects and a \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} start/stop boundaries have a natural ordering that can be used to tell if a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} falls between boundary points and if \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} objects intersect. Ordering is determined by comparing the values returned by this method. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and/or boundary point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a value for comparison 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCoverBlock_a26da4f088471ccf7e896fa2e7f657444}\label{classCoverBlock_a26da4f088471ccf7e896fa2e7f657444}} 
+\index{CoverBlock@{CoverBlock}!intersect@{intersect}}
+\index{intersect@{intersect}!CoverBlock@{CoverBlock}}
+\doxysubsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily int4 Cover\+Block\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection with another \mbox{\hyperlink{classCoverBlock}{Cover\+Block}}. 
+
+Characterize the intersection of {\bfseries{this}} range with another \mbox{\hyperlink{classCoverBlock}{Cover\+Block}}. Return\+:
+\begin{DoxyItemize}
+\item 0 if there is no intersection
+\item 1 if only the intersection is at boundary points
+\item 2 if a whole interval intersects
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the intersection characterization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCoverBlock_ad686102d99fec796c67db2778d9981e5}\label{classCoverBlock_ad686102d99fec796c67db2778d9981e5}} 
+\index{CoverBlock@{CoverBlock}!merge@{merge}}
+\index{merge@{merge}!CoverBlock@{CoverBlock}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily void Cover\+Block\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMerge}{Merge}} another \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} into {\bfseries{this}}. 
+
+Compute the union of {\bfseries{this}} with the other given \mbox{\hyperlink{classCoverBlock}{Cover\+Block}}, replacing {\bfseries{this}} in place. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other given \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCoverBlock_a58f570ab514cdabc3b9671cdb08911e7}\label{classCoverBlock_a58f570ab514cdabc3b9671cdb08911e7}} 
+\index{CoverBlock@{CoverBlock}!print@{print}}
+\index{print@{print}!CoverBlock@{CoverBlock}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Cover\+Block\+::print (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Dump a description to stream. 
+
+Print a description of the covered range of ops in this block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cover_8hh}{cover.\+hh}}\item 
+cover.\+cc\end{DoxyCompactItemize}

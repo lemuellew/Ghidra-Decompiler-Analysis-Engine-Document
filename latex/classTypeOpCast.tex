@@ -1,0 +1,98 @@
+\hypertarget{classTypeOpCast}{}\doxysection{Type\+Op\+Cast Class Reference}
+\label{classTypeOpCast}\index{TypeOpCast@{TypeOpCast}}
+
+
+Information about the C\+A\+ST op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Cast\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classTypeOpCast__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Cast\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpCast__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpCast_a2839ea94cc7e358614ccf708b619d104}\label{classTypeOpCast_a2839ea94cc7e358614ccf708b619d104}} 
+\mbox{\hyperlink{classTypeOpCast_a2839ea94cc7e358614ccf708b619d104}{Type\+Op\+Cast}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpCast_abda8e6d7b8008aa0211490bbf06bdcaf}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpCast_a4cab77a0e4ca4568cea8b4789487b531}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the C\+A\+ST op-\/code. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpCast_a4cab77a0e4ca4568cea8b4789487b531}\label{classTypeOpCast_a4cab77a0e4ca4568cea8b4789487b531}} 
+\index{TypeOpCast@{TypeOpCast}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeOpCast@{TypeOpCast}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Op\+Cast\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to print \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpCast_abda8e6d7b8008aa0211490bbf06bdcaf}\label{classTypeOpCast_abda8e6d7b8008aa0211490bbf06bdcaf}} 
+\index{TypeOpCast@{TypeOpCast}!push@{push}}
+\index{push@{push}!TypeOpCast@{TypeOpCast}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Cast\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

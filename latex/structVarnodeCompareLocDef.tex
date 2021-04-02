@@ -1,0 +1,48 @@
+\hypertarget{structVarnodeCompareLocDef}{}\doxysection{Varnode\+Compare\+Loc\+Def Struct Reference}
+\label{structVarnodeCompareLocDef}\index{VarnodeCompareLocDef@{VarnodeCompareLocDef}}
+
+
+Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by location then definition.  
+
+
+
+
+{\ttfamily \#include $<$varnode.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structVarnodeCompareLocDef_a8874edc42984b5bf108b5ff6dc0d054f}{operator()}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$a, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$b) const
+\begin{DoxyCompactList}\small\item\em Functional comparison operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by location then definition. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structVarnodeCompareLocDef_a8874edc42984b5bf108b5ff6dc0d054f}\label{structVarnodeCompareLocDef_a8874edc42984b5bf108b5ff6dc0d054f}} 
+\index{VarnodeCompareLocDef@{VarnodeCompareLocDef}!operator()@{operator()}}
+\index{operator()@{operator()}!VarnodeCompareLocDef@{VarnodeCompareLocDef}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Varnode\+Compare\+Loc\+Def\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{b }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Functional comparison operator. 
+
+Compare by location then by definition. This is the same as the normal varnode compare, but we distinguish identical frees by their pointer address. Thus varsets defined with this comparison act like multisets for free varnodes and like unique sets for everything else (with respect to the standard varnode comparison) 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+{\em b} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\bfseries{a}} occurs earlier than {\bfseries{b}} 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varnode_8hh}{varnode.\+hh}}\item 
+varnode.\+cc\end{DoxyCompactItemize}

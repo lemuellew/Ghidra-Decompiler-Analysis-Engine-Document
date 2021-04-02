@@ -1,0 +1,251 @@
+\hypertarget{classActionPool}{}\doxysection{Action\+Pool Class Reference}
+\label{classActionPool}\index{ActionPool@{ActionPool}}
+
+
+A pool of Rules that apply simultaneously.  
+
+
+
+
+{\ttfamily \#include $<$action.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Pool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classActionPool__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Pool\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classActionPool__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionPool_a57593c805f7486f07eeb40598e814700}\label{classActionPool_a57593c805f7486f07eeb40598e814700}} 
+virtual \mbox{\hyperlink{classActionPool_a57593c805f7486f07eeb40598e814700}{$\sim$\+Action\+Pool}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActionPool_af8879782eac5bfb2cb748dda52760e12}{add\+Rule}} (\mbox{\hyperlink{classRule}{Rule}} $\ast$rl)
+\begin{DoxyCompactList}\small\item\em Add a \mbox{\hyperlink{classRule}{Rule}} to the pool. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionPool_a4bfdc0304820d4f018eeb5a34cab06ab}\label{classActionPool_a4bfdc0304820d4f018eeb5a34cab06ab}} 
+virtual void \mbox{\hyperlink{classActionPool_a4bfdc0304820d4f018eeb5a34cab06ab}{clear\+Break\+Points}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all breakpoints set on {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionPool_a96a6ada9201cdf36d2ed452d0c831725}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionPool_a63d93ad40b2066b0ad88fc83ee50c8e6}{reset}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionPool_aef3e6dfc90703230f5f4e3fcdc626984}{reset\+Stats}} (void)
+\begin{DoxyCompactList}\small\item\em Reset all the counts to zero. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionPool_ad7b2ba46cad39369c0831cbfcc654802}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionPool_a543411d736e1a5766a74fe30b65efdd8}{print}} (ostream \&s, int4 num, int4 depth) const
+\begin{DoxyCompactList}\small\item\em Print a description of this \mbox{\hyperlink{classAction}{Action}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionPool_ac3301606be4afd36584109196c71e2ed}{print\+State}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print status to stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classActionPool_ab3fa9090810784f45c832c641947fb2e}{get\+Sub\+Rule}} (const string \&specify)
+\begin{DoxyCompactList}\small\item\em Retrieve a specific sub-\/rule by name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionPool_aed2073462c2dc9a3c33a6720f9cfc93b}{print\+Statistics}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump statistics to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A pool of Rules that apply simultaneously. 
+
+This class groups together a set of Rules as a formal \mbox{\hyperlink{classAction}{Action}}. Rules are given an opportunity to apply to every \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} in a function. Usually rule\+\_\+repeatapply is enabled for this action, which causes all Rules to apply repeatedly until no \mbox{\hyperlink{classRule}{Rule}} can make an additional change. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionPool_af8879782eac5bfb2cb748dda52760e12}\label{classActionPool_af8879782eac5bfb2cb748dda52760e12}} 
+\index{ActionPool@{ActionPool}!addRule@{addRule}}
+\index{addRule@{addRule}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{addRule()}{addRule()}}
+{\footnotesize\ttfamily void Action\+Pool\+::add\+Rule (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRule}{Rule}} $\ast$}]{rl }\end{DoxyParamCaption})}
+
+
+
+Add a \mbox{\hyperlink{classRule}{Rule}} to the pool. 
+
+This method should only be invoked during construction of this \mbox{\hyperlink{classActionPool}{Action\+Pool}} A single \mbox{\hyperlink{classRule}{Rule}} is added to the pool. The \mbox{\hyperlink{classRule}{Rule}}\textquotesingle{}s Op\+Code is inspected by this method. 
+\begin{DoxyParams}{Parameters}
+{\em rl} & is the \mbox{\hyperlink{classRule}{Rule}} to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionPool_ad7b2ba46cad39369c0831cbfcc654802}\label{classActionPool_ad7b2ba46cad39369c0831cbfcc654802}} 
+\index{ActionPool@{ActionPool}!apply@{apply}}
+\index{apply@{apply}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Pool\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionPool_a96a6ada9201cdf36d2ed452d0c831725}\label{classActionPool_a96a6ada9201cdf36d2ed452d0c831725}} 
+\index{ActionPool@{ActionPool}!clone@{clone}}
+\index{clone@{clone}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAction}{Action}} $\ast$ Action\+Pool\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+\mbox{\Hypertarget{classActionPool_ab3fa9090810784f45c832c641947fb2e}\label{classActionPool_ab3fa9090810784f45c832c641947fb2e}} 
+\index{ActionPool@{ActionPool}!getSubRule@{getSubRule}}
+\index{getSubRule@{getSubRule}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{getSubRule()}{getSubRule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRule}{Rule}} $\ast$ Action\+Pool\+::get\+Sub\+Rule (\begin{DoxyParamCaption}\item[{const string \&}]{specify }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a specific sub-\/rule by name. 
+
+Find a \mbox{\hyperlink{classRule}{Rule}}, as a component of {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}, with the given name. 
+\begin{DoxyParams}{Parameters}
+{\em specify} & is the name of the rule \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching sub-\/rule 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_aacd1f960b27f1b02d27a49aaa61c895a}{Action}}.
+
+\mbox{\Hypertarget{classActionPool_a543411d736e1a5766a74fe30b65efdd8}\label{classActionPool_a543411d736e1a5766a74fe30b65efdd8}} 
+\index{ActionPool@{ActionPool}!print@{print}}
+\index{print@{print}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily int4 Action\+Pool\+::print (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{num,  }\item[{int4}]{depth }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a description of this \mbox{\hyperlink{classAction}{Action}} to stream. 
+
+The description is suitable for a console mode listing of actions 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em num} & is a starting index to associate with the action (and its sub-\/actions) \\
+\hline
+{\em depth} & is amount of indent necessary before printing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next available index 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_a0f7c833f74d267d7fbc50fa9e0f2a964}{Action}}.
+
+\mbox{\Hypertarget{classActionPool_ac3301606be4afd36584109196c71e2ed}\label{classActionPool_ac3301606be4afd36584109196c71e2ed}} 
+\index{ActionPool@{ActionPool}!printState@{printState}}
+\index{printState@{printState}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{printState()}{printState()}}
+{\footnotesize\ttfamily void Action\+Pool\+::print\+State (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print status to stream. 
+
+This will the \mbox{\hyperlink{classAction}{Action}} name and the next step to execute 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_a8c64348dc5e9ad6ba914cf74aaac8bfb}{Action}}.
+
+\mbox{\Hypertarget{classActionPool_aed2073462c2dc9a3c33a6720f9cfc93b}\label{classActionPool_aed2073462c2dc9a3c33a6720f9cfc93b}} 
+\index{ActionPool@{ActionPool}!printStatistics@{printStatistics}}
+\index{printStatistics@{printStatistics}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{printStatistics()}{printStatistics()}}
+{\footnotesize\ttfamily void Action\+Pool\+::print\+Statistics (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dump statistics to stream. 
+
+Print out the collected statistics for the \mbox{\hyperlink{classAction}{Action}} to stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_a57e38931fcb3bf9dffac2946d5e790be}{Action}}.
+
+\mbox{\Hypertarget{classActionPool_a63d93ad40b2066b0ad88fc83ee50c8e6}\label{classActionPool_a63d93ad40b2066b0ad88fc83ee50c8e6}} 
+\index{ActionPool@{ActionPool}!reset@{reset}}
+\index{reset@{reset}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Action\+Pool\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the new function {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} may affect \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_ac7c1cf16bb63e0741ba16be5179cf943}{Action}}.
+
+\mbox{\Hypertarget{classActionPool_aef3e6dfc90703230f5f4e3fcdc626984}\label{classActionPool_aef3e6dfc90703230f5f4e3fcdc626984}} 
+\index{ActionPool@{ActionPool}!resetStats@{resetStats}}
+\index{resetStats@{resetStats}!ActionPool@{ActionPool}}
+\doxysubsubsection{\texorpdfstring{resetStats()}{resetStats()}}
+{\footnotesize\ttfamily void Action\+Pool\+::reset\+Stats (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset all the counts to zero. 
+
+Reset the statistics 
+
+Reimplemented from \mbox{\hyperlink{classAction_a8ac616ae7f497202746a92c95e32821d}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{action_8hh}{action.\+hh}}\item 
+action.\+cc\end{DoxyCompactItemize}

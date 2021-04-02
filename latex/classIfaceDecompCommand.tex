@@ -1,0 +1,198 @@
+\hypertarget{classIfaceDecompCommand}{}\doxysection{Iface\+Decomp\+Command Class Reference}
+\label{classIfaceDecompCommand}\index{IfaceDecompCommand@{IfaceDecompCommand}}
+
+
+Root class for all decompiler specific commands.  
+
+
+
+
+{\ttfamily \#include $<$ifacedecomp.\+hh$>$}
+
+
+
+Inherits \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}}.
+
+
+
+Inherited by \mbox{\hyperlink{classIfcAddpath}{Ifc\+Addpath}}, \mbox{\hyperlink{classIfcAddrrangeLoad}{Ifc\+Addrrange\+Load}}, \mbox{\hyperlink{classIfcAdjustVma}{Ifc\+Adjust\+Vma}}, \mbox{\hyperlink{classIfcAnalyzeRange}{Ifc\+Analyze\+Range}}, \mbox{\hyperlink{classIfcBreakaction}{Ifc\+Breakaction}}, \mbox{\hyperlink{classIfcBreakstart}{Ifc\+Breakstart}}, \mbox{\hyperlink{classIfcCallFixup}{Ifc\+Call\+Fixup}}, \mbox{\hyperlink{classIfcCallGraphBuild}{Ifc\+Call\+Graph\+Build}}, \mbox{\hyperlink{classIfcCallGraphDump}{Ifc\+Call\+Graph\+Dump}}, \mbox{\hyperlink{classIfcCallGraphList}{Ifc\+Call\+Graph\+List}}, \mbox{\hyperlink{classIfcCallGraphLoad}{Ifc\+Call\+Graph\+Load}}, \mbox{\hyperlink{classIfcCallOtherFixup}{Ifc\+Call\+Other\+Fixup}}, \mbox{\hyperlink{classIfcCleararch}{Ifc\+Cleararch}}, \mbox{\hyperlink{classIfcComment}{Ifc\+Comment}}, \mbox{\hyperlink{classIfcCommentInstr}{Ifc\+Comment\+Instr}}, \mbox{\hyperlink{classIfcContinue}{Ifc\+Continue}}, \mbox{\hyperlink{classIfcCountPcode}{Ifc\+Count\+Pcode}}, \mbox{\hyperlink{classIfcDeadcodedelay}{Ifc\+Deadcodedelay}}, \mbox{\hyperlink{classIfcDecompile}{Ifc\+Decompile}}, \mbox{\hyperlink{classIfcDump}{Ifc\+Dump}}, \mbox{\hyperlink{classIfcDumpbinary}{Ifc\+Dumpbinary}}, \mbox{\hyperlink{classIfcDuplicateHash}{Ifc\+Duplicate\+Hash}}, \mbox{\hyperlink{classIfcFlowOverride}{Ifc\+Flow\+Override}}, \mbox{\hyperlink{classIfcForceDec}{Ifc\+Force\+Dec}}, \mbox{\hyperlink{classIfcForcegoto}{Ifc\+Forcegoto}}, \mbox{\hyperlink{classIfcForceHex}{Ifc\+Force\+Hex}}, \mbox{\hyperlink{classIfcFuncload}{Ifc\+Funcload}}, \mbox{\hyperlink{classIfcGlobalAdd}{Ifc\+Global\+Add}}, \mbox{\hyperlink{classIfcGlobalify}{Ifc\+Globalify}}, \mbox{\hyperlink{classIfcGlobalRegisters}{Ifc\+Global\+Registers}}, \mbox{\hyperlink{classIfcGlobalRemove}{Ifc\+Global\+Remove}}, \mbox{\hyperlink{classIfcGraphControlflow}{Ifc\+Graph\+Controlflow}}, \mbox{\hyperlink{classIfcGraphDataflow}{Ifc\+Graph\+Dataflow}}, \mbox{\hyperlink{classIfcGraphDom}{Ifc\+Graph\+Dom}}, \mbox{\hyperlink{classIfcJumpOverride}{Ifc\+Jump\+Override}}, \mbox{\hyperlink{classIfcListaction}{Ifc\+Listaction}}, \mbox{\hyperlink{classIfcListOverride}{Ifc\+List\+Override}}, \mbox{\hyperlink{classIfcListprototypes}{Ifc\+Listprototypes}}, \mbox{\hyperlink{classIfcLoadFile}{Ifc\+Load\+File}}, \mbox{\hyperlink{classIfcLockPrototype}{Ifc\+Lock\+Prototype}}, \mbox{\hyperlink{classIfcMapaddress}{Ifc\+Mapaddress}}, \mbox{\hyperlink{classIfcMapexternalref}{Ifc\+Mapexternalref}}, \mbox{\hyperlink{classIfcMapfunction}{Ifc\+Mapfunction}}, \mbox{\hyperlink{classIfcMaphash}{Ifc\+Maphash}}, \mbox{\hyperlink{classIfcMaplabel}{Ifc\+Maplabel}}, \mbox{\hyperlink{classIfcNameVarnode}{Ifc\+Name\+Varnode}}, \mbox{\hyperlink{classIfcOption}{Ifc\+Option}}, \mbox{\hyperlink{classIfcParseFile}{Ifc\+Parse\+File}}, \mbox{\hyperlink{classIfcParseLine}{Ifc\+Parse\+Line}}, \mbox{\hyperlink{classIfcPreferSplit}{Ifc\+Prefer\+Split}}, \mbox{\hyperlink{classIfcPrintActionstats}{Ifc\+Print\+Actionstats}}, \mbox{\hyperlink{classIfcPrintBlocktree}{Ifc\+Print\+Blocktree}}, \mbox{\hyperlink{classIfcPrintCFlat}{Ifc\+Print\+C\+Flat}}, \mbox{\hyperlink{classIfcPrintCGlobals}{Ifc\+Print\+C\+Globals}}, \mbox{\hyperlink{classIfcPrintCover}{Ifc\+Print\+Cover}}, \mbox{\hyperlink{classIfcPrintCStruct}{Ifc\+Print\+C\+Struct}}, \mbox{\hyperlink{classIfcPrintCTypes}{Ifc\+Print\+C\+Types}}, \mbox{\hyperlink{classIfcPrintCXml}{Ifc\+Print\+C\+Xml}}, \mbox{\hyperlink{classIfcPrintdisasm}{Ifc\+Printdisasm}}, \mbox{\hyperlink{classIfcPrintExtrapop}{Ifc\+Print\+Extrapop}}, \mbox{\hyperlink{classIfcPrintHigh}{Ifc\+Print\+High}}, \mbox{\hyperlink{classIfcPrintInputs}{Ifc\+Print\+Inputs}}, \mbox{\hyperlink{classIfcPrintInputsAll}{Ifc\+Print\+Inputs\+All}}, \mbox{\hyperlink{classIfcPrintLanguage}{Ifc\+Print\+Language}}, \mbox{\hyperlink{classIfcPrintLocalrange}{Ifc\+Print\+Localrange}}, \mbox{\hyperlink{classIfcPrintMap}{Ifc\+Print\+Map}}, \mbox{\hyperlink{classIfcPrintParamMeasures}{Ifc\+Print\+Param\+Measures}}, \mbox{\hyperlink{classIfcPrintRaw}{Ifc\+Print\+Raw}}, \mbox{\hyperlink{classIfcPrintSpaces}{Ifc\+Print\+Spaces}}, \mbox{\hyperlink{classIfcPrintTree}{Ifc\+Print\+Tree}}, \mbox{\hyperlink{classIfcPrintVarnode}{Ifc\+Print\+Varnode}}, \mbox{\hyperlink{classIfcProduceC}{Ifc\+ProduceC}}, \mbox{\hyperlink{classIfcProducePrototypes}{Ifc\+Produce\+Prototypes}}, \mbox{\hyperlink{classIfcProtooverride}{Ifc\+Protooverride}}, \mbox{\hyperlink{classIfcReadonly}{Ifc\+Readonly}}, \mbox{\hyperlink{classIfcReadSymbols}{Ifc\+Read\+Symbols}}, \mbox{\hyperlink{classIfcRemove}{Ifc\+Remove}}, \mbox{\hyperlink{classIfcRename}{Ifc\+Rename}}, \mbox{\hyperlink{classIfcResetActionstats}{Ifc\+Reset\+Actionstats}}, \mbox{\hyperlink{classIfcRestore}{Ifc\+Restore}}, \mbox{\hyperlink{classIfcRetype}{Ifc\+Retype}}, \mbox{\hyperlink{classIfcSave}{Ifc\+Save}}, \mbox{\hyperlink{classIfcSetcontextrange}{Ifc\+Setcontextrange}}, \mbox{\hyperlink{classIfcSettrackedrange}{Ifc\+Settrackedrange}}, \mbox{\hyperlink{classIfcSource}{Ifc\+Source}}, \mbox{\hyperlink{classIfcStructureBlocks}{Ifc\+Structure\+Blocks}}, \mbox{\hyperlink{classIfcTypeVarnode}{Ifc\+Type\+Varnode}}, \mbox{\hyperlink{classIfcUnlockPrototype}{Ifc\+Unlock\+Prototype}}, \mbox{\hyperlink{classIfcVarnodeCover}{Ifc\+Varnode\+Cover}}, \mbox{\hyperlink{classIfcVarnodehighCover}{Ifc\+Varnodehigh\+Cover}}, and \mbox{\hyperlink{classIfcVolatile}{Ifc\+Volatile}}.
+
+
+
+Collaboration diagram for Iface\+Decomp\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfaceDecompCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfaceDecompCommand_ad9bcf72bbdc7faddd7a23a1a4d127b0c}{set\+Data}} (\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$root, \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Associate a specific data object with this command. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classIfaceDecompCommand_aa1505dc6014dbdca5f922a826cd04b40}{get\+Module}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the formal module name to which this command belongs. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$ \mbox{\hyperlink{classIfaceDecompCommand_a9a4c2fccea348fbb80dc363dc6a39853}{create\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Create a specialized data object for {\bfseries{this}} command (and its module) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}{iteration\+Callback}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Perform the per-\/function aspect of {\bfseries{this}} command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceDecompCommand_a070c2e1f98082c991af6cb5a727fbd6e}{iterate\+Functions\+Addr\+Order}} (void)
+\begin{DoxyCompactList}\small\item\em Iterate command over all functions in all scopes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceDecompCommand_a9ad8fa5ad85876f4a085822fa9f04d48}{iterate\+Functions\+Leaf\+Order}} (void)
+\begin{DoxyCompactList}\small\item\em Iterate command over all functions in a call-\/graph traversal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classIfaceDecompCommand_a9f80fe6092ffac0f38a848eeae0b3773}{iterate\+Scopes\+Recursive}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$scope)
+\begin{DoxyCompactList}\small\item\em Iterate recursively over all functions in given scope. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceDecompCommand_a002b0fafba1c9f44ae4255a45f604148}{iterate\+Functions\+Addr\+Order}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$scope)
+\begin{DoxyCompactList}\small\item\em Iterate over all functions in a given scope. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceDecompCommand_a23377b0b15a552563f0558c2c3f155f5}\label{classIfaceDecompCommand_a23377b0b15a552563f0558c2c3f155f5}} 
+\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$ \mbox{\hyperlink{classIfaceDecompCommand_a23377b0b15a552563f0558c2c3f155f5}{status}}
+\begin{DoxyCompactList}\small\item\em The console owning {\bfseries{this}} command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceDecompCommand_a577eeaba407343565278a765a17bf4b7}\label{classIfaceDecompCommand_a577eeaba407343565278a765a17bf4b7}} 
+\mbox{\hyperlink{classIfaceDecompData}{Iface\+Decomp\+Data}} $\ast$ \mbox{\hyperlink{classIfaceDecompCommand_a577eeaba407343565278a765a17bf4b7}{dcp}}
+\begin{DoxyCompactList}\small\item\em Data common to decompiler commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Root class for all decompiler specific commands. 
+
+Commands share the data object \mbox{\hyperlink{classIfaceDecompData}{Iface\+Decomp\+Data}} and are capable of iterating over all functions in the program/architecture. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfaceDecompCommand_a9a4c2fccea348fbb80dc363dc6a39853}\label{classIfaceDecompCommand_a9a4c2fccea348fbb80dc363dc6a39853}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!createData@{createData}}
+\index{createData@{createData}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{createData()}{createData()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classIfaceData}{Iface\+Data}}$\ast$ Iface\+Decomp\+Command\+::create\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Create a specialized data object for {\bfseries{this}} command (and its module) 
+
+This method is only called once per module \begin{DoxyReturn}{Returns}
+the newly created data object for the module 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_a908e484baf6e090b46ceb2ccaea8139d}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfaceDecompCommand_aa1505dc6014dbdca5f922a826cd04b40}\label{classIfaceDecompCommand_aa1505dc6014dbdca5f922a826cd04b40}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!getModule@{getModule}}
+\index{getModule@{getModule}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{getModule()}{getModule()}}
+{\footnotesize\ttfamily virtual string Iface\+Decomp\+Command\+::get\+Module (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the formal module name to which this command belongs. 
+
+Commands in the same module share data through their registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object \begin{DoxyReturn}{Returns}
+the formal module name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_a06f9500f4b0a0e3cf14010cf133502d5}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfaceDecompCommand_a002b0fafba1c9f44ae4255a45f604148}\label{classIfaceDecompCommand_a002b0fafba1c9f44ae4255a45f604148}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!iterateFunctionsAddrOrder@{iterateFunctionsAddrOrder}}
+\index{iterateFunctionsAddrOrder@{iterateFunctionsAddrOrder}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{iterateFunctionsAddrOrder()}{iterateFunctionsAddrOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Iface\+Decomp\+Command\+::iterate\+Functions\+Addr\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Iterate over all functions in a given scope. 
+
+Runs over every function in the scope calling \mbox{\hyperlink{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}{iteration\+Callback()}}. 
+\begin{DoxyParams}{Parameters}
+{\em scope} & is the given scope \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceDecompCommand_a070c2e1f98082c991af6cb5a727fbd6e}\label{classIfaceDecompCommand_a070c2e1f98082c991af6cb5a727fbd6e}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!iterateFunctionsAddrOrder@{iterateFunctionsAddrOrder}}
+\index{iterateFunctionsAddrOrder@{iterateFunctionsAddrOrder}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{iterateFunctionsAddrOrder()}{iterateFunctionsAddrOrder()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Iface\+Decomp\+Command\+::iterate\+Functions\+Addr\+Order (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Iterate command over all functions in all scopes. 
+
+Scopes are traversed depth-\/first, then within a scope, functions are traversed in address order. \mbox{\Hypertarget{classIfaceDecompCommand_a9ad8fa5ad85876f4a085822fa9f04d48}\label{classIfaceDecompCommand_a9ad8fa5ad85876f4a085822fa9f04d48}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!iterateFunctionsLeafOrder@{iterateFunctionsLeafOrder}}
+\index{iterateFunctionsLeafOrder@{iterateFunctionsLeafOrder}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{iterateFunctionsLeafOrder()}{iterateFunctionsLeafOrder()}}
+{\footnotesize\ttfamily void Iface\+Decomp\+Command\+::iterate\+Functions\+Leaf\+Order (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Iterate command over all functions in a call-\/graph traversal. 
+
+Traversal is based on the current \mbox{\hyperlink{classCallGraph}{Call\+Graph}} for the program. Child functions are traversed before their parents. \mbox{\Hypertarget{classIfaceDecompCommand_a9f80fe6092ffac0f38a848eeae0b3773}\label{classIfaceDecompCommand_a9f80fe6092ffac0f38a848eeae0b3773}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!iterateScopesRecursive@{iterateScopesRecursive}}
+\index{iterateScopesRecursive@{iterateScopesRecursive}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{iterateScopesRecursive()}{iterateScopesRecursive()}}
+{\footnotesize\ttfamily void Iface\+Decomp\+Command\+::iterate\+Scopes\+Recursive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{scope }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Iterate recursively over all functions in given scope. 
+
+Runs over every function in the scope, or any sub-\/scope , calling \mbox{\hyperlink{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}{iteration\+Callback()}} 
+\begin{DoxyParams}{Parameters}
+{\em scope} & is the given scope \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}\label{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!iterationCallback@{iterationCallback}}
+\index{iterationCallback@{iterationCallback}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{iterationCallback()}{iterationCallback()}}
+{\footnotesize\ttfamily virtual void Iface\+Decomp\+Command\+::iteration\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Perform the per-\/function aspect of {\bfseries{this}} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the particular function to operate on \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classIfcCallGraphList_aa7250e67ebde654dd6792caf88186f6c}{Ifc\+Call\+Graph\+List}}, \mbox{\hyperlink{classIfcCallGraphBuild_a141d9fa5d5f44124c3baadd825a7d658}{Ifc\+Call\+Graph\+Build}}, \mbox{\hyperlink{classIfcDuplicateHash_a5459747ed3d0b946f717556fd9e40c08}{Ifc\+Duplicate\+Hash}}, \mbox{\hyperlink{classIfcPrintInputsAll_af1ed619938898b1dd91be98c256a7512}{Ifc\+Print\+Inputs\+All}}, \mbox{\hyperlink{classIfcProducePrototypes_abff378a291a5e7dd0c24d8ced5c9c4ea}{Ifc\+Produce\+Prototypes}}, and \mbox{\hyperlink{classIfcProduceC_ae7aa419deb8e0f730e574b40ac69b2d7}{Ifc\+ProduceC}}.
+
+\mbox{\Hypertarget{classIfaceDecompCommand_ad9bcf72bbdc7faddd7a23a1a4d127b0c}\label{classIfaceDecompCommand_ad9bcf72bbdc7faddd7a23a1a4d127b0c}} 
+\index{IfaceDecompCommand@{IfaceDecompCommand}!setData@{setData}}
+\index{setData@{setData}!IfaceDecompCommand@{IfaceDecompCommand}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily virtual void Iface\+Decomp\+Command\+::set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Associate a specific data object with this command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & is the interface object this command is registered with \\
+\hline
+{\em data} & is the data object the command should use \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_ad0a0ba80d392ef1346c43283a8c3ca90}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

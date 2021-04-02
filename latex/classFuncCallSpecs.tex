@@ -1,0 +1,533 @@
+\hypertarget{classFuncCallSpecs}{}\doxysection{Func\+Call\+Specs Class Reference}
+\label{classFuncCallSpecs}\index{FuncCallSpecs@{FuncCallSpecs}}
+
+
+A class for analyzing parameters to a sub-\/function call.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Func\+Call\+Specs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classFuncCallSpecs__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Func\+Call\+Specs\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classFuncCallSpecs__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classFuncCallSpecs_a198cd8b07468e4518499e55057f6d655a584ec7401809588c22798803bff5b796}{offset\+\_\+unknown}} = 0x\+B\+A\+D\+B\+E\+EF
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFuncCallSpecs_a96cbd6a1b0311883aeb840f47e4a0ec7}{Func\+Call\+Specs}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$call\+\_\+op)
+\begin{DoxyCompactList}\small\item\em Construct based on C\+A\+LL or C\+A\+L\+L\+I\+ND. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncCallSpecs_ae2f63fcf31daa5cc5663df227a813f0a}\label{classFuncCallSpecs_ae2f63fcf31daa5cc5663df227a813f0a}} 
+void \mbox{\hyperlink{classFuncCallSpecs_ae2f63fcf31daa5cc5663df227a813f0a}{set\+Funcdata}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classFuncdata}{Funcdata}} object associated with the called function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ \mbox{\hyperlink{classFuncCallSpecs_ac649b58eb85cf052096ac32e5ced8607}{clone}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$newop) const
+\begin{DoxyCompactList}\small\item\em Clone {\bfseries{this}} given the mirrored p-\/code C\+A\+LL. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncCallSpecs_a0b481b6be0cc41e4f1b35089fc5f192b}\label{classFuncCallSpecs_a0b481b6be0cc41e4f1b35089fc5f192b}} 
+void \mbox{\hyperlink{classFuncCallSpecs_a0b481b6be0cc41e4f1b35089fc5f192b}{init\+Active\+Input}} (void)
+\begin{DoxyCompactList}\small\item\em Turn on analysis recovering input parameters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncCallSpecs_a808f3d0c962701b6c98bca1792e86908}{check\+Input\+Join}} (int4 slot1, bool ishislot, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2) const
+\begin{DoxyCompactList}\small\item\em Check if adjacent parameter trials can be combined into a single logical parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_a489441d9d77d08bdf87eff937e8ef5b8}{do\+Input\+Join}} (int4 slot1, bool ishislot)
+\begin{DoxyCompactList}\small\item\em Join two parameter trials. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncCallSpecs_ab55b52b70e4def9167d06709746635e9}{late\+Restriction}} (const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&restricted\+Proto, vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&newinput, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$\&newoutput)
+\begin{DoxyCompactList}\small\item\em Update {\bfseries{this}} prototype to match a given (more specialized) prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_aad64d557811baf4602afcefb2746f7be}{deindirect}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$newfd)
+\begin{DoxyCompactList}\small\item\em Convert {\bfseries{this}} call site from an indirect to a direct function call. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_a8bc0ef657c876530f21a6ae60458eb35}{force\+Set}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&fp)
+\begin{DoxyCompactList}\small\item\em Force a more restrictive prototype on {\bfseries{this}} call site. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_aae6a890aaa82deca59ec7c57c92629aa}{insert\+Pcode}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Inject any {\itshape upon-\/return} p-\/code at {\bfseries{this}} call site. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_a5ad2a3f374049dec6fdf0f9d20295305}{resolve\+Spacebase\+Relative}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$phvn)
+\begin{DoxyCompactList}\small\item\em Calculate the stack offset of {\bfseries{this}} call site. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_ad3c3231b5c523e491d65f31ddb688cc1}{abort\+Spacebase\+Relative}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Abort the attempt to recover the relative stack offset for {\bfseries{this}} function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_a48998cb808c1feedcad257f0984317ed}{final\+Input\+Check}} (void)
+\begin{DoxyCompactList}\small\item\em Make final activity check on trials that might have been affected by conditional execution. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_ab49917128896eb002c816e361f875943}{check\+Input\+Trial\+Use}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classAliasChecker}{Alias\+Checker}} \&aliascheck)
+\begin{DoxyCompactList}\small\item\em Mark if input trials are being actively used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_a82c50f8299ce305411880fc61b8b1907}{check\+Output\+Trial\+Use}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&trialvn)
+\begin{DoxyCompactList}\small\item\em Mark if output trials are being actively used. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_a1bb49b65cf036e8bc8b398e549b26a9c}{build\+Input\+From\+Trials}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Set the final input Varnodes to {\bfseries{this}} C\+A\+LL based on \mbox{\hyperlink{classParamActive}{Param\+Active}} analysis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncCallSpecs_a15f172165e29fbabfbb02be245ee1c98}{build\+Output\+From\+Trials}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&trialvn)
+\begin{DoxyCompactList}\small\item\em Set the final output \mbox{\hyperlink{classVarnode}{Varnode}} of {\bfseries{this}} C\+A\+LL based on \mbox{\hyperlink{classParamActive}{Param\+Active}} analysis of trials. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFuncCallSpecs_ad15bd3498c19455047bf9b6b5af3df5b}{get\+Input\+Bytes\+Consumed}} (int4 slot) const
+\begin{DoxyCompactList}\small\item\em Get the estimated number of bytes within the given parameter that are consumed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncCallSpecs_acb672e7f2a55179e16d4270143580093}{set\+Input\+Bytes\+Consumed}} (int4 slot, int4 val) const
+\begin{DoxyCompactList}\small\item\em Set the estimated number of bytes within the given parameter that are consumed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncCallSpecs_aac7bcd5ea5ed14adbe74b4ca4c7e0814}\label{classFuncCallSpecs_aac7bcd5ea5ed14adbe74b4ca4c7e0814}} 
+void \mbox{\hyperlink{classFuncCallSpecs_aac7bcd5ea5ed14adbe74b4ca4c7e0814}{paramshift\+Modify\+Start}} (void)
+\begin{DoxyCompactList}\small\item\em Prepend any extra parameters if a paramshift is required. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncCallSpecs_a01e16ebebb71bdc63fb884c8d0e3b7e3}{paramshift\+Modify\+Stop}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Throw out any paramshift parameters. \end{DoxyCompactList}\item 
+uint4 \mbox{\hyperlink{classFuncCallSpecs_a37a11cd8c631ed5b643eaf259b2ae49b}{has\+Effect\+Translate}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size) const
+\begin{DoxyCompactList}\small\item\em Calculate type of side-\/effect for a given storage location (with caller translation) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classFuncCallSpecs_a9a59b9321b66bc9f23e69d2ef729258c}{find\+Preexisting\+Whole}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2)
+\begin{DoxyCompactList}\small\item\em Check if given two Varnodes are merged into a whole. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ \mbox{\hyperlink{classFuncCallSpecs_aa1d084c81a9ae8656d7ef79c84398dc8}{get\+Fspec\+From\+Const}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Convert \mbox{\hyperlink{classFspecSpace}{Fspec\+Space}} addresses to the underlying \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} object. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classFuncCallSpecs_a57f3844d92136d3ab6b67ea9ea316aa7}{compare\+By\+Entry\+Address}} (const \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$a, const \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Compare \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} by function entry address. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classFuncCallSpecs_aab6fc72a11289af288ec65f216d7a45b}{count\+Matching\+Calls}} (const vector$<$ \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ $>$ \&qlst)
+\begin{DoxyCompactList}\small\item\em Calculate the number of times an individual sub-\/function is called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A class for analyzing parameters to a sub-\/function call. 
+
+This can be viewed as a function prototype that evolves over the course of analysis. It derives off of \mbox{\hyperlink{classFuncProto}{Func\+Proto}} and includes facilities for analyzing data-\/flow for parameter information. This is the high-\/level object managing the examination of data-\/flow to recover a working prototype (\mbox{\hyperlink{classParamActive}{Param\+Active}}), holding a stack-\/pointer placeholder to facilitate stack analysis, and deciding on the working {\itshape extrapop} for the C\+A\+LL.
+
+A {\bfseries{stack-\/pointer}} {\bfseries{placeholder}} is a temporary \mbox{\hyperlink{classVarnode}{Varnode}} in the input operands of the C\+A\+LL or C\+A\+L\+L\+I\+ND that is defined by a L\+O\+AD from the stack-\/pointer. By examining the pointer, the exact value of the stack-\/pointer (relative to its incoming value) can be computed at the point of the C\+A\+LL. The temporary can arise naturally if stack parameters are a possibility, otherwise a placeholder temporary is artificially inserted into the C\+A\+LL input. At the time heritage of the stack space is computed, the placeholder is examined to read off the active stack-\/pointer offset for the C\+A\+LL and the placeholder is removed. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classFuncCallSpecs_a198cd8b07468e4518499e55057f6d655}\label{classFuncCallSpecs_a198cd8b07468e4518499e55057f6d655}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{offset\_unknown@{offset\_unknown}!FuncCallSpecs@{FuncCallSpecs}}\index{FuncCallSpecs@{FuncCallSpecs}!offset\_unknown@{offset\_unknown}}}\mbox{\Hypertarget{classFuncCallSpecs_a198cd8b07468e4518499e55057f6d655a584ec7401809588c22798803bff5b796}\label{classFuncCallSpecs_a198cd8b07468e4518499e55057f6d655a584ec7401809588c22798803bff5b796}} 
+offset\+\_\+unknown&\char`\"{}\+Magic\char`\"{} stack offset indicating the offset is unknown \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFuncCallSpecs_a96cbd6a1b0311883aeb840f47e4a0ec7}\label{classFuncCallSpecs_a96cbd6a1b0311883aeb840f47e4a0ec7}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!FuncCallSpecs@{FuncCallSpecs}}
+\index{FuncCallSpecs@{FuncCallSpecs}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{FuncCallSpecs()}{FuncCallSpecs()}}
+{\footnotesize\ttfamily Func\+Call\+Specs\+::\+Func\+Call\+Specs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{call\+\_\+op }\end{DoxyParamCaption})}
+
+
+
+Construct based on C\+A\+LL or C\+A\+L\+L\+I\+ND. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em call\+\_\+op} & is the representative call site within the data-\/flow \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFuncCallSpecs_ad3c3231b5c523e491d65f31ddb688cc1}\label{classFuncCallSpecs_ad3c3231b5c523e491d65f31ddb688cc1}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!abortSpacebaseRelative@{abortSpacebaseRelative}}
+\index{abortSpacebaseRelative@{abortSpacebaseRelative}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{abortSpacebaseRelative()}{abortSpacebaseRelative()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::abort\+Spacebase\+Relative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Abort the attempt to recover the relative stack offset for {\bfseries{this}} function. 
+
+Any stack-\/pointer {\itshape placeholder} is removed. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_a1bb49b65cf036e8bc8b398e549b26a9c}\label{classFuncCallSpecs_a1bb49b65cf036e8bc8b398e549b26a9c}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!buildInputFromTrials@{buildInputFromTrials}}
+\index{buildInputFromTrials@{buildInputFromTrials}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{buildInputFromTrials()}{buildInputFromTrials()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::build\+Input\+From\+Trials (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Set the final input Varnodes to {\bfseries{this}} C\+A\+LL based on \mbox{\hyperlink{classParamActive}{Param\+Active}} analysis. 
+
+Varnodes that don\textquotesingle{}t look like parameters are removed. Parameters that are unreferenced are filled in. Other \mbox{\hyperlink{classVarnode}{Varnode}} inputs may be truncated or extended. This prototype itself is unchanged. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_a15f172165e29fbabfbb02be245ee1c98}\label{classFuncCallSpecs_a15f172165e29fbabfbb02be245ee1c98}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!buildOutputFromTrials@{buildOutputFromTrials}}
+\index{buildOutputFromTrials@{buildOutputFromTrials}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{buildOutputFromTrials()}{buildOutputFromTrials()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::build\+Output\+From\+Trials (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{trialvn }\end{DoxyParamCaption})}
+
+
+
+Set the final output \mbox{\hyperlink{classVarnode}{Varnode}} of {\bfseries{this}} C\+A\+LL based on \mbox{\hyperlink{classParamActive}{Param\+Active}} analysis of trials. 
+
+If it exists, the active output trial is moved to be the output \mbox{\hyperlink{classVarnode}{Varnode}} of {\bfseries{this}} C\+A\+LL. If there are two active trials, they are merged as a single output of the C\+A\+LL. Any I\+N\+D\+I\+R\+E\+CT ops that were holding the active trials are removed. This prototype itself is unchanged. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+{\em trialvn} & is the list of Varnodes associated with trials \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_a808f3d0c962701b6c98bca1792e86908}\label{classFuncCallSpecs_a808f3d0c962701b6c98bca1792e86908}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!checkInputJoin@{checkInputJoin}}
+\index{checkInputJoin@{checkInputJoin}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{checkInputJoin()}{checkInputJoin()}}
+{\footnotesize\ttfamily bool Func\+Call\+Specs\+::check\+Input\+Join (\begin{DoxyParamCaption}\item[{int4}]{slot1,  }\item[{bool}]{ishislot,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2 }\end{DoxyParamCaption}) const}
+
+
+
+Check if adjacent parameter trials can be combined into a single logical parameter. 
+
+A slot must be provided indicating the trial and the only following it. 
+\begin{DoxyParams}{Parameters}
+{\em slot1} & is the first trial slot \\
+\hline
+{\em ishislot} & is {\bfseries{true}} if the first slot will be the most significant piece \\
+\hline
+{\em vn1} & is the \mbox{\hyperlink{classVarnode}{Varnode}} corresponding to the first trial \\
+\hline
+{\em vn2} & is the \mbox{\hyperlink{classVarnode}{Varnode}} corresponding to the second trial \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the trials can be combined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_ab49917128896eb002c816e361f875943}\label{classFuncCallSpecs_ab49917128896eb002c816e361f875943}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!checkInputTrialUse@{checkInputTrialUse}}
+\index{checkInputTrialUse@{checkInputTrialUse}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{checkInputTrialUse()}{checkInputTrialUse()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::check\+Input\+Trial\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classAliasChecker}{Alias\+Checker}} \&}]{aliascheck }\end{DoxyParamCaption})}
+
+
+
+Mark if input trials are being actively used. 
+
+Run through each input trial and try to make a determination if the trial is {\itshape active} or not, meaning basically that a write has occurred on the trial with no intervening reads between the write and the call. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+{\em aliascheck} & holds local aliasing information about the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_a82c50f8299ce305411880fc61b8b1907}\label{classFuncCallSpecs_a82c50f8299ce305411880fc61b8b1907}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!checkOutputTrialUse@{checkOutputTrialUse}}
+\index{checkOutputTrialUse@{checkOutputTrialUse}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{checkOutputTrialUse()}{checkOutputTrialUse()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::check\+Output\+Trial\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{trialvn }\end{DoxyParamCaption})}
+
+
+
+Mark if output trials are being actively used. 
+
+Run through each output trial and try to make a determination if the trial is {\itshape active} or not, meaning basically that the first occurrence of a trial after the call is a read. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+{\em trialvn} & will hold Varnodes corresponding to the trials \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_ac649b58eb85cf052096ac32e5ced8607}\label{classFuncCallSpecs_ac649b58eb85cf052096ac32e5ced8607}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!clone@{clone}}
+\index{clone@{clone}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ Func\+Call\+Specs\+::clone (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{newop }\end{DoxyParamCaption}) const}
+
+
+
+Clone {\bfseries{this}} given the mirrored p-\/code C\+A\+LL. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em newop} & replaces the C\+A\+LL or C\+A\+L\+L\+I\+ND op in the clone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_a57f3844d92136d3ab6b67ea9ea316aa7}\label{classFuncCallSpecs_a57f3844d92136d3ab6b67ea9ea316aa7}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!compareByEntryAddress@{compareByEntryAddress}}
+\index{compareByEntryAddress@{compareByEntryAddress}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{compareByEntryAddress()}{compareByEntryAddress()}}
+{\footnotesize\ttfamily static bool Func\+Call\+Specs\+::compare\+By\+Entry\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Compare \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} by function entry address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} to compare \\
+\hline
+{\em b} & is the second to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the first should be ordered before the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_aab6fc72a11289af288ec65f216d7a45b}\label{classFuncCallSpecs_aab6fc72a11289af288ec65f216d7a45b}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!countMatchingCalls@{countMatchingCalls}}
+\index{countMatchingCalls@{countMatchingCalls}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{countMatchingCalls()}{countMatchingCalls()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::count\+Matching\+Calls (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ $>$ \&}]{qlst }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Calculate the number of times an individual sub-\/function is called. 
+
+Provided a list of all call sites for a calling function, tally the number of calls to the same sub-\/function. Update the {\bfseries{match\+Call\+Count}} field of each \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} 
+\begin{DoxyParams}{Parameters}
+{\em qlst} & is the list of call sites (\mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}}) for the calling function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_aad64d557811baf4602afcefb2746f7be}\label{classFuncCallSpecs_aad64d557811baf4602afcefb2746f7be}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!deindirect@{deindirect}}
+\index{deindirect@{deindirect}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{deindirect()}{deindirect()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::deindirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{newfd }\end{DoxyParamCaption})}
+
+
+
+Convert {\bfseries{this}} call site from an indirect to a direct function call. 
+
+This call site must be a C\+A\+L\+L\+I\+ND, and the function that it is actually calling must be provided. The method makes a determination if the current state of data-\/flow allows converting to the prototype of the new function without dropping information due to inaccurate dead-\/code elimination. If conversion is safe, it is performed immediately. Otherwise a {\itshape restart} directive issued to force decompilation to restart from scratch (now with the direct function in hand) 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+{\em newfd} & is the \mbox{\hyperlink{classFuncdata}{Funcdata}} object that we know is the destination of {\bfseries{this}} C\+A\+L\+L\+I\+ND \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_a489441d9d77d08bdf87eff937e8ef5b8}\label{classFuncCallSpecs_a489441d9d77d08bdf87eff937e8ef5b8}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!doInputJoin@{doInputJoin}}
+\index{doInputJoin@{doInputJoin}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{doInputJoin()}{doInputJoin()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::do\+Input\+Join (\begin{DoxyParamCaption}\item[{int4}]{slot1,  }\item[{bool}]{ishislot }\end{DoxyParamCaption})}
+
+
+
+Join two parameter trials. 
+
+We assume \mbox{\hyperlink{classFuncCallSpecs_a808f3d0c962701b6c98bca1792e86908}{check\+Input\+Join()}} has returned {\bfseries{true}}. Perform the join, replacing the given adjacent trials with a single merged parameter. 
+\begin{DoxyParams}{Parameters}
+{\em slot1} & is the trial slot of the first trial \\
+\hline
+{\em ishislot} & is {\bfseries{true}} if the first slot will be the most significant piece \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_a48998cb808c1feedcad257f0984317ed}\label{classFuncCallSpecs_a48998cb808c1feedcad257f0984317ed}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!finalInputCheck@{finalInputCheck}}
+\index{finalInputCheck@{finalInputCheck}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{finalInputCheck()}{finalInputCheck()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::final\+Input\+Check (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Make final activity check on trials that might have been affected by conditional execution. 
+
+The activity level a trial may change once conditional execution has been analyzed. This routine (re)checks trials that might be affected by this, which may then be converted to {\itshape not} {\itshape used}. \mbox{\Hypertarget{classFuncCallSpecs_a9a59b9321b66bc9f23e69d2ef729258c}\label{classFuncCallSpecs_a9a59b9321b66bc9f23e69d2ef729258c}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!findPreexistingWhole@{findPreexistingWhole}}
+\index{findPreexistingWhole@{findPreexistingWhole}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{findPreexistingWhole()}{findPreexistingWhole()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Func\+Call\+Specs\+::find\+Preexisting\+Whole (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if given two Varnodes are merged into a whole. 
+
+If the Varnodes are merged immediately into a common whole and aren\textquotesingle{}t used for anything else, return the whole \mbox{\hyperlink{classVarnode}{Varnode}}. 
+\begin{DoxyParams}{Parameters}
+{\em vn1} & is the first given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em vn2} & is the second given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined \mbox{\hyperlink{classVarnode}{Varnode}} or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_a8bc0ef657c876530f21a6ae60458eb35}\label{classFuncCallSpecs_a8bc0ef657c876530f21a6ae60458eb35}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!forceSet@{forceSet}}
+\index{forceSet@{forceSet}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{forceSet()}{forceSet()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::force\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&}]{fp }\end{DoxyParamCaption})}
+
+
+
+Force a more restrictive prototype on {\bfseries{this}} call site. 
+
+A new prototype must be given, typically recovered from a function pointer data-\/type that has been propagated to {\bfseries{this}} call site. The method makes a determination if the current state of data-\/flow allows converting to the new prototype without dropping information due to inaccurate dead-\/code elimination. If conversion is safe, it is performed immediately. Otherwise a {\itshape restart} directive issued to force decompilation to restart from scratch (now with the new prototype in hand) 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+{\em fp} & is the new (more restrictive) function prototype \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_aa1d084c81a9ae8656d7ef79c84398dc8}\label{classFuncCallSpecs_aa1d084c81a9ae8656d7ef79c84398dc8}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!getFspecFromConst@{getFspecFromConst}}
+\index{getFspecFromConst@{getFspecFromConst}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{getFspecFromConst()}{getFspecFromConst()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}}$\ast$ Func\+Call\+Specs\+::get\+Fspec\+From\+Const (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Convert \mbox{\hyperlink{classFspecSpace}{Fspec\+Space}} addresses to the underlying \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given {\itshape fspec} address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_ad15bd3498c19455047bf9b6b5af3df5b}\label{classFuncCallSpecs_ad15bd3498c19455047bf9b6b5af3df5b}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!getInputBytesConsumed@{getInputBytesConsumed}}
+\index{getInputBytesConsumed@{getInputBytesConsumed}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{getInputBytesConsumed()}{getInputBytesConsumed()}}
+{\footnotesize\ttfamily int4 Func\+Call\+Specs\+::get\+Input\+Bytes\+Consumed (\begin{DoxyParamCaption}\item[{int4}]{slot }\end{DoxyParamCaption}) const}
+
+
+
+Get the estimated number of bytes within the given parameter that are consumed. 
+
+As a function is decompiled, there may hints about how many of the bytes, within the storage location used to pass the parameter, are used by {\bfseries{this}} sub-\/function. A non-\/zero value means that that many least significant bytes of the storage location are used. A value of zero means all bytes are presumed used. 
+\begin{DoxyParams}{Parameters}
+{\em slot} & is the slot of the given input parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes used (or 0) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_a37a11cd8c631ed5b643eaf259b2ae49b}\label{classFuncCallSpecs_a37a11cd8c631ed5b643eaf259b2ae49b}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!hasEffectTranslate@{hasEffectTranslate}}
+\index{hasEffectTranslate@{hasEffectTranslate}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{hasEffectTranslate()}{hasEffectTranslate()}}
+{\footnotesize\ttfamily uint4 Func\+Call\+Specs\+::has\+Effect\+Translate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Calculate type of side-\/effect for a given storage location (with caller translation) 
+
+Stack locations should be provided from the caller\textquotesingle{}s perspective. They are automatically translated to the callee\textquotesingle{}s perspective before making the underlying query. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the storage location \\
+\hline
+{\em size} & is the number of bytes in the storage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the effect type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_aae6a890aaa82deca59ec7c57c92629aa}\label{classFuncCallSpecs_aae6a890aaa82deca59ec7c57c92629aa}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!insertPcode@{insertPcode}}
+\index{insertPcode@{insertPcode}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{insertPcode()}{insertPcode()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::insert\+Pcode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Inject any {\itshape upon-\/return} p-\/code at {\bfseries{this}} call site. 
+
+This function prototype may trigger injection of p-\/code immediately after the C\+A\+LL or C\+A\+L\+L\+I\+ND to mimic a portion of the callee that decompilation of the caller otherwise wouldn\textquotesingle{}t see. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_ab55b52b70e4def9167d06709746635e9}\label{classFuncCallSpecs_ab55b52b70e4def9167d06709746635e9}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!lateRestriction@{lateRestriction}}
+\index{lateRestriction@{lateRestriction}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{lateRestriction()}{lateRestriction()}}
+{\footnotesize\ttfamily bool Func\+Call\+Specs\+::late\+Restriction (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&}]{restricted\+Proto,  }\item[{vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{newinput,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$\&}]{newoutput }\end{DoxyParamCaption})}
+
+
+
+Update {\bfseries{this}} prototype to match a given (more specialized) prototype. 
+
+This method assumes that {\bfseries{this}} prototype is in some intermediate state during the parameter recovery process and that a new definitive (locked) prototype is discovered for {\bfseries{this}} call site. This method checks to see if {\bfseries{this}} can be updated to match the new prototype without missing any data-\/flow. If so, {\bfseries{this}} is updated, and new input and output Varnodes for the C\+A\+LL are passed back. 
+\begin{DoxyParams}{Parameters}
+{\em restricted\+Proto} & is the new definitive function prototype \\
+\hline
+{\em newinput} & will hold the new list of input Varnodes for the C\+A\+LL \\
+\hline
+{\em newoutput} & will hold the new output \mbox{\hyperlink{classVarnode}{Varnode}} or N\+U\+LL \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} can be fully converted 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_a01e16ebebb71bdc63fb884c8d0e3b7e3}\label{classFuncCallSpecs_a01e16ebebb71bdc63fb884c8d0e3b7e3}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!paramshiftModifyStop@{paramshiftModifyStop}}
+\index{paramshiftModifyStop@{paramshiftModifyStop}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{paramshiftModifyStop()}{paramshiftModifyStop()}}
+{\footnotesize\ttfamily bool Func\+Call\+Specs\+::paramshift\+Modify\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Throw out any paramshift parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncCallSpecs_a5ad2a3f374049dec6fdf0f9d20295305}\label{classFuncCallSpecs_a5ad2a3f374049dec6fdf0f9d20295305}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!resolveSpacebaseRelative@{resolveSpacebaseRelative}}
+\index{resolveSpacebaseRelative@{resolveSpacebaseRelative}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{resolveSpacebaseRelative()}{resolveSpacebaseRelative()}}
+{\footnotesize\ttfamily void Func\+Call\+Specs\+::resolve\+Spacebase\+Relative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{phvn }\end{DoxyParamCaption})}
+
+
+
+Calculate the stack offset of {\bfseries{this}} call site. 
+
+The given \mbox{\hyperlink{classVarnode}{Varnode}} must be the input to the C\+A\+LL in the {\itshape placeholder} slot and must be defined by a C\+O\+PY from a \mbox{\hyperlink{classVarnode}{Varnode}} in the stack space. Calculate the offset of the stack-\/pointer at the point of {\bfseries{this}} C\+A\+LL, relative to the incoming stack-\/pointer value. This can be obtained either be looking at a stack parameter, or if there is no stack parameter, the stack-\/pointer {\itshape placeholder} can be used. If the {\itshape placeholder} has no other purpose, remove it. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the calling function \\
+\hline
+{\em phvn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} in the {\itshape placeholder} slot for {\bfseries{this}} C\+A\+LL \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncCallSpecs_acb672e7f2a55179e16d4270143580093}\label{classFuncCallSpecs_acb672e7f2a55179e16d4270143580093}} 
+\index{FuncCallSpecs@{FuncCallSpecs}!setInputBytesConsumed@{setInputBytesConsumed}}
+\index{setInputBytesConsumed@{setInputBytesConsumed}!FuncCallSpecs@{FuncCallSpecs}}
+\doxysubsubsection{\texorpdfstring{setInputBytesConsumed()}{setInputBytesConsumed()}}
+{\footnotesize\ttfamily bool Func\+Call\+Specs\+::set\+Input\+Bytes\+Consumed (\begin{DoxyParamCaption}\item[{int4}]{slot,  }\item[{int4}]{val }\end{DoxyParamCaption}) const}
+
+
+
+Set the estimated number of bytes within the given parameter that are consumed. 
+
+This provides a hint to the dead code {\itshape consume} algorithm, while examining the calling function, about how the given parameter within the subfunction is used. A non-\/zero value means that that many least significant bytes of the storage location are used. A value of zero means all bytes are presumed used. 
+\begin{DoxyParams}{Parameters}
+{\em slot} & is the slot of the given input parameter \\
+\hline
+{\em val} & is the number of bytes consumed (or 0) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there was a change in the estimate 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

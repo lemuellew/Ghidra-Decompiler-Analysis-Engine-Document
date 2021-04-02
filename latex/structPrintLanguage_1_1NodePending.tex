@@ -1,0 +1,49 @@
+\hypertarget{structPrintLanguage_1_1NodePending}{}\doxysection{Print\+Language\+::Node\+Pending Struct Reference}
+\label{structPrintLanguage_1_1NodePending}\index{PrintLanguage::NodePending@{PrintLanguage::NodePending}}
+
+
+A pending data-\/flow node; waiting to be placed on the reverse polish notation stack.  
+
+
+
+
+{\ttfamily \#include $<$printlanguage.\+hh$>$}
+
+
+
+Collaboration diagram for Print\+Language\+::Node\+Pending\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{structPrintLanguage_1_1NodePending__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1NodePending_a900ea3ad753bfed285208b4ac9cfc4c6}\label{structPrintLanguage_1_1NodePending_a900ea3ad753bfed285208b4ac9cfc4c6}} 
+\mbox{\hyperlink{structPrintLanguage_1_1NodePending_a900ea3ad753bfed285208b4ac9cfc4c6}{Node\+Pending}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$v, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$o, uint4 m)
+\begin{DoxyCompactList}\small\item\em Construct a pending data-\/flow node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1NodePending_ae0010f0e2a1595e804fac743c52d61b0}\label{structPrintLanguage_1_1NodePending_ae0010f0e2a1595e804fac743c52d61b0}} 
+const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{structPrintLanguage_1_1NodePending_ae0010f0e2a1595e804fac743c52d61b0}{vn}}
+\begin{DoxyCompactList}\small\item\em The implied \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1NodePending_a3f2183bccb0f2163cce4f598d44760d4}\label{structPrintLanguage_1_1NodePending_a3f2183bccb0f2163cce4f598d44760d4}} 
+const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{structPrintLanguage_1_1NodePending_a3f2183bccb0f2163cce4f598d44760d4}{op}}
+\begin{DoxyCompactList}\small\item\em The single operator consuming value from the implied \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1NodePending_aba9c0cf6dcd3d4f86976c8ab0e097839}\label{structPrintLanguage_1_1NodePending_aba9c0cf6dcd3d4f86976c8ab0e097839}} 
+uint4 \mbox{\hyperlink{structPrintLanguage_1_1NodePending_aba9c0cf6dcd3d4f86976c8ab0e097839}{vnmod}}
+\begin{DoxyCompactList}\small\item\em Printing modifications to enforce on the expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A pending data-\/flow node; waiting to be placed on the reverse polish notation stack. 
+
+This holds an {\itshape implied} \mbox{\hyperlink{classVarnode}{Varnode}} in the data-\/flow graph, which prints as the expression producing the value in the \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{printlanguage_8hh}{printlanguage.\+hh}}\end{DoxyCompactItemize}

@@ -1,0 +1,201 @@
+\hypertarget{classTypePointer}{}\doxysection{Type\+Pointer Class Reference}
+\label{classTypePointer}\index{TypePointer@{TypePointer}}
+
+
+\mbox{\hyperlink{classDatatype}{Datatype}} object representing a pointer.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Pointer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classTypePointer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Pointer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classTypePointer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypePointer_a900b24dbd7c0f62e6588312e9c7e3bc6}\label{classTypePointer_a900b24dbd7c0f62e6588312e9c7e3bc6}} 
+\mbox{\hyperlink{classTypePointer_a900b24dbd7c0f62e6588312e9c7e3bc6}{Type\+Pointer}} (const \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} \&op)
+\begin{DoxyCompactList}\small\item\em Construct from another \mbox{\hyperlink{classTypePointer}{Type\+Pointer}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypePointer_a22ed9237fd9579b823cf43daefba0c98}\label{classTypePointer_a22ed9237fd9579b823cf43daefba0c98}} 
+\mbox{\hyperlink{classTypePointer_a22ed9237fd9579b823cf43daefba0c98}{Type\+Pointer}} (int4 s, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$pt, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Construct from a size, pointed-\/to type, and wordsize. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypePointer_a0aece76a1fd245a58d75136ca81fca1b}{print\+Raw}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a description of the type to stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypePointer_a376a0feb3fb85e98df0a7a9f1eeee0ce}\label{classTypePointer_a376a0feb3fb85e98df0a7a9f1eeee0ce}} 
+virtual int4 {\bfseries num\+Depend} (void) const
+\item 
+\mbox{\Hypertarget{classTypePointer_ac63c41e423f88eca13459135f86c7d32}\label{classTypePointer_ac63c41e423f88eca13459135f86c7d32}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries get\+Depend} (int4 index) const
+\item 
+\mbox{\Hypertarget{classTypePointer_a843f2ebe62187fe48a0f3d1b9bd9c10b}\label{classTypePointer_a843f2ebe62187fe48a0f3d1b9bd9c10b}} 
+virtual void {\bfseries print\+Name\+Base} (ostream \&s) const
+\item 
+virtual int4 \mbox{\hyperlink{classTypePointer_aba4a7c8c334a37a2225ec32c7328e402}{compare}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op, int4 level) const
+\begin{DoxyCompactList}\small\item\em Compare for functional equivalence. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classTypePointer_a20dfb07c24c08242c21ae856508197fe}{compare\+Dependency}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op) const
+\begin{DoxyCompactList}\small\item\em Compare for storage in tree structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypePointer_acb36f99677bfbe269f7bfca663f81618}\label{classTypePointer_acb36f99677bfbe269f7bfca663f81618}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypePointer_acb36f99677bfbe269f7bfca663f81618}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypePointer_adee39f5a617b1133d7a701cda30d154b}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize the data-\/type to X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classTypePointer_a8f62fbff5e735eb8ad562878bc5efed7}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typegrp)
+\begin{DoxyCompactList}\small\item\em Restore data-\/type from X\+ML. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypePointer_aa70c8251d0da1b243d248951366c06c7}\label{classTypePointer_aa70c8251d0da1b243d248951366c06c7}} 
+\mbox{\hyperlink{classTypePointer_aa70c8251d0da1b243d248951366c06c7}{Type\+Pointer}} (void)
+\begin{DoxyCompactList}\small\item\em Internal constructor for use with restore\+Xml. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypePointer_aa8c502781518e5f51b3020ddd4ac9fe1}\label{classTypePointer_aa8c502781518e5f51b3020ddd4ac9fe1}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypePointer_aa8c502781518e5f51b3020ddd4ac9fe1}{ptrto}}
+\begin{DoxyCompactList}\small\item\em Type being pointed to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypePointer_a32eee64befc16e8200d81477a5846ec6}\label{classTypePointer_a32eee64befc16e8200d81477a5846ec6}} 
+uint4 \mbox{\hyperlink{classTypePointer_a32eee64befc16e8200d81477a5846ec6}{wordsize}}
+\begin{DoxyCompactList}\small\item\em What size unit does the pointer address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypePointer_ac8c1945d0a63785e78b3e09a13226ed6}\label{classTypePointer_ac8c1945d0a63785e78b3e09a13226ed6}} 
+class {\bfseries Type\+Factory}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDatatype}{Datatype}} object representing a pointer. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypePointer_aba4a7c8c334a37a2225ec32c7328e402}\label{classTypePointer_aba4a7c8c334a37a2225ec32c7328e402}} 
+\index{TypePointer@{TypePointer}!compare@{compare}}
+\index{compare@{compare}!TypePointer@{TypePointer}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int4 Type\+Pointer\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op,  }\item[{int4}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for functional equivalence. 
+
+0 (equality) means the data-\/types are functionally equivalent (even if names differ) Smaller types come earlier. More specific types come earlier. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+{\em level} & is maximum level to descend when recursively comparing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a4d5a102b2d909180c3080fdb55d7b305}{Datatype}}.
+
+\mbox{\Hypertarget{classTypePointer_a20dfb07c24c08242c21ae856508197fe}\label{classTypePointer_a20dfb07c24c08242c21ae856508197fe}} 
+\index{TypePointer@{TypePointer}!compareDependency@{compareDependency}}
+\index{compareDependency@{compareDependency}!TypePointer@{TypePointer}}
+\doxysubsubsection{\texorpdfstring{compareDependency()}{compareDependency()}}
+{\footnotesize\ttfamily int4 Type\+Pointer\+::compare\+Dependency (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for storage in tree structure. 
+
+Ordering of data-\/types for the main \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} container. Comparison only goes down one-\/level in the component structure, before just comparing pointers. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_ab26e4ca2c3091d3c5a34b4fbd7be76ae}{Datatype}}.
+
+\mbox{\Hypertarget{classTypePointer_a0aece76a1fd245a58d75136ca81fca1b}\label{classTypePointer_a0aece76a1fd245a58d75136ca81fca1b}} 
+\index{TypePointer@{TypePointer}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypePointer@{TypePointer}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Pointer\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a description of the type to stream. 
+
+Print a raw description of the type to stream. Intended for debugging. Not intended to produce parsable C. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a034a9b665df1a06f17fd3dfe61e7bf41}{Datatype}}.
+
+\mbox{\Hypertarget{classTypePointer_a8f62fbff5e735eb8ad562878bc5efed7}\label{classTypePointer_a8f62fbff5e735eb8ad562878bc5efed7}} 
+\index{TypePointer@{TypePointer}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!TypePointer@{TypePointer}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Type\+Pointer\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Restore data-\/type from X\+ML. 
+
+Restore a \mbox{\hyperlink{classDatatype}{Datatype}} object from an X\+ML element 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+{\em typegrp} & is the underlying \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} that will hold the new object \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_aed882ae693a31a64d56fffb9abdaa575}{Datatype}}.
+
+\mbox{\Hypertarget{classTypePointer_adee39f5a617b1133d7a701cda30d154b}\label{classTypePointer_adee39f5a617b1133d7a701cda30d154b}} 
+\index{TypePointer@{TypePointer}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!TypePointer@{TypePointer}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Type\+Pointer\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize the data-\/type to X\+ML. 
+
+Write out a formal description of the data-\/type as an X\+ML $<$type$>$ tag. For composite data-\/types, the description goes down one level, describing the component types only by reference. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a33339824f1c50d4354952296070c3902}{Datatype}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hh}{type.\+hh}}\item 
+type.\+cc\end{DoxyCompactItemize}

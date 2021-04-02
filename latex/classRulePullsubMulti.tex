@@ -1,0 +1,228 @@
+\hypertarget{classRulePullsubMulti}{}\doxysection{Rule\+Pullsub\+Multi Class Reference}
+\label{classRulePullsubMulti}\index{RulePullsubMulti@{RulePullsubMulti}}
+
+
+Pull S\+U\+B\+P\+I\+E\+CE back through M\+U\+L\+T\+I\+E\+Q\+U\+AL.  
+
+
+
+
+Inheritance diagram for Rule\+Pullsub\+Multi\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classRulePullsubMulti__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Pullsub\+Multi\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classRulePullsubMulti__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRulePullsubMulti_ad97158dddae367b04cc50438c4380033}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRulePullsubMulti_a41fa2a5dcee23ca0a9a831982c9b2b0f}{get\+Op\+List}} (vector$<$ uint4 $>$ \&oplist) const
+\begin{DoxyCompactList}\small\item\em List of op codes this rule operates on. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRulePullsubMulti_ae66401a1bda28e0332a3058b276fdca5}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classRulePullsubMulti_a4c0d85290c63eb31453f8348219f9d71}{min\+Max\+Use}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, int4 \&max\+Byte, int4 \&min\+Byte)
+\begin{DoxyCompactList}\small\item\em Compute minimum and maximum bytes being used. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classRulePullsubMulti_a913ef535547efd0f181a08dfff49beab}{replace\+Descendants}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$orig\+Vn, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$new\+Vn, int4 max\+Byte, int4 min\+Byte, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\item 
+static bool \mbox{\hyperlink{classRulePullsubMulti_a9bbbf48ca07f76c7d40a53feb65eded7}{acceptable\+Size}} (int4 size)
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if given size is a suitable truncated size. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classRulePullsubMulti_a9195ceded3ce1f8d7d12bb52c8e268db}{build\+Subpiece}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$basevn, uint4 outsize, uint4 shift, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Build a S\+U\+B\+P\+I\+E\+CE of given base \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classRulePullsubMulti_a92f1aaf99bec05ceb9a6fc3a418a6851}{find\+Subpiece}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$basevn, uint4 outsize, uint4 shift)
+\begin{DoxyCompactList}\small\item\em Find a predefined S\+U\+B\+P\+I\+E\+CE of a base \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Pull S\+U\+B\+P\+I\+E\+CE back through M\+U\+L\+T\+I\+E\+Q\+U\+AL. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRulePullsubMulti_a9bbbf48ca07f76c7d40a53feb65eded7}\label{classRulePullsubMulti_a9bbbf48ca07f76c7d40a53feb65eded7}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!acceptableSize@{acceptableSize}}
+\index{acceptableSize@{acceptableSize}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{acceptableSize()}{acceptableSize()}}
+{\footnotesize\ttfamily bool Rule\+Pullsub\+Multi\+::acceptable\+Size (\begin{DoxyParamCaption}\item[{int4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return {\bfseries{true}} if given size is a suitable truncated size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & is the given size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if it is acceptable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRulePullsubMulti_ae66401a1bda28e0332a3058b276fdca5}\label{classRulePullsubMulti_ae66401a1bda28e0332a3058b276fdca5}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Pullsub\+Multi\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRulePullsubMulti_a9195ceded3ce1f8d7d12bb52c8e268db}\label{classRulePullsubMulti_a9195ceded3ce1f8d7d12bb52c8e268db}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!buildSubpiece@{buildSubpiece}}
+\index{buildSubpiece@{buildSubpiece}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{buildSubpiece()}{buildSubpiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Rule\+Pullsub\+Multi\+::build\+Subpiece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{basevn,  }\item[{uint4}]{outsize,  }\item[{uint4}]{shift,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Build a S\+U\+B\+P\+I\+E\+CE of given base \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is constructed and inserted near the definition of the base \mbox{\hyperlink{classVarnode}{Varnode}}. 
+\begin{DoxyParams}{Parameters}
+{\em basevn} & is the given base \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em outsize} & is the required truncated size in bytes \\
+\hline
+{\em shift} & is the number of least significant bytes to truncate \\
+\hline
+{\em data} & is the function being analyzed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output \mbox{\hyperlink{classVarnode}{Varnode}} of the new S\+U\+B\+P\+I\+E\+CE 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRulePullsubMulti_ad97158dddae367b04cc50438c4380033}\label{classRulePullsubMulti_ad97158dddae367b04cc50438c4380033}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!clone@{clone}}
+\index{clone@{clone}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Pullsub\+Multi\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+\mbox{\Hypertarget{classRulePullsubMulti_a92f1aaf99bec05ceb9a6fc3a418a6851}\label{classRulePullsubMulti_a92f1aaf99bec05ceb9a6fc3a418a6851}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!findSubpiece@{findSubpiece}}
+\index{findSubpiece@{findSubpiece}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{findSubpiece()}{findSubpiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Rule\+Pullsub\+Multi\+::find\+Subpiece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{basevn,  }\item[{uint4}]{outsize,  }\item[{uint4}]{shift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find a predefined S\+U\+B\+P\+I\+E\+CE of a base \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Given a \mbox{\hyperlink{classVarnode}{Varnode}} and desired dimensions (size and shift), search for a preexisting truncation defined in the same block as the original \mbox{\hyperlink{classVarnode}{Varnode}} or return N\+U\+LL 
+\begin{DoxyParams}{Parameters}
+{\em basevn} & is the base \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em outsize} & is the desired truncation size \\
+\hline
+{\em shift} & if the desired truncation shift \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the truncated \mbox{\hyperlink{classVarnode}{Varnode}} or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRulePullsubMulti_a41fa2a5dcee23ca0a9a831982c9b2b0f}\label{classRulePullsubMulti_a41fa2a5dcee23ca0a9a831982c9b2b0f}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!getOpList@{getOpList}}
+\index{getOpList@{getOpList}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{getOpList()}{getOpList()}}
+{\footnotesize\ttfamily void Rule\+Pullsub\+Multi\+::get\+Op\+List (\begin{DoxyParamCaption}\item[{vector$<$ uint4 $>$ \&}]{oplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List of op codes this rule operates on. 
+
+Populate the given array with all possible Op\+Codes this \mbox{\hyperlink{classRule}{Rule}} might apply to. By default, this method returns all possible Op\+Codes 
+\begin{DoxyParams}{Parameters}
+{\em oplist} & is the array to populate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4023bfc7825de0ab866790551856d10e}{Rule}}.
+
+\mbox{\Hypertarget{classRulePullsubMulti_a4c0d85290c63eb31453f8348219f9d71}\label{classRulePullsubMulti_a4c0d85290c63eb31453f8348219f9d71}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!minMaxUse@{minMaxUse}}
+\index{minMaxUse@{minMaxUse}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{minMaxUse()}{minMaxUse()}}
+{\footnotesize\ttfamily void Rule\+Pullsub\+Multi\+::min\+Max\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{int4 \&}]{max\+Byte,  }\item[{int4 \&}]{min\+Byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compute minimum and maximum bytes being used. 
+
+For bytes in given \mbox{\hyperlink{classVarnode}{Varnode}} pass back the largest and smallest index (lsb=0) consumed by an immediate descendant. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em max\+Byte} & will hold the index of the maximum byte \\
+\hline
+{\em min\+Byte} & will hold the index of the minimum byte \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRulePullsubMulti_a913ef535547efd0f181a08dfff49beab}\label{classRulePullsubMulti_a913ef535547efd0f181a08dfff49beab}} 
+\index{RulePullsubMulti@{RulePullsubMulti}!replaceDescendants@{replaceDescendants}}
+\index{replaceDescendants@{replaceDescendants}!RulePullsubMulti@{RulePullsubMulti}}
+\doxysubsubsection{\texorpdfstring{replaceDescendants()}{replaceDescendants()}}
+{\footnotesize\ttfamily void Rule\+Pullsub\+Multi\+::replace\+Descendants (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{orig\+Vn,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{new\+Vn,  }\item[{int4}]{max\+Byte,  }\item[{int4}]{min\+Byte,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Replace given \mbox{\hyperlink{classVarnode}{Varnode}} with (smaller) {\bfseries{new\+Vn}} in all descendants
+
+If \mbox{\hyperlink{classRulePullsubMulti_a4c0d85290c63eb31453f8348219f9d71}{min\+Max\+Use()}} indicates not all bytes are used, this should always succeed 
+\begin{DoxyParams}{Parameters}
+{\em orig\+Vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em new\+Vn} & is the new \mbox{\hyperlink{classVarnode}{Varnode}} to replace with \\
+\hline
+{\em max\+Byte} & is the maximum byte immediately used in {\bfseries{orig\+Vn}} \\
+\hline
+{\em min\+Byte} & is the minimum byte immediately used in {\bfseries{orig\+Vn}} \\
+\hline
+{\em data} & is the function being analyzed \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

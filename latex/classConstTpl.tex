@@ -1,0 +1,121 @@
+\hypertarget{classConstTpl}{}\doxysection{Const\+Tpl Class Reference}
+\label{classConstTpl}\index{ConstTpl@{ConstTpl}}
+
+
+Collaboration diagram for Const\+Tpl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classConstTpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstTpl_af7f677ee5ef2e5af1becb0109793396b}\label{classConstTpl_af7f677ee5ef2e5af1becb0109793396b}} 
+enum {\bfseries const\+\_\+type} \{ \newline
+{\bfseries real} =0, 
+{\bfseries handle} =1, 
+{\bfseries j\+\_\+start} =2, 
+{\bfseries j\+\_\+next} =3, 
+\newline
+{\bfseries j\+\_\+curspace} =4, 
+{\bfseries j\+\_\+curspace\+\_\+size} =5, 
+{\bfseries spaceid} =6, 
+{\bfseries j\+\_\+relative} =7, 
+\newline
+{\bfseries j\+\_\+flowref} =8, 
+{\bfseries j\+\_\+flowref\+\_\+size} =9, 
+{\bfseries j\+\_\+flowdest} =10, 
+{\bfseries j\+\_\+flowdest\+\_\+size} =11
+ \}
+\item 
+\mbox{\Hypertarget{classConstTpl_a4aa1b485e0cac884006d1aa35b3b0c57}\label{classConstTpl_a4aa1b485e0cac884006d1aa35b3b0c57}} 
+enum {\bfseries v\+\_\+field} \{ {\bfseries v\+\_\+space} =0, 
+{\bfseries v\+\_\+offset} =1, 
+{\bfseries v\+\_\+size} =2, 
+{\bfseries v\+\_\+offset\+\_\+plus} =3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstTpl_ae3a5265248a081e1aa47c16b39dfcaf7}\label{classConstTpl_ae3a5265248a081e1aa47c16b39dfcaf7}} 
+{\bfseries Const\+Tpl} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&op2)
+\item 
+\mbox{\Hypertarget{classConstTpl_a5cd6bb0244ddd590c39911370fcb51a2}\label{classConstTpl_a5cd6bb0244ddd590c39911370fcb51a2}} 
+{\bfseries Const\+Tpl} (const\+\_\+type tp, uintb val)
+\item 
+\mbox{\Hypertarget{classConstTpl_a19de20824475f051abdef1ac4edb67fd}\label{classConstTpl_a19de20824475f051abdef1ac4edb67fd}} 
+{\bfseries Const\+Tpl} (const\+\_\+type tp)
+\item 
+\mbox{\Hypertarget{classConstTpl_aa5ca3edd704efb40fc06dea3e4325fda}\label{classConstTpl_aa5ca3edd704efb40fc06dea3e4325fda}} 
+{\bfseries Const\+Tpl} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$sid)
+\item 
+\mbox{\Hypertarget{classConstTpl_ad962a583381d61306fe8d007bbca1c55}\label{classConstTpl_ad962a583381d61306fe8d007bbca1c55}} 
+{\bfseries Const\+Tpl} (const\+\_\+type tp, int4 ht, v\+\_\+field vf)
+\item 
+\mbox{\Hypertarget{classConstTpl_a142aaf2a01641780bfc0911cf64f0faf}\label{classConstTpl_a142aaf2a01641780bfc0911cf64f0faf}} 
+{\bfseries Const\+Tpl} (const\+\_\+type tp, int4 ht, v\+\_\+field vf, uintb plus)
+\item 
+\mbox{\Hypertarget{classConstTpl_a9b303a814a4e17013e37d4dcb70b4a79}\label{classConstTpl_a9b303a814a4e17013e37d4dcb70b4a79}} 
+bool {\bfseries is\+Const\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a9626ee452f63e079a22ab5662e92cd6d}\label{classConstTpl_a9626ee452f63e079a22ab5662e92cd6d}} 
+bool {\bfseries is\+Unique\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a6476d76ec2c6e32dc8dc47f96b45ac8f}\label{classConstTpl_a6476d76ec2c6e32dc8dc47f96b45ac8f}} 
+bool {\bfseries operator==} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&op2) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a6b340db27f3077b7e618e7b0e23e98ce}\label{classConstTpl_a6b340db27f3077b7e618e7b0e23e98ce}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&op2) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a456a8ce94fc3beba134ed54c6e2a5773}\label{classConstTpl_a456a8ce94fc3beba134ed54c6e2a5773}} 
+uintb {\bfseries get\+Real} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_ab23dfe352075812889649cffec63f80a}\label{classConstTpl_ab23dfe352075812889649cffec63f80a}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries get\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_ae13b49fd91f96382b97c7b0d6901653f}\label{classConstTpl_ae13b49fd91f96382b97c7b0d6901653f}} 
+int4 {\bfseries get\+Handle\+Index} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_ac919975d2d1ceff56bc5a0e6961ec04b}\label{classConstTpl_ac919975d2d1ceff56bc5a0e6961ec04b}} 
+const\+\_\+type {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a4bc27aa15f85b5fb4a621a7488b9f6fc}\label{classConstTpl_a4bc27aa15f85b5fb4a621a7488b9f6fc}} 
+v\+\_\+field {\bfseries get\+Select} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a2676416d2a1e9a14443ca54fb8af042d}\label{classConstTpl_a2676416d2a1e9a14443ca54fb8af042d}} 
+uintb {\bfseries fix} (const \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classConstTpl_ab27ba4441dc79c4dd00dbd41d75d3e90}\label{classConstTpl_ab27ba4441dc79c4dd00dbd41d75d3e90}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ {\bfseries fix\+Space} (const \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a71f5d8ca70523ece65f093a1d83ef314}\label{classConstTpl_a71f5d8ca70523ece65f093a1d83ef314}} 
+void {\bfseries transfer} (const vector$<$ \mbox{\hyperlink{classHandleTpl}{Handle\+Tpl}} $\ast$ $>$ \&params)
+\item 
+\mbox{\Hypertarget{classConstTpl_a544ad1f2c43673e6975da4872003626f}\label{classConstTpl_a544ad1f2c43673e6975da4872003626f}} 
+bool {\bfseries is\+Zero} (void) const
+\item 
+\mbox{\Hypertarget{classConstTpl_abfd18cee78e9e1aedd8f2e2c42f7c40f}\label{classConstTpl_abfd18cee78e9e1aedd8f2e2c42f7c40f}} 
+void {\bfseries change\+Handle\+Index} (const vector$<$ int4 $>$ \&handmap)
+\item 
+\mbox{\Hypertarget{classConstTpl_ad04e4bde130998d2083f9befd8472d66}\label{classConstTpl_ad04e4bde130998d2083f9befd8472d66}} 
+void {\bfseries fillin\+Space} (\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \&hand, const \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a80f254aea88a52ec15deed96f46d1b97}\label{classConstTpl_a80f254aea88a52ec15deed96f46d1b97}} 
+void {\bfseries fillin\+Offset} (\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \&hand, const \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classConstTpl_ad8fe31f044a44888cbf07b760db54627}\label{classConstTpl_ad8fe31f044a44888cbf07b760db54627}} 
+void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classConstTpl_a693d02a50ed80c1601bb7d6e648c09ec}\label{classConstTpl_a693d02a50ed80c1601bb7d6e648c09ec}} 
+void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+semantics.\+hh\item 
+semantics.\+cc\end{DoxyCompactItemize}

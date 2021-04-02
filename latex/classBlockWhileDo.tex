@@ -1,0 +1,180 @@
+\hypertarget{classBlockWhileDo}{}\doxysection{Block\+While\+Do Class Reference}
+\label{classBlockWhileDo}\index{BlockWhileDo@{BlockWhileDo}}
+
+
+A loop structure where the condition is checked at the top.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+While\+Do\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classBlockWhileDo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+While\+Do\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classBlockWhileDo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockWhileDo_a7bb1454de32707fac664051525c58d47}\label{classBlockWhileDo_a7bb1454de32707fac664051525c58d47}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+virtual void \mbox{\hyperlink{classBlockWhileDo_ac850d56fa3365a195b91373ef00d7bd3}{mark\+Label\+Bump\+Up}} (bool bump)
+\begin{DoxyCompactList}\small\item\em Let hierarchical blocks steal labels of their (first) components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockWhileDo_a87ab7a000da06ffdca299db53495eae0}\label{classBlockWhileDo_a87ab7a000da06ffdca299db53495eae0}} 
+virtual void {\bfseries scope\+Break} (int4 curexit, int4 curloopexit)
+\item 
+virtual void \mbox{\hyperlink{classBlockWhileDo_a298687d8d9dbe264f779cca2c89ca32e}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockWhileDo_a8596786848701d23bc4e4a7fc3730889}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockWhileDo_a28f4f91e7ec3b4cc2bde0a0d432e0fe8}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockWhileDo_ac9dbe70a94f819fce7475914a66b0185}{final\+Transform}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\item 
+virtual void \mbox{\hyperlink{classBlockWhileDo_ad9bcbff60a254dffc77a618af2a10758}{finalize\+Printing}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A loop structure where the condition is checked at the top. 
+
+This has exactly two components\+: one conditional block which evaluates when the loop terminates, and one body block. The conditional block has two outgoing edges, one to the body block and one to the exit block. The body block has one outgoing edge back to the conditional block. The \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} instance has exactly one outgoing edge.
+
+Overflow syntax refers to the situation where there is a proper \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} structure but the conditional block is too long or complicated to emit as a single conditional expression. An alternate {\ttfamily while(true) \{ \}} form is used instead.
+
+If an iterator op is provided, the block will be printed using {\itshape for} loop syntax, {\ttfamily for(i=0;i$<$10;++i)} where an {\itshape initializer} statement and {\itshape iterator} statement are printed alongside the {\itshape condition} statement. Otherwise, {\itshape while} loop syntax is used {\ttfamily while(i$<$10)} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockWhileDo_a8596786848701d23bc4e4a7fc3730889}\label{classBlockWhileDo_a8596786848701d23bc4e4a7fc3730889}} 
+\index{BlockWhileDo@{BlockWhileDo}!emit@{emit}}
+\index{emit@{emit}!BlockWhileDo@{BlockWhileDo}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+While\+Do\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockWhileDo_ad9bcbff60a254dffc77a618af2a10758}\label{classBlockWhileDo_ad9bcbff60a254dffc77a618af2a10758}} 
+\index{BlockWhileDo@{BlockWhileDo}!finalizePrinting@{finalizePrinting}}
+\index{finalizePrinting@{finalizePrinting}!BlockWhileDo@{BlockWhileDo}}
+\doxysubsubsection{\texorpdfstring{finalizePrinting()}{finalizePrinting()}}
+{\footnotesize\ttfamily void Block\+While\+Do\+::finalize\+Printing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Assume that \mbox{\hyperlink{classBlockWhileDo_ac9dbe70a94f819fce7475914a66b0185}{final\+Transform()}} has run and that all \mbox{\hyperlink{classHighVariable}{High\+Variable}} merging has occurred. Do any final tests checking that the initialization and iteration statements are good. Extract initialization and iteration statements from their basic blocks. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function containing the loop \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockWhileDo_ac9dbe70a94f819fce7475914a66b0185}\label{classBlockWhileDo_ac9dbe70a94f819fce7475914a66b0185}} 
+\index{BlockWhileDo@{BlockWhileDo}!finalTransform@{finalTransform}}
+\index{finalTransform@{finalTransform}!BlockWhileDo@{BlockWhileDo}}
+\doxysubsubsection{\texorpdfstring{finalTransform()}{finalTransform()}}
+{\footnotesize\ttfamily void Block\+While\+Do\+::final\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Determine if {\bfseries{this}} block can be printed as a {\itshape for} loop, with an {\itshape initializer} statement extracted from the previous block, and an {\itshape iterator} statement extracted from the body. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function containing {\bfseries{this}} loop \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockWhileDo_ac850d56fa3365a195b91373ef00d7bd3}\label{classBlockWhileDo_ac850d56fa3365a195b91373ef00d7bd3}} 
+\index{BlockWhileDo@{BlockWhileDo}!markLabelBumpUp@{markLabelBumpUp}}
+\index{markLabelBumpUp@{markLabelBumpUp}!BlockWhileDo@{BlockWhileDo}}
+\doxysubsubsection{\texorpdfstring{markLabelBumpUp()}{markLabelBumpUp()}}
+{\footnotesize\ttfamily void Block\+While\+Do\+::mark\+Label\+Bump\+Up (\begin{DoxyParamCaption}\item[{bool}]{bump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Let hierarchical blocks steal labels of their (first) components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bump} & if {\bfseries{true}}, mark that labels for this block are printed by somebody higher in hierarchy \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a67e2a75a80e60655a9936045d40983f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockWhileDo_a28f4f91e7ec3b4cc2bde0a0d432e0fe8}\label{classBlockWhileDo_a28f4f91e7ec3b4cc2bde0a0d432e0fe8}} 
+\index{BlockWhileDo@{BlockWhileDo}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!BlockWhileDo@{BlockWhileDo}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+While\+Do\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockWhileDo_a298687d8d9dbe264f779cca2c89ca32e}\label{classBlockWhileDo_a298687d8d9dbe264f779cca2c89ca32e}} 
+\index{BlockWhileDo@{BlockWhileDo}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockWhileDo@{BlockWhileDo}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+While\+Do\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

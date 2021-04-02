@@ -1,0 +1,54 @@
+\hypertarget{classAddTreeState}{}\doxysection{Add\+Tree\+State Class Reference}
+\label{classAddTreeState}\index{AddTreeState@{AddTreeState}}
+
+
+Structure for sorting out pointer expression trees.  
+
+
+
+
+{\ttfamily \#include $<$ruleaction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAddTreeState_a185c2380f854f4355176454d2bb0f9c8}\label{classAddTreeState_a185c2380f854f4355176454d2bb0f9c8}} 
+\mbox{\hyperlink{classAddTreeState_a185c2380f854f4355176454d2bb0f9c8}{Add\+Tree\+State}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&d, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot)
+\begin{DoxyCompactList}\small\item\em Construct given root of A\+DD tree and pointer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddTreeState_a1fba7b1b0b2a97ada10a8a59ab2e6cd4}{apply}} (void)
+\begin{DoxyCompactList}\small\item\em Attempt to transform the pointer expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure for sorting out pointer expression trees. 
+
+Given a base pointer of known data-\/type and an additive expression involving the pointer, group the terms of the expression into\+:
+\begin{DoxyItemize}
+\item A constant multiple of the base data-\/type
+\item Non-\/constant multiples of the base data-\/type
+\item An constant offset to a sub-\/component of the base data-\/type
+\item An remaining terms
+\end{DoxyItemize}
+
+The {\itshape multiple} terms are rewritten using a C\+P\+U\+I\+\_\+\+P\+T\+R\+A\+DD. The constant offset is rewritten using a C\+P\+U\+I\+\_\+\+P\+T\+R\+S\+UB. Other terms are added back in. Analysis may cause multiplication (C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+M\+U\+LT) by a constant to be distributed to its C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+DD input. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAddTreeState_a1fba7b1b0b2a97ada10a8a59ab2e6cd4}\label{classAddTreeState_a1fba7b1b0b2a97ada10a8a59ab2e6cd4}} 
+\index{AddTreeState@{AddTreeState}!apply@{apply}}
+\index{apply@{apply}!AddTreeState@{AddTreeState}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily bool Add\+Tree\+State\+::apply (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Attempt to transform the pointer expression. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a transform was applied 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

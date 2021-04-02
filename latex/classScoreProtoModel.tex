@@ -1,0 +1,74 @@
+\hypertarget{classScoreProtoModel}{}\doxysection{Score\+Proto\+Model Class Reference}
+\label{classScoreProtoModel}\index{ScoreProtoModel@{ScoreProtoModel}}
+
+
+Class for calculating \char`\"{}goodness of fit\char`\"{} of parameter trials against a prototype model.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScoreProtoModel_afb8e99caf8e9d51d6811b4fc482526e2}{Score\+Proto\+Model}} (bool isinput, const \mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$mod, int4 numparam)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScoreProtoModel_aac1568db9b3ebba5747ad8eba5f6438f}{add\+Parameter}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz)
+\begin{DoxyCompactList}\small\item\em Register a trial to be scored. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScoreProtoModel_aae328b10f50c1f6526f503e0064d4749}\label{classScoreProtoModel_aae328b10f50c1f6526f503e0064d4749}} 
+void \mbox{\hyperlink{classScoreProtoModel_aae328b10f50c1f6526f503e0064d4749}{do\+Score}} (void)
+\begin{DoxyCompactList}\small\item\em Compute the fitness score. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for calculating \char`\"{}goodness of fit\char`\"{} of parameter trials against a prototype model. 
+
+The class is instantiated with a prototype model (\mbox{\hyperlink{classProtoModel}{Proto\+Model}}). A set of \mbox{\hyperlink{classVarnode}{Varnode}} parameter trials are registered by calling \mbox{\hyperlink{classScoreProtoModel_aac1568db9b3ebba5747ad8eba5f6438f}{add\+Parameter()}} for each trial. Then calling \mbox{\hyperlink{classScoreProtoModel_aae328b10f50c1f6526f503e0064d4749}{do\+Score()}} computes a score that evaluates how well the set of registered trials fit the prototype model. A lower score indicates a better fit. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScoreProtoModel_afb8e99caf8e9d51d6811b4fc482526e2}\label{classScoreProtoModel_afb8e99caf8e9d51d6811b4fc482526e2}} 
+\index{ScoreProtoModel@{ScoreProtoModel}!ScoreProtoModel@{ScoreProtoModel}}
+\index{ScoreProtoModel@{ScoreProtoModel}!ScoreProtoModel@{ScoreProtoModel}}
+\doxysubsubsection{\texorpdfstring{ScoreProtoModel()}{ScoreProtoModel()}}
+{\footnotesize\ttfamily Score\+Proto\+Model\+::\+Score\+Proto\+Model (\begin{DoxyParamCaption}\item[{bool}]{isinput,  }\item[{const \mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{mod,  }\item[{int4}]{numparam }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em isinput} & is set to {\bfseries{true}} to compute scores against the input part of the model \\
+\hline
+{\em mod} & is the prototype model to score against \\
+\hline
+{\em numparam} & is the presumed number of trials that will constitute the score \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScoreProtoModel_aac1568db9b3ebba5747ad8eba5f6438f}\label{classScoreProtoModel_aac1568db9b3ebba5747ad8eba5f6438f}} 
+\index{ScoreProtoModel@{ScoreProtoModel}!addParameter@{addParameter}}
+\index{addParameter@{addParameter}!ScoreProtoModel@{ScoreProtoModel}}
+\doxysubsubsection{\texorpdfstring{addParameter()}{addParameter()}}
+{\footnotesize\ttfamily void Score\+Proto\+Model\+::add\+Parameter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Register a trial to be scored. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the trial \\
+\hline
+{\em sz} & is the number of bytes in the trial \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

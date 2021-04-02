@@ -1,0 +1,63 @@
+\hypertarget{classXmlScan}{}\doxysection{Xml\+Scan Class Reference}
+\label{classXmlScan}\index{XmlScan@{XmlScan}}
+
+
+The X\+ML character scanner.  
+
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXmlScan_acbbea633c8f9f08f831c3235e26109f7}\label{classXmlScan_acbbea633c8f9f08f831c3235e26109f7}} 
+enum \mbox{\hyperlink{classXmlScan_acbbea633c8f9f08f831c3235e26109f7}{mode}} \{ \newline
+{\bfseries Char\+Data\+Mode}, 
+{\bfseries C\+Data\+Mode}, 
+{\bfseries Att\+Value\+Single\+Mode}, 
+{\bfseries Att\+Value\+Double\+Mode}, 
+\newline
+{\bfseries Comment\+Mode}, 
+{\bfseries Char\+Ref\+Mode}, 
+{\bfseries Name\+Mode}, 
+{\bfseries S\+Name\+Mode}, 
+\newline
+{\bfseries Single\+Mode}
+ \}
+\begin{DoxyCompactList}\small\item\em Modes of the scanner. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXmlScan_a2ccccc80e08579e049322249148091e6}\label{classXmlScan_a2ccccc80e08579e049322249148091e6}} 
+enum \mbox{\hyperlink{classXmlScan_a2ccccc80e08579e049322249148091e6}{token}} \{ \newline
+{\bfseries Char\+Data\+Token} = 258, 
+{\bfseries C\+Data\+Token} = 259, 
+{\bfseries Att\+Value\+Token} = 260, 
+{\bfseries Comment\+Token} =261, 
+\newline
+{\bfseries Char\+Ref\+Token} = 262, 
+{\bfseries Name\+Token} = 263, 
+{\bfseries S\+Name\+Token} = 264, 
+{\bfseries Element\+Brace\+Token} = 265, 
+\newline
+{\bfseries Command\+Brace\+Token} = 266
+ \}
+\begin{DoxyCompactList}\small\item\em Additional tokens returned by the scanner, in addition to byte values 00-\/ff. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classXmlScan_a9c3cb600f6067c8d30c0c4754648ee8d}\label{classXmlScan_a9c3cb600f6067c8d30c0c4754648ee8d}} 
+\mbox{\hyperlink{classXmlScan_a9c3cb600f6067c8d30c0c4754648ee8d}{Xml\+Scan}} (istream \&t)
+\begin{DoxyCompactList}\small\item\em Construct scanner given a stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXmlScan_a9cb45eac2a8d9d7367c7138a18879193}\label{classXmlScan_a9cb45eac2a8d9d7367c7138a18879193}} 
+\mbox{\hyperlink{classXmlScan_a9cb45eac2a8d9d7367c7138a18879193}{$\sim$\+Xml\+Scan}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classXmlScan_a8bac078fa6f5c6ea227e6ebd0921b73f}\label{classXmlScan_a8bac078fa6f5c6ea227e6ebd0921b73f}} 
+int4 \mbox{\hyperlink{classXmlScan_a8bac078fa6f5c6ea227e6ebd0921b73f}{nexttoken}} (void)
+\begin{DoxyCompactList}\small\item\em Get the next token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The X\+ML character scanner. 
+
+Tokenize a byte stream suitably for the main X\+ML parser. The scanner expects an A\+S\+C\+II or U\+T\+F-\/8 encoding. Characters is X\+ML tag and attribute names are restricted to A\+S\+C\+II \char`\"{}letters\char`\"{}, but extended U\+T\+F-\/8 characters can be used in any other character data\+: attribute values, content, comments. ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+xml.\+cc\end{DoxyCompactItemize}

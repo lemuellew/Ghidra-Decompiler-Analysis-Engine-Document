@@ -1,0 +1,118 @@
+\hypertarget{classMemoryImage}{}\doxysection{Memory\+Image Class Reference}
+\label{classMemoryImage}\index{MemoryImage@{MemoryImage}}
+
+
+A kind of \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} which retrieves its data from an underlying \mbox{\hyperlink{classLoadImage}{Load\+Image}}.  
+
+
+
+
+{\ttfamily \#include $<$memstate.\+hh$>$}
+
+
+
+Inheritance diagram for Memory\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classMemoryImage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Memory\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classMemoryImage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryImage_acd1eeb4e8337a282739056e9c092fb5a}{Memory\+Image}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, int4 ws, int4 ps, \mbox{\hyperlink{classLoadImage}{Load\+Image}} $\ast$ld)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}} for a loadimage memorybank. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uintb \mbox{\hyperlink{classMemoryImage_a196464ef9a11a0088aa62d01e510aabf}{find}} (uintb addr) const
+\begin{DoxyCompactList}\small\item\em Overridden find method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMemoryImage_abcf3229adb6b824702b627d1de5a9f10}{get\+Page}} (uintb addr, uint1 $\ast$res, int4 skip, int4 size) const
+\begin{DoxyCompactList}\small\item\em Overridded get\+Page method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A kind of \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} which retrieves its data from an underlying \mbox{\hyperlink{classLoadImage}{Load\+Image}}. 
+
+Any bytes requested on the bank which lie in the \mbox{\hyperlink{classLoadImage}{Load\+Image}} are retrieved from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. Other addresses in the space are filled in with zero. This bank cannot be written to. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMemoryImage_acd1eeb4e8337a282739056e9c092fb5a}\label{classMemoryImage_acd1eeb4e8337a282739056e9c092fb5a}} 
+\index{MemoryImage@{MemoryImage}!MemoryImage@{MemoryImage}}
+\index{MemoryImage@{MemoryImage}!MemoryImage@{MemoryImage}}
+\doxysubsubsection{\texorpdfstring{MemoryImage()}{MemoryImage()}}
+{\footnotesize\ttfamily Memory\+Image\+::\+Memory\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{int4}]{ws,  }\item[{int4}]{ps,  }\item[{\mbox{\hyperlink{classLoadImage}{Load\+Image}} $\ast$}]{ld }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}} for a loadimage memorybank. 
+
+A \mbox{\hyperlink{classMemoryImage}{Memory\+Image}} needs everything a basic memory bank needs and is needs to know the underlying \mbox{\hyperlink{classLoadImage}{Load\+Image}} object to forward read reqests to. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space associated with the memory bank \\
+\hline
+{\em ws} & is the number of bytes in the preferred wordsize (must be power of 2) \\
+\hline
+{\em ps} & is the number of bytes in a page (must be power of 2) \\
+\hline
+{\em ld} & is the underlying \mbox{\hyperlink{classLoadImage}{Load\+Image}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryImage_a196464ef9a11a0088aa62d01e510aabf}\label{classMemoryImage_a196464ef9a11a0088aa62d01e510aabf}} 
+\index{MemoryImage@{MemoryImage}!find@{find}}
+\index{find@{find}!MemoryImage@{MemoryImage}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily uintb Memory\+Image\+::find (\begin{DoxyParamCaption}\item[{uintb}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overridden find method. 
+
+Find an aligned word from the bank. First an attempt is made to fetch the data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. If this fails, the value is returned as 0. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address of the word to fetch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the fetched value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classMemoryBank_a421a5b8dd872d0c3e462d9055fa4266d}{Memory\+Bank}}.
+
+\mbox{\Hypertarget{classMemoryImage_abcf3229adb6b824702b627d1de5a9f10}\label{classMemoryImage_abcf3229adb6b824702b627d1de5a9f10}} 
+\index{MemoryImage@{MemoryImage}!getPage@{getPage}}
+\index{getPage@{getPage}!MemoryImage@{MemoryImage}}
+\doxysubsubsection{\texorpdfstring{getPage()}{getPage()}}
+{\footnotesize\ttfamily void Memory\+Image\+::get\+Page (\begin{DoxyParamCaption}\item[{uintb}]{addr,  }\item[{uint1 $\ast$}]{res,  }\item[{int4}]{skip,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overridded get\+Page method. 
+
+Retrieve an aligned page from the bank. First an attempt is made to retrieve the page from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}, which may do its own zero filling. If the attempt fails, the page is entirely filled in with zeros. 
+
+Reimplemented from \mbox{\hyperlink{classMemoryBank_ac48e5c77befa62116190b34611ad4339}{Memory\+Bank}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{memstate_8hh}{memstate.\+hh}}\item 
+memstate.\+cc\end{DoxyCompactItemize}

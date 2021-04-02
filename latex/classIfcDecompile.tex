@@ -1,0 +1,62 @@
+\hypertarget{classIfcDecompile}{}\doxysection{Ifc\+Decompile Class Reference}
+\label{classIfcDecompile}\index{IfcDecompile@{IfcDecompile}}
+
+
+Decompile the current function\+: {\ttfamily decompile}  
+
+
+
+
+Inheritance diagram for Ifc\+Decompile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcDecompile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Decompile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcDecompile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcDecompile_acf3a1c4ebd4069695d56d89c2babcf28}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Decompile the current function\+: {\ttfamily decompile} 
+
+Decompilation is started for the current function. Any previous decompilation analysis on the function is cleared first. The process respects any active break points or traces, so decompilation may not complete. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcDecompile_acf3a1c4ebd4069695d56d89c2babcf28}\label{classIfcDecompile_acf3a1c4ebd4069695d56d89c2babcf28}} 
+\index{IfcDecompile@{IfcDecompile}!execute@{execute}}
+\index{execute@{execute}!IfcDecompile@{IfcDecompile}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Decompile\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

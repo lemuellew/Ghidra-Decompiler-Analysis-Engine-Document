@@ -1,0 +1,621 @@
+\hypertarget{classContextDatabase}{}\doxysection{Context\+Database Class Reference}
+\label{classContextDatabase}\index{ContextDatabase@{ContextDatabase}}
+
+
+An interface to a database of disassembly/decompiler {\bfseries{context}} information.  
+
+
+
+
+{\ttfamily \#include $<$globalcontext.\+hh$>$}
+
+
+
+Inheritance diagram for Context\+Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classContextDatabase__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int4 \mbox{\hyperlink{classContextDatabase_add56654146d3e6d9bab727980fd1da28}{get\+Context\+Size}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the number of words (uintm) in a context {\itshape blob}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextDatabase_a990c6b94512bff06a37d4b59b7316a4f}{register\+Variable}} (const string \&nm, int4 sbit, int4 ebit)=0
+\begin{DoxyCompactList}\small\item\em Register a new named context variable (as a bit range) with the database. \end{DoxyCompactList}\item 
+virtual const uintm $\ast$ \mbox{\hyperlink{classContextDatabase_a780d39f9c8f7bafe9bbb7eb948d3f9ca}{get\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const =0
+\begin{DoxyCompactList}\small\item\em Get the context blob of values associated with a given address. \end{DoxyCompactList}\item 
+virtual const uintm $\ast$ \mbox{\hyperlink{classContextDatabase_adbc2e2f157fe56f212f0edb55435dd7d}{get\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, uintb \&first, uintb \&last) const =0
+\begin{DoxyCompactList}\small\item\em Get the context blob of values associated with a given address and its bounding offsets. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \& \mbox{\hyperlink{classContextDatabase_a08908cbaeb6c0a722e40f9392d9615bd}{get\+Tracked\+Default}} (void)=0
+\begin{DoxyCompactList}\small\item\em Get the set of default values for all tracked registers. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \& \mbox{\hyperlink{classContextDatabase_a6ea1e4b793286c0b1ecbafcc58422339}{get\+Tracked\+Set}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const =0
+\begin{DoxyCompactList}\small\item\em Get the set of tracked register values associated with the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \& \mbox{\hyperlink{classContextDatabase_aba61e2244e4c12105ed5b45a47720808}{create\+Set}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr1, const \mbox{\hyperlink{classAddress}{Address}} \&addr2)=0
+\begin{DoxyCompactList}\small\item\em Create a tracked register set that is valid over the given range. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextDatabase_aaf116d099044b04dbcb6d83a079b1836}{save\+Xml}} (ostream \&s) const =0
+\begin{DoxyCompactList}\small\item\em Serialize the entire database to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextDatabase_a779b5bcb5326d79e748a3dc9df0137d0}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)=0
+\begin{DoxyCompactList}\small\item\em Restore the state of {\bfseries{this}} database object from a serialized X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextDatabase_ab21ed86cbe093ccf2f5a81a7db4a7174}{restore\+From\+Spec}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)=0
+\begin{DoxyCompactList}\small\item\em Add initial context state from X\+ML tags in compiler/processor specifications. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextDatabase_ad076227dbe22aad0f4a379e2f39ef488}{set\+Variable\+Default}} (const string \&nm, uintm val)
+\begin{DoxyCompactList}\small\item\em Provide a default value for a context variable. \end{DoxyCompactList}\item 
+uintm \mbox{\hyperlink{classContextDatabase_a8da40f85a0fa7a8af508f1df35c3de06}{get\+Default\+Value}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Retrieve the default value for a context variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextDatabase_acda111acb02b6fdc598a7e872f002458}{set\+Variable}} (const string \&nm, const \mbox{\hyperlink{classAddress}{Address}} \&addr, uintm value)
+\begin{DoxyCompactList}\small\item\em Set a context value at the given address. \end{DoxyCompactList}\item 
+uintm \mbox{\hyperlink{classContextDatabase_a70c042b2aed6df6e5194905a25758fcd}{get\+Variable}} (const string \&nm, const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Retrieve a context value at the given address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextDatabase_a58728fefe21b68e5599cddfdb5b59091}{set\+Context\+Change\+Point}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 num, uintm mask, uintm value)
+\begin{DoxyCompactList}\small\item\em Set a specific context value starting at the given address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextDatabase_adce04fedb87fa51a7511963bdffdd591}{set\+Context\+Region}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr1, const \mbox{\hyperlink{classAddress}{Address}} \&addr2, int4 num, uintm mask, uintm value)
+\begin{DoxyCompactList}\small\item\em Set a context variable value over a given range of addresses. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextDatabase_a567fd374a19fcb9a85ac96e4f2fea27e}{set\+Variable\+Region}} (const string \&nm, const \mbox{\hyperlink{classAddress}{Address}} \&begad, const \mbox{\hyperlink{classAddress}{Address}} \&endad, uintm value)
+\begin{DoxyCompactList}\small\item\em Set a context variable by name over a given range of addresses. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classContextDatabase_a4e4ffd9c15465a2503ddc38a54caab61}{get\+Tracked\+Value}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&mem, const \mbox{\hyperlink{classAddress}{Address}} \&point) const
+\begin{DoxyCompactList}\small\item\em Get the value of a tracked register at a specific address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}} \& \mbox{\hyperlink{classContextDatabase_a1ebd1d177e17c5ea1e877f8b1d8c581d}{get\+Variable}} (const string \&nm)=0
+\begin{DoxyCompactList}\small\item\em Retrieve the context variable description object by name. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}} \& \mbox{\hyperlink{classContextDatabase_a91002953f968ee118476983ef49d525b}{get\+Variable}} (const string \&nm) const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the context variable description object by name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextDatabase_a0b1179b61de5ead9bc606d37231b6d24}{get\+Region\+For\+Set}} (vector$<$ uintm $\ast$ $>$ \&res, const \mbox{\hyperlink{classAddress}{Address}} \&addr1, const \mbox{\hyperlink{classAddress}{Address}} \&addr2, int4 num, uintm mask)=0
+\begin{DoxyCompactList}\small\item\em Grab the context blob(s) for the given address range, marking bits that will be set. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classContextDatabase_ac20e325921c1d8f5ad9fff37ff06b15f}{get\+Region\+To\+Change\+Point}} (vector$<$ uintm $\ast$ $>$ \&res, const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 num, uintm mask)=0
+\begin{DoxyCompactList}\small\item\em Grab the context blob(s) starting at the given address up to the first point of change. \end{DoxyCompactList}\item 
+virtual uintm $\ast$ \mbox{\hyperlink{classContextDatabase_aaefe473eb8e2175df51c17d250d13c51}{get\+Default\+Value}} (void)=0
+\begin{DoxyCompactList}\small\item\em Retrieve the memory region holding all default context values. \end{DoxyCompactList}\item 
+virtual const uintm $\ast$ \mbox{\hyperlink{classContextDatabase_a615c33c424edd6ed84d73cdfb6d2e331}{get\+Default\+Value}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the memory region holding all default context values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classContextDatabase_ab2fb0798b9a7831b68c5c22117d6d2c7}{save\+Tracked}} (ostream \&s, const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \&vec)
+\begin{DoxyCompactList}\small\item\em Save all tracked register values for a specific address to an X\+ML stream. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classContextDatabase_a566bc8f30012254edd3c86303c479386}{restore\+Tracked}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage, \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \&vec)
+\begin{DoxyCompactList}\small\item\em Restore a sequence of tracked register values from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface to a database of disassembly/decompiler {\bfseries{context}} information. 
+
+{\bfseries{Context}} {\bfseries{information}} is a set of named variables that hold concrete values at specific addresses in the target executable being analyzed. A variable can hold different values at different addresses, but a specific value at a specific address never changes. Analysis recovers these values over time, populating this database, and querying this database lets analysis provides concrete values for memory locations in context.
+
+Context variables come in two flavors\+:
+\begin{DoxyItemize}
+\item {\bfseries{Low-\/level}} {\bfseries{context}} {\bfseries{variables\+:}} These can affect instruction decoding. These can be as small as a single bit and need to be defined in the \mbox{\hyperlink{classSleigh}{Sleigh}} specification (so that \mbox{\hyperlink{classSleigh}{Sleigh}} knows how they effect disassembly). These variables are not mapped to normal memory locations with an address space and offset (although they often have a corresponding embedding into a normal memory location). The model to keep in mind is a control register with specialized bit-\/fields within it.
+\item {\bfseries{High-\/level}} {\bfseries{tracked}} {\bfseries{variables\+:}} These are normal memory locations that are to be treated as constants across some range of code. These are normally registers that are being tracked by the compiler outside the domain of normal local and global variables. They have a specific value established by the compiler coming into a function but are not supposed to be interpreted as a high-\/level variable. Typical examples are the direction flag (for {\itshape string} instructions) and segment registers. All tracked variables are interpreted as a constant value at the start of a function, although the memory location can be recycled for other calculations later in the function.
+\end{DoxyItemize}
+
+Low-\/level context variables can be queried and set by name -- \mbox{\hyperlink{classContextDatabase_a1ebd1d177e17c5ea1e877f8b1d8c581d}{get\+Variable()}}, \mbox{\hyperlink{classContextDatabase_acda111acb02b6fdc598a7e872f002458}{set\+Variable()}}, \mbox{\hyperlink{classContextDatabase_a567fd374a19fcb9a85ac96e4f2fea27e}{set\+Variable\+Region()}} -- but the disassembler accesses all the variables at an address as a group via \mbox{\hyperlink{classContextDatabase_a780d39f9c8f7bafe9bbb7eb948d3f9ca}{get\+Context()}}, \mbox{\hyperlink{classContextDatabase_a58728fefe21b68e5599cddfdb5b59091}{set\+Context\+Change\+Point()}}, \mbox{\hyperlink{classContextDatabase_adce04fedb87fa51a7511963bdffdd591}{set\+Context\+Region()}}. In this setting, all the values are packed together in an array of words, a context {\itshape blob} (See \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}}).
+
+Tracked variables are also queried as a group via \mbox{\hyperlink{classContextDatabase_a6ea1e4b793286c0b1ecbafcc58422339}{get\+Tracked\+Set()}} and \mbox{\hyperlink{classContextDatabase_aba61e2244e4c12105ed5b45a47720808}{create\+Set()}}. These return a list of \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classContextDatabase_aba61e2244e4c12105ed5b45a47720808}\label{classContextDatabase_aba61e2244e4c12105ed5b45a47720808}} 
+\index{ContextDatabase@{ContextDatabase}!createSet@{createSet}}
+\index{createSet@{createSet}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{createSet()}{createSet()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}}\& Context\+Database\+::create\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr1,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a tracked register set that is valid over the given range. 
+
+This really should be an internal routine. The created set is empty, old values are blown away. If old/default values are to be preserved, they must be copied back in. 
+\begin{DoxyParams}{Parameters}
+{\em addr1} & is the starting address of the given range \\
+\hline
+{\em addr2} & is (1 past) the ending address of the given range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the empty set of tracked register values 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_aa3e2cdba48dac0da0a63c023b96fd07a}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_ab7f9df57870baceb7776fd8dcdbd5287}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_a780d39f9c8f7bafe9bbb7eb948d3f9ca}\label{classContextDatabase_a780d39f9c8f7bafe9bbb7eb948d3f9ca}} 
+\index{ContextDatabase@{ContextDatabase}!getContext@{getContext}}
+\index{getContext@{getContext}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getContext()}{getContext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const uintm$\ast$ Context\+Database\+::get\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the context blob of values associated with a given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the memory region holding the context values for the address 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_a817dcba491a21368cfa81b522ff21b39}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a222fa5ff7a23b1b5242a6be7da1b438f}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_adbc2e2f157fe56f212f0edb55435dd7d}\label{classContextDatabase_adbc2e2f157fe56f212f0edb55435dd7d}} 
+\index{ContextDatabase@{ContextDatabase}!getContext@{getContext}}
+\index{getContext@{getContext}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getContext()}{getContext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual const uintm$\ast$ Context\+Database\+::get\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uintb \&}]{first,  }\item[{uintb \&}]{last }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the context blob of values associated with a given address and its bounding offsets. 
+
+In addition to the memory region, the range of addresses for which the region is valid is passed back as offsets into the address space. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em first} & will hold the starting offset of the valid range \\
+\hline
+{\em last} & will hold the ending offset of the valid range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the memory region holding the context values for the address 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_a8b1a3c3cee5fdfe657c114a8ce341e5c}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a9ea9dfd15af6e45cc089cafeef2e90d7}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_add56654146d3e6d9bab727980fd1da28}\label{classContextDatabase_add56654146d3e6d9bab727980fd1da28}} 
+\index{ContextDatabase@{ContextDatabase}!getContextSize@{getContextSize}}
+\index{getContextSize@{getContextSize}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getContextSize()}{getContextSize()}}
+{\footnotesize\ttfamily virtual int4 Context\+Database\+::get\+Context\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve the number of words (uintm) in a context {\itshape blob}. 
+
+\begin{DoxyReturn}{Returns}
+the number of words 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_ace67dca0cb2ecdc012cabcfd571a43d8}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a7baaa83e4b1b3cf9f6b3e5f467ed59c4}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_a8da40f85a0fa7a8af508f1df35c3de06}\label{classContextDatabase_a8da40f85a0fa7a8af508f1df35c3de06}} 
+\index{ContextDatabase@{ContextDatabase}!getDefaultValue@{getDefaultValue}}
+\index{getDefaultValue@{getDefaultValue}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getDefaultValue()}{getDefaultValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily uintm Context\+Database\+::get\+Default\+Value (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the default value for a context variable. 
+
+This will return the default value used for addresses that have not been overlaid with other values. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the context variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the variable\textquotesingle{}s default value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextDatabase_a615c33c424edd6ed84d73cdfb6d2e331}\label{classContextDatabase_a615c33c424edd6ed84d73cdfb6d2e331}} 
+\index{ContextDatabase@{ContextDatabase}!getDefaultValue@{getDefaultValue}}
+\index{getDefaultValue@{getDefaultValue}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getDefaultValue()}{getDefaultValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual const uintm$\ast$ Context\+Database\+::get\+Default\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Retrieve the memory region holding all default context values. 
+
+This fetches the active memory holding the default context values on top of which all other context values are overlaid. \begin{DoxyReturn}{Returns}
+the memory region holding all the default context values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextDatabase_aaefe473eb8e2175df51c17d250d13c51}\label{classContextDatabase_aaefe473eb8e2175df51c17d250d13c51}} 
+\index{ContextDatabase@{ContextDatabase}!getDefaultValue@{getDefaultValue}}
+\index{getDefaultValue@{getDefaultValue}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getDefaultValue()}{getDefaultValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily virtual uintm$\ast$ Context\+Database\+::get\+Default\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Retrieve the memory region holding all default context values. 
+
+This fetches the active memory holding the default context values on top of which all other context values are overlaid. \begin{DoxyReturn}{Returns}
+the memory region holding all the default context values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextDatabase_a0b1179b61de5ead9bc606d37231b6d24}\label{classContextDatabase_a0b1179b61de5ead9bc606d37231b6d24}} 
+\index{ContextDatabase@{ContextDatabase}!getRegionForSet@{getRegionForSet}}
+\index{getRegionForSet@{getRegionForSet}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getRegionForSet()}{getRegionForSet()}}
+{\footnotesize\ttfamily virtual void Context\+Database\+::get\+Region\+For\+Set (\begin{DoxyParamCaption}\item[{vector$<$ uintm $\ast$ $>$ \&}]{res,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr1,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr2,  }\item[{int4}]{num,  }\item[{uintm}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Grab the context blob(s) for the given address range, marking bits that will be set. 
+
+This is an internal routine for obtaining the actual memory regions holding context values for the address range. This also informs the system which bits are getting set. A split is forced at the first address, and at least one memory region is passed back. The second address can be invalid in which case the memory region passed back is valid from the first address to whatever the next split point is. 
+\begin{DoxyParams}{Parameters}
+{\em res} & will hold pointers to memory regions for the given range \\
+\hline
+{\em addr1} & is the starting address of the range \\
+\hline
+{\em addr2} & is (1 past) the last address of the range or is invalid \\
+\hline
+{\em num} & is the word index for the context value that will be set \\
+\hline
+{\em mask} & is a mask of the value being set (within its word) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_ac20e325921c1d8f5ad9fff37ff06b15f}\label{classContextDatabase_ac20e325921c1d8f5ad9fff37ff06b15f}} 
+\index{ContextDatabase@{ContextDatabase}!getRegionToChangePoint@{getRegionToChangePoint}}
+\index{getRegionToChangePoint@{getRegionToChangePoint}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getRegionToChangePoint()}{getRegionToChangePoint()}}
+{\footnotesize\ttfamily virtual void Context\+Database\+::get\+Region\+To\+Change\+Point (\begin{DoxyParamCaption}\item[{vector$<$ uintm $\ast$ $>$ \&}]{res,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{num,  }\item[{uintm}]{mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Grab the context blob(s) starting at the given address up to the first point of change. 
+
+This is an internal routine for obtaining the actual memory regions holding context values starting at the given address. A specific context value is specified, and all memory regions are returned up to the first address where that particular context value changes. 
+\begin{DoxyParams}{Parameters}
+{\em res} & will hold pointers to memory regions being passed back \\
+\hline
+{\em addr} & is the starting address of the regions to fetch \\
+\hline
+{\em num} & is the word index for the specific context value being set \\
+\hline
+{\em mask} & is a mask of the context value being set (within its word) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_a08908cbaeb6c0a722e40f9392d9615bd}\label{classContextDatabase_a08908cbaeb6c0a722e40f9392d9615bd}} 
+\index{ContextDatabase@{ContextDatabase}!getTrackedDefault@{getTrackedDefault}}
+\index{getTrackedDefault@{getTrackedDefault}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getTrackedDefault()}{getTrackedDefault()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}}\& Context\+Database\+::get\+Tracked\+Default (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the set of default values for all tracked registers. 
+
+\begin{DoxyReturn}{Returns}
+the list of \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} objects 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_a38f6d0158f108dd29132250b1cb234b1}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a7eca09e7b7d72d65669b91e79e16971b}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_a6ea1e4b793286c0b1ecbafcc58422339}\label{classContextDatabase_a6ea1e4b793286c0b1ecbafcc58422339}} 
+\index{ContextDatabase@{ContextDatabase}!getTrackedSet@{getTrackedSet}}
+\index{getTrackedSet@{getTrackedSet}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getTrackedSet()}{getTrackedSet()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}}\& Context\+Database\+::get\+Tracked\+Set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the set of tracked register values associated with the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the list of \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} objects 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_a0953f0bba2a187d4cd001463c9f667ab}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a4f6d11b1a9dd101791a11ee522139828}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_a4e4ffd9c15465a2503ddc38a54caab61}\label{classContextDatabase_a4e4ffd9c15465a2503ddc38a54caab61}} 
+\index{ContextDatabase@{ContextDatabase}!getTrackedValue@{getTrackedValue}}
+\index{getTrackedValue@{getTrackedValue}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getTrackedValue()}{getTrackedValue()}}
+{\footnotesize\ttfamily uintb Context\+Database\+::get\+Tracked\+Value (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{mem,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Get the value of a tracked register at a specific address. 
+
+A specific storage region and code address is given. If the region is tracked the value at the address is retrieved. If the specified storage region is contained in the tracked region, the retrieved value is trimmed to match the containment before returning it. If the region is not tracked, a value of 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em mem} & is the specified storage region \\
+\hline
+{\em point} & is the code address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the tracked value or zero 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextDatabase_a91002953f968ee118476983ef49d525b}\label{classContextDatabase_a91002953f968ee118476983ef49d525b}} 
+\index{ContextDatabase@{ContextDatabase}!getVariable@{getVariable}}
+\index{getVariable@{getVariable}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getVariable()}{getVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}}\& Context\+Database\+::get\+Variable (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Retrieve the context variable description object by name. 
+
+If the variable doesn\textquotesingle{}t exist an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the context value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}} object matching the name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextDatabase_a1ebd1d177e17c5ea1e877f8b1d8c581d}\label{classContextDatabase_a1ebd1d177e17c5ea1e877f8b1d8c581d}} 
+\index{ContextDatabase@{ContextDatabase}!getVariable@{getVariable}}
+\index{getVariable@{getVariable}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getVariable()}{getVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}}\& Context\+Database\+::get\+Variable (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Retrieve the context variable description object by name. 
+
+If the variable doesn\textquotesingle{}t exist an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the context value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}} object matching the name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextDatabase_a70c042b2aed6df6e5194905a25758fcd}\label{classContextDatabase_a70c042b2aed6df6e5194905a25758fcd}} 
+\index{ContextDatabase@{ContextDatabase}!getVariable@{getVariable}}
+\index{getVariable@{getVariable}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{getVariable()}{getVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily uintm Context\+Database\+::get\+Variable (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve a context value at the given address. 
+
+If a value has not been explicit set for an address range containing the given address, the default value for the variable is returned 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the context variable \\
+\hline
+{\em addr} & is the address for which the specific value is needed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the context variable value for the address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classContextDatabase_a990c6b94512bff06a37d4b59b7316a4f}\label{classContextDatabase_a990c6b94512bff06a37d4b59b7316a4f}} 
+\index{ContextDatabase@{ContextDatabase}!registerVariable@{registerVariable}}
+\index{registerVariable@{registerVariable}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{registerVariable()}{registerVariable()}}
+{\footnotesize\ttfamily virtual void Context\+Database\+::register\+Variable (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{int4}]{sbit,  }\item[{int4}]{ebit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Register a new named context variable (as a bit range) with the database. 
+
+A new variable is registered by providing a name and the range of bits the value will occupy within the context blob. The full blob size is automatically increased if necessary. The variable must be contained within a single word, and all variables must be registered before any values can be set. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the new variable \\
+\hline
+{\em sbit} & is the position of the variable\textquotesingle{}s most significant bit within the blob \\
+\hline
+{\em ebit} & is the position of the variable\textquotesingle{}s least significant bit within the blob \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_ad4674e15208ed415b717d058edc1a140}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_ab71324da92653ec926463cf81b741432}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_ab21ed86cbe093ccf2f5a81a7db4a7174}\label{classContextDatabase_ab21ed86cbe093ccf2f5a81a7db4a7174}} 
+\index{ContextDatabase@{ContextDatabase}!restoreFromSpec@{restoreFromSpec}}
+\index{restoreFromSpec@{restoreFromSpec}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{restoreFromSpec()}{restoreFromSpec()}}
+{\footnotesize\ttfamily virtual void Context\+Database\+::restore\+From\+Spec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Add initial context state from X\+ML tags in compiler/processor specifications. 
+
+The database can be configured with a consistent initial state by providing $<$context\+\_\+data$>$ tags in either the compiler or processor specification file for the architecture 
+\begin{DoxyParams}{Parameters}
+{\em el} & is a $<$context\+\_\+data$>$ tag \\
+\hline
+{\em manage} & is used to resolve address space references \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_a1b06379e4ee5c7c3105047737bb4331b}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a7c35c56015e08545ff22473955ba7363}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_a566bc8f30012254edd3c86303c479386}\label{classContextDatabase_a566bc8f30012254edd3c86303c479386}} 
+\index{ContextDatabase@{ContextDatabase}!restoreTracked@{restoreTracked}}
+\index{restoreTracked@{restoreTracked}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{restoreTracked()}{restoreTracked()}}
+{\footnotesize\ttfamily void Context\+Database\+::restore\+Tracked (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage,  }\item[{\mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Restore a sequence of tracked register values from an X\+ML stream. 
+
+Given a root $<$tracked\+\_\+pointset$>$ tag, decode each child in turn populating a list of \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} objects. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root tag \\
+\hline
+{\em manage} & is used to resolve address space references \\
+\hline
+{\em vec} & is the container that will hold the new \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} objects \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_a779b5bcb5326d79e748a3dc9df0137d0}\label{classContextDatabase_a779b5bcb5326d79e748a3dc9df0137d0}} 
+\index{ContextDatabase@{ContextDatabase}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily virtual void Context\+Database\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Restore the state of {\bfseries{this}} database object from a serialized X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root element of the X\+ML describing the database state \\
+\hline
+{\em manage} & is used to resolve address space references \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_acaa68fc13719dbed6a06ec20d04bc6bf}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a8632d7b9354c57464dbe0a362d564bde}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_ab2fb0798b9a7831b68c5c22117d6d2c7}\label{classContextDatabase_ab2fb0798b9a7831b68c5c22117d6d2c7}} 
+\index{ContextDatabase@{ContextDatabase}!saveTracked@{saveTracked}}
+\index{saveTracked@{saveTracked}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{saveTracked()}{saveTracked()}}
+{\footnotesize\ttfamily void Context\+Database\+::save\+Tracked (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}} \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Save all tracked register values for a specific address to an X\+ML stream. 
+
+Encode all the tracked register values associated with a specific target address as a $<$tracked\+\_\+pointset$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em addr} & is the specific address we have tracked values for \\
+\hline
+{\em vec} & is the list of tracked values \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_aaf116d099044b04dbcb6d83a079b1836}\label{classContextDatabase_aaf116d099044b04dbcb6d83a079b1836}} 
+\index{ContextDatabase@{ContextDatabase}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily virtual void Context\+Database\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Serialize the entire database to an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classContextInternal_a98a632ce5decb052fdf7057d6b6433ed}{Context\+Internal}}, and \mbox{\hyperlink{classContextGhidra_a8d1d4fb7225ec04dec7b5e3c950e79bb}{Context\+Ghidra}}.
+
+\mbox{\Hypertarget{classContextDatabase_a58728fefe21b68e5599cddfdb5b59091}\label{classContextDatabase_a58728fefe21b68e5599cddfdb5b59091}} 
+\index{ContextDatabase@{ContextDatabase}!setContextChangePoint@{setContextChangePoint}}
+\index{setContextChangePoint@{setContextChangePoint}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{setContextChangePoint()}{setContextChangePoint()}}
+{\footnotesize\ttfamily void Context\+Database\+::set\+Context\+Change\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{num,  }\item[{uintm}]{mask,  }\item[{uintm}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a specific context value starting at the given address. 
+
+The new value is {\itshape painted} across an address range starting, starting with the given address up to the point where another change for the variable was specified. No other context variable is changed, inside (or outside) the range. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given starting address \\
+\hline
+{\em num} & is the index of the word (within the context blob) of the context variable \\
+\hline
+{\em mask} & is the mask delimiting the context variable (within its word) \\
+\hline
+{\em value} & is the (already shifted) value being set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_adce04fedb87fa51a7511963bdffdd591}\label{classContextDatabase_adce04fedb87fa51a7511963bdffdd591}} 
+\index{ContextDatabase@{ContextDatabase}!setContextRegion@{setContextRegion}}
+\index{setContextRegion@{setContextRegion}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{setContextRegion()}{setContextRegion()}}
+{\footnotesize\ttfamily void Context\+Database\+::set\+Context\+Region (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr1,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr2,  }\item[{int4}]{num,  }\item[{uintm}]{mask,  }\item[{uintm}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a context variable value over a given range of addresses. 
+
+The new value is {\itshape painted} over an explicit range of addresses. No other context variable is changed inside (or outside) the range. 
+\begin{DoxyParams}{Parameters}
+{\em addr1} & is the starting address of the given range \\
+\hline
+{\em addr2} & is the ending address of the given range \\
+\hline
+{\em num} & is the index of the word (within the context blob) of the context variable \\
+\hline
+{\em mask} & is the mask delimiting the context variable (within its word) \\
+\hline
+{\em value} & is the (already shifted) value being set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_acda111acb02b6fdc598a7e872f002458}\label{classContextDatabase_acda111acb02b6fdc598a7e872f002458}} 
+\index{ContextDatabase@{ContextDatabase}!setVariable@{setVariable}}
+\index{setVariable@{setVariable}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{setVariable()}{setVariable()}}
+{\footnotesize\ttfamily void Context\+Database\+::set\+Variable (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uintm}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a context value at the given address. 
+
+The variable will be changed to the new value, starting at the given address up to the next point of change. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the context variable \\
+\hline
+{\em addr} & is the given address \\
+\hline
+{\em value} & is the new value to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_ad076227dbe22aad0f4a379e2f39ef488}\label{classContextDatabase_ad076227dbe22aad0f4a379e2f39ef488}} 
+\index{ContextDatabase@{ContextDatabase}!setVariableDefault@{setVariableDefault}}
+\index{setVariableDefault@{setVariableDefault}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{setVariableDefault()}{setVariableDefault()}}
+{\footnotesize\ttfamily void Context\+Database\+::set\+Variable\+Default (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{uintm}]{val }\end{DoxyParamCaption})}
+
+
+
+Provide a default value for a context variable. 
+
+The default value is returned for addresses that have not been overlaid with other values. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the context variable \\
+\hline
+{\em val} & is the default value to establish \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextDatabase_a567fd374a19fcb9a85ac96e4f2fea27e}\label{classContextDatabase_a567fd374a19fcb9a85ac96e4f2fea27e}} 
+\index{ContextDatabase@{ContextDatabase}!setVariableRegion@{setVariableRegion}}
+\index{setVariableRegion@{setVariableRegion}!ContextDatabase@{ContextDatabase}}
+\doxysubsubsection{\texorpdfstring{setVariableRegion()}{setVariableRegion()}}
+{\footnotesize\ttfamily void Context\+Database\+::set\+Variable\+Region (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{begad,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{endad,  }\item[{uintm}]{value }\end{DoxyParamCaption})}
+
+
+
+Set a context variable by name over a given range of addresses. 
+
+The new value is {\itshape painted} over an explicit range of addresses. No other context variable is changed inside (or outside) the range. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the context variable to set \\
+\hline
+{\em begad} & is the starting address of the given range \\
+\hline
+{\em endad} & is the ending address of the given range \\
+\hline
+{\em value} & is the new value to set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globalcontext_8hh}{globalcontext.\+hh}}\item 
+globalcontext.\+cc\end{DoxyCompactItemize}

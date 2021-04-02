@@ -1,0 +1,788 @@
+\hypertarget{classTypeFactory}{}\doxysection{Type\+Factory Class Reference}
+\label{classTypeFactory}\index{TypeFactory@{TypeFactory}}
+
+
+Container class for all \mbox{\hyperlink{classDatatype}{Datatype}} objects in an \mbox{\hyperlink{classArchitecture}{Architecture}}.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classTypeFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTypeFactory_a68a14752ee51f674664cce90522fe559}{Type\+Factory}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Construct a factory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_afae3189d62867e5358bcbb98e7723b75}{setup\+Sizes}} (void)
+\begin{DoxyCompactList}\small\item\em Derive some size information from \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_a8497930bbd88dd89d91536de06a79f3f}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear out all types. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_afa4b55a83c2f6dbb6f4f13b5ca930ae4}{clear\+Noncore}} (void)
+\begin{DoxyCompactList}\small\item\em Clear out non-\/core types. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeFactory_a2d006876061f78e680f8697a335399d5}\label{classTypeFactory_a2d006876061f78e680f8697a335399d5}} 
+virtual \mbox{\hyperlink{classTypeFactory_a2d006876061f78e680f8697a335399d5}{$\sim$\+Type\+Factory}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_a5e139f5b338e423fd2b1beb7d941d30f}{find\+By\+Name}} (const string \&n)
+\begin{DoxyCompactList}\small\item\em Return type of given name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_a6a2c74462f5a832e6233421bb6cb1beb}{set\+Name}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, const string \&n)
+\begin{DoxyCompactList}\small\item\em Set the given types name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTypeFactory_afc1fc5e17c8e0636ea976cc0e28113fd}{set\+Fields}} (vector$<$ \mbox{\hyperlink{structTypeField}{Type\+Field}} $>$ \&fd, \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} $\ast$ot, int4 fixedsize, uint4 flags)
+\begin{DoxyCompactList}\small\item\em Set fields on a \mbox{\hyperlink{classTypeStruct}{Type\+Struct}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTypeFactory_a17cf58ac6b927a91b4f794a3347b2822}{set\+Enum\+Values}} (const vector$<$ string $>$ \&namelist, const vector$<$ uintb $>$ \&vallist, const vector$<$ bool $>$ \&assignlist, \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$te)
+\begin{DoxyCompactList}\small\item\em Set named values for an enumeration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_aea5f4036abb11e63ca5f79a9eacfc93c}{restore\+Xml\+Type}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore \mbox{\hyperlink{classDatatype}{Datatype}} from X\+ML. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_ab25856a74501dae4b91e1b5313773bff}{restore\+Xml\+Type\+With\+Code\+Flags}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, bool is\+Constructor, bool is\+Destructor)
+\begin{DoxyCompactList}\small\item\em Restore data-\/type from X\+ML with extra \char`\"{}code\char`\"{} flags. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypeVoid}{Type\+Void}} $\ast$ \mbox{\hyperlink{classTypeFactory_ab7277908ef32101f172633ec00fbecb1}{get\+Type\+Void}} (void)
+\begin{DoxyCompactList}\small\item\em Get the \char`\"{}void\char`\"{} data-\/type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_adca2937f24e37c5ac19ba442cd1df0d8}{get\+Base\+No\+Char}} (int4 s, \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} m)
+\begin{DoxyCompactList}\small\item\em Get atomic type excluding \char`\"{}char\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_a5fe1ae26c0b76b18d59d5cd27a9b8ff1}{get\+Base}} (int4 s, \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} m)
+\begin{DoxyCompactList}\small\item\em Get atomic type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_a2848b5923834b755de0749d9f96880e1}{get\+Base}} (int4 s, \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} m, const string \&n)
+\begin{DoxyCompactList}\small\item\em Get named atomic type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypeCode}{Type\+Code}} $\ast$ \mbox{\hyperlink{classTypeFactory_a47c3d70d9598d2b4ce3770593f6ce97e}{get\+Type\+Code}} (void)
+\begin{DoxyCompactList}\small\item\em Get an \char`\"{}anonymous\char`\"{} function data-\/type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ \mbox{\hyperlink{classTypeFactory_aff97843c231aea653d16621caa5f1ee6}{get\+Type\+Pointer\+Strip\+Array}} (int4 s, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$pt, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Construct a pointer data-\/type, stripping an A\+R\+R\+AY level. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ \mbox{\hyperlink{classTypeFactory_a2ff26aa7e6197ffb865907313f752d43}{get\+Type\+Pointer}} (int4 s, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$pt, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Construct an absolute pointer data-\/type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ \mbox{\hyperlink{classTypeFactory_a77988d5cf50fc10fe92dec8e265a720f}{get\+Type\+Pointer\+No\+Depth}} (int4 s, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$pt, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Construct a depth limited pointer data-\/type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypeArray}{Type\+Array}} $\ast$ \mbox{\hyperlink{classTypeFactory_ad1efe412493c66b6072ae0def3b53004}{get\+Type\+Array}} (int4 as, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ao)
+\begin{DoxyCompactList}\small\item\em Construct an array data-\/type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypeStruct}{Type\+Struct}} $\ast$ \mbox{\hyperlink{classTypeFactory_aaa4a75179b840571eeb97e24642c55ee}{get\+Type\+Struct}} (const string \&n)
+\begin{DoxyCompactList}\small\item\em Create an (empty) structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$ \mbox{\hyperlink{classTypeFactory_a3bb1aba15e198a7ba2b67741c571de3a}{get\+Type\+Enum}} (const string \&n)
+\begin{DoxyCompactList}\small\item\em Create an (empty) enumeration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypeSpacebase}{Type\+Spacebase}} $\ast$ \mbox{\hyperlink{classTypeFactory_a85de9d19ce1dc44476a414f5ce69b97e}{get\+Type\+Spacebase}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$id, const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}spacebase\char`\"{} type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTypeCode}{Type\+Code}} $\ast$ \mbox{\hyperlink{classTypeFactory_a99362bf53b0ead2d57a2221bc2fd03cc}{get\+Type\+Code}} (\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$model, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype, const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&intypes, bool dotdotdot)
+\begin{DoxyCompactList}\small\item\em Create a \char`\"{}function\char`\"{} datatype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_ab4edd4fa31629380ec4124c840022f5a}{destroy\+Type}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Remove a data-\/type from {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_a979852b4d0b186f833d16d4638fe6f08}{down\+Chain}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ptrtype, uintb \&off)
+\begin{DoxyCompactList}\small\item\em Find a sub-\/type matching a pointer and offset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_aab5c58286d60717b8305f4f26a39c5ac}{concretize}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Convert given data-\/type to concrete form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_ab143d57ae08682ff4fbc28a6ace5a54e}{dependent\+Order}} (vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&deporder) const
+\begin{DoxyCompactList}\small\item\em Place all data-\/types in dependency order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_adf9b9838cfe8166a236de6562f6dfcc3}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} container to stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_a1caebbe3620eee3ba78427608b1126dd}{save\+Xml\+Core\+Types}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save core types to stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_af9a16d80bfd84732a8dca11ed4a23fab}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} container from a stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_a24c7308dab804e4f89fd567500b97d63}{restore\+Xml\+Core\+Types}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Initialize basic type names. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_a6e13c732148b6c5f78797d60e1a115f5}{parse\+Data\+Organization}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Parse the $<$data\+\_\+organization$>$ tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_a8d10b37cae4c213ca3a613f454ada676}{parse\+Enum\+Config}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Parse the $<$enum$>$ tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_a7f142a54450d41bc12ca18fe06c6e1e0}{set\+Core\+Type}} (const string \&name, int4 size, \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} meta, bool chartp)
+\begin{DoxyCompactList}\small\item\em Create a core data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeFactory_a16ccfeecd29c1d5d40ada6b1d4032212}{cache\+Core\+Types}} (void)
+\begin{DoxyCompactList}\small\item\em Cache common types. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_ab86f43d69c0f879d315ce2aacc1f7326}{find\+By\+Id\+Local}} (const string \&nm, uint8 id) const
+\begin{DoxyCompactList}\small\item\em Search locally by name and id. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactory_a79cd8d76884043080a3430f3aff8b010}{find\+By\+Id}} (const string \&n, uint8 id)
+\begin{DoxyCompactList}\small\item\em Search by name and id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeFactory_a0652ec9d4b9d9d0943d1fbffe9b9c740}\label{classTypeFactory_a0652ec9d4b9d9d0943d1fbffe9b9c740}} 
+\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classTypeFactory_a0652ec9d4b9d9d0943d1fbffe9b9c740}{glb}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classArchitecture}{Architecture}} object that owns this \mbox{\hyperlink{classTypeFactory}{Type\+Factory}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container class for all \mbox{\hyperlink{classDatatype}{Datatype}} objects in an \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTypeFactory_a68a14752ee51f674664cce90522fe559}\label{classTypeFactory_a68a14752ee51f674664cce90522fe559}} 
+\index{TypeFactory@{TypeFactory}!TypeFactory@{TypeFactory}}
+\index{TypeFactory@{TypeFactory}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{TypeFactory()}{TypeFactory()}}
+{\footnotesize\ttfamily Type\+Factory\+::\+Type\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Construct a factory. 
+
+Initialize an empty container 
+\begin{DoxyParams}{Parameters}
+{\em g} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeFactory_a16ccfeecd29c1d5d40ada6b1d4032212}\label{classTypeFactory_a16ccfeecd29c1d5d40ada6b1d4032212}} 
+\index{TypeFactory@{TypeFactory}!cacheCoreTypes@{cacheCoreTypes}}
+\index{cacheCoreTypes@{cacheCoreTypes}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{cacheCoreTypes()}{cacheCoreTypes()}}
+{\footnotesize\ttfamily void Type\+Factory\+::cache\+Core\+Types (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Cache common types. 
+
+Run through the list of \char`\"{}core\char`\"{} data-\/types and cache the most commonly accessed ones for quick access (avoiding the tree lookup). The \char`\"{}core\char`\"{} data-\/types must have been previously initialized. \mbox{\Hypertarget{classTypeFactory_a8497930bbd88dd89d91536de06a79f3f}\label{classTypeFactory_a8497930bbd88dd89d91536de06a79f3f}} 
+\index{TypeFactory@{TypeFactory}!clear@{clear}}
+\index{clear@{clear}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Type\+Factory\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear out all types. 
+
+Remove all \mbox{\hyperlink{classDatatype}{Datatype}} objects owned by this \mbox{\hyperlink{classTypeFactory}{Type\+Factory}}. \mbox{\Hypertarget{classTypeFactory_afa4b55a83c2f6dbb6f4f13b5ca930ae4}\label{classTypeFactory_afa4b55a83c2f6dbb6f4f13b5ca930ae4}} 
+\index{TypeFactory@{TypeFactory}!clearNoncore@{clearNoncore}}
+\index{clearNoncore@{clearNoncore}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{clearNoncore()}{clearNoncore()}}
+{\footnotesize\ttfamily void Type\+Factory\+::clear\+Noncore (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear out non-\/core types. 
+
+Delete anything that isn\textquotesingle{}t a core type. \mbox{\Hypertarget{classTypeFactory_aab5c58286d60717b8305f4f26a39c5ac}\label{classTypeFactory_aab5c58286d60717b8305f4f26a39c5ac}} 
+\index{TypeFactory@{TypeFactory}!concretize@{concretize}}
+\index{concretize@{concretize}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{concretize()}{concretize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::concretize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})}
+
+
+
+Convert given data-\/type to concrete form. 
+
+The data-\/type propagation system can push around data-\/types that are {\itshape partial} or are otherwise unrepresentable in the source language. This method substitutes those data-\/types with a concrete data-\/type that is representable, or returns the same data-\/type if is already concrete. Its important that the returned data-\/type have the same size as the original data-\/type regardless. 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the given data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the concrete data-\/type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_ab143d57ae08682ff4fbc28a6ace5a54e}\label{classTypeFactory_ab143d57ae08682ff4fbc28a6ace5a54e}} 
+\index{TypeFactory@{TypeFactory}!dependentOrder@{dependentOrder}}
+\index{dependentOrder@{dependentOrder}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{dependentOrder()}{dependentOrder()}}
+{\footnotesize\ttfamily void Type\+Factory\+::dependent\+Order (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&}]{deporder }\end{DoxyParamCaption}) const}
+
+
+
+Place all data-\/types in dependency order. 
+
+Place data-\/types in an order such that if the definition of data-\/type \char`\"{}a\char`\"{} depends on the definition of data-\/type \char`\"{}b\char`\"{}, then \char`\"{}b\char`\"{} occurs earlier in the order 
+\begin{DoxyParams}{Parameters}
+{\em deporder} & will hold the generated dependency list of data-\/types \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_ab4edd4fa31629380ec4124c840022f5a}\label{classTypeFactory_ab4edd4fa31629380ec4124c840022f5a}} 
+\index{TypeFactory@{TypeFactory}!destroyType@{destroyType}}
+\index{destroyType@{destroyType}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{destroyType()}{destroyType()}}
+{\footnotesize\ttfamily void Type\+Factory\+::destroy\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})}
+
+
+
+Remove a data-\/type from {\bfseries{this}}. 
+
+The indicated \mbox{\hyperlink{classDatatype}{Datatype}} object is removed from this container. Indirect references (via \mbox{\hyperlink{classTypeArray}{Type\+Array}} \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} etc.) are not affected 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the data-\/type to destroy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_a979852b4d0b186f833d16d4638fe6f08}\label{classTypeFactory_a979852b4d0b186f833d16d4638fe6f08}} 
+\index{TypeFactory@{TypeFactory}!downChain@{downChain}}
+\index{downChain@{downChain}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{downChain()}{downChain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::down\+Chain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ptrtype,  }\item[{uintb \&}]{off }\end{DoxyParamCaption})}
+
+
+
+Find a sub-\/type matching a pointer and offset. 
+
+Add a constant offset to a pointer with known data-\/type. If there is a valid component at that offset, return a pointer to the data-\/type of the component or N\+U\+LL otherwise. This routine only goes down one level at most. Pass back the renormalized offset relative to the new data-\/type 
+\begin{DoxyParams}{Parameters}
+{\em ptrtype} & is the pointer data-\/type being added to \\
+\hline
+{\em off} & is a reference to the offset to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer datatype for the component or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a79cd8d76884043080a3430f3aff8b010}\label{classTypeFactory_a79cd8d76884043080a3430f3aff8b010}} 
+\index{TypeFactory@{TypeFactory}!findById@{findById}}
+\index{findById@{findById}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{findById()}{findById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::find\+By\+Id (\begin{DoxyParamCaption}\item[{const string \&}]{n,  }\item[{uint8}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Search by name and id. 
+
+Search for a \mbox{\hyperlink{classDatatype}{Datatype}} by {\bfseries{name}} and/or {\bfseries{id}}. Derived classes may search outside this container. 
+\begin{DoxyParams}{Parameters}
+{\em n} & is the name of the data-\/type \\
+\hline
+{\em id} & is the type id of the data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeFactoryGhidra_a494fd9c2fb18db1b1f9ee4d7078d590c}{Type\+Factory\+Ghidra}}.
+
+\mbox{\Hypertarget{classTypeFactory_ab86f43d69c0f879d315ce2aacc1f7326}\label{classTypeFactory_ab86f43d69c0f879d315ce2aacc1f7326}} 
+\index{TypeFactory@{TypeFactory}!findByIdLocal@{findByIdLocal}}
+\index{findByIdLocal@{findByIdLocal}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{findByIdLocal()}{findByIdLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::find\+By\+Id\+Local (\begin{DoxyParamCaption}\item[{const string \&}]{n,  }\item[{uint8}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Search locally by name and id. 
+
+Looking just within this container, find a \mbox{\hyperlink{classDatatype}{Datatype}} by {\bfseries{name}} and/or {\bfseries{id}}. 
+\begin{DoxyParams}{Parameters}
+{\em n} & is the name of the data-\/type \\
+\hline
+{\em id} & is the type id of the data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a5e139f5b338e423fd2b1beb7d941d30f}\label{classTypeFactory_a5e139f5b338e423fd2b1beb7d941d30f}} 
+\index{TypeFactory@{TypeFactory}!findByName@{findByName}}
+\index{findByName@{findByName}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{findByName()}{findByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::find\+By\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Return type of given name. 
+
+Find type with given name. If there are more than, return first. 
+\begin{DoxyParams}{Parameters}
+{\em n} & is the name to search for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{classDatatype}{Datatype}} object with the name or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a5fe1ae26c0b76b18d59d5cd27a9b8ff1}\label{classTypeFactory_a5fe1ae26c0b76b18d59d5cd27a9b8ff1}} 
+\index{TypeFactory@{TypeFactory}!getBase@{getBase}}
+\index{getBase@{getBase}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getBase()}{getBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::get\+Base (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}}}]{m }\end{DoxyParamCaption})}
+
+
+
+Get atomic type. 
+
+Get one of the \char`\"{}base\char`\"{} datatypes. This routine is called a lot, so we go through a cache first. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the desired size \\
+\hline
+{\em m} & is the desired meta-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a2848b5923834b755de0749d9f96880e1}\label{classTypeFactory_a2848b5923834b755de0749d9f96880e1}} 
+\index{TypeFactory@{TypeFactory}!getBase@{getBase}}
+\index{getBase@{getBase}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getBase()}{getBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::get\+Base (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}}}]{m,  }\item[{const string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Get named atomic type. 
+
+Get or create a \char`\"{}base\char`\"{} type with a specified name and properties 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the desired size \\
+\hline
+{\em m} & is the desired meta-\/type \\
+\hline
+{\em n} & is the desired name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classDatabase}{Database}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_adca2937f24e37c5ac19ba442cd1df0d8}\label{classTypeFactory_adca2937f24e37c5ac19ba442cd1df0d8}} 
+\index{TypeFactory@{TypeFactory}!getBaseNoChar@{getBaseNoChar}}
+\index{getBaseNoChar@{getBaseNoChar}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getBaseNoChar()}{getBaseNoChar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::get\+Base\+No\+Char (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}}}]{m }\end{DoxyParamCaption})}
+
+
+
+Get atomic type excluding \char`\"{}char\char`\"{}. 
+
+Get a \char`\"{}base\char`\"{} data-\/type, given its size and {\bfseries{metatype}}. If a 1-\/byte integer is requested, do N\+OT return a \mbox{\hyperlink{classTypeChar}{Type\+Char}} 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the data-\/type \\
+\hline
+{\em m} & is the meta-\/type of the data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_ad1efe412493c66b6072ae0def3b53004}\label{classTypeFactory_ad1efe412493c66b6072ae0def3b53004}} 
+\index{TypeFactory@{TypeFactory}!getTypeArray@{getTypeArray}}
+\index{getTypeArray@{getTypeArray}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypeArray()}{getTypeArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypeArray}{Type\+Array}} $\ast$ Type\+Factory\+::get\+Type\+Array (\begin{DoxyParamCaption}\item[{int4}]{as,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ao }\end{DoxyParamCaption})}
+
+
+
+Construct an array data-\/type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em as} & is the number of elements in the desired array \\
+\hline
+{\em ao} & is the data-\/type of the array element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypeArray}{Type\+Array}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a99362bf53b0ead2d57a2221bc2fd03cc}\label{classTypeFactory_a99362bf53b0ead2d57a2221bc2fd03cc}} 
+\index{TypeFactory@{TypeFactory}!getTypeCode@{getTypeCode}}
+\index{getTypeCode@{getTypeCode}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypeCode()}{getTypeCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypeCode}{Type\+Code}} $\ast$ Type\+Factory\+::get\+Type\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{model,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype,  }\item[{const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&}]{intypes,  }\item[{bool}]{dotdotdot }\end{DoxyParamCaption})}
+
+
+
+Create a \char`\"{}function\char`\"{} datatype. 
+
+Creates a \mbox{\hyperlink{classTypeCode}{Type\+Code}} object and associates a specific function prototype with it. 
+\begin{DoxyParams}{Parameters}
+{\em model} & is the prototype model associated with the function \\
+\hline
+{\em outtype} & is the return type of the function \\
+\hline
+{\em intypes} & is the array of input parameters of the function \\
+\hline
+{\em dotdotdot} & is true if the function takes variable arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypeCode}{Type\+Code}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a47c3d70d9598d2b4ce3770593f6ce97e}\label{classTypeFactory_a47c3d70d9598d2b4ce3770593f6ce97e}} 
+\index{TypeFactory@{TypeFactory}!getTypeCode@{getTypeCode}}
+\index{getTypeCode@{getTypeCode}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypeCode()}{getTypeCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypeCode}{Type\+Code}} $\ast$ Type\+Factory\+::get\+Type\+Code (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get an \char`\"{}anonymous\char`\"{} function data-\/type. 
+
+Retrieve or create the core \char`\"{}code\char`\"{} \mbox{\hyperlink{classDatatype}{Datatype}} object This has no prototype attached to it and is appropriate for anonymous function pointers. \begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypeCode}{Type\+Code}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a3bb1aba15e198a7ba2b67741c571de3a}\label{classTypeFactory_a3bb1aba15e198a7ba2b67741c571de3a}} 
+\index{TypeFactory@{TypeFactory}!getTypeEnum@{getTypeEnum}}
+\index{getTypeEnum@{getTypeEnum}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypeEnum()}{getTypeEnum()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$ Type\+Factory\+::get\+Type\+Enum (\begin{DoxyParamCaption}\item[{const string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Create an (empty) enumeration. 
+
+The created enumeration will have no named values and a default configuration Named values must be added later. 
+\begin{DoxyParams}{Parameters}
+{\em n} & is the name of the enumeration \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a2ff26aa7e6197ffb865907313f752d43}\label{classTypeFactory_a2ff26aa7e6197ffb865907313f752d43}} 
+\index{TypeFactory@{TypeFactory}!getTypePointer@{getTypePointer}}
+\index{getTypePointer@{getTypePointer}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypePointer()}{getTypePointer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ Type\+Factory\+::get\+Type\+Pointer (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{pt,  }\item[{uint4}]{ws }\end{DoxyParamCaption})}
+
+
+
+Construct an absolute pointer data-\/type. 
+
+Allows \char`\"{}pointer to array\char`\"{} to be constructed 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the pointer \\
+\hline
+{\em pt} & is the pointed-\/to data-\/type \\
+\hline
+{\em ws} & is the wordsize associated with the pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a77988d5cf50fc10fe92dec8e265a720f}\label{classTypeFactory_a77988d5cf50fc10fe92dec8e265a720f}} 
+\index{TypeFactory@{TypeFactory}!getTypePointerNoDepth@{getTypePointerNoDepth}}
+\index{getTypePointerNoDepth@{getTypePointerNoDepth}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypePointerNoDepth()}{getTypePointerNoDepth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ Type\+Factory\+::get\+Type\+Pointer\+No\+Depth (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{pt,  }\item[{uint4}]{ws }\end{DoxyParamCaption})}
+
+
+
+Construct a depth limited pointer data-\/type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the pointer \\
+\hline
+{\em pt} & is the pointed-\/to data-\/type \\
+\hline
+{\em ws} & is the wordsize associated with the pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_aff97843c231aea653d16621caa5f1ee6}\label{classTypeFactory_aff97843c231aea653d16621caa5f1ee6}} 
+\index{TypeFactory@{TypeFactory}!getTypePointerStripArray@{getTypePointerStripArray}}
+\index{getTypePointerStripArray@{getTypePointerStripArray}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypePointerStripArray()}{getTypePointerStripArray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} $\ast$ Type\+Factory\+::get\+Type\+Pointer\+Strip\+Array (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{pt,  }\item[{uint4}]{ws }\end{DoxyParamCaption})}
+
+
+
+Construct a pointer data-\/type, stripping an A\+R\+R\+AY level. 
+
+This creates a pointer to a given data-\/type. If the given data-\/type is an array, the T\+Y\+P\+E\+\_\+\+A\+R\+R\+AY property is stripped off, and a pointer to the array element data-\/type is returned. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the pointer \\
+\hline
+{\em pt} & is the pointed-\/to data-\/type \\
+\hline
+{\em ws} & is the wordsize associated with the pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypePointer}{Type\+Pointer}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a85de9d19ce1dc44476a414f5ce69b97e}\label{classTypeFactory_a85de9d19ce1dc44476a414f5ce69b97e}} 
+\index{TypeFactory@{TypeFactory}!getTypeSpacebase@{getTypeSpacebase}}
+\index{getTypeSpacebase@{getTypeSpacebase}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypeSpacebase()}{getTypeSpacebase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypeSpacebase}{Type\+Spacebase}} $\ast$ Type\+Factory\+::get\+Type\+Spacebase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{id,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Create a \char`\"{}spacebase\char`\"{} type. 
+
+Creates the special \mbox{\hyperlink{classTypeSpacebase}{Type\+Spacebase}} with an associated address space and scope 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the address space \\
+\hline
+{\em addr} & specifies the function scope, or is\+Invalid() for global scope \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypeSpacebase}{Type\+Spacebase}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_aaa4a75179b840571eeb97e24642c55ee}\label{classTypeFactory_aaa4a75179b840571eeb97e24642c55ee}} 
+\index{TypeFactory@{TypeFactory}!getTypeStruct@{getTypeStruct}}
+\index{getTypeStruct@{getTypeStruct}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypeStruct()}{getTypeStruct()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} $\ast$ Type\+Factory\+::get\+Type\+Struct (\begin{DoxyParamCaption}\item[{const string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Create an (empty) structure. 
+
+The created structure will have no fields. They must be added later. 
+\begin{DoxyParams}{Parameters}
+{\em n} & is the name of the structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_ab7277908ef32101f172633ec00fbecb1}\label{classTypeFactory_ab7277908ef32101f172633ec00fbecb1}} 
+\index{TypeFactory@{TypeFactory}!getTypeVoid@{getTypeVoid}}
+\index{getTypeVoid@{getTypeVoid}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{getTypeVoid()}{getTypeVoid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTypeVoid}{Type\+Void}} $\ast$ Type\+Factory\+::get\+Type\+Void (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the \char`\"{}void\char`\"{} data-\/type. 
+
+There should be exactly one instance of the \char`\"{}void\char`\"{} \mbox{\hyperlink{classDatatype}{Datatype}} object, which this fetches \begin{DoxyReturn}{Returns}
+the \char`\"{}void\char`\"{} data-\/type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a6e13c732148b6c5f78797d60e1a115f5}\label{classTypeFactory_a6e13c732148b6c5f78797d60e1a115f5}} 
+\index{TypeFactory@{TypeFactory}!parseDataOrganization@{parseDataOrganization}}
+\index{parseDataOrganization@{parseDataOrganization}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{parseDataOrganization()}{parseDataOrganization()}}
+{\footnotesize\ttfamily void Type\+Factory\+::parse\+Data\+Organization (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Parse the $<$data\+\_\+organization$>$ tag. 
+
+Recover various sizes relevant to {\bfseries{this}} container, such as the default size of \char`\"{}int\char`\"{} and structure alignment, by parsing the $<$data\+\_\+organization$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_a8d10b37cae4c213ca3a613f454ada676}\label{classTypeFactory_a8d10b37cae4c213ca3a613f454ada676}} 
+\index{TypeFactory@{TypeFactory}!parseEnumConfig@{parseEnumConfig}}
+\index{parseEnumConfig@{parseEnumConfig}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{parseEnumConfig()}{parseEnumConfig()}}
+{\footnotesize\ttfamily void Type\+Factory\+::parse\+Enum\+Config (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Parse the $<$enum$>$ tag. 
+
+Recover default enumeration properties (size and meta-\/type) from an $<$enum$>$ X\+ML tag. Should probably consider this deprecated. These values are only used by the internal C parser. param el is the X\+ML element \mbox{\Hypertarget{classTypeFactory_af9a16d80bfd84732a8dca11ed4a23fab}\label{classTypeFactory_af9a16d80bfd84732a8dca11ed4a23fab}} 
+\index{TypeFactory@{TypeFactory}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Type\+Factory\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} container from a stream. 
+
+Read data-\/types into this container from an X\+ML stream 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_a24c7308dab804e4f89fd567500b97d63}\label{classTypeFactory_a24c7308dab804e4f89fd567500b97d63}} 
+\index{TypeFactory@{TypeFactory}!restoreXmlCoreTypes@{restoreXmlCoreTypes}}
+\index{restoreXmlCoreTypes@{restoreXmlCoreTypes}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{restoreXmlCoreTypes()}{restoreXmlCoreTypes()}}
+{\footnotesize\ttfamily void Type\+Factory\+::restore\+Xml\+Core\+Types (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Initialize basic type names. 
+
+Restore data-\/types from an X\+ML stream into this container This stream is presumed to contain \char`\"{}core\char`\"{} datatypes and the cached matrix will be populated from this set. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_aea5f4036abb11e63ca5f79a9eacfc93c}\label{classTypeFactory_aea5f4036abb11e63ca5f79a9eacfc93c}} 
+\index{TypeFactory@{TypeFactory}!restoreXmlType@{restoreXmlType}}
+\index{restoreXmlType@{restoreXmlType}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{restoreXmlType()}{restoreXmlType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::restore\+Xml\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Restore \mbox{\hyperlink{classDatatype}{Datatype}} from X\+ML. 
+
+Restore a \mbox{\hyperlink{classDatatype}{Datatype}} object from an X\+ML tag description\+: either $<$type$>$, $<$typeref$>$, or $<$void$>$ 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element describing the data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the restored \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_ab25856a74501dae4b91e1b5313773bff}\label{classTypeFactory_ab25856a74501dae4b91e1b5313773bff}} 
+\index{TypeFactory@{TypeFactory}!restoreXmlTypeWithCodeFlags@{restoreXmlTypeWithCodeFlags}}
+\index{restoreXmlTypeWithCodeFlags@{restoreXmlTypeWithCodeFlags}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{restoreXmlTypeWithCodeFlags()}{restoreXmlTypeWithCodeFlags()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::restore\+Xml\+Type\+With\+Code\+Flags (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{bool}]{is\+Constructor,  }\item[{bool}]{is\+Destructor }\end{DoxyParamCaption})}
+
+
+
+Restore data-\/type from X\+ML with extra \char`\"{}code\char`\"{} flags. 
+
+Kludge to get flags into code pointer types, when they can\textquotesingle{}t come through X\+ML 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element describing the \mbox{\hyperlink{classDatatype}{Datatype}} \\
+\hline
+{\em is\+Constructor} & toggles \char`\"{}constructor\char`\"{} property on \char`\"{}function\char`\"{} datatypes \\
+\hline
+{\em is\+Destructor} & toggles \char`\"{}destructor\char`\"{} property on \char`\"{}function\char`\"{} datatypes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the restored \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_adf9b9838cfe8166a236de6562f6dfcc3}\label{classTypeFactory_adf9b9838cfe8166a236de6562f6dfcc3}} 
+\index{TypeFactory@{TypeFactory}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Type\+Factory\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save {\bfseries{this}} container to stream. 
+
+All data-\/types, in dependency order, are written out to an X\+ML stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_a1caebbe3620eee3ba78427608b1126dd}\label{classTypeFactory_a1caebbe3620eee3ba78427608b1126dd}} 
+\index{TypeFactory@{TypeFactory}!saveXmlCoreTypes@{saveXmlCoreTypes}}
+\index{saveXmlCoreTypes@{saveXmlCoreTypes}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{saveXmlCoreTypes()}{saveXmlCoreTypes()}}
+{\footnotesize\ttfamily void Type\+Factory\+::save\+Xml\+Core\+Types (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save core types to stream. 
+
+Any data-\/type within this container marked as \char`\"{}core\char`\"{} will be written to an X\+ML $<$coretypes$>$ stream. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_a7f142a54450d41bc12ca18fe06c6e1e0}\label{classTypeFactory_a7f142a54450d41bc12ca18fe06c6e1e0}} 
+\index{TypeFactory@{TypeFactory}!setCoreType@{setCoreType}}
+\index{setCoreType@{setCoreType}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{setCoreType()}{setCoreType()}}
+{\footnotesize\ttfamily void Type\+Factory\+::set\+Core\+Type (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}}}]{meta,  }\item[{bool}]{chartp }\end{DoxyParamCaption})}
+
+
+
+Create a core data-\/type. 
+
+Manually create a \char`\"{}base\char`\"{} core type. This currently must be called before any pointers or arrays are defined off of the type. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the data-\/type name \\
+\hline
+{\em size} & is the size of the data-\/type \\
+\hline
+{\em meta} & is the meta-\/type of the data-\/type \\
+\hline
+{\em chartp} & is true if a character type should be created \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeFactory_a17cf58ac6b927a91b4f794a3347b2822}\label{classTypeFactory_a17cf58ac6b927a91b4f794a3347b2822}} 
+\index{TypeFactory@{TypeFactory}!setEnumValues@{setEnumValues}}
+\index{setEnumValues@{setEnumValues}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{setEnumValues()}{setEnumValues()}}
+{\footnotesize\ttfamily bool Type\+Factory\+::set\+Enum\+Values (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{namelist,  }\item[{const vector$<$ uintb $>$ \&}]{vallist,  }\item[{const vector$<$ bool $>$ \&}]{assignlist,  }\item[{\mbox{\hyperlink{classTypeEnum}{Type\+Enum}} $\ast$}]{te }\end{DoxyParamCaption})}
+
+
+
+Set named values for an enumeration. 
+
+Set the list of enumeration values and identifiers for a \mbox{\hyperlink{classTypeEnum}{Type\+Enum}} Fill in any values for any names that weren\textquotesingle{}t explicitly assigned and check for duplicates. 
+\begin{DoxyParams}{Parameters}
+{\em namelist} & is the list of names in the enumeration \\
+\hline
+{\em vallist} & is the corresponding list of values assigned to names in namelist \\
+\hline
+{\em assignlist} & is true if the corresponding name in namelist has an assigned value \\
+\hline
+{\em te} & is the enumeration object to modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the modification is successful (no duplicate names) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_afc1fc5e17c8e0636ea976cc0e28113fd}\label{classTypeFactory_afc1fc5e17c8e0636ea976cc0e28113fd}} 
+\index{TypeFactory@{TypeFactory}!setFields@{setFields}}
+\index{setFields@{setFields}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{setFields()}{setFields()}}
+{\footnotesize\ttfamily bool Type\+Factory\+::set\+Fields (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structTypeField}{Type\+Field}} $>$ \&}]{fd,  }\item[{\mbox{\hyperlink{classTypeStruct}{Type\+Struct}} $\ast$}]{ot,  }\item[{int4}]{fixedsize,  }\item[{uint4}]{flags }\end{DoxyParamCaption})}
+
+
+
+Set fields on a \mbox{\hyperlink{classTypeStruct}{Type\+Struct}}. 
+
+Make sure all the offsets are fully established then set fields of the structure If -\/fixedsize-\/ is greater than 0, force the final structure to have that size 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the list of fields to set \\
+\hline
+{\em ot} & is the \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} object to modify \\
+\hline
+{\em fixedsize} & is 0 or the forced size of the structure \\
+\hline
+{\em flags} & are other flags to set on the structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if modification was successful 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_a6a2c74462f5a832e6233421bb6cb1beb}\label{classTypeFactory_a6a2c74462f5a832e6233421bb6cb1beb}} 
+\index{TypeFactory@{TypeFactory}!setName@{setName}}
+\index{setName@{setName}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+::set\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{const string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+Set the given types name. 
+
+This routine renames a \mbox{\hyperlink{classDatatype}{Datatype}} object and fixes up cross-\/referencing 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the data-\/type to rename \\
+\hline
+{\em n} & is the new name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the renamed \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeFactory_afae3189d62867e5358bcbb98e7723b75}\label{classTypeFactory_afae3189d62867e5358bcbb98e7723b75}} 
+\index{TypeFactory@{TypeFactory}!setupSizes@{setupSizes}}
+\index{setupSizes@{setupSizes}!TypeFactory@{TypeFactory}}
+\doxysubsubsection{\texorpdfstring{setupSizes()}{setupSizes()}}
+{\footnotesize\ttfamily void Type\+Factory\+::setup\+Sizes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Derive some size information from \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+Set up default values for size of \char`\"{}int\char`\"{}, structure alignment, and enums. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hh}{type.\+hh}}\item 
+type.\+cc\end{DoxyCompactItemize}

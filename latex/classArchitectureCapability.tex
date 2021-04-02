@@ -1,0 +1,219 @@
+\hypertarget{classArchitectureCapability}{}\doxysection{Architecture\+Capability Class Reference}
+\label{classArchitectureCapability}\index{ArchitectureCapability@{ArchitectureCapability}}
+
+
+Abstract extension point for building \mbox{\hyperlink{classArchitecture}{Architecture}} objects.  
+
+
+
+
+{\ttfamily \#include $<$architecture.\+hh$>$}
+
+
+
+Inheritance diagram for Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArchitectureCapability__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classArchitectureCapability__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classArchitectureCapability_af414aa921939711c0199d02e2ff35e26}{initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Do specialized initialization. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classArchitectureCapability_a42e418206c4bcd9c0bc86d8ddfbf03e0}{build\+Architecture}} (const string \&filename, const string \&target, ostream $\ast$estream)=0
+\begin{DoxyCompactList}\small\item\em Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classArchitectureCapability_aa3d4fed15e42f3e853851babaf379376}{is\+File\+Match}} (const string \&filename) const =0
+\begin{DoxyCompactList}\small\item\em Determine if this extension can handle this file. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classArchitectureCapability_a653243b342d480273e0f04f7194094b8}{is\+Xml\+Match}} (\mbox{\hyperlink{classDocument}{Document}} $\ast$doc) const =0
+\begin{DoxyCompactList}\small\item\em Determine is this extension can handle this X\+ML document. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} $\ast$ \mbox{\hyperlink{classArchitectureCapability_a0150ffd9a1532fc394f75f67662b7cae}{find\+Capability}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Find an extension to process a file. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} $\ast$ \mbox{\hyperlink{classArchitectureCapability_ac85f63c6e2e12e2f37f239cd5399ad42}{find\+Capability}} (\mbox{\hyperlink{classDocument}{Document}} $\ast$doc)
+\begin{DoxyCompactList}\small\item\em Find an extension to process an X\+ML document. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} $\ast$ \mbox{\hyperlink{classArchitectureCapability_a5605c1e13297824d5157b4e07782a8c6}{get\+Capability}} (const string \&\mbox{\hyperlink{classArchitectureCapability_a685df0ea6f90347afa6eb27d0b3fd3cc}{name}})
+\begin{DoxyCompactList}\small\item\em Get a capability by name. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArchitectureCapability_aa2c4dc37eac39cfe01d8ee5ec75d0c61}{sort\+Capabilities}} (void)
+\begin{DoxyCompactList}\small\item\em Sort extensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArchitectureCapability_a685df0ea6f90347afa6eb27d0b3fd3cc}\label{classArchitectureCapability_a685df0ea6f90347afa6eb27d0b3fd3cc}} 
+string \mbox{\hyperlink{classArchitectureCapability_a685df0ea6f90347afa6eb27d0b3fd3cc}{name}}
+\begin{DoxyCompactList}\small\item\em Identifier for this capability. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Abstract extension point for building \mbox{\hyperlink{classArchitecture}{Architecture}} objects. 
+
+Decompilation hinges on initially recognizing the format of code then bootstrapping into discovering the processor etc. This is the base class for the different extensions that perform this process. Each extension implements the \mbox{\hyperlink{classArchitectureCapability_a42e418206c4bcd9c0bc86d8ddfbf03e0}{build\+Architecture()}} method as the formal entry point for the bootstrapping process. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArchitectureCapability_a42e418206c4bcd9c0bc86d8ddfbf03e0}\label{classArchitectureCapability_a42e418206c4bcd9c0bc86d8ddfbf03e0}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!buildArchitecture@{buildArchitecture}}
+\index{buildArchitecture@{buildArchitecture}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{buildArchitecture()}{buildArchitecture()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classArchitecture}{Architecture}}$\ast$ Architecture\+Capability\+::build\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{filename,  }\item[{const string \&}]{target,  }\item[{ostream $\ast$}]{estream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. 
+
+This is implemented by each separate extension. The method is handed a {\itshape filename} and possibly external target information and must build the \mbox{\hyperlink{classArchitecture}{Architecture}} object, initializing all the major subcomponents, using just this info. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the path to the executable file to examine \\
+\hline
+{\em target} & if non-\/empty is a language id string \\
+\hline
+{\em estream} & is an output stream for error messages \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classBfdArchitectureCapability_ac03b938e119bf80fcbc83b22db84ccf1}{Bfd\+Architecture\+Capability}}, \mbox{\hyperlink{classRawBinaryArchitectureCapability_a69e87f1ba9b72c89b74981b168074062}{Raw\+Binary\+Architecture\+Capability}}, and \mbox{\hyperlink{classXmlArchitectureCapability_a3aedd28755471c050f539d7fcb9553f9}{Xml\+Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classArchitectureCapability_a0150ffd9a1532fc394f75f67662b7cae}\label{classArchitectureCapability_a0150ffd9a1532fc394f75f67662b7cae}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!findCapability@{findCapability}}
+\index{findCapability@{findCapability}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{findCapability()}{findCapability()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} $\ast$ Architecture\+Capability\+::find\+Capability (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find an extension to process a file. 
+
+Given a specific file, find an \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} that can handle it. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the path to the file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} that can handle it or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureCapability_ac85f63c6e2e12e2f37f239cd5399ad42}\label{classArchitectureCapability_ac85f63c6e2e12e2f37f239cd5399ad42}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!findCapability@{findCapability}}
+\index{findCapability@{findCapability}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{findCapability()}{findCapability()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} $\ast$ Architecture\+Capability\+::find\+Capability (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocument}{Document}} $\ast$}]{doc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find an extension to process an X\+ML document. 
+
+Given a parsed X\+ML document, find an \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} that can handle it. 
+\begin{DoxyParams}{Parameters}
+{\em doc} & is the parsed X\+ML document \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} that can handle it or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureCapability_a5605c1e13297824d5157b4e07782a8c6}\label{classArchitectureCapability_a5605c1e13297824d5157b4e07782a8c6}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!getCapability@{getCapability}}
+\index{getCapability@{getCapability}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{getCapability()}{getCapability()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} $\ast$ Architecture\+Capability\+::get\+Capability (\begin{DoxyParamCaption}\item[{const string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get a capability by name. 
+
+Return the \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} object with the matching name 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name to match \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} or null if no match is found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureCapability_af414aa921939711c0199d02e2ff35e26}\label{classArchitectureCapability_af414aa921939711c0199d02e2ff35e26}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!initialize@{initialize}}
+\index{initialize@{initialize}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Architecture\+Capability\+::initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Do specialized initialization. 
+
+This builds a list of just the \mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} extensions. 
+
+Implements \mbox{\hyperlink{classCapabilityPoint_a493d24125e7e024a9b2d6c2ad4bfbfab}{Capability\+Point}}.
+
+\mbox{\Hypertarget{classArchitectureCapability_aa3d4fed15e42f3e853851babaf379376}\label{classArchitectureCapability_aa3d4fed15e42f3e853851babaf379376}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!isFileMatch@{isFileMatch}}
+\index{isFileMatch@{isFileMatch}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isFileMatch()}{isFileMatch()}}
+{\footnotesize\ttfamily virtual bool Architecture\+Capability\+::is\+File\+Match (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Determine if this extension can handle this file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to examine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} is {\bfseries{this}} extension is suitable for analyzing the file 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBfdArchitectureCapability_a0191dabc12d97b8c5fc0ba14392077b1}{Bfd\+Architecture\+Capability}}, \mbox{\hyperlink{classRawBinaryArchitectureCapability_aef426ad157b2f6b9130159322e2a2465}{Raw\+Binary\+Architecture\+Capability}}, and \mbox{\hyperlink{classXmlArchitectureCapability_a90009c1feff64b66e29562b68b5f2a5a}{Xml\+Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classArchitectureCapability_a653243b342d480273e0f04f7194094b8}\label{classArchitectureCapability_a653243b342d480273e0f04f7194094b8}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!isXmlMatch@{isXmlMatch}}
+\index{isXmlMatch@{isXmlMatch}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isXmlMatch()}{isXmlMatch()}}
+{\footnotesize\ttfamily virtual bool Architecture\+Capability\+::is\+Xml\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocument}{Document}} $\ast$}]{doc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Determine is this extension can handle this X\+ML document. 
+
+If a file to analyze is X\+ML based, this method examines the X\+ML parse to determine if {\bfseries{this}} extension can understand the document 
+\begin{DoxyParams}{Parameters}
+{\em doc} & is the parsed X\+ML document \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} extension understands the X\+ML 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBfdArchitectureCapability_aa5231740c6fb12308f8e9a31ea291cf4}{Bfd\+Architecture\+Capability}}, \mbox{\hyperlink{classRawBinaryArchitectureCapability_ad26a1a35fec33c5952a3f499dc0e43db}{Raw\+Binary\+Architecture\+Capability}}, and \mbox{\hyperlink{classXmlArchitectureCapability_ab834c8722ce6813e4b5cf34a207b0f52}{Xml\+Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classArchitectureCapability_aa2c4dc37eac39cfe01d8ee5ec75d0c61}\label{classArchitectureCapability_aa2c4dc37eac39cfe01d8ee5ec75d0c61}} 
+\index{ArchitectureCapability@{ArchitectureCapability}!sortCapabilities@{sortCapabilities}}
+\index{sortCapabilities@{sortCapabilities}!ArchitectureCapability@{ArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{sortCapabilities()}{sortCapabilities()}}
+{\footnotesize\ttfamily void Architecture\+Capability\+::sort\+Capabilities (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sort extensions. 
+
+Modify order that extensions are searched, to effect which gets a chance to run first. Right now all we need to do is make sure the raw architecture comes last 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{architecture_8hh}{architecture.\+hh}}\item 
+architecture.\+cc\end{DoxyCompactItemize}

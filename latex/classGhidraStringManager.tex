@@ -1,0 +1,80 @@
+\hypertarget{classGhidraStringManager}{}\doxysection{Ghidra\+String\+Manager Class Reference}
+\label{classGhidraStringManager}\index{GhidraStringManager@{GhidraStringManager}}
+
+
+Implementation of the \mbox{\hyperlink{classStringManager}{String\+Manager}} that queries through the ghidra client.  
+
+
+
+
+{\ttfamily \#include $<$string\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Ghidra\+String\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classGhidraStringManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ghidra\+String\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classGhidraStringManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGhidraStringManager_a9c88e92b845921af5c88a0f19a0ac9c2}\label{classGhidraStringManager_a9c88e92b845921af5c88a0f19a0ac9c2}} 
+\mbox{\hyperlink{classGhidraStringManager_a9c88e92b845921af5c88a0f19a0ac9c2}{Ghidra\+String\+Manager}} (\mbox{\hyperlink{classArchitectureGhidra}{Architecture\+Ghidra}} $\ast$g, int4 max)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual const vector$<$ uint1 $>$ \& \mbox{\hyperlink{classGhidraStringManager_a2504b13f591ab6ebbd2eb313c4b9edc7}{get\+String\+Data}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$char\+Type, bool \&is\+Trunc)
+\begin{DoxyCompactList}\small\item\em Retrieve string data at the given address as a U\+T\+F8 byte array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \mbox{\hyperlink{classStringManager}{String\+Manager}} that queries through the ghidra client. 
+
+This acts as a front end to Ghidra\textquotesingle{}s string formats and encodings. The client translates any type of string into a U\+T\+F8 representation, and this class stores it for final presentation. Escaping the U\+T\+F8 string is left up to the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGhidraStringManager_a2504b13f591ab6ebbd2eb313c4b9edc7}\label{classGhidraStringManager_a2504b13f591ab6ebbd2eb313c4b9edc7}} 
+\index{GhidraStringManager@{GhidraStringManager}!getStringData@{getStringData}}
+\index{getStringData@{getStringData}!GhidraStringManager@{GhidraStringManager}}
+\doxysubsubsection{\texorpdfstring{getStringData()}{getStringData()}}
+{\footnotesize\ttfamily const vector$<$ uint1 $>$ \& Ghidra\+String\+Manager\+::get\+String\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{char\+Type,  }\item[{bool \&}]{is\+Trunc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve string data at the given address as a U\+T\+F8 byte array. 
+
+If the address does not represent string data, a zero length vector is returned. Otherwise, the string data is fetched, converted to a U\+T\+F8 encoding, cached and returned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em char\+Type} & is a character data-\/type indicating the encoding \\
+\hline
+{\em is\+Trunc} & passes back whether the string is truncated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the byte array of U\+T\+F8 data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStringManager_ae4b3978a8dd1e6c7f425b9fe2e651083}{String\+Manager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{string__ghidra_8hh}{string\+\_\+ghidra.\+hh}}\item 
+string\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

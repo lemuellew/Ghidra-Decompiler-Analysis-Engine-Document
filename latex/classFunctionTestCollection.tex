@@ -1,0 +1,104 @@
+\hypertarget{classFunctionTestCollection}{}\doxysection{Function\+Test\+Collection Class Reference}
+\label{classFunctionTestCollection}\index{FunctionTestCollection@{FunctionTestCollection}}
+
+
+A collection of tests around a single program/function.  
+
+
+
+
+{\ttfamily \#include $<$testfunction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFunctionTestCollection_af88856f62b32e049fb07c982ff6b15ec}\label{classFunctionTestCollection_af88856f62b32e049fb07c982ff6b15ec}} 
+\mbox{\hyperlink{classFunctionTestCollection_af88856f62b32e049fb07c982ff6b15ec}{Function\+Test\+Collection}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFunctionTestCollection_af6e0efea5ba0800bfb65ff906e38be8c}{load\+Test}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Load a test program, tests, and script. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFunctionTestCollection_a76581f6ae791be779d6ff0b1b97b700d}\label{classFunctionTestCollection_a76581f6ae791be779d6ff0b1b97b700d}} 
+void \mbox{\hyperlink{classFunctionTestCollection_a76581f6ae791be779d6ff0b1b97b700d}{restore\+Xml}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store, const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Load tests from a $<$decompilertest$>$ tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFunctionTestCollection_a02e7b64f882f5ebeeba14fa278037266}{restore\+Xml\+Old\+Form}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store, const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Load tests from $<$binaryimage$>$ tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFunctionTestCollection_a1e9c20a43399c1169f0d81cd359fa07e}{run\+Tests}} (ostream \&mid\+Stream, list$<$ string $>$ \&late\+Stream)
+\begin{DoxyCompactList}\small\item\em Run the script and perform the tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classFunctionTestCollection_a51e09c9bad76eba403f53da9c6028286}{run\+Test\+Collections}} (const string \&dirname, set$<$ string $>$ \&test\+Names)
+\begin{DoxyCompactList}\small\item\em Run test files in a whole directory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collection of tests around a single program/function. 
+
+The collection of tests is loaded from a single X\+ML file via \mbox{\hyperlink{classFunctionTestCollection_af6e0efea5ba0800bfb65ff906e38be8c}{load\+Test()}}, and the tests are run by calling \mbox{\hyperlink{classFunctionTestCollection_a1e9c20a43399c1169f0d81cd359fa07e}{run\+Tests()}}. An entire program is loaded and possibly annotated by a series of console command lines. Decompiler output is also triggered by a command, and then the output is scanned for by the test objects (\mbox{\hyperlink{classFunctionTestProperty}{Function\+Test\+Property}}). Results of passed/failed tests are collected. If the command line script does not complete properly, this is considered a special kind of failure. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFunctionTestCollection_af6e0efea5ba0800bfb65ff906e38be8c}\label{classFunctionTestCollection_af6e0efea5ba0800bfb65ff906e38be8c}} 
+\index{FunctionTestCollection@{FunctionTestCollection}!loadTest@{loadTest}}
+\index{loadTest@{loadTest}!FunctionTestCollection@{FunctionTestCollection}}
+\doxysubsubsection{\texorpdfstring{loadTest()}{loadTest()}}
+{\footnotesize\ttfamily void Function\+Test\+Collection\+::load\+Test (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Load a test program, tests, and script. 
+
+Load the architecture based on the discovered $<$binaryimage$>$ tag. Collect the script commands and the specific tests. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the X\+ML file holding the test data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFunctionTestCollection_a02e7b64f882f5ebeeba14fa278037266}\label{classFunctionTestCollection_a02e7b64f882f5ebeeba14fa278037266}} 
+\index{FunctionTestCollection@{FunctionTestCollection}!restoreXmlOldForm@{restoreXmlOldForm}}
+\index{restoreXmlOldForm@{restoreXmlOldForm}!FunctionTestCollection@{FunctionTestCollection}}
+\doxysubsubsection{\texorpdfstring{restoreXmlOldForm()}{restoreXmlOldForm()}}
+{\footnotesize\ttfamily void Function\+Test\+Collection\+::restore\+Xml\+Old\+Form (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store,  }\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Load tests from $<$binaryimage$>$ tag. 
+
+Pull the script and tests from a comment in $<$binaryimage$>$ \mbox{\Hypertarget{classFunctionTestCollection_a51e09c9bad76eba403f53da9c6028286}\label{classFunctionTestCollection_a51e09c9bad76eba403f53da9c6028286}} 
+\index{FunctionTestCollection@{FunctionTestCollection}!runTestCollections@{runTestCollections}}
+\index{runTestCollections@{runTestCollections}!FunctionTestCollection@{FunctionTestCollection}}
+\doxysubsubsection{\texorpdfstring{runTestCollections()}{runTestCollections()}}
+{\footnotesize\ttfamily void Function\+Test\+Collection\+::run\+Test\+Collections (\begin{DoxyParamCaption}\item[{const string \&}]{dirname,  }\item[{set$<$ string $>$ \&}]{test\+Names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Run test files in a whole directory. 
+
+Run through all X\+ML files in the given directory, processing each in turn. 
+\begin{DoxyParams}{Parameters}
+{\em dirname} & is a directory containing the X\+ML test files \\
+\hline
+{\em test\+Names} & (if not empty) specifies particular tests to run \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFunctionTestCollection_a1e9c20a43399c1169f0d81cd359fa07e}\label{classFunctionTestCollection_a1e9c20a43399c1169f0d81cd359fa07e}} 
+\index{FunctionTestCollection@{FunctionTestCollection}!runTests@{runTests}}
+\index{runTests@{runTests}!FunctionTestCollection@{FunctionTestCollection}}
+\doxysubsubsection{\texorpdfstring{runTests()}{runTests()}}
+{\footnotesize\ttfamily void Function\+Test\+Collection\+::run\+Tests (\begin{DoxyParamCaption}\item[{ostream \&}]{mid\+Stream,  }\item[{list$<$ string $>$ \&}]{late\+Stream }\end{DoxyParamCaption})}
+
+
+
+Run the script and perform the tests. 
+
+Run the script commands on the current program. Collect any bulk output, and run tests over the output. Report test failures back to the caller 
+\begin{DoxyParams}{Parameters}
+{\em mid\+Stream} & is the output stream to write to during the test \\
+\hline
+{\em late\+Stream} & collects messages for a final summary \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{testfunction_8hh}{testfunction.\+hh}}\item 
+testfunction.\+cc\end{DoxyCompactItemize}

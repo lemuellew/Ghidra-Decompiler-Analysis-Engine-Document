@@ -1,0 +1,96 @@
+\hypertarget{classExecutablePcode}{}\doxysection{Executable\+Pcode Class Reference}
+\label{classExecutablePcode}\index{ExecutablePcode@{ExecutablePcode}}
+
+
+A snippet of p-\/code that can be executed outside of normal analysis.  
+
+
+
+
+{\ttfamily \#include $<$pcodeinject.\+hh$>$}
+
+
+
+Inheritance diagram for Executable\+Pcode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExecutablePcode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Executable\+Pcode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classExecutablePcode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classExecutablePcode_adda3ecde2df23fa5ebea51e0f7ded106}{Executable\+Pcode}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, const string \&src, const string \&nm)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classExecutablePcode_a778beba39ea7ee969febbfce992d6600}\label{classExecutablePcode_a778beba39ea7ee969febbfce992d6600}} 
+virtual string \mbox{\hyperlink{classExecutablePcode_a778beba39ea7ee969febbfce992d6600}{get\+Source}} (void) const
+\begin{DoxyCompactList}\small\item\em Return a string describing the {\itshape source} of the injection (.cspec, prototype model, etc.) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classExecutablePcode_a0ff39a9bb778d67df86b741a20739d75}{evaluate}} (const vector$<$ uintb $>$ \&input)
+\begin{DoxyCompactList}\small\item\em Evaluate the snippet on the given inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A snippet of p-\/code that can be executed outside of normal analysis. 
+
+Essentially a p-\/code script. The p-\/code contained in this snippet needs to be processor agnostic, so any register Varnodes must be temporary (out of the {\itshape unique} space) and any control-\/flow operations must be contained within the snippet (p-\/code relative addressing). Input and output to the snippet/script is provided by standard injection parameters. The class contains, as a field, a stripped down emulator to run the script and a convenience method \mbox{\hyperlink{classExecutablePcode_a0ff39a9bb778d67df86b741a20739d75}{evaluate()}} to feed in concrete values to the input parameters and return a value from a single output parameter. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classExecutablePcode_adda3ecde2df23fa5ebea51e0f7ded106}\label{classExecutablePcode_adda3ecde2df23fa5ebea51e0f7ded106}} 
+\index{ExecutablePcode@{ExecutablePcode}!ExecutablePcode@{ExecutablePcode}}
+\index{ExecutablePcode@{ExecutablePcode}!ExecutablePcode@{ExecutablePcode}}
+\doxysubsubsection{\texorpdfstring{ExecutablePcode()}{ExecutablePcode()}}
+{\footnotesize\ttfamily Executable\+Pcode\+::\+Executable\+Pcode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g,  }\item[{const string \&}]{src,  }\item[{const string \&}]{nm }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} owning {\bfseries{snippet}} \\
+\hline
+{\em src} & is a string describing the {\itshape source} of the snippet \\
+\hline
+{\em nm} & is the formal name of the snippet \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classExecutablePcode_a0ff39a9bb778d67df86b741a20739d75}\label{classExecutablePcode_a0ff39a9bb778d67df86b741a20739d75}} 
+\index{ExecutablePcode@{ExecutablePcode}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ExecutablePcode@{ExecutablePcode}}
+\doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}}
+{\footnotesize\ttfamily uintb Executable\+Pcode\+::evaluate (\begin{DoxyParamCaption}\item[{const vector$<$ uintb $>$ \&}]{input }\end{DoxyParamCaption})}
+
+
+
+Evaluate the snippet on the given inputs. 
+
+The caller provides a list of concrete values that are assigned to the input parameters. The number of values and input parameters must match, and values are assigned in order. Input parameter order is determined either by the order of tags in the defining X\+ML. This method assumes there is exactly 1 relevant output parameter. Once the snippet is executed the value of this parameter is read from the emulator state and returned. 
+\begin{DoxyParams}{Parameters}
+{\em input} & is the ordered list of input values to feed to {\bfseries{this}} script \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the output parameter after script execution 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcodeinject_8hh}{pcodeinject.\+hh}}\item 
+pcodeinject.\+cc\end{DoxyCompactItemize}

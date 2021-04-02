@@ -1,0 +1,311 @@
+\hypertarget{classLoadImage}{}\doxysection{Load\+Image Class Reference}
+\label{classLoadImage}\index{LoadImage@{LoadImage}}
+
+
+An interface into a particular binary executable image.  
+
+
+
+
+{\ttfamily \#include $<$loadimage.\+hh$>$}
+
+
+
+Inheritance diagram for Load\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLoadImage__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadImage_a4fc6f708cad0202b134c79069af89cc3}{Load\+Image}} (const string \&f)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classLoadImage}{Load\+Image}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classLoadImage_a7818613254abfa992691eedfc33fbe28}{$\sim$\+Load\+Image}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classLoadImage}{Load\+Image}} destructor. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classLoadImage_add06668a3a1b9c47ed9fe671b656b4a4}{get\+File\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the name of the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}{load\+Fill}} (uint1 $\ast$ptr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&addr)=0
+\begin{DoxyCompactList}\small\item\em Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImage_a5b17f1d68413ab802966bdc7aa07cc73}{open\+Symbols}} (void) const
+\begin{DoxyCompactList}\small\item\em Prepare to read symbols. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImage_a58c86c5342b7500e317ba98bcbf66753}{close\+Symbols}} (void) const
+\begin{DoxyCompactList}\small\item\em Stop reading symbols. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classLoadImage_af4a887cf44c719c576bb05605a4c5c7e}{get\+Next\+Symbol}} (\mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}} \&record) const
+\begin{DoxyCompactList}\small\item\em Get the next symbol record. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImage_a915fb52632f5d770511833ed1cb76088}{open\+Section\+Info}} (void) const
+\begin{DoxyCompactList}\small\item\em Prepare to read section info. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImage_a6358439b2aaef7497dad384b7c43213f}{close\+Section\+Info}} (void) const
+\begin{DoxyCompactList}\small\item\em Stop reading section info. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classLoadImage_ab4a927238becd33d8eb75ddc96cc9616}{get\+Next\+Section}} (\mbox{\hyperlink{structLoadImageSection}{Load\+Image\+Section}} \&sec) const
+\begin{DoxyCompactList}\small\item\em Get info on the next section. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImage_a31dba7f0f819c97e68f868cc623e4054}{get\+Readonly}} (\mbox{\hyperlink{classRangeList}{Range\+List}} \&list) const
+\begin{DoxyCompactList}\small\item\em Return list of {\itshape readonly} address ranges. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classLoadImage_a5103418147e95994f66e77746c0a0cfc}{get\+Arch\+Type}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get a string indicating the architecture type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImage_a51a254f705fba6f0e6524995acd5aaa7}{adjust\+Vma}} (long adjust)=0
+\begin{DoxyCompactList}\small\item\em Adjust load addresses with a global offset. \end{DoxyCompactList}\item 
+uint1 $\ast$ \mbox{\hyperlink{classLoadImage_ae7aee28b81e5629d90bf104954a6835b}{load}} (int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Load a chunk of image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLoadImage_a4d95f3891fc75d7549277d5f26fa06fc}\label{classLoadImage_a4d95f3891fc75d7549277d5f26fa06fc}} 
+string \mbox{\hyperlink{classLoadImage_a4d95f3891fc75d7549277d5f26fa06fc}{filename}}
+\begin{DoxyCompactList}\small\item\em Name of the loadimage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An interface into a particular binary executable image. 
+
+This class provides the abstraction needed by the decompiler for the numerous load file formats used to encode binary executables. The data encoding the machine instructions for the executable can be accessed via the addresses where that data would be loaded into R\+AM. Properties other than the main data and instructions of the binary are not supposed to repeatedly queried through this interface. This information is intended to be read from this class exactly once, during initialization, and used to populate the main decompiler database. This class currently has only rudimentary support for accessing such properties. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadImage_a4fc6f708cad0202b134c79069af89cc3}\label{classLoadImage_a4fc6f708cad0202b134c79069af89cc3}} 
+\index{LoadImage@{LoadImage}!LoadImage@{LoadImage}}
+\index{LoadImage@{LoadImage}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{LoadImage()}{LoadImage()}}
+{\footnotesize\ttfamily Load\+Image\+::\+Load\+Image (\begin{DoxyParamCaption}\item[{const string \&}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classLoadImage}{Load\+Image}} constructor. 
+
+For the base class there is no relevant initialization except the name of the image. 
+\begin{DoxyParams}{Parameters}
+{\em f} & is the name of the image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadImage_a7818613254abfa992691eedfc33fbe28}\label{classLoadImage_a7818613254abfa992691eedfc33fbe28}} 
+\index{LoadImage@{LoadImage}!````~LoadImage@{$\sim$LoadImage}}
+\index{````~LoadImage@{$\sim$LoadImage}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{$\sim$LoadImage()}{~LoadImage()}}
+{\footnotesize\ttfamily Load\+Image\+::$\sim$\+Load\+Image (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classLoadImage}{Load\+Image}} destructor. 
+
+The destructor for the load image object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadImage_a51a254f705fba6f0e6524995acd5aaa7}\label{classLoadImage_a51a254f705fba6f0e6524995acd5aaa7}} 
+\index{LoadImage@{LoadImage}!adjustVma@{adjustVma}}
+\index{adjustVma@{adjustVma}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{adjustVma()}{adjustVma()}}
+{\footnotesize\ttfamily void Load\+Image\+::adjust\+Vma (\begin{DoxyParamCaption}\item[{long}]{adjust }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adjust load addresses with a global offset. 
+
+Most load image formats automatically encode information about the true loading address(es) for the data in the image. But if this is missing or incorrect, this routine can be used to make a global adjustment to the load address. Only one adjustment is made across {\itshape all} addresses in the image. The offset passed to this method is added to the stored or default value for any address queried in the image. This is most often used in a {\itshape raw} binary file format. In this case, the entire executable file is intended to be read straight into R\+AM, as one contiguous chunk, in order to be executed. In the absence of any other info, the first byte of the image file is loaded at offset 0. This method then would adjust the load address of the first byte. 
+\begin{DoxyParams}{Parameters}
+{\em adjust} & is the offset amount to be added to default values \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classRawLoadImage_aee25cd14ca80ad47db0b17d56cc31180}{Raw\+Load\+Image}}, \mbox{\hyperlink{classMyLoadImage_aa395d2908f2d6d61295ce0d5995838a9}{My\+Load\+Image}}, \mbox{\hyperlink{classLoadImageBfd_a92442c79bbcb55ef602bd9cb092da87e}{Load\+Image\+Bfd}}, \mbox{\hyperlink{classLoadImageXml_ab6a98e9bcf8141caee525fefc6a6d115}{Load\+Image\+Xml}}, and \mbox{\hyperlink{classLoadImageGhidra_a4abe9a4fba1ce99fe3f29ff1236f541e}{Load\+Image\+Ghidra}}.
+
+\mbox{\Hypertarget{classLoadImage_a6358439b2aaef7497dad384b7c43213f}\label{classLoadImage_a6358439b2aaef7497dad384b7c43213f}} 
+\index{LoadImage@{LoadImage}!closeSectionInfo@{closeSectionInfo}}
+\index{closeSectionInfo@{closeSectionInfo}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{closeSectionInfo()}{closeSectionInfo()}}
+{\footnotesize\ttfamily void Load\+Image\+::close\+Section\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Stop reading section info. 
+
+Once all the section information is read from the load image using the \mbox{\hyperlink{classLoadImage_ab4a927238becd33d8eb75ddc96cc9616}{get\+Next\+Section()}} method, this method should be called to free up any resources used in parsing the section info. 
+
+Reimplemented in \mbox{\hyperlink{classLoadImageBfd_ab09105d243f255c2bece8d27803cb4c5}{Load\+Image\+Bfd}}.
+
+\mbox{\Hypertarget{classLoadImage_a58c86c5342b7500e317ba98bcbf66753}\label{classLoadImage_a58c86c5342b7500e317ba98bcbf66753}} 
+\index{LoadImage@{LoadImage}!closeSymbols@{closeSymbols}}
+\index{closeSymbols@{closeSymbols}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{closeSymbols()}{closeSymbols()}}
+{\footnotesize\ttfamily void Load\+Image\+::close\+Symbols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Stop reading symbols. 
+
+Once all the symbol information has been read out from the load image via the \mbox{\hyperlink{classLoadImage_a5b17f1d68413ab802966bdc7aa07cc73}{open\+Symbols()}} and \mbox{\hyperlink{classLoadImage_af4a887cf44c719c576bb05605a4c5c7e}{get\+Next\+Symbol()}} calls, the application should call this method to free up resources used in parsing the symbol information. 
+
+Reimplemented in \mbox{\hyperlink{classLoadImageBfd_aaf25ff18d5cec7300dcd28ca4150b8ce}{Load\+Image\+Bfd}}.
+
+\mbox{\Hypertarget{classLoadImage_a5103418147e95994f66e77746c0a0cfc}\label{classLoadImage_a5103418147e95994f66e77746c0a0cfc}} 
+\index{LoadImage@{LoadImage}!getArchType@{getArchType}}
+\index{getArchType@{getArchType}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{getArchType()}{getArchType()}}
+{\footnotesize\ttfamily string Load\+Image\+::get\+Arch\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get a string indicating the architecture type. 
+
+The load image class is intended to be a generic front-\/end to the large variety of load formats in use. This method should return a string that identifies the particular architecture this particular image is intended to run on. It is currently the responsibility of any derived \mbox{\hyperlink{classLoadImage}{Load\+Image}} class to establish a format for this string, but it should generally contain some indication of the operating system and the processor. \begin{DoxyReturn}{Returns}
+the identifier string 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classRawLoadImage_af6696aae484080c76a2fd0b059aa27c8}{Raw\+Load\+Image}}, \mbox{\hyperlink{classMyLoadImage_aae5307e132d6736494b7da8ace1b41f1}{My\+Load\+Image}}, \mbox{\hyperlink{classLoadImageBfd_a20f8ec53008fada4bd5c8e4d2d712ca9}{Load\+Image\+Bfd}}, \mbox{\hyperlink{classLoadImageXml_ad6b8dd51035746be7a59e1070e65c668}{Load\+Image\+Xml}}, and \mbox{\hyperlink{classLoadImageGhidra_aa7df1ff6995b047b625f104053f71e47}{Load\+Image\+Ghidra}}.
+
+\mbox{\Hypertarget{classLoadImage_add06668a3a1b9c47ed9fe671b656b4a4}\label{classLoadImage_add06668a3a1b9c47ed9fe671b656b4a4}} 
+\index{LoadImage@{LoadImage}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily const string \& Load\+Image\+::get\+File\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name of the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. 
+
+The loadimage is usually associated with a file. This routine retrieves the name as a string. \begin{DoxyReturn}{Returns}
+the name of the image 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoadImage_ab4a927238becd33d8eb75ddc96cc9616}\label{classLoadImage_ab4a927238becd33d8eb75ddc96cc9616}} 
+\index{LoadImage@{LoadImage}!getNextSection@{getNextSection}}
+\index{getNextSection@{getNextSection}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{getNextSection()}{getNextSection()}}
+{\footnotesize\ttfamily bool Load\+Image\+::get\+Next\+Section (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLoadImageSection}{Load\+Image\+Section}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get info on the next section. 
+
+This method is used to read out a record that describes a single section of bytes mapped by the load image. This method can be called repeatedly until it returns {\bfseries{false}}, to get info on additional sections. 
+\begin{DoxyParams}{Parameters}
+{\em record} & is a reference to the info record to be filled in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are more records to read 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classLoadImageBfd_aaae78fac403213f2dc9ebf97ac28a5b2}{Load\+Image\+Bfd}}.
+
+\mbox{\Hypertarget{classLoadImage_af4a887cf44c719c576bb05605a4c5c7e}\label{classLoadImage_af4a887cf44c719c576bb05605a4c5c7e}} 
+\index{LoadImage@{LoadImage}!getNextSymbol@{getNextSymbol}}
+\index{getNextSymbol@{getNextSymbol}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{getNextSymbol()}{getNextSymbol()}}
+{\footnotesize\ttfamily bool Load\+Image\+::get\+Next\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the next symbol record. 
+
+This method is used to read out an individual symbol record, \mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}}, from the load image. Right now, the only information that can be read out are function starts and the associated function name. This method can be called repeatedly to iterate through all the symbols, until it returns {\bfseries{false}}. This indicates the end of the symbols. 
+\begin{DoxyParams}{Parameters}
+{\em record} & is a reference to the symbol record to be filled in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are more records to read 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classLoadImageBfd_a8db5bae4688dfea449ed8c5e9d584904}{Load\+Image\+Bfd}}, and \mbox{\hyperlink{classLoadImageXml_ab0a1e2aee8d5d8925e29662f32fa2060}{Load\+Image\+Xml}}.
+
+\mbox{\Hypertarget{classLoadImage_a31dba7f0f819c97e68f868cc623e4054}\label{classLoadImage_a31dba7f0f819c97e68f868cc623e4054}} 
+\index{LoadImage@{LoadImage}!getReadonly@{getReadonly}}
+\index{getReadonly@{getReadonly}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{getReadonly()}{getReadonly()}}
+{\footnotesize\ttfamily void Load\+Image\+::get\+Readonly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return list of {\itshape readonly} address ranges. 
+
+This method should read out information about {\itshape all} address ranges within the load image that are known to be {\bfseries{readonly}}. This method is intended to be called only once, so all information should be written to the passed \mbox{\hyperlink{classRangeList}{Range\+List}} object. 
+\begin{DoxyParams}{Parameters}
+{\em list} & is where readonly info will get put \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classLoadImageBfd_a8a45d7f2aaa3ae3028f997978f1d9d0c}{Load\+Image\+Bfd}}, and \mbox{\hyperlink{classLoadImageXml_adab4a4d8e035047641c5a1613e9386d6}{Load\+Image\+Xml}}.
+
+\mbox{\Hypertarget{classLoadImage_ae7aee28b81e5629d90bf104954a6835b}\label{classLoadImage_ae7aee28b81e5629d90bf104954a6835b}} 
+\index{LoadImage@{LoadImage}!load@{load}}
+\index{load@{load}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily uint1 $\ast$ Load\+Image\+::load (\begin{DoxyParamCaption}\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Load a chunk of image. 
+
+This is a convenience method wrapped around the core \mbox{\hyperlink{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}{load\+Fill()}} routine. It automatically allocates an array of the desired size, and then fills it with load image data. If the array cannot be allocated, an exception is thrown. The caller assumes the responsibility of freeing the array after it has been used. 
+\begin{DoxyParams}{Parameters}
+{\em size} & is the number of bytes to read from the image \\
+\hline
+{\em addr} & is the address of the first byte being read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the desired bytes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}\label{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}} 
+\index{LoadImage@{LoadImage}!loadFill@{loadFill}}
+\index{loadFill@{loadFill}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{loadFill()}{loadFill()}}
+{\footnotesize\ttfamily void Load\+Image\+::load\+Fill (\begin{DoxyParamCaption}\item[{uint1 $\ast$}]{ptr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. 
+
+This is the {\itshape core} routine of a \mbox{\hyperlink{classLoadImage}{Load\+Image}}. Given a particular address range, this routine retrieves the exact byte values that are stored at that address when the executable is loaded into R\+AM. The caller must supply a pre-\/allocated array of bytes where the returned bytes should be stored. If the requested address range does not exist in the image, or otherwise can\textquotesingle{}t be retrieved, this method throws an \mbox{\hyperlink{structDataUnavailError}{Data\+Unavail\+Error}} exception. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & points to where the resulting bytes will be stored \\
+\hline
+{\em size} & is the number of bytes to retrieve from the image \\
+\hline
+{\em addr} & is the starting address of the bytes to retrieve \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classRawLoadImage_ac66523f8d5e0533f4af6ee7bd48741cc}{Raw\+Load\+Image}}, \mbox{\hyperlink{classMyLoadImage_ac06717c19db7a80515b6f330540bce1d}{My\+Load\+Image}}, \mbox{\hyperlink{classLoadImageBfd_a78225283223f58c852c4b63af4fc8791}{Load\+Image\+Bfd}}, \mbox{\hyperlink{classLoadImageXml_a39ab20b5642df7cf4b84d312a48b1d17}{Load\+Image\+Xml}}, and \mbox{\hyperlink{classLoadImageGhidra_accc4b273390b6959e4552490fbb146c7}{Load\+Image\+Ghidra}}.
+
+\mbox{\Hypertarget{classLoadImage_a915fb52632f5d770511833ed1cb76088}\label{classLoadImage_a915fb52632f5d770511833ed1cb76088}} 
+\index{LoadImage@{LoadImage}!openSectionInfo@{openSectionInfo}}
+\index{openSectionInfo@{openSectionInfo}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{openSectionInfo()}{openSectionInfo()}}
+{\footnotesize\ttfamily void Load\+Image\+::open\+Section\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Prepare to read section info. 
+
+This method initializes iteration over all the sections of bytes that are mapped by the load image. Once this is called, information on individual sections should be read out with the \mbox{\hyperlink{classLoadImage_ab4a927238becd33d8eb75ddc96cc9616}{get\+Next\+Section()}} method. 
+
+Reimplemented in \mbox{\hyperlink{classLoadImageBfd_a48e82236ac85863f02e49e3ecae877e1}{Load\+Image\+Bfd}}.
+
+\mbox{\Hypertarget{classLoadImage_a5b17f1d68413ab802966bdc7aa07cc73}\label{classLoadImage_a5b17f1d68413ab802966bdc7aa07cc73}} 
+\index{LoadImage@{LoadImage}!openSymbols@{openSymbols}}
+\index{openSymbols@{openSymbols}!LoadImage@{LoadImage}}
+\doxysubsubsection{\texorpdfstring{openSymbols()}{openSymbols()}}
+{\footnotesize\ttfamily void Load\+Image\+::open\+Symbols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Prepare to read symbols. 
+
+This routine should read in and parse any symbol information that the load image contains about executable. Once this method is called, individual symbol records are read out using the \mbox{\hyperlink{classLoadImage_af4a887cf44c719c576bb05605a4c5c7e}{get\+Next\+Symbol()}} method. 
+
+Reimplemented in \mbox{\hyperlink{classLoadImageBfd_a55a11f9c90d067643acb55b197179878}{Load\+Image\+Bfd}}, and \mbox{\hyperlink{classLoadImageXml_abf281fd9e155951f168ddab099dadf47}{Load\+Image\+Xml}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{loadimage_8hh}{loadimage.\+hh}}\item 
+loadimage.\+cc\end{DoxyCompactItemize}

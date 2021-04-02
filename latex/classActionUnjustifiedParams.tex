@@ -1,0 +1,97 @@
+\hypertarget{classActionUnjustifiedParams}{}\doxysection{Action\+Unjustified\+Params Class Reference}
+\label{classActionUnjustifiedParams}\index{ActionUnjustifiedParams@{ActionUnjustifiedParams}}
+
+
+Adjust improperly justified parameters.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Unjustified\+Params\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classActionUnjustifiedParams__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Unjustified\+Params\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classActionUnjustifiedParams__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionUnjustifiedParams_a07403536c15bc35659c34d1dec3b2c11}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionUnjustifiedParams_a76dd93b62ac18bb4d18cba2a79c0ac55}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Adjust improperly justified parameters. 
+
+Scan through all inputs, find Varnodes that look like improperly justified input parameters create a new full input, and change the old partial input to be formed as a C\+P\+U\+I\+\_\+\+S\+U\+B\+P\+I\+E\+CE of the full input 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionUnjustifiedParams_a76dd93b62ac18bb4d18cba2a79c0ac55}\label{classActionUnjustifiedParams_a76dd93b62ac18bb4d18cba2a79c0ac55}} 
+\index{ActionUnjustifiedParams@{ActionUnjustifiedParams}!apply@{apply}}
+\index{apply@{apply}!ActionUnjustifiedParams@{ActionUnjustifiedParams}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Unjustified\+Params\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionUnjustifiedParams_a07403536c15bc35659c34d1dec3b2c11}\label{classActionUnjustifiedParams_a07403536c15bc35659c34d1dec3b2c11}} 
+\index{ActionUnjustifiedParams@{ActionUnjustifiedParams}!clone@{clone}}
+\index{clone@{clone}!ActionUnjustifiedParams@{ActionUnjustifiedParams}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Unjustified\+Params\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

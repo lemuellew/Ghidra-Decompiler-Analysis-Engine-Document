@@ -1,0 +1,98 @@
+\hypertarget{classJumpAssistOp}{}\doxysection{Jump\+Assist\+Op Class Reference}
+\label{classJumpAssistOp}\index{JumpAssistOp@{JumpAssistOp}}
+
+
+A user defined p-\/code op for assisting the recovery of jump tables.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Jump\+Assist\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classJumpAssistOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jump\+Assist\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJumpAssistOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJumpAssistOp_a78d4877f371694b4f9526564b29ebbe5}{Jump\+Assist\+Op}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpAssistOp_a2e246c75988410d0fbdae74e44eb09cc}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore the detailed description from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A user defined p-\/code op for assisting the recovery of jump tables. 
+
+An instance of this class refers to p-\/code script(s) that describe how to parse the jump table from the load image. Possible scripts include\+:
+\begin{DoxyItemize}
+\item (if present) {\bfseries{index2case}} describes how to get case values from an index 0..size-\/1
+\item {\bfseries{index2addr}} describes how to get address values from the same index range
+\item {\bfseries{defaultaddr}} describes how to calculate the switch\textquotesingle{}s default address
+\item (if present) {\bfseries{calcsize}} recovers the number of indices in the table
+\end{DoxyItemize}
+
+This class stores injection ids. The scripts themselves are managed by \mbox{\hyperlink{classPcodeInjectLibrary}{Pcode\+Inject\+Library}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJumpAssistOp_a78d4877f371694b4f9526564b29ebbe5}\label{classJumpAssistOp_a78d4877f371694b4f9526564b29ebbe5}} 
+\index{JumpAssistOp@{JumpAssistOp}!JumpAssistOp@{JumpAssistOp}}
+\index{JumpAssistOp@{JumpAssistOp}!JumpAssistOp@{JumpAssistOp}}
+\doxysubsubsection{\texorpdfstring{JumpAssistOp()}{JumpAssistOp()}}
+{\footnotesize\ttfamily Jump\+Assist\+Op\+::\+Jump\+Assist\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} owning this set of jump assist scripts \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpAssistOp_a2e246c75988410d0fbdae74e44eb09cc}\label{classJumpAssistOp_a2e246c75988410d0fbdae74e44eb09cc}} 
+\index{JumpAssistOp@{JumpAssistOp}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!JumpAssistOp@{JumpAssistOp}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Jump\+Assist\+Op\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the detailed description from an X\+ML stream. 
+
+The details of how a user defined operation behaves can be dynamically configured from an X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element describing the op \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUserPcodeOp_a2a7b7c637369bc4fba4604cd83a937af}{User\+Pcode\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

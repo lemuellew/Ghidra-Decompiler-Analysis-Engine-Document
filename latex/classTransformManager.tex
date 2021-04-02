@@ -1,0 +1,457 @@
+\hypertarget{classTransformManager}{}\doxysection{Transform\+Manager Class Reference}
+\label{classTransformManager}\index{TransformManager@{TransformManager}}
+
+
+Class for splitting larger registers holding smaller logical lanes.  
+
+
+
+
+{\ttfamily \#include $<$transform.\+hh$>$}
+
+
+
+Inheritance diagram for Transform\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classTransformManager__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTransformManager_aae8b53384ed370e1dc4a3526fed7f62b}\label{classTransformManager_aae8b53384ed370e1dc4a3526fed7f62b}} 
+virtual \mbox{\hyperlink{classTransformManager_aae8b53384ed370e1dc4a3526fed7f62b}{$\sim$\+Transform\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTransformManager_ae2b948f919c95e2f4a3b000a75d8ffbe}{preserve\+Address}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, int4 bit\+Size, int4 lsb\+Offset) const
+\begin{DoxyCompactList}\small\item\em Should the address of the given \mbox{\hyperlink{classVarnode}{Varnode}} be preserved when constructing a piece. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransformManager_a854b4855ec3ced3b0afb12fd3e5e9cba}\label{classTransformManager_a854b4855ec3ced3b0afb12fd3e5e9cba}} 
+void \mbox{\hyperlink{classTransformManager_a854b4855ec3ced3b0afb12fd3e5e9cba}{clear\+Varnode\+Marks}} (void)
+\begin{DoxyCompactList}\small\item\em Clear mark for all Varnodes in the map. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_aaaee3318c0a3ee71435e402b31a47b91}{new\+Preexisting\+Varnode}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Make placeholder for preexisting \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_a2e1a80d967583d907cf2f27025347f51}{new\+Unique}} (int4 size)
+\begin{DoxyCompactList}\small\item\em Make placeholder for new unique space \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_af0be0feebea331c9e12fe80e7c2229f2}{new\+Constant}} (int4 size, int4 lsb\+Offset, uintb val)
+\begin{DoxyCompactList}\small\item\em Make placeholder for constant \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_ab566ae1e823aadc9ce8316ad4bf53a91}{new\+Iop}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Make placeholder for special iop constant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_a208b344db9e2b0f8aae46bbdd1478e1b}{new\+Piece}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, int4 bit\+Size, int4 lsb\+Offset)
+\begin{DoxyCompactList}\small\item\em Make placeholder for piece of a \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_af8751dc0fd19ea8264bf93d3bb9b2569}{new\+Split}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&description)
+\begin{DoxyCompactList}\small\item\em Create placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into its lanes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_af7ea37c74d10a836ca3e77cf5a065519}{new\+Split}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&description, int4 num\+Lanes, int4 start\+Lane)
+\begin{DoxyCompactList}\small\item\em Create placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into a subset of lanes in the given description. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$ \mbox{\hyperlink{classTransformManager_a3aef51eeb1b0c9e98951427667253561}{new\+Op\+Replace}} (int4 num\+Params, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$replace)
+\begin{DoxyCompactList}\small\item\em Create a new placeholder op intended to replace an existing op. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$ \mbox{\hyperlink{classTransformManager_acea6dc76f33136751101f20f2ab6d2c7}{new\+Op}} (int4 num\+Params, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$follow)
+\begin{DoxyCompactList}\small\item\em Create a new placeholder op that will not replace an existing op. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$ \mbox{\hyperlink{classTransformManager_a00cd33f9b4ca4c111d912f5c36112c7c}{new\+Preexisting\+Op}} (int4 num\+Params, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$original\+Op)
+\begin{DoxyCompactList}\small\item\em Create a new placeholder op for an existing \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_a22d5897da21f3a9f194769a5f67f638b}{get\+Preexisting\+Varnode}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Get (or create) placeholder for preexisting \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_ad4dfb3c6f8c822455d41832d06449ecb}{get\+Piece}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, int4 bit\+Size, int4 lsb\+Offset)
+\begin{DoxyCompactList}\small\item\em Get (or create) placeholder piece. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_a890f76d4b44a6f0ccad97533e9fdaf2d}{get\+Split}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&description)
+\begin{DoxyCompactList}\small\item\em Find (or create) placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into its lanes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ \mbox{\hyperlink{classTransformManager_a530bf14b465eefccb3d173fa1796bf4d}{get\+Split}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&description, int4 num\+Lanes, int4 start\+Lane)
+\begin{DoxyCompactList}\small\item\em Find (or create) placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into a subset of lanes from a description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTransformManager_af17f9dbe7f73713ed4b5684682169c0f}{op\+Set\+Input}} (\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$rop, \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$rvn, int4 slot)
+\begin{DoxyCompactList}\small\item\em Mark given variable as input to given op. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTransformManager_a0d67484b4dd36d3fb5ca19697a48f66a}{op\+Set\+Output}} (\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$rop, \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$rvn)
+\begin{DoxyCompactList}\small\item\em Mark given variable as output of given op. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTransformManager_a2dcee2b69511dfb160421566ad1e9ce8}\label{classTransformManager_a2dcee2b69511dfb160421566ad1e9ce8}} 
+void \mbox{\hyperlink{classTransformManager_a2dcee2b69511dfb160421566ad1e9ce8}{apply}} (void)
+\begin{DoxyCompactList}\small\item\em Apply the full transform to the function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classTransformManager_a3f8190cd08984f5a860b9798105a7c5d}{preexisting\+Guard}} (int4 slot, \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$rvn)
+\begin{DoxyCompactList}\small\item\em Should new\+Preexisting\+Op be called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for splitting larger registers holding smaller logical lanes. 
+
+Given a starting \mbox{\hyperlink{classVarnode}{Varnode}} in the data-\/flow, look for evidence of the \mbox{\hyperlink{classVarnode}{Varnode}} being interpreted as disjoint logical values concatenated together (lanes). If the interpretation is consistent for data-\/flow involving the \mbox{\hyperlink{classVarnode}{Varnode}}, split \mbox{\hyperlink{classVarnode}{Varnode}} and data-\/flow into explicit operations on the lanes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTransformManager_ad4dfb3c6f8c822455d41832d06449ecb}\label{classTransformManager_ad4dfb3c6f8c822455d41832d06449ecb}} 
+\index{TransformManager@{TransformManager}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::get\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{int4}]{bit\+Size,  }\item[{int4}]{lsb\+Offset }\end{DoxyParamCaption})}
+
+
+
+Get (or create) placeholder piece. 
+
+Given a big \mbox{\hyperlink{classVarnode}{Varnode}}, find the placeholder corresponding to the logical value given by a size and significance offset. If it doesn\textquotesingle{}t exist, create it. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the big \mbox{\hyperlink{classVarnode}{Varnode}} containing the logical value \\
+\hline
+{\em bit\+Size} & is the size of the logical value in bytes \\
+\hline
+{\em lsb\+Offset} & is the signficance offset of the logical value within the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the found/created placeholder 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_a22d5897da21f3a9f194769a5f67f638b}\label{classTransformManager_a22d5897da21f3a9f194769a5f67f638b}} 
+\index{TransformManager@{TransformManager}!getPreexistingVarnode@{getPreexistingVarnode}}
+\index{getPreexistingVarnode@{getPreexistingVarnode}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{getPreexistingVarnode()}{getPreexistingVarnode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::get\+Preexisting\+Varnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Get (or create) placeholder for preexisting \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Check if a placeholder node was created for the preexisting \mbox{\hyperlink{classVarnode}{Varnode}} for, otherwise create a new one. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the preexisting \mbox{\hyperlink{classVarnode}{Varnode}} to find a placeholder for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_a890f76d4b44a6f0ccad97533e9fdaf2d}\label{classTransformManager_a890f76d4b44a6f0ccad97533e9fdaf2d}} 
+\index{TransformManager@{TransformManager}!getSplit@{getSplit}}
+\index{getSplit@{getSplit}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{getSplit()}{getSplit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::get\+Split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&}]{description }\end{DoxyParamCaption})}
+
+
+
+Find (or create) placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into its lanes. 
+
+Given a big \mbox{\hyperlink{classVarnode}{Varnode}} and a lane description, look up placeholders for all its explicit pieces. If they don\textquotesingle{}t exist, create them. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the big \mbox{\hyperlink{classVarnode}{Varnode}} to split \\
+\hline
+{\em description} & shows how the big \mbox{\hyperlink{classVarnode}{Varnode}} will be split \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of the \mbox{\hyperlink{classTransformVar}{Transform\+Var}} placeholders from least to most significant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_a530bf14b465eefccb3d173fa1796bf4d}\label{classTransformManager_a530bf14b465eefccb3d173fa1796bf4d}} 
+\index{TransformManager@{TransformManager}!getSplit@{getSplit}}
+\index{getSplit@{getSplit}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{getSplit()}{getSplit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::get\+Split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&}]{description,  }\item[{int4}]{num\+Lanes,  }\item[{int4}]{start\+Lane }\end{DoxyParamCaption})}
+
+
+
+Find (or create) placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into a subset of lanes from a description. 
+
+Given a big \mbox{\hyperlink{classVarnode}{Varnode}} and a specific subset of a lane description, look up placeholders for all the explicit pieces. If they don\textquotesingle{}t exist, create them. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the big \mbox{\hyperlink{classVarnode}{Varnode}} to split \\
+\hline
+{\em description} & describes all the possible lanes \\
+\hline
+{\em num\+Lanes} & is the number of lanes in the subset \\
+\hline
+{\em start\+Lane} & is the starting (least significant) lane in the subset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of the \mbox{\hyperlink{classTransformVar}{Transform\+Var}} placeholders from least to most significant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_af0be0feebea331c9e12fe80e7c2229f2}\label{classTransformManager_af0be0feebea331c9e12fe80e7c2229f2}} 
+\index{TransformManager@{TransformManager}!newConstant@{newConstant}}
+\index{newConstant@{newConstant}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newConstant()}{newConstant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::new\+Constant (\begin{DoxyParamCaption}\item[{int4}]{size,  }\item[{int4}]{lsb\+Offset,  }\item[{uintb}]{val }\end{DoxyParamCaption})}
+
+
+
+Make placeholder for constant \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Create a new constant in the transform view. A piece of an existing constant can be created by giving the existing value and the least significant offset. 
+\begin{DoxyParams}{Parameters}
+{\em size} & is the size in bytes of the new constant \\
+\hline
+{\em lsb\+Offset} & is the number of bits to strip off of the existing value \\
+\hline
+{\em val} & is the value of the constant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_ab566ae1e823aadc9ce8316ad4bf53a91}\label{classTransformManager_ab566ae1e823aadc9ce8316ad4bf53a91}} 
+\index{TransformManager@{TransformManager}!newIop@{newIop}}
+\index{newIop@{newIop}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newIop()}{newIop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::new\+Iop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Make placeholder for special iop constant. 
+
+Used for creating I\+N\+D\+I\+R\+E\+CT placeholders. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the original iop parameter to the I\+N\+D\+I\+R\+E\+CT \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_acea6dc76f33136751101f20f2ab6d2c7}\label{classTransformManager_acea6dc76f33136751101f20f2ab6d2c7}} 
+\index{TransformManager@{TransformManager}!newOp@{newOp}}
+\index{newOp@{newOp}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newOp()}{newOp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$ Transform\+Manager\+::new\+Op (\begin{DoxyParamCaption}\item[{int4}]{num\+Params,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$}]{follow }\end{DoxyParamCaption})}
+
+
+
+Create a new placeholder op that will not replace an existing op. 
+
+An uninitialized placeholder for the new op is created. When (if) the new op is created it will not replace an existing op. The op that follows it must be given. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Params} & is the number of \mbox{\hyperlink{classVarnode}{Varnode}} inputs intended for the new op \\
+\hline
+{\em opc} & is the opcode of the new op \\
+\hline
+{\em follow} & is the placeholder for the op that follow the new op when it is created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_a3aef51eeb1b0c9e98951427667253561}\label{classTransformManager_a3aef51eeb1b0c9e98951427667253561}} 
+\index{TransformManager@{TransformManager}!newOpReplace@{newOpReplace}}
+\index{newOpReplace@{newOpReplace}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newOpReplace()}{newOpReplace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$ Transform\+Manager\+::new\+Op\+Replace (\begin{DoxyParamCaption}\item[{int4}]{num\+Params,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{replace }\end{DoxyParamCaption})}
+
+
+
+Create a new placeholder op intended to replace an existing op. 
+
+An uninitialized placeholder for the new op is created. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Params} & is the number of \mbox{\hyperlink{classVarnode}{Varnode}} inputs intended for the new op \\
+\hline
+{\em opc} & is the opcode of the new op \\
+\hline
+{\em replace} & is the existing op the new op will replace \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_a208b344db9e2b0f8aae46bbdd1478e1b}\label{classTransformManager_a208b344db9e2b0f8aae46bbdd1478e1b}} 
+\index{TransformManager@{TransformManager}!newPiece@{newPiece}}
+\index{newPiece@{newPiece}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newPiece()}{newPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::new\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{int4}]{bit\+Size,  }\item[{int4}]{lsb\+Offset }\end{DoxyParamCaption})}
+
+
+
+Make placeholder for piece of a \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Given a single logical value within a larger \mbox{\hyperlink{classVarnode}{Varnode}}, create a placeholder for that logical value. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the large \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em bit\+Size} & is the size of the logical value in bits \\
+\hline
+{\em lsb\+Offset} & is the number of least significant bits of the \mbox{\hyperlink{classVarnode}{Varnode}} dropped from the value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the placeholder variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_a00cd33f9b4ca4c111d912f5c36112c7c}\label{classTransformManager_a00cd33f9b4ca4c111d912f5c36112c7c}} 
+\index{TransformManager@{TransformManager}!newPreexistingOp@{newPreexistingOp}}
+\index{newPreexistingOp@{newPreexistingOp}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newPreexistingOp()}{newPreexistingOp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$ Transform\+Manager\+::new\+Preexisting\+Op (\begin{DoxyParamCaption}\item[{int4}]{num\+Params,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{original\+Op }\end{DoxyParamCaption})}
+
+
+
+Create a new placeholder op for an existing \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+An uninitialized placeholder for the existing op is created. When applied, this causes the op to be transformed as described by the placeholder, changing its opcode and inputs. The output however is unaffected. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Params} & is the number of \mbox{\hyperlink{classVarnode}{Varnode}} inputs intended for the transformed op \\
+\hline
+{\em opc} & is the opcode of the transformed op \\
+\hline
+{\em original\+Op} & is the preexisting \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_aaaee3318c0a3ee71435e402b31a47b91}\label{classTransformManager_aaaee3318c0a3ee71435e402b31a47b91}} 
+\index{TransformManager@{TransformManager}!newPreexistingVarnode@{newPreexistingVarnode}}
+\index{newPreexistingVarnode@{newPreexistingVarnode}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newPreexistingVarnode()}{newPreexistingVarnode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::new\+Preexisting\+Varnode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Make placeholder for preexisting \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the preexisting \mbox{\hyperlink{classVarnode}{Varnode}} to create a placeholder for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_af8751dc0fd19ea8264bf93d3bb9b2569}\label{classTransformManager_af8751dc0fd19ea8264bf93d3bb9b2569}} 
+\index{TransformManager@{TransformManager}!newSplit@{newSplit}}
+\index{newSplit@{newSplit}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newSplit()}{newSplit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::new\+Split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&}]{description }\end{DoxyParamCaption})}
+
+
+
+Create placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into its lanes. 
+
+Given a big \mbox{\hyperlink{classVarnode}{Varnode}} and a lane description, create placeholders for all the explicit pieces that the big \mbox{\hyperlink{classVarnode}{Varnode}} will be split into. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the big \mbox{\hyperlink{classVarnode}{Varnode}} to split \\
+\hline
+{\em description} & shows how the big \mbox{\hyperlink{classVarnode}{Varnode}} will be split \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of the new \mbox{\hyperlink{classTransformVar}{Transform\+Var}} placeholders from least to most significant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_af7ea37c74d10a836ca3e77cf5a065519}\label{classTransformManager_af7ea37c74d10a836ca3e77cf5a065519}} 
+\index{TransformManager@{TransformManager}!newSplit@{newSplit}}
+\index{newSplit@{newSplit}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newSplit()}{newSplit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::new\+Split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&}]{description,  }\item[{int4}]{num\+Lanes,  }\item[{int4}]{start\+Lane }\end{DoxyParamCaption})}
+
+
+
+Create placeholder nodes splitting a \mbox{\hyperlink{classVarnode}{Varnode}} into a subset of lanes in the given description. 
+
+Given a big \mbox{\hyperlink{classVarnode}{Varnode}} and specific subset of a lane description, create placeholders for all the explicit pieces that the big \mbox{\hyperlink{classVarnode}{Varnode}} will be split into. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the big \mbox{\hyperlink{classVarnode}{Varnode}} to split \\
+\hline
+{\em description} & gives a list of potentional lanes \\
+\hline
+{\em num\+Lanes} & is the number of lanes in the subset \\
+\hline
+{\em start\+Lane} & is the starting (least significant) lane in the subset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of the new \mbox{\hyperlink{classTransformVar}{Transform\+Var}} placeholders from least to most significant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_a2e1a80d967583d907cf2f27025347f51}\label{classTransformManager_a2e1a80d967583d907cf2f27025347f51}} 
+\index{TransformManager@{TransformManager}!newUnique@{newUnique}}
+\index{newUnique@{newUnique}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{newUnique()}{newUnique()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$ Transform\+Manager\+::new\+Unique (\begin{DoxyParamCaption}\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Make placeholder for new unique space \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & is the size in bytes of the new unique \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new placeholder node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTransformManager_af17f9dbe7f73713ed4b5684682169c0f}\label{classTransformManager_af17f9dbe7f73713ed4b5684682169c0f}} 
+\index{TransformManager@{TransformManager}!opSetInput@{opSetInput}}
+\index{opSetInput@{opSetInput}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{opSetInput()}{opSetInput()}}
+{\footnotesize\ttfamily void Transform\+Manager\+::op\+Set\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$}]{rop,  }\item[{\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$}]{rvn,  }\item[{int4}]{slot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mark given variable as input to given op. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rop} & is the given placeholder op whose input is set \\
+\hline
+{\em rvn} & is the placeholder variable to set \\
+\hline
+{\em slot} & is the input position to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTransformManager_a0d67484b4dd36d3fb5ca19697a48f66a}\label{classTransformManager_a0d67484b4dd36d3fb5ca19697a48f66a}} 
+\index{TransformManager@{TransformManager}!opSetOutput@{opSetOutput}}
+\index{opSetOutput@{opSetOutput}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{opSetOutput()}{opSetOutput()}}
+{\footnotesize\ttfamily void Transform\+Manager\+::op\+Set\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransformOp}{Transform\+Op}} $\ast$}]{rop,  }\item[{\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$}]{rvn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Mark given variable as output of given op. 
+
+Establish that the given op produces the given var as output. Mark both the {\itshape output} field of the \mbox{\hyperlink{classTransformOp}{Transform\+Op}} and the {\itshape def} field of the \mbox{\hyperlink{classTransformVar}{Transform\+Var}}. 
+\begin{DoxyParams}{Parameters}
+{\em rop} & is the given op \\
+\hline
+{\em rvn} & is the given variable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTransformManager_a3f8190cd08984f5a860b9798105a7c5d}\label{classTransformManager_a3f8190cd08984f5a860b9798105a7c5d}} 
+\index{TransformManager@{TransformManager}!preexistingGuard@{preexistingGuard}}
+\index{preexistingGuard@{preexistingGuard}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{preexistingGuard()}{preexistingGuard()}}
+{\footnotesize\ttfamily bool Transform\+Manager\+::preexisting\+Guard (\begin{DoxyParamCaption}\item[{int4}]{slot,  }\item[{\mbox{\hyperlink{classTransformVar}{Transform\+Var}} $\ast$}]{rvn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Should new\+Preexisting\+Op be called. 
+
+\mbox{\hyperlink{classVarnode}{Varnode}} marking prevents duplicate \mbox{\hyperlink{classTransformOp}{Transform\+Op}} (and \mbox{\hyperlink{classTransformVar}{Transform\+Var}}) records from getting created, except in the case of a preexisting \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} with 2 (or more) non-\/constant inputs. Because the op is preexisting the output \mbox{\hyperlink{classVarnode}{Varnode}} doesn\textquotesingle{}t get marked, and the op will be visited for each input. This method determines when the \mbox{\hyperlink{classTransformOp}{Transform\+Op}} object should be created, with the goal of creating it exactly once even though the op is visited more than once. It currently assumes the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is binary, and the slot along which the op is currently visited is passed in, along with the \mbox{\hyperlink{classTransformVar}{Transform\+Var}} for the {\itshape other} input. It returns {\bfseries{true}} if the \mbox{\hyperlink{classTransformOp}{Transform\+Op}} should be created. 
+\begin{DoxyParams}{Parameters}
+{\em slot} & is the incoming slot along which the op is visited \\
+\hline
+{\em rvn} & is the other input \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTransformManager_ae2b948f919c95e2f4a3b000a75d8ffbe}\label{classTransformManager_ae2b948f919c95e2f4a3b000a75d8ffbe}} 
+\index{TransformManager@{TransformManager}!preserveAddress@{preserveAddress}}
+\index{preserveAddress@{preserveAddress}!TransformManager@{TransformManager}}
+\doxysubsubsection{\texorpdfstring{preserveAddress()}{preserveAddress()}}
+{\footnotesize\ttfamily bool Transform\+Manager\+::preserve\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{int4}]{bit\+Size,  }\item[{int4}]{lsb\+Offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Should the address of the given \mbox{\hyperlink{classVarnode}{Varnode}} be preserved when constructing a piece. 
+
+A new \mbox{\hyperlink{classVarnode}{Varnode}} will be created that represents a logical piece of the given \mbox{\hyperlink{classVarnode}{Varnode}}. This routine determines whether the new \mbox{\hyperlink{classVarnode}{Varnode}} should be constructed using storage which overlaps the given \mbox{\hyperlink{classVarnode}{Varnode}}. It returns {\bfseries{true}} if overlapping storage should be used, {\bfseries{false}} if the new \mbox{\hyperlink{classVarnode}{Varnode}} should be constructed as a unique temporary. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em bit\+Size} & is the logical size of the \mbox{\hyperlink{classVarnode}{Varnode}} piece being constructed \\
+\hline
+{\em lsb\+Offset} & is the least significant bit position of the logical value within the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if overlapping storage should be used in construction 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSubfloatFlow_a4303e6fb3f259339fc66affdbc4bf613}{Subfloat\+Flow}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{transform_8hh}{transform.\+hh}}\item 
+transform.\+cc\end{DoxyCompactItemize}

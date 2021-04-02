@@ -1,0 +1,89 @@
+\hypertarget{classIfcCallGraphBuild}{}\doxysection{Ifc\+Call\+Graph\+Build Class Reference}
+\label{classIfcCallGraphBuild}\index{IfcCallGraphBuild@{IfcCallGraphBuild}}
+
+
+Build the call-\/graph for the architecture/program\+: {\ttfamily callgraph build}  
+
+
+
+
+Inheritance diagram for Ifc\+Call\+Graph\+Build\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcCallGraphBuild__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Call\+Graph\+Build\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcCallGraphBuild__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcCallGraphBuild_abe1d0338026fa9dd6bcf466e12e0fed1}{execute}} (istream \&s)
+\item 
+virtual void \mbox{\hyperlink{classIfcCallGraphBuild_a141d9fa5d5f44124c3baadd825a7d658}{iteration\+Callback}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Perform the per-\/function aspect of {\bfseries{this}} command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfcCallGraphBuild_a8ed330d968150ce54b6dcf6643277b19}\label{classIfcCallGraphBuild_a8ed330d968150ce54b6dcf6643277b19}} 
+bool \mbox{\hyperlink{classIfcCallGraphBuild_a8ed330d968150ce54b6dcf6643277b19}{quick}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if a quick analysis is desired. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Build the call-\/graph for the architecture/program\+: {\ttfamily callgraph build} 
+
+Build, or rebuild, the call-\/graph with nodes for all existing functions. Functions are to decompiled to recover destinations of indirect calls. Going forward, the graph is held in memory and is accessible by other commands. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcCallGraphBuild_abe1d0338026fa9dd6bcf466e12e0fed1}\label{classIfcCallGraphBuild_abe1d0338026fa9dd6bcf466e12e0fed1}} 
+\index{IfcCallGraphBuild@{IfcCallGraphBuild}!execute@{execute}}
+\index{execute@{execute}!IfcCallGraphBuild@{IfcCallGraphBuild}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Graph\+Build\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfcCallGraphBuild_a141d9fa5d5f44124c3baadd825a7d658}\label{classIfcCallGraphBuild_a141d9fa5d5f44124c3baadd825a7d658}} 
+\index{IfcCallGraphBuild@{IfcCallGraphBuild}!iterationCallback@{iterationCallback}}
+\index{iterationCallback@{iterationCallback}!IfcCallGraphBuild@{IfcCallGraphBuild}}
+\doxysubsubsection{\texorpdfstring{iterationCallback()}{iterationCallback()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Graph\+Build\+::iteration\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the per-\/function aspect of {\bfseries{this}} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the particular function to operate on \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}{Iface\+Decomp\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

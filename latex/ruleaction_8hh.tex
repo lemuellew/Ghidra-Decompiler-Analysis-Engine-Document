@@ -1,0 +1,289 @@
+\hypertarget{ruleaction_8hh}{}\doxysection{ruleaction.\+hh File Reference}
+\label{ruleaction_8hh}\index{ruleaction.hh@{ruleaction.hh}}
+
+
+This is the basic set of transformation \mbox{\hyperlink{classRule}{Rule}} objects.  
+
+
+{\ttfamily \#include \char`\"{}action.\+hh\char`\"{}}\newline
+Include dependency graph for ruleaction.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ruleaction_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{ruleaction_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAddTreeState}{Add\+Tree\+State}}
+\begin{DoxyCompactList}\small\item\em Structure for sorting out pointer expression trees. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleEarlyRemoval}{Rule\+Early\+Removal}}
+\begin{DoxyCompactList}\small\item\em Get rid of unused \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects where we can guarantee the output is unused. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleCollectTerms}{Rule\+Collect\+Terms}}
+\begin{DoxyCompactList}\small\item\em Collect terms in a sum\+: {\ttfamily V $\ast$ c + V $\ast$ d =$>$ V $\ast$ (c + d)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSelectCse}{Rule\+Select\+Cse}}
+\begin{DoxyCompactList}\small\item\em Look for common sub-\/expressions (built out of a restricted set of ops) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePiece2Zext}{Rule\+Piece2\+Zext}}
+\begin{DoxyCompactList}\small\item\em Concatenation with 0 becomes an extension\+: {\ttfamily V = concat(\#0,W) =$>$ V = zext(\+W)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePiece2Sext}{Rule\+Piece2\+Sext}}
+\begin{DoxyCompactList}\small\item\em Concatenation with sign bits becomes an extension\+: {\ttfamily concat( V s$>$$>$ \#0x1f , V) =$>$ sext(\+V)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleBxor2NotEqual}{Rule\+Bxor2\+Not\+Equal}}
+\begin{DoxyCompactList}\small\item\em Eliminate B\+O\+O\+L\+\_\+\+X\+OR\+: {\ttfamily V $^\wedge$$^\wedge$ W =$>$ V != W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleOrMask}{Rule\+Or\+Mask}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+OR with full mask\+: {\ttfamily V = W $\vert$ 0xffff =$>$ V = W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAndMask}{Rule\+And\+Mask}}
+\begin{DoxyCompactList}\small\item\em Collapse unnecessary I\+N\+T\+\_\+\+A\+ND. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleOrConsume}{Rule\+Or\+Consume}}
+\begin{DoxyCompactList}\small\item\em Simply OR with unconsumed input\+: \`{}V = A $\vert$ B =$>$ V = B if nzm(\+A) \& consume(\+V) == 0. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleOrCollapse}{Rule\+Or\+Collapse}}
+\begin{DoxyCompactList}\small\item\em Collapse unnecessary I\+N\+T\+\_\+\+OR. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAndOrLump}{Rule\+And\+Or\+Lump}}
+\begin{DoxyCompactList}\small\item\em Collapse constants in logical expressions\+: {\ttfamily (V \& c) \& d =$>$ V \& (c \& d)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleNegateIdentity}{Rule\+Negate\+Identity}}
+\begin{DoxyCompactList}\small\item\em Apply I\+N\+T\+\_\+\+N\+E\+G\+A\+TE identities\+: {\ttfamily V \& $\sim$V =$>$ \#0, V $\vert$ $\sim$V -\/$>$ \#-\/1} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleShiftBitops}{Rule\+Shift\+Bitops}}
+\begin{DoxyCompactList}\small\item\em Shifting away all non-\/zero bits of one-\/side of a logical/arithmetic op. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleRightShiftAnd}{Rule\+Right\+Shift\+And}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+R\+I\+G\+HT and I\+N\+T\+\_\+\+S\+R\+I\+G\+HT ops where an I\+N\+T\+\_\+\+A\+ND mask becomes unnecessary. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleIntLessEqual}{Rule\+Int\+Less\+Equal}}
+\begin{DoxyCompactList}\small\item\em Convert L\+E\+S\+S\+E\+Q\+U\+AL to L\+E\+SS\+: {\ttfamily V $<$= c =$>$ V $<$ (c+1)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleEquality}{Rule\+Equality}}
+\begin{DoxyCompactList}\small\item\em Collapse I\+N\+T\+\_\+\+E\+Q\+U\+AL and I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL\+: {\ttfamily f(\+V,\+W) == f(\+V,\+W) =$>$ true} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleTermOrder}{Rule\+Term\+Order}}
+\begin{DoxyCompactList}\small\item\em Order the inputs to commutative operations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePullsubMulti}{Rule\+Pullsub\+Multi}}
+\begin{DoxyCompactList}\small\item\em Pull S\+U\+B\+P\+I\+E\+CE back through M\+U\+L\+T\+I\+E\+Q\+U\+AL. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePullsubIndirect}{Rule\+Pullsub\+Indirect}}
+\begin{DoxyCompactList}\small\item\em Pull-\/back S\+U\+B\+P\+I\+E\+CE through I\+N\+D\+I\+R\+E\+CT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePushMulti}{Rule\+Push\+Multi}}
+\begin{DoxyCompactList}\small\item\em Simplify M\+U\+L\+T\+I\+E\+Q\+U\+AL operations where the branches hold the same value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleNotDistribute}{Rule\+Not\+Distribute}}
+\begin{DoxyCompactList}\small\item\em Distribute B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE\+: {\ttfamily !(V \&\& W) =$>$ !V $\vert$$\vert$ !W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleHighOrderAnd}{Rule\+High\+Order\+And}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+A\+ND when applied to aligned I\+N\+T\+\_\+\+A\+DD\+: {\ttfamily (V + c) \& 0xfff0 =$>$ V + (c \& 0xfff0)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAndDistribute}{Rule\+And\+Distribute}}
+\begin{DoxyCompactList}\small\item\em Distribute I\+N\+T\+\_\+\+A\+ND through I\+N\+T\+\_\+\+OR if result is simpler. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLessOne}{Rule\+Less\+One}}
+\begin{DoxyCompactList}\small\item\em Transform I\+N\+T\+\_\+\+L\+E\+SS of 0 or 1\+: {\ttfamily V $<$ 1 =$>$ V == 0, V $<$= 0 =$>$ V == 0} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleRangeMeld}{Rule\+Range\+Meld}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMerge}{Merge}} range conditions of the form\+: {\ttfamily V s$<$ c, c s$<$ V, V == c, V != c} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleFloatRange}{Rule\+Float\+Range}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMerge}{Merge}} range conditions of the form\+: {\ttfamily V f$<$ c, c f$<$ V, V f== c} etc. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAndCommute}{Rule\+And\+Commute}}
+\begin{DoxyCompactList}\small\item\em Commute I\+N\+T\+\_\+\+A\+ND with I\+N\+T\+\_\+\+L\+E\+FT and I\+N\+T\+\_\+\+R\+I\+G\+HT\+: {\ttfamily (V $<$$<$ W) \& d =$>$ (V \& (W $>$$>$ c)) $<$$<$ c} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAndPiece}{Rule\+And\+Piece}}
+\begin{DoxyCompactList}\small\item\em Convert P\+I\+E\+CE to I\+N\+T\+\_\+\+Z\+E\+XT where appropriate\+: {\ttfamily V \& concat(\+W,\+X) =$>$ zext(\+X)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAndCompare}{Rule\+And\+Compare}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+Z\+E\+XT and S\+U\+B\+P\+I\+E\+CE in masked comparison\+: {\ttfamily zext(\+V) \& c == 0 =$>$ V \& (c \& mask) == 0} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleDoubleSub}{Rule\+Double\+Sub}}
+\begin{DoxyCompactList}\small\item\em Simplify chained S\+U\+B\+P\+I\+E\+CE\+: {\ttfamily sub( sub(\+V,c), d) =$>$ sub(V, c+d)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleDoubleShift}{Rule\+Double\+Shift}}
+\begin{DoxyCompactList}\small\item\em Simplify chained shifts I\+N\+T\+\_\+\+L\+E\+FT and I\+N\+T\+\_\+\+R\+I\+G\+HT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleDoubleArithShift}{Rule\+Double\+Arith\+Shift}}
+\begin{DoxyCompactList}\small\item\em Simplify two sequential I\+N\+T\+\_\+\+S\+R\+I\+G\+HT\+: {\ttfamily (x s$>$$>$ \#c) s$>$$>$ \#d =$>$ x s$>$$>$ saturate(\#c + \#d)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleConcatShift}{Rule\+Concat\+Shift}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+R\+I\+G\+HT canceling P\+I\+E\+CE\+: {\ttfamily concat(\+V,\+W) $>$$>$ c =$>$ zext(\+V)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLeftRight}{Rule\+Left\+Right}}
+\begin{DoxyCompactList}\small\item\em Transform canceling I\+N\+T\+\_\+\+R\+I\+G\+HT or I\+N\+T\+\_\+\+S\+R\+I\+G\+HT of I\+N\+T\+\_\+\+L\+E\+FT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleShiftCompare}{Rule\+Shift\+Compare}}
+\begin{DoxyCompactList}\small\item\em Transform shifts in comparisons\+: {\ttfamily V $>$$>$ c == d =$>$ V == (d $<$$<$ c)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLessEqual}{Rule\+Less\+Equal}}
+\begin{DoxyCompactList}\small\item\em Simplify \textquotesingle{}less than or equal\textquotesingle{}\+: {\ttfamily V $<$ W $\vert$$\vert$ V == W =$>$ V $<$= W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLessNotEqual}{Rule\+Less\+Not\+Equal}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL \&\& I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL\+: {\ttfamily V $<$= W \&\& V != W =$>$ V $<$ W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleTrivialArith}{Rule\+Trivial\+Arith}}
+\begin{DoxyCompactList}\small\item\em Simplify trivial arithmetic expressions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleTrivialBool}{Rule\+Trivial\+Bool}}
+\begin{DoxyCompactList}\small\item\em Simplify boolean expressions when one side is constant. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleZextEliminate}{Rule\+Zext\+Eliminate}}
+\begin{DoxyCompactList}\small\item\em Eliminate I\+N\+T\+\_\+\+Z\+E\+XT in comparisons\+: {\ttfamily zext(\+V) == c =$>$ V == c} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSlessToLess}{Rule\+Sless\+To\+Less}}
+\begin{DoxyCompactList}\small\item\em Convert I\+N\+T\+\_\+\+S\+L\+E\+SS to I\+N\+T\+\_\+\+L\+E\+SS when comparing positive values. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleZextSless}{Rule\+Zext\+Sless}}
+\begin{DoxyCompactList}\small\item\em Transform I\+N\+T\+\_\+\+Z\+E\+XT and I\+N\+T\+\_\+\+S\+L\+E\+SS\+: {\ttfamily zext(\+V) s$<$ c =$>$ V $<$ c} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleBitUndistribute}{Rule\+Bit\+Undistribute}}
+\begin{DoxyCompactList}\small\item\em Undo distributed operations through I\+N\+T\+\_\+\+A\+ND, I\+N\+T\+\_\+\+OR, and I\+N\+T\+\_\+\+X\+OR. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleBooleanNegate}{Rule\+Boolean\+Negate}}
+\begin{DoxyCompactList}\small\item\em Simplify comparisons with boolean values\+: {\ttfamily V == false =$>$ !V, V == true =$>$ V} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleBoolZext}{Rule\+Bool\+Zext}}
+\begin{DoxyCompactList}\small\item\em Simplify boolean expressions of the form zext(\+V) $\ast$ -\/1. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLogic2Bool}{Rule\+Logic2\+Bool}}
+\begin{DoxyCompactList}\small\item\em Convert logical to boolean operations\+: {\ttfamily V \& W =$>$ V \&\& W, V $\vert$ W =$>$ V $\vert$$\vert$ W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleIndirectCollapse}{Rule\+Indirect\+Collapse}}
+\begin{DoxyCompactList}\small\item\em Remove a C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT if its blocking \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is dead. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleMultiCollapse}{Rule\+Multi\+Collapse}}
+\begin{DoxyCompactList}\small\item\em Collapse M\+U\+L\+T\+I\+E\+Q\+U\+AL whose inputs all trace to the same value. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSborrow}{Rule\+Sborrow}}
+\begin{DoxyCompactList}\small\item\em Simplify signed comparisons using I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleTrivialShift}{Rule\+Trivial\+Shift}}
+\begin{DoxyCompactList}\small\item\em Simplify trivial shifts\+: {\ttfamily V $<$$<$ 0 =$>$ V, V $<$$<$ \#64 =$>$ 0} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSignShift}{Rule\+Sign\+Shift}}
+\begin{DoxyCompactList}\small\item\em Normalize sign-\/bit extraction\+: {\ttfamily V $>$$>$ 0x1f =$>$ (V s$>$$>$ 0x1f) $\ast$ -\/1} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleTestSign}{Rule\+Test\+Sign}}
+\begin{DoxyCompactList}\small\item\em Convert sign-\/bit test to signed comparison\+: {\ttfamily (V s$>$$>$ 0x1f) != 0 =$>$ V s$<$ 0} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleIdentityEl}{Rule\+Identity\+El}}
+\begin{DoxyCompactList}\small\item\em Collapse operations using identity element\+: {\ttfamily V + 0 =$>$ V} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleShift2Mult}{Rule\+Shift2\+Mult}}
+\begin{DoxyCompactList}\small\item\em Convert I\+N\+T\+\_\+\+L\+E\+FT to I\+N\+T\+\_\+\+M\+U\+LT\+: {\ttfamily V $<$$<$ 2 =$>$ V $\ast$ 4} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleShiftPiece}{Rule\+Shift\+Piece}}
+\begin{DoxyCompactList}\small\item\em Convert \char`\"{}shift and add\char`\"{} to P\+I\+E\+CE\+: (zext(\+V) $<$$<$ 16) + zext(\+W) =$>$ concat(\+V,\+W) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleCollapseConstants}{Rule\+Collapse\+Constants}}
+\begin{DoxyCompactList}\small\item\em Collapse constant expressions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleTransformCpool}{Rule\+Transform\+Cpool}}
+\begin{DoxyCompactList}\small\item\em Transform C\+P\+O\+O\+L\+R\+EF operations by looking up the value in the constant pool. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePropagateCopy}{Rule\+Propagate\+Copy}}
+\begin{DoxyCompactList}\small\item\em Propagate the input of a C\+O\+PY to all the places that read the output. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRule2Comp2Mult}{Rule2\+Comp2\+Mult}}
+\begin{DoxyCompactList}\small\item\em Eliminate I\+N\+T\+\_\+2\+C\+O\+MP\+: {\ttfamily -\/V =$>$ V $\ast$ -\/1} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleCarryElim}{Rule\+Carry\+Elim}}
+\begin{DoxyCompactList}\small\item\em Transform I\+N\+T\+\_\+\+C\+A\+R\+RY using a constant\+: {\ttfamily carry(\+V,c) =$>$ -\/c $<$= V} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSub2Add}{Rule\+Sub2\+Add}}
+\begin{DoxyCompactList}\small\item\em Eliminate I\+N\+T\+\_\+\+S\+UB\+: {\ttfamily V -\/ W =$>$ V + W $\ast$ -\/1} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleXorCollapse}{Rule\+Xor\+Collapse}}
+\begin{DoxyCompactList}\small\item\em Eliminate I\+N\+T\+\_\+\+X\+OR in comparisons\+: {\ttfamily (V $^\wedge$ W) == 0 =$>$ V == W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAddMultCollapse}{Rule\+Add\+Mult\+Collapse}}
+\begin{DoxyCompactList}\small\item\em Collapse constants in an additive or multiplicative expression. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLoadVarnode}{Rule\+Load\+Varnode}}
+\begin{DoxyCompactList}\small\item\em Convert L\+O\+AD operations using a constant offset to C\+O\+PY. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleStoreVarnode}{Rule\+Store\+Varnode}}
+\begin{DoxyCompactList}\small\item\em Convert S\+T\+O\+RE operations using a constant offset to C\+O\+PY. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubExtComm}{Rule\+Sub\+Ext\+Comm}}
+\begin{DoxyCompactList}\small\item\em Commute S\+U\+B\+P\+I\+E\+CE and I\+N\+T\+\_\+\+Z\+E\+XT\+: {\ttfamily sub(zext(\+V),c) =$>$ zext(sub(\+V,c))} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubCommute}{Rule\+Sub\+Commute}}
+\begin{DoxyCompactList}\small\item\em Commute S\+U\+B\+P\+I\+E\+CE operations with earlier operations where possible. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleConcatCommute}{Rule\+Concat\+Commute}}
+\begin{DoxyCompactList}\small\item\em Commute P\+I\+E\+CE with I\+N\+T\+\_\+\+A\+ND, I\+N\+T\+\_\+\+OR, and I\+N\+T\+\_\+\+X\+OR. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleConcatZext}{Rule\+Concat\+Zext}}
+\begin{DoxyCompactList}\small\item\em Commute P\+I\+E\+CE with I\+N\+T\+\_\+\+Z\+E\+XT\+: {\ttfamily concat(zext(\+V),\+W) =$>$ zext(concat(\+V,\+W))} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleZextCommute}{Rule\+Zext\+Commute}}
+\begin{DoxyCompactList}\small\item\em Commute I\+N\+T\+\_\+\+Z\+E\+XT with I\+N\+T\+\_\+\+R\+I\+G\+HT\+: {\ttfamily zext(\+V) $>$$>$ W =$>$ zext(V $>$$>$ W)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleZextShiftZext}{Rule\+Zext\+Shift\+Zext}}
+\begin{DoxyCompactList}\small\item\em Simplify multiple I\+N\+T\+\_\+\+Z\+E\+XT operations\+: {\ttfamily zext( zext(\+V) $<$$<$ c ) =$>$ zext(\+V) $<$$<$ c} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleShiftAnd}{Rule\+Shift\+And}}
+\begin{DoxyCompactList}\small\item\em Eliminate any I\+N\+T\+\_\+\+A\+ND when the bits it zeroes out are discarded by a shift. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleConcatZero}{Rule\+Concat\+Zero}}
+\begin{DoxyCompactList}\small\item\em Simplify concatenation with zero\+: {\ttfamily concat(\+V,0) =$>$ zext(\+V) $<$$<$ c} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleConcatLeftShift}{Rule\+Concat\+Left\+Shift}}
+\begin{DoxyCompactList}\small\item\em Simplify concatenation of extended value\+: {\ttfamily concat(V, zext(\+W) $<$$<$ c) =$>$ concat( concat(\+V,\+W), 0)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubZext}{Rule\+Sub\+Zext}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+Z\+E\+XT applied to S\+U\+B\+P\+I\+E\+CE expressions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubCancel}{Rule\+Sub\+Cancel}}
+\begin{DoxyCompactList}\small\item\em Simplify composition of S\+U\+B\+P\+I\+E\+CE with I\+N\+T\+\_\+\+Z\+E\+XT or I\+N\+T\+\_\+\+S\+E\+XT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleShiftSub}{Rule\+Shift\+Sub}}
+\begin{DoxyCompactList}\small\item\em Simplify S\+U\+B\+P\+I\+E\+CE applied to I\+N\+T\+\_\+\+L\+E\+FT\+: {\ttfamily sub( V $<$$<$ 8$\ast$c, c) =$>$ sub(\+V,0)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleHumptyDumpty}{Rule\+Humpty\+Dumpty}}
+\begin{DoxyCompactList}\small\item\em Simplify break and rejoin\+: {\ttfamily concat( sub(\+V,c), sub(\+V,0) ) =$>$ V} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleDumptyHump}{Rule\+Dumpty\+Hump}}
+\begin{DoxyCompactList}\small\item\em Simplify join and break apart\+: {\ttfamily sub( concat(\+V,\+W), c) =$>$ sub(\+W,c)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleHumptyOr}{Rule\+Humpty\+Or}}
+\begin{DoxyCompactList}\small\item\em Simplify masked pieces I\+N\+T\+\_\+\+O\+Red together\+: {\ttfamily (V \& ff00) $\vert$ (V \& 00ff) =$>$ V} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleEmbed}{Rule\+Embed}}
+\begin{DoxyCompactList}\small\item\em Simplify P\+I\+E\+CE intended as embedding\+: {\ttfamily concat(\+V, sub(\+W,0)) =$>$ W \& 0xff $\vert$ (zext(\+W) $<$$<$ 8)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSwitchSingle}{Rule\+Switch\+Single}}
+\begin{DoxyCompactList}\small\item\em Convert B\+R\+A\+N\+C\+H\+I\+ND with only one computed destination to a B\+R\+A\+N\+CH. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleCondNegate}{Rule\+Cond\+Negate}}
+\begin{DoxyCompactList}\small\item\em Flip conditions to match structuring cues. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleBoolNegate}{Rule\+Bool\+Negate}}
+\begin{DoxyCompactList}\small\item\em Apply a set of identities involving B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLess2Zero}{Rule\+Less2\+Zero}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+L\+E\+SS applied to extremal constants. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleLessEqual2Zero}{Rule\+Less\+Equal2\+Zero}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL applied to extremal constants. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSLess2Zero}{Rule\+S\+Less2\+Zero}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+S\+L\+E\+SS applied to 0 or -\/1. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleEqual2Zero}{Rule\+Equal2\+Zero}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+E\+Q\+U\+AL applied to 0\+: {\ttfamily 0 == V + W $\ast$ -\/1 =$>$ V == W or 0 == V + c =$>$ V == -\/c} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleEqual2Constant}{Rule\+Equal2\+Constant}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+E\+Q\+U\+AL applied to arithmetic expressions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePtrArith}{Rule\+Ptr\+Arith}}
+\begin{DoxyCompactList}\small\item\em Transform pointer arithmetic. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleStructOffset0}{Rule\+Struct\+Offset0}}
+\begin{DoxyCompactList}\small\item\em Convert a L\+O\+AD or S\+T\+O\+RE to the first element of a structure to a P\+T\+R\+S\+UB. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePushPtr}{Rule\+Push\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Push a \mbox{\hyperlink{classVarnode}{Varnode}} with known pointer data-\/type to the bottom of its additive expression. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePtraddUndo}{Rule\+Ptradd\+Undo}}
+\begin{DoxyCompactList}\small\item\em Remove P\+T\+R\+A\+DD operations with mismatched data-\/type information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePtrsubUndo}{Rule\+Ptrsub\+Undo}}
+\begin{DoxyCompactList}\small\item\em Remove P\+T\+R\+S\+UB operations with mismatched data-\/type information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleMultNegOne}{Rule\+Mult\+Neg\+One}}
+\begin{DoxyCompactList}\small\item\em Cleanup\+: Convert I\+N\+T\+\_\+2\+C\+O\+MP from I\+N\+T\+\_\+\+M\+U\+LT\+: {\ttfamily V $\ast$ -\/1 =$>$ -\/V} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleAddUnsigned}{Rule\+Add\+Unsigned}}
+\begin{DoxyCompactList}\small\item\em Cleanup\+: Convert I\+N\+T\+\_\+\+A\+DD of constants to I\+N\+T\+\_\+\+S\+UB\+: {\ttfamily V + 0xff... =$>$ V -\/ 0x00...} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRule2Comp2Sub}{Rule2\+Comp2\+Sub}}
+\begin{DoxyCompactList}\small\item\em Cleanup\+: Convert I\+N\+T\+\_\+\+A\+DD back to I\+N\+T\+\_\+\+S\+UB\+: {\ttfamily V + -\/W ==$>$ V -\/ W} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubRight}{Rule\+Sub\+Right}}
+\begin{DoxyCompactList}\small\item\em Cleanup\+: Convert truncation to cast\+: {\ttfamily sub(\+V,c) =$>$ sub(V$>$$>$c$\ast$8,0)} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePtrsubCharConstant}{Rule\+Ptrsub\+Char\+Constant}}
+\begin{DoxyCompactList}\small\item\em Cleanup\+: Set-\/up to print string constants. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubNormal}{Rule\+Sub\+Normal}}
+\begin{DoxyCompactList}\small\item\em Pull-\/back S\+U\+B\+P\+I\+E\+CE through I\+N\+T\+\_\+\+R\+I\+G\+HT and I\+N\+T\+\_\+\+S\+R\+I\+G\+HT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePositiveDiv}{Rule\+Positive\+Div}}
+\begin{DoxyCompactList}\small\item\em Signed division of positive values is unsigned division. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleDivTermAdd}{Rule\+Div\+Term\+Add}}
+\begin{DoxyCompactList}\small\item\em Simplify expressions associated with optimized division expressions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleDivTermAdd2}{Rule\+Div\+Term\+Add2}}
+\begin{DoxyCompactList}\small\item\em Simplify another expression associated with optimized division. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleDivOpt}{Rule\+Div\+Opt}}
+\begin{DoxyCompactList}\small\item\em Convert I\+N\+T\+\_\+\+M\+U\+LT and shift forms into I\+N\+T\+\_\+\+D\+IV or I\+N\+T\+\_\+\+S\+D\+IV. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSignDiv2}{Rule\+Sign\+Div2}}
+\begin{DoxyCompactList}\small\item\em Convert I\+N\+T\+\_\+\+S\+R\+I\+G\+HT form into I\+N\+T\+\_\+\+S\+D\+IV\+: {\ttfamily (V + -\/1$\ast$(V s$>$$>$ 31)) s$>$$>$ 1 =$>$ V s/ 2} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSignForm}{Rule\+Sign\+Form}}
+\begin{DoxyCompactList}\small\item\em Normalize sign extraction\+: {\ttfamily sub(sext(\+V),c) =$>$ V s$>$$>$ 31} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSignNearMult}{Rule\+Sign\+Near\+Mult}}
+\begin{DoxyCompactList}\small\item\em Simplify division form\+: {\ttfamily (V + (V s$>$$>$ 0x1f)$>$$>$(32-\/n)) \& (-\/1$<$$<$n) =$>$ (V s/ 2$^\wedge$n) $\ast$ 2$^\wedge$n} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleModOpt}{Rule\+Mod\+Opt}}
+\begin{DoxyCompactList}\small\item\em Simplify expressions that optimize I\+N\+T\+\_\+\+R\+EM and I\+N\+T\+\_\+\+S\+R\+EM. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSegment}{Rule\+Segment}}
+\begin{DoxyCompactList}\small\item\em Propagate constants through a S\+E\+G\+M\+E\+N\+T\+OP. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubvarAnd}{Rule\+Subvar\+And}}
+\begin{DoxyCompactList}\small\item\em Perform Sub\+Variable\+Flow analysis triggered by I\+N\+T\+\_\+\+A\+ND. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubvarSubpiece}{Rule\+Subvar\+Subpiece}}
+\begin{DoxyCompactList}\small\item\em Perform Sub\+Variable\+Flow analysis triggered by S\+U\+B\+P\+I\+E\+CE. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSplitFlow}{Rule\+Split\+Flow}}
+\begin{DoxyCompactList}\small\item\em Try to detect and split artificially joined Varnodes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePtrFlow}{Rule\+Ptr\+Flow}}
+\begin{DoxyCompactList}\small\item\em Mark \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects that are carrying or operating on pointers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubvarCompZero}{Rule\+Subvar\+Comp\+Zero}}
+\begin{DoxyCompactList}\small\item\em Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by testing of a single bit. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubvarShift}{Rule\+Subvar\+Shift}}
+\begin{DoxyCompactList}\small\item\em Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by I\+N\+T\+\_\+\+R\+I\+G\+HT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubvarZext}{Rule\+Subvar\+Zext}}
+\begin{DoxyCompactList}\small\item\em Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by I\+N\+T\+\_\+\+Z\+E\+XT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubvarSext}{Rule\+Subvar\+Sext}}
+\begin{DoxyCompactList}\small\item\em Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by I\+N\+T\+\_\+\+S\+E\+XT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleSubfloatConvert}{Rule\+Subfloat\+Convert}}
+\begin{DoxyCompactList}\small\item\em Perform \mbox{\hyperlink{classSubfloatFlow}{Subfloat\+Flow}} analysis triggered by F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleNegateNegate}{Rule\+Negate\+Negate}}
+\begin{DoxyCompactList}\small\item\em Simplify I\+N\+T\+\_\+\+N\+E\+G\+A\+TE chains\+: {\ttfamily $\sim$$\sim$V =$>$ V} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleConditionalMove}{Rule\+Conditional\+Move}}
+\begin{DoxyCompactList}\small\item\em Simplify various conditional move situations. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleFloatCast}{Rule\+Float\+Cast}}
+\begin{DoxyCompactList}\small\item\em Replace (casttosmall)(casttobig)V with identity or with single cast. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleIgnoreNan}{Rule\+Ignore\+Nan}}
+\begin{DoxyCompactList}\small\item\em Treat F\+L\+O\+A\+T\+\_\+\+N\+AN as always evaluating to false. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleFuncPtrEncoding}{Rule\+Func\+Ptr\+Encoding}}
+\begin{DoxyCompactList}\small\item\em Eliminate A\+R\+M/\+T\+H\+U\+MB style masking of the low order bits on function pointers. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleThreeWayCompare}{Rule\+Three\+Way\+Compare}}
+\begin{DoxyCompactList}\small\item\em Simplify expressions involving {\itshape three-\/way} comparisons. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePopcountBoolXor}{Rule\+Popcount\+Bool\+Xor}}
+\begin{DoxyCompactList}\small\item\em Simplify boolean expressions that are combined through P\+O\+P\+C\+O\+U\+NT. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRulePiecePathology}{Rule\+Piece\+Pathology}}
+\begin{DoxyCompactList}\small\item\em Search for concatenations with unlikely things to inform return/parameter consumption calculation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRuleXorSwap}{Rule\+Xor\+Swap}}
+\begin{DoxyCompactList}\small\item\em Simplify limited chains of X\+OR operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the basic set of transformation \mbox{\hyperlink{classRule}{Rule}} objects. 
+
+Each \mbox{\hyperlink{classRule}{Rule}} triggers on a specific localized data-\/flow configuration. They are generally applied simultaneously from a pool (see \mbox{\hyperlink{classActionPool}{Action\+Pool}}) and can interact with each other to produce an emergent transformation. The Rules are applied repeatedly until no \mbox{\hyperlink{classRule}{Rule}} can make any additional transformations. 

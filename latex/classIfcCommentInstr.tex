@@ -1,0 +1,62 @@
+\hypertarget{classIfcCommentInstr}{}\doxysection{Ifc\+Comment\+Instr Class Reference}
+\label{classIfcCommentInstr}\index{IfcCommentInstr@{IfcCommentInstr}}
+
+
+Attach a comment to an address\+: {\ttfamily comment $<$address$>$ comment text...}  
+
+
+
+
+Inheritance diagram for Ifc\+Comment\+Instr\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcCommentInstr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Comment\+Instr\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcCommentInstr__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcCommentInstr_a101c4b13e1dff5bd5fde18c7b62cd38c}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Attach a comment to an address\+: {\ttfamily comment $<$address$>$ comment text...} 
+
+Add a comment to the database, suitable for integration into decompiler output for the {\itshape current} function. The command-\/line takes the address of the machine instruction which the comment will be attached to and is followed by the text of the comment. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcCommentInstr_a101c4b13e1dff5bd5fde18c7b62cd38c}\label{classIfcCommentInstr_a101c4b13e1dff5bd5fde18c7b62cd38c}} 
+\index{IfcCommentInstr@{IfcCommentInstr}!execute@{execute}}
+\index{execute@{execute}!IfcCommentInstr@{IfcCommentInstr}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Comment\+Instr\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

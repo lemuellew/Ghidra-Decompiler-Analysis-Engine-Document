@@ -1,0 +1,130 @@
+\hypertarget{classTypeOpBinary}{}\doxysection{Type\+Op\+Binary Class Reference}
+\label{classTypeOpBinary}\index{TypeOpBinary@{TypeOpBinary}}
+
+
+A generic binary operator\+: two inputs and one output.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Binary\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classTypeOpBinary__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Binary\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpBinary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpBinary_a183a65ebb3716a380229e38c3383fd98}{get\+Output\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpBinary_a6b8460b8ee0e97579321c6d02fe4fd29}{get\+Input\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpBinary_a3f26fc1e6bc1d143fb4f8391ef7ff3d6}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A generic binary operator\+: two inputs and one output. 
+
+All binary op-\/codes have a single data-\/type for input values and a data-\/type for the output value 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpBinary_a6b8460b8ee0e97579321c6d02fe4fd29}\label{classTypeOpBinary_a6b8460b8ee0e97579321c6d02fe4fd29}} 
+\index{TypeOpBinary@{TypeOpBinary}!getInputLocal@{getInputLocal}}
+\index{getInputLocal@{getInputLocal}!TypeOpBinary@{TypeOpBinary}}
+\doxysubsubsection{\texorpdfstring{getInputLocal()}{getInputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Binary\+::get\+Input\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the input) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+{\em slot} & is the input being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_abe2e4b619932cf94bafb084963a0fc66}{Type\+Op}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpIntSright_a684bdbbed1aa1ac2fc0d08caf5e0ca24}{Type\+Op\+Int\+Sright}}, \mbox{\hyperlink{classTypeOpIntRight_afd6976a40304a509b940a874da58b31b}{Type\+Op\+Int\+Right}}, and \mbox{\hyperlink{classTypeOpIntLeft_ace4697dce938154ffc5098b0c582cf3b}{Type\+Op\+Int\+Left}}.
+
+\mbox{\Hypertarget{classTypeOpBinary_a183a65ebb3716a380229e38c3383fd98}\label{classTypeOpBinary_a183a65ebb3716a380229e38c3383fd98}} 
+\index{TypeOpBinary@{TypeOpBinary}!getOutputLocal@{getOutputLocal}}
+\index{getOutputLocal@{getOutputLocal}!TypeOpBinary@{TypeOpBinary}}
+\doxysubsubsection{\texorpdfstring{getOutputLocal()}{getOutputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Binary\+::get\+Output\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the output) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a3454cadfb15f6794829123a7ecfe38f5}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpBinary_a3f26fc1e6bc1d143fb4f8391ef7ff3d6}\label{classTypeOpBinary_a3f26fc1e6bc1d143fb4f8391ef7ff3d6}} 
+\index{TypeOpBinary@{TypeOpBinary}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeOpBinary@{TypeOpBinary}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Op\+Binary\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to print \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}{Type\+Op}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpIntSright_a1559e48c6d810e3c092f3b9957528ec8}{Type\+Op\+Int\+Sright}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

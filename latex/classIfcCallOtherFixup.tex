@@ -1,0 +1,66 @@
+\hypertarget{classIfcCallOtherFixup}{}\doxysection{Ifc\+Call\+Other\+Fixup Class Reference}
+\label{classIfcCallOtherFixup}\index{IfcCallOtherFixup@{IfcCallOtherFixup}}
+
+
+Add a new callother fix-\/up to the program\+: {\ttfamily fixup callother ...}  
+
+
+
+
+Inheritance diagram for Ifc\+Call\+Other\+Fixup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcCallOtherFixup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Call\+Other\+Fixup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcCallOtherFixup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcCallOtherFixup_aec285f15002efa5a47ee620114ef6150}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Add a new callother fix-\/up to the program\+: {\ttfamily fixup callother ...} 
+
+The new fix-\/up is suitable for replacing specific user-\/defined (C\+A\+L\+L\+O\+T\+H\+ER) p-\/code operations. The declarator provides the name of the fix-\/up and can also provide formal input and output parameters. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{fixup callother outvar myfixup2(invar1,invar2) \{ outvar = invar1 + invar2; \}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcCallOtherFixup_aec285f15002efa5a47ee620114ef6150}\label{classIfcCallOtherFixup_aec285f15002efa5a47ee620114ef6150}} 
+\index{IfcCallOtherFixup@{IfcCallOtherFixup}!execute@{execute}}
+\index{execute@{execute}!IfcCallOtherFixup@{IfcCallOtherFixup}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Other\+Fixup\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

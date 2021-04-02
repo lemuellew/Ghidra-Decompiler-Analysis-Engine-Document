@@ -1,0 +1,120 @@
+\hypertarget{classOtherSpace}{}\doxysection{Other\+Space Class Reference}
+\label{classOtherSpace}\index{OtherSpace@{OtherSpace}}
+
+
+Special \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} for special/user-\/defined address spaces.  
+
+
+
+
+{\ttfamily \#include $<$space.\+hh$>$}
+
+
+
+Inheritance diagram for Other\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classOtherSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Other\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classOtherSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOtherSpace_ac11ae8844e0ae5435870068810aea5c4}{Other\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, const string \&nm, int4 ind)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOtherSpace_a26f61102cbd0a6cda5d73486bb0f9359}\label{classOtherSpace_a26f61102cbd0a6cda5d73486bb0f9359}} 
+\mbox{\hyperlink{classOtherSpace_a26f61102cbd0a6cda5d73486bb0f9359}{Other\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em For use with restore\+Xml. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classOtherSpace_a77624dbfb5e63e3bb54c48eba5bf66a6}{print\+Raw}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Write an address in this space to a stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classOtherSpace_a6a91f8d45074c60d731790e755eca7d0}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the details of this space as X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Special \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} for special/user-\/defined address spaces. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOtherSpace_ac11ae8844e0ae5435870068810aea5c4}\label{classOtherSpace_ac11ae8844e0ae5435870068810aea5c4}} 
+\index{OtherSpace@{OtherSpace}!OtherSpace@{OtherSpace}}
+\index{OtherSpace@{OtherSpace}!OtherSpace@{OtherSpace}}
+\doxysubsubsection{\texorpdfstring{OtherSpace()}{OtherSpace()}}
+{\footnotesize\ttfamily Other\+Space\+::\+Other\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{const string \&}]{nm,  }\item[{int4}]{ind }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+Construct the {\bfseries{other}} space, which is automatically constructed by the compiler, and is only constructed once. The name should always by {\bfseries{O\+T\+H\+ER}}. 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the associated address space manager \\
+\hline
+{\em t} & is the associated processor translator \\
+\hline
+{\em nm} & is the name of the space \\
+\hline
+{\em ind} & is the integer identifier \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOtherSpace_a77624dbfb5e63e3bb54c48eba5bf66a6}\label{classOtherSpace_a77624dbfb5e63e3bb54c48eba5bf66a6}} 
+\index{OtherSpace@{OtherSpace}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!OtherSpace@{OtherSpace}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Other\+Space\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write an address in this space to a stream. 
+
+This is a printing method for the debugging routines. It prints taking into account the {\itshape wordsize}, adding a \char`\"{}+n\char`\"{} if the offset is not on-\/cut with wordsize. It also returns the expected/typical size of values from this space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+{\em offset} & is the offset to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a76819b70cd6b6ae8601ac1821f86b929}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classOtherSpace_a6a91f8d45074c60d731790e755eca7d0}\label{classOtherSpace_a6a91f8d45074c60d731790e755eca7d0}} 
+\index{OtherSpace@{OtherSpace}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!OtherSpace@{OtherSpace}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Other\+Space\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the details of this space as X\+ML. 
+
+Write a tag fully describing the details of this space suitable for later recovery via restore\+Xml. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ac073a4d446677c54d769abba01318864}{Addr\+Space}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{space_8hh}{space.\+hh}}\item 
+space.\+cc\end{DoxyCompactItemize}

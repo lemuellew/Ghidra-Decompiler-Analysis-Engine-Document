@@ -1,0 +1,73 @@
+\hypertarget{classAddressResolver}{}\doxysection{Address\+Resolver Class Reference}
+\label{classAddressResolver}\index{AddressResolver@{AddressResolver}}
+
+
+Abstract class for converting native constants to addresses.  
+
+
+
+
+{\ttfamily \#include $<$translate.\+hh$>$}
+
+
+
+Inheritance diagram for Address\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classAddressResolver__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddressResolver_a80c05cd2e1a4ff745967f9f1512d418d}{resolve}} (uintb val, int4 sz, const \mbox{\hyperlink{classAddress}{Address}} \&point, uintb \&full\+Encoding)=0
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+Virtual destructor \end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for converting native constants to addresses. 
+
+This class is used if there is a special calculation to get from a constant embedded in the code being analyzed to the actual \mbox{\hyperlink{classAddress}{Address}} being referred to. This is used especially in the case of a segmented architecture, where \char`\"{}near\char`\"{} pointers must be extended to a full address with implied segment information. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAddressResolver_a80c05cd2e1a4ff745967f9f1512d418d}\label{classAddressResolver_a80c05cd2e1a4ff745967f9f1512d418d}} 
+\index{AddressResolver@{AddressResolver}!resolve@{resolve}}
+\index{resolve@{resolve}!AddressResolver@{AddressResolver}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAddress}{Address}} Address\+Resolver\+::resolve (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{point,  }\item[{uintb \&}]{full\+Encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\begin{quote}
+Virtual destructor \end{quote}
+
+
+The main resolver method.
+
+Given a native constant in a specific context, resolve what address is being referred to. The constant can be a partially encoded pointer, in which case the full pointer encoding is recovered as well as the address. Whether or not a pointer is partially encoded or not is determined by the {\itshape sz} parameter, indicating the number of bytes in the pointer. A value of -\/1 here indicates that the pointer is known to be a full encoding. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is constant to be resolved to an address \\
+\hline
+{\em sz} & is the size of {\itshape val} in context (or -\/1). \\
+\hline
+{\em point} & is the address at which this constant is being used \\
+\hline
+{\em full\+Encoding} & is used to hold the full pointer encoding if {\bfseries{val}} is a partial encoding \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resolved \mbox{\hyperlink{classAddress}{Address}} 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classSegmentedResolver_a0751cdea5d9794b98bacf185bec0773b}{Segmented\+Resolver}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{translate_8hh}{translate.\+hh}}\end{DoxyCompactItemize}

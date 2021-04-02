@@ -1,0 +1,70 @@
+\hypertarget{classIfcJumpOverride}{}\doxysection{Ifc\+Jump\+Override Class Reference}
+\label{classIfcJumpOverride}\index{IfcJumpOverride@{IfcJumpOverride}}
+
+
+Provide an overriding jump-\/table for an indirect branch\+: {\ttfamily override jumptable ...}  
+
+
+
+
+Inheritance diagram for Ifc\+Jump\+Override\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcJumpOverride__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Jump\+Override\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcJumpOverride__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcJumpOverride_a90f8e712da03bb3c716692501627f890}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Provide an overriding jump-\/table for an indirect branch\+: {\ttfamily override jumptable ...} 
+
+The command expects the address of an indirect branch in the {\itshape current} function, followed by the keyword {\bfseries{table}} then a list of possible target addresses of the branch. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{override} jumptable r0x1000 table r0x1020 r0x1030 r0x1043 ...}
+\end{DoxyCode}
+ The command can optionally take the keyword {\bfseries{startval}} followed by an integer indicating the value taken by the {\itshape normalized} switch variable that produces the first address in the table. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{override} jumptable startval 10 table r0x1020 r0x1030 ...}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcJumpOverride_a90f8e712da03bb3c716692501627f890}\label{classIfcJumpOverride_a90f8e712da03bb3c716692501627f890}} 
+\index{IfcJumpOverride@{IfcJumpOverride}!execute@{execute}}
+\index{execute@{execute}!IfcJumpOverride@{IfcJumpOverride}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Jump\+Override\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

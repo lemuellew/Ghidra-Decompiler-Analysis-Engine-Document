@@ -1,0 +1,962 @@
+\hypertarget{classFlowBlock}{}\doxysection{Flow\+Block Class Reference}
+\label{classFlowBlock}\index{FlowBlock@{FlowBlock}}
+
+
+Description of a control-\/flow block containing Pcode\+Ops.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Flow\+Block\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFlowBlock__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}\label{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}} 
+enum \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} \{ \newline
+{\bfseries t\+\_\+plain}, 
+{\bfseries t\+\_\+basic}, 
+{\bfseries t\+\_\+graph}, 
+{\bfseries t\+\_\+copy}, 
+\newline
+{\bfseries t\+\_\+goto}, 
+{\bfseries t\+\_\+multigoto}, 
+{\bfseries t\+\_\+ls}, 
+{\bfseries t\+\_\+condition}, 
+\newline
+{\bfseries t\+\_\+if}, 
+{\bfseries t\+\_\+whiledo}, 
+{\bfseries t\+\_\+dowhile}, 
+{\bfseries t\+\_\+switch}, 
+\newline
+{\bfseries t\+\_\+infloop}
+ \}
+\begin{DoxyCompactList}\small\item\em The possible block types. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2}{block\+\_\+flags}} \{ \newline
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a26555312a9d48b2907880f9049884fcd}{f\+\_\+goto\+\_\+goto}} = 1, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aa1bf1bbaf846b5c1b283959e40536e7b}{f\+\_\+break\+\_\+goto}} = 2, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a99acc4a23a022bb7f450fa0484ff52a4}{f\+\_\+continue\+\_\+goto}} = 4, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a78728a42dfc897142aa3016755dee1d7}{f\+\_\+switch\+\_\+out}} = 0x10, 
+\newline
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aa930fe29ee92e5f6a4bc2e1f22ac4528}{f\+\_\+unstructured\+\_\+targ}} = 0x20, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ae41c73039c1b823b5dc565f94a52a99b}{f\+\_\+mark}} = 0x80, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aaa2314a6bc6670c898ca3b6770c6ecd2}{f\+\_\+mark2}} = 0x100, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2afd94c2db722af168be7fea53cbfddd30}{f\+\_\+entry\+\_\+point}} = 0x200, 
+\newline
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a307269697a1ba916e087fdc3f2feb1c9}{f\+\_\+interior\+\_\+gotoout}} = 0x400, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a7008fbe718e9fb77312862a94f05c405}{f\+\_\+interior\+\_\+gotoin}} = 0x800, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a93b97b5009f28b26aebafda88251e259}{f\+\_\+label\+\_\+bumpup}} = 0x1000, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ad72248908bd5f571586172be7deada5f}{f\+\_\+donothing\+\_\+loop}} = 0x2000, 
+\newline
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a8c84642bdace36eaa4fcd6c340583051}{f\+\_\+dead}} = 0x4000, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a64dd5bbfe0ba6090634f9718f67b277a}{f\+\_\+whiledo\+\_\+overflow}} = 0x8000, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a690cc8c4469d205a9462326623678a68}{f\+\_\+flip\+\_\+path}} = 0x10000, 
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a2342aaea273caf2fbd3fb633bb9f1013}{f\+\_\+joined\+\_\+block}} = 0x20000, 
+\newline
+\mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ac1eba11e8c914e6a242f81da5f897a32}{f\+\_\+duplicate\+\_\+block}} = 0x40000
+ \}
+\begin{DoxyCompactList}\small\item\em Boolean properties of blocks. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3}{edge\+\_\+flags}} \{ \newline
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a3f9a64fdd2b723fb0362217484850282}{f\+\_\+goto\+\_\+edge}} = 1, 
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a3a60b7af995b069a9b27002238a2f3bc}{f\+\_\+loop\+\_\+edge}} = 2, 
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a6c0f0a93541f9b6dd943fc716453ac12}{f\+\_\+defaultswitch\+\_\+edge}} = 4, 
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a33cc7e60530766eb8f4635b1b1e0b4b7}{f\+\_\+irreducible}} = 8, 
+\newline
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a56f633c28bfedad8128d9643be7b50ba}{f\+\_\+tree\+\_\+edge}} = 0x10, 
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a34ec311319be4344538ca3ef3d5140ab}{f\+\_\+forward\+\_\+edge}} = 0x20, 
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3ac9dab7e61ad7f205f945cba731b84a77}{f\+\_\+cross\+\_\+edge}} = 0x40, 
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3ad18dd95f5292f700bce81c8c84bb00a4}{f\+\_\+back\+\_\+edge}} = 0x80, 
+\newline
+\mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a74e873806d57e50f28ea65bf580aa0c5}{f\+\_\+loop\+\_\+exit\+\_\+edge}} = 0x100
+ \}
+\begin{DoxyCompactList}\small\item\em Boolean properties on edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFlowBlock_a1322971561fc70b9f0a9a9a7e05b6c7c}\label{classFlowBlock_a1322971561fc70b9f0a9a9a7e05b6c7c}} 
+\mbox{\hyperlink{classFlowBlock_a1322971561fc70b9f0a9a9a7e05b6c7c}{Flow\+Block}} (void)
+\begin{DoxyCompactList}\small\item\em Construct a block with no edges. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_a0882ce85a017e4988eda779de6a86089}{mark\+Label\+Bump\+Up}} (bool bump)
+\begin{DoxyCompactList}\small\item\em Let hierarchical blocks steal labels of their (first) components. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_ae00f14fc1916599ec34074fbb010c74b}{print\+Tree}} (ostream \&s, int4 level) const
+\begin{DoxyCompactList}\small\item\em Print tree structure of any blocks owned by {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_a9baddec2635c95a5ac9019d6b21d3eab}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classFlowBlock_ae0f8a479ae1548280ff0b4f45bc08dc3}{negate\+Condition}} (bool toporbottom)
+\begin{DoxyCompactList}\small\item\em Flip the condition computed by {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classFlowBlock_a6ab46f9a87bc94b30bd3bee0923b3f51}{prefer\+Complement}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Rearrange {\bfseries{this}} hierarchy to simplify boolean expressions. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFlowBlock_a20996aacbad259e2e4a7bb0c72482335}{get\+Split\+Point}} (void)
+\begin{DoxyCompactList}\small\item\em Get the leaf splitting block. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}{flip\+In\+Place\+Test}} (vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&fliplist) const
+\begin{DoxyCompactList}\small\item\em Test normalizing the conditional branch in {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}{flip\+In\+Place\+Execute}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the flip to normalize conditional branch executed by {\bfseries{this}} block. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFlowBlock_a400c220d6c728958396286f54de6dd9e}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_a6cf95f66e3f6940a8342b3e6fdfc5ca2}{save\+Xml\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save basic information as X\+ML attributes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_ad41a9b871ab1994b91334de10fc2c63f}{restore\+Xml\+Header}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore basic information for X\+ML attributes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFlowBlock_aea33ed5d172e8486557198c2e18c88ae}{restore\+Xml\+Body}} (List\+::const\+\_\+iterator \&iter, List\+::const\+\_\+iterator enditer, \mbox{\hyperlink{classBlockMap}{Block\+Map}} \&resolver)
+\begin{DoxyCompactList}\small\item\em Restore details about {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowBlock_a5b6c4638bc1ca5fa47c33fe2ca0e1696}{save\+Xml\+Edges}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save edge information to an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowBlock_a4f4f2a042d4754abc9facea69d7f5cd1}{restore\+Xml\+Edges}} (List\+::const\+\_\+iterator \&iter, List\+::const\+\_\+iterator enditer, \mbox{\hyperlink{classBlockMap}{Block\+Map}} \&resolver)
+\begin{DoxyCompactList}\small\item\em Restore edges from an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowBlock_a91d4573992c7a798259b34be67d97d5a}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write out {\bfseries{this}} to an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowBlock_a002ddc14dc84098dcb14b513f8b973c1}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classBlockMap}{Block\+Map}} \&resolver)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} from an X\+ML stream. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFlowBlock_adb062ea29f2d073206adf61c317e97c7}{next\+In\+Flow}} (void) const
+\begin{DoxyCompactList}\small\item\em Return next block to be executed in flow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowBlock_a50ac469ba63c50f574bf05f18a307f8c}{set\+Goto\+Branch}} (int4 i)
+\begin{DoxyCompactList}\small\item\em Mark a {\itshape goto} branch. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlowBlock_a9dd26ef25c281fc1c64a99ecd1c9eada}{is\+Jump\+Target}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if non-\/fallthru jump flows into {\bfseries{this}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFlowBlock_af351e164076032e278a238cbb570710c}{get\+Front\+Leaf}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFlowBlock_a79329e1df72d004f0b7b8ff475e0143d}{get\+Front\+Leaf}} (void)
+\begin{DoxyCompactList}\small\item\em Get the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFlowBlock_af611c90c1974b257161c37860065c011}{calc\+Depth}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$leaf) const
+\begin{DoxyCompactList}\small\item\em Get the depth of the given component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlowBlock_a8f56cf50470348ef52289ce28c03cb08}{dominates}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$sub\+Block) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} block dominate the given block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlowBlock_a00ebb66879a68e1d4ddd0fb30a218d0f}{restricted\+By\+Conditional}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$cond) const
+\begin{DoxyCompactList}\small\item\em Check if the condition from the given block holds for {\bfseries{this}} block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlowBlock_a54d8e26d57d72d73f4ae36744eccf85d}{has\+Loop\+In}} (void) const
+\begin{DoxyCompactList}\small\item\em Is there a looping edge coming into {\bfseries{this}} block. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlowBlock_af871bdc2674a0bcc53c9886e57e70f72}{has\+Loop\+Out}} (void) const
+\begin{DoxyCompactList}\small\item\em Is there a looping edge going out of {\bfseries{this}} block. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFlowBlock_aa7e3329c296bc6ac805cc067aa4c301e}{get\+In\+Index}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the incoming edge index for the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFlowBlock_a814ffded437db16866c5da50ba1990f8}{get\+Out\+Index}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the outgoing edge index for the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFlowBlock_a96f1d86554ed27136413d992238356f1}\label{classFlowBlock_a96f1d86554ed27136413d992238356f1}} 
+bool \mbox{\hyperlink{classFlowBlock_a96f1d86554ed27136413d992238356f1}{is\+Decision\+Out}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Can {\bfseries{this}} and the i-\/th output be merged into a \mbox{\hyperlink{classBlockIf}{Block\+If}} or \mbox{\hyperlink{classBlockList}{Block\+List}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFlowBlock_a905ae147d7a99ce2cfa5686b2f76193b}\label{classFlowBlock_a905ae147d7a99ce2cfa5686b2f76193b}} 
+bool \mbox{\hyperlink{classFlowBlock_a905ae147d7a99ce2cfa5686b2f76193b}{is\+Decision\+In}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Can {\bfseries{this}} and the i-\/th input be merged into a \mbox{\hyperlink{classBlockIf}{Block\+If}} or \mbox{\hyperlink{classBlockList}{Block\+List}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFlowBlock_a82b1e9b66bef1b34d2f5136b61cadbe9}\label{classFlowBlock_a82b1e9b66bef1b34d2f5136b61cadbe9}} 
+bool \mbox{\hyperlink{classFlowBlock_a82b1e9b66bef1b34d2f5136b61cadbe9}{is\+Loop\+D\+A\+G\+Out}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Is the i-\/th outgoing edge part of the D\+AG sub-\/graph. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFlowBlock_a31db534d506fdf721189b553f869cd33}\label{classFlowBlock_a31db534d506fdf721189b553f869cd33}} 
+bool \mbox{\hyperlink{classFlowBlock_a31db534d506fdf721189b553f869cd33}{is\+Loop\+D\+A\+G\+In}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Is the i-\/th incoming edge part of the D\+AG sub-\/graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$ \mbox{\hyperlink{classFlowBlock_a6791d31146a1bb676caa165ad5950c2d}{get\+Jumptable}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classJumpTable}{Jump\+Table}} associated {\bfseries{this}} block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} \mbox{\hyperlink{classFlowBlock_a0d80ab1ac96b718913a58b690357828b}{name\+To\+Type}} (const string \&name)
+\begin{DoxyCompactList}\small\item\em Get the block\+\_\+type associated with a name string. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{classFlowBlock_ade29abe8cdfae0daaeb6a65c057065c6}{type\+To\+Name}} (\mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} bt)
+\begin{DoxyCompactList}\small\item\em Get the name string associated with a block\+\_\+type. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classFlowBlock_ac83c5d30331ddcae56c23c96088e2ce7}{compare\+Block\+Index}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl1, const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl2)
+\begin{DoxyCompactList}\small\item\em Compare \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} by index. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classFlowBlock_a743cb628028fcd227b072bb14587f08e}{compare\+Final\+Order}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl1, const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl2)
+\begin{DoxyCompactList}\small\item\em Final \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} comparison. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFlowBlock_a5c7762af431a7897d31d51f6391926c2}{find\+Common\+Block}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl1, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl2)
+\begin{DoxyCompactList}\small\item\em Find the common dominator of two Flow\+Blocks. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFlowBlock_a36bef9434d37effc2add410273b60fd8}{find\+Common\+Block}} (const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&block\+Set)
+\begin{DoxyCompactList}\small\item\em Find common dominator of multiple Flow\+Blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFlowBlock_a922a06f846f258741ffe743ea49198d7}\label{classFlowBlock_a922a06f846f258741ffe743ea49198d7}} 
+class {\bfseries Block\+Graph}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Description of a control-\/flow block containing Pcode\+Ops. 
+
+This is the base class for basic blocks (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}}) and the hierarchical description of {\itshape structured} code. At all levels, these can be viewed as a block of code (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects) with other blocks flowing into and out of it. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2}} 
+\index{FlowBlock@{FlowBlock}!block\_flags@{block\_flags}}
+\index{block\_flags@{block\_flags}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{block\_flags}{block\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2}{Flow\+Block\+::block\+\_\+flags}}}
+
+
+
+Boolean properties of blocks. 
+
+The first four flags describe attributes of the blocks primary exiting edges The f\+\_\+interior\+\_\+$\ast$ flags do not necessarily apply to these edges. They are used with the block structure and hierarchy algorithms where unstructured jumps are removed from the list of primary edges. These flags keep track only of the existence of unstructured edges, even though they aren\textquotesingle{}t listed \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_goto\_goto@{f\_goto\_goto}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_goto\_goto@{f\_goto\_goto}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a26555312a9d48b2907880f9049884fcd}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a26555312a9d48b2907880f9049884fcd}} 
+f\+\_\+goto\+\_\+goto&(Block ends in) non-\/structured branch \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_break\_goto@{f\_break\_goto}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_break\_goto@{f\_break\_goto}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aa1bf1bbaf846b5c1b283959e40536e7b}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aa1bf1bbaf846b5c1b283959e40536e7b}} 
+f\+\_\+break\+\_\+goto&Block ends with a break;. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_continue\_goto@{f\_continue\_goto}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_continue\_goto@{f\_continue\_goto}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a99acc4a23a022bb7f450fa0484ff52a4}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a99acc4a23a022bb7f450fa0484ff52a4}} 
+f\+\_\+continue\+\_\+goto&Block ends with a continue;. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_switch\_out@{f\_switch\_out}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_switch\_out@{f\_switch\_out}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a78728a42dfc897142aa3016755dee1d7}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a78728a42dfc897142aa3016755dee1d7}} 
+f\+\_\+switch\+\_\+out&Output is decided by switch. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_unstructured\_targ@{f\_unstructured\_targ}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_unstructured\_targ@{f\_unstructured\_targ}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aa930fe29ee92e5f6a4bc2e1f22ac4528}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aa930fe29ee92e5f6a4bc2e1f22ac4528}} 
+f\+\_\+unstructured\+\_\+targ&Block is destination of unstructured goto. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_mark@{f\_mark}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_mark@{f\_mark}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ae41c73039c1b823b5dc565f94a52a99b}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ae41c73039c1b823b5dc565f94a52a99b}} 
+f\+\_\+mark&Generic way to mark a block. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_mark2@{f\_mark2}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_mark2@{f\_mark2}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aaa2314a6bc6670c898ca3b6770c6ecd2}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2aaa2314a6bc6670c898ca3b6770c6ecd2}} 
+f\+\_\+mark2&A secondary mark. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_entry\_point@{f\_entry\_point}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_entry\_point@{f\_entry\_point}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2afd94c2db722af168be7fea53cbfddd30}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2afd94c2db722af168be7fea53cbfddd30}} 
+f\+\_\+entry\+\_\+point&Official entry point of the function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_interior\_gotoout@{f\_interior\_gotoout}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_interior\_gotoout@{f\_interior\_gotoout}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a307269697a1ba916e087fdc3f2feb1c9}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a307269697a1ba916e087fdc3f2feb1c9}} 
+f\+\_\+interior\+\_\+gotoout&The block has an unstructured jump out of interior. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_interior\_gotoin@{f\_interior\_gotoin}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_interior\_gotoin@{f\_interior\_gotoin}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a7008fbe718e9fb77312862a94f05c405}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a7008fbe718e9fb77312862a94f05c405}} 
+f\+\_\+interior\+\_\+gotoin&Block is target of unstructured jump to its interior. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_label\_bumpup@{f\_label\_bumpup}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_label\_bumpup@{f\_label\_bumpup}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a93b97b5009f28b26aebafda88251e259}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a93b97b5009f28b26aebafda88251e259}} 
+f\+\_\+label\+\_\+bumpup&Any label printed higher up in hierarchy. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_donothing\_loop@{f\_donothing\_loop}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_donothing\_loop@{f\_donothing\_loop}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ad72248908bd5f571586172be7deada5f}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ad72248908bd5f571586172be7deada5f}} 
+f\+\_\+donothing\+\_\+loop&Block does nothing in infinite loop (halt) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_dead@{f\_dead}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_dead@{f\_dead}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a8c84642bdace36eaa4fcd6c340583051}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a8c84642bdace36eaa4fcd6c340583051}} 
+f\+\_\+dead&Block is in process of being deleted. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_whiledo\_overflow@{f\_whiledo\_overflow}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_whiledo\_overflow@{f\_whiledo\_overflow}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a64dd5bbfe0ba6090634f9718f67b277a}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a64dd5bbfe0ba6090634f9718f67b277a}} 
+f\+\_\+whiledo\+\_\+overflow&Set if the conditional block of a whiledo is too big to print as while(cond) \{ ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_flip\_path@{f\_flip\_path}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_flip\_path@{f\_flip\_path}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a690cc8c4469d205a9462326623678a68}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a690cc8c4469d205a9462326623678a68}} 
+f\+\_\+flip\+\_\+path&If true, out edges have been flipped since last time path was traced. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_joined\_block@{f\_joined\_block}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_joined\_block@{f\_joined\_block}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a2342aaea273caf2fbd3fb633bb9f1013}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2a2342aaea273caf2fbd3fb633bb9f1013}} 
+f\+\_\+joined\+\_\+block&Block is a merged form of original basic blocks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_duplicate\_block@{f\_duplicate\_block}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_duplicate\_block@{f\_duplicate\_block}}}\mbox{\Hypertarget{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ac1eba11e8c914e6a242f81da5f897a32}\label{classFlowBlock_a26c4544d5e03d58799f03a43a46f78d2ac1eba11e8c914e6a242f81da5f897a32}} 
+f\+\_\+duplicate\+\_\+block&Block is a duplicated version of an original basic block. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3}} 
+\index{FlowBlock@{FlowBlock}!edge\_flags@{edge\_flags}}
+\index{edge\_flags@{edge\_flags}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{edge\_flags}{edge\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3}{Flow\+Block\+::edge\+\_\+flags}}}
+
+
+
+Boolean properties on edges. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_goto\_edge@{f\_goto\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_goto\_edge@{f\_goto\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a3f9a64fdd2b723fb0362217484850282}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a3f9a64fdd2b723fb0362217484850282}} 
+f\+\_\+goto\+\_\+edge&Edge is unstructured. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_loop\_edge@{f\_loop\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_loop\_edge@{f\_loop\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a3a60b7af995b069a9b27002238a2f3bc}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a3a60b7af995b069a9b27002238a2f3bc}} 
+f\+\_\+loop\+\_\+edge&Edge completes a loop, removing these edges gives you a D\+AG. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_defaultswitch\_edge@{f\_defaultswitch\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_defaultswitch\_edge@{f\_defaultswitch\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a6c0f0a93541f9b6dd943fc716453ac12}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a6c0f0a93541f9b6dd943fc716453ac12}} 
+f\+\_\+defaultswitch\+\_\+edge&This is default edge from switchblock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_irreducible@{f\_irreducible}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_irreducible@{f\_irreducible}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a33cc7e60530766eb8f4635b1b1e0b4b7}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a33cc7e60530766eb8f4635b1b1e0b4b7}} 
+f\+\_\+irreducible&Edge which must be removed to make graph reducible. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_tree\_edge@{f\_tree\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_tree\_edge@{f\_tree\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a56f633c28bfedad8128d9643be7b50ba}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a56f633c28bfedad8128d9643be7b50ba}} 
+f\+\_\+tree\+\_\+edge&An edge in the spanning tree. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_forward\_edge@{f\_forward\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_forward\_edge@{f\_forward\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a34ec311319be4344538ca3ef3d5140ab}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a34ec311319be4344538ca3ef3d5140ab}} 
+f\+\_\+forward\+\_\+edge&An edge that jumps forward in the spanning tree. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_cross\_edge@{f\_cross\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_cross\_edge@{f\_cross\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3ac9dab7e61ad7f205f945cba731b84a77}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3ac9dab7e61ad7f205f945cba731b84a77}} 
+f\+\_\+cross\+\_\+edge&An edge that crosses subtrees in the spanning tree. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_back\_edge@{f\_back\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_back\_edge@{f\_back\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3ad18dd95f5292f700bce81c8c84bb00a4}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3ad18dd95f5292f700bce81c8c84bb00a4}} 
+f\+\_\+back\+\_\+edge&Within (reducible) graph, a back edge defining a loop. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{f\_loop\_exit\_edge@{f\_loop\_exit\_edge}!FlowBlock@{FlowBlock}}\index{FlowBlock@{FlowBlock}!f\_loop\_exit\_edge@{f\_loop\_exit\_edge}}}\mbox{\Hypertarget{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a74e873806d57e50f28ea65bf580aa0c5}\label{classFlowBlock_a8e0a775040ad0bd333cf48957b81f9d3a74e873806d57e50f28ea65bf580aa0c5}} 
+f\+\_\+loop\+\_\+exit\+\_\+edge&Edge exits the body of a loop. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFlowBlock_af611c90c1974b257161c37860065c011}\label{classFlowBlock_af611c90c1974b257161c37860065c011}} 
+\index{FlowBlock@{FlowBlock}!calcDepth@{calcDepth}}
+\index{calcDepth@{calcDepth}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{calcDepth()}{calcDepth()}}
+{\footnotesize\ttfamily int4 Flow\+Block\+::calc\+Depth (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{leaf }\end{DoxyParamCaption}) const}
+
+
+
+Get the depth of the given component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+How many get\+Parent() calls from the leaf to {\bfseries{this}} 
+\begin{DoxyParams}{Parameters}
+{\em leaf} & is the component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the depth count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_ac83c5d30331ddcae56c23c96088e2ce7}\label{classFlowBlock_ac83c5d30331ddcae56c23c96088e2ce7}} 
+\index{FlowBlock@{FlowBlock}!compareBlockIndex@{compareBlockIndex}}
+\index{compareBlockIndex@{compareBlockIndex}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{compareBlockIndex()}{compareBlockIndex()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::compare\+Block\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl1,  }\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Compare \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bl1} & is the first \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to compare \\
+\hline
+{\em bl2} & is the second \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the first comes before the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a743cb628028fcd227b072bb14587f08e}\label{classFlowBlock_a743cb628028fcd227b072bb14587f08e}} 
+\index{FlowBlock@{FlowBlock}!compareFinalOrder@{compareFinalOrder}}
+\index{compareFinalOrder@{compareFinalOrder}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{compareFinalOrder()}{compareFinalOrder()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::compare\+Final\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl1,  }\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Final \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} comparison. 
+
+Comparator for ordering the final 0-\/exit blocks 
+\begin{DoxyParams}{Parameters}
+{\em bl1} & is the first \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to compare \\
+\hline
+{\em bl2} & is the second \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the first comes before the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a8f56cf50470348ef52289ce28c03cb08}\label{classFlowBlock_a8f56cf50470348ef52289ce28c03cb08}} 
+\index{FlowBlock@{FlowBlock}!dominates@{dominates}}
+\index{dominates@{dominates}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{dominates()}{dominates()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::dominates (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{sub\+Block }\end{DoxyParamCaption}) const}
+
+
+
+Does {\bfseries{this}} block dominate the given block. 
+
+Return {\bfseries{true}} if {\bfseries{this}} block {\itshape dominates} the given block (or is equal to it). This assumes that block indices have been set with a reverse post order so that having a smaller index is a necessary condition for dominance. 
+\begin{DoxyParams}{Parameters}
+{\em sub\+Block} & is the given block to test against {\bfseries{this}} for dominance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} dominates 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a9baddec2635c95a5ac9019d6b21d3eab}\label{classFlowBlock_a9baddec2635c95a5ac9019d6b21d3eab}} 
+\index{FlowBlock@{FlowBlock}!emit@{emit}}
+\index{emit@{emit}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily void Flow\+Block\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockSwitch_ad1102b97e80c4dd7afa66891eb67a0d6}{Block\+Switch}}, \mbox{\hyperlink{classBlockInfLoop_aa86634144acbb9f7b6b580b9f4566bfe}{Block\+Inf\+Loop}}, \mbox{\hyperlink{classBlockDoWhile_aa3ab4da82b72f8de35ad9de5f5dff9a2}{Block\+Do\+While}}, \mbox{\hyperlink{classBlockWhileDo_a8596786848701d23bc4e4a7fc3730889}{Block\+While\+Do}}, \mbox{\hyperlink{classBlockIf_a81d526be9d8cca137f9008ac7a12d410}{Block\+If}}, \mbox{\hyperlink{classBlockCondition_a952361756ea8b84dc0234d00d628c164}{Block\+Condition}}, \mbox{\hyperlink{classBlockList_a391529d850ca5f97c74acee00c080c43}{Block\+List}}, \mbox{\hyperlink{classBlockMultiGoto_a8eee38e26a13873ceaff6d37b46eaafd}{Block\+Multi\+Goto}}, \mbox{\hyperlink{classBlockGoto_a0efc3af4b5fda8bf5f04b0fbca784935}{Block\+Goto}}, \mbox{\hyperlink{classBlockCopy_a4336d4193f96a1499ee1d97281548a33}{Block\+Copy}}, \mbox{\hyperlink{classBlockBasic_a0b163426cb08cdecdcdd7305ecc6381e}{Block\+Basic}}, and \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classFlowBlock_a36bef9434d37effc2add410273b60fd8}\label{classFlowBlock_a36bef9434d37effc2add410273b60fd8}} 
+\index{FlowBlock@{FlowBlock}!findCommonBlock@{findCommonBlock}}
+\index{findCommonBlock@{findCommonBlock}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{findCommonBlock()}{findCommonBlock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Flow\+Block\+::find\+Common\+Block (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{block\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find common dominator of multiple Flow\+Blocks. 
+
+Find the most immediate dominating \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} of all blocks in the given set. The container must not be empty. 
+\begin{DoxyParams}{Parameters}
+{\em block\+Set} & is the given set of blocks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the most immediate dominating \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a5c7762af431a7897d31d51f6391926c2}\label{classFlowBlock_a5c7762af431a7897d31d51f6391926c2}} 
+\index{FlowBlock@{FlowBlock}!findCommonBlock@{findCommonBlock}}
+\index{findCommonBlock@{findCommonBlock}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{findCommonBlock()}{findCommonBlock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Flow\+Block\+::find\+Common\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl1,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find the common dominator of two Flow\+Blocks. 
+
+Within the dominator tree, find the earliest common ancestor of two Flow\+Blocks 
+\begin{DoxyParams}{Parameters}
+{\em bl1} & is the first \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em bl2} & is the second \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the common ancestor which dominates both 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}\label{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}} 
+\index{FlowBlock@{FlowBlock}!flipInPlaceExecute@{flipInPlaceExecute}}
+\index{flipInPlaceExecute@{flipInPlaceExecute}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{flipInPlaceExecute()}{flipInPlaceExecute()}}
+{\footnotesize\ttfamily void Flow\+Block\+::flip\+In\+Place\+Execute (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Perform the flip to normalize conditional branch executed by {\bfseries{this}} block. 
+
+This reverses the outgoing edge order in the right basic blocks, but does not modify the instructions directly. 
+
+Reimplemented in \mbox{\hyperlink{classBlockCondition_a600c60c9af3b7ad9d7b8f58fa0f7ab5a}{Block\+Condition}}, and \mbox{\hyperlink{classBlockBasic_a2949ef4a8d42f16c696fd24ba2ecb58c}{Block\+Basic}}.
+
+\mbox{\Hypertarget{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}\label{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}} 
+\index{FlowBlock@{FlowBlock}!flipInPlaceTest@{flipInPlaceTest}}
+\index{flipInPlaceTest@{flipInPlaceTest}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{flipInPlaceTest()}{flipInPlaceTest()}}
+{\footnotesize\ttfamily int4 Flow\+Block\+::flip\+In\+Place\+Test (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&}]{fliplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Test normalizing the conditional branch in {\bfseries{this}}. 
+
+Find the set of \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects that need to be adjusted to flip the condition {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} calculates.
+
+Return\+:
+\begin{DoxyItemize}
+\item 0 if the flip would normalize the condition
+\item 1 if the flip doesn\textquotesingle{}t affect normalization of the condition
+\item 2 if the flip produces an unnormalized condition 
+\begin{DoxyParams}{Parameters}
+{\em fliplist} & will contain the Pcode\+Ops that need to be adjusted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the condition will be normalized, 1 or 2 otherwise 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Reimplemented in \mbox{\hyperlink{classBlockCondition_a586d47e72963c4e5f719f3673ef3743c}{Block\+Condition}}, and \mbox{\hyperlink{classBlockBasic_a7f864c14ab60a19ffb492b86f98f29c7}{Block\+Basic}}.
+
+\mbox{\Hypertarget{classFlowBlock_a79329e1df72d004f0b7b8ff475e0143d}\label{classFlowBlock_a79329e1df72d004f0b7b8ff475e0143d}} 
+\index{FlowBlock@{FlowBlock}!getFrontLeaf@{getFrontLeaf}}
+\index{getFrontLeaf@{getFrontLeaf}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{getFrontLeaf()}{getFrontLeaf()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Flow\+Block\+::get\+Front\+Leaf (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Keep descending tree hierarchy, taking the front block, until we get to the bottom copy block \begin{DoxyReturn}{Returns}
+the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_af351e164076032e278a238cbb570710c}\label{classFlowBlock_af351e164076032e278a238cbb570710c}} 
+\index{FlowBlock@{FlowBlock}!getFrontLeaf@{getFrontLeaf}}
+\index{getFrontLeaf@{getFrontLeaf}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{getFrontLeaf()}{getFrontLeaf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Flow\+Block\+::get\+Front\+Leaf (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Keep descending tree hierarchy, taking the front block, until we get to the bottom copy block \begin{DoxyReturn}{Returns}
+the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_aa7e3329c296bc6ac805cc067aa4c301e}\label{classFlowBlock_aa7e3329c296bc6ac805cc067aa4c301e}} 
+\index{FlowBlock@{FlowBlock}!getInIndex@{getInIndex}}
+\index{getInIndex@{getInIndex}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{getInIndex()}{getInIndex()}}
+{\footnotesize\ttfamily int4 Flow\+Block\+::get\+In\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const}
+
+
+
+Get the incoming edge index for the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Search through incoming blocks in edge order for the given block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching edge index or -\/1 if {\bfseries{bl}} doesn\textquotesingle{}t flow into {\bfseries{this}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a6791d31146a1bb676caa165ad5950c2d}\label{classFlowBlock_a6791d31146a1bb676caa165ad5950c2d}} 
+\index{FlowBlock@{FlowBlock}!getJumptable@{getJumptable}}
+\index{getJumptable@{getJumptable}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{getJumptable()}{getJumptable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$ Flow\+Block\+::get\+Jumptable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the \mbox{\hyperlink{classJumpTable}{Jump\+Table}} associated {\bfseries{this}} block. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} was ends with a computed jump, retrieve the associated \mbox{\hyperlink{classJumpTable}{Jump\+Table}} object \begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classJumpTable}{Jump\+Table}} object or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a814ffded437db16866c5da50ba1990f8}\label{classFlowBlock_a814ffded437db16866c5da50ba1990f8}} 
+\index{FlowBlock@{FlowBlock}!getOutIndex@{getOutIndex}}
+\index{getOutIndex@{getOutIndex}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{getOutIndex()}{getOutIndex()}}
+{\footnotesize\ttfamily int4 Flow\+Block\+::get\+Out\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const}
+
+
+
+Get the outgoing edge index for the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Search through outgoing blocks in edge order for the given block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching edge index or -\/1 if {\bfseries{bl}} doesn\textquotesingle{}t flow out of {\bfseries{this}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a20996aacbad259e2e4a7bb0c72482335}\label{classFlowBlock_a20996aacbad259e2e4a7bb0c72482335}} 
+\index{FlowBlock@{FlowBlock}!getSplitPoint@{getSplitPoint}}
+\index{getSplitPoint@{getSplitPoint}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{getSplitPoint()}{getSplitPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Flow\+Block\+::get\+Split\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the leaf splitting block. 
+
+If {\bfseries{this}} block ends with a conditional branch, return the deepest component block that performs the split. This component needs to be able to perform \mbox{\hyperlink{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}{flip\+In\+Place\+Test()}} and \mbox{\hyperlink{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}{flip\+In\+Place\+Execute()}} \begin{DoxyReturn}{Returns}
+the component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} or N\+U\+LL if this doesn\textquotesingle{}t end in a conditional branch 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockCondition_a031007ca09262646abc489c6d5d29e50}{Block\+Condition}}, \mbox{\hyperlink{classBlockList_a18e5d3b6de59ea0522dfb1eb96c012c6}{Block\+List}}, \mbox{\hyperlink{classBlockCopy_a86c90bb0020298ac2287ff5ab46af8a2}{Block\+Copy}}, and \mbox{\hyperlink{classBlockBasic_a22d7b010455f00b1bb1ff5efb3d00550}{Block\+Basic}}.
+
+\mbox{\Hypertarget{classFlowBlock_a54d8e26d57d72d73f4ae36744eccf85d}\label{classFlowBlock_a54d8e26d57d72d73f4ae36744eccf85d}} 
+\index{FlowBlock@{FlowBlock}!hasLoopIn@{hasLoopIn}}
+\index{hasLoopIn@{hasLoopIn}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{hasLoopIn()}{hasLoopIn()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::has\+Loop\+In (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Is there a looping edge coming into {\bfseries{this}} block. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} is the top of a loop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_af871bdc2674a0bcc53c9886e57e70f72}\label{classFlowBlock_af871bdc2674a0bcc53c9886e57e70f72}} 
+\index{FlowBlock@{FlowBlock}!hasLoopOut@{hasLoopOut}}
+\index{hasLoopOut@{hasLoopOut}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{hasLoopOut()}{hasLoopOut()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::has\+Loop\+Out (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Is there a looping edge going out of {\bfseries{this}} block. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} is the bottom of a loop 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a9dd26ef25c281fc1c64a99ecd1c9eada}\label{classFlowBlock_a9dd26ef25c281fc1c64a99ecd1c9eada}} 
+\index{FlowBlock@{FlowBlock}!isJumpTarget@{isJumpTarget}}
+\index{isJumpTarget@{isJumpTarget}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{isJumpTarget()}{isJumpTarget()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::is\+Jump\+Target (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if non-\/fallthru jump flows into {\bfseries{this}}. 
+
+{\bfseries{return}} {\bfseries{true}} if block is the target of a jump \mbox{\Hypertarget{classFlowBlock_a0882ce85a017e4988eda779de6a86089}\label{classFlowBlock_a0882ce85a017e4988eda779de6a86089}} 
+\index{FlowBlock@{FlowBlock}!markLabelBumpUp@{markLabelBumpUp}}
+\index{markLabelBumpUp@{markLabelBumpUp}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{markLabelBumpUp()}{markLabelBumpUp()}}
+{\footnotesize\ttfamily void Flow\+Block\+::mark\+Label\+Bump\+Up (\begin{DoxyParamCaption}\item[{bool}]{bump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Let hierarchical blocks steal labels of their (first) components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bump} & if {\bfseries{true}}, mark that labels for this block are printed by somebody higher in hierarchy \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockInfLoop_a4b07279f936c69240ceacf4d5e8dfebc}{Block\+Inf\+Loop}}, \mbox{\hyperlink{classBlockDoWhile_ab391ccd9276eec9200396ea6e8db7a96}{Block\+Do\+While}}, \mbox{\hyperlink{classBlockWhileDo_ac850d56fa3365a195b91373ef00d7bd3}{Block\+While\+Do}}, and \mbox{\hyperlink{classBlockGraph_a67e2a75a80e60655a9936045d40983f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classFlowBlock_a0d80ab1ac96b718913a58b690357828b}\label{classFlowBlock_a0d80ab1ac96b718913a58b690357828b}} 
+\index{FlowBlock@{FlowBlock}!nameToType@{nameToType}}
+\index{nameToType@{nameToType}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{nameToType()}{nameToType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{Flow\+Block\+::block\+\_\+type}} Flow\+Block\+::name\+To\+Type (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the block\+\_\+type associated with a name string. 
+
+Given a string describing a \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} type, return the block\+\_\+type. This is currently only used by the \mbox{\hyperlink{classFlowBlock_a002ddc14dc84098dcb14b513f8b973c1}{restore\+Xml()}} process. T\+O\+DO\+: Fill in the remaining names and types 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding block\+\_\+type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_ae0f8a479ae1548280ff0b4f45bc08dc3}\label{classFlowBlock_ae0f8a479ae1548280ff0b4f45bc08dc3}} 
+\index{FlowBlock@{FlowBlock}!negateCondition@{negateCondition}}
+\index{negateCondition@{negateCondition}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{negateCondition()}{negateCondition()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::negate\+Condition (\begin{DoxyParamCaption}\item[{bool}]{toporbottom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Flip the condition computed by {\bfseries{this}}. 
+
+Flip the order of outgoing edges (at least). This should also affect the original op causing the condition. Note\+: we don\textquotesingle{}t have to flip at all levels of the hierarchy only at the top and at the bottom 
+\begin{DoxyParams}{Parameters}
+{\em toporbottom} & is {\bfseries{true}} if {\bfseries{this}} is the top outermost block of the hierarchy getting negated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made to data-\/flow 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockCondition_a2af1221f54ea05c5c8b25b4321f60705}{Block\+Condition}}, \mbox{\hyperlink{classBlockList_a97202688e117da20c82ef225318536ca}{Block\+List}}, \mbox{\hyperlink{classBlockCopy_ad31f116ca37dd1ba235f0642365cf4f4}{Block\+Copy}}, and \mbox{\hyperlink{classBlockBasic_aa15eaf687397a3b73da57abbb061a04c}{Block\+Basic}}.
+
+\mbox{\Hypertarget{classFlowBlock_a400c220d6c728958396286f54de6dd9e}\label{classFlowBlock_a400c220d6c728958396286f54de6dd9e}} 
+\index{FlowBlock@{FlowBlock}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Flow\+Block\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockSwitch_ae13e717fc62265c1f9b5024cb0e9cd1a}{Block\+Switch}}, \mbox{\hyperlink{classBlockInfLoop_a10ef0de99961f931b7432b2662ac2677}{Block\+Inf\+Loop}}, \mbox{\hyperlink{classBlockDoWhile_a996ef387d4f6d645c38544d2aa4ba438}{Block\+Do\+While}}, \mbox{\hyperlink{classBlockWhileDo_a28f4f91e7ec3b4cc2bde0a0d432e0fe8}{Block\+While\+Do}}, \mbox{\hyperlink{classBlockIf_adbc4cd5fb6cad60aa333c12532b55e1f}{Block\+If}}, \mbox{\hyperlink{classBlockCondition_aefdc0e19b1623ebefa07b05b5bd85408}{Block\+Condition}}, \mbox{\hyperlink{classBlockMultiGoto_a44d0021262e569ac4ecf6ecddbdf1d41}{Block\+Multi\+Goto}}, \mbox{\hyperlink{classBlockGoto_acc1628a26572e23d61f4b4dad717816e}{Block\+Goto}}, and \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classFlowBlock_adb062ea29f2d073206adf61c317e97c7}\label{classFlowBlock_adb062ea29f2d073206adf61c317e97c7}} 
+\index{FlowBlock@{FlowBlock}!nextInFlow@{nextInFlow}}
+\index{nextInFlow@{nextInFlow}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{nextInFlow()}{nextInFlow()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Flow\+Block\+::next\+In\+Flow (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return next block to be executed in flow. 
+
+If there are two branches, pick the fall-\/thru branch \begin{DoxyReturn}{Returns}
+the next block in flow, or N\+U\+LL otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a6ab46f9a87bc94b30bd3bee0923b3f51}\label{classFlowBlock_a6ab46f9a87bc94b30bd3bee0923b3f51}} 
+\index{FlowBlock@{FlowBlock}!preferComplement@{preferComplement}}
+\index{preferComplement@{preferComplement}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{preferComplement()}{preferComplement()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::prefer\+Complement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Rearrange {\bfseries{this}} hierarchy to simplify boolean expressions. 
+
+For the instructions in this block, decide if the control-\/flow structure can be rearranged so that boolean expressions come out more naturally. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to analyze \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockIf_a41fef7fb5278f859257b6e560c0a08dd}{Block\+If}}.
+
+\mbox{\Hypertarget{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}\label{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}} 
+\index{FlowBlock@{FlowBlock}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Flow\+Block\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockSwitch_a57143ab3d1cea8c6962bdcf52fbe4bdf}{Block\+Switch}}, \mbox{\hyperlink{classBlockInfLoop_a52090deeaa2673ea5afedca0331d3027}{Block\+Inf\+Loop}}, \mbox{\hyperlink{classBlockDoWhile_a95baa39da580d08f36b507fefe61823f}{Block\+Do\+While}}, \mbox{\hyperlink{classBlockWhileDo_a298687d8d9dbe264f779cca2c89ca32e}{Block\+While\+Do}}, \mbox{\hyperlink{classBlockIf_a6c45f688f991ec5f1412c51e56bf5fd3}{Block\+If}}, \mbox{\hyperlink{classBlockCondition_a94ff21df098dda7c4cb50c87c500c439}{Block\+Condition}}, \mbox{\hyperlink{classBlockList_ac49227f39d0238f4d86c76a170cc009b}{Block\+List}}, \mbox{\hyperlink{classBlockMultiGoto_a0886201717ed839e30e4e8e2b39d33d7}{Block\+Multi\+Goto}}, \mbox{\hyperlink{classBlockGoto_a01f0af5a9043ec72c96e3f2591d0c469}{Block\+Goto}}, \mbox{\hyperlink{classBlockCopy_aa360ee1fda40a1cb2289cb92e615fb9c}{Block\+Copy}}, and \mbox{\hyperlink{classBlockBasic_a5a0f22c6bd8b164e787dc6a6d756952a}{Block\+Basic}}.
+
+\mbox{\Hypertarget{classFlowBlock_ae00f14fc1916599ec34074fbb010c74b}\label{classFlowBlock_ae00f14fc1916599ec34074fbb010c74b}} 
+\index{FlowBlock@{FlowBlock}!printTree@{printTree}}
+\index{printTree@{printTree}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{printTree()}{printTree()}}
+{\footnotesize\ttfamily void Flow\+Block\+::print\+Tree (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print tree structure of any blocks owned by {\bfseries{this}}. 
+
+Recursively print out the hierarchical structure of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em level} & is the current level of indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockCopy_ac44129ef866b5e09769f7962c1da928c}{Block\+Copy}}, and \mbox{\hyperlink{classBlockGraph_add1908219c53b2687c4d1c6c9132c11e}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classFlowBlock_a002ddc14dc84098dcb14b513f8b973c1}\label{classFlowBlock_a002ddc14dc84098dcb14b513f8b973c1}} 
+\index{FlowBlock@{FlowBlock}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Flow\+Block\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classBlockMap}{Block\+Map}} \&}]{resolver }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} from an X\+ML stream. 
+
+Recover {\bfseries{this}} and all it sub-\/components from an X\+ML $<$block$>$ tag.
+
+This will construct all the sub-\/components using {\bfseries{resolver}} as a factory. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element \\
+\hline
+{\em resolver} & acts as a factory and resolves cross-\/references \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowBlock_aea33ed5d172e8486557198c2e18c88ae}\label{classFlowBlock_aea33ed5d172e8486557198c2e18c88ae}} 
+\index{FlowBlock@{FlowBlock}!restoreXmlBody@{restoreXmlBody}}
+\index{restoreXmlBody@{restoreXmlBody}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{restoreXmlBody()}{restoreXmlBody()}}
+{\footnotesize\ttfamily virtual void Flow\+Block\+::restore\+Xml\+Body (\begin{DoxyParamCaption}\item[{List\+::const\+\_\+iterator \&}]{iter,  }\item[{List\+::const\+\_\+iterator}]{enditer,  }\item[{\mbox{\hyperlink{classBlockMap}{Block\+Map}} \&}]{resolver }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Restore details about {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iter} & is an iterator to X\+ML elements containing component tags etc. \\
+\hline
+{\em enditer} & marks the end of the X\+ML tags \\
+\hline
+{\em resolver} & is used to recover \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects based on X\+ML references \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockBasic_ae2147a1a73714a1592dfb3e43821c3ef}{Block\+Basic}}, and \mbox{\hyperlink{classBlockGraph_a7a1c54e577b11af83f2635f9c5ad0545}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classFlowBlock_a4f4f2a042d4754abc9facea69d7f5cd1}\label{classFlowBlock_a4f4f2a042d4754abc9facea69d7f5cd1}} 
+\index{FlowBlock@{FlowBlock}!restoreXmlEdges@{restoreXmlEdges}}
+\index{restoreXmlEdges@{restoreXmlEdges}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{restoreXmlEdges()}{restoreXmlEdges()}}
+{\footnotesize\ttfamily void Flow\+Block\+::restore\+Xml\+Edges (\begin{DoxyParamCaption}\item[{List\+::const\+\_\+iterator \&}]{iter,  }\item[{List\+::const\+\_\+iterator}]{enditer,  }\item[{\mbox{\hyperlink{classBlockMap}{Block\+Map}} \&}]{resolver }\end{DoxyParamCaption})}
+
+
+
+Restore edges from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iter} & is an iterator to the $<$edge$>$ tags \\
+\hline
+{\em enditer} & marks the end of the list of tags \\
+\hline
+{\em resolver} & is used to recover \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} cross-\/references \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowBlock_ad41a9b871ab1994b91334de10fc2c63f}\label{classFlowBlock_ad41a9b871ab1994b91334de10fc2c63f}} 
+\index{FlowBlock@{FlowBlock}!restoreXmlHeader@{restoreXmlHeader}}
+\index{restoreXmlHeader@{restoreXmlHeader}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{restoreXmlHeader()}{restoreXmlHeader()}}
+{\footnotesize\ttfamily void Flow\+Block\+::restore\+Xml\+Header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore basic information for X\+ML attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element to pull attributes from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowBlock_a00ebb66879a68e1d4ddd0fb30a218d0f}\label{classFlowBlock_a00ebb66879a68e1d4ddd0fb30a218d0f}} 
+\index{FlowBlock@{FlowBlock}!restrictedByConditional@{restrictedByConditional}}
+\index{restrictedByConditional@{restrictedByConditional}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{restrictedByConditional()}{restrictedByConditional()}}
+{\footnotesize\ttfamily bool Flow\+Block\+::restricted\+By\+Conditional (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{cond }\end{DoxyParamCaption}) const}
+
+
+
+Check if the condition from the given block holds for {\bfseries{this}} block. 
+
+We assume the given block has 2 out-\/edges and that {\bfseries{this}} block is immediately reached by one of these two edges. Some condition holds when traversing the out-\/edge to {\bfseries{this}}, and the complement of the condition holds for traversing the other out-\/edge. We verify that the condition holds for this entire block. More specifically, we check that that there is no path to {\bfseries{this}} through the sibling edge, where the complement of the condition holds (unless we loop back through the conditional block). 
+\begin{DoxyParams}{Parameters}
+{\em cond} & is the conditional block with 2 out-\/edges \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the condition holds for this block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowBlock_a91d4573992c7a798259b34be67d97d5a}\label{classFlowBlock_a91d4573992c7a798259b34be67d97d5a}} 
+\index{FlowBlock@{FlowBlock}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Flow\+Block\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Write out {\bfseries{this}} to an X\+ML stream. 
+
+Serialize {\bfseries{this}} and all its sub-\/components as an X\+ML $<$block$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowBlock_a5b6c4638bc1ca5fa47c33fe2ca0e1696}\label{classFlowBlock_a5b6c4638bc1ca5fa47c33fe2ca0e1696}} 
+\index{FlowBlock@{FlowBlock}!saveXmlEdges@{saveXmlEdges}}
+\index{saveXmlEdges@{saveXmlEdges}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{saveXmlEdges()}{saveXmlEdges()}}
+{\footnotesize\ttfamily void Flow\+Block\+::save\+Xml\+Edges (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save edge information to an X\+ML stream. 
+
+Write $<$edge$>$ tags to stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowBlock_a6cf95f66e3f6940a8342b3e6fdfc5ca2}\label{classFlowBlock_a6cf95f66e3f6940a8342b3e6fdfc5ca2}} 
+\index{FlowBlock@{FlowBlock}!saveXmlHeader@{saveXmlHeader}}
+\index{saveXmlHeader@{saveXmlHeader}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{saveXmlHeader()}{saveXmlHeader()}}
+{\footnotesize\ttfamily void Flow\+Block\+::save\+Xml\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save basic information as X\+ML attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classBlockCondition_a1e24ce75951cb7a66b281eeabe7854c0}{Block\+Condition}}, and \mbox{\hyperlink{classBlockCopy_a67aa0188bb62e91052092088eeec70ed}{Block\+Copy}}.
+
+\mbox{\Hypertarget{classFlowBlock_a50ac469ba63c50f574bf05f18a307f8c}\label{classFlowBlock_a50ac469ba63c50f574bf05f18a307f8c}} 
+\index{FlowBlock@{FlowBlock}!setGotoBranch@{setGotoBranch}}
+\index{setGotoBranch@{setGotoBranch}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{setGotoBranch()}{setGotoBranch()}}
+{\footnotesize\ttfamily void Flow\+Block\+::set\+Goto\+Branch (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption})}
+
+
+
+Mark a {\itshape goto} branch. 
+
+This is the main entry point for marking a branch from one block to another as unstructured. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the outgoing edge to mark \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowBlock_ade29abe8cdfae0daaeb6a65c057065c6}\label{classFlowBlock_ade29abe8cdfae0daaeb6a65c057065c6}} 
+\index{FlowBlock@{FlowBlock}!typeToName@{typeToName}}
+\index{typeToName@{typeToName}!FlowBlock@{FlowBlock}}
+\doxysubsubsection{\texorpdfstring{typeToName()}{typeToName()}}
+{\footnotesize\ttfamily string Flow\+Block\+::type\+To\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{Flow\+Block\+::block\+\_\+type}}}]{bt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the name string associated with a block\+\_\+type. 
+
+For use in serializng Flow\+Blocks to X\+ML. 
+\begin{DoxyParams}{Parameters}
+{\em bt} & is the block\+\_\+type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding name string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

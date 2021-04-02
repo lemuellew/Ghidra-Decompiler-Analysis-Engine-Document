@@ -1,0 +1,62 @@
+\hypertarget{classIfcSettrackedrange}{}\doxysection{Ifc\+Settrackedrange Class Reference}
+\label{classIfcSettrackedrange}\index{IfcSettrackedrange@{IfcSettrackedrange}}
+
+
+Set the value of a register\+: {\ttfamily set track $<$name$>$ $<$value$>$ \mbox{[}$<$startaddress$>$ $<$endaddress$>$\mbox{]}}  
+
+
+
+
+Inheritance diagram for Ifc\+Settrackedrange\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcSettrackedrange__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Settrackedrange\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcSettrackedrange__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcSettrackedrange_acaa8f1641f3ffac2da07d34c377ef299}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Set the value of a register\+: {\ttfamily set track $<$name$>$ $<$value$>$ \mbox{[}$<$startaddress$>$ $<$endaddress$>$\mbox{]}} 
+
+The value for the register is picked up by the decompiler for functions in the tracked range. The register is specified by name. A specific range can be provided, otherwise the value is treated as a default. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcSettrackedrange_acaa8f1641f3ffac2da07d34c377ef299}\label{classIfcSettrackedrange_acaa8f1641f3ffac2da07d34c377ef299}} 
+\index{IfcSettrackedrange@{IfcSettrackedrange}!execute@{execute}}
+\index{execute@{execute}!IfcSettrackedrange@{IfcSettrackedrange}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Settrackedrange\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

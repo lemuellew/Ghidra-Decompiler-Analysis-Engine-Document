@@ -1,0 +1,717 @@
+\hypertarget{classAddress}{}\doxysection{Address Class Reference}
+\label{classAddress}\index{Address@{Address}}
+
+
+A low-\/level machine address for labelling bytes and data.  
+
+
+
+
+{\ttfamily \#include $<$address.\+hh$>$}
+
+
+
+Collaboration diagram for Address\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classAddress__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7}{mach\+\_\+extreme}} \{ \mbox{\hyperlink{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7a1990ccfacf791a707a42d623bdc4134d}{m\+\_\+minimal}}, 
+\mbox{\hyperlink{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7abe15025551d5d35578ab1f409e3f6b7f}{m\+\_\+maximal}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum for specifying extremal addresses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddress_a84f096e8cab2cd71a252877055938759}{Address}} (\mbox{\hyperlink{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7}{mach\+\_\+extreme}} ex)
+\begin{DoxyCompactList}\small\item\em Initialize an extremal address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress_a69a01db36be374e934ed33c773e31b7f}{Address}} (void)
+\begin{DoxyCompactList}\small\item\em Create an invalid address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress_aa525e3d0433b8bbe9045465d78cfe5ae}{Address}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$id, uintb off)
+\begin{DoxyCompactList}\small\item\em Construct an address with a space/offset pair. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress_a29436dab23400efc18afcf58ce529082}{Address}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2)
+\begin{DoxyCompactList}\small\item\em A copy constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_a90ea7ea47a048afa95a14709e704d876}{is\+Invalid}} (void) const
+\begin{DoxyCompactList}\small\item\em Is the address invalid? \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddress_a18dc61d8b617214f2ec054dabc3c9040}{get\+Addr\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of bytes in the address. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_aec0c5e9a64d45b7e913e61eb064bcc2d}{is\+Big\+Endian}} (void) const
+\begin{DoxyCompactList}\small\item\em Is data at this address big endian encoded. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddress_abc8be0370dd8397596c06a5f68bcc8e8}{print\+Raw}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write a raw version of the address to a stream. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddress_a10953bd3fe65b279ee102a69d43e2d27}{read}} (const string \&s)
+\begin{DoxyCompactList}\small\item\em Read in the address from a string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddress_a2e1cbf153126eebf5ba92f52c5dbc6a8}{get\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the address space. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classAddress_a208ce07ecf27e5c148d8395913831c2a}{get\+Offset}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the address offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddress_a5dfb849ac01e7b1ca87d0ecbf5022dca}{to\+Physical}} (void)
+\begin{DoxyCompactList}\small\item\em Convert this to a physical address. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classAddress_a00559098470f2e6da27c07cdda47d1ea}{get\+Shortcut}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the shortcut character for the address space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \& \mbox{\hyperlink{classAddress_a942aba71799e61225a20135d3dc86453}{operator=}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy an address. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_a6f61edd53efcd9ff5d7f067fb46250dd}{operator==}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare two addresses for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_abe25251b102af0a1eed6e5120bb8e8b3}{operator!=}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare two addresses for inequality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_ac2109b6d10183b10d67c7f743bfc21dc}{operator$<$}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare two addresses via their natural ordering. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_a8d3c3b93cd942cfeb881ea577dfb869f}{operator$<$=}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare two addresses via their natural ordering. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddress_a2e0f4cfc80a3284beeb1fa70adcfa9cb}{operator+}} (int4 off) const
+\begin{DoxyCompactList}\small\item\em Increment address by a number of bytes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddress_adbf6ed048012cc8d1f52e1d4fd63b7aa}{operator-\/}} (int4 off) const
+\begin{DoxyCompactList}\small\item\em Decrement address by a number of bytes. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_a965a4af990914bc8be054c96d12485d2}{contained\+By}} (int4 sz, const \mbox{\hyperlink{classAddress}{Address}} \&op2, int4 sz2) const
+\begin{DoxyCompactList}\small\item\em Determine if {\itshape op2} range contains {\bfseries{this}} range. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddress_a71d6969466b6edf50b9542e6a75dc439}{justified\+Contain}} (int4 sz, const \mbox{\hyperlink{classAddress}{Address}} \&op2, int4 sz2, bool forceleft) const
+\begin{DoxyCompactList}\small\item\em Determine if {\itshape op2} is the least significant part of {\itshape this}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddress_af63d859f7cdbe890e9ca2fd2812f616c}{overlap}} (int4 skip, const \mbox{\hyperlink{classAddress}{Address}} \&op, int4 size) const
+\begin{DoxyCompactList}\small\item\em Determine how two address ranges overlap. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_a77b6efa62ad4f31c95f3861b79d3ed5e}{is\+Contiguous}} (int4 sz, const \mbox{\hyperlink{classAddress}{Address}} \&loaddr, int4 losz) const
+\begin{DoxyCompactList}\small\item\em Does {\itshape this} form a contigous range with {\itshape loaddr}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_a8ef20a60dfb144bb91c466432e377eb5}{is\+Constant}} (void) const
+\begin{DoxyCompactList}\small\item\em Is this a {\itshape constant} {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddress_a079f391c59a43a0e0fb8a5c66eaf6f64}{renormalize}} (int4 size)
+\begin{DoxyCompactList}\small\item\em Make sure there is a backing \mbox{\hyperlink{classJoinRecord}{Join\+Record}} if {\bfseries{this}} is in the {\itshape join} space. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddress_ae0e5cdee35b24c75adcbfc444e6e5be6}{is\+Join}} (void) const
+\begin{DoxyCompactList}\small\item\em Is this a {\itshape join} {\itshape value}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddress_ab483818c0d4947d565828c53ffd3cb4b}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save this to a stream as an X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddress_a9369f5ae7596c2aeecfb1a000454b2e5}{save\+Xml}} (ostream \&s, int4 size) const
+\begin{DoxyCompactList}\small\item\em Save this and a size to a stream as an X\+ML tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddress_a31fdc8c33088abb3040027d35e7c4026}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore an address from parsed X\+ML. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddress_a18a4b4f313eca927ac348a943c886365}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage, int4 \&size)
+\begin{DoxyCompactList}\small\item\em Restore an address and size from parsed X\+ML. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddress_acd17db20230415cb1fe1ad33c34c11ff}{get\+Space\+From\+Const}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Recover an encoded address space from an address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAddress_ac08d67074731b83664127bb0cc190bfe}\label{classAddress_ac08d67074731b83664127bb0cc190bfe}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddress_ac08d67074731b83664127bb0cc190bfe}{base}}
+\begin{DoxyCompactList}\small\item\em Pointer to our address space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddress_adbb9f0a40c81e28e83eca5a9de2959a8}\label{classAddress_adbb9f0a40c81e28e83eca5a9de2959a8}} 
+uintb \mbox{\hyperlink{classAddress_adbb9f0a40c81e28e83eca5a9de2959a8}{offset}}
+\begin{DoxyCompactList}\small\item\em Offset (in bytes) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \mbox{\hyperlink{classAddress_aad61b7eee4f2506349c6a517a1271faa}{operator$<$$<$}} (ostream \&s, const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Write out an address to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A low-\/level machine address for labelling bytes and data. 
+
+All data that can be manipulated within the processor reverse engineering model can be labelled with an \mbox{\hyperlink{classAddress}{Address}}. It is simply an address space (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}}) and an offset within that space. Note that processor registers are typically modelled by creating a dedicated address space for them, as distinct from R\+AM say, and then specifying certain addresses within the register space that correspond to particular registers. However, an arbitrary address could refer to anything, R\+AM, R\+OM, cpu register, data segment, coprocessor, stack, nvram, etc. An \mbox{\hyperlink{classAddress}{Address}} represents an offset {\itshape only}, not an offset and length 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7}\label{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7}} 
+\index{Address@{Address}!mach\_extreme@{mach\_extreme}}
+\index{mach\_extreme@{mach\_extreme}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{mach\_extreme}{mach\_extreme}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7}{Address\+::mach\+\_\+extreme}}}
+
+
+
+An enum for specifying extremal addresses. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{m\_minimal@{m\_minimal}!Address@{Address}}\index{Address@{Address}!m\_minimal@{m\_minimal}}}\mbox{\Hypertarget{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7a1990ccfacf791a707a42d623bdc4134d}\label{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7a1990ccfacf791a707a42d623bdc4134d}} 
+m\+\_\+minimal&Smallest possible address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{m\_maximal@{m\_maximal}!Address@{Address}}\index{Address@{Address}!m\_maximal@{m\_maximal}}}\mbox{\Hypertarget{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7abe15025551d5d35578ab1f409e3f6b7f}\label{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7abe15025551d5d35578ab1f409e3f6b7f}} 
+m\+\_\+maximal&Biggest possible address. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAddress_a84f096e8cab2cd71a252877055938759}\label{classAddress_a84f096e8cab2cd71a252877055938759}} 
+\index{Address@{Address}!Address@{Address}}
+\index{Address@{Address}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{Address()}{Address()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Address\+::\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7}{mach\+\_\+extreme}}}]{ex }\end{DoxyParamCaption})}
+
+
+
+Initialize an extremal address. 
+
+Some data structures sort on an \mbox{\hyperlink{classAddress}{Address}}, and it is convenient to be able to create an \mbox{\hyperlink{classAddress}{Address}} that is either bigger than or smaller than all other Addresses. 
+\begin{DoxyParams}{Parameters}
+{\em ex} & is either {\itshape m\+\_\+minimal} or {\itshape m\+\_\+maximal} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddress_a69a01db36be374e934ed33c773e31b7f}\label{classAddress_a69a01db36be374e934ed33c773e31b7f}} 
+\index{Address@{Address}!Address@{Address}}
+\index{Address@{Address}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{Address()}{Address()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Address\+::\+Address (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create an invalid address. 
+
+An invalid address is possible in some circumstances. This deliberately constructs an invalid address \mbox{\Hypertarget{classAddress_aa525e3d0433b8bbe9045465d78cfe5ae}\label{classAddress_aa525e3d0433b8bbe9045465d78cfe5ae}} 
+\index{Address@{Address}!Address@{Address}}
+\index{Address@{Address}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{Address()}{Address()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Address\+::\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{id,  }\item[{uintb}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an address with a space/offset pair. 
+
+This is the basic \mbox{\hyperlink{classAddress}{Address}} constructor 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the space containing the address \\
+\hline
+{\em off} & is the offset of the address \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddress_a29436dab23400efc18afcf58ce529082}\label{classAddress_a29436dab23400efc18afcf58ce529082}} 
+\index{Address@{Address}!Address@{Address}}
+\index{Address@{Address}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{Address()}{Address()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Address\+::\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A copy constructor. 
+
+This is a standard copy constructor, copying the address space and the offset 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the \mbox{\hyperlink{classAddress}{Address}} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAddress_a965a4af990914bc8be054c96d12485d2}\label{classAddress_a965a4af990914bc8be054c96d12485d2}} 
+\index{Address@{Address}!containedBy@{containedBy}}
+\index{containedBy@{containedBy}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{containedBy()}{containedBy()}}
+{\footnotesize\ttfamily bool Address\+::contained\+By (\begin{DoxyParamCaption}\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2,  }\item[{int4}]{sz2 }\end{DoxyParamCaption}) const}
+
+
+
+Determine if {\itshape op2} range contains {\bfseries{this}} range. 
+
+Return {\bfseries{true}} if the range starting at {\bfseries{this}} extending the given number of bytes is contained by the second given range. 
+\begin{DoxyParams}{Parameters}
+{\em sz} & is the given number of bytes in {\bfseries{this}} range \\
+\hline
+{\em op2} & is the start of the second given range \\
+\hline
+{\em sz2} & is the number of bytes in the second given range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the second given range contains {\bfseries{this}} range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a18dc61d8b617214f2ec054dabc3c9040}\label{classAddress_a18dc61d8b617214f2ec054dabc3c9040}} 
+\index{Address@{Address}!getAddrSize@{getAddrSize}}
+\index{getAddrSize@{getAddrSize}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{getAddrSize()}{getAddrSize()}}
+{\footnotesize\ttfamily int4 Address\+::get\+Addr\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of bytes in the address. 
+
+Get the number of bytes needed to encode the {\itshape offset} for this address. \begin{DoxyReturn}{Returns}
+the number of bytes in the encoding 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a208ce07ecf27e5c148d8395913831c2a}\label{classAddress_a208ce07ecf27e5c148d8395913831c2a}} 
+\index{Address@{Address}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
+{\footnotesize\ttfamily uintb Address\+::get\+Offset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the address offset. 
+
+Get the offset of the address as an integer. \begin{DoxyReturn}{Returns}
+the offset integer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a00559098470f2e6da27c07cdda47d1ea}\label{classAddress_a00559098470f2e6da27c07cdda47d1ea}} 
+\index{Address@{Address}!getShortcut@{getShortcut}}
+\index{getShortcut@{getShortcut}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{getShortcut()}{getShortcut()}}
+{\footnotesize\ttfamily char Address\+::get\+Shortcut (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the shortcut character for the address space. 
+
+Each address has a shortcut character associated with it for use with the read and print\+Raw methods. \begin{DoxyReturn}{Returns}
+the shortcut char 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a2e1cbf153126eebf5ba92f52c5dbc6a8}\label{classAddress_a2e1cbf153126eebf5ba92f52c5dbc6a8}} 
+\index{Address@{Address}!getSpace@{getSpace}}
+\index{getSpace@{getSpace}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{getSpace()}{getSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Address\+::get\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the address space. 
+
+Get the address space associated with this address. \begin{DoxyReturn}{Returns}
+the Address\+Space pointer, or {\bfseries{N\+U\+LL}} if invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_acd17db20230415cb1fe1ad33c34c11ff}\label{classAddress_acd17db20230415cb1fe1ad33c34c11ff}} 
+\index{Address@{Address}!getSpaceFromConst@{getSpaceFromConst}}
+\index{getSpaceFromConst@{getSpaceFromConst}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{getSpaceFromConst()}{getSpaceFromConst()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Address\+::get\+Space\+From\+Const (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Recover an encoded address space from an address. 
+
+In {\bfseries{L\+O\+AD}} and {\bfseries{S\+T\+O\+RE}} instructions, the particular address space being read/written is encoded as a constant input parameter to the instruction. Internally, this constant is the actual pointer to the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}. This function allows the encoded pointer to be recovered from the address it is encoded in. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} encoding the pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} pointer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_aec0c5e9a64d45b7e913e61eb064bcc2d}\label{classAddress_aec0c5e9a64d45b7e913e61eb064bcc2d}} 
+\index{Address@{Address}!isBigEndian@{isBigEndian}}
+\index{isBigEndian@{isBigEndian}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{isBigEndian()}{isBigEndian()}}
+{\footnotesize\ttfamily bool Address\+::is\+Big\+Endian (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is data at this address big endian encoded. 
+
+Determine if data stored at this address is big endian encoded. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the address is big endian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a8ef20a60dfb144bb91c466432e377eb5}\label{classAddress_a8ef20a60dfb144bb91c466432e377eb5}} 
+\index{Address@{Address}!isConstant@{isConstant}}
+\index{isConstant@{isConstant}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{isConstant()}{isConstant()}}
+{\footnotesize\ttfamily bool Address\+::is\+Constant (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is this a {\itshape constant} {\itshape value}. 
+
+Determine if this address is from the {\itshape constant} {\itshape space}. All constant values are represented as an offset into the {\itshape constant} {\itshape space}. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if this address represents a constant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a77b6efa62ad4f31c95f3861b79d3ed5e}\label{classAddress_a77b6efa62ad4f31c95f3861b79d3ed5e}} 
+\index{Address@{Address}!isContiguous@{isContiguous}}
+\index{isContiguous@{isContiguous}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{isContiguous()}{isContiguous()}}
+{\footnotesize\ttfamily bool Address\+::is\+Contiguous (\begin{DoxyParamCaption}\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loaddr,  }\item[{int4}]{losz }\end{DoxyParamCaption}) const}
+
+
+
+Does {\itshape this} form a contigous range with {\itshape loaddr}. 
+
+Does the location {\itshape this}, {\itshape sz} form a contiguous region to {\itshape loaddr}, {\itshape losz}, where {\itshape this} forms the most significant piece of the logical whole 
+\begin{DoxyParams}{Parameters}
+{\em sz} & is the size of {\itshape this} hi region \\
+\hline
+{\em loaddr} & is the starting address of the low region \\
+\hline
+{\em losz} & is the size of the low region \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the pieces form a contiguous whole 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a90ea7ea47a048afa95a14709e704d876}\label{classAddress_a90ea7ea47a048afa95a14709e704d876}} 
+\index{Address@{Address}!isInvalid@{isInvalid}}
+\index{isInvalid@{isInvalid}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{isInvalid()}{isInvalid()}}
+{\footnotesize\ttfamily bool Address\+::is\+Invalid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is the address invalid? 
+
+Determine if this is an invalid address. This only detects {\itshape deliberate} invalid addresses. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the address is invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_ae0e5cdee35b24c75adcbfc444e6e5be6}\label{classAddress_ae0e5cdee35b24c75adcbfc444e6e5be6}} 
+\index{Address@{Address}!isJoin@{isJoin}}
+\index{isJoin@{isJoin}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{isJoin()}{isJoin()}}
+{\footnotesize\ttfamily bool Address\+::is\+Join (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is this a {\itshape join} {\itshape value}. 
+
+Determine if this address represents a set of joined memory locations. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if this address represents a join 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a71d6969466b6edf50b9542e6a75dc439}\label{classAddress_a71d6969466b6edf50b9542e6a75dc439}} 
+\index{Address@{Address}!justifiedContain@{justifiedContain}}
+\index{justifiedContain@{justifiedContain}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{justifiedContain()}{justifiedContain()}}
+{\footnotesize\ttfamily int4 Address\+::justified\+Contain (\begin{DoxyParamCaption}\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2,  }\item[{int4}]{sz2,  }\item[{bool}]{forceleft }\end{DoxyParamCaption}) const}
+
+
+
+Determine if {\itshape op2} is the least significant part of {\itshape this}. 
+
+Return -\/1 if ({\itshape op2},{\itshape sz2}) is not properly contained in ({\itshape this},{\itshape sz}). If it is contained, return the endian aware offset of ({\itshape op2},{\itshape sz2}) I.\+e. if the least significant byte of the {\itshape op2} range falls on the least significant byte of the {\itshape this} range, return 0. If it intersects the second least significant, return 1, etc. The -\/forceleft-\/ toggle causes the check to be made against the left (lowest address) side of the container, regardless of the endianness. I.\+e. it forces a little endian interpretation. 
+\begin{DoxyParams}{Parameters}
+{\em sz} & is the size of {\itshape this} range \\
+\hline
+{\em op2} & is the address of the second range \\
+\hline
+{\em sz2} & is the size of the second range \\
+\hline
+{\em forceleft} & is {\bfseries{true}} if containments is forced to be on the left even for big endian \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the endian aware offset, or -\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_abe25251b102af0a1eed6e5120bb8e8b3}\label{classAddress_abe25251b102af0a1eed6e5120bb8e8b3}} 
+\index{Address@{Address}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Address\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare two addresses for inequality. 
+
+Check if two addresses are not equal. I.\+e. if either their address space or offset are different. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the address to compare to {\itshape this} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the addresses are different 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a2e0f4cfc80a3284beeb1fa70adcfa9cb}\label{classAddress_a2e0f4cfc80a3284beeb1fa70adcfa9cb}} 
+\index{Address@{Address}!operator+@{operator+}}
+\index{operator+@{operator+}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Address\+::operator+ (\begin{DoxyParamCaption}\item[{int4}]{off }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Increment address by a number of bytes. 
+
+Add an integer value to the offset portion of the address. The addition takes into account the {\itshape size} of the address space, and the \mbox{\hyperlink{classAddress}{Address}} will wrap around if necessary. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the number to add to the offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new incremented address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_adbf6ed048012cc8d1f52e1d4fd63b7aa}\label{classAddress_adbf6ed048012cc8d1f52e1d4fd63b7aa}} 
+\index{Address@{Address}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Address\+::operator-\/ (\begin{DoxyParamCaption}\item[{int4}]{off }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Decrement address by a number of bytes. 
+
+Subtract an integer value from the offset portion of the address. The subtraction takes into account the {\itshape size} of the address space, and the \mbox{\hyperlink{classAddress}{Address}} will wrap around if necessary. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the number to subtract from the offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new decremented address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_ac2109b6d10183b10d67c7f743bfc21dc}\label{classAddress_ac2109b6d10183b10d67c7f743bfc21dc}} 
+\index{Address@{Address}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Address\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare two addresses via their natural ordering. 
+
+Do an ordering comparison of two addresses. Addresses are sorted first on space, then on offset. So two addresses in the same space compare naturally based on their offset, but addresses in different spaces also compare. Different spaces are ordered by their index. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the address to compare to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\itshape this} comes before {\itshape op2} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a8d3c3b93cd942cfeb881ea577dfb869f}\label{classAddress_a8d3c3b93cd942cfeb881ea577dfb869f}} 
+\index{Address@{Address}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool Address\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare two addresses via their natural ordering. 
+
+Do an ordering comparison of two addresses. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the address to compare to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\itshape this} comes before or is equal to {\itshape op2} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a942aba71799e61225a20135d3dc86453}\label{classAddress_a942aba71799e61225a20135d3dc86453}} 
+\index{Address@{Address}!operator=@{operator=}}
+\index{operator=@{operator=}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} \& Address\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy an address. 
+
+This is a standard assignment operator, copying the address space pointer and the offset 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the \mbox{\hyperlink{classAddress}{Address}} being assigned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to altered address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a6f61edd53efcd9ff5d7f067fb46250dd}\label{classAddress_a6f61edd53efcd9ff5d7f067fb46250dd}} 
+\index{Address@{Address}!operator==@{operator==}}
+\index{operator==@{operator==}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Address\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare two addresses for equality. 
+
+Check if two addresses are equal. I.\+e. if their address space and offset are the same. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the address to compare to {\itshape this} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the addresses are the same 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_af63d859f7cdbe890e9ca2fd2812f616c}\label{classAddress_af63d859f7cdbe890e9ca2fd2812f616c}} 
+\index{Address@{Address}!overlap@{overlap}}
+\index{overlap@{overlap}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{overlap()}{overlap()}}
+{\footnotesize\ttfamily int4 Address\+::overlap (\begin{DoxyParamCaption}\item[{int4}]{skip,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Determine how two address ranges overlap. 
+
+If {\itshape this} + {\itshape skip} falls in the range {\itshape op} to {\itshape op} + {\itshape size}, then a non-\/negative integer is returned indicating where in the interval it falls. I.\+e. if {\itshape this} + {\itshape skip} == {\itshape op}, then 0 is returned. Otherwise -\/1 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em skip} & is an adjust to {\itshape this} address \\
+\hline
+{\em op} & is the start of the range to check \\
+\hline
+{\em size} & is the size of the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer indicating how overlap occurs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_abc8be0370dd8397596c06a5f68bcc8e8}\label{classAddress_abc8be0370dd8397596c06a5f68bcc8e8}} 
+\index{Address@{Address}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Address\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write a raw version of the address to a stream. 
+
+Write a short-\/hand or debug version of this address to a stream. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddress_a10953bd3fe65b279ee102a69d43e2d27}\label{classAddress_a10953bd3fe65b279ee102a69d43e2d27}} 
+\index{Address@{Address}!read@{read}}
+\index{read@{read}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int4 Address\+::read (\begin{DoxyParamCaption}\item[{const string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read in the address from a string. 
+
+Convert a string into an address. The string format can be tailored for the particular address space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the string to parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+any size associated with the parsed string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a079f391c59a43a0e0fb8a5c66eaf6f64}\label{classAddress_a079f391c59a43a0e0fb8a5c66eaf6f64}} 
+\index{Address@{Address}!renormalize@{renormalize}}
+\index{renormalize@{renormalize}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{renormalize()}{renormalize()}}
+{\footnotesize\ttfamily void Address\+::renormalize (\begin{DoxyParamCaption}\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Make sure there is a backing \mbox{\hyperlink{classJoinRecord}{Join\+Record}} if {\bfseries{this}} is in the {\itshape join} space. 
+
+If {\bfseries{this}} is (originally) a {\itshape join} address, reevaluate it in terms of its new {\itshape offset} and {\itshape siz}, changing the space and offset if necessary. 
+\begin{DoxyParams}{Parameters}
+{\em size} & is the new size in bytes of the underlying object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddress_a31fdc8c33088abb3040027d35e7c4026}\label{classAddress_a31fdc8c33088abb3040027d35e7c4026}} 
+\index{Address@{Address}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Address\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Restore an address from parsed X\+ML. 
+
+This is usually used to build an address from an {\bfseries{$<$addr$>$}} tag, but it can be used to create an address from any tag with the appropriate attributes
+\begin{DoxyItemize}
+\item {\itshape space} indicates the address space of the tag
+\item {\itshape offset} indicates the offset within the space
+\end{DoxyItemize}
+
+or a {\itshape name} attribute can be used to recover an address based on a register name. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed tag \\
+\hline
+{\em manage} & is the address space manager for the program \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting \mbox{\hyperlink{classAddress}{Address}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_a18a4b4f313eca927ac348a943c886365}\label{classAddress_a18a4b4f313eca927ac348a943c886365}} 
+\index{Address@{Address}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Address\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage,  }\item[{int4 \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Restore an address and size from parsed X\+ML. 
+
+This is usually used to build an address from an {\bfseries{$<$addr$>$}} tag, but it can be used to create an address from any tag with the appropriate attributes
+\begin{DoxyItemize}
+\item {\itshape space} indicates the address space of the tag
+\item {\itshape offset} indicates the offset within the space
+\item {\itshape size} indicates the size of an address range
+\end{DoxyItemize}
+
+or a {\itshape name} attribute can be used to recover an address and size based on a register name. If a size is recovered it is stored in {\itshape size} reference. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed tag \\
+\hline
+{\em manage} & is the address space manager for the program \\
+\hline
+{\em size} & is the reference to any recovered size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting \mbox{\hyperlink{classAddress}{Address}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddress_ab483818c0d4947d565828c53ffd3cb4b}\label{classAddress_ab483818c0d4947d565828c53ffd3cb4b}} 
+\index{Address@{Address}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Address\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save this to a stream as an X\+ML tag. 
+
+Save an {\bfseries{$<$addr$>$}} tag corresponding to this address to a stream. The exact format is determined by the address space, but this generally has a {\itshape space} and an {\itshape offset} attribute. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddress_a9369f5ae7596c2aeecfb1a000454b2e5}\label{classAddress_a9369f5ae7596c2aeecfb1a000454b2e5}} 
+\index{Address@{Address}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Address\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save this and a size to a stream as an X\+ML tag. 
+
+Save an {\bfseries{$<$addr$>$}} tag corresponding to this address to a stream. The tag will also include an extra {\itshape size} attribute so that it can describe an entire memory range. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written to \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddress_a5dfb849ac01e7b1ca87d0ecbf5022dca}\label{classAddress_a5dfb849ac01e7b1ca87d0ecbf5022dca}} 
+\index{Address@{Address}!toPhysical@{toPhysical}}
+\index{toPhysical@{toPhysical}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{toPhysical()}{toPhysical()}}
+{\footnotesize\ttfamily void Address\+::to\+Physical (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Convert this to a physical address. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Convert this to the most basic physical address. This routine is only present for backward compatibility with S\+L\+ED \end{DoxyRefDesc}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classAddress_aad61b7eee4f2506349c6a517a1271faa}\label{classAddress_aad61b7eee4f2506349c6a517a1271faa}} 
+\index{Address@{Address}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Address@{Address}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Write out an address to stream. 
+
+This allows an \mbox{\hyperlink{classAddress}{Address}} to be written to a stream using the standard \textquotesingle{}$<$$<$\textquotesingle{} operator. This is a wrapper for the print\+Raw method and is intended for debugging and console mode uses. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written to \\
+\hline
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{address_8hh}{address.\+hh}}\item 
+address.\+cc\end{DoxyCompactItemize}

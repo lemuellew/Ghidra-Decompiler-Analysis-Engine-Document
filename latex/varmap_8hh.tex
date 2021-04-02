@@ -1,0 +1,48 @@
+\hypertarget{varmap_8hh}{}\doxysection{varmap.\+hh File Reference}
+\label{varmap_8hh}\index{varmap.hh@{varmap.hh}}
+
+
+Classes for keeping track of local variables and reconstructing stack layout.  
+
+
+{\ttfamily \#include \char`\"{}database.\+hh\char`\"{}}\newline
+Include dependency graph for varmap.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{varmap_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{varmap_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classNameRecommend}{Name\+Recommend}}
+\begin{DoxyCompactList}\small\item\em A symbol name recommendation with its associated storage location. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDynamicRecommend}{Dynamic\+Recommend}}
+\begin{DoxyCompactList}\small\item\em A name recommendation for a particular dynamic storage location. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeRecommend}{Type\+Recommend}}
+\begin{DoxyCompactList}\small\item\em Data-\/type for a storage location when there is no \mbox{\hyperlink{classSymbol}{Symbol}} (yet) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRangeHint}{Range\+Hint}}
+\begin{DoxyCompactList}\small\item\em Partial data-\/type information mapped to a specific range of bytes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classAliasChecker}{Alias\+Checker}}
+\begin{DoxyCompactList}\small\item\em A light-\/weight class for analyzing pointers and aliasing on the stack. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structAliasChecker_1_1AddBase}{Alias\+Checker\+::\+Add\+Base}}
+\begin{DoxyCompactList}\small\item\em A helper class holding a \mbox{\hyperlink{classVarnode}{Varnode}} pointer reference and a possible index added to it. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMapState}{Map\+State}}
+\begin{DoxyCompactList}\small\item\em A container for hints about the data-\/type layout of an address space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classScopeLocal}{Scope\+Local}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classSymbol}{Symbol}} scope for {\itshape local} variables of a particular function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes for keeping track of local variables and reconstructing stack layout. 
+

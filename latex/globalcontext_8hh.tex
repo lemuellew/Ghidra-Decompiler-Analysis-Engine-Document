@@ -1,0 +1,49 @@
+\hypertarget{globalcontext_8hh}{}\doxysection{globalcontext.\+hh File Reference}
+\label{globalcontext_8hh}\index{globalcontext.hh@{globalcontext.hh}}
+
+
+Utilities for getting address-\/based context to the disassembler and decompiler.  
+
+
+{\ttfamily \#include \char`\"{}pcoderaw.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}partmap.\+hh\char`\"{}}\newline
+Include dependency graph for globalcontext.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{globalcontext_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{globalcontext_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}}
+\begin{DoxyCompactList}\small\item\em Description of a context variable within the disassembly context {\itshape blob}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}}
+\begin{DoxyCompactList}\small\item\em A tracked register (\mbox{\hyperlink{classVarnode}{Varnode}}) and the value it contains. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classContextDatabase}{Context\+Database}}
+\begin{DoxyCompactList}\small\item\em An interface to a database of disassembly/decompiler {\bfseries{context}} information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classContextInternal}{Context\+Internal}}
+\begin{DoxyCompactList}\small\item\em An in-\/memory implementation of the \mbox{\hyperlink{classContextDatabase}{Context\+Database}} interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classContextCache}{Context\+Cache}}
+\begin{DoxyCompactList}\small\item\em A helper class for caching the active context blob to minimize database lookups. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}\label{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}} 
+typedef vector$<$ \mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} $>$ \mbox{\hyperlink{globalcontext_8hh_a7559d2c55c5d12fbbaf0418733b62438}{Tracked\+Set}}
+\begin{DoxyCompactList}\small\item\em A set of tracked registers and their values (at one code point) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utilities for getting address-\/based context to the disassembler and decompiler. 
+

@@ -1,0 +1,71 @@
+\hypertarget{classInjectCallotherGhidra}{}\doxysection{Inject\+Callother\+Ghidra Class Reference}
+\label{classInjectCallotherGhidra}\index{InjectCallotherGhidra@{InjectCallotherGhidra}}
+
+
+A callother-\/fixup injection that uses a Ghidra client to generate the p-\/code ops.  
+
+
+
+
+{\ttfamily \#include $<$inject\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Inject\+Callother\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classInjectCallotherGhidra__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Inject\+Callother\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{classInjectCallotherGhidra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInjectCallotherGhidra_a101edb421169e4c38d75479398dc6984}\label{classInjectCallotherGhidra_a101edb421169e4c38d75479398dc6984}} 
+\mbox{\hyperlink{classInjectCallotherGhidra_a101edb421169e4c38d75479398dc6984}{Inject\+Callother\+Ghidra}} (const string \&src, const string \&nm)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classInjectCallotherGhidra_a2b2c94c0e13627b5b0eeaa54d52aaeee}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} payload from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A callother-\/fixup injection that uses a Ghidra client to generate the p-\/code ops. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInjectCallotherGhidra_a2b2c94c0e13627b5b0eeaa54d52aaeee}\label{classInjectCallotherGhidra_a2b2c94c0e13627b5b0eeaa54d52aaeee}} 
+\index{InjectCallotherGhidra@{InjectCallotherGhidra}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!InjectCallotherGhidra@{InjectCallotherGhidra}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Inject\+Callother\+Ghidra\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} payload from an X\+ML stream. 
+
+The base class version of this method restores from a $<$pcode$>$ tag. Derived classes may restore from a parent tag and then invoke the base class method. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classInjectPayloadGhidra_a5ccd974310decec0bdb6985f89c0f0ed}{Inject\+Payload\+Ghidra}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{inject__ghidra_8hh}{inject\+\_\+ghidra.\+hh}}\item 
+inject\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

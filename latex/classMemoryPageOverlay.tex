@@ -1,0 +1,179 @@
+\hypertarget{classMemoryPageOverlay}{}\doxysection{Memory\+Page\+Overlay Class Reference}
+\label{classMemoryPageOverlay}\index{MemoryPageOverlay@{MemoryPageOverlay}}
+
+
+Memory bank that overlays some other memory bank, using a \char`\"{}copy on write\char`\"{} behavior.  
+
+
+
+
+{\ttfamily \#include $<$memstate.\+hh$>$}
+
+
+
+Inheritance diagram for Memory\+Page\+Overlay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classMemoryPageOverlay__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Memory\+Page\+Overlay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classMemoryPageOverlay__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryPageOverlay_a6c428c147305c5233d570fcfe74d747d}{Memory\+Page\+Overlay}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, int4 ws, int4 ps, \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} $\ast$ul)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}} for page overlay. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMemoryPageOverlay_a4dad83693ae5fe82459e9bdcb3f2415f}{insert}} (uintb addr, uintb val)
+\begin{DoxyCompactList}\small\item\em Overridden aligned word insert. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classMemoryPageOverlay_a7ba248277eadf04ca7895dea1e614148}{find}} (uintb addr) const
+\begin{DoxyCompactList}\small\item\em Overridden aligned word find. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMemoryPageOverlay_a0b502920d00bee935fdd15a2e2d823f2}{get\+Page}} (uintb addr, uint1 $\ast$res, int4 skip, int4 size) const
+\begin{DoxyCompactList}\small\item\em Overridden get\+Page. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMemoryPageOverlay_a1d713334ec06e47cfdfcf76f0649eb71}{set\+Page}} (uintb addr, const uint1 $\ast$val, int4 skip, int4 size)
+\begin{DoxyCompactList}\small\item\em Overridden set\+Page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Memory bank that overlays some other memory bank, using a \char`\"{}copy on write\char`\"{} behavior. 
+
+Pages are copied from the underlying object only when there is a write. The underlying access routines are overridden to make optimal use of this page implementation. The underlying memory bank can be a {\bfseries{null}} pointer in which case, this memory bank behaves as if it were initially filled with zeros. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMemoryPageOverlay_a6c428c147305c5233d570fcfe74d747d}\label{classMemoryPageOverlay_a6c428c147305c5233d570fcfe74d747d}} 
+\index{MemoryPageOverlay@{MemoryPageOverlay}!MemoryPageOverlay@{MemoryPageOverlay}}
+\index{MemoryPageOverlay@{MemoryPageOverlay}!MemoryPageOverlay@{MemoryPageOverlay}}
+\doxysubsubsection{\texorpdfstring{MemoryPageOverlay()}{MemoryPageOverlay()}}
+{\footnotesize\ttfamily Memory\+Page\+Overlay\+::\+Memory\+Page\+Overlay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{int4}]{ws,  }\item[{int4}]{ps,  }\item[{\mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} $\ast$}]{ul }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}} for page overlay. 
+
+A page overlay memory bank needs all the parameters for a generic memory bank and it needs to know the underlying memory bank being overlayed. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space associated with the memory bank \\
+\hline
+{\em ws} & is the number of bytes in the preferred wordsize (must be power of 2) \\
+\hline
+{\em ps} & is the number of bytes in a page (must be power of 2) \\
+\hline
+{\em ul} & is the underlying \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryPageOverlay_a7ba248277eadf04ca7895dea1e614148}\label{classMemoryPageOverlay_a7ba248277eadf04ca7895dea1e614148}} 
+\index{MemoryPageOverlay@{MemoryPageOverlay}!find@{find}}
+\index{find@{find}!MemoryPageOverlay@{MemoryPageOverlay}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily uintb Memory\+Page\+Overlay\+::find (\begin{DoxyParamCaption}\item[{uintb}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overridden aligned word find. 
+
+This derived method first looks for the aligned word in the mapped pages. If the address is not mapped, the search is forwarded to the {\itshape underlying} memory bank. If there is no underlying bank, zero is returned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the aligned offset of the word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the retrieved value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classMemoryBank_a421a5b8dd872d0c3e462d9055fa4266d}{Memory\+Bank}}.
+
+\mbox{\Hypertarget{classMemoryPageOverlay_a0b502920d00bee935fdd15a2e2d823f2}\label{classMemoryPageOverlay_a0b502920d00bee935fdd15a2e2d823f2}} 
+\index{MemoryPageOverlay@{MemoryPageOverlay}!getPage@{getPage}}
+\index{getPage@{getPage}!MemoryPageOverlay@{MemoryPageOverlay}}
+\doxysubsubsection{\texorpdfstring{getPage()}{getPage()}}
+{\footnotesize\ttfamily void Memory\+Page\+Overlay\+::get\+Page (\begin{DoxyParamCaption}\item[{uintb}]{addr,  }\item[{uint1 $\ast$}]{res,  }\item[{int4}]{skip,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overridden get\+Page. 
+
+The desired page is looked for in the page cache. If it doesn\textquotesingle{}t exist, the request is forwarded to {\itshape underlying} bank. If there is no underlying bank, the result buffer is filled with zeros. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the aligned offset of the page \\
+\hline
+{\em res} & is the pointer to where retrieved bytes should be stored \\
+\hline
+{\em skip} & is the offset {\itshape into} {\itshape the} {\itshape page} from where bytes should be retrieved \\
+\hline
+{\em size} & is the number of bytes to retrieve \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classMemoryBank_ac48e5c77befa62116190b34611ad4339}{Memory\+Bank}}.
+
+\mbox{\Hypertarget{classMemoryPageOverlay_a4dad83693ae5fe82459e9bdcb3f2415f}\label{classMemoryPageOverlay_a4dad83693ae5fe82459e9bdcb3f2415f}} 
+\index{MemoryPageOverlay@{MemoryPageOverlay}!insert@{insert}}
+\index{insert@{insert}!MemoryPageOverlay@{MemoryPageOverlay}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Memory\+Page\+Overlay\+::insert (\begin{DoxyParamCaption}\item[{uintb}]{addr,  }\item[{uintb}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overridden aligned word insert. 
+
+This derived method looks for a previously cached page of the underlying memory bank. If the cached page does not exist, it creates it and fills in its initial value by retrieving the page from the underlying bank. The new value is then written into cached page. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the aligned address of the word to be written \\
+\hline
+{\em val} & is the value to be written at that word \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classMemoryBank_abccbb8ba1e2c2ae941b372e90f454e5f}{Memory\+Bank}}.
+
+\mbox{\Hypertarget{classMemoryPageOverlay_a1d713334ec06e47cfdfcf76f0649eb71}\label{classMemoryPageOverlay_a1d713334ec06e47cfdfcf76f0649eb71}} 
+\index{MemoryPageOverlay@{MemoryPageOverlay}!setPage@{setPage}}
+\index{setPage@{setPage}!MemoryPageOverlay@{MemoryPageOverlay}}
+\doxysubsubsection{\texorpdfstring{setPage()}{setPage()}}
+{\footnotesize\ttfamily void Memory\+Page\+Overlay\+::set\+Page (\begin{DoxyParamCaption}\item[{uintb}]{addr,  }\item[{const uint1 $\ast$}]{val,  }\item[{int4}]{skip,  }\item[{int4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Overridden set\+Page. 
+
+First, a cached version of the desired page is searched for via its address. If it doesn\textquotesingle{}t exist, it is created, and its initial value is filled via the {\itshape underlying} bank. The bytes to be written are then copied into the cached page. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the aligned offset of the page to write \\
+\hline
+{\em val} & is a pointer to bytes to be written into the page \\
+\hline
+{\em skip} & is the offset {\itshape into} {\itshape the} {\itshape page} where bytes should be written \\
+\hline
+{\em size} & is the number of bytes to write \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classMemoryBank_a68bf2318442e1f7da99ae85f63f9df19}{Memory\+Bank}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{memstate_8hh}{memstate.\+hh}}\item 
+memstate.\+cc\end{DoxyCompactItemize}

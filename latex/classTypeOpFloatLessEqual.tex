@@ -1,0 +1,75 @@
+\hypertarget{classTypeOpFloatLessEqual}{}\doxysection{Type\+Op\+Float\+Less\+Equal Class Reference}
+\label{classTypeOpFloatLessEqual}\index{TypeOpFloatLessEqual@{TypeOpFloatLessEqual}}
+
+
+Information about the F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Float\+Less\+Equal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classTypeOpFloatLessEqual__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Float\+Less\+Equal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpFloatLessEqual__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpFloatLessEqual_acbd4ef67b2c3c93f4774b64b0f83e24f}\label{classTypeOpFloatLessEqual_acbd4ef67b2c3c93f4774b64b0f83e24f}} 
+\mbox{\hyperlink{classTypeOpFloatLessEqual_acbd4ef67b2c3c93f4774b64b0f83e24f}{Type\+Op\+Float\+Less\+Equal}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpFloatLessEqual_ab6d90d739c59288a0840d9076f9a1524}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpFloatLessEqual_ab6d90d739c59288a0840d9076f9a1524}\label{classTypeOpFloatLessEqual_ab6d90d739c59288a0840d9076f9a1524}} 
+\index{TypeOpFloatLessEqual@{TypeOpFloatLessEqual}!push@{push}}
+\index{push@{push}!TypeOpFloatLessEqual@{TypeOpFloatLessEqual}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Float\+Less\+Equal\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

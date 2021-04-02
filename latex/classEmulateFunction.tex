@@ -1,0 +1,162 @@
+\hypertarget{classEmulateFunction}{}\doxysection{Emulate\+Function Class Reference}
+\label{classEmulateFunction}\index{EmulateFunction@{EmulateFunction}}
+
+
+A light-\/weight emulator to calculate switch targets from switch variables.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+
+
+Inheritance diagram for Emulate\+Function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classEmulateFunction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Emulate\+Function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmulateFunction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEmulateFunction_a5693cdd5aff9468316dedea0e56c26b0}{Emulate\+Function}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulateFunction_abdda883c4bab425f1c060fcc6c867b25}\label{classEmulateFunction_abdda883c4bab425f1c060fcc6c867b25}} 
+virtual void \mbox{\hyperlink{classEmulateFunction_abdda883c4bab425f1c060fcc6c867b25}{set\+Execute\+Address}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Set the address of the next instruction to emulate. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classEmulateFunction_aea3a1fca2e8073ab6e7bcff5f05a74ca}{get\+Varnode\+Value}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Given a specific \mbox{\hyperlink{classVarnode}{Varnode}}, retrieve the current value for it from the machine state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmulateFunction_a9b130aee822f3e00552259a3ecaf14ff}{set\+Varnode\+Value}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, uintb val)
+\begin{DoxyCompactList}\small\item\em Given a specific \mbox{\hyperlink{classVarnode}{Varnode}}, set the given value for it in the current machine state. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classEmulateFunction_a0b6a72cd2a09edc2f9ca29503c435259}{emulate\+Path}} (uintb val, const \mbox{\hyperlink{classPathMeld}{Path\+Meld}} \&path\+Meld, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$startop, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$startvn)
+\begin{DoxyCompactList}\small\item\em Execute from a given starting point and value to the common end-\/point of the path set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEmulateFunction_a92c3d9ddc113361c767f598ac892a7e9}{collect\+Load\+Points}} (vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ \&res) const
+\begin{DoxyCompactList}\small\item\em Recover any L\+O\+AD table descriptions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A light-\/weight emulator to calculate switch targets from switch variables. 
+
+We assume we only have to store memory state for individual Varnodes and that dynamic L\+O\+A\+Ds are resolved from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. B\+R\+A\+N\+CH and C\+B\+R\+A\+N\+CH emulation will fail, there can only be one execution path, although there can be multiple data-\/flow paths. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEmulateFunction_a5693cdd5aff9468316dedea0e56c26b0}\label{classEmulateFunction_a5693cdd5aff9468316dedea0e56c26b0}} 
+\index{EmulateFunction@{EmulateFunction}!EmulateFunction@{EmulateFunction}}
+\index{EmulateFunction@{EmulateFunction}!EmulateFunction@{EmulateFunction}}
+\doxysubsubsection{\texorpdfstring{EmulateFunction()}{EmulateFunction()}}
+{\footnotesize\ttfamily Emulate\+Function\+::\+Emulate\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & is the function to emulate within \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmulateFunction_a92c3d9ddc113361c767f598ac892a7e9}\label{classEmulateFunction_a92c3d9ddc113361c767f598ac892a7e9}} 
+\index{EmulateFunction@{EmulateFunction}!collectLoadPoints@{collectLoadPoints}}
+\index{collectLoadPoints@{collectLoadPoints}!EmulateFunction@{EmulateFunction}}
+\doxysubsubsection{\texorpdfstring{collectLoadPoints()}{collectLoadPoints()}}
+{\footnotesize\ttfamily void Emulate\+Function\+::collect\+Load\+Points (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ \&}]{res }\end{DoxyParamCaption}) const}
+
+
+
+Recover any L\+O\+AD table descriptions. 
+
+Pass back any L\+O\+AD records collected during emulation. The individual records are sorted and collapsed into concise {\itshape table} descriptions. 
+\begin{DoxyParams}{Parameters}
+{\em res} & will hold any resulting table descriptions \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classEmulateFunction_a0b6a72cd2a09edc2f9ca29503c435259}\label{classEmulateFunction_a0b6a72cd2a09edc2f9ca29503c435259}} 
+\index{EmulateFunction@{EmulateFunction}!emulatePath@{emulatePath}}
+\index{emulatePath@{emulatePath}!EmulateFunction@{EmulateFunction}}
+\doxysubsubsection{\texorpdfstring{emulatePath()}{emulatePath()}}
+{\footnotesize\ttfamily uintb Emulate\+Function\+::emulate\+Path (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{const \mbox{\hyperlink{classPathMeld}{Path\+Meld}} \&}]{path\+Meld,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{startop,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{startvn }\end{DoxyParamCaption})}
+
+
+
+Execute from a given starting point and value to the common end-\/point of the path set. 
+
+Flow the given value through all paths in the path container to produce the single output value. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the starting value \\
+\hline
+{\em path\+Meld} & is the set of paths to execute \\
+\hline
+{\em startop} & is the starting \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} within the path set \\
+\hline
+{\em startvn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} holding the starting value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calculated value at the common end-\/point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmulateFunction_aea3a1fca2e8073ab6e7bcff5f05a74ca}\label{classEmulateFunction_aea3a1fca2e8073ab6e7bcff5f05a74ca}} 
+\index{EmulateFunction@{EmulateFunction}!getVarnodeValue@{getVarnodeValue}}
+\index{getVarnodeValue@{getVarnodeValue}!EmulateFunction@{EmulateFunction}}
+\doxysubsubsection{\texorpdfstring{getVarnodeValue()}{getVarnodeValue()}}
+{\footnotesize\ttfamily uintb Emulate\+Function\+::get\+Varnode\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given a specific \mbox{\hyperlink{classVarnode}{Varnode}}, retrieve the current value for it from the machine state. 
+
+This is the placeholder internal operation for obtaining a \mbox{\hyperlink{classVarnode}{Varnode}} value during emulation. The value is {\itshape loaded} using the \mbox{\hyperlink{classVarnode}{Varnode}} as the {\itshape address} and {\itshape storage} {\itshape size}. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the specific \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding value from the machine state 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEmulatePcodeOp_a90f1046ddac488b5a88b5b151a307eca}{Emulate\+Pcode\+Op}}.
+
+\mbox{\Hypertarget{classEmulateFunction_a9b130aee822f3e00552259a3ecaf14ff}\label{classEmulateFunction_a9b130aee822f3e00552259a3ecaf14ff}} 
+\index{EmulateFunction@{EmulateFunction}!setVarnodeValue@{setVarnodeValue}}
+\index{setVarnodeValue@{setVarnodeValue}!EmulateFunction@{EmulateFunction}}
+\doxysubsubsection{\texorpdfstring{setVarnodeValue()}{setVarnodeValue()}}
+{\footnotesize\ttfamily void Emulate\+Function\+::set\+Varnode\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{uintb}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given a specific \mbox{\hyperlink{classVarnode}{Varnode}}, set the given value for it in the current machine state. 
+
+This is the placeholder internal operation for setting a \mbox{\hyperlink{classVarnode}{Varnode}} value during emulation. The value is {\itshape stored} using the \mbox{\hyperlink{classVarnode}{Varnode}} as the {\itshape address} and {\itshape storage} {\itshape size}. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the specific \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em val} & is the constant value to store \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classEmulatePcodeOp_a44bfa9a3b6d87135a6bfc6680d01ea27}{Emulate\+Pcode\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

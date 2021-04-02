@@ -1,0 +1,187 @@
+\hypertarget{classEmulate}{}\doxysection{Emulate Class Reference}
+\label{classEmulate}\index{Emulate@{Emulate}}
+
+
+A pcode-\/based emulator interface.  
+
+
+
+
+{\ttfamily \#include $<$emulate.\+hh$>$}
+
+
+
+Inheritance diagram for Emulate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmulate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Emulate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classEmulate__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classEmulate_a4858bc80cf7b078a592f9c8d3442450d}{set\+Halt}} (bool val)
+\begin{DoxyCompactList}\small\item\em Set the {\itshape halt} state of the emulator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEmulate_ab1f2882dd3554c18c60e817e80f3c4bc}{get\+Halt}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the {\itshape halt} state of the emulator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_aff5f9779fdad54f853d4e799f5289410}\label{classEmulate_aff5f9779fdad54f853d4e799f5289410}} 
+virtual void \mbox{\hyperlink{classEmulate_aff5f9779fdad54f853d4e799f5289410}{set\+Execute\+Address}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)=0
+\begin{DoxyCompactList}\small\item\em Set the address of the next instruction to emulate. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_aeca3c773876b391304afffe2a5eff9de}\label{classEmulate_aeca3c773876b391304afffe2a5eff9de}} 
+virtual \mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classEmulate_aeca3c773876b391304afffe2a5eff9de}{get\+Execute\+Address}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get the address of the current instruction being executed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEmulate_aad37ba97a90d7cd5338a75afce3a21b9}{execute\+Current\+Op}} (void)
+\begin{DoxyCompactList}\small\item\em Do a single pcode op step. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEmulate_a95111238fb3061b23db2e94ec280b34f}\label{classEmulate_a95111238fb3061b23db2e94ec280b34f}} 
+virtual void \mbox{\hyperlink{classEmulate_a95111238fb3061b23db2e94ec280b34f}{execute\+Unary}} (void)=0
+\begin{DoxyCompactList}\small\item\em Execute a unary arithmetic/logical operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_a278171740465666a64442716187a1505}\label{classEmulate_a278171740465666a64442716187a1505}} 
+virtual void \mbox{\hyperlink{classEmulate_a278171740465666a64442716187a1505}{execute\+Binary}} (void)=0
+\begin{DoxyCompactList}\small\item\em Execute a binary arithmetic/logical operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_acc9c4d2ddbfe4ff639e320d30a212e56}\label{classEmulate_acc9c4d2ddbfe4ff639e320d30a212e56}} 
+virtual void \mbox{\hyperlink{classEmulate_acc9c4d2ddbfe4ff639e320d30a212e56}{execute\+Load}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a p-\/code L\+O\+AD. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_a634f0261bf49be73e7d31a2baf9f6e4d}\label{classEmulate_a634f0261bf49be73e7d31a2baf9f6e4d}} 
+virtual void \mbox{\hyperlink{classEmulate_a634f0261bf49be73e7d31a2baf9f6e4d}{execute\+Store}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a p-\/code S\+T\+O\+RE. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmulate_a145cee350a9273250a970c9387ecbd81}{execute\+Branch}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a B\+R\+A\+N\+CH. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classEmulate_ac0dbab7129d69471d8400a75c0c7c1b5}{execute\+Cbranch}} (void)=0
+\begin{DoxyCompactList}\small\item\em Check if the conditional of a C\+B\+R\+A\+N\+CH is {\bfseries{true}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_a9b2a5e6e6328d22c6143a5ca7d3ce4e4}\label{classEmulate_a9b2a5e6e6328d22c6143a5ca7d3ce4e4}} 
+virtual void \mbox{\hyperlink{classEmulate_a9b2a5e6e6328d22c6143a5ca7d3ce4e4}{execute\+Branchind}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a B\+R\+A\+N\+C\+H\+I\+ND. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_abdb4b20ec872310aba005d54813c35ce}\label{classEmulate_abdb4b20ec872310aba005d54813c35ce}} 
+virtual void \mbox{\hyperlink{classEmulate_abdb4b20ec872310aba005d54813c35ce}{execute\+Call}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a p-\/code C\+A\+LL. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_aa3579bd388004b72fab0e62175aeb1a0}\label{classEmulate_aa3579bd388004b72fab0e62175aeb1a0}} 
+virtual void \mbox{\hyperlink{classEmulate_aa3579bd388004b72fab0e62175aeb1a0}{execute\+Callind}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a C\+A\+L\+L\+I\+ND. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_ab60a8c9f009c0ce388bb2b6eef50a50b}\label{classEmulate_ab60a8c9f009c0ce388bb2b6eef50a50b}} 
+virtual void \mbox{\hyperlink{classEmulate_ab60a8c9f009c0ce388bb2b6eef50a50b}{execute\+Callother}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a user-\/defined p-\/code op. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_ab98cf68b6d37869f65825f3fdf03019c}\label{classEmulate_ab98cf68b6d37869f65825f3fdf03019c}} 
+virtual void \mbox{\hyperlink{classEmulate_ab98cf68b6d37869f65825f3fdf03019c}{execute\+Multiequal}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a M\+U\+L\+T\+I\+E\+Q\+U\+AL (phi-\/node) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_aa791523787e5154d73bfe0e846a2cd38}\label{classEmulate_aa791523787e5154d73bfe0e846a2cd38}} 
+virtual void \mbox{\hyperlink{classEmulate_aa791523787e5154d73bfe0e846a2cd38}{execute\+Indirect}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for an I\+N\+D\+I\+R\+E\+CT op. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_ac4c13159c340cd33ca6f3b69d2b50e38}\label{classEmulate_ac4c13159c340cd33ca6f3b69d2b50e38}} 
+virtual void \mbox{\hyperlink{classEmulate_ac4c13159c340cd33ca6f3b69d2b50e38}{execute\+Segment\+Op}} (void)=0
+\begin{DoxyCompactList}\small\item\em Behavior for a S\+E\+G\+M\+E\+N\+T\+OP. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_a544e0f87351d29a0336b56c06fe8b3c3}\label{classEmulate_a544e0f87351d29a0336b56c06fe8b3c3}} 
+virtual void \mbox{\hyperlink{classEmulate_a544e0f87351d29a0336b56c06fe8b3c3}{execute\+Cpool\+Ref}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for a C\+P\+O\+O\+L\+R\+EF (constant pool reference) op. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_ad6d1b182791e6d69b6469ea159729372}\label{classEmulate_ad6d1b182791e6d69b6469ea159729372}} 
+virtual void \mbox{\hyperlink{classEmulate_ad6d1b182791e6d69b6469ea159729372}{execute\+New}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard behavior for (low-\/level) N\+EW op. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_ae9cd5b56525c54479e9c7add4a17687b}\label{classEmulate_ae9cd5b56525c54479e9c7add4a17687b}} 
+virtual void \mbox{\hyperlink{classEmulate_ae9cd5b56525c54479e9c7add4a17687b}{fallthru\+Op}} (void)=0
+\begin{DoxyCompactList}\small\item\em Standard p-\/code fall-\/thru semantics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classEmulate_a8811816cbc0eef9f4cdb856cfd496e94}\label{classEmulate_a8811816cbc0eef9f4cdb856cfd496e94}} 
+bool \mbox{\hyperlink{classEmulate_a8811816cbc0eef9f4cdb856cfd496e94}{emu\+\_\+halted}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if the emulator is halted. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classEmulate_a1e5d4f8c0ad5c62aa3e723440c5141ca}\label{classEmulate_a1e5d4f8c0ad5c62aa3e723440c5141ca}} 
+\mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ \mbox{\hyperlink{classEmulate_a1e5d4f8c0ad5c62aa3e723440c5141ca}{current\+Behave}}
+\begin{DoxyCompactList}\small\item\em Behavior of the next op to execute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A pcode-\/based emulator interface. 
+
+The interface expects that the underlying emulation engine operates on individual pcode operations as its atomic operation. The interface allows execution stepping through individual pcode operations. The interface allows querying of the {\itshape current} pcode op, the current machine address, and the rest of the machine state. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmulate_a145cee350a9273250a970c9387ecbd81}\label{classEmulate_a145cee350a9273250a970c9387ecbd81}} 
+\index{Emulate@{Emulate}!executeBranch@{executeBranch}}
+\index{executeBranch@{executeBranch}!Emulate@{Emulate}}
+\doxysubsubsection{\texorpdfstring{executeBranch()}{executeBranch()}}
+{\footnotesize\ttfamily virtual void Emulate\+::execute\+Branch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Standard behavior for a B\+R\+A\+N\+CH. 
+
+This routine performs a standard p-\/code B\+R\+A\+N\+CH operation on the memory state. This same routine is used for C\+B\+R\+A\+N\+CH operations if the condition has evaluated to {\bfseries{true}}. 
+
+Implemented in \mbox{\hyperlink{classEmulatePcodeCache_a6108efef1c0291ca887228781e4c1238}{Emulate\+Pcode\+Cache}}, and \mbox{\hyperlink{classEmulateMemory_ac69d1f93ffc1a86d3486af34bb520302}{Emulate\+Memory}}.
+
+\mbox{\Hypertarget{classEmulate_ac0dbab7129d69471d8400a75c0c7c1b5}\label{classEmulate_ac0dbab7129d69471d8400a75c0c7c1b5}} 
+\index{Emulate@{Emulate}!executeCbranch@{executeCbranch}}
+\index{executeCbranch@{executeCbranch}!Emulate@{Emulate}}
+\doxysubsubsection{\texorpdfstring{executeCbranch()}{executeCbranch()}}
+{\footnotesize\ttfamily virtual bool Emulate\+::execute\+Cbranch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Check if the conditional of a C\+B\+R\+A\+N\+CH is {\bfseries{true}}. 
+
+This routine only checks if the condition for a p-\/code C\+B\+R\+A\+N\+CH is true. It does {\itshape not} perform the actual branch. \begin{DoxyReturn}{Returns}
+the boolean state indicated by the condition 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classEmulateMemory_a098137ac05d9118162a1d0aaa5506d0b}{Emulate\+Memory}}, and \mbox{\hyperlink{classEmulatePcodeOp_a5aa70550f3f75829976b082a87d50d8f}{Emulate\+Pcode\+Op}}.
+
+\mbox{\Hypertarget{classEmulate_aad37ba97a90d7cd5338a75afce3a21b9}\label{classEmulate_aad37ba97a90d7cd5338a75afce3a21b9}} 
+\index{Emulate@{Emulate}!executeCurrentOp@{executeCurrentOp}}
+\index{executeCurrentOp@{executeCurrentOp}!Emulate@{Emulate}}
+\doxysubsubsection{\texorpdfstring{executeCurrentOp()}{executeCurrentOp()}}
+{\footnotesize\ttfamily void Emulate\+::execute\+Current\+Op (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Do a single pcode op step. 
+
+This method executes a single pcode operation, the current one (returned by get\+Current\+Op()). The \mbox{\hyperlink{classMemoryState}{Memory\+State}} of the emulator is queried and changed as needed to accomplish this. \mbox{\Hypertarget{classEmulate_ab1f2882dd3554c18c60e817e80f3c4bc}\label{classEmulate_ab1f2882dd3554c18c60e817e80f3c4bc}} 
+\index{Emulate@{Emulate}!getHalt@{getHalt}}
+\index{getHalt@{getHalt}!Emulate@{Emulate}}
+\doxysubsubsection{\texorpdfstring{getHalt()}{getHalt()}}
+{\footnotesize\ttfamily bool Emulate\+::get\+Halt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the {\itshape halt} state of the emulator. 
+
+Applications and breakpoints can use this method and its companion \mbox{\hyperlink{classEmulate_a4858bc80cf7b078a592f9c8d3442450d}{set\+Halt()}} to terminate and restart the main emulator loop as needed. The emulator itself makes no use of this routine or the associated state variable {\bfseries{emu\+\_\+halted}}. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the emulator is in a \char`\"{}halted\char`\"{} state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmulate_a4858bc80cf7b078a592f9c8d3442450d}\label{classEmulate_a4858bc80cf7b078a592f9c8d3442450d}} 
+\index{Emulate@{Emulate}!setHalt@{setHalt}}
+\index{setHalt@{setHalt}!Emulate@{Emulate}}
+\doxysubsubsection{\texorpdfstring{setHalt()}{setHalt()}}
+{\footnotesize\ttfamily void Emulate\+::set\+Halt (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the {\itshape halt} state of the emulator. 
+
+Applications and breakpoints can use this method and its companion \mbox{\hyperlink{classEmulate_ab1f2882dd3554c18c60e817e80f3c4bc}{get\+Halt()}} to terminate and restart the main emulator loop as needed. The emulator itself makes no use of this routine or the associated state variable {\bfseries{emu\+\_\+halted}}. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is what the halt state of the emulator should be set to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{emulate_8hh}{emulate.\+hh}}\item 
+emulate.\+cc\end{DoxyCompactItemize}

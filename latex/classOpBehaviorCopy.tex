@@ -1,0 +1,103 @@
+\hypertarget{classOpBehaviorCopy}{}\doxysection{Op\+Behavior\+Copy Class Reference}
+\label{classOpBehaviorCopy}\index{OpBehaviorCopy@{OpBehaviorCopy}}
+
+
+C\+P\+U\+I\+\_\+\+C\+O\+PY behavior.  
+
+
+
+
+{\ttfamily \#include $<$opbehavior.\+hh$>$}
+
+
+
+Inheritance diagram for Op\+Behavior\+Copy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classOpBehaviorCopy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Op\+Behavior\+Copy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classOpBehaviorCopy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uintb \mbox{\hyperlink{classOpBehaviorCopy_a066689b1b401477e46a6cd8376bfc2ca}{evaluate\+Unary}} (int4 sizeout, int4 sizein, uintb in1) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEmulate}{Emulate}} the unary op-\/code on an input value. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classOpBehaviorCopy_a55e554798a0b0c529f0f42218c2acda3}{recover\+Input\+Unary}} (int4 sizeout, uintb out, int4 sizein) const
+\begin{DoxyCompactList}\small\item\em Reverse the unary op-\/code operation, recovering the input value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+C\+P\+U\+I\+\_\+\+C\+O\+PY behavior. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOpBehaviorCopy_a066689b1b401477e46a6cd8376bfc2ca}\label{classOpBehaviorCopy_a066689b1b401477e46a6cd8376bfc2ca}} 
+\index{OpBehaviorCopy@{OpBehaviorCopy}!evaluateUnary@{evaluateUnary}}
+\index{evaluateUnary@{evaluateUnary}!OpBehaviorCopy@{OpBehaviorCopy}}
+\doxysubsubsection{\texorpdfstring{evaluateUnary()}{evaluateUnary()}}
+{\footnotesize\ttfamily uintb Op\+Behavior\+Copy\+::evaluate\+Unary (\begin{DoxyParamCaption}\item[{int4}]{sizeout,  }\item[{int4}]{sizein,  }\item[{uintb}]{in1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classEmulate}{Emulate}} the unary op-\/code on an input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em sizein} & is the size of the input in bytes \\
+\hline
+{\em in1} & is the input value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output value 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classOpBehavior_acd4f5a1c0dee0414f3c541620b88fe45}{Op\+Behavior}}.
+
+\mbox{\Hypertarget{classOpBehaviorCopy_a55e554798a0b0c529f0f42218c2acda3}\label{classOpBehaviorCopy_a55e554798a0b0c529f0f42218c2acda3}} 
+\index{OpBehaviorCopy@{OpBehaviorCopy}!recoverInputUnary@{recoverInputUnary}}
+\index{recoverInputUnary@{recoverInputUnary}!OpBehaviorCopy@{OpBehaviorCopy}}
+\doxysubsubsection{\texorpdfstring{recoverInputUnary()}{recoverInputUnary()}}
+{\footnotesize\ttfamily uintb Op\+Behavior\+Copy\+::recover\+Input\+Unary (\begin{DoxyParamCaption}\item[{int4}]{sizeout,  }\item[{uintb}]{out,  }\item[{int4}]{sizein }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reverse the unary op-\/code operation, recovering the input value. 
+
+If the output value is known, recover the input value. 
+\begin{DoxyParams}{Parameters}
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em out} & is the output value \\
+\hline
+{\em sizein} & is the size of the input in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input value 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classOpBehavior_a6c3b008e093085e50f71020437be3b03}{Op\+Behavior}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{opbehavior_8hh}{opbehavior.\+hh}}\item 
+opbehavior.\+cc\end{DoxyCompactItemize}

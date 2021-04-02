@@ -1,0 +1,105 @@
+\hypertarget{classTermPatternOp}{}\doxysection{Term\+Pattern\+Op Class Reference}
+\label{classTermPatternOp}\index{TermPatternOp@{TermPatternOp}}
+
+
+A user defined p-\/code op that has a dynamically defined procedure.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Term\+Pattern\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classTermPatternOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Term\+Pattern\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTermPatternOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTermPatternOp_a3978a156aa6681432b937361a2294f5d}\label{classTermPatternOp_a3978a156aa6681432b937361a2294f5d}} 
+virtual int4 \mbox{\hyperlink{classTermPatternOp_a3978a156aa6681432b937361a2294f5d}{get\+Num\+Variable\+Terms}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get the number of input Varnodes expected. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTermPatternOp_afe2a8a69c8f803e3134eaaaf087cc0b0}{unify}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&bindlist) const =0
+\begin{DoxyCompactList}\small\item\em Gather the formal input \mbox{\hyperlink{classVarnode}{Varnode}} objects given the root \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classTermPatternOp_a766fd191b337e60fb882b2e7bc9b42a6}{execute}} (const vector$<$ uintb $>$ \&input) const =0
+\begin{DoxyCompactList}\small\item\em Compute the output value of {\bfseries{this}} operation, given constant inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A user defined p-\/code op that has a dynamically defined procedure. 
+
+The behavior of this op on constant inputs can be dynamically defined. This class defines a \mbox{\hyperlink{classTermPatternOp_afe2a8a69c8f803e3134eaaaf087cc0b0}{unify()}} method that picks out the input varnodes to the operation, given the root \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. The input varnodes would generally just be the input varnodes to the raw C\+A\+L\+L\+O\+T\+H\+ER after the constant id, but skipping, reordering, or other tree traversal is possible.
+
+This class also defines an \mbox{\hyperlink{classTermPatternOp_a766fd191b337e60fb882b2e7bc9b42a6}{execute()}} method that computes the output given constant inputs (matching the format determined by \mbox{\hyperlink{classTermPatternOp_afe2a8a69c8f803e3134eaaaf087cc0b0}{unify()}}). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTermPatternOp_a766fd191b337e60fb882b2e7bc9b42a6}\label{classTermPatternOp_a766fd191b337e60fb882b2e7bc9b42a6}} 
+\index{TermPatternOp@{TermPatternOp}!execute@{execute}}
+\index{execute@{execute}!TermPatternOp@{TermPatternOp}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual uintb Term\+Pattern\+Op\+::execute (\begin{DoxyParamCaption}\item[{const vector$<$ uintb $>$ \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Compute the output value of {\bfseries{this}} operation, given constant inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & is the ordered list of constant inputs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting value as a constant 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classSegmentOp_a1857d8c2eef84b0a8c1bb7c624210c6c}{Segment\+Op}}.
+
+\mbox{\Hypertarget{classTermPatternOp_afe2a8a69c8f803e3134eaaaf087cc0b0}\label{classTermPatternOp_afe2a8a69c8f803e3134eaaaf087cc0b0}} 
+\index{TermPatternOp@{TermPatternOp}!unify@{unify}}
+\index{unify@{unify}!TermPatternOp@{TermPatternOp}}
+\doxysubsubsection{\texorpdfstring{unify()}{unify()}}
+{\footnotesize\ttfamily virtual bool Term\+Pattern\+Op\+::unify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{bindlist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gather the formal input \mbox{\hyperlink{classVarnode}{Varnode}} objects given the root \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function being analyzed \\
+\hline
+{\em op} & is the root operation \\
+\hline
+{\em bindlist} & will hold the ordered list of input Varnodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the requisite inputs were found 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classSegmentOp_acb25104d3aad5e44a3c9d5b471e39c48}{Segment\+Op}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\end{DoxyCompactItemize}

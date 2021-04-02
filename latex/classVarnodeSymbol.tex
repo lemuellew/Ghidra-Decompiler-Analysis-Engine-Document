@@ -1,0 +1,68 @@
+\hypertarget{classVarnodeSymbol}{}\doxysection{Varnode\+Symbol Class Reference}
+\label{classVarnodeSymbol}\index{VarnodeSymbol@{VarnodeSymbol}}
+
+
+Inheritance diagram for Varnode\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classVarnodeSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Varnode\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classVarnodeSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a60841906e74dd82c1df97982912ddc77}\label{classVarnodeSymbol_a60841906e74dd82c1df97982912ddc77}} 
+{\bfseries Varnode\+Symbol} (const string \&nm, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$base, uintb offset, int4 size)
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a247dfc7a93f9da6491c457f3fbe097e9}\label{classVarnodeSymbol_a247dfc7a93f9da6491c457f3fbe097e9}} 
+void {\bfseries mark\+As\+Context} (void)
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a4552dee5d466cadd34766d38fd804c8e}\label{classVarnodeSymbol_a4552dee5d466cadd34766d38fd804c8e}} 
+const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& {\bfseries get\+Fixed\+Varnode} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_aae6d99071fdc4ac8e55d78845898669f}\label{classVarnodeSymbol_aae6d99071fdc4ac8e55d78845898669f}} 
+virtual \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$ {\bfseries get\+Varnode} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a11a3571821d8d4092798d3cc62d925ee}\label{classVarnodeSymbol_a11a3571821d8d4092798d3cc62d925ee}} 
+virtual void {\bfseries get\+Fixed\+Handle} (\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \&hand, \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a3e37b8884d830c54656a43e6b2e1712b}\label{classVarnodeSymbol_a3e37b8884d830c54656a43e6b2e1712b}} 
+virtual int4 {\bfseries get\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a10b765544964a8f2b84072676fc945ff}\label{classVarnodeSymbol_a10b765544964a8f2b84072676fc945ff}} 
+virtual void {\bfseries print} (ostream \&s, \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_ad38815e7d6a8f7001eb88286145efecd}\label{classVarnodeSymbol_ad38815e7d6a8f7001eb88286145efecd}} 
+virtual void {\bfseries collect\+Local\+Values} (vector$<$ uintb $>$ \&results) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a15662a0fcf1825811b7729bee1a5a2a5}\label{classVarnodeSymbol_a15662a0fcf1825811b7729bee1a5a2a5}} 
+virtual symbol\+\_\+type {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_aed153df5b4c3fdb8c04bf422e2ea329b}\label{classVarnodeSymbol_aed153df5b4c3fdb8c04bf422e2ea329b}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a897bc5a3be293e1067070b26eb5fa14b}\label{classVarnodeSymbol_a897bc5a3be293e1067070b26eb5fa14b}} 
+virtual void {\bfseries save\+Xml\+Header} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classVarnodeSymbol_a9d0f7e98d0425e26ca4eddf002f1e471}\label{classVarnodeSymbol_a9d0f7e98d0425e26ca4eddf002f1e471}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classSleighBase}{Sleigh\+Base}} $\ast$trans)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghsymbol.\+hh\item 
+slghsymbol.\+cc\end{DoxyCompactItemize}

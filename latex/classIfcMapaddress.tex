@@ -1,0 +1,66 @@
+\hypertarget{classIfcMapaddress}{}\doxysection{Ifc\+Mapaddress Class Reference}
+\label{classIfcMapaddress}\index{IfcMapaddress@{IfcMapaddress}}
+
+
+Map a new symbol into the program\+: {\ttfamily map address $<$address$>$ $<$typedeclaration$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Mapaddress\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcMapaddress__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Mapaddress\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcMapaddress__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcMapaddress_a83f33c8f34d56dfcaabe64a58f9b8236}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Map a new symbol into the program\+: {\ttfamily map address $<$address$>$ $<$typedeclaration$>$} 
+
+Create a new variable in the current scope 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{map address r0x1000 int4 globalvar}
+\end{DoxyCode}
+ The symbol specified in the type declaration can qualify the namespace using the \char`\"{}\+::\char`\"{} specifier. If there is a current function, the variable is local to the function. Otherwise the symbol is created relative to the global scope. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcMapaddress_a83f33c8f34d56dfcaabe64a58f9b8236}\label{classIfcMapaddress_a83f33c8f34d56dfcaabe64a58f9b8236}} 
+\index{IfcMapaddress@{IfcMapaddress}!execute@{execute}}
+\index{execute@{execute}!IfcMapaddress@{IfcMapaddress}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Mapaddress\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

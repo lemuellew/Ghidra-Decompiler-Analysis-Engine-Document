@@ -1,0 +1,97 @@
+\hypertarget{classArchOption}{}\doxysection{Arch\+Option Class Reference}
+\label{classArchOption}\index{ArchOption@{ArchOption}}
+
+
+Base class for options classes that affect the configuration of the \mbox{\hyperlink{classArchitecture}{Architecture}} object.  
+
+
+
+
+{\ttfamily \#include $<$options.\+hh$>$}
+
+
+
+Inheritance diagram for Arch\+Option\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classArchOption__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{apply}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb, const string \&p1, const string \&p2, const string \&p3) const =0
+\begin{DoxyCompactList}\small\item\em Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classArchOption_a20449a316e535886478bb1b73ac5ee68}{on\+Or\+Off}} (const string \&p)
+\begin{DoxyCompactList}\small\item\em Parse an \char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classArchOption_a4c9a1914e575636d12be5c3ecc4aede3}\label{classArchOption_a4c9a1914e575636d12be5c3ecc4aede3}} 
+string \mbox{\hyperlink{classArchOption_a4c9a1914e575636d12be5c3ecc4aede3}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for options classes that affect the configuration of the \mbox{\hyperlink{classArchitecture}{Architecture}} object. 
+
+Each class instance affects configuration through its \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{apply()}} method, which is handed the \mbox{\hyperlink{classArchitecture}{Architecture}} object to be configured along with string based parameters. The \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{apply()}} methods are run once during initialization of the \mbox{\hyperlink{classArchitecture}{Architecture}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArchOption_a5dc1b3adaee0d11e6018b85640272498}\label{classArchOption_a5dc1b3adaee0d11e6018b85640272498}} 
+\index{ArchOption@{ArchOption}!apply@{apply}}
+\index{apply@{apply}!ArchOption@{ArchOption}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily virtual string Arch\+Option\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb,  }\item[{const string \&}]{p1,  }\item[{const string \&}]{p2,  }\item[{const string \&}]{p3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+This method is overloaded by the different Option classes to provide possible configuration of different parts of the \mbox{\hyperlink{classArchitecture}{Architecture}}. The user can provide up to three optional parameters to tailor a specific type of configuration. The method returns a confirmation/failure message as feedback. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} being configured \\
+\hline
+{\em p1} & is the first optional configuration string \\
+\hline
+{\em p2} & is the second optional configuration string \\
+\hline
+{\em p3} & is the third optional configuration string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a confirmation/failure message 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classOptionNamespaceStrategy_ac3dc2b4e0b94718de1e7cb73cb486570}{Option\+Namespace\+Strategy}}, \mbox{\hyperlink{classOptionMaxInstruction_a2d9a8c4b37c5d72217bdbd51ee2df574}{Option\+Max\+Instruction}}, \mbox{\hyperlink{classOptionAliasBlock_a1ff09a61b8238c70a65081d93f4d628b}{Option\+Alias\+Block}}, \mbox{\hyperlink{classOptionToggleRule_aa32ec58eafbd9711221d06fdc4c29b2b}{Option\+Toggle\+Rule}}, \mbox{\hyperlink{classOptionJumpLoad_a7b290bad24d6dd14d77a04c5688300e6}{Option\+Jump\+Load}}, \mbox{\hyperlink{classOptionSetLanguage_add4e5b7ef4cc478556814a4b232969fc}{Option\+Set\+Language}}, \mbox{\hyperlink{classOptionProtoEval_a8fd059a29b0abecc4e5f3a9e55661621}{Option\+Proto\+Eval}}, \mbox{\hyperlink{classOptionErrorTooManyInstructions_a6bf25f21e5f63254c9c48acd1b1490e4}{Option\+Error\+Too\+Many\+Instructions}}, \mbox{\hyperlink{classOptionErrorReinterpreted_a62b6697ee1cc195531f65cd383f6c3d7}{Option\+Error\+Reinterpreted}}, \mbox{\hyperlink{classOptionErrorUnimplemented_a02c390db41fb158de4a6388210bd6075}{Option\+Error\+Unimplemented}}, \mbox{\hyperlink{classOptionIgnoreUnimplemented_a459728e7576c3f9f873778201715249d}{Option\+Ignore\+Unimplemented}}, \mbox{\hyperlink{classOptionAllowContextSet_aff2666342d40ad18914039177a08c666}{Option\+Allow\+Context\+Set}}, \mbox{\hyperlink{classOptionCurrentAction_abb1f2fb22f75d2c3da60a9e7ac6e6ef6}{Option\+Current\+Action}}, \mbox{\hyperlink{classOptionSetAction_ab24a366561133f89e6584157d53f7b81}{Option\+Set\+Action}}, \mbox{\hyperlink{classOptionIntegerFormat_a96f055544f7ea5a765906481a0880b4f}{Option\+Integer\+Format}}, \mbox{\hyperlink{classOptionCommentInstruction_afb67ac6097c2043acb256fd1d6935d95}{Option\+Comment\+Instruction}}, \mbox{\hyperlink{classOptionCommentHeader_a9020b0d5fab12d14a6fb309c5306bac7}{Option\+Comment\+Header}}, \mbox{\hyperlink{classOptionCommentStyle_a7371a6222646b1c3e16c3474c0c62b1b}{Option\+Comment\+Style}}, \mbox{\hyperlink{classOptionCommentIndent_a1bbaa0f6aea68d413ce9d4c581f71792}{Option\+Comment\+Indent}}, \mbox{\hyperlink{classOptionIndentIncrement_a2f5a66d0ce8ae8863e3498449011d360}{Option\+Indent\+Increment}}, \mbox{\hyperlink{classOptionMaxLineWidth_a07c124f2e4fb139ae10e94033b0ed232}{Option\+Max\+Line\+Width}}, \mbox{\hyperlink{classOptionHideExtensions_a7bb44dba8036591ace187e3fc0364481}{Option\+Hide\+Extensions}}, \mbox{\hyperlink{classOptionNoCastPrinting_a75a6992f570f828de4a07eb5a4c73fea}{Option\+No\+Cast\+Printing}}, \mbox{\hyperlink{classOptionConventionPrinting_a9f28fa77231c615d59e6357fece32f7d}{Option\+Convention\+Printing}}, \mbox{\hyperlink{classOptionInPlaceOps_aef329cdeae9d51c6059ef7ca9233662f}{Option\+In\+Place\+Ops}}, \mbox{\hyperlink{classOptionNullPrinting_ac2cdd4d12779b79894c3449d8d601110}{Option\+Null\+Printing}}, \mbox{\hyperlink{classOptionWarning_af3b3ebf05120fe85d740e03a2e27b644}{Option\+Warning}}, \mbox{\hyperlink{classOptionStructAlign_abe8f802c3e37987b0b5094b4699c20df}{Option\+Struct\+Align}}, \mbox{\hyperlink{classOptionNoReturn_af92ab261861bf699b5ac1f775fc5029d}{Option\+No\+Return}}, \mbox{\hyperlink{classOptionInline_aec2b4cc28f9de203dbc2ff8901c93dc8}{Option\+Inline}}, \mbox{\hyperlink{classOptionForLoops_a96df834d64f6a7d10c0ca3b5e7a605ec}{Option\+For\+Loops}}, \mbox{\hyperlink{classOptionInferConstPtr_adc43210baf04d8e5fe13977502f56a69}{Option\+Infer\+Const\+Ptr}}, \mbox{\hyperlink{classOptionDefaultPrototype_af350045f3bd78a0f63b8788fa21ee7f2}{Option\+Default\+Prototype}}, \mbox{\hyperlink{classOptionReadOnly_a3ef9635661526f6d08d665fa4b6f69a8}{Option\+Read\+Only}}, and \mbox{\hyperlink{classOptionExtraPop_a19de8bfd77683f807a1a20ba4d9103dc}{Option\+Extra\+Pop}}.
+
+\mbox{\Hypertarget{classArchOption_a20449a316e535886478bb1b73ac5ee68}\label{classArchOption_a20449a316e535886478bb1b73ac5ee68}} 
+\index{ArchOption@{ArchOption}!onOrOff@{onOrOff}}
+\index{onOrOff@{onOrOff}!ArchOption@{ArchOption}}
+\doxysubsubsection{\texorpdfstring{onOrOff()}{onOrOff()}}
+{\footnotesize\ttfamily bool Arch\+Option\+::on\+Or\+Off (\begin{DoxyParamCaption}\item[{const string \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parse an \char`\"{}on\char`\"{} or \char`\"{}off\char`\"{} string. 
+
+If the parameter is \char`\"{}on\char`\"{} return {\bfseries{true}}, if \char`\"{}off\char`\"{} return {\bfseries{false}}. Any other value causes an exception. 
+\begin{DoxyParams}{Parameters}
+{\em p} & is the parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the parsed boolean value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,73 @@
+\hypertarget{classDisassemblyEngine}{}\doxysection{Disassembly\+Engine Class Reference}
+\label{classDisassemblyEngine}\index{DisassemblyEngine@{DisassemblyEngine}}
+
+
+Inheritance diagram for Disassembly\+Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classDisassemblyEngine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Disassembly\+Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classDisassemblyEngine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDisassemblyEngine_a7e152dadcc1051af27f535a76f207a7a}\label{classDisassemblyEngine_a7e152dadcc1051af27f535a76f207a7a}} 
+void {\bfseries init} (const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t)
+\item 
+virtual void \mbox{\hyperlink{classDisassemblyEngine_a33295e9d637ed2e437d3cbd6481eb20d}{dump}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$outvar, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$vars, int4 isize)
+\begin{DoxyCompactList}\small\item\em The main pcode emit method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDisassemblyEngine_ad09a3d8b19efae613f8e45e59ccdd3e6}\label{classDisassemblyEngine_ad09a3d8b19efae613f8e45e59ccdd3e6}} 
+void {\bfseries disassemble} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{structDisassemblyResult}{Disassembly\+Result}} \&res)
+\item 
+\mbox{\Hypertarget{classDisassemblyEngine_ab2912ebd18c438f0d85425b8314ed0c9}\label{classDisassemblyEngine_ab2912ebd18c438f0d85425b8314ed0c9}} 
+void {\bfseries add\+Target} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDisassemblyEngine_a33295e9d637ed2e437d3cbd6481eb20d}\label{classDisassemblyEngine_a33295e9d637ed2e437d3cbd6481eb20d}} 
+\index{DisassemblyEngine@{DisassemblyEngine}!dump@{dump}}
+\index{dump@{dump}!DisassemblyEngine@{DisassemblyEngine}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void Disassembly\+Engine\+::dump (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{outvar,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{vars,  }\item[{int4}]{isize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The main pcode emit method. 
+
+A single pcode instruction is returned to the application via this method. Particular applications override it to tailor how the operations are used. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+{\em opc} & is the opcode of the particular pcode instruction \\
+\hline
+{\em outvar} & if not {\itshape null} is a pointer to data about the output varnode \\
+\hline
+{\em vars} & is a pointer to an array of \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} for each input varnode \\
+\hline
+{\em isize} & is the number of input varnodes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}{Pcode\+Emit}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+codedata.\+hh\item 
+codedata.\+cc\end{DoxyCompactItemize}

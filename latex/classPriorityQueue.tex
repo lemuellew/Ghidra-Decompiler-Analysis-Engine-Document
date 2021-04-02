@@ -1,0 +1,79 @@
+\hypertarget{classPriorityQueue}{}\doxysection{Priority\+Queue Class Reference}
+\label{classPriorityQueue}\index{PriorityQueue@{PriorityQueue}}
+
+
+Priority queue for the phi-\/node (M\+U\+L\+T\+I\+E\+Q\+U\+AL) placement algorithm.  
+
+
+
+
+{\ttfamily \#include $<$heritage.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPriorityQueue_a75ec253ec066ea6dc172f1f8bd88758b}{reset}} (int4 maxdepth)
+\begin{DoxyCompactList}\small\item\em Reset to an empty queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPriorityQueue_a8abe49ecb70033726324497f4aafdb74}{insert}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl, int4 depth)
+\begin{DoxyCompactList}\small\item\em Insert a block into the queue given its priority. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classPriorityQueue_a6cd7194cc2cb973f33158a1d7dc7acc9}{extract}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve the highest priority block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Priority queue for the phi-\/node (M\+U\+L\+T\+I\+E\+Q\+U\+AL) placement algorithm. 
+
+A {\itshape work-\/list} for basic blocks used during phi-\/node placement. Implemented as a set of stacks with an associated priority. Blocks are placed in the {\itshape queue} with an associated {\itshape priority} (or depth) using the \mbox{\hyperlink{classPriorityQueue_a8abe49ecb70033726324497f4aafdb74}{insert()}} method. The current highest priority block is retrieved with the \mbox{\hyperlink{classPriorityQueue_a6cd7194cc2cb973f33158a1d7dc7acc9}{extract()}} method. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPriorityQueue_a6cd7194cc2cb973f33158a1d7dc7acc9}\label{classPriorityQueue_a6cd7194cc2cb973f33158a1d7dc7acc9}} 
+\index{PriorityQueue@{PriorityQueue}!extract@{extract}}
+\index{extract@{extract}!PriorityQueue@{PriorityQueue}}
+\doxysubsubsection{\texorpdfstring{extract()}{extract()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Priority\+Queue\+::extract (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Retrieve the highest priority block. 
+
+The block at the top of the highest priority non-\/empty stack is popped and returned. This will always return a block. It shouldn\textquotesingle{}t be called if the queue is empty. \begin{DoxyReturn}{Returns}
+the highest priority block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPriorityQueue_a8abe49ecb70033726324497f4aafdb74}\label{classPriorityQueue_a8abe49ecb70033726324497f4aafdb74}} 
+\index{PriorityQueue@{PriorityQueue}!insert@{insert}}
+\index{insert@{insert}!PriorityQueue@{PriorityQueue}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void Priority\+Queue\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl,  }\item[{int4}]{depth }\end{DoxyParamCaption})}
+
+
+
+Insert a block into the queue given its priority. 
+
+The block is pushed onto the stack of the given priority. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the block being added to the queue \\
+\hline
+{\em depth} & is the priority to associate with the block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPriorityQueue_a75ec253ec066ea6dc172f1f8bd88758b}\label{classPriorityQueue_a75ec253ec066ea6dc172f1f8bd88758b}} 
+\index{PriorityQueue@{PriorityQueue}!reset@{reset}}
+\index{reset@{reset}!PriorityQueue@{PriorityQueue}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Priority\+Queue\+::reset (\begin{DoxyParamCaption}\item[{int4}]{maxdepth }\end{DoxyParamCaption})}
+
+
+
+Reset to an empty queue. 
+
+Any basic blocks currently in {\bfseries{this}} queue are removed. Space is reserved for a new set of prioritized stacks. 
+\begin{DoxyParams}{Parameters}
+{\em maxdepth} & is the number of stacks to allocate \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{heritage_8hh}{heritage.\+hh}}\item 
+heritage.\+cc\end{DoxyCompactItemize}

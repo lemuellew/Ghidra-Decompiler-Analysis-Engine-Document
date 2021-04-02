@@ -1,0 +1,139 @@
+\hypertarget{index_toc}{}\doxysection{Table of Contents}\label{index_toc}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{index_overview}{Overview}}
+\item \mbox{\hyperlink{index_capabilities}{Capabilities}}
+\item \mbox{\hyperlink{index_design}{Design}}
+\item \mbox{\hyperlink{index_workflow}{Main Work Flow}}
+\item ghidraimpl
+\item \mbox{\hyperlink{sleigh}{S\+L\+E\+I\+GH}}
+\item \mbox{\hyperlink{coreclasses}{Core Classes}}
+\item termrewriting
+\end{DoxyItemize}\hypertarget{index_overview}{}\doxysection{Overview}\label{index_overview}
+Welcome to the {\bfseries{Decompiler}} {\bfseries{Analysis}} {\bfseries{Engine}}. It is a complete library for performing automated data-\/flow analysis on software, starting from the binary executable. This documentation is geared toward understanding the source code and starts with a brief discussion of the libraries capabilities and moves immediately into the design of the decompiler and the main code workflow.
+
+The library provides its own Register Transfer Languate (R\+TL), referred to internally as {\bfseries{p-\/code}}, which is designed specifically for reverse engineering applications. The disassembly of processor specific machine-\/code languages, and subsequent translation into {\bfseries{p-\/code}}, forms a major sub-\/system of the decompiler. There is a processor specification language, referred to as {\bfseries{S\+L\+E\+I\+GH}}, which is dedicated to this translation task, and there is a corresponding section in the documentation for the classes and methods used to implement this language in the library (See \mbox{\hyperlink{sleigh}{S\+L\+E\+I\+GH}}). This piece of the code can be built as a standalone binary translation library, for use by other applications.
+
+For getting up to speed quickly on the details of the source and the decompiler\textquotesingle{}s main data structures, there is a specific documentation page describing the core classes and methods.
+
+Finally there is a documentation page summarizing the simplification rules used in the core decompiler analysis.\hypertarget{index_capabilities}{}\doxysection{Capabilities}\label{index_capabilities}
+\hypertarget{index_design}{}\doxysection{Design}\label{index_design}
+The main design elements of the decompiler come straight from standard {\itshape Compiler} {\itshape Theory} data structures and algorithms. This should come as no surprise, as both compilers and decompilers are concerned with translating from one coding language to another. They both follow a general work flow\+:
+
+
+\begin{DoxyItemize}
+\item Parse/tokenize input language.
+\item Build abstract syntax trees in an intermediate language.
+\item Manipulate/optimize syntax trees.
+\item Map intermediate language to output language constructs.
+\item Emit final output language encoding.
+\end{DoxyItemize}
+
+With direct analogs to (forward engineering) compilers, the decompiler uses\+:
+
+
+\begin{DoxyItemize}
+\item A Register Transfer Language (R\+TL) referred to as {\bfseries{p-\/code}}.
+\item Static Single Assignment (S\+SA) form.
+\item Basic blocks and Control Flow Graphs.
+\item Term rewriting rules.
+\item Dead code elimination.
+\item \mbox{\hyperlink{classSymbol}{Symbol}} tables and scopes.
+\end{DoxyItemize}
+
+Despite these similarities, the differences between a decompiler and a compiler are substantial and run throughout the entire process. These all stem from the fact that, in general, descriptive elements and the higher-\/level organization of a piece of code can only be explicitly expressed in a high-\/level language. So the decompiler, working with a low-\/level language as input, can only infer this information.
+
+The features mentioned above all have a decompiler specific slant to them, and there are other tasks that the decompiler must perform that have no real analog with a compiler. These include\+:
+
+
+\begin{DoxyItemize}
+\item Variable merging (vaguely related to register coloring)
+\item Type propagation
+\item Control flow structuring
+\item Function prototype recovery
+\item Expression recovery
+\end{DoxyItemize}\hypertarget{index_workflow}{}\doxysection{Main Work Flow}\label{index_workflow}
+Here is an outline of the decompiler work flow.
+
+
+\begin{DoxyEnumerate}
+\item \mbox{\hyperlink{index_step0}{Specify Entry Point}}
+\item \mbox{\hyperlink{index_step1}{Generate Raw P-\/code}}
+\item \mbox{\hyperlink{index_step2}{Generate Basic Blocks and the C\+FG}}
+\item \mbox{\hyperlink{index_step3}{Inspect Sub-\/functions}}
+\item \mbox{\hyperlink{index_step4}{Adjust/\+Annotate P-\/code}}
+\item \mbox{\hyperlink{index_step5}{The Main Simplification Loop}}
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{index_step5a}{Generate S\+SA Form}}
+\item Adjust p-\/code in special situations.
+\item \mbox{\hyperlink{index_step5b}{Eliminate Dead Code}}
+\item \mbox{\hyperlink{index_step5c}{Propagate Local Types}}
+\item \mbox{\hyperlink{index_step5d}{Perform Term Rewriting}}
+\item \mbox{\hyperlink{index_step5e}{Adjust Control Flow Graph}}
+\item \mbox{\hyperlink{index_step5f}{Recover Control Flow Structure}}
+\end{DoxyItemize}
+\item \mbox{\hyperlink{index_step6}{Perform Final P-\/code Transformations}}
+\item \mbox{\hyperlink{index_step7}{Exit S\+SA Form and Merge Low-\/level Variables (phase 1)}}
+\item \mbox{\hyperlink{index_step8}{Determine Expressions and Temporary Variables}}
+\item \mbox{\hyperlink{index_step9}{Merge Low-\/level Variables (phase 2)}}
+\item \mbox{\hyperlink{index_step10}{Add Type Casts}}
+\item \mbox{\hyperlink{index_step11}{Establish Function\textquotesingle{}s Prototype}}
+\item \mbox{\hyperlink{index_step12}{Select Variable Names}}
+\item \mbox{\hyperlink{index_step13}{Do Final Control Flow Structuring}}
+\item \mbox{\hyperlink{index_step14}{Emit Final C Tokens}}
+\end{DoxyEnumerate}\hypertarget{index_step0}{}\doxysubsection{Specify Entry Point}\label{index_step0}
+The user specifies a starting address for a particular function.\hypertarget{index_step1}{}\doxysubsection{Generate Raw P-\/code}\label{index_step1}
+The p-\/code generation engine is called {\bfseries{S\+L\+E\+I\+GH}}. Based on a processor specification file, it maps binary encoded machine instructions to sequences of p-\/code operations. P-\/code operations are generated for a single machine instruction at a specific address. The control flow through these p-\/code operations is followed to determine if control falls through, or if there are jumps or calls. A work list of new instruction addresses is kept and is continually revisited until there are no new instructions. After the control flow is traced, additional changes may be made to the p-\/code.
+
+
+\begin{DoxyEnumerate}
+\item P\+IC constructions are checked for, now that the extent of the function is known. If a call is to a location that is still within the function, the call is changed to a jump.
+\item Functions which are marked as inlined are filled in at this point, before basic blocks are generated. P-\/code for the inlined function is generated separately and control flow is carefully set up to link it in properly.
+\end{DoxyEnumerate}\hypertarget{index_step2}{}\doxysubsection{Generate Basic Blocks and the C\+FG}\label{index_step2}
+Basic blocks are generated on the p-\/code instructions ({\itshape not} the machine instructions) and a control flow graph of these basic blocks is generated. Control flow is normalized so that there is always a unique start block with no other blocks falling into it. In the case of subroutines which have branches back to their very first machine instruction, this requires the creation of an empty placeholder start block that flows immediately into the block containing the p-\/code for the first instruction.\hypertarget{index_step3}{}\doxysubsection{Inspect Sub-\/functions}\label{index_step3}
+
+\begin{DoxyEnumerate}
+\item Addresses of direct calls are looked up in the database and any parameter information is recovered.
+\item If there is information about an indirect call, parameter information can be filled in and the indirect call can be changed to a direct call.
+\item Any call for which no prototype is found has a default prototype set for it.
+\item Any global or default prototype recovered at this point can be overridden locally.
+\end{DoxyEnumerate}\hypertarget{index_step4}{}\doxysubsection{Adjust/\+Annotate P-\/code}\label{index_step4}
+
+\begin{DoxyEnumerate}
+\item The context database is searched for known values of memory locations coming into the function. These are implemented by inserting p-\/code {\bfseries{C\+O\+PY}} instructions that assign the correct value to the correct memory location at the beginning of the function.
+\item The recovered prototypes may require that extra p-\/code is injected at the call site so that certain actions of the call are explicit to the analysis engine.
+\item Other p-\/code may be inserted to indicate changes a call makes to the stack pointer. Its possible that the change to the stack pointer is unknown. In this case {\bfseries{I\+N\+D\+I\+R\+E\+CT}} p-\/code instructions are inserted to indicate that the state of the stack pointer is unknown at that point, preparing for the extrapop action.
+\item For each p-\/code call instruction, extra inputs are added to the instruction either corresponding to a known input for that call, or in preparation for the prototype recovery actions. If the (potential) function input is located on the stack, a temporary is defined for that input and a full p-\/code {\bfseries{L\+O\+AD}} instruction, with accompanying offset calculation, is inserted before the call to link the input with the (currently unknown) stack offset. Similarly extra outputs are added to the call instructions either representing a known return value, or in preparation for parameter recovery actions.
+\item Each p-\/code {\bfseries{R\+E\+T\+U\+RN}} instruction for the current function is adjusted to hide the use of the return address and to add an input location for the return value. The return value is considered an input to the {\bfseries{R\+E\+T\+U\+RN}} instruction.
+\end{DoxyEnumerate}\hypertarget{index_step5}{}\doxysubsection{The Main Simplification Loop}\label{index_step5}
+\hypertarget{index_step5a}{}\doxysubsubsection{Generate S\+S\+A Form}\label{index_step5a}
+This is very similar to forward engineering algorithms. It uses a fairly standard phi-\/node placement algorithm based on the control flow dominator tree and the so-\/called dominance frontier. A standard renaming algorithm is used for the final linking of variable defs and uses. The decompiler has to take into account partially overlapping variables and guard against various aliasing situations, which are generally more explicit to a compiler. The decompiler S\+SA algorithm also works incrementally. Many of the stack references in a function cannot be fully resolved until the main term rewriting pass has been performed on the register variables. Rather than leaving stack references as associated {\bfseries{L\+O\+AD}} s and {\bfseries{S\+T\+O\+RE}} s, when the references are finally discovered, they are promoted to full variables within the S\+SA tree. This allows full copy propagation and simplification to occur with these variables, but it often requires 1 or more additional passes to fully build the S\+SA tree. Local aliasing information and aliasing across subfunction calls can be annotated in the S\+SA structure via {\bfseries{I\+N\+D\+I\+R\+E\+CT}} p-\/code operations, which holds the information that the output of the {\bfseries{I\+N\+D\+I\+R\+E\+CT}} is derived from the input by some indirect (frequently unknown) effect.\hypertarget{index_step5b}{}\doxysubsubsection{Eliminate Dead Code}\label{index_step5b}
+Dead code elimination is essential to the decompiler because a large percentage of machine instructions have side-\/effects on machine state, such as the setting of flags, that are not relevant to the function at a particular point in the code. Dead code elimination is complicated by the fact that its not always clear what variables are temporary, locals, or globals. Also, compilers frequently map smaller (1-\/byte or 2-\/byte) variables into bigger (4-\/byte) registers, and manipulation of these registers may still carry around left over information in the upper bytes. The decompiler detects dead code down to the bit, in order to appropriately truncate variables in these situations.\hypertarget{index_step5c}{}\doxysubsubsection{Propagate Local Types}\label{index_step5c}
+The decompiler has to infer high-\/level type information about the variables it analyzes, as this kind of information is generally not present in the input binary. Some information can be gathered about a variable, based on the instructions it is used in (.i.\+e if it is used in a floating point instruction). Other information about type might be available from header files or from the user. Once this is gathered, the preliminary type information is allowed to propagate through the syntax trees so that related types of other variables can be determined.\hypertarget{index_step5d}{}\doxysubsubsection{Perform Term Rewriting}\label{index_step5d}
+The bulk of the interesting simplifications happen in this section. Following Formal Methods style term rewriting, a long list of rules are applied to the syntax tree. Each rule matches some potential configuration in a portion of the syntax tree, and after the rule matches, it specifies a sequence of edit operations on the syntax tree to transform it. Each rule can be applied repeatedly and in different parts of the tree if necessary. So even a small set of rules can cause a large transformation. The set of rules in the decompiler is extensive and is tailored to specific reverse engineering needs and compiler constructs. The goal of these transformations is not to optimize as a compiler would, but to simplify and normalize for easier understanding and recognition by human analysts (and follow on machine processing). Typical examples of transforms include, copy propagation, constant propagation, collecting terms, cancellation of operators and other algebraic simplifications, undoing multiplication and division optimizations, commuting operators, ....\hypertarget{index_step5e}{}\doxysubsubsection{Adjust Control Flow Graph}\label{index_step5e}
+The decompiler can recognize
+\begin{DoxyItemize}
+\item unreachable code
+\item unused branches
+\item empty basic blocks
+\item redundant predicates
+\item ...
+\end{DoxyItemize}
+
+It will remove branches or blocks in order to simplify the control flow.\hypertarget{index_step5f}{}\doxysubsubsection{Recover Control Flow Structure}\label{index_step5f}
+The decompiler recovers higher-\/level control flow objects like loops, {\bfseries{if/{\bfseries{else}} blocks}}, and {\bfseries{switch}} statements. The entire control flow of the function is built up hierarchically with these objects, allowing it to be expressed naturally in the final output with the standard control flow constructs of the high-\/level language. The decompiler recognizes common high-\/level unstructured control flow idioms, like {\itshape break}, and can use node-\/splitting in some situations to undo compiler flow optimizations that prevent a structured representation.\hypertarget{index_step6}{}\doxysubsection{Perform Final P-\/code Transformations}\label{index_step6}
+During the main simplification loop, many p-\/code operations are normalized in specific ways for the term rewriting process that aren\textquotesingle{}t necessarily ideal for the final output. This phase does transforms designed to enhance readability of the final output. A simple example is that all subtractions ({\bfseries{I\+N\+T\+\_\+\+S\+UB}}) are normalized to be an addition on the twos complement in the main loop. This phase would convert any remaining additions of this form back into a subtraction operation.\hypertarget{index_step7}{}\doxysubsection{Exit S\+S\+A Form and Merge Low-\/level Variables (phase 1)}\label{index_step7}
+The static variables of the S\+SA form need to be merged into complete high-\/level variables. The first part of this is accomplished by formally exiting S\+SA form. The S\+SA phi-\/nodes and indirects are eliminated either by merging the input and output variables or inserting extra {\bfseries{C\+O\+PY}} operations. Merging must guard against a high-\/level variable holding different values (in different memory locations) at the same time. This is similar to register coloring in compiler design.\hypertarget{index_step8}{}\doxysubsection{Determine Expressions and Temporary Variables}\label{index_step8}
+A final determination is made of what the final output expressions are going to be, by determining which variables in the syntax tree will be explicit and which represent temporary variables. Certain terms must automatically be explicit, such as constants, inputs, etc. Other variables are forced to be explicit because they are read too many times or because making it implicit would propagate another variable too far. Any variables remaining are marked implicit.\hypertarget{index_step9}{}\doxysubsection{Merge Low-\/level Variables (phase 2)}\label{index_step9}
+Even after the initial merging of variables in phase 1, there are generally still too many for normal C code. So the decompiler, does additional, more speculative merging. It first tries to merge the inputs and outputs of copy operations, and then the inputs and outputs of more general operations. And finally, merging is attempted on variables of the same type. Each potential merge is subject to register coloring restrictions.\hypertarget{index_step10}{}\doxysubsection{Add Type Casts}\label{index_step10}
+Type casts are added to the code so that the final output will be syntactically legal.\hypertarget{index_step11}{}\doxysubsection{Establish Function\textquotesingle{}s Prototype}\label{index_step11}
+The register/stack locations being used to pass parameters into the function are analyzed in terms of the parameter passing convention being used so that appropriate names can be selected and the prototype can be printed with the input variables in the correct order.\hypertarget{index_step12}{}\doxysubsection{Select Variable Names}\label{index_step12}
+The high-\/level variables, which are now in their final form, have names assigned based on any information gathered from their low-\/level elements and the symbol table. If no name can be identified from the database, an appropriate name is generated automatically.\hypertarget{index_step13}{}\doxysubsection{Do Final Control Flow Structuring}\label{index_step13}
+
+\begin{DoxyEnumerate}
+\item Order separate components
+\item Order switch cases
+\item Determine which unstructured jumps are breaks
+\item Stick in labels for remaining unstructured jumps
+\end{DoxyEnumerate}\hypertarget{index_step14}{}\doxysubsection{Emit Final C Tokens}\label{index_step14}
+Following the recovered function prototype, the recovered control flow structure, and the recovered expressions, the final C tokens are generated. Each token is annotated with its syntactic meaning, for later syntax highlighting. And most tokens are also annotated with the address of the machine instruction with which they are most closely associated. This is the basis for the machine/C code cross highlighting capability. The tokens are passed through a standard Oppen pretty-\/printing algorithm to determine the final line breaks and indenting. 

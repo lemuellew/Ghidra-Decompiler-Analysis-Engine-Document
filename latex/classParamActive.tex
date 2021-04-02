@@ -1,0 +1,238 @@
+\hypertarget{classParamActive}{}\doxysection{Param\+Active Class Reference}
+\label{classParamActive}\index{ParamActive@{ParamActive}}
+
+
+Container class for \mbox{\hyperlink{classParamTrial}{Param\+Trial}} objects.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParamActive_aa8913b6e862e54ff8fce9b3c22badc5b}{Param\+Active}} (bool recoversub)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}} an empty container. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamActive_afadcd4621258a53d5edd7f7d4430eb7b}\label{classParamActive_afadcd4621258a53d5edd7f7d4430eb7b}} 
+void \mbox{\hyperlink{classParamActive_afadcd4621258a53d5edd7f7d4430eb7b}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Reset to an empty container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamActive_a43a357162f55b3b8f7e13a013ad207b5}{register\+Trial}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz)
+\begin{DoxyCompactList}\small\item\em Add a new trial to the container. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classParamTrial}{Param\+Trial}} \& \mbox{\hyperlink{classParamActive_a4ce9f8640c32eb48df409ff71a6e15eb}{get\+Trial\+For\+Input\+Varnode}} (int4 slot) const
+\begin{DoxyCompactList}\small\item\em Get trial corresponding to the given input \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classParamActive_a94904915a57b3a27a68053e85d6d08e1}{which\+Trial}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz) const
+\begin{DoxyCompactList}\small\item\em Get the trial overlapping with the given memory range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamActive_a42ec2498ce1d913aaed22b67b479d6e5}{free\+Placeholder\+Slot}} (void)
+\begin{DoxyCompactList}\small\item\em Free the stack placeholder slot. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamActive_a23ffb29ecb4569901e136929a50ac6b2}{delete\+Unused\+Trials}} (void)
+\begin{DoxyCompactList}\small\item\em Remove trials that were found not to be parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamActive_add969ad5cdac4ac6dab2bd7e6b7b3ca5}{split\+Trial}} (int4 i, int4 sz)
+\begin{DoxyCompactList}\small\item\em Split the given trial in two. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamActive_a593685d8f2f13f34e5c48f1f363c793d}{join\+Trial}} (int4 slot, const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz)
+\begin{DoxyCompactList}\small\item\em Join adjacent parameter trials. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classParamActive_a9f9fb238c57992903f10a7ccc2ca45ff}{get\+Num\+Used}} (void) const
+\begin{DoxyCompactList}\small\item\em Get number of trials marked as formal parameters. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParamActive_aa8aaa478177b4ce6d94c4a988059ab3f}{test\+Shrink}} (int4 i, const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz) const
+\begin{DoxyCompactList}\small\item\em Test if the given trial can be shrunk to the given range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamActive_abce147faf761497f43582dbed22b57c0}{shrink}} (int4 i, const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz)
+\begin{DoxyCompactList}\small\item\em Shrink the given trial to a new given range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container class for \mbox{\hyperlink{classParamTrial}{Param\+Trial}} objects. 
+
+The parameter analysis algorithms use this class to maintain the collection of parameter trials being actively considered for a given function. It holds the \mbox{\hyperlink{classParamTrial}{Param\+Trial}} objects and other information about the current state of analysis.
+
+Trials are maintained in two stages, {\itshape before} parameter decisions have been made and {\itshape after}. Before, trials are in input index order relative to the C\+A\+LL or C\+A\+L\+L\+I\+ND op for a sub-\/function, or they are in address order for input Varnodes to the active function. After, the trials are put into formal parameter order, as dictated by the Prototype\+Model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classParamActive_aa8913b6e862e54ff8fce9b3c22badc5b}\label{classParamActive_aa8913b6e862e54ff8fce9b3c22badc5b}} 
+\index{ParamActive@{ParamActive}!ParamActive@{ParamActive}}
+\index{ParamActive@{ParamActive}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{ParamActive()}{ParamActive()}}
+{\footnotesize\ttfamily Param\+Active\+::\+Param\+Active (\begin{DoxyParamCaption}\item[{bool}]{recoversub }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}} an empty container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em recoversub} & selects whether a sub-\/function or the active function is being tested \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParamActive_a23ffb29ecb4569901e136929a50ac6b2}\label{classParamActive_a23ffb29ecb4569901e136929a50ac6b2}} 
+\index{ParamActive@{ParamActive}!deleteUnusedTrials@{deleteUnusedTrials}}
+\index{deleteUnusedTrials@{deleteUnusedTrials}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{deleteUnusedTrials()}{deleteUnusedTrials()}}
+{\footnotesize\ttfamily void Param\+Active\+::delete\+Unused\+Trials (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Remove trials that were found not to be parameters. 
+
+Delete any trial for which is\+Used() returns {\bfseries{false}}. This is used in conjunction with setting the active Varnodes on a call, so the slot number is reordered too. \mbox{\Hypertarget{classParamActive_a42ec2498ce1d913aaed22b67b479d6e5}\label{classParamActive_a42ec2498ce1d913aaed22b67b479d6e5}} 
+\index{ParamActive@{ParamActive}!freePlaceholderSlot@{freePlaceholderSlot}}
+\index{freePlaceholderSlot@{freePlaceholderSlot}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{freePlaceholderSlot()}{freePlaceholderSlot()}}
+{\footnotesize\ttfamily void Param\+Active\+::free\+Placeholder\+Slot (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Free the stack placeholder slot. 
+
+Free up the stack placeholder slot, which may cause trial slots to get adjusted. \mbox{\Hypertarget{classParamActive_a9f9fb238c57992903f10a7ccc2ca45ff}\label{classParamActive_a9f9fb238c57992903f10a7ccc2ca45ff}} 
+\index{ParamActive@{ParamActive}!getNumUsed@{getNumUsed}}
+\index{getNumUsed@{getNumUsed}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{getNumUsed()}{getNumUsed()}}
+{\footnotesize\ttfamily int4 Param\+Active\+::get\+Num\+Used (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of trials marked as formal parameters. 
+
+This assumes the trials have been sorted. So {\itshape used} trials are first. \begin{DoxyReturn}{Returns}
+the number of formally used trials 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamActive_a4ce9f8640c32eb48df409ff71a6e15eb}\label{classParamActive_a4ce9f8640c32eb48df409ff71a6e15eb}} 
+\index{ParamActive@{ParamActive}!getTrialForInputVarnode@{getTrialForInputVarnode}}
+\index{getTrialForInputVarnode@{getTrialForInputVarnode}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{getTrialForInputVarnode()}{getTrialForInputVarnode()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classParamTrial}{Param\+Trial}} \& Param\+Active\+::get\+Trial\+For\+Input\+Varnode (\begin{DoxyParamCaption}\item[{int4}]{slot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get trial corresponding to the given input \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Return the trial associated with the input \mbox{\hyperlink{classVarnode}{Varnode}} to the associated p-\/code C\+A\+LL or C\+A\+L\+L\+I\+ND. We take into account the call address parameter (subtract 1) and if the index occurs {\itshape after} the index holding the stackpointer placeholder, we subtract an additional 1. 
+\begin{DoxyParams}{Parameters}
+{\em slot} & is the input index of the input \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding parameter trial 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamActive_a593685d8f2f13f34e5c48f1f363c793d}\label{classParamActive_a593685d8f2f13f34e5c48f1f363c793d}} 
+\index{ParamActive@{ParamActive}!joinTrial@{joinTrial}}
+\index{joinTrial@{joinTrial}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{joinTrial()}{joinTrial()}}
+{\footnotesize\ttfamily void Param\+Active\+::join\+Trial (\begin{DoxyParamCaption}\item[{int4}]{slot,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Join adjacent parameter trials. 
+
+Join the trial at the given slot with the trial in the next slot 
+\begin{DoxyParams}{Parameters}
+{\em slot} & is the given slot \\
+\hline
+{\em addr} & is the address of the new joined memory range \\
+\hline
+{\em sz} & is the size of the new memory range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamActive_a43a357162f55b3b8f7e13a013ad207b5}\label{classParamActive_a43a357162f55b3b8f7e13a013ad207b5}} 
+\index{ParamActive@{ParamActive}!registerTrial@{registerTrial}}
+\index{registerTrial@{registerTrial}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{registerTrial()}{registerTrial()}}
+{\footnotesize\ttfamily void Param\+Active\+::register\+Trial (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Add a new trial to the container. 
+
+A \mbox{\hyperlink{classParamTrial}{Param\+Trial}} object is created and a slot is assigned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the memory range \\
+\hline
+{\em sz} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamActive_abce147faf761497f43582dbed22b57c0}\label{classParamActive_abce147faf761497f43582dbed22b57c0}} 
+\index{ParamActive@{ParamActive}!shrink@{shrink}}
+\index{shrink@{shrink}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{shrink()}{shrink()}}
+{\footnotesize\ttfamily void Param\+Active\+::shrink (\begin{DoxyParamCaption}\item[{int4}]{i,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Shrink the given trial to a new given range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the given trial \\
+\hline
+{\em addr} & is the new range\textquotesingle{}s starting address \\
+\hline
+{\em sz} & is the new range\textquotesingle{}s size in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamActive_add969ad5cdac4ac6dab2bd7e6b7b3ca5}\label{classParamActive_add969ad5cdac4ac6dab2bd7e6b7b3ca5}} 
+\index{ParamActive@{ParamActive}!splitTrial@{splitTrial}}
+\index{splitTrial@{splitTrial}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{splitTrial()}{splitTrial()}}
+{\footnotesize\ttfamily void Param\+Active\+::split\+Trial (\begin{DoxyParamCaption}\item[{int4}]{i,  }\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Split the given trial in two. 
+
+Split the trial into two trials, where the first piece has the given size. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the given trial \\
+\hline
+{\em sz} & is the given size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamActive_aa8aaa478177b4ce6d94c4a988059ab3f}\label{classParamActive_aa8aaa478177b4ce6d94c4a988059ab3f}} 
+\index{ParamActive@{ParamActive}!testShrink@{testShrink}}
+\index{testShrink@{testShrink}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{testShrink()}{testShrink()}}
+{\footnotesize\ttfamily bool Param\+Active\+::test\+Shrink (\begin{DoxyParamCaption}\item[{int4}]{i,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Test if the given trial can be shrunk to the given range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the given trial \\
+\hline
+{\em addr} & is the new address \\
+\hline
+{\em sz} & is the new size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the trial can be shrunk to the new range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamActive_a94904915a57b3a27a68053e85d6d08e1}\label{classParamActive_a94904915a57b3a27a68053e85d6d08e1}} 
+\index{ParamActive@{ParamActive}!whichTrial@{whichTrial}}
+\index{whichTrial@{whichTrial}!ParamActive@{ParamActive}}
+\doxysubsubsection{\texorpdfstring{whichTrial()}{whichTrial()}}
+{\footnotesize\ttfamily int4 Param\+Active\+::which\+Trial (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Get the trial overlapping with the given memory range. 
+
+The (index of) the first overlapping trial is returned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given range \\
+\hline
+{\em sz} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the overlapping trial, or -\/1 if no trial overlaps 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

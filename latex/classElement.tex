@@ -1,0 +1,137 @@
+\hypertarget{classElement}{}\doxysection{Element Class Reference}
+\label{classElement}\index{Element@{Element}}
+
+
+An X\+ML element. A node in the D\+OM tree.  
+
+
+
+
+{\ttfamily \#include $<$xml.\+hh$>$}
+
+
+
+Inheritance diagram for Element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=147pt]{classElement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classElement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classElement_a2d1e1ab54ade3240c7fd99773de13d24}\label{classElement_a2d1e1ab54ade3240c7fd99773de13d24}} 
+\mbox{\hyperlink{classElement_a2d1e1ab54ade3240c7fd99773de13d24}{$\sim$\+Element}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classElement_aaad8f8e819869b0906c10c3e2829ec12}{add\+Content}} (const char $\ast$str, int4 start, int4 length)
+\begin{DoxyCompactList}\small\item\em Append new character content to {\bfseries{this}} element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classElement_a5e5de37f6b79a3a952d021ba15b3912d}{add\+Child}} (\mbox{\hyperlink{classElement}{Element}} $\ast$child)
+\begin{DoxyCompactList}\small\item\em Add a new child \mbox{\hyperlink{classElement}{Element}} to the model, with {\bfseries{this}} as the parent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classElement_a49f5e63e04bfc793832db7091553abf2}{add\+Attribute}} (const string \&nm, const string \&vl)
+\begin{DoxyCompactList}\small\item\em Add a new name/value attribute pair to {\bfseries{this}} element. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classElement_af2a65db381825551e6da7254f2ac2458}{get\+Attribute\+Value}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Get an attribute value by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classElement_ae9b2bd00c9ba7a16c9981142c9e41fe3}\label{classElement_ae9b2bd00c9ba7a16c9981142c9e41fe3}} 
+\mbox{\hyperlink{classElement}{Element}} $\ast$ \mbox{\hyperlink{classElement_ae9b2bd00c9ba7a16c9981142c9e41fe3}{parent}}
+\begin{DoxyCompactList}\small\item\em The parent \mbox{\hyperlink{classElement}{Element}} (or null) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classElement_a74557a312f8a7edfca63321f31fdad8d}\label{classElement_a74557a312f8a7edfca63321f31fdad8d}} 
+\mbox{\hyperlink{xml_8hh_ab5ab62f46b3735557c125f91b40ac155}{List}} \mbox{\hyperlink{classElement_a74557a312f8a7edfca63321f31fdad8d}{children}}
+\begin{DoxyCompactList}\small\item\em A list of child \mbox{\hyperlink{classElement}{Element}} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An X\+ML element. A node in the D\+OM tree. 
+
+This is the main node for the in-\/memory representation of the X\+ML (D\+OM) tree. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classElement_a49f5e63e04bfc793832db7091553abf2}\label{classElement_a49f5e63e04bfc793832db7091553abf2}} 
+\index{Element@{Element}!addAttribute@{addAttribute}}
+\index{addAttribute@{addAttribute}!Element@{Element}}
+\doxysubsubsection{\texorpdfstring{addAttribute()}{addAttribute()}}
+{\footnotesize\ttfamily void Element\+::add\+Attribute (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const string \&}]{vl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new name/value attribute pair to {\bfseries{this}} element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the attribute \\
+\hline
+{\em vl} & is the value of the attribute \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classElement_a5e5de37f6b79a3a952d021ba15b3912d}\label{classElement_a5e5de37f6b79a3a952d021ba15b3912d}} 
+\index{Element@{Element}!addChild@{addChild}}
+\index{addChild@{addChild}!Element@{Element}}
+\doxysubsubsection{\texorpdfstring{addChild()}{addChild()}}
+{\footnotesize\ttfamily void Element\+::add\+Child (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classElement}{Element}} $\ast$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new child \mbox{\hyperlink{classElement}{Element}} to the model, with {\bfseries{this}} as the parent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em child} & is the new child \mbox{\hyperlink{classElement}{Element}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classElement_aaad8f8e819869b0906c10c3e2829ec12}\label{classElement_aaad8f8e819869b0906c10c3e2829ec12}} 
+\index{Element@{Element}!addContent@{addContent}}
+\index{addContent@{addContent}!Element@{Element}}
+\doxysubsubsection{\texorpdfstring{addContent()}{addContent()}}
+{\footnotesize\ttfamily void Element\+::add\+Content (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{int4}]{start,  }\item[{int4}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append new character content to {\bfseries{this}} element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & is an array of character data \\
+\hline
+{\em start} & is the index of the first character to append \\
+\hline
+{\em length} & is the number of characters to append \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classElement_af2a65db381825551e6da7254f2ac2458}\label{classElement_af2a65db381825551e6da7254f2ac2458}} 
+\index{Element@{Element}!getAttributeValue@{getAttributeValue}}
+\index{getAttributeValue@{getAttributeValue}!Element@{Element}}
+\doxysubsubsection{\texorpdfstring{getAttributeValue()}{getAttributeValue()}}
+{\footnotesize\ttfamily const string \& Element\+::get\+Attribute\+Value (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Get an attribute value by name. 
+
+Look up the value for the given attribute name and return it. An exception is thrown if the attribute does not exist. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the attribute \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding attribute value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{xml_8hh}{xml.\+hh}}\item 
+xml.\+cc\end{DoxyCompactItemize}

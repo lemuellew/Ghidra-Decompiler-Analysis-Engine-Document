@@ -1,0 +1,62 @@
+\hypertarget{classIfcGraphDataflow}{}\doxysection{Ifc\+Graph\+Dataflow Class Reference}
+\label{classIfcGraphDataflow}\index{IfcGraphDataflow@{IfcGraphDataflow}}
+
+
+Write a graph representation of data-\/flow to a file\+: {\ttfamily graph dataflow $<$filename$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Graph\+Dataflow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcGraphDataflow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Graph\+Dataflow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcGraphDataflow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcGraphDataflow_a5daf51e3a17da2d71241bbd1e900e8f7}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Write a graph representation of data-\/flow to a file\+: {\ttfamily graph dataflow $<$filename$>$} 
+
+The data-\/flow graph for the {\itshape current} function, in its current state of transform, is written to the indicated file. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcGraphDataflow_a5daf51e3a17da2d71241bbd1e900e8f7}\label{classIfcGraphDataflow_a5daf51e3a17da2d71241bbd1e900e8f7}} 
+\index{IfcGraphDataflow@{IfcGraphDataflow}!execute@{execute}}
+\index{execute@{execute}!IfcGraphDataflow@{IfcGraphDataflow}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Graph\+Dataflow\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

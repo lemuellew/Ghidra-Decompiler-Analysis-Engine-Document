@@ -1,0 +1,62 @@
+\hypertarget{classIfcSource}{}\doxysection{Ifc\+Source Class Reference}
+\label{classIfcSource}\index{IfcSource@{IfcSource}}
+
+
+Execute a command script \+: {\ttfamily source $<$filename$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Source\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcSource__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Source\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcSource__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcSource_a53da0f4768e86d92bea07dc05b4a878f}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Execute a command script \+: {\ttfamily source $<$filename$>$} 
+
+A file is opened as a new streaming source of command-\/lines. The stream is pushed onto the stack for the console. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcSource_a53da0f4768e86d92bea07dc05b4a878f}\label{classIfcSource_a53da0f4768e86d92bea07dc05b4a878f}} 
+\index{IfcSource@{IfcSource}!execute@{execute}}
+\index{execute@{execute}!IfcSource@{IfcSource}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Source\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

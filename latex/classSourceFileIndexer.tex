@@ -1,0 +1,40 @@
+\hypertarget{classSourceFileIndexer}{}\doxysection{Source\+File\+Indexer Class Reference}
+\label{classSourceFileIndexer}\index{SourceFileIndexer@{SourceFileIndexer}}
+
+
+class for recording source file information for S\+L\+E\+I\+GH constructors.  
+
+
+
+
+{\ttfamily \#include $<$sleighbase.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSourceFileIndexer_a993ab2f95e9f4901a0699f52747a0cbf}\label{classSourceFileIndexer_a993ab2f95e9f4901a0699f52747a0cbf}} 
+int4 \mbox{\hyperlink{classSourceFileIndexer_a993ab2f95e9f4901a0699f52747a0cbf}{index}} (const string filename)
+\begin{DoxyCompactList}\small\item\em Returns the index of the file. If the file is not in the index it is added. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSourceFileIndexer_a8cc8af2b3a0380c92ef411afcbefb9b8}\label{classSourceFileIndexer_a8cc8af2b3a0380c92ef411afcbefb9b8}} 
+int4 \mbox{\hyperlink{classSourceFileIndexer_a8cc8af2b3a0380c92ef411afcbefb9b8}{get\+Index}} (const string)
+\begin{DoxyCompactList}\small\item\em get the index of a file. Error if the file is not in the index. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSourceFileIndexer_a03bdcd38aa76a370db99006a31a0a3f3}\label{classSourceFileIndexer_a03bdcd38aa76a370db99006a31a0a3f3}} 
+string \mbox{\hyperlink{classSourceFileIndexer_a03bdcd38aa76a370db99006a31a0a3f3}{get\+Filename}} (int4)
+\begin{DoxyCompactList}\small\item\em get the filename corresponding to an index \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSourceFileIndexer_abcc273f56b8d0b188033e2a3e32ee6a2}\label{classSourceFileIndexer_abcc273f56b8d0b188033e2a3e32ee6a2}} 
+void \mbox{\hyperlink{classSourceFileIndexer_abcc273f56b8d0b188033e2a3e32ee6a2}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em read a stored index mapping from an X\+ML file \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSourceFileIndexer_a012e6024af379de05148c4a1653ceaf0}\label{classSourceFileIndexer_a012e6024af379de05148c4a1653ceaf0}} 
+void \mbox{\hyperlink{classSourceFileIndexer_a012e6024af379de05148c4a1653ceaf0}{save\+Xml}} (ostream \&) const
+\begin{DoxyCompactList}\small\item\em save the index mapping to an X\+ML file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class for recording source file information for S\+L\+E\+I\+GH constructors. 
+
+A S\+L\+E\+I\+GH specification may contain many source files. This class is used to associate each constructor in a S\+L\+E\+I\+GH language to the source file where it is defined. This information is useful when debugging S\+L\+E\+I\+GH specifications. Sourcefiles are assigned a numeric index and the mapping from indices to filenames is written to the generated .sla file. For each constructor, the data written to the .sla file includes the source file index. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleighbase_8hh}{sleighbase.\+hh}}\item 
+sleighbase.\+cc\end{DoxyCompactItemize}

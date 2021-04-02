@@ -1,0 +1,296 @@
+\hypertarget{classActionGroup}{}\doxysection{Action\+Group Class Reference}
+\label{classActionGroup}\index{ActionGroup@{ActionGroup}}
+
+
+A group of actions (generally) applied in sequence.  
+
+
+
+
+{\ttfamily \#include $<$action.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classActionGroup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classActionGroup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionGroup_aa7225f652d1984bc106a3b208366de82}\label{classActionGroup_aa7225f652d1984bc106a3b208366de82}} 
+virtual \mbox{\hyperlink{classActionGroup_aa7225f652d1984bc106a3b208366de82}{$\sim$\+Action\+Group}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActionGroup_a868ae1f92d3369b22075d337b8681ffe}{add\+Action}} (\mbox{\hyperlink{classAction}{Action}} $\ast$ac)
+\begin{DoxyCompactList}\small\item\em Add an \mbox{\hyperlink{classAction}{Action}} to the group. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionGroup_a3cce22951e34067d4f1a9cb4e15cc5bb}\label{classActionGroup_a3cce22951e34067d4f1a9cb4e15cc5bb}} 
+virtual void \mbox{\hyperlink{classActionGroup_a3cce22951e34067d4f1a9cb4e15cc5bb}{clear\+Break\+Points}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all breakpoints set on {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionGroup_ace0724b13474c6c098eb25aee96dd1d6}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionGroup_ae5f0c78e136f9bb5b9bcd6256b8ad097}{reset}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionGroup_a536ed9307295585894a5f083415f2f77}{reset\+Stats}} (void)
+\begin{DoxyCompactList}\small\item\em Reset all the counts to zero. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionGroup_aaaab0b0f5c7a14752cd57478de2e9290}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionGroup_a41f7962b522cfbcc68c20991f5fcc4f3}{print}} (ostream \&s, int4 num, int4 depth) const
+\begin{DoxyCompactList}\small\item\em Print a description of this \mbox{\hyperlink{classAction}{Action}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionGroup_af5e07efb4a443cd74b57083a0fd57c02}{print\+State}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print status to stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionGroup_a5bf70e0947c75bb1e0c106f436027531}{get\+Sub\+Action}} (const string \&specify)
+\begin{DoxyCompactList}\small\item\em Retrieve a specific sub-\/action by name. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classActionGroup_acf178e5772a5fba9fb8f11e8dadba126}{get\+Sub\+Rule}} (const string \&specify)
+\begin{DoxyCompactList}\small\item\em Retrieve a specific sub-\/rule by name. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionGroup_ac61fd44348c6eabee0ebba16dfc4ff3b}{print\+Statistics}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump statistics to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionGroup_a2490d195adbf5542c17f3a751afc31c1}\label{classActionGroup_a2490d195adbf5542c17f3a751afc31c1}} 
+vector$<$ \mbox{\hyperlink{classAction}{Action}} $\ast$ $>$ \mbox{\hyperlink{classActionGroup_a2490d195adbf5542c17f3a751afc31c1}{list}}
+\begin{DoxyCompactList}\small\item\em List of actions to perform in the group. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionGroup_a7989aa415058903bd2bd3f06227e9ea1}\label{classActionGroup_a7989aa415058903bd2bd3f06227e9ea1}} 
+vector$<$ \mbox{\hyperlink{classAction}{Action}} $\ast$ $>$\+::iterator \mbox{\hyperlink{classActionGroup_a7989aa415058903bd2bd3f06227e9ea1}{state}}
+\begin{DoxyCompactList}\small\item\em Current action being applied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A group of actions (generally) applied in sequence. 
+
+This is a a list of \mbox{\hyperlink{classAction}{Action}} objects, which are usually applied in sequence. But the behavior properties of each individual \mbox{\hyperlink{classAction}{Action}} may affect this. Properties (like rule\+\_\+repeatapply) may be put directly to this group that also affect how the Actions are applied. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionGroup_a868ae1f92d3369b22075d337b8681ffe}\label{classActionGroup_a868ae1f92d3369b22075d337b8681ffe}} 
+\index{ActionGroup@{ActionGroup}!addAction@{addAction}}
+\index{addAction@{addAction}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{addAction()}{addAction()}}
+{\footnotesize\ttfamily void Action\+Group\+::add\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAction}{Action}} $\ast$}]{ac }\end{DoxyParamCaption})}
+
+
+
+Add an \mbox{\hyperlink{classAction}{Action}} to the group. 
+
+To be used only during the construction of {\bfseries{this}} \mbox{\hyperlink{classActionGroup}{Action\+Group}}. This routine adds an \mbox{\hyperlink{classAction}{Action}} to the end of this group\textquotesingle{}s list. 
+\begin{DoxyParams}{Parameters}
+{\em ac} & is the \mbox{\hyperlink{classAction}{Action}} to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionGroup_aaaab0b0f5c7a14752cd57478de2e9290}\label{classActionGroup_aaaab0b0f5c7a14752cd57478de2e9290}} 
+\index{ActionGroup@{ActionGroup}!apply@{apply}}
+\index{apply@{apply}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Group\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classActionRestartGroup_ab597697ab15a9b8f1a25832f43bdeb0d}{Action\+Restart\+Group}}.
+
+\mbox{\Hypertarget{classActionGroup_ace0724b13474c6c098eb25aee96dd1d6}\label{classActionGroup_ace0724b13474c6c098eb25aee96dd1d6}} 
+\index{ActionGroup@{ActionGroup}!clone@{clone}}
+\index{clone@{clone}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAction}{Action}} $\ast$ Action\+Group\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classActionRestartGroup_a2dd3daab632e0a41e64d9515f47c7200}{Action\+Restart\+Group}}.
+
+\mbox{\Hypertarget{classActionGroup_a5bf70e0947c75bb1e0c106f436027531}\label{classActionGroup_a5bf70e0947c75bb1e0c106f436027531}} 
+\index{ActionGroup@{ActionGroup}!getSubAction@{getSubAction}}
+\index{getSubAction@{getSubAction}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{getSubAction()}{getSubAction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAction}{Action}} $\ast$ Action\+Group\+::get\+Sub\+Action (\begin{DoxyParamCaption}\item[{const string \&}]{specify }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a specific sub-\/action by name. 
+
+If this \mbox{\hyperlink{classAction}{Action}} matches the given name, it is returned. If the name matches a sub-\/action, this is returned. 
+\begin{DoxyParams}{Parameters}
+{\em specify} & is the action name to match \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classAction}{Action}} or sub-\/action 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_ad7c260f28ff9705265558c3c077b9792}{Action}}.
+
+\mbox{\Hypertarget{classActionGroup_acf178e5772a5fba9fb8f11e8dadba126}\label{classActionGroup_acf178e5772a5fba9fb8f11e8dadba126}} 
+\index{ActionGroup@{ActionGroup}!getSubRule@{getSubRule}}
+\index{getSubRule@{getSubRule}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{getSubRule()}{getSubRule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRule}{Rule}} $\ast$ Action\+Group\+::get\+Sub\+Rule (\begin{DoxyParamCaption}\item[{const string \&}]{specify }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a specific sub-\/rule by name. 
+
+Find a \mbox{\hyperlink{classRule}{Rule}}, as a component of {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}, with the given name. 
+\begin{DoxyParams}{Parameters}
+{\em specify} & is the name of the rule \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching sub-\/rule 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_aacd1f960b27f1b02d27a49aaa61c895a}{Action}}.
+
+\mbox{\Hypertarget{classActionGroup_a41f7962b522cfbcc68c20991f5fcc4f3}\label{classActionGroup_a41f7962b522cfbcc68c20991f5fcc4f3}} 
+\index{ActionGroup@{ActionGroup}!print@{print}}
+\index{print@{print}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily int4 Action\+Group\+::print (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{num,  }\item[{int4}]{depth }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a description of this \mbox{\hyperlink{classAction}{Action}} to stream. 
+
+The description is suitable for a console mode listing of actions 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em num} & is a starting index to associate with the action (and its sub-\/actions) \\
+\hline
+{\em depth} & is amount of indent necessary before printing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next available index 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_a0f7c833f74d267d7fbc50fa9e0f2a964}{Action}}.
+
+\mbox{\Hypertarget{classActionGroup_af5e07efb4a443cd74b57083a0fd57c02}\label{classActionGroup_af5e07efb4a443cd74b57083a0fd57c02}} 
+\index{ActionGroup@{ActionGroup}!printState@{printState}}
+\index{printState@{printState}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{printState()}{printState()}}
+{\footnotesize\ttfamily void Action\+Group\+::print\+State (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print status to stream. 
+
+This will the \mbox{\hyperlink{classAction}{Action}} name and the next step to execute 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_a8c64348dc5e9ad6ba914cf74aaac8bfb}{Action}}.
+
+\mbox{\Hypertarget{classActionGroup_ac61fd44348c6eabee0ebba16dfc4ff3b}\label{classActionGroup_ac61fd44348c6eabee0ebba16dfc4ff3b}} 
+\index{ActionGroup@{ActionGroup}!printStatistics@{printStatistics}}
+\index{printStatistics@{printStatistics}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{printStatistics()}{printStatistics()}}
+{\footnotesize\ttfamily void Action\+Group\+::print\+Statistics (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dump statistics to stream. 
+
+Print out the collected statistics for the \mbox{\hyperlink{classAction}{Action}} to stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_a57e38931fcb3bf9dffac2946d5e790be}{Action}}.
+
+\mbox{\Hypertarget{classActionGroup_ae5f0c78e136f9bb5b9bcd6256b8ad097}\label{classActionGroup_ae5f0c78e136f9bb5b9bcd6256b8ad097}} 
+\index{ActionGroup@{ActionGroup}!reset@{reset}}
+\index{reset@{reset}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Action\+Group\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the new function {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} may affect \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_ac7c1cf16bb63e0741ba16be5179cf943}{Action}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classActionRestartGroup_a8a48151026811fbe97f4aa3eecf67cf0}{Action\+Restart\+Group}}.
+
+\mbox{\Hypertarget{classActionGroup_a536ed9307295585894a5f083415f2f77}\label{classActionGroup_a536ed9307295585894a5f083415f2f77}} 
+\index{ActionGroup@{ActionGroup}!resetStats@{resetStats}}
+\index{resetStats@{resetStats}!ActionGroup@{ActionGroup}}
+\doxysubsubsection{\texorpdfstring{resetStats()}{resetStats()}}
+{\footnotesize\ttfamily void Action\+Group\+::reset\+Stats (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset all the counts to zero. 
+
+Reset the statistics 
+
+Reimplemented from \mbox{\hyperlink{classAction_a8ac616ae7f497202746a92c95e32821d}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{action_8hh}{action.\+hh}}\item 
+action.\+cc\end{DoxyCompactItemize}

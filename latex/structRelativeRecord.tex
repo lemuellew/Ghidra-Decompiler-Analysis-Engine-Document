@@ -1,0 +1,40 @@
+\hypertarget{structRelativeRecord}{}\doxysection{Relative\+Record Struct Reference}
+\label{structRelativeRecord}\index{RelativeRecord@{RelativeRecord}}
+
+
+Class for describing a relative p-\/code branch destination.  
+
+
+
+
+{\ttfamily \#include $<$sleigh.\+hh$>$}
+
+
+
+Collaboration diagram for Relative\+Record\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{structRelativeRecord__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structRelativeRecord_a850f0350cbee0663232960529ed4f271}\label{structRelativeRecord_a850f0350cbee0663232960529ed4f271}} 
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ \mbox{\hyperlink{structRelativeRecord_a850f0350cbee0663232960529ed4f271}{dataptr}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classVarnode}{Varnode}} indicating relative offset. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structRelativeRecord_aec0e3f94be30f9591788f7cd45425667}\label{structRelativeRecord_aec0e3f94be30f9591788f7cd45425667}} 
+uintb \mbox{\hyperlink{structRelativeRecord_aec0e3f94be30f9591788f7cd45425667}{calling\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Index of instruction containing relative offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for describing a relative p-\/code branch destination. 
+
+An intra-\/instruction p-\/code branch takes a {\itshape relative} operand. The actual value produced during p-\/code generation is calculated at the last second using {\bfseries{this}}. It stores the index of the B\+R\+A\+N\+CH instruction and a reference to its destination operand. This initially holds a reference to a destination {\itshape label} symbol, but is later updated with the final relative value. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh_8hh}{sleigh.\+hh}}\end{DoxyCompactItemize}

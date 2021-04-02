@@ -1,0 +1,176 @@
+\hypertarget{classTypeOpCpoolref}{}\doxysection{Type\+Op\+Cpoolref Class Reference}
+\label{classTypeOpCpoolref}\index{TypeOpCpoolref@{TypeOpCpoolref}}
+
+
+Information about the C\+P\+O\+O\+L\+R\+EF op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Cpoolref\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classTypeOpCpoolref__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Cpoolref\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpCpoolref__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpCpoolref_af24f28c844c4c945ef9a223b48d2e955}\label{classTypeOpCpoolref_af24f28c844c4c945ef9a223b48d2e955}} 
+\mbox{\hyperlink{classTypeOpCpoolref_af24f28c844c4c945ef9a223b48d2e955}{Type\+Op\+Cpoolref}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpCpoolref_a5cc9b6921ce5b3672dc96af17134474f}{get\+Input\+Cast}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot, const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$cast\+Strategy) const
+\begin{DoxyCompactList}\small\item\em Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpCpoolref_af6f8c8b7ce807d7773e55820c11a08f1}{get\+Output\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpCpoolref_a08047a47da143613ebf78d36dd22c564}{get\+Input\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpCpoolref_a68ad570055c344286fb2db93c427cc7e}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpCpoolref_a3368bf134c942c37c4c3080b82b069f6}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the C\+P\+O\+O\+L\+R\+EF op-\/code. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpCpoolref_a5cc9b6921ce5b3672dc96af17134474f}\label{classTypeOpCpoolref_a5cc9b6921ce5b3672dc96af17134474f}} 
+\index{TypeOpCpoolref@{TypeOpCpoolref}!getInputCast@{getInputCast}}
+\index{getInputCast@{getInputCast}!TypeOpCpoolref@{TypeOpCpoolref}}
+\doxysubsubsection{\texorpdfstring{getInputCast()}{getInputCast()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classDatatype}{Datatype}}$\ast$ Type\+Op\+Cpoolref\+::get\+Input\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot,  }\item[{const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$}]{cast\+Strategy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+Calculate the actual data-\/type of the input to the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. A {\bfseries{null}} result indicates the input data-\/type is the same as or otherwise doesn\textquotesingle{}t need a cast from the data-\/type of the actual input \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em slot} & is the input to consider \\
+\hline
+{\em cast\+Strategy} & is the current casting strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a950c417e4af100d176a701af5816b5ab}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpCpoolref_a08047a47da143613ebf78d36dd22c564}\label{classTypeOpCpoolref_a08047a47da143613ebf78d36dd22c564}} 
+\index{TypeOpCpoolref@{TypeOpCpoolref}!getInputLocal@{getInputLocal}}
+\index{getInputLocal@{getInputLocal}!TypeOpCpoolref@{TypeOpCpoolref}}
+\doxysubsubsection{\texorpdfstring{getInputLocal()}{getInputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Cpoolref\+::get\+Input\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the input) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+{\em slot} & is the input being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_abe2e4b619932cf94bafb084963a0fc66}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpCpoolref_af6f8c8b7ce807d7773e55820c11a08f1}\label{classTypeOpCpoolref_af6f8c8b7ce807d7773e55820c11a08f1}} 
+\index{TypeOpCpoolref@{TypeOpCpoolref}!getOutputLocal@{getOutputLocal}}
+\index{getOutputLocal@{getOutputLocal}!TypeOpCpoolref@{TypeOpCpoolref}}
+\doxysubsubsection{\texorpdfstring{getOutputLocal()}{getOutputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Cpoolref\+::get\+Output\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the output) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a3454cadfb15f6794829123a7ecfe38f5}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpCpoolref_a3368bf134c942c37c4c3080b82b069f6}\label{classTypeOpCpoolref_a3368bf134c942c37c4c3080b82b069f6}} 
+\index{TypeOpCpoolref@{TypeOpCpoolref}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeOpCpoolref@{TypeOpCpoolref}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Op\+Cpoolref\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to print \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpCpoolref_a68ad570055c344286fb2db93c427cc7e}\label{classTypeOpCpoolref_a68ad570055c344286fb2db93c427cc7e}} 
+\index{TypeOpCpoolref@{TypeOpCpoolref}!push@{push}}
+\index{push@{push}!TypeOpCpoolref@{TypeOpCpoolref}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Cpoolref\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

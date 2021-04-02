@@ -1,0 +1,88 @@
+\hypertarget{classPropagationState}{}\doxysection{Propagation\+State Class Reference}
+\label{classPropagationState}\index{PropagationState@{PropagationState}}
+
+
+A class that holds a data-\/type traversal state during type propagation.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Collaboration diagram for Propagation\+State\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classPropagationState__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPropagationState_a0d46f7392b5cc38c418e92429cde1a83}{Propagation\+State}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPropagationState_a49ccacb0e834ad22fc157dc701f14b46}{step}} (void)
+\begin{DoxyCompactList}\small\item\em Advance to the next propagation edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPropagationState_ad1e2aa7ef7c3650b04b4bf6541b009f4}\label{classPropagationState_ad1e2aa7ef7c3650b04b4bf6541b009f4}} 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classPropagationState_ad1e2aa7ef7c3650b04b4bf6541b009f4}{vn}}
+\begin{DoxyCompactList}\small\item\em The root \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPropagationState_a215ac3517dbd555b90e371b4e0303eb3}\label{classPropagationState_a215ac3517dbd555b90e371b4e0303eb3}} 
+list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator \mbox{\hyperlink{classPropagationState_a215ac3517dbd555b90e371b4e0303eb3}{iter}}
+\begin{DoxyCompactList}\small\item\em Iterator to current descendant being enumerated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPropagationState_ae26bcb5e9e3ce711d1f973fd2d7c0e0c}\label{classPropagationState_ae26bcb5e9e3ce711d1f973fd2d7c0e0c}} 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPropagationState_ae26bcb5e9e3ce711d1f973fd2d7c0e0c}{op}}
+\begin{DoxyCompactList}\small\item\em The current descendant or the defining \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPropagationState_a35ab65aa35ba4bad632d618d3b25d171}\label{classPropagationState_a35ab65aa35ba4bad632d618d3b25d171}} 
+int4 \mbox{\hyperlink{classPropagationState_a35ab65aa35ba4bad632d618d3b25d171}{inslot}}
+\begin{DoxyCompactList}\small\item\em Slot holding \mbox{\hyperlink{classVarnode}{Varnode}} for descendant \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPropagationState_a205db0b2b585fcb959667eb6745feec8}\label{classPropagationState_a205db0b2b585fcb959667eb6745feec8}} 
+int4 \mbox{\hyperlink{classPropagationState_a205db0b2b585fcb959667eb6745feec8}{slot}}
+\begin{DoxyCompactList}\small\item\em Current edge relative to current \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that holds a data-\/type traversal state during type propagation. 
+
+For a given \mbox{\hyperlink{classVarnode}{Varnode}}, this class iterates all the possible edges its data-\/type might propagate through. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPropagationState_a0d46f7392b5cc38c418e92429cde1a83}\label{classPropagationState_a0d46f7392b5cc38c418e92429cde1a83}} 
+\index{PropagationState@{PropagationState}!PropagationState@{PropagationState}}
+\index{PropagationState@{PropagationState}!PropagationState@{PropagationState}}
+\doxysubsubsection{\texorpdfstring{PropagationState()}{PropagationState()}}
+{\footnotesize\ttfamily Propagation\+State\+::\+Propagation\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & is the root \mbox{\hyperlink{classVarnode}{Varnode}} to iterate over \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPropagationState_a49ccacb0e834ad22fc157dc701f14b46}\label{classPropagationState_a49ccacb0e834ad22fc157dc701f14b46}} 
+\index{PropagationState@{PropagationState}!step@{step}}
+\index{step@{step}!PropagationState@{PropagationState}}
+\doxysubsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily void Propagation\+State\+::step (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Advance to the next propagation edge. 
+
+At the high level, this iterates through all the descendant Pcode\+Ops of the root \mbox{\hyperlink{classVarnode}{Varnode}}, then the defining \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. At the low level, this iterates from the output \mbox{\hyperlink{classVarnode}{Varnode}} of the current \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} then through all the input Varnodes 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

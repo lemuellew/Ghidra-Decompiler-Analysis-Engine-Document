@@ -1,0 +1,85 @@
+\hypertarget{classValueSet}{}\doxysection{Value\+Set Class Reference}
+\label{classValueSet}\index{ValueSet@{ValueSet}}
+
+
+A range of values attached to a \mbox{\hyperlink{classVarnode}{Varnode}} within a data-\/flow subsystem.  
+
+
+
+
+{\ttfamily \#include $<$rangeutil.\+hh$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classValueSet_1_1Equation}{Equation}}
+\begin{DoxyCompactList}\small\item\em An external that can be applied to a \mbox{\hyperlink{classValueSet}{Value\+Set}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} $\ast$ \mbox{\hyperlink{classValueSet_ae3b141f5e442baa61fcf01491b0dd267}{get\+Land\+Mark}} (void) const
+\begin{DoxyCompactList}\small\item\em Get any {\itshape landmark} range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classValueSet_a97d537023ade121f5574bb45fa84d929}{print\+Raw}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write a text description of {\bfseries{to}} the given stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int4 \mbox{\hyperlink{classValueSet_abb936eb42305246571cd42527b0f82a7}{M\+A\+X\+\_\+\+S\+T\+EP}} = 32
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classValueSet_af8af7508a4288bd7d6bc143044478f40}\label{classValueSet_af8af7508a4288bd7d6bc143044478f40}} 
+class {\bfseries Value\+Set\+Solver}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A range of values attached to a \mbox{\hyperlink{classVarnode}{Varnode}} within a data-\/flow subsystem. 
+
+This class acts as both the set of values for the \mbox{\hyperlink{classVarnode}{Varnode}} and as a node in a sub-\/graph overlaying the full data-\/flow of the function containing the \mbox{\hyperlink{classVarnode}{Varnode}}. The values are stored in the \mbox{\hyperlink{classCircleRange}{Circle\+Range}} field and can be interpreted either as absolute values (if {\bfseries{type\+Code}} is 0) or as values relative to a stack pointer or some other register (if {\bfseries{type\+Code}} is non-\/zero). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classValueSet_ae3b141f5e442baa61fcf01491b0dd267}\label{classValueSet_ae3b141f5e442baa61fcf01491b0dd267}} 
+\index{ValueSet@{ValueSet}!getLandMark@{getLandMark}}
+\index{getLandMark@{getLandMark}!ValueSet@{ValueSet}}
+\doxysubsubsection{\texorpdfstring{getLandMark()}{getLandMark()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} $\ast$ Value\+Set\+::get\+Land\+Mark (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get any {\itshape landmark} range. 
+
+If a landmark was associated with {\bfseries{this}} value set, return its range, otherwise return null. \begin{DoxyReturn}{Returns}
+the landmark range or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classValueSet_a97d537023ade121f5574bb45fa84d929}\label{classValueSet_a97d537023ade121f5574bb45fa84d929}} 
+\index{ValueSet@{ValueSet}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!ValueSet@{ValueSet}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Value\+Set\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Write a text description of {\bfseries{to}} the given stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to print to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classValueSet_abb936eb42305246571cd42527b0f82a7}\label{classValueSet_abb936eb42305246571cd42527b0f82a7}} 
+\index{ValueSet@{ValueSet}!MAX\_STEP@{MAX\_STEP}}
+\index{MAX\_STEP@{MAX\_STEP}!ValueSet@{ValueSet}}
+\doxysubsubsection{\texorpdfstring{MAX\_STEP}{MAX\_STEP}}
+{\footnotesize\ttfamily const int4 Value\+Set\+::\+M\+A\+X\+\_\+\+S\+T\+EP = 32\hspace{0.3cm}{\ttfamily [static]}}
+
+Maximum step inferred for a value set 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rangeutil_8hh}{rangeutil.\+hh}}\item 
+rangeutil.\+cc\end{DoxyCompactItemize}

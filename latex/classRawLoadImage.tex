@@ -1,0 +1,132 @@
+\hypertarget{classRawLoadImage}{}\doxysection{Raw\+Load\+Image Class Reference}
+\label{classRawLoadImage}\index{RawLoadImage@{RawLoadImage}}
+
+
+A simple raw binary loadimage.  
+
+
+
+
+{\ttfamily \#include $<$loadimage.\+hh$>$}
+
+
+
+Inheritance diagram for Raw\+Load\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classRawLoadImage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Raw\+Load\+Image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classRawLoadImage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRawLoadImage_aa3de896c28484086e22da165f678001f}\label{classRawLoadImage_aa3de896c28484086e22da165f678001f}} 
+\mbox{\hyperlink{classRawLoadImage_aa3de896c28484086e22da165f678001f}{Raw\+Load\+Image}} (const string \&f)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRawLoadImage}{Raw\+Load\+Image}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRawLoadImage_a0863902d12aba3ca097aa8329b27d8e8}{open}} (void)
+\begin{DoxyCompactList}\small\item\em Open the raw file for reading. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRawLoadImage_ad7216066780c11564979f945e9068b08}\label{classRawLoadImage_ad7216066780c11564979f945e9068b08}} 
+virtual \mbox{\hyperlink{classRawLoadImage_ad7216066780c11564979f945e9068b08}{$\sim$\+Raw\+Load\+Image}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRawLoadImage}{Raw\+Load\+Image}} destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRawLoadImage_ac66523f8d5e0533f4af6ee7bd48741cc}{load\+Fill}} (uint1 $\ast$ptr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classRawLoadImage_af6696aae484080c76a2fd0b059aa27c8}{get\+Arch\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get a string indicating the architecture type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRawLoadImage_aee25cd14ca80ad47db0b17d56cc31180}{adjust\+Vma}} (long adjust)
+\begin{DoxyCompactList}\small\item\em Adjust load addresses with a global offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A simple raw binary loadimage. 
+
+This is probably the simplest loadimage. Bytes from the image are read directly from a file stream. The address associated with each byte is determined by a single value, the vma, which is the address of the first byte in the file. No symbols or sections are supported 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRawLoadImage_aee25cd14ca80ad47db0b17d56cc31180}\label{classRawLoadImage_aee25cd14ca80ad47db0b17d56cc31180}} 
+\index{RawLoadImage@{RawLoadImage}!adjustVma@{adjustVma}}
+\index{adjustVma@{adjustVma}!RawLoadImage@{RawLoadImage}}
+\doxysubsubsection{\texorpdfstring{adjustVma()}{adjustVma()}}
+{\footnotesize\ttfamily void Raw\+Load\+Image\+::adjust\+Vma (\begin{DoxyParamCaption}\item[{long}]{adjust }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adjust load addresses with a global offset. 
+
+Most load image formats automatically encode information about the true loading address(es) for the data in the image. But if this is missing or incorrect, this routine can be used to make a global adjustment to the load address. Only one adjustment is made across {\itshape all} addresses in the image. The offset passed to this method is added to the stored or default value for any address queried in the image. This is most often used in a {\itshape raw} binary file format. In this case, the entire executable file is intended to be read straight into R\+AM, as one contiguous chunk, in order to be executed. In the absence of any other info, the first byte of the image file is loaded at offset 0. This method then would adjust the load address of the first byte. 
+\begin{DoxyParams}{Parameters}
+{\em adjust} & is the offset amount to be added to default values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLoadImage_a51a254f705fba6f0e6524995acd5aaa7}{Load\+Image}}.
+
+\mbox{\Hypertarget{classRawLoadImage_af6696aae484080c76a2fd0b059aa27c8}\label{classRawLoadImage_af6696aae484080c76a2fd0b059aa27c8}} 
+\index{RawLoadImage@{RawLoadImage}!getArchType@{getArchType}}
+\index{getArchType@{getArchType}!RawLoadImage@{RawLoadImage}}
+\doxysubsubsection{\texorpdfstring{getArchType()}{getArchType()}}
+{\footnotesize\ttfamily string Raw\+Load\+Image\+::get\+Arch\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a string indicating the architecture type. 
+
+The load image class is intended to be a generic front-\/end to the large variety of load formats in use. This method should return a string that identifies the particular architecture this particular image is intended to run on. It is currently the responsibility of any derived \mbox{\hyperlink{classLoadImage}{Load\+Image}} class to establish a format for this string, but it should generally contain some indication of the operating system and the processor. \begin{DoxyReturn}{Returns}
+the identifier string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLoadImage_a5103418147e95994f66e77746c0a0cfc}{Load\+Image}}.
+
+\mbox{\Hypertarget{classRawLoadImage_ac66523f8d5e0533f4af6ee7bd48741cc}\label{classRawLoadImage_ac66523f8d5e0533f4af6ee7bd48741cc}} 
+\index{RawLoadImage@{RawLoadImage}!loadFill@{loadFill}}
+\index{loadFill@{loadFill}!RawLoadImage@{RawLoadImage}}
+\doxysubsubsection{\texorpdfstring{loadFill()}{loadFill()}}
+{\footnotesize\ttfamily void Raw\+Load\+Image\+::load\+Fill (\begin{DoxyParamCaption}\item[{uint1 $\ast$}]{ptr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. 
+
+This is the {\itshape core} routine of a \mbox{\hyperlink{classLoadImage}{Load\+Image}}. Given a particular address range, this routine retrieves the exact byte values that are stored at that address when the executable is loaded into R\+AM. The caller must supply a pre-\/allocated array of bytes where the returned bytes should be stored. If the requested address range does not exist in the image, or otherwise can\textquotesingle{}t be retrieved, this method throws an \mbox{\hyperlink{structDataUnavailError}{Data\+Unavail\+Error}} exception. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & points to where the resulting bytes will be stored \\
+\hline
+{\em size} & is the number of bytes to retrieve from the image \\
+\hline
+{\em addr} & is the starting address of the bytes to retrieve \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}{Load\+Image}}.
+
+\mbox{\Hypertarget{classRawLoadImage_a0863902d12aba3ca097aa8329b27d8e8}\label{classRawLoadImage_a0863902d12aba3ca097aa8329b27d8e8}} 
+\index{RawLoadImage@{RawLoadImage}!open@{open}}
+\index{open@{open}!RawLoadImage@{RawLoadImage}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Raw\+Load\+Image\+::open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open the raw file for reading. 
+
+The file is opened and its size immediately recovered. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{loadimage_8hh}{loadimage.\+hh}}\item 
+loadimage.\+cc\end{DoxyCompactItemize}

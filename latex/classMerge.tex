@@ -1,0 +1,254 @@
+\hypertarget{classMerge}{}\doxysection{Merge Class Reference}
+\label{classMerge}\index{Merge@{Merge}}
+
+
+Class for merging low-\/level Varnodes into high-\/level High\+Variables.  
+
+
+
+
+{\ttfamily \#include $<$merge.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classMerge_abc0c74b3892b9724fd4091a126631089}{intersection}} (\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$a, \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Test the intersection of two High\+Variables and cache the result. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMerge_a682cf4cedcb80161fa47a1f0c7382a77}{inflate\+Test}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$a, \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$high)
+\begin{DoxyCompactList}\small\item\em Test if we can inflate the \mbox{\hyperlink{classCover}{Cover}} of the given \mbox{\hyperlink{classVarnode}{Varnode}} without incurring intersections. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_a157b6a6d44e6aec22f1bb77201f3e402}{inflate}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$a, \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$high)
+\begin{DoxyCompactList}\small\item\em Inflate the \mbox{\hyperlink{classCover}{Cover}} of a given \mbox{\hyperlink{classVarnode}{Varnode}} with a \mbox{\hyperlink{classHighVariable}{High\+Variable}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMerge_a819c900aaa428a745faa59335bf0b69e}{merge\+Test}} (\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$high, vector$<$ \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$ $>$ \&tmplist)
+\begin{DoxyCompactList}\small\item\em Test for intersections between a given \mbox{\hyperlink{classHighVariable}{High\+Variable}} and a list of other High\+Variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_a55762a93af96a7e8abab70b169302b59}{merge\+Opcode}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc)
+\begin{DoxyCompactList}\small\item\em Try to force merges of input to output for all p-\/code ops of a given type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_a319ac2d65a6dff86cbfda772d047b2e1}{merge\+By\+Datatype}} (Varnode\+Loc\+Set\+::const\+\_\+iterator startiter, Varnode\+Loc\+Set\+::const\+\_\+iterator enditer)
+\begin{DoxyCompactList}\small\item\em Try to merge all High\+Variables in the given range that have the same data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_a8045c24ce73080b02d4506f2047a414e}{merge\+Addr\+Tied}} (void)
+\begin{DoxyCompactList}\small\item\em Force the merge of {\itshape address} {\itshape tried} Varnodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_aedcf63d8d5400410d06ef4aa250275a1}{merge\+Marker}} (void)
+\begin{DoxyCompactList}\small\item\em Force the merge of input and output Varnodes to M\+U\+L\+T\+I\+E\+Q\+U\+AL and I\+N\+D\+I\+R\+E\+CT ops. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_a79f377000da91c9e50b89307fa88d268}{merge\+Adjacent}} (void)
+\begin{DoxyCompactList}\small\item\em Speculatively merge Varnodes that are input/output to the same p-\/code op. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_ab07666baf4d4fb03ee2243d22f15c25d}{merge\+Multi\+Entry}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMerge}{Merge}} together Varnodes mapped to Symbol\+Entrys from the same \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMerge_abb1f01b80297db3a5c37c9860af56162}{hide\+Shadows}} (\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$high)
+\begin{DoxyCompactList}\small\item\em Hide {\itshape shadow} Varnodes related to the given \mbox{\hyperlink{classHighVariable}{High\+Variable}} by consolidating C\+O\+PY chains. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_a0af9c332a00eee4f51242239e05bc916}{process\+Copy\+Trims}} (void)
+\begin{DoxyCompactList}\small\item\em Try to reduce/eliminate C\+O\+P\+Ys produced by the merge trimming process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMerge_a6f49b387659a09e702cb70cacb050ec1}{mark\+Internal\+Copies}} (void)
+\begin{DoxyCompactList}\small\item\em Mark redundant/internal C\+O\+PY Pcode\+Ops. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for merging low-\/level Varnodes into high-\/level High\+Variables. 
+
+As a node in Single Static Assignment (S\+SA) form, a \mbox{\hyperlink{classVarnode}{Varnode}} has at most one defining operation. To get a suitable notion of a single high-\/level variable (\mbox{\hyperlink{classHighVariable}{High\+Variable}}) that may be reassigned at multiple places in a single function, individual \mbox{\hyperlink{classVarnode}{Varnode}} objects can be {\itshape merged} into a \mbox{\hyperlink{classHighVariable}{High\+Variable}} object. \mbox{\hyperlink{classVarnode}{Varnode}} objects may be merged in this way if there is no pairwise intersection between each \mbox{\hyperlink{classVarnode}{Varnode}}\textquotesingle{}s \mbox{\hyperlink{classCover}{Cover}}, the ranges of code where the \mbox{\hyperlink{classVarnode}{Varnode}} holds its value.
+
+For a given function, this class attempts to merge Varnodes using various strategies and keeps track of \mbox{\hyperlink{classCover}{Cover}} intersections to facilitate the process. \mbox{\hyperlink{classMerge}{Merge}} strategies break up into two general categories\+: {\bfseries{forced}} merges, and {\bfseries{speculative}} merges. Forced merges {\itshape must} happen, and extra Varnodes may be added to split up problematic covers to enforce it. Forced merges include\+:
+\begin{DoxyItemize}
+\item Merging inputs and outputs of M\+U\+L\+T\+I\+E\+Q\+U\+AL and I\+N\+D\+I\+R\+E\+CT operations
+\item Merging Varnodes at global (persistent) storage locations
+\item Merging Varnodes at mapped stack locations
+\end{DoxyItemize}
+
+Speculative merges are attempted to reduce the overall number of variables defined by a function, but any given merge attempt is abandoned if there are \mbox{\hyperlink{classCover}{Cover}} intersections. No modification is made to the data-\/flow to force the merge. Speculative merges include\+:
+\begin{DoxyItemize}
+\item Merging an input and output \mbox{\hyperlink{classVarnode}{Varnode}} of a single p-\/code op
+\item Merging Varnodes that hold the same data-\/type 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMerge_abb1f01b80297db3a5c37c9860af56162}\label{classMerge_abb1f01b80297db3a5c37c9860af56162}} 
+\index{Merge@{Merge}!hideShadows@{hideShadows}}
+\index{hideShadows@{hideShadows}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{hideShadows()}{hideShadows()}}
+{\footnotesize\ttfamily bool Merge\+::hide\+Shadows (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$}]{high }\end{DoxyParamCaption})}
+
+
+
+Hide {\itshape shadow} Varnodes related to the given \mbox{\hyperlink{classHighVariable}{High\+Variable}} by consolidating C\+O\+PY chains. 
+
+If two Varnodes are copied from the same common ancestor then they will always contain the same value and can be considered {\bfseries{shadows}} of the same variable. If the paths from the ancestor to the two Varnodes aren\textquotesingle{}t properly nested, the two Varnodes will still look like distinct variables. This routine searches for this situation, relative to a single \mbox{\hyperlink{classHighVariable}{High\+Variable}}, and alters data-\/flow so that copying from ancestor to first \mbox{\hyperlink{classVarnode}{Varnode}} to second \mbox{\hyperlink{classVarnode}{Varnode}} becomes a single path. Both Varnodes then ultimately become instances of the same \mbox{\hyperlink{classHighVariable}{High\+Variable}}. 
+\begin{DoxyParams}{Parameters}
+{\em high} & is the given \mbox{\hyperlink{classHighVariable}{High\+Variable}} to search near \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made to data-\/flow 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMerge_a157b6a6d44e6aec22f1bb77201f3e402}\label{classMerge_a157b6a6d44e6aec22f1bb77201f3e402}} 
+\index{Merge@{Merge}!inflate@{inflate}}
+\index{inflate@{inflate}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{inflate()}{inflate()}}
+{\footnotesize\ttfamily void Merge\+::inflate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$}]{high }\end{DoxyParamCaption})}
+
+
+
+Inflate the \mbox{\hyperlink{classCover}{Cover}} of a given \mbox{\hyperlink{classVarnode}{Varnode}} with a \mbox{\hyperlink{classHighVariable}{High\+Variable}}. 
+
+An expression involving a \mbox{\hyperlink{classHighVariable}{High\+Variable}} can be propagated to all the read sites of the output \mbox{\hyperlink{classVarnode}{Varnode}} of the expression if the \mbox{\hyperlink{classVarnode}{Varnode}} \mbox{\hyperlink{classCover}{Cover}} can be {\bfseries{inflated}} to include the \mbox{\hyperlink{classCover}{Cover}} of the \mbox{\hyperlink{classHighVariable}{High\+Variable}}, even though the \mbox{\hyperlink{classVarnode}{Varnode}} is not part of the \mbox{\hyperlink{classHighVariable}{High\+Variable}}. This routine performs the inflation, assuming an intersection test is already performed. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} to inflate \\
+\hline
+{\em high} & is the \mbox{\hyperlink{classHighVariable}{High\+Variable}} to inflate with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMerge_a682cf4cedcb80161fa47a1f0c7382a77}\label{classMerge_a682cf4cedcb80161fa47a1f0c7382a77}} 
+\index{Merge@{Merge}!inflateTest@{inflateTest}}
+\index{inflateTest@{inflateTest}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{inflateTest()}{inflateTest()}}
+{\footnotesize\ttfamily bool Merge\+::inflate\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$}]{high }\end{DoxyParamCaption})}
+
+
+
+Test if we can inflate the \mbox{\hyperlink{classCover}{Cover}} of the given \mbox{\hyperlink{classVarnode}{Varnode}} without incurring intersections. 
+
+This routine tests whether an expression involving a \mbox{\hyperlink{classHighVariable}{High\+Variable}} can be propagated to all the read sites of the output \mbox{\hyperlink{classVarnode}{Varnode}} of the expression. This is possible only if the \mbox{\hyperlink{classVarnode}{Varnode}} \mbox{\hyperlink{classCover}{Cover}} can be {\bfseries{inflated}} to include the \mbox{\hyperlink{classCover}{Cover}} of the \mbox{\hyperlink{classHighVariable}{High\+Variable}}, even though the \mbox{\hyperlink{classVarnode}{Varnode}} is not part of the \mbox{\hyperlink{classHighVariable}{High\+Variable}}. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} to inflate \\
+\hline
+{\em high} & is the \mbox{\hyperlink{classHighVariable}{High\+Variable}} being propagated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the \mbox{\hyperlink{classVarnode}{Varnode}} can be inflated without intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMerge_abc0c74b3892b9724fd4091a126631089}\label{classMerge_abc0c74b3892b9724fd4091a126631089}} 
+\index{Merge@{Merge}!intersection@{intersection}}
+\index{intersection@{intersection}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{intersection()}{intersection()}}
+{\footnotesize\ttfamily bool Merge\+::intersection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Test the intersection of two High\+Variables and cache the result. 
+
+If the Covers of the two variables intersect, this routine returns {\bfseries{true}}. To avoid expensive computation on the \mbox{\hyperlink{classCover}{Cover}} objects themselves, the test result associated with the pair of High\+Variables is cached. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classHighVariable}{High\+Variable}} \\
+\hline
+{\em b} & is the second \mbox{\hyperlink{classHighVariable}{High\+Variable}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the variables intersect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMerge_a6f49b387659a09e702cb70cacb050ec1}\label{classMerge_a6f49b387659a09e702cb70cacb050ec1}} 
+\index{Merge@{Merge}!markInternalCopies@{markInternalCopies}}
+\index{markInternalCopies@{markInternalCopies}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{markInternalCopies()}{markInternalCopies()}}
+{\footnotesize\ttfamily void Merge\+::mark\+Internal\+Copies (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Mark redundant/internal C\+O\+PY Pcode\+Ops. 
+
+Run through all C\+O\+PY, S\+U\+B\+P\+I\+E\+CE, and P\+I\+E\+CE operations (Pcode\+Ops that copy data) and characterize those that are {\itshape internal} (copy data between storage locations representing the same variable) or {\itshape redundant} (perform the same copy as an earlier operation). These, as a result, are not printed in the final source code representation. \mbox{\Hypertarget{classMerge_a8045c24ce73080b02d4506f2047a414e}\label{classMerge_a8045c24ce73080b02d4506f2047a414e}} 
+\index{Merge@{Merge}!mergeAddrTied@{mergeAddrTied}}
+\index{mergeAddrTied@{mergeAddrTied}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{mergeAddrTied()}{mergeAddrTied()}}
+{\footnotesize\ttfamily void Merge\+::merge\+Addr\+Tied (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Force the merge of {\itshape address} {\itshape tried} Varnodes. 
+
+For each set of address tied Varnodes with the same size and storage address, merge them into a single \mbox{\hyperlink{classHighVariable}{High\+Variable}}. The merges are {\itshape forced}, so any \mbox{\hyperlink{classCover}{Cover}} intersections must be resolved by altering data-\/flow, which involves inserting additional C\+O\+PY ops and {\itshape unique} Varnodes. \mbox{\Hypertarget{classMerge_a79f377000da91c9e50b89307fa88d268}\label{classMerge_a79f377000da91c9e50b89307fa88d268}} 
+\index{Merge@{Merge}!mergeAdjacent@{mergeAdjacent}}
+\index{mergeAdjacent@{mergeAdjacent}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{mergeAdjacent()}{mergeAdjacent()}}
+{\footnotesize\ttfamily void Merge\+::merge\+Adjacent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Speculatively merge Varnodes that are input/output to the same p-\/code op. 
+
+If a single p-\/code op has an input and output \mbox{\hyperlink{classHighVariable}{High\+Variable}} that share the same data-\/type, attempt to merge them. Each merge is speculative and is skipped if it would introduce \mbox{\hyperlink{classCover}{Cover}} intersections. \mbox{\Hypertarget{classMerge_a319ac2d65a6dff86cbfda772d047b2e1}\label{classMerge_a319ac2d65a6dff86cbfda772d047b2e1}} 
+\index{Merge@{Merge}!mergeByDatatype@{mergeByDatatype}}
+\index{mergeByDatatype@{mergeByDatatype}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{mergeByDatatype()}{mergeByDatatype()}}
+{\footnotesize\ttfamily void Merge\+::merge\+By\+Datatype (\begin{DoxyParamCaption}\item[{Varnode\+Loc\+Set\+::const\+\_\+iterator}]{startiter,  }\item[{Varnode\+Loc\+Set\+::const\+\_\+iterator}]{enditer }\end{DoxyParamCaption})}
+
+
+
+Try to merge all High\+Variables in the given range that have the same data-\/type. 
+
+High\+Variables that have an instance within the given \mbox{\hyperlink{classVarnode}{Varnode}} range are sorted into groups based on their data-\/type. Then an attempt is made to merge all the High\+Variables within a group. If a particular merge causes \mbox{\hyperlink{classCover}{Cover}} intersection, it is skipped. 
+\begin{DoxyParams}{Parameters}
+{\em startiter} & is the start of the given range of Varnodes \\
+\hline
+{\em enditer} & is the end of the given range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMerge_aedcf63d8d5400410d06ef4aa250275a1}\label{classMerge_aedcf63d8d5400410d06ef4aa250275a1}} 
+\index{Merge@{Merge}!mergeMarker@{mergeMarker}}
+\index{mergeMarker@{mergeMarker}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{mergeMarker()}{mergeMarker()}}
+{\footnotesize\ttfamily void Merge\+::merge\+Marker (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Force the merge of input and output Varnodes to M\+U\+L\+T\+I\+E\+Q\+U\+AL and I\+N\+D\+I\+R\+E\+CT ops. 
+
+Run through all M\+U\+L\+T\+I\+E\+Q\+U\+AL and I\+N\+D\+I\+R\+E\+CT ops in the function. Force the merge of each input \mbox{\hyperlink{classVarnode}{Varnode}} with the output \mbox{\hyperlink{classVarnode}{Varnode}}, doing data-\/flow modification if necessary to resolve \mbox{\hyperlink{classCover}{Cover}} intersections. \mbox{\Hypertarget{classMerge_ab07666baf4d4fb03ee2243d22f15c25d}\label{classMerge_ab07666baf4d4fb03ee2243d22f15c25d}} 
+\index{Merge@{Merge}!mergeMultiEntry@{mergeMultiEntry}}
+\index{mergeMultiEntry@{mergeMultiEntry}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{mergeMultiEntry()}{mergeMultiEntry()}}
+{\footnotesize\ttfamily void Merge\+::merge\+Multi\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMerge}{Merge}} together Varnodes mapped to Symbol\+Entrys from the same \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+Symbols that have more than one \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} may attach to more than one \mbox{\hyperlink{classVarnode}{Varnode}}. These Varnodes need to be merged to properly represent a single variable. \mbox{\Hypertarget{classMerge_a55762a93af96a7e8abab70b169302b59}\label{classMerge_a55762a93af96a7e8abab70b169302b59}} 
+\index{Merge@{Merge}!mergeOpcode@{mergeOpcode}}
+\index{mergeOpcode@{mergeOpcode}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{mergeOpcode()}{mergeOpcode()}}
+{\footnotesize\ttfamily void Merge\+::merge\+Opcode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc }\end{DoxyParamCaption})}
+
+
+
+Try to force merges of input to output for all p-\/code ops of a given type. 
+
+For a given opcode, run through all ops in the function in block/address order and try to merge each input \mbox{\hyperlink{classHighVariable}{High\+Variable}} with the output \mbox{\hyperlink{classHighVariable}{High\+Variable}}. If this would introduce \mbox{\hyperlink{classCover}{Cover}} intersections, the merge is skipped. This is generally used to try to merge the input and output of C\+O\+PY ops if possible. 
+\begin{DoxyParams}{Parameters}
+{\em opc} & is the op-\/code type to merge \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMerge_a819c900aaa428a745faa59335bf0b69e}\label{classMerge_a819c900aaa428a745faa59335bf0b69e}} 
+\index{Merge@{Merge}!mergeTest@{mergeTest}}
+\index{mergeTest@{mergeTest}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{mergeTest()}{mergeTest()}}
+{\footnotesize\ttfamily bool Merge\+::merge\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$}]{high,  }\item[{vector$<$ \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$ $>$ \&}]{tmplist }\end{DoxyParamCaption})}
+
+
+
+Test for intersections between a given \mbox{\hyperlink{classHighVariable}{High\+Variable}} and a list of other High\+Variables. 
+
+If there is any \mbox{\hyperlink{classCover}{Cover}} intersection between the given \mbox{\hyperlink{classHighVariable}{High\+Variable}} and one in the list, this routine returns {\bfseries{false}}. Otherwise, the given \mbox{\hyperlink{classHighVariable}{High\+Variable}} is added to the end of the list and {\bfseries{true}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em high} & is the given \mbox{\hyperlink{classHighVariable}{High\+Variable}} \\
+\hline
+{\em tmplist} & is the list of High\+Variables to test against \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are no pairwise intersections. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMerge_a0af9c332a00eee4f51242239e05bc916}\label{classMerge_a0af9c332a00eee4f51242239e05bc916}} 
+\index{Merge@{Merge}!processCopyTrims@{processCopyTrims}}
+\index{processCopyTrims@{processCopyTrims}!Merge@{Merge}}
+\doxysubsubsection{\texorpdfstring{processCopyTrims()}{processCopyTrims()}}
+{\footnotesize\ttfamily void Merge\+::process\+Copy\+Trims (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Try to reduce/eliminate C\+O\+P\+Ys produced by the merge trimming process. 
+
+In order to force merging of certain Varnodes, extra C\+O\+PY operations may be inserted to reduce their \mbox{\hyperlink{classCover}{Cover}} ranges, and multiple C\+O\+P\+Ys from the same \mbox{\hyperlink{classVarnode}{Varnode}} can be created this way. This method collects sets of C\+O\+P\+Ys generated in this way that have the same input \mbox{\hyperlink{classVarnode}{Varnode}} and then tries to replace the C\+O\+P\+Ys with fewer or a single C\+O\+PY. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{merge_8hh}{merge.\+hh}}\item 
+merge.\+cc\end{DoxyCompactItemize}

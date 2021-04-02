@@ -1,0 +1,982 @@
+\hypertarget{classFuncProto}{}\doxysection{Func\+Proto Class Reference}
+\label{classFuncProto}\index{FuncProto@{FuncProto}}
+
+
+A {\bfseries{function}} {\bfseries{prototype}}.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Func\+Proto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classFuncProto__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFuncProto_a9c7db7dec63a18a9de97b0ba9f6f42bd}\label{classFuncProto_a9c7db7dec63a18a9de97b0ba9f6f42bd}} 
+\mbox{\hyperlink{classFuncProto_a9c7db7dec63a18a9de97b0ba9f6f42bd}{Func\+Proto}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a142706f5f3c9086635f812501521f3b4}\label{classFuncProto_a142706f5f3c9086635f812501521f3b4}} 
+\mbox{\hyperlink{classFuncProto_a142706f5f3c9086635f812501521f3b4}{$\sim$\+Func\+Proto}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a9bd4f3bc764b11b57f4e71b9d19df27d}{copy}} (const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy another function prototype. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_ace26c345cdf567de704b24cd99e8a254}\label{classFuncProto_ace26c345cdf567de704b24cd99e8a254}} 
+void \mbox{\hyperlink{classFuncProto_ace26c345cdf567de704b24cd99e8a254}{copy\+Flow\+Effects}} (const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy properties that affect data-\/flow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a1b220dc769358d73110df5c60744566b}{get\+Pieces}} (\mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} \&pieces) const
+\begin{DoxyCompactList}\small\item\em Get the raw pieces of the prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a8e6f53c7733c8aa58d9138a8f3add2ce}{set\+Pieces}} (const \mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} \&pieces)
+\begin{DoxyCompactList}\small\item\em Set {\bfseries{this}} prototype based on raw pieces. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_adc83eddece4cb123d198ad288dfa89bd}{set\+Scope}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$s, const \mbox{\hyperlink{classAddress}{Address}} \&startpoint)
+\begin{DoxyCompactList}\small\item\em Set a backing symbol \mbox{\hyperlink{classScope}{Scope}} for {\bfseries{this}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_af69f89b0b3c5165e521d33b658599699}{set\+Internal}} (\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$m, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$vt)
+\begin{DoxyCompactList}\small\item\em Set internal backing storage for {\bfseries{this}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_ae8c14d15c7296c47deae3433687b1b15}{set\+Model}} (\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Set the prototype model for {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_aab52f093617d8bd8a67f011ba5a0d324}\label{classFuncProto_aab52f093617d8bd8a67f011ba5a0d324}} 
+bool \mbox{\hyperlink{classFuncProto_aab52f093617d8bd8a67f011ba5a0d324}{is\+Input\+Locked}} (void) const
+\begin{DoxyCompactList}\small\item\em Are input data-\/types locked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a4afe216709633a3b075111d6f1b7148f}{set\+Input\+Lock}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the data-\/type lock on input parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a7593a0880a632bce714a376244ef4f9a}{set\+Output\+Lock}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the data-\/type lock on the return value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_acc303c449c418dd875319c6f6cd9436f}{set\+Model\+Lock}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the lock on the prototype model for {\bfseries{this}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a843bc3ca11536028c5cb00ce5479182d}{set\+Inline}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the {\itshape in-\/line} setting for functions with {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFuncProto_a88af8e37c1ddb25fd9d6d8322ec436c6}{get\+Inject\+Id}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the injection id associated with {\bfseries{this}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFuncProto_a93a764c6b7aa6f4718a38df9881666df}{get\+Return\+Bytes\+Consumed}} (void) const
+\begin{DoxyCompactList}\small\item\em Get an estimate of the number of bytes consumed by callers of {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_abd05102695a39cdad0170eeb92884b3a}{set\+Return\+Bytes\+Consumed}} (int4 val)
+\begin{DoxyCompactList}\small\item\em Set the number of bytes consumed by callers of {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a2f1510914c66b2201248a6a06d282948}\label{classFuncProto_a2f1510914c66b2201248a6a06d282948}} 
+bool \mbox{\hyperlink{classFuncProto_a2f1510914c66b2201248a6a06d282948}{is\+No\+Return}} (void) const
+\begin{DoxyCompactList}\small\item\em Does a function with {\bfseries{this}} prototype never return. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_aacaf0bda9b424dfd5c6a28d3a45fb100}{set\+No\+Return}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the {\itshape no-\/return} setting for functions with {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a2a274b3ff58e50e73e4eaa82cb08bae3}\label{classFuncProto_a2a274b3ff58e50e73e4eaa82cb08bae3}} 
+bool \mbox{\hyperlink{classFuncProto_a2a274b3ff58e50e73e4eaa82cb08bae3}{has\+This\+Pointer}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} a prototype for a class method, taking a {\itshape this} pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a007c1b4a9c33831738e3ac9bc283c5a4}\label{classFuncProto_a007c1b4a9c33831738e3ac9bc283c5a4}} 
+bool \mbox{\hyperlink{classFuncProto_a007c1b4a9c33831738e3ac9bc283c5a4}{is\+Constructor}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} prototype for a class constructor method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a1ff2f80e5cf4043147ccd83a863ee83f}{set\+Constructor}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether {\bfseries{this}} prototype is a {\itshape constructor} method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_aed492939de15e4ea60f9970f2ec685ac}\label{classFuncProto_aed492939de15e4ea60f9970f2ec685ac}} 
+bool \mbox{\hyperlink{classFuncProto_aed492939de15e4ea60f9970f2ec685ac}{is\+Destructor}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} prototype for a class destructor method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_aa191f5c52ce98ba14ef14f63a763a7da}{set\+Destructor}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether {\bfseries{this}} prototype is a {\itshape destructor} method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_abeba6c216afa6ad43160d69a10433fab}\label{classFuncProto_abeba6c216afa6ad43160d69a10433fab}} 
+bool \mbox{\hyperlink{classFuncProto_abeba6c216afa6ad43160d69a10433fab}{has\+Input\+Errors}} (void) const
+\begin{DoxyCompactList}\small\item\em Has {\bfseries{this}} prototype been marked as having an incorrect input parameter descriptions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_ace0306cd7ee2a040dd783bd5e7606370}\label{classFuncProto_ace0306cd7ee2a040dd783bd5e7606370}} 
+bool \mbox{\hyperlink{classFuncProto_ace0306cd7ee2a040dd783bd5e7606370}{has\+Output\+Errors}} (void) const
+\begin{DoxyCompactList}\small\item\em Has {\bfseries{this}} prototype been marked as having an incorrect return value description. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_ad5f36aaa3e2d1d7cdc90d101065abbc0}{set\+Input\+Errors}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the input error setting for {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_ac8eacd70fbc6e4cd5d694d2ae5b1ed64}{set\+Output\+Errors}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the output error setting for {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a22889d3a526dce245368b8de9c889529}{resolve\+Extra\+Pop}} (void)
+\begin{DoxyCompactList}\small\item\em Assuming {\bfseries{this}} prototype is locked, calculate the {\itshape extrapop}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_ae91eb49088323b42bdb38b83586eea6f}\label{classFuncProto_ae91eb49088323b42bdb38b83586eea6f}} 
+void \mbox{\hyperlink{classFuncProto_ae91eb49088323b42bdb38b83586eea6f}{clear\+Unlocked\+Input}} (void)
+\begin{DoxyCompactList}\small\item\em Clear input parameters that have not been locked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a3c7428f70c6c7e040b4d090f3efeee08}\label{classFuncProto_a3c7428f70c6c7e040b4d090f3efeee08}} 
+void \mbox{\hyperlink{classFuncProto_a3c7428f70c6c7e040b4d090f3efeee08}{clear\+Unlocked\+Output}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the return value if it has not been locked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_af8059930e66577c8906ade2f36f65cce}\label{classFuncProto_af8059930e66577c8906ade2f36f65cce}} 
+void \mbox{\hyperlink{classFuncProto_af8059930e66577c8906ade2f36f65cce}{clear\+Input}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all input parameters regardless of lock. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a0bb585835251e43a5c9f644519e69dc0}\label{classFuncProto_a0bb585835251e43a5c9f644519e69dc0}} 
+void \mbox{\hyperlink{classFuncProto_a0bb585835251e43a5c9f644519e69dc0}{cancel\+Inject\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em Turn-\/off any in-\/lining for this function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_afd3b71963b55dd19755eeaccd016c4bf}{resolve\+Model}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active)
+\begin{DoxyCompactList}\small\item\em If {\bfseries{this}} has a {\itshape merged} model, pick the most likely model (from the merged set) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a06ef0c088573715372df24ef978bd610}{derive\+Input\+Map}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Given a list of input {\itshape trials}, derive the most likely inputs for {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a750224dcda509d76d01e3f45a3d38117}{derive\+Output\+Map}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Given a list of output {\itshape trials}, derive the most likely return value for {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_a961837591bf1445a8db9d7604c1e5046}{check\+Input\+Join}} (const \mbox{\hyperlink{classAddress}{Address}} \&hiaddr, int4 hisz, const \mbox{\hyperlink{classAddress}{Address}} \&loaddr, int4 losz) const
+\begin{DoxyCompactList}\small\item\em Check if the given two input storage locations can represent a single logical parameter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_a768d557c966fc2f59c8ae0f09777b4fe}{check\+Input\+Split}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size, int4 splitpoint) const
+\begin{DoxyCompactList}\small\item\em Check if it makes sense to split a single storage location into two input parameters. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_ae89afc199ba2c4c8261dac381c5e426b}{update\+Input\+Types}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&triallist, \mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$activeinput)
+\begin{DoxyCompactList}\small\item\em Update input parameters based on \mbox{\hyperlink{classVarnode}{Varnode}} trials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a33463f351b0ebc8c8f6065eff896dbc3}{update\+Input\+No\+Types}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&triallist, \mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$activeinput)
+\begin{DoxyCompactList}\small\item\em Update input parameters based on \mbox{\hyperlink{classVarnode}{Varnode}} trials, but do not store the data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a56cbde2e23cdcf41ddb870721e02be6b}{update\+Output\+Types}} (const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&triallist)
+\begin{DoxyCompactList}\small\item\em Update the return value based on \mbox{\hyperlink{classVarnode}{Varnode}} trials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a882e34d08f3e4e44ba5aa25b87c84bfe}{update\+Output\+No\+Types}} (const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&triallist, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$factory)
+\begin{DoxyCompactList}\small\item\em Update the return value based on \mbox{\hyperlink{classVarnode}{Varnode}} trials, but don\textquotesingle{}t store the data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a9ad6aba5f6731281a4c16fdfac76de2c}{update\+All\+Types}} (const vector$<$ string $>$ \&namelist, const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&typelist, bool dtdtdt)
+\begin{DoxyCompactList}\small\item\em Set {\bfseries{this}} entire function prototype based on a list of names and data-\/types. \end{DoxyCompactList}\item 
+uint4 \mbox{\hyperlink{classFuncProto_a906c0e176919bd0ced34e337445c2bf7}{has\+Effect}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size) const
+\begin{DoxyCompactList}\small\item\em Calculate the effect {\bfseries{this}} has an a given storage location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a802de184a6ac675b8f4bb4c4cb47a194}\label{classFuncProto_a802de184a6ac675b8f4bb4c4cb47a194}} 
+vector$<$ \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classFuncProto_a802de184a6ac675b8f4bb4c4cb47a194}{effect\+Begin}} (void) const
+\begin{DoxyCompactList}\small\item\em Get iterator to front of \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_a75adeed5dd962662f85c69b6104a8d07}\label{classFuncProto_a75adeed5dd962662f85c69b6104a8d07}} 
+vector$<$ \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classFuncProto_a75adeed5dd962662f85c69b6104a8d07}{effect\+End}} (void) const
+\begin{DoxyCompactList}\small\item\em Get iterator to end of \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} list. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFuncProto_af903eb699778675e96f0d3376b505732}{num\+Likely\+Trash}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of {\itshape likely-\/trash} locations. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& \mbox{\hyperlink{classFuncProto_a078b7588849b80acc7c1d1ba13cda5f3}{get\+Likely\+Trash}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get the i-\/th {\itshape likely-\/trash} location. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFuncProto_abb3a9b7304fda4d72942f76ef64d725b}{characterize\+As\+Input\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size) const
+\begin{DoxyCompactList}\small\item\em Decide whether a given storage location could be, or could hold, an input parameter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_a59ed6ca81a4b601ae81f4080a5bf89fa}{possible\+Input\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size) const
+\begin{DoxyCompactList}\small\item\em Decide whether a given storage location could be an input parameter. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_a65c37f6adddd70f3fd17500dcacd0c92}{possible\+Output\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size) const
+\begin{DoxyCompactList}\small\item\em Decide whether a given storage location could be a return value. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFuncProto_a07b4705cc5b9695e8c96e1e9294f0cfb}{get\+Max\+Input\+Delay}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the maximum heritage delay across all possible input parameters. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFuncProto_a79cb1fac9b0d2d2c55d3ff4fa7db5c27}{get\+Max\+Output\+Delay}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the maximum heritage delay across all possible return values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_af0fe71f261f3593c98efe396973d5775}{unjustified\+Input\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Check if the given storage location looks like an {\itshape unjustified} input parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{classFuncProto_ace1a73b8df1756f6945df97319270508}{assumed\+Input\+Extension}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Get the type of extension and containing input parameter for the given storage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{classFuncProto_a2550a272235e295512ee5eb7a2674638}{assumed\+Output\+Extension}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Get the type of extension and containing return value location for the given storage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_ac2e92071dcc850f3dc74cd3e5ce85123}{get\+Biggest\+Contained\+Input\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Pass-\/back the biggest potential input parameter contained within the given range. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFuncProto_aa5ee60788e6d8b4de304e2c5955a393b}{is\+Compatible}} (const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Decide if {\bfseries{this}} can be safely restricted to match another prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_acf8d609764a4fd6c38cb0c284f225180}{print\+Raw}} (const string \&funcname, ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print {\bfseries{this}} prototype as a single line of text. \end{DoxyCompactList}\item 
+uint4 \mbox{\hyperlink{classFuncProto_aeb1c9aa013921f2738ad28dce59867e6}{get\+Comparable\+Flags}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the comparable properties of {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a4da5ce755480a4eded9bedff2c6e274f}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} to an X\+ML stream as a $<$prototype$>$ tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFuncProto_a4c4f9da74ee904e6abfa195bd843521e}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classFuncProto_a75f9569f65cd6472f80d3e85d8453ced}{param\+Shift}} (int4 paramshift)
+\begin{DoxyCompactList}\small\item\em Add parameters to the front of the input parameter list. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFuncProto_ab1a494d8691b68a76a56495907ab9f6d}\label{classFuncProto_ab1a494d8691b68a76a56495907ab9f6d}} 
+void \mbox{\hyperlink{classFuncProto_ab1a494d8691b68a76a56495907ab9f6d}{set\+Paramshift\+Applied}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether a parameter shift has been applied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A {\bfseries{function}} {\bfseries{prototype}}. 
+
+A description of the parameters and return value for a specific function. Parameter descriptions include both source code features like {\itshape name} and {\itshape data-\/type} but also give the storage location. Storage follows a specific parameter passing convention (\mbox{\hyperlink{classProtoModel}{Proto\+Model}}), although individual parameters may be customized. The prototype describes numerous properties related to calling the specific function\+:
+\begin{DoxyItemize}
+\item Side-\/effects on non-\/parameter storage locations (like save registers)
+\item P-\/code injection associated with the function (uponentry, uponreturn, callfixup)
+\item Additional bytes ({\bfseries{extrapop}}) popped from the stack by the function
+\item Method flags (thiscall, is\+\_\+constructor, is\+\_\+destructor) 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFuncProto_ace1a73b8df1756f6945df97319270508}\label{classFuncProto_ace1a73b8df1756f6945df97319270508}} 
+\index{FuncProto@{FuncProto}!assumedInputExtension@{assumedInputExtension}}
+\index{assumedInputExtension@{assumedInputExtension}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{assumedInputExtension()}{assumedInputExtension()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} Func\+Proto\+::assumed\+Input\+Extension (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the type of extension and containing input parameter for the given storage. 
+
+If the given storage is properly contained within a normal parameter and the model typically extends a small value into the full container, pass back the full container and the type of extension. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given storage \\
+\hline
+{\em size} & is the number of bytes in the given storage \\
+\hline
+{\em res} & is the parameter storage to pass back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the extension operator (I\+N\+T\+\_\+\+Z\+E\+XT I\+N\+T\+\_\+\+S\+E\+XT) or I\+N\+T\+\_\+\+C\+O\+PY if there is no extension. I\+N\+T\+\_\+\+P\+I\+E\+CE indicates the extension is determined by the specific prototype. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a2550a272235e295512ee5eb7a2674638}\label{classFuncProto_a2550a272235e295512ee5eb7a2674638}} 
+\index{FuncProto@{FuncProto}!assumedOutputExtension@{assumedOutputExtension}}
+\index{assumedOutputExtension@{assumedOutputExtension}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{assumedOutputExtension()}{assumedOutputExtension()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} Func\+Proto\+::assumed\+Output\+Extension (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the type of extension and containing return value location for the given storage. 
+
+If the given storage is properly contained within a normal return value location and the model typically extends a small value into the full container, pass back the full container and the type of extension. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given storage \\
+\hline
+{\em size} & is the number of bytes in the given storage \\
+\hline
+{\em res} & is the parameter storage to pass back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the extension operator (I\+N\+T\+\_\+\+Z\+E\+XT I\+N\+T\+\_\+\+S\+E\+XT) or I\+N\+T\+\_\+\+C\+O\+PY if there is no extension. I\+N\+T\+\_\+\+P\+I\+E\+CE indicates the extension is determined by the specific prototype. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_abb3a9b7304fda4d72942f76ef64d725b}\label{classFuncProto_abb3a9b7304fda4d72942f76ef64d725b}} 
+\index{FuncProto@{FuncProto}!characterizeAsInputParam@{characterizeAsInputParam}}
+\index{characterizeAsInputParam@{characterizeAsInputParam}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{characterizeAsInputParam()}{characterizeAsInputParam()}}
+{\footnotesize\ttfamily int4 Func\+Proto\+::characterize\+As\+Input\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Decide whether a given storage location could be, or could hold, an input parameter. 
+
+If the input is locked, check if the location overlaps one of the current parameters. Otherwise, check if the location overlaps an entry in the prototype model. Return\+:
+\begin{DoxyItemize}
+\item 0 if the location neither contains or is contained by a parameter storage location
+\item 1 if the location is contained by a parameter storage location
+\item 2 if the location contains a parameter storage location 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given storage location \\
+\hline
+{\em size} & is the number of bytes in the storage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the characterization code 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classFuncProto_a961837591bf1445a8db9d7604c1e5046}\label{classFuncProto_a961837591bf1445a8db9d7604c1e5046}} 
+\index{FuncProto@{FuncProto}!checkInputJoin@{checkInputJoin}}
+\index{checkInputJoin@{checkInputJoin}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{checkInputJoin()}{checkInputJoin()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::check\+Input\+Join (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{hiaddr,  }\item[{int4}]{hisz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loaddr,  }\item[{int4}]{losz }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if the given two input storage locations can represent a single logical parameter. 
+
+For {\bfseries{this}} prototype, do the two (hi/lo) locations represent consecutive input parameter locations that can be replaced by a single logical parameter. 
+\begin{DoxyParams}{Parameters}
+{\em hiaddr} & is the address of the most significant part of the value \\
+\hline
+{\em hisz} & is the size of the most significant part in bytes \\
+\hline
+{\em loaddr} & is the address of the least significant part of the value \\
+\hline
+{\em losz} & is the size of the least significant part in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the two pieces can be joined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a768d557c966fc2f59c8ae0f09777b4fe}\label{classFuncProto_a768d557c966fc2f59c8ae0f09777b4fe}} 
+\index{FuncProto@{FuncProto}!checkInputSplit@{checkInputSplit}}
+\index{checkInputSplit@{checkInputSplit}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{checkInputSplit()}{checkInputSplit()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::check\+Input\+Split (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size,  }\item[{int4}]{splitpoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if it makes sense to split a single storage location into two input parameters. 
+
+A storage location and split point is provided, implying two new storage locations. Does {\bfseries{this}} prototype allow these locations to be considered separate parameters. 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of provided storage location \\
+\hline
+{\em size} & is the size of the location in bytes \\
+\hline
+{\em splitpoint} & is the number of bytes to consider in the first (in address order) piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the storage location can be split 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a9bd4f3bc764b11b57f4e71b9d19df27d}\label{classFuncProto_a9bd4f3bc764b11b57f4e71b9d19df27d}} 
+\index{FuncProto@{FuncProto}!copy@{copy}}
+\index{copy@{copy}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Func\+Proto\+::copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Copy another function prototype. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other function prototype to copy into {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a06ef0c088573715372df24ef978bd610}\label{classFuncProto_a06ef0c088573715372df24ef978bd610}} 
+\index{FuncProto@{FuncProto}!deriveInputMap@{deriveInputMap}}
+\index{deriveInputMap@{deriveInputMap}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{deriveInputMap()}{deriveInputMap()}}
+{\footnotesize\ttfamily void Func\+Proto\+::derive\+Input\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a list of input {\itshape trials}, derive the most likely inputs for {\bfseries{this}} prototype. 
+
+Trials are sorted and marked as {\itshape used} or not. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the collection of \mbox{\hyperlink{classVarnode}{Varnode}} input trials \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a750224dcda509d76d01e3f45a3d38117}\label{classFuncProto_a750224dcda509d76d01e3f45a3d38117}} 
+\index{FuncProto@{FuncProto}!deriveOutputMap@{deriveOutputMap}}
+\index{deriveOutputMap@{deriveOutputMap}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{deriveOutputMap()}{deriveOutputMap()}}
+{\footnotesize\ttfamily void Func\+Proto\+::derive\+Output\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a list of output {\itshape trials}, derive the most likely return value for {\bfseries{this}} prototype. 
+
+One trial (at most) is marked {\itshape used} and moved to the front of the list 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the collection of output trials \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_ac2e92071dcc850f3dc74cd3e5ce85123}\label{classFuncProto_ac2e92071dcc850f3dc74cd3e5ce85123}} 
+\index{FuncProto@{FuncProto}!getBiggestContainedInputParam@{getBiggestContainedInputParam}}
+\index{getBiggestContainedInputParam@{getBiggestContainedInputParam}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getBiggestContainedInputParam()}{getBiggestContainedInputParam()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::get\+Biggest\+Contained\+Input\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const}
+
+
+
+Pass-\/back the biggest potential input parameter contained within the given range. 
+
+Pass-\/back the biggest input parameter contained within the given range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the given range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+{\em res} & will hold the parameter storage description being passed back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there is at least one parameter contained in the range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_aeb1c9aa013921f2738ad28dce59867e6}\label{classFuncProto_aeb1c9aa013921f2738ad28dce59867e6}} 
+\index{FuncProto@{FuncProto}!getComparableFlags@{getComparableFlags}}
+\index{getComparableFlags@{getComparableFlags}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getComparableFlags()}{getComparableFlags()}}
+{\footnotesize\ttfamily uint4 Func\+Proto\+::get\+Comparable\+Flags (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the comparable properties of {\bfseries{this}} prototype. 
+
+Get properties not including locking, error, and inlining flags. \begin{DoxyReturn}{Returns}
+the active set of flags for {\bfseries{this}} prototype 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a88af8e37c1ddb25fd9d6d8322ec436c6}\label{classFuncProto_a88af8e37c1ddb25fd9d6d8322ec436c6}} 
+\index{FuncProto@{FuncProto}!getInjectId@{getInjectId}}
+\index{getInjectId@{getInjectId}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getInjectId()}{getInjectId()}}
+{\footnotesize\ttfamily int4 Func\+Proto\+::get\+Inject\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the injection id associated with {\bfseries{this}}. 
+
+A non-\/negative id indicates a {\itshape call-\/fixup} is used to in-\/line function\textquotesingle{}s with {\bfseries{this}} prototype. \begin{DoxyReturn}{Returns}
+the id value corresponding to the specific call-\/fixup or -\/1 if there is no call-\/fixup 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a078b7588849b80acc7c1d1ba13cda5f3}\label{classFuncProto_a078b7588849b80acc7c1d1ba13cda5f3}} 
+\index{FuncProto@{FuncProto}!getLikelyTrash@{getLikelyTrash}}
+\index{getLikelyTrash@{getLikelyTrash}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getLikelyTrash()}{getLikelyTrash()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& Func\+Proto\+::get\+Likely\+Trash (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Get the i-\/th {\itshape likely-\/trash} location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the storage location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the storage location which may hold a trash value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a07b4705cc5b9695e8c96e1e9294f0cfb}\label{classFuncProto_a07b4705cc5b9695e8c96e1e9294f0cfb}} 
+\index{FuncProto@{FuncProto}!getMaxInputDelay@{getMaxInputDelay}}
+\index{getMaxInputDelay@{getMaxInputDelay}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getMaxInputDelay()}{getMaxInputDelay()}}
+{\footnotesize\ttfamily int4 Func\+Proto\+::get\+Max\+Input\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the maximum heritage delay across all possible input parameters. 
+
+Depending on the address space, data-\/flow for a parameter may not be available until extra transform passes have completed. This method returns the number of passes that must occur before we can guarantee that all parameters have data-\/flow info. \begin{DoxyReturn}{Returns}
+the maximum number of passes across all input parameters in {\bfseries{this}} prototype 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a79cb1fac9b0d2d2c55d3ff4fa7db5c27}\label{classFuncProto_a79cb1fac9b0d2d2c55d3ff4fa7db5c27}} 
+\index{FuncProto@{FuncProto}!getMaxOutputDelay@{getMaxOutputDelay}}
+\index{getMaxOutputDelay@{getMaxOutputDelay}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getMaxOutputDelay()}{getMaxOutputDelay()}}
+{\footnotesize\ttfamily int4 Func\+Proto\+::get\+Max\+Output\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the maximum heritage delay across all possible return values. 
+
+Depending on the address space, data-\/flow for a parameter may not be available until extra transform passes have completed. This method returns the number of passes that must occur before we can guarantee that any return value has data-\/flow info. \begin{DoxyReturn}{Returns}
+the maximum number of passes across all output parameters in {\bfseries{this}} prototype 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a1b220dc769358d73110df5c60744566b}\label{classFuncProto_a1b220dc769358d73110df5c60744566b}} 
+\index{FuncProto@{FuncProto}!getPieces@{getPieces}}
+\index{getPieces@{getPieces}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getPieces()}{getPieces()}}
+{\footnotesize\ttfamily void Func\+Proto\+::get\+Pieces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} \&}]{pieces }\end{DoxyParamCaption}) const}
+
+
+
+Get the raw pieces of the prototype. 
+
+Copy out the raw pieces of {\bfseries{this}} prototype as stand-\/alone objects, includings model, names, and data-\/types 
+\begin{DoxyParams}{Parameters}
+{\em pieces} & will hold the raw pieces \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a93a764c6b7aa6f4718a38df9881666df}\label{classFuncProto_a93a764c6b7aa6f4718a38df9881666df}} 
+\index{FuncProto@{FuncProto}!getReturnBytesConsumed@{getReturnBytesConsumed}}
+\index{getReturnBytesConsumed@{getReturnBytesConsumed}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{getReturnBytesConsumed()}{getReturnBytesConsumed()}}
+{\footnotesize\ttfamily int4 Func\+Proto\+::get\+Return\+Bytes\+Consumed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an estimate of the number of bytes consumed by callers of {\bfseries{this}} prototype. 
+
+A value of 0 means {\itshape all} possible bytes of the storage location are consumed. \begin{DoxyReturn}{Returns}
+the number of bytes or 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a906c0e176919bd0ced34e337445c2bf7}\label{classFuncProto_a906c0e176919bd0ced34e337445c2bf7}} 
+\index{FuncProto@{FuncProto}!hasEffect@{hasEffect}}
+\index{hasEffect@{hasEffect}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{hasEffect()}{hasEffect()}}
+{\footnotesize\ttfamily uint4 Func\+Proto\+::has\+Effect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the effect {\bfseries{this}} has an a given storage location. 
+
+For a storage location that is active before and after a call to a function with {\bfseries{this}} prototype, we determine the type of side-\/effect the function will have on the storage. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the storage location \\
+\hline
+{\em size} & is the number of bytes in the storage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the type of side-\/effect\+: \mbox{\hyperlink{classEffectRecord_a3462e9526ef10db66a1a304c2a0a5210a3488da6d6b149499cbe384f7b57d0564}{Effect\+Record\+::unaffected}}, \mbox{\hyperlink{classEffectRecord_a3462e9526ef10db66a1a304c2a0a5210aacd8991c4ebdeb4057e15faf1d08abc2}{Effect\+Record\+::killedbycall}}, etc. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_aa5ee60788e6d8b4de304e2c5955a393b}\label{classFuncProto_aa5ee60788e6d8b4de304e2c5955a393b}} 
+\index{FuncProto@{FuncProto}!isCompatible@{isCompatible}}
+\index{isCompatible@{isCompatible}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{isCompatible()}{isCompatible()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::is\+Compatible (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncProto}{Func\+Proto}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Decide if {\bfseries{this}} can be safely restricted to match another prototype. 
+
+Do {\bfseries{this}} and another given function prototype share enough of their model, that if we restrict {\bfseries{this}} to the other prototype, we know we won\textquotesingle{}t miss data-\/flow. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other restricting prototype \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the two prototypes are compatible enough to restrict 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_af903eb699778675e96f0d3376b505732}\label{classFuncProto_af903eb699778675e96f0d3376b505732}} 
+\index{FuncProto@{FuncProto}!numLikelyTrash@{numLikelyTrash}}
+\index{numLikelyTrash@{numLikelyTrash}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{numLikelyTrash()}{numLikelyTrash()}}
+{\footnotesize\ttfamily int4 Func\+Proto\+::num\+Likely\+Trash (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of {\itshape likely-\/trash} locations. 
+
+\begin{DoxyReturn}{Returns}
+the number of individual storage locations 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a75f9569f65cd6472f80d3e85d8453ced}\label{classFuncProto_a75f9569f65cd6472f80d3e85d8453ced}} 
+\index{FuncProto@{FuncProto}!paramShift@{paramShift}}
+\index{paramShift@{paramShift}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{paramShift()}{paramShift()}}
+{\footnotesize\ttfamily void Func\+Proto\+::param\+Shift (\begin{DoxyParamCaption}\item[{int4}]{paramshift }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add parameters to the front of the input parameter list. 
+
+Prepend the indicated number of input parameters to {\bfseries{this}}. The new parameters have a data-\/type of xunknown4. If they were originally locked, the existing parameters are preserved. 
+\begin{DoxyParams}{Parameters}
+{\em paramshift} & is the number of parameters to add (must be $>$0) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a59ed6ca81a4b601ae81f4080a5bf89fa}\label{classFuncProto_a59ed6ca81a4b601ae81f4080a5bf89fa}} 
+\index{FuncProto@{FuncProto}!possibleInputParam@{possibleInputParam}}
+\index{possibleInputParam@{possibleInputParam}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{possibleInputParam()}{possibleInputParam()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::possible\+Input\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Decide whether a given storage location could be an input parameter. 
+
+If the input is locked, check if the location matches one of the current parameters. Otherwise, check if the location {\itshape could} be a parameter based on the prototype model. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given storage location \\
+\hline
+{\em size} & is the number of bytes in the storage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{false}} if the location is definitely not an input parameter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a65c37f6adddd70f3fd17500dcacd0c92}\label{classFuncProto_a65c37f6adddd70f3fd17500dcacd0c92}} 
+\index{FuncProto@{FuncProto}!possibleOutputParam@{possibleOutputParam}}
+\index{possibleOutputParam@{possibleOutputParam}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{possibleOutputParam()}{possibleOutputParam()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::possible\+Output\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Decide whether a given storage location could be a return value. 
+
+If the output is locked, check if the location matches the current return value. Otherwise, check if the location {\itshape could} be a return value based on the prototype model. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given storage location \\
+\hline
+{\em size} & is the number of bytes in the storage \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{false}} if the location is definitely not the return value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_acf8d609764a4fd6c38cb0c284f225180}\label{classFuncProto_acf8d609764a4fd6c38cb0c284f225180}} 
+\index{FuncProto@{FuncProto}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Func\+Proto\+::print\+Raw (\begin{DoxyParamCaption}\item[{const string \&}]{funcname,  }\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print {\bfseries{this}} prototype as a single line of text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em funcname} & is an identifier of the function using {\bfseries{this}} prototype \\
+\hline
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a22889d3a526dce245368b8de9c889529}\label{classFuncProto_a22889d3a526dce245368b8de9c889529}} 
+\index{FuncProto@{FuncProto}!resolveExtraPop@{resolveExtraPop}}
+\index{resolveExtraPop@{resolveExtraPop}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{resolveExtraPop()}{resolveExtraPop()}}
+{\footnotesize\ttfamily void Func\+Proto\+::resolve\+Extra\+Pop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Assuming {\bfseries{this}} prototype is locked, calculate the {\itshape extrapop}. 
+
+If {\itshape extrapop} is unknown and {\bfseries{this}} prototype is locked, try to directly calculate what the {\itshape extrapop} should be. This is really only designed to work with 32-\/bit x86 binaries. \mbox{\Hypertarget{classFuncProto_afd3b71963b55dd19755eeaccd016c4bf}\label{classFuncProto_afd3b71963b55dd19755eeaccd016c4bf}} 
+\index{FuncProto@{FuncProto}!resolveModel@{resolveModel}}
+\index{resolveModel@{resolveModel}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{resolveModel()}{resolveModel()}}
+{\footnotesize\ttfamily void Func\+Proto\+::resolve\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption})}
+
+
+
+If {\bfseries{this}} has a {\itshape merged} model, pick the most likely model (from the merged set) 
+
+The given parameter trials are used to pick from among the merged Proto\+Models and {\bfseries{this}} prototype is changed (specialized) to the pick 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the set of parameter trials to evaluate with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a4c4f9da74ee904e6abfa195bd843521e}\label{classFuncProto_a4c4f9da74ee904e6abfa195bd843521e}} 
+\index{FuncProto@{FuncProto}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Func\+Proto\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} from an X\+ML stream. 
+
+The backing store for the parameters must already be established using either set\+Store() or \mbox{\hyperlink{classFuncProto_af69f89b0b3c5165e521d33b658599699}{set\+Internal()}}. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the $<$prototype$>$ X\+ML element \\
+\hline
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} owning the prototype \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a4da5ce755480a4eded9bedff2c6e274f}\label{classFuncProto_a4da5ce755480a4eded9bedff2c6e274f}} 
+\index{FuncProto@{FuncProto}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Func\+Proto\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save {\bfseries{this}} to an X\+ML stream as a $<$prototype$>$ tag. 
+
+Save everything under the control of this prototype, which may {\itshape not} include input parameters, as these are typically controlled by the function\textquotesingle{}s symbol table scope. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a1ff2f80e5cf4043147ccd83a863ee83f}\label{classFuncProto_a1ff2f80e5cf4043147ccd83a863ee83f}} 
+\index{FuncProto@{FuncProto}!setConstructor@{setConstructor}}
+\index{setConstructor@{setConstructor}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setConstructor()}{setConstructor()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Constructor (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle whether {\bfseries{this}} prototype is a {\itshape constructor} method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} if {\bfseries{this}} is a constructor, {\bfseries{false}} otherwise \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_aa191f5c52ce98ba14ef14f63a763a7da}\label{classFuncProto_aa191f5c52ce98ba14ef14f63a763a7da}} 
+\index{FuncProto@{FuncProto}!setDestructor@{setDestructor}}
+\index{setDestructor@{setDestructor}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setDestructor()}{setDestructor()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Destructor (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle whether {\bfseries{this}} prototype is a {\itshape destructor} method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} if {\bfseries{this}} is a destructor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a843bc3ca11536028c5cb00ce5479182d}\label{classFuncProto_a843bc3ca11536028c5cb00ce5479182d}} 
+\index{FuncProto@{FuncProto}!setInline@{setInline}}
+\index{setInline@{setInline}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setInline()}{setInline()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Inline (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle the {\itshape in-\/line} setting for functions with {\bfseries{this}} prototype. 
+
+In-\/lining can be based on a {\itshape call-\/fixup}, or the full body of the function can be in-\/lined. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} if in-\/lining should be performed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_ad5f36aaa3e2d1d7cdc90d101065abbc0}\label{classFuncProto_ad5f36aaa3e2d1d7cdc90d101065abbc0}} 
+\index{FuncProto@{FuncProto}!setInputErrors@{setInputErrors}}
+\index{setInputErrors@{setInputErrors}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setInputErrors()}{setInputErrors()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Input\+Errors (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle the input error setting for {\bfseries{this}} prototype. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} if input parameters should be marked as in error \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a4afe216709633a3b075111d6f1b7148f}\label{classFuncProto_a4afe216709633a3b075111d6f1b7148f}} 
+\index{FuncProto@{FuncProto}!setInputLock@{setInputLock}}
+\index{setInputLock@{setInputLock}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setInputLock()}{setInputLock()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Input\+Lock (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Toggle the data-\/type lock on input parameters. 
+
+The lock on the data-\/type of input parameters is set as specified. A {\bfseries{true}} value indicates that future analysis will not change the number of input parameters or their data-\/type. Zero parameters or {\itshape void} can be locked. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to indicate a lock, {\bfseries{false}} for unlocked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_af69f89b0b3c5165e521d33b658599699}\label{classFuncProto_af69f89b0b3c5165e521d33b658599699}} 
+\index{FuncProto@{FuncProto}!setInternal@{setInternal}}
+\index{setInternal@{setInternal}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setInternal()}{setInternal()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{m,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{vt }\end{DoxyParamCaption})}
+
+
+
+Set internal backing storage for {\bfseries{this}}. 
+
+A prototype model is set, and any parameters added to {\bfseries{this}} during analysis will be backed internally. 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the prototype model to set \\
+\hline
+{\em vt} & is the default {\itshape void} data-\/type to use if the return-\/value remains unassigned \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_ae8c14d15c7296c47deae3433687b1b15}\label{classFuncProto_ae8c14d15c7296c47deae3433687b1b15}} 
+\index{FuncProto@{FuncProto}!setModel@{setModel}}
+\index{setModel@{setModel}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setModel()}{setModel()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Set the prototype model for {\bfseries{this}}. 
+
+Establish a specific prototype model for {\bfseries{this}} function prototype. Some basic properties are inherited from the model, otherwise parameters are unchanged. 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the new prototype model to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_acc303c449c418dd875319c6f6cd9436f}\label{classFuncProto_acc303c449c418dd875319c6f6cd9436f}} 
+\index{FuncProto@{FuncProto}!setModelLock@{setModelLock}}
+\index{setModelLock@{setModelLock}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setModelLock()}{setModelLock()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Model\+Lock (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle the lock on the prototype model for {\bfseries{this}}. 
+
+The prototype model can be locked while still leaving parameters unlocked. Parameter recovery will follow the rules of the locked model. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to indicate a lock, {\bfseries{false}} for unlocked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_aacaf0bda9b424dfd5c6a28d3a45fb100}\label{classFuncProto_aacaf0bda9b424dfd5c6a28d3a45fb100}} 
+\index{FuncProto@{FuncProto}!setNoReturn@{setNoReturn}}
+\index{setNoReturn@{setNoReturn}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setNoReturn()}{setNoReturn()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+No\+Return (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle the {\itshape no-\/return} setting for functions with {\bfseries{this}} prototype. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to treat the function as never returning \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_ac8eacd70fbc6e4cd5d694d2ae5b1ed64}\label{classFuncProto_ac8eacd70fbc6e4cd5d694d2ae5b1ed64}} 
+\index{FuncProto@{FuncProto}!setOutputErrors@{setOutputErrors}}
+\index{setOutputErrors@{setOutputErrors}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setOutputErrors()}{setOutputErrors()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Output\+Errors (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle the output error setting for {\bfseries{this}} prototype. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} if return value should be marked as in error \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a7593a0880a632bce714a376244ef4f9a}\label{classFuncProto_a7593a0880a632bce714a376244ef4f9a}} 
+\index{FuncProto@{FuncProto}!setOutputLock@{setOutputLock}}
+\index{setOutputLock@{setOutputLock}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setOutputLock()}{setOutputLock()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Output\+Lock (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Toggle the data-\/type lock on the return value. 
+
+The lock of the data-\/type of the return value is set as specified. A {\bfseries{true}} value indicates that future analysis will not change the presence of or the data-\/type of the return value. A {\itshape void} return value can be locked. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to indicate a lock, {\bfseries{false}} for unlocked \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a8e6f53c7733c8aa58d9138a8f3add2ce}\label{classFuncProto_a8e6f53c7733c8aa58d9138a8f3add2ce}} 
+\index{FuncProto@{FuncProto}!setPieces@{setPieces}}
+\index{setPieces@{setPieces}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setPieces()}{setPieces()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Pieces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} \&}]{pieces }\end{DoxyParamCaption})}
+
+
+
+Set {\bfseries{this}} prototype based on raw pieces. 
+
+The full function prototype is (re)set from a model, names, and data-\/types The new input and output parameters are both assumed to be locked. 
+\begin{DoxyParams}{Parameters}
+{\em pieces} & is the raw collection of names and data-\/types \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_abd05102695a39cdad0170eeb92884b3a}\label{classFuncProto_abd05102695a39cdad0170eeb92884b3a}} 
+\index{FuncProto@{FuncProto}!setReturnBytesConsumed@{setReturnBytesConsumed}}
+\index{setReturnBytesConsumed@{setReturnBytesConsumed}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setReturnBytesConsumed()}{setReturnBytesConsumed()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::set\+Return\+Bytes\+Consumed (\begin{DoxyParamCaption}\item[{int4}]{val }\end{DoxyParamCaption})}
+
+
+
+Set the number of bytes consumed by callers of {\bfseries{this}}. 
+
+This value can be used as a hint as to how much of the return value is important and is used to inform the dead code {\itshape consume} algorithm. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the estimated number of bytes or 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the value was changed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_adc83eddece4cb123d198ad288dfa89bd}\label{classFuncProto_adc83eddece4cb123d198ad288dfa89bd}} 
+\index{FuncProto@{FuncProto}!setScope@{setScope}}
+\index{setScope@{setScope}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{setScope()}{setScope()}}
+{\footnotesize\ttfamily void Func\+Proto\+::set\+Scope (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{startpoint }\end{DoxyParamCaption})}
+
+
+
+Set a backing symbol \mbox{\hyperlink{classScope}{Scope}} for {\bfseries{this}}. 
+
+Input parameters are set based on an existing function \mbox{\hyperlink{classScope}{Scope}} and if there is no prototype model the default model is set. Parameters that are added to {\bfseries{this}} during analysis will automatically be reflected in the symbol table. This should only be called during initialization of {\bfseries{this}} prototype. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the \mbox{\hyperlink{classScope}{Scope}} to set \\
+\hline
+{\em startpoint} & is a usepoint to associate with the parameters \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_af0fe71f261f3593c98efe396973d5775}\label{classFuncProto_af0fe71f261f3593c98efe396973d5775}} 
+\index{FuncProto@{FuncProto}!unjustifiedInputParam@{unjustifiedInputParam}}
+\index{unjustifiedInputParam@{unjustifiedInputParam}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{unjustifiedInputParam()}{unjustifiedInputParam()}}
+{\footnotesize\ttfamily bool Func\+Proto\+::unjustified\+Input\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const}
+
+
+
+Check if the given storage location looks like an {\itshape unjustified} input parameter. 
+
+The storage for a value may be contained in a normal parameter location but be unjustified within that container, i.\+e. the least significant bytes are not being used. If this is the case, pass back the full parameter location and return {\bfseries{true}}. If the input is locked, checking is againt the set parameters, otherwise the check is against the prototype model. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given storage \\
+\hline
+{\em size} & is the number of bytes in the given storage \\
+\hline
+{\em res} & is the full parameter storage to pass back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the given storage is unjustified within its parameter container 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFuncProto_a9ad6aba5f6731281a4c16fdfac76de2c}\label{classFuncProto_a9ad6aba5f6731281a4c16fdfac76de2c}} 
+\index{FuncProto@{FuncProto}!updateAllTypes@{updateAllTypes}}
+\index{updateAllTypes@{updateAllTypes}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{updateAllTypes()}{updateAllTypes()}}
+{\footnotesize\ttfamily void Func\+Proto\+::update\+All\+Types (\begin{DoxyParamCaption}\item[{const vector$<$ string $>$ \&}]{namelist,  }\item[{const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&}]{typelist,  }\item[{bool}]{dtdtdt }\end{DoxyParamCaption})}
+
+
+
+Set {\bfseries{this}} entire function prototype based on a list of names and data-\/types. 
+
+Prototype information is provided as separate lists of names and data-\/types, where the first entry corresponds to the output parameter (return value) and the remaining entries correspond to input parameters. Storage locations and hidden return parameters are calculated, creating a complete function protototype. Existing locks are overridden. 
+\begin{DoxyParams}{Parameters}
+{\em namelist} & is the list of parameter names \\
+\hline
+{\em typelist} & is the list of data-\/types \\
+\hline
+{\em dtdtdt} & is {\bfseries{true}} if the new prototype accepts variable argument lists \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a33463f351b0ebc8c8f6065eff896dbc3}\label{classFuncProto_a33463f351b0ebc8c8f6065eff896dbc3}} 
+\index{FuncProto@{FuncProto}!updateInputNoTypes@{updateInputNoTypes}}
+\index{updateInputNoTypes@{updateInputNoTypes}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{updateInputNoTypes()}{updateInputNoTypes()}}
+{\footnotesize\ttfamily void Func\+Proto\+::update\+Input\+No\+Types (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{triallist,  }\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{activeinput }\end{DoxyParamCaption})}
+
+
+
+Update input parameters based on \mbox{\hyperlink{classVarnode}{Varnode}} trials, but do not store the data-\/type. 
+
+This is accomplished in the same way as if there were data-\/types but instead of pulling a data-\/type from the \mbox{\hyperlink{classVarnode}{Varnode}}, only the size is used. Undefined data-\/types are pulled from the given \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function containing the trial Varnodes \\
+\hline
+{\em triallist} & is the list of Varnodes \\
+\hline
+{\em activeinput} & is the trial container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_ae89afc199ba2c4c8261dac381c5e426b}\label{classFuncProto_ae89afc199ba2c4c8261dac381c5e426b}} 
+\index{FuncProto@{FuncProto}!updateInputTypes@{updateInputTypes}}
+\index{updateInputTypes@{updateInputTypes}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{updateInputTypes()}{updateInputTypes()}}
+{\footnotesize\ttfamily void Func\+Proto\+::update\+Input\+Types (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{triallist,  }\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{activeinput }\end{DoxyParamCaption})}
+
+
+
+Update input parameters based on \mbox{\hyperlink{classVarnode}{Varnode}} trials. 
+
+If the input parameters are locked, don\textquotesingle{}t do anything. Otherwise, given a list of Varnodes and their associated trial information, create an input parameter for each trial in order, grabbing data-\/type information from the \mbox{\hyperlink{classVarnode}{Varnode}}. Any old input parameters are cleared. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function containing the trial Varnodes \\
+\hline
+{\em triallist} & is the list of Varnodes \\
+\hline
+{\em activeinput} & is the trial container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a882e34d08f3e4e44ba5aa25b87c84bfe}\label{classFuncProto_a882e34d08f3e4e44ba5aa25b87c84bfe}} 
+\index{FuncProto@{FuncProto}!updateOutputNoTypes@{updateOutputNoTypes}}
+\index{updateOutputNoTypes@{updateOutputNoTypes}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{updateOutputNoTypes()}{updateOutputNoTypes()}}
+{\footnotesize\ttfamily void Func\+Proto\+::update\+Output\+No\+Types (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{triallist,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{factory }\end{DoxyParamCaption})}
+
+
+
+Update the return value based on \mbox{\hyperlink{classVarnode}{Varnode}} trials, but don\textquotesingle{}t store the data-\/type. 
+
+If the output parameter is locked, don\textquotesingle{}t do anything. Otherwise, given a list of (at most 1) \mbox{\hyperlink{classVarnode}{Varnode}}, create a return value, grabbing size information from the \mbox{\hyperlink{classVarnode}{Varnode}}. An undefined data-\/type is created from the given \mbox{\hyperlink{classTypeFactory}{Type\+Factory}}. Any old return value is removed. 
+\begin{DoxyParams}{Parameters}
+{\em triallist} & is the list of Varnodes \\
+\hline
+{\em factory} & is the given \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFuncProto_a56cbde2e23cdcf41ddb870721e02be6b}\label{classFuncProto_a56cbde2e23cdcf41ddb870721e02be6b}} 
+\index{FuncProto@{FuncProto}!updateOutputTypes@{updateOutputTypes}}
+\index{updateOutputTypes@{updateOutputTypes}!FuncProto@{FuncProto}}
+\doxysubsubsection{\texorpdfstring{updateOutputTypes()}{updateOutputTypes()}}
+{\footnotesize\ttfamily void Func\+Proto\+::update\+Output\+Types (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{triallist }\end{DoxyParamCaption})}
+
+
+
+Update the return value based on \mbox{\hyperlink{classVarnode}{Varnode}} trials. 
+
+If the output parameter is locked, don\textquotesingle{}t do anything. Otherwise, given a list of (at most 1) \mbox{\hyperlink{classVarnode}{Varnode}}, create a return value, grabbing data-\/type information from the \mbox{\hyperlink{classVarnode}{Varnode}}. Any old return value is removed. 
+\begin{DoxyParams}{Parameters}
+{\em triallist} & is the list of Varnodes \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

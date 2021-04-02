@@ -1,0 +1,631 @@
+\hypertarget{classParamListStandard}{}\doxysection{Param\+List\+Standard Class Reference}
+\label{classParamListStandard}\index{ParamListStandard@{ParamListStandard}}
+
+
+A standard model for parameters as an ordered list of storage resources.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Param\+List\+Standard\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classParamListStandard__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Param\+List\+Standard\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classParamListStandard__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParamListStandard_a0267994ed8c3c3e203b09dde4e7836be}\label{classParamListStandard_a0267994ed8c3c3e203b09dde4e7836be}} 
+\mbox{\hyperlink{classParamListStandard_a0267994ed8c3c3e203b09dde4e7836be}{Param\+List\+Standard}} (const \mbox{\hyperlink{classParamListStandard}{Param\+List\+Standard}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_a37193293ffb24b1206944e35ef64973c}\label{classParamListStandard_a37193293ffb24b1206944e35ef64973c}} 
+virtual uint4 \mbox{\hyperlink{classParamListStandard_a37193293ffb24b1206944e35ef64973c}{get\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the type of parameter list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListStandard_a4819bb8291e202e3d11737d586878525}{assign\+Map}} (const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&proto, bool isinput, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typefactory, vector$<$ \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} $>$ \&res) const
+\begin{DoxyCompactList}\small\item\em Given list of data-\/types, map the list positions to storage locations. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListStandard_a7fa7043f5c6bba995e2ea716ca16ccaf}{fillin\+Map}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Given an unordered list of storage locations, calculate a function prototype. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classParamListStandard_ae051857a29a6ed3684c8110fcb53c85c}{check\+Join}} (const \mbox{\hyperlink{classAddress}{Address}} \&hiaddr, int4 hisize, const \mbox{\hyperlink{classAddress}{Address}} \&loaddr, int4 losize) const
+\begin{DoxyCompactList}\small\item\em Check if the given two storage locations can represent a single logical parameter. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classParamListStandard_aec665632071c4504aec5b4c4d153cb62}{check\+Split}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size, int4 splitpoint) const
+\begin{DoxyCompactList}\small\item\em Check if it makes sense to split a single storage location into two parameters. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classParamListStandard_a179f9038bbb5a5686f2c5c44ec51c706}{characterize\+As\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size) const
+\begin{DoxyCompactList}\small\item\em Characterize whether the given range overlaps parameter storage. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classParamListStandard_a22a2afd938c503357fac9d330eb89858}{possible\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size) const
+\begin{DoxyCompactList}\small\item\em Does the given storage location make sense as a parameter. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classParamListStandard_a9b9ed2f66a0e7401208abcd385f2c678}{possible\+Param\+With\+Slot}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size, int4 \&slot, int4 \&slotsize) const
+\begin{DoxyCompactList}\small\item\em Pass-\/back the slot and slot size for the given storage location as a parameter. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classParamListStandard_aa295895634e00c09c2b5d6dede9e9551}{get\+Biggest\+Contained\+Param}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Pass-\/back the biggest parameter contained within the given range. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classParamListStandard_a10d5f6771892d435ab6711e9df458f60}{unjustified\+Container}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Check if the given storage location looks like an {\itshape unjustified} parameter. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{classParamListStandard_aa9fb818f8190ec57216242d3d20786e8}{assumed\+Extension}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&res) const
+\begin{DoxyCompactList}\small\item\em Get the type of extension and containing parameter for the given storage. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classParamListStandard_a8c6910cf8fb253c2f64361dbf92901c5}{get\+Spacebase}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the address space associated with any stack based parameters in {\bfseries{this}} list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListStandard_a715b7fc4875a69e7e5b8b498002f03de}{get\+Range\+List}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, \mbox{\hyperlink{classRangeList}{Range\+List}} \&res) const
+\begin{DoxyCompactList}\small\item\em For a given address space, collect all the parameter locations within that space. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classParamListStandard_aeb0fe74f815ad09f021ace22eb60d06a}{get\+Max\+Delay}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the maximum heritage delay across all possible parameters. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListStandard_a7dc8219ff6422f4e23d12643b68eb100}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage, vector$<$ \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} $>$ \&effectlist, bool normalstack)
+\begin{DoxyCompactList}\small\item\em Restore the model from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_a8257219823fdb31ac4aa59d2c0c640e5}\label{classParamListStandard_a8257219823fdb31ac4aa59d2c0c640e5}} 
+virtual \mbox{\hyperlink{classParamList}{Param\+List}} $\ast$ \mbox{\hyperlink{classParamListStandard_a8257219823fdb31ac4aa59d2c0c640e5}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone this parameter list model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classParamEntry}{Param\+Entry}} $\ast$ \mbox{\hyperlink{classParamListStandard_a0994d868c5ffe64dfba43c955b738f94}{find\+Entry}} (const \mbox{\hyperlink{classAddress}{Address}} \&loc, int4 size) const
+\begin{DoxyCompactList}\small\item\em Given storage location find matching \mbox{\hyperlink{classParamEntry}{Param\+Entry}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classParamListStandard_a3775b16cc55e45ffb7c6626e99a935b7}{assign\+Address}} (const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$tp, vector$<$ int4 $>$ \&status) const
+\begin{DoxyCompactList}\small\item\em Assign storage for given parameter data-\/type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamListStandard_ad417701f25ded842e652c57cf8216fad}{build\+Trial\+Map}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Build map from parameter trials to model Param\+Entrys. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamListStandard_aacdd4138b9b70be59a0033514cbb6abb}{separate\+Float}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active, int4 \&floatstart, int4 \&floatstop, int4 \&start, int4 \&stop) const
+\begin{DoxyCompactList}\small\item\em Calculate the range of floating-\/point entries within a given set of parameter {\itshape trials}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamListStandard_a97ad61c3065470a692b401d3234f642a}{force\+Exclusion\+Group}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Enforce exclusion rules for the given set of parameter trials. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamListStandard_a2027e18fbb90231abb775e04cca4ed97}{force\+No\+Use}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active, int4 start, int4 stop) const
+\begin{DoxyCompactList}\small\item\em Mark every trial above the first \char`\"{}definitely not used\char`\"{} as {\itshape inactive}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamListStandard_a551c148ffe5eb58a1f431b7e884f4de2}{force\+Inactive\+Chain}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active, int4 maxchain, int4 start, int4 stop) const
+\begin{DoxyCompactList}\small\item\em Enforce rules about chains of inactive slots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_a0157393aeb32898f19740e548309d594}\label{classParamListStandard_a0157393aeb32898f19740e548309d594}} 
+void \mbox{\hyperlink{classParamListStandard_a0157393aeb32898f19740e548309d594}{calc\+Delay}} (void)
+\begin{DoxyCompactList}\small\item\em Calculate the maximum heritage delay for any potential parameter in this list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classParamListStandard_a56f30bf68a015dcc657d9fbfc5a42aa1}{populate\+Resolver}} (void)
+\begin{DoxyCompactList}\small\item\em Build the \mbox{\hyperlink{classParamEntry}{Param\+Entry}} resolver maps. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParamListStandard_ae129a4db3bb767656a32daeffee806a5}\label{classParamListStandard_ae129a4db3bb767656a32daeffee806a5}} 
+int4 \mbox{\hyperlink{classParamListStandard_ae129a4db3bb767656a32daeffee806a5}{numgroup}}
+\begin{DoxyCompactList}\small\item\em Number of {\itshape groups} in this parameter convention. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_afe373fd5fb7807b7bba1d83649469cab}\label{classParamListStandard_afe373fd5fb7807b7bba1d83649469cab}} 
+int4 \mbox{\hyperlink{classParamListStandard_afe373fd5fb7807b7bba1d83649469cab}{maxdelay}}
+\begin{DoxyCompactList}\small\item\em Maximum heritage delay across all parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_aef1c07a708c2278a4a51705a4601035c}\label{classParamListStandard_aef1c07a708c2278a4a51705a4601035c}} 
+int4 \mbox{\hyperlink{classParamListStandard_aef1c07a708c2278a4a51705a4601035c}{pointermax}}
+\begin{DoxyCompactList}\small\item\em If non-\/zero, maximum size of a data-\/type before converting to a pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_a65af086fa366444a788721fecc8afc86}\label{classParamListStandard_a65af086fa366444a788721fecc8afc86}} 
+bool \mbox{\hyperlink{classParamListStandard_a65af086fa366444a788721fecc8afc86}{thisbeforeret}}
+\begin{DoxyCompactList}\small\item\em Does a {\bfseries{this}} parameter come before a hidden return parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_a512864be48d391ee4903d0a38147438c}\label{classParamListStandard_a512864be48d391ee4903d0a38147438c}} 
+int4 \mbox{\hyperlink{classParamListStandard_a512864be48d391ee4903d0a38147438c}{nonfloatgroup}}
+\begin{DoxyCompactList}\small\item\em Group of first entry which is not marked float. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_aab273cce362411690e324331d03d959f}\label{classParamListStandard_aab273cce362411690e324331d03d959f}} 
+list$<$ \mbox{\hyperlink{classParamEntry}{Param\+Entry}} $>$ \mbox{\hyperlink{classParamListStandard_aab273cce362411690e324331d03d959f}{entry}}
+\begin{DoxyCompactList}\small\item\em The ordered list of parameter entries. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_abb7014b3098269d3534cd9738f70fd7e}\label{classParamListStandard_abb7014b3098269d3534cd9738f70fd7e}} 
+vector$<$ \mbox{\hyperlink{fspec_8hh_a034dd951d43e43b9e7d26f7326000992}{Param\+Entry\+Resolver}} $\ast$ $>$ \mbox{\hyperlink{classParamListStandard_abb7014b3098269d3534cd9738f70fd7e}{resolver\+Map}}
+\begin{DoxyCompactList}\small\item\em Map from space id to resolver. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListStandard_a23eb96cd5ffb8cc27ffb71caed2d96ca}\label{classParamListStandard_a23eb96cd5ffb8cc27ffb71caed2d96ca}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classParamListStandard_a23eb96cd5ffb8cc27ffb71caed2d96ca}{spacebase}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classAddress}{Address}} space containing relative offset parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A standard model for parameters as an ordered list of storage resources. 
+
+This is a configurable model for passing (input) parameters as a list to a function. The model allows 1 or more resource lists based on data-\/type, either T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN for general purpose or T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT for floating-\/point registers. Within a resource list, any number of parameters can be used but they must come starting at the beginning of the list with no {\itshape holes} (skipped resources). A resource list can include (at the end) {\itshape stack} parameters that are allocated based on an alignment. Optionally, the model supports converting data-\/types larger than a specified size to pointers within the parameter list. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParamListStandard_a3775b16cc55e45ffb7c6626e99a935b7}\label{classParamListStandard_a3775b16cc55e45ffb7c6626e99a935b7}} 
+\index{ParamListStandard@{ParamListStandard}!assignAddress@{assignAddress}}
+\index{assignAddress@{assignAddress}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{assignAddress()}{assignAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Param\+List\+Standard\+::assign\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{tp,  }\item[{vector$<$ int4 $>$ \&}]{status }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Assign storage for given parameter data-\/type. 
+
+Given the next data-\/type and the status of previously allocated slots, select the storage location for the parameter. The status array is indexed by {\itshape group\+:} a positive value indicates how many {\itshape slots} have been allocated from that group, and a -\/1 indicates the group/resource is fully consumed. 
+\begin{DoxyParams}{Parameters}
+{\em tp} & is the data-\/type of the next parameter \\
+\hline
+{\em status} & is an array marking how many {\itshape slots} have already been consumed in a group \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly assigned address for the parameter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamListStandard_a4819bb8291e202e3d11737d586878525}\label{classParamListStandard_a4819bb8291e202e3d11737d586878525}} 
+\index{ParamListStandard@{ParamListStandard}!assignMap@{assignMap}}
+\index{assignMap@{assignMap}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{assignMap()}{assignMap()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::assign\+Map (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&}]{proto,  }\item[{bool}]{isinput,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typefactory,  }\item[{vector$<$ \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} $>$ \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given list of data-\/types, map the list positions to storage locations. 
+
+If we know the function prototype, recover how parameters are actually stored using the model. 
+\begin{DoxyParams}{Parameters}
+{\em proto} & is the ordered list of data-\/types \\
+\hline
+{\em isinput} & is {\bfseries{true}} for the input prototype, {\bfseries{false}} for output prototype \\
+\hline
+{\em typefactory} & is the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} (for constructing pointers) \\
+\hline
+{\em res} & will contain the storage locations corresponding to the datatypes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classParamList_ab30f200d65a2c66f434506acc77d384e}{Param\+List}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classParamListMerged_a54e5b3089383a5d80efbd23791992e4b}{Param\+List\+Merged}}, and \mbox{\hyperlink{classParamListStandardOut_af50fd192a944d885223b263e5c31a69e}{Param\+List\+Standard\+Out}}.
+
+\mbox{\Hypertarget{classParamListStandard_aa9fb818f8190ec57216242d3d20786e8}\label{classParamListStandard_aa9fb818f8190ec57216242d3d20786e8}} 
+\index{ParamListStandard@{ParamListStandard}!assumedExtension@{assumedExtension}}
+\index{assumedExtension@{assumedExtension}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{assumedExtension()}{assumedExtension()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} Param\+List\+Standard\+::assumed\+Extension (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the type of extension and containing parameter for the given storage. 
+
+If the given storage is properly contained within a normal parameter and the model typically extends a small value into the full container, pass back the full container and the type of extension. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given storage \\
+\hline
+{\em size} & is the number of bytes in the given storage \\
+\hline
+{\em res} & is the parameter storage to pass back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the extension operator (I\+N\+T\+\_\+\+Z\+E\+XT I\+N\+T\+\_\+\+S\+E\+XT) or I\+N\+T\+\_\+\+C\+O\+PY if there is no extension. I\+N\+T\+\_\+\+P\+I\+E\+CE indicates the extension is determined by the specific prototype. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_a10bf678b80a0e6737a955706418ab645}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_ad417701f25ded842e652c57cf8216fad}\label{classParamListStandard_ad417701f25ded842e652c57cf8216fad}} 
+\index{ParamListStandard@{ParamListStandard}!buildTrialMap@{buildTrialMap}}
+\index{buildTrialMap@{buildTrialMap}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{buildTrialMap()}{buildTrialMap()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::build\+Trial\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Build map from parameter trials to model Param\+Entrys. 
+
+Given a set of {\bfseries{trials}} (putative \mbox{\hyperlink{classVarnode}{Varnode}} parameters) as \mbox{\hyperlink{classParamTrial}{Param\+Trial}} objects, associate each trial with a model \mbox{\hyperlink{classParamEntry}{Param\+Entry}} within {\bfseries{this}} list. Trials for for which there are no matching entries are marked as unused. Any holes in the resource list are filled with {\itshape unreferenced} trials. The trial list is sorted. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the set of {\bfseries{trials}} to map and organize \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamListStandard_a179f9038bbb5a5686f2c5c44ec51c706}\label{classParamListStandard_a179f9038bbb5a5686f2c5c44ec51c706}} 
+\index{ParamListStandard@{ParamListStandard}!characterizeAsParam@{characterizeAsParam}}
+\index{characterizeAsParam@{characterizeAsParam}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{characterizeAsParam()}{characterizeAsParam()}}
+{\footnotesize\ttfamily int4 Param\+List\+Standard\+::characterize\+As\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Characterize whether the given range overlaps parameter storage. 
+
+Does the range naturally fit inside a potential parameter entry from this list or does it contain a parameter entry. Return one of three values indicating this characterization\+:
+\begin{DoxyItemize}
+\item 0 means there is no intersection between the range and any parameter in this list
+\item 1 means that at least one parameter contains the range in a properly justified manner
+\item 2 means no parameter contains the range, but the range contains at least one \mbox{\hyperlink{classParamEntry}{Param\+Entry}} 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the given range \\
+\hline
+{\em size} & is the number of bytes in the given range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the characterization code 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Implements \mbox{\hyperlink{classParamList_a79a541cc056240c613a28e5aa5a795f0}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_ae051857a29a6ed3684c8110fcb53c85c}\label{classParamListStandard_ae051857a29a6ed3684c8110fcb53c85c}} 
+\index{ParamListStandard@{ParamListStandard}!checkJoin@{checkJoin}}
+\index{checkJoin@{checkJoin}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{checkJoin()}{checkJoin()}}
+{\footnotesize\ttfamily bool Param\+List\+Standard\+::check\+Join (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{hiaddr,  }\item[{int4}]{hisize,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loaddr,  }\item[{int4}]{losize }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the given two storage locations can represent a single logical parameter. 
+
+Within the conventions of this model, do the two (hi/lo) locations represent consecutive parameter locations that can be replaced by a single logical parameter. 
+\begin{DoxyParams}{Parameters}
+{\em hiaddr} & is the address of the most significant part of the value \\
+\hline
+{\em hisize} & is the size of the most significant part in bytes \\
+\hline
+{\em loaddr} & is the address of the least significant part of the value \\
+\hline
+{\em losize} & is the size of the least significant part in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the two pieces can be joined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_afbd77bcf71722f89a9ad9f4d9d20bdc5}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_aec665632071c4504aec5b4c4d153cb62}\label{classParamListStandard_aec665632071c4504aec5b4c4d153cb62}} 
+\index{ParamListStandard@{ParamListStandard}!checkSplit@{checkSplit}}
+\index{checkSplit@{checkSplit}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{checkSplit()}{checkSplit()}}
+{\footnotesize\ttfamily bool Param\+List\+Standard\+::check\+Split (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size,  }\item[{int4}]{splitpoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if it makes sense to split a single storage location into two parameters. 
+
+A storage location and split point is provided, implying two new storage locations. Does {\bfseries{this}} model allow these locations to be considered parameters. 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of provided storage location \\
+\hline
+{\em size} & is the size of the location in bytes \\
+\hline
+{\em splitpoint} & is the number of bytes to consider in the first (in address order) piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the storage location can be split 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_af27b49e05fbcbaa4e833e2e4f68d41ee}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_a7fa7043f5c6bba995e2ea716ca16ccaf}\label{classParamListStandard_a7fa7043f5c6bba995e2ea716ca16ccaf}} 
+\index{ParamListStandard@{ParamListStandard}!fillinMap@{fillinMap}}
+\index{fillinMap@{fillinMap}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{fillinMap()}{fillinMap()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::fillin\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given an unordered list of storage locations, calculate a function prototype. 
+
+A list of input (or output) trials is given, which may have holes, invalid inputs etc. Decide on the formal ordered parameter list. Trials within the \mbox{\hyperlink{classParamActive}{Param\+Active}} are added, removed, or reordered as needed. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the given list of trials \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classParamList_aaf2680343e933767d7ffd38e22e84011}{Param\+List}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classParamListMerged_aa4252b6768505e059edfe83ebdbf2065}{Param\+List\+Merged}}, \mbox{\hyperlink{classParamListRegister_a35bf1a7b1033500cb3657608c27d4786}{Param\+List\+Register}}, and \mbox{\hyperlink{classParamListStandardOut_aab2d6055785c4e98b3a8c4e1b70f86be}{Param\+List\+Standard\+Out}}.
+
+\mbox{\Hypertarget{classParamListStandard_a0994d868c5ffe64dfba43c955b738f94}\label{classParamListStandard_a0994d868c5ffe64dfba43c955b738f94}} 
+\index{ParamListStandard@{ParamListStandard}!findEntry@{findEntry}}
+\index{findEntry@{findEntry}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{findEntry()}{findEntry()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classParamEntry}{Param\+Entry}} $\ast$ Param\+List\+Standard\+::find\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Given storage location find matching \mbox{\hyperlink{classParamEntry}{Param\+Entry}}. 
+
+Find the (first) entry containing the given memory range 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pointer to the matching \mbox{\hyperlink{classParamEntry}{Param\+Entry}} or null if no match exists 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamListStandard_a97ad61c3065470a692b401d3234f642a}\label{classParamListStandard_a97ad61c3065470a692b401d3234f642a}} 
+\index{ParamListStandard@{ParamListStandard}!forceExclusionGroup@{forceExclusionGroup}}
+\index{forceExclusionGroup@{forceExclusionGroup}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{forceExclusionGroup()}{forceExclusionGroup()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::force\+Exclusion\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Enforce exclusion rules for the given set of parameter trials. 
+
+If there are more than one active trials in a single group, and if that group is an exclusion group, mark all but the first trial to {\itshape inactive}. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the set of trials \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamListStandard_a551c148ffe5eb58a1f431b7e884f4de2}\label{classParamListStandard_a551c148ffe5eb58a1f431b7e884f4de2}} 
+\index{ParamListStandard@{ParamListStandard}!forceInactiveChain@{forceInactiveChain}}
+\index{forceInactiveChain@{forceInactiveChain}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{forceInactiveChain()}{forceInactiveChain()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::force\+Inactive\+Chain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active,  }\item[{int4}]{maxchain,  }\item[{int4}]{start,  }\item[{int4}]{stop }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Enforce rules about chains of inactive slots. 
+
+If there is a chain of slots whose length is greater than {\bfseries{maxchain}}, where all trials are {\itshape inactive}, mark trials in any later slot as {\itshape inactive}. Mark any {\itshape inactive} trials before this (that aren\textquotesingle{}t in a maximal chain) as active. Inspection and marking is restricted to a given range of trials to facilitate separate analysis of floating-\/point and general-\/purpose resources. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the set of trials, which must be sorted \\
+\hline
+{\em maxchain} & is the maximum number of {\itshape inactive} trials to allow in a chain \\
+\hline
+{\em start} & is the first index in the range of trials to consider \\
+\hline
+{\em stop} & is the last index (+1) in the range of trials to consider \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamListStandard_a2027e18fbb90231abb775e04cca4ed97}\label{classParamListStandard_a2027e18fbb90231abb775e04cca4ed97}} 
+\index{ParamListStandard@{ParamListStandard}!forceNoUse@{forceNoUse}}
+\index{forceNoUse@{forceNoUse}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{forceNoUse()}{forceNoUse()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::force\+No\+Use (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active,  }\item[{int4}]{start,  }\item[{int4}]{stop }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mark every trial above the first \char`\"{}definitely not used\char`\"{} as {\itshape inactive}. 
+
+Inspection and marking only occurs within an indicated range of trials, allowing floating-\/point and general purpose resources to be treated separately. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the set of trials, which must already be ordered \\
+\hline
+{\em start} & is the index of the first trial in the range to consider \\
+\hline
+{\em stop} & is the index (+1) of the last trial in the range to consider \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamListStandard_aa295895634e00c09c2b5d6dede9e9551}\label{classParamListStandard_aa295895634e00c09c2b5d6dede9e9551}} 
+\index{ParamListStandard@{ParamListStandard}!getBiggestContainedParam@{getBiggestContainedParam}}
+\index{getBiggestContainedParam@{getBiggestContainedParam}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{getBiggestContainedParam()}{getBiggestContainedParam()}}
+{\footnotesize\ttfamily bool Param\+List\+Standard\+::get\+Biggest\+Contained\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pass-\/back the biggest parameter contained within the given range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the given range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+{\em res} & will hold the parameter storage description being passed back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there is at least one parameter contained in the range 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_a518a03c6e6dffaf5ab98abe39d1c358d}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_aeb0fe74f815ad09f021ace22eb60d06a}\label{classParamListStandard_aeb0fe74f815ad09f021ace22eb60d06a}} 
+\index{ParamListStandard@{ParamListStandard}!getMaxDelay@{getMaxDelay}}
+\index{getMaxDelay@{getMaxDelay}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{getMaxDelay()}{getMaxDelay()}}
+{\footnotesize\ttfamily virtual int4 Param\+List\+Standard\+::get\+Max\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return the maximum heritage delay across all possible parameters. 
+
+Depending on the address space, data-\/flow for a parameter may not be available until extra transform passes have completed. This method returns the number of passes that must occur before we can guarantee that all parameters have data-\/flow info. \begin{DoxyReturn}{Returns}
+the maximum number of passes across all parameters in {\bfseries{this}} model 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_af3d5640d0912fca118219d8213ed3a28}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_a715b7fc4875a69e7e5b8b498002f03de}\label{classParamListStandard_a715b7fc4875a69e7e5b8b498002f03de}} 
+\index{ParamListStandard@{ParamListStandard}!getRangeList@{getRangeList}}
+\index{getRangeList@{getRangeList}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{getRangeList()}{getRangeList()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::get\+Range\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{\mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+For a given address space, collect all the parameter locations within that space. 
+
+Pass back the memory ranges for any parameter that is stored in the given address space. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given address space \\
+\hline
+{\em res} & will hold the set of matching memory ranges \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classParamList_a35f41fbd1143cba10bd81cd5a81ad476}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_a8c6910cf8fb253c2f64361dbf92901c5}\label{classParamListStandard_a8c6910cf8fb253c2f64361dbf92901c5}} 
+\index{ParamListStandard@{ParamListStandard}!getSpacebase@{getSpacebase}}
+\index{getSpacebase@{getSpacebase}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{getSpacebase()}{getSpacebase()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}$\ast$ Param\+List\+Standard\+::get\+Spacebase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the address space associated with any stack based parameters in {\bfseries{this}} list. 
+
+\begin{DoxyReturn}{Returns}
+the stack address space, if {\bfseries{this}} models parameters passed on the stack, N\+U\+LL otherwise 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_ae42fc70d73e1143e5dad67766e413f05}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_a56f30bf68a015dcc657d9fbfc5a42aa1}\label{classParamListStandard_a56f30bf68a015dcc657d9fbfc5a42aa1}} 
+\index{ParamListStandard@{ParamListStandard}!populateResolver@{populateResolver}}
+\index{populateResolver@{populateResolver}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{populateResolver()}{populateResolver()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::populate\+Resolver (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Build the \mbox{\hyperlink{classParamEntry}{Param\+Entry}} resolver maps. 
+
+Enter all the \mbox{\hyperlink{classParamEntry}{Param\+Entry}} objects into an interval map (based on address space) \mbox{\Hypertarget{classParamListStandard_a22a2afd938c503357fac9d330eb89858}\label{classParamListStandard_a22a2afd938c503357fac9d330eb89858}} 
+\index{ParamListStandard@{ParamListStandard}!possibleParam@{possibleParam}}
+\index{possibleParam@{possibleParam}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{possibleParam()}{possibleParam()}}
+{\footnotesize\ttfamily bool Param\+List\+Standard\+::possible\+Param (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Does the given storage location make sense as a parameter. 
+
+Within {\bfseries{this}} model, decide if the storage location can be considered a parameter. 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the storage location \\
+\hline
+{\em size} & is the number of bytes in the storage location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the location can be a parameter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_a77bf29c2bd3fe17be0e8200af97c50d9}{Param\+List}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classParamListStandardOut_a9c8b1c882536296945ff816d9e3f3600}{Param\+List\+Standard\+Out}}.
+
+\mbox{\Hypertarget{classParamListStandard_a9b9ed2f66a0e7401208abcd385f2c678}\label{classParamListStandard_a9b9ed2f66a0e7401208abcd385f2c678}} 
+\index{ParamListStandard@{ParamListStandard}!possibleParamWithSlot@{possibleParamWithSlot}}
+\index{possibleParamWithSlot@{possibleParamWithSlot}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{possibleParamWithSlot()}{possibleParamWithSlot()}}
+{\footnotesize\ttfamily bool Param\+List\+Standard\+::possible\+Param\+With\+Slot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size,  }\item[{int4 \&}]{slot,  }\item[{int4 \&}]{slotsize }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Pass-\/back the slot and slot size for the given storage location as a parameter. 
+
+This checks if the given storage location acts as a parameter in {\bfseries{this}} model and passes back the number of slots that it occupies. 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the storage location \\
+\hline
+{\em size} & is the number of bytes in the storage location \\
+\hline
+{\em slot} & if the {\itshape slot} number to pass back \\
+\hline
+{\em slotsize} & is the number of consumed slots to pass back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the location can be a parameter 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_a612c46c0ba7aca424885c566b4c965fc}{Param\+List}}.
+
+\mbox{\Hypertarget{classParamListStandard_a7dc8219ff6422f4e23d12643b68eb100}\label{classParamListStandard_a7dc8219ff6422f4e23d12643b68eb100}} 
+\index{ParamListStandard@{ParamListStandard}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage,  }\item[{vector$<$ \mbox{\hyperlink{classEffectRecord}{Effect\+Record}} $>$ \&}]{effectlist,  }\item[{bool}]{normalstack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the model from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$input$>$ or $<$output$>$ element \\
+\hline
+{\em manage} & is used to resolve references to address spaces \\
+\hline
+{\em effectlist} & is a container collecting Effect\+Records across all parameters \\
+\hline
+{\em normalstack} & is {\bfseries{true}} if parameters are pushed on the stack in the normal order \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classParamList_a886a9ff1081a2cdcfdaec5c45b5f7f29}{Param\+List}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classParamListStandardOut_a6ca5a4b571dad6ad5378afda6ac84e0c}{Param\+List\+Standard\+Out}}.
+
+\mbox{\Hypertarget{classParamListStandard_aacdd4138b9b70be59a0033514cbb6abb}\label{classParamListStandard_aacdd4138b9b70be59a0033514cbb6abb}} 
+\index{ParamListStandard@{ParamListStandard}!separateFloat@{separateFloat}}
+\index{separateFloat@{separateFloat}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{separateFloat()}{separateFloat()}}
+{\footnotesize\ttfamily void Param\+List\+Standard\+::separate\+Float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active,  }\item[{int4 \&}]{floatstart,  }\item[{int4 \&}]{floatstop,  }\item[{int4 \&}]{start,  }\item[{int4 \&}]{stop }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculate the range of floating-\/point entries within a given set of parameter {\itshape trials}. 
+
+The trials must already be mapped, which should put floating-\/point entries first. This method calculates the range of floating-\/point entries and the range of general purpose entries and passes them back. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the given set of parameter trials \\
+\hline
+{\em floatstart} & will pass back the index of the first floating-\/point trial \\
+\hline
+{\em floatstop} & will pass back the index (+1) of the last floating-\/point trial \\
+\hline
+{\em start} & will pass back the index of the first general purpose trial \\
+\hline
+{\em stop} & will pass back the index (+1) of the last general purpose trial \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classParamListStandard_a10d5f6771892d435ab6711e9df458f60}\label{classParamListStandard_a10d5f6771892d435ab6711e9df458f60}} 
+\index{ParamListStandard@{ParamListStandard}!unjustifiedContainer@{unjustifiedContainer}}
+\index{unjustifiedContainer@{unjustifiedContainer}!ParamListStandard@{ParamListStandard}}
+\doxysubsubsection{\texorpdfstring{unjustifiedContainer()}{unjustifiedContainer()}}
+{\footnotesize\ttfamily bool Param\+List\+Standard\+::unjustified\+Container (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{int4}]{size,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the given storage location looks like an {\itshape unjustified} parameter. 
+
+The storage for a value may be contained in a normal parameter location but be unjustified within that container, i.\+e. the least significant bytes are not being used. If this is the case, pass back the full parameter location and return {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em loc} & is the starting address of the given storage \\
+\hline
+{\em size} & is the number of bytes in the given storage \\
+\hline
+{\em res} & is the full parameter storage to pass back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the given storage is unjustified within its parameter container 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classParamList_a6e43243a4f88cb16925d6a785b6f8289}{Param\+List}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

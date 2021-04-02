@@ -1,0 +1,105 @@
+\hypertarget{classInjectPayloadSleigh}{}\doxysection{Inject\+Payload\+Sleigh Class Reference}
+\label{classInjectPayloadSleigh}\index{InjectPayloadSleigh@{InjectPayloadSleigh}}
+
+
+Inheritance diagram for Inject\+Payload\+Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInjectPayloadSleigh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Inject\+Payload\+Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classInjectPayloadSleigh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInjectPayloadSleigh_a33e2114e7eebfa2a130b973fcfa7f549}\label{classInjectPayloadSleigh_a33e2114e7eebfa2a130b973fcfa7f549}} 
+{\bfseries Inject\+Payload\+Sleigh} (const string \&src, const string \&nm, int4 tp)
+\item 
+virtual void \mbox{\hyperlink{classInjectPayloadSleigh_a54d60a04cf80a0fece97040b0dc8ed0d}{inject}} (\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&context, \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&emit) const
+\item 
+virtual void \mbox{\hyperlink{classInjectPayloadSleigh_ae41de3f330c3cbb5327e94fcf3ae705c}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} payload from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectPayloadSleigh_af501310c66ead549c7bd48456b0c8020}\label{classInjectPayloadSleigh_af501310c66ead549c7bd48456b0c8020}} 
+virtual void \mbox{\hyperlink{classInjectPayloadSleigh_af501310c66ead549c7bd48456b0c8020}{print\+Template}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print the p-\/code ops of the injection to a stream (for debugging) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectPayloadSleigh_a8de1f54277859a5f9b867abaa0387832}\label{classInjectPayloadSleigh_a8de1f54277859a5f9b867abaa0387832}} 
+virtual string \mbox{\hyperlink{classInjectPayloadSleigh_a8de1f54277859a5f9b867abaa0387832}{get\+Source}} (void) const
+\begin{DoxyCompactList}\small\item\em Return a string describing the {\itshape source} of the injection (.cspec, prototype model, etc.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInjectPayloadSleigh_af694891d58e93134de26968640817371}\label{classInjectPayloadSleigh_af694891d58e93134de26968640817371}} 
+static void {\bfseries check\+Parameter\+Restrictions} (\mbox{\hyperlink{classInjectContextSleigh}{Inject\+Context\+Sleigh}} \&con, const vector$<$ \mbox{\hyperlink{classInjectParameter}{Inject\+Parameter}} $>$ \&\mbox{\hyperlink{classInjectPayload_a60b9ce0c3f608f1a9be223342948fa07}{inputlist}}, const vector$<$ \mbox{\hyperlink{classInjectParameter}{Inject\+Parameter}} $>$ \&\mbox{\hyperlink{classInjectPayload_adc1cb331a8229c5fd1dd8000cc6da97c}{output}}, const string \&source)
+\item 
+\mbox{\Hypertarget{classInjectPayloadSleigh_a2e0e17d52688e5404b7133d122b2e8aa}\label{classInjectPayloadSleigh_a2e0e17d52688e5404b7133d122b2e8aa}} 
+static void {\bfseries setup\+Parameters} (\mbox{\hyperlink{classInjectContextSleigh}{Inject\+Context\+Sleigh}} \&con, \mbox{\hyperlink{classParserWalkerChange}{Parser\+Walker\+Change}} \&walker, const vector$<$ \mbox{\hyperlink{classInjectParameter}{Inject\+Parameter}} $>$ \&\mbox{\hyperlink{classInjectPayload_a60b9ce0c3f608f1a9be223342948fa07}{inputlist}}, const vector$<$ \mbox{\hyperlink{classInjectParameter}{Inject\+Parameter}} $>$ \&\mbox{\hyperlink{classInjectPayload_adc1cb331a8229c5fd1dd8000cc6da97c}{output}}, const string \&source)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInjectPayloadSleigh_a66b43a88911f518d0a761ebd9375c30f}\label{classInjectPayloadSleigh_a66b43a88911f518d0a761ebd9375c30f}} 
+class {\bfseries Pcode\+Inject\+Library\+Sleigh}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInjectPayloadSleigh_a54d60a04cf80a0fece97040b0dc8ed0d}\label{classInjectPayloadSleigh_a54d60a04cf80a0fece97040b0dc8ed0d}} 
+\index{InjectPayloadSleigh@{InjectPayloadSleigh}!inject@{inject}}
+\index{inject@{inject}!InjectPayloadSleigh@{InjectPayloadSleigh}}
+\doxysubsubsection{\texorpdfstring{inject()}{inject()}}
+{\footnotesize\ttfamily void Inject\+Payload\+Sleigh\+::inject (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&}]{context,  }\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&}]{emit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Perform the injection of {\bfseries{this}} payload into data-\/flow.
+
+P-\/code operations representing {\bfseries{this}} payload are copied into the controlling analysis context. The provided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object dictates exactly where the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and \mbox{\hyperlink{classVarnode}{Varnode}} objects are inserted and to what container. An \mbox{\hyperlink{classInjectContext}{Inject\+Context}} object specifies how placeholder elements become concrete Varnodes in the appropriate context. 
+\begin{DoxyParams}{Parameters}
+{\em context} & is the provided Inject\+Conject object \\
+\hline
+{\em emit} & is the provovided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInjectPayload_aca9c322377f54e8e45c9a79e44ce0ff9}{Inject\+Payload}}.
+
+\mbox{\Hypertarget{classInjectPayloadSleigh_ae41de3f330c3cbb5327e94fcf3ae705c}\label{classInjectPayloadSleigh_ae41de3f330c3cbb5327e94fcf3ae705c}} 
+\index{InjectPayloadSleigh@{InjectPayloadSleigh}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!InjectPayloadSleigh@{InjectPayloadSleigh}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Inject\+Payload\+Sleigh\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} payload from an X\+ML stream. 
+
+The base class version of this method restores from a $<$pcode$>$ tag. Derived classes may restore from a parent tag and then invoke the base class method. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classInjectPayload_a19811abba789abc6bc1d3b2322709255}{Inject\+Payload}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classInjectPayloadCallother_a1d09a05eebbf6db00fd72650b45b9b85}{Inject\+Payload\+Callother}}, and \mbox{\hyperlink{classInjectPayloadCallfixup_a79e5f333168b25b8cd91e18e809029eb}{Inject\+Payload\+Callfixup}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inject\+\_\+sleigh.\+hh\item 
+inject\+\_\+sleigh.\+cc\end{DoxyCompactItemize}

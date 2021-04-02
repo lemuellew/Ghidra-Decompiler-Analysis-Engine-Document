@@ -1,0 +1,219 @@
+\hypertarget{classPcodeOpRaw}{}\doxysection{Pcode\+Op\+Raw Class Reference}
+\label{classPcodeOpRaw}\index{PcodeOpRaw@{PcodeOpRaw}}
+
+
+A low-\/level representation of a single pcode operation.  
+
+
+
+
+{\ttfamily \#include $<$pcoderaw.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPcodeOpRaw_a294ebc1a204972cfdc831faf6aff3f48}{set\+Behavior}} (\mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$be)
+\begin{DoxyCompactList}\small\item\em Set the opcode for this op. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ \mbox{\hyperlink{classPcodeOpRaw_ac790c26c33b84b492ce1146dfc813c8d}{get\+Behavior}} (void) const
+\begin{DoxyCompactList}\small\item\em Retrieve the behavior for this op. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{classPcodeOpRaw_a6c8a73aa191303dfb59ea23acf9edd42}{get\+Opcode}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the opcode for this op. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpRaw_afabdf56ea3e97062b7daf2af34f741a1}{set\+Seq\+Num}} (const \mbox{\hyperlink{classAddress}{Address}} \&a, uintm b)
+\begin{DoxyCompactList}\small\item\em Set the sequence number. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \& \mbox{\hyperlink{classPcodeOpRaw_a7845603fd30656ce6c99273a8498f4a7}{get\+Seq\+Num}} (void) const
+\begin{DoxyCompactList}\small\item\em Retrieve the sequence number. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classAddress}{Address}} \& \mbox{\hyperlink{classPcodeOpRaw_ad6fbe5fdf363a5f46361910de067cc96}{get\+Addr}} (void) const
+\begin{DoxyCompactList}\small\item\em Get address of this operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpRaw_a1c25e2a933548b236169924aa3b40d46}{set\+Output}} (\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$o)
+\begin{DoxyCompactList}\small\item\em Set the output varnode for this op. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ \mbox{\hyperlink{classPcodeOpRaw_a74d17c5335e043ff228c1c5f5e97cd74}{get\+Output}} (void) const
+\begin{DoxyCompactList}\small\item\em Retrieve the output varnode for this op. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpRaw_acd56b621ed3037ffa2cd015ca77406c0}{add\+Input}} (\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$i)
+\begin{DoxyCompactList}\small\item\em Add an additional input varnode to this op. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOpRaw_ac9a26e03c83c2e057f90010d350be391}{clear\+Inputs}} (void)
+\begin{DoxyCompactList}\small\item\em Remove all input varnodes to this op. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classPcodeOpRaw_a35819a340681743d4fb345b686ae5565}{num\+Input}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of input varnodes to this op. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ \mbox{\hyperlink{classPcodeOpRaw_a450f1af7453d285458b9cc00d5562bc4}{get\+Input}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get the i-\/th input varnode for this op. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A low-\/level representation of a single pcode operation. 
+
+This is just the minimum amount of data to represent a pcode operation An opcode, sequence number, optional output varnode and input varnodes 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeOpRaw_acd56b621ed3037ffa2cd015ca77406c0}\label{classPcodeOpRaw_acd56b621ed3037ffa2cd015ca77406c0}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!addInput@{addInput}}
+\index{addInput@{addInput}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{addInput()}{addInput()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Raw\+::add\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add an additional input varnode to this op. 
+
+A \mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} is initially created with no input varnodes. Inputs are added with this method. Varnodes are added in order, so the first add\+Input call creates input 0, for example. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the varnode to be added as input \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpRaw_ac9a26e03c83c2e057f90010d350be391}\label{classPcodeOpRaw_ac9a26e03c83c2e057f90010d350be391}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!clearInputs@{clearInputs}}
+\index{clearInputs@{clearInputs}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{clearInputs()}{clearInputs()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Raw\+::clear\+Inputs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove all input varnodes to this op. 
+
+If the inputs to a pcode operation need to be changed, this routine clears the existing inputs so new ones can be added. \mbox{\Hypertarget{classPcodeOpRaw_ad6fbe5fdf363a5f46361910de067cc96}\label{classPcodeOpRaw_ad6fbe5fdf363a5f46361910de067cc96}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!getAddr@{getAddr}}
+\index{getAddr@{getAddr}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{getAddr()}{getAddr()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classAddress}{Address}} \& Pcode\+Op\+Raw\+::get\+Addr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get address of this operation. 
+
+This is a convenience function to get the address of the machine instruction (of which this pcode op is a translation) \begin{DoxyReturn}{Returns}
+the machine instruction address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpRaw_ac790c26c33b84b492ce1146dfc813c8d}\label{classPcodeOpRaw_ac790c26c33b84b492ce1146dfc813c8d}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!getBehavior@{getBehavior}}
+\index{getBehavior@{getBehavior}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{getBehavior()}{getBehavior()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ Pcode\+Op\+Raw\+::get\+Behavior (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the behavior for this op. 
+
+Get the underlying behavior object for this pcode operation. From this object you can determine how the object evaluates inputs to get the output \begin{DoxyReturn}{Returns}
+the behavior object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpRaw_a450f1af7453d285458b9cc00d5562bc4}\label{classPcodeOpRaw_a450f1af7453d285458b9cc00d5562bc4}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!getInput@{getInput}}
+\index{getInput@{getInput}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{getInput()}{getInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ Pcode\+Op\+Raw\+::get\+Input (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the i-\/th input varnode for this op. 
+
+Input varnodes are indexed starting at 0. This retrieves the input varnode by index. The index {\itshape must} be in range, or unpredicatable behavior will result. Use the num\+Input method to get the number of inputs. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the desired input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the desired input varnode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpRaw_a6c8a73aa191303dfb59ea23acf9edd42}\label{classPcodeOpRaw_a6c8a73aa191303dfb59ea23acf9edd42}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!getOpcode@{getOpcode}}
+\index{getOpcode@{getOpcode}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{getOpcode()}{getOpcode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} Pcode\+Op\+Raw\+::get\+Opcode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the opcode for this op. 
+
+The possible types of pcode operations are enumerated by Op\+Code This routine retrieves the enumeration value for this particular op \begin{DoxyReturn}{Returns}
+the opcode value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpRaw_a74d17c5335e043ff228c1c5f5e97cd74}\label{classPcodeOpRaw_a74d17c5335e043ff228c1c5f5e97cd74}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!getOutput@{getOutput}}
+\index{getOutput@{getOutput}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{getOutput()}{getOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ Pcode\+Op\+Raw\+::get\+Output (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the output varnode for this op. 
+
+Most pcode operations have an output varnode. This routine retrieves that varnode. \begin{DoxyReturn}{Returns}
+the output varnode or {\bfseries{null}} if there is no output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpRaw_a7845603fd30656ce6c99273a8498f4a7}\label{classPcodeOpRaw_a7845603fd30656ce6c99273a8498f4a7}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!getSeqNum@{getSeqNum}}
+\index{getSeqNum@{getSeqNum}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{getSeqNum()}{getSeqNum()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \& Pcode\+Op\+Raw\+::get\+Seq\+Num (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieve the sequence number. 
+
+Every pcode operation has a {\bfseries{sequence}} {\bfseries{number}} which associates the operation with the address of the machine instruction being translated and an index number for this operation within the translation. \begin{DoxyReturn}{Returns}
+a reference to the sequence number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpRaw_a35819a340681743d4fb345b686ae5565}\label{classPcodeOpRaw_a35819a340681743d4fb345b686ae5565}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!numInput@{numInput}}
+\index{numInput@{numInput}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{numInput()}{numInput()}}
+{\footnotesize\ttfamily int4 Pcode\+Op\+Raw\+::num\+Input (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of input varnodes to this op. 
+
+\begin{DoxyReturn}{Returns}
+the number of inputs 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOpRaw_a294ebc1a204972cfdc831faf6aff3f48}\label{classPcodeOpRaw_a294ebc1a204972cfdc831faf6aff3f48}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!setBehavior@{setBehavior}}
+\index{setBehavior@{setBehavior}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{setBehavior()}{setBehavior()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Raw\+::set\+Behavior (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$}]{be }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the opcode for this op. 
+
+The core behavior for this operation is controlled by an \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} object which knows how output is determined given inputs. This routine sets that object 
+\begin{DoxyParams}{Parameters}
+{\em be} & is the behavior object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpRaw_a1c25e2a933548b236169924aa3b40d46}\label{classPcodeOpRaw_a1c25e2a933548b236169924aa3b40d46}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!setOutput@{setOutput}}
+\index{setOutput@{setOutput}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{setOutput()}{setOutput()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Raw\+::set\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the output varnode for this op. 
+
+Most pcode operations output to a varnode. This routine sets what that varnode is. 
+\begin{DoxyParams}{Parameters}
+{\em o} & is the varnode to set as output \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOpRaw_afabdf56ea3e97062b7daf2af34f741a1}\label{classPcodeOpRaw_afabdf56ea3e97062b7daf2af34f741a1}} 
+\index{PcodeOpRaw@{PcodeOpRaw}!setSeqNum@{setSeqNum}}
+\index{setSeqNum@{setSeqNum}!PcodeOpRaw@{PcodeOpRaw}}
+\doxysubsubsection{\texorpdfstring{setSeqNum()}{setSeqNum()}}
+{\footnotesize\ttfamily void Pcode\+Op\+Raw\+::set\+Seq\+Num (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{a,  }\item[{uintm}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the sequence number. 
+
+Every pcode operation has a {\bfseries{sequence}} {\bfseries{number}} which associates the operation with the address of the machine instruction being translated and an order number which provides an index for this particular operation within the entire translation of the machine instruction 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the instruction address \\
+\hline
+{\em b} & is the order number \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcoderaw_8hh}{pcoderaw.\+hh}}\end{DoxyCompactItemize}

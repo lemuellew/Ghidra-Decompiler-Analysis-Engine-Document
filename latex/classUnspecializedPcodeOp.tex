@@ -1,0 +1,69 @@
+\hypertarget{classUnspecializedPcodeOp}{}\doxysection{Unspecialized\+Pcode\+Op Class Reference}
+\label{classUnspecializedPcodeOp}\index{UnspecializedPcodeOp@{UnspecializedPcodeOp}}
+
+
+A user defined p-\/code op with no specialization.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Unspecialized\+Pcode\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classUnspecializedPcodeOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Unspecialized\+Pcode\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classUnspecializedPcodeOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classUnspecializedPcodeOp_a3e3e33005e96d5daef2aa26234d02d51}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore the detailed description from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A user defined p-\/code op with no specialization. 
+
+This class is used by the manager for C\+A\+L\+L\+O\+T\+H\+ER indices that have not been mapped to a specialization. The p-\/code operation has the (S\+L\+E\+I\+GH assigned) name, but still has an unknown effect. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUnspecializedPcodeOp_a3e3e33005e96d5daef2aa26234d02d51}\label{classUnspecializedPcodeOp_a3e3e33005e96d5daef2aa26234d02d51}} 
+\index{UnspecializedPcodeOp@{UnspecializedPcodeOp}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!UnspecializedPcodeOp@{UnspecializedPcodeOp}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily virtual void Unspecialized\+Pcode\+Op\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Restore the detailed description from an X\+ML stream. 
+
+The details of how a user defined operation behaves can be dynamically configured from an X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element describing the op \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUserPcodeOp_a2a7b7c637369bc4fba4604cd83a937af}{User\+Pcode\+Op}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\end{DoxyCompactItemize}

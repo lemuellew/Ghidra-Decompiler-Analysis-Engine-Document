@@ -1,0 +1,206 @@
+\hypertarget{classBlockSwitch}{}\doxysection{Block\+Switch Class Reference}
+\label{classBlockSwitch}\index{BlockSwitch@{BlockSwitch}}
+
+
+A structured {\itshape switch} construction.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+Switch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classBlockSwitch__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+Switch\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{classBlockSwitch__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockSwitch_a9c8ea8ab5e05fa4b6c9244cac89cf5cf}\label{classBlockSwitch_a9c8ea8ab5e05fa4b6c9244cac89cf5cf}} 
+\mbox{\hyperlink{classBlockSwitch_a9c8ea8ab5e05fa4b6c9244cac89cf5cf}{Block\+Switch}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ind)
+\begin{DoxyCompactList}\small\item\em Construct given the multi-\/exit root block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockSwitch_ab6767a24f3c49d93a880e101ccef4b7f}{grab\+Case\+Basic}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$switchbl, const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&cs)
+\begin{DoxyCompactList}\small\item\em Build annotated Case\+Order objects. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classBlockSwitch_af7731cebe7c26c9de45a45b0f821738a}{get\+Num\+Labels}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get the number of labels associated with one {\itshape case} block. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classBlockSwitch_a96c22ddffa4cc1b28ad0a1942d9b7524}{get\+Label}} (int4 i, int4 j) const
+\begin{DoxyCompactList}\small\item\em Get a specific label associated with a {\itshape case} block. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classBlockSwitch_a1f9c2081ef18f91022fd21ff2770fa67}{get\+Switch\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the data-\/type of the switch variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockSwitch_a9796f852aa205ba32346ae9d249f94c1}\label{classBlockSwitch_a9796f852aa205ba32346ae9d249f94c1}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classBlockSwitch_ac0f9b63b617ff225b3240f8dda6cf56b}\label{classBlockSwitch_ac0f9b63b617ff225b3240f8dda6cf56b}} 
+virtual void {\bfseries mark\+Unstructured} (void)
+\item 
+\mbox{\Hypertarget{classBlockSwitch_a85ad912114b4e2ac355ac2bc2f3be12c}\label{classBlockSwitch_a85ad912114b4e2ac355ac2bc2f3be12c}} 
+virtual void {\bfseries scope\+Break} (int4 curexit, int4 curloopexit)
+\item 
+virtual void \mbox{\hyperlink{classBlockSwitch_a57143ab3d1cea8c6962bdcf52fbe4bdf}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockSwitch_ad1102b97e80c4dd7afa66891eb67a0d6}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockSwitch_ae13e717fc62265c1f9b5024cb0e9cd1a}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockSwitch_a7025c1b84e94932c16427a62db0d7074}\label{classBlockSwitch_a7025c1b84e94932c16427a62db0d7074}} 
+virtual void {\bfseries finalize\+Printing} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A structured {\itshape switch} construction. 
+
+This always has at least one component, the first, that executes the {\itshape switch} statement itself and has multiple outgoing edges. Each edge flows either to a formal exit block, or to another {\itshape case} component. All additional components are {\bfseries{case}} components, which have either zero or one outgoing edge. If there is an edge, it flows either to another case component or to the formal exit block. The \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} instance has zero or one outgoing edges. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockSwitch_ad1102b97e80c4dd7afa66891eb67a0d6}\label{classBlockSwitch_ad1102b97e80c4dd7afa66891eb67a0d6}} 
+\index{BlockSwitch@{BlockSwitch}!emit@{emit}}
+\index{emit@{emit}!BlockSwitch@{BlockSwitch}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+Switch\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockSwitch_a96c22ddffa4cc1b28ad0a1942d9b7524}\label{classBlockSwitch_a96c22ddffa4cc1b28ad0a1942d9b7524}} 
+\index{BlockSwitch@{BlockSwitch}!getLabel@{getLabel}}
+\index{getLabel@{getLabel}!BlockSwitch@{BlockSwitch}}
+\doxysubsubsection{\texorpdfstring{getLabel()}{getLabel()}}
+{\footnotesize\ttfamily uintb Block\+Switch\+::get\+Label (\begin{DoxyParamCaption}\item[{int4}]{i,  }\item[{int4}]{j }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a specific label associated with a {\itshape case} block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the {\itshape case} block \\
+\hline
+{\em j} & is the index of the specific label \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the label as an untyped constant 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockSwitch_af7731cebe7c26c9de45a45b0f821738a}\label{classBlockSwitch_af7731cebe7c26c9de45a45b0f821738a}} 
+\index{BlockSwitch@{BlockSwitch}!getNumLabels@{getNumLabels}}
+\index{getNumLabels@{getNumLabels}!BlockSwitch@{BlockSwitch}}
+\doxysubsubsection{\texorpdfstring{getNumLabels()}{getNumLabels()}}
+{\footnotesize\ttfamily int4 Block\+Switch\+::get\+Num\+Labels (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of labels associated with one {\itshape case} block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the {\itshape case} block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of labels put on the associated block 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockSwitch_a1f9c2081ef18f91022fd21ff2770fa67}\label{classBlockSwitch_a1f9c2081ef18f91022fd21ff2770fa67}} 
+\index{BlockSwitch@{BlockSwitch}!getSwitchType@{getSwitchType}}
+\index{getSwitchType@{getSwitchType}!BlockSwitch@{BlockSwitch}}
+\doxysubsubsection{\texorpdfstring{getSwitchType()}{getSwitchType()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Block\+Switch\+::get\+Switch\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the data-\/type of the switch variable. 
+
+Drill down to the variable associated with the B\+R\+A\+N\+C\+H\+I\+ND itself, and return its data-\/type \begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classDatatype}{Datatype}} associated with the switch variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockSwitch_ab6767a24f3c49d93a880e101ccef4b7f}\label{classBlockSwitch_ab6767a24f3c49d93a880e101ccef4b7f}} 
+\index{BlockSwitch@{BlockSwitch}!grabCaseBasic@{grabCaseBasic}}
+\index{grabCaseBasic@{grabCaseBasic}!BlockSwitch@{BlockSwitch}}
+\doxysubsubsection{\texorpdfstring{grabCaseBasic()}{grabCaseBasic()}}
+{\footnotesize\ttfamily void Block\+Switch\+::grab\+Case\+Basic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{switchbl,  }\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{cs }\end{DoxyParamCaption})}
+
+
+
+Build annotated Case\+Order objects. 
+
+Given the list of components for the switch structure, build the annotated descriptions of the cases. Work out flow between cases and if there are any unstructured cases. The first \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} in the component list is the switch component itself. All other Flow\+Blocks in the list are the {\itshape case} components. 
+\begin{DoxyParams}{Parameters}
+{\em switchbl} & is the underlying basic block, with multiple outgoing edges, for the switch \\
+\hline
+{\em cs} & is the list of switch and case components \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockSwitch_ae13e717fc62265c1f9b5024cb0e9cd1a}\label{classBlockSwitch_ae13e717fc62265c1f9b5024cb0e9cd1a}} 
+\index{BlockSwitch@{BlockSwitch}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!BlockSwitch@{BlockSwitch}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Switch\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockSwitch_a57143ab3d1cea8c6962bdcf52fbe4bdf}\label{classBlockSwitch_a57143ab3d1cea8c6962bdcf52fbe4bdf}} 
+\index{BlockSwitch@{BlockSwitch}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockSwitch@{BlockSwitch}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+Switch\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

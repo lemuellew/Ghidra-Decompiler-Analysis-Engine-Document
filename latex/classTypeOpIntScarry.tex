@@ -1,0 +1,99 @@
+\hypertarget{classTypeOpIntScarry}{}\doxysection{Type\+Op\+Int\+Scarry Class Reference}
+\label{classTypeOpIntScarry}\index{TypeOpIntScarry@{TypeOpIntScarry}}
+
+
+Information about the I\+N\+T\+\_\+\+S\+C\+A\+R\+RY op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Int\+Scarry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classTypeOpIntScarry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Int\+Scarry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpIntScarry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpIntScarry_a1dfdc4943d6250ecb5cb4caa201a5488}\label{classTypeOpIntScarry_a1dfdc4943d6250ecb5cb4caa201a5488}} 
+\mbox{\hyperlink{classTypeOpIntScarry_a1dfdc4943d6250ecb5cb4caa201a5488}{Type\+Op\+Int\+Scarry}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpIntScarry_a606f0a1249cd4b1570e94a38f26dfb54}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classTypeOpIntScarry_a7808f16bddeba6d5b61bd2b24fe96143}{get\+Operator\+Name}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Get the name of the op-\/code as it should be displayed in context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the I\+N\+T\+\_\+\+S\+C\+A\+R\+RY op-\/code. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpIntScarry_a7808f16bddeba6d5b61bd2b24fe96143}\label{classTypeOpIntScarry_a7808f16bddeba6d5b61bd2b24fe96143}} 
+\index{TypeOpIntScarry@{TypeOpIntScarry}!getOperatorName@{getOperatorName}}
+\index{getOperatorName@{getOperatorName}!TypeOpIntScarry@{TypeOpIntScarry}}
+\doxysubsubsection{\texorpdfstring{getOperatorName()}{getOperatorName()}}
+{\footnotesize\ttfamily string Type\+Op\+Int\+Scarry\+::get\+Operator\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the name of the op-\/code as it should be displayed in context. 
+
+Depending on the context, the same op-\/code may get displayed in different ways. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the display token 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a42a1ffa77f998df24efdb44405b33ac5}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpIntScarry_a606f0a1249cd4b1570e94a38f26dfb54}\label{classTypeOpIntScarry_a606f0a1249cd4b1570e94a38f26dfb54}} 
+\index{TypeOpIntScarry@{TypeOpIntScarry}!push@{push}}
+\index{push@{push}!TypeOpIntScarry@{TypeOpIntScarry}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Int\+Scarry\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

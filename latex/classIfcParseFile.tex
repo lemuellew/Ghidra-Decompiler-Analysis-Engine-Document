@@ -1,0 +1,62 @@
+\hypertarget{classIfcParseFile}{}\doxysection{Ifc\+Parse\+File Class Reference}
+\label{classIfcParseFile}\index{IfcParseFile@{IfcParseFile}}
+
+
+Parse a file with C declarations\+: {\ttfamily parse file $<$filename$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Parse\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcParseFile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Parse\+File\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcParseFile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcParseFile_abe050f74bc02c78b231ed636e629b3ca}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Parse a file with C declarations\+: {\ttfamily parse file $<$filename$>$} 
+
+The file must contain C syntax data-\/type and function declarations. Data-\/types become part of the program, and function declarations, if the symbol already exists, associate the prototype with the symbol. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcParseFile_abe050f74bc02c78b231ed636e629b3ca}\label{classIfcParseFile_abe050f74bc02c78b231ed636e629b3ca}} 
+\index{IfcParseFile@{IfcParseFile}!execute@{execute}}
+\index{execute@{execute}!IfcParseFile@{IfcParseFile}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Parse\+File\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

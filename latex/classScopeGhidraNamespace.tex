@@ -1,0 +1,115 @@
+\hypertarget{classScopeGhidraNamespace}{}\doxysection{Scope\+Ghidra\+Namespace Class Reference}
+\label{classScopeGhidraNamespace}\index{ScopeGhidraNamespace@{ScopeGhidraNamespace}}
+
+
+A global {\itshape namespace} \mbox{\hyperlink{classScope}{Scope}}.  
+
+
+
+
+{\ttfamily \#include $<$database\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Scope\+Ghidra\+Namespace\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classScopeGhidraNamespace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scope\+Ghidra\+Namespace\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScopeGhidraNamespace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classScopeGhidraNamespace_a3a25b6d1d0ffd81f77e229ce0b52c3e3}{is\+Name\+Used}} (const string \&nm, const \mbox{\hyperlink{classScope}{Scope}} $\ast$op2) const
+\begin{DoxyCompactList}\small\item\em Check if the given name is occurs within the given scope path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeGhidraNamespace_aa172c9a51885ac46f20967d68ca2a24c}{add\+Map\+Internal}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 exfl, const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 off, int4 sz, const \mbox{\hyperlink{classRangeList}{Range\+List}} \&uselim)
+\begin{DoxyCompactList}\small\item\em Create a new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} for a \mbox{\hyperlink{classSymbol}{Symbol}} given a memory range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScopeGhidraNamespace_aa9ab46e531b6e61f887328e3c12f9c8f}\label{classScopeGhidraNamespace_aa9ab46e531b6e61f887328e3c12f9c8f}} 
+class {\bfseries Scope\+Ghidra}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A global {\itshape namespace} \mbox{\hyperlink{classScope}{Scope}}. 
+
+The only difference between {\bfseries{this}} and a \mbox{\hyperlink{classScopeInternal}{Scope\+Internal}} is that this scope builds up its {\itshape ownership} range with the symbols that are placed in it. This allows \mbox{\hyperlink{classDatabase_ab3840564f424238dd3a498fdb1a02644}{Database\+::map\+Scope()}} to recover the {\itshape namespace} \mbox{\hyperlink{classScope}{Scope}} for symbols that have been placed in it. Queries for {\itshape namespace} symbols that haven\textquotesingle{}t been cached yet percolate up to the global scope, which must be a \mbox{\hyperlink{classScopeGhidra}{Scope\+Ghidra}}. This will query the Ghidra client on behalf of the {\itshape namespace} and register any new symbols with {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScopeGhidraNamespace_aa172c9a51885ac46f20967d68ca2a24c}\label{classScopeGhidraNamespace_aa172c9a51885ac46f20967d68ca2a24c}} 
+\index{ScopeGhidraNamespace@{ScopeGhidraNamespace}!addMapInternal@{addMapInternal}}
+\index{addMapInternal@{addMapInternal}!ScopeGhidraNamespace@{ScopeGhidraNamespace}}
+\doxysubsubsection{\texorpdfstring{addMapInternal()}{addMapInternal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Ghidra\+Namespace\+::add\+Map\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{uint4}]{exfl,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{uselim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Create a new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} for a \mbox{\hyperlink{classSymbol}{Symbol}} given a memory range. 
+
+The \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} is specified in terms of a memory range and {\bfseries{usepoint}} 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} being mapped \\
+\hline
+{\em exfl} & are any boolean \mbox{\hyperlink{classVarnode}{Varnode}} properties specific to the memory range \\
+\hline
+{\em addr} & is the starting address of the given memory range \\
+\hline
+{\em off} & is the byte offset of the new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} (relative to the whole \mbox{\hyperlink{classSymbol}{Symbol}}) \\
+\hline
+{\em sz} & is the number of bytes in the range \\
+\hline
+{\em uselim} & is the given {\bfseries{usepoint}} (which may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly created \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classScopeInternal_a3b6e20fcb0624056020f2fc20d0a06ee}{Scope\+Internal}}.
+
+\mbox{\Hypertarget{classScopeGhidraNamespace_a3a25b6d1d0ffd81f77e229ce0b52c3e3}\label{classScopeGhidraNamespace_a3a25b6d1d0ffd81f77e229ce0b52c3e3}} 
+\index{ScopeGhidraNamespace@{ScopeGhidraNamespace}!isNameUsed@{isNameUsed}}
+\index{isNameUsed@{isNameUsed}!ScopeGhidraNamespace@{ScopeGhidraNamespace}}
+\doxysubsubsection{\texorpdfstring{isNameUsed()}{isNameUsed()}}
+{\footnotesize\ttfamily bool Scope\+Ghidra\+Namespace\+::is\+Name\+Used (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{classScope}{Scope}} $\ast$}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the given name is occurs within the given scope path. 
+
+Test for the presence of a symbol with the given name in either {\bfseries{this}} scope or an ancestor scope up to but not including the given terminating scope. If the name is used {\bfseries{true}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given name to test \\
+\hline
+{\em op2} & is the terminating ancestor scope (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classScopeInternal_ad92dba88239145749dd5b33820828f84}{Scope\+Internal}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database__ghidra_8hh}{database\+\_\+ghidra.\+hh}}\item 
+database\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

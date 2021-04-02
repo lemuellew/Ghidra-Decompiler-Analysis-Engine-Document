@@ -1,0 +1,628 @@
+\hypertarget{classScopeGhidra}{}\doxysection{Scope\+Ghidra Class Reference}
+\label{classScopeGhidra}\index{ScopeGhidra@{ScopeGhidra}}
+
+
+An implementation of the \mbox{\hyperlink{classScope}{Scope}} interface by querying a Ghidra client for \mbox{\hyperlink{classSymbol}{Symbol}} information.  
+
+
+
+
+{\ttfamily \#include $<$database\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Scope\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classScopeGhidra__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scope\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScopeGhidra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScopeGhidra_a715046c5b708da35b3547780a3226713}{Scope\+Ghidra}} (\mbox{\hyperlink{classArchitectureGhidra}{Architecture\+Ghidra}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeGhidra_a912898628da7cab6ec50207b9d9bd418}{lock\+Default\+Properties}} (void)
+\begin{DoxyCompactList}\small\item\em Lock in the default state of the boolean property map. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a2ebfecc6211081f8f2411c006cc867de}\label{classScopeGhidra_a2ebfecc6211081f8f2411c006cc867de}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_a2ebfecc6211081f8f2411c006cc867de}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all symbols from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeGhidra_abb80f5f1b2391d5865f3c75ec1e03644}{add\+Symbol}} (const string \&\mbox{\hyperlink{classScope_abb4900f6409e8a82c1b1cea827e4e2c5}{name}}, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint)
+\begin{DoxyCompactList}\small\item\em Add a new \mbox{\hyperlink{classSymbol}{Symbol}} to {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}, given a name, data-\/type, and a single mapping. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classScopeGhidra_a4a8ab1c82c0d5101e7e2f5cdd5cc8268}{build\+Variable\+Name}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&pc, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, int4 \&index, uint4 flags) const
+\begin{DoxyCompactList}\small\item\em Given an address and data-\/type, build a suitable generic symbol name. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classScopeGhidra_a25f55a3495b08a4caafaaeb5c1cf8bed}{build\+Undefined\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Build a formal {\bfseries{undefined}} name, used internally when a \mbox{\hyperlink{classSymbol}{Symbol}} is not given a name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a8de7736cd5930af6bdcd29b4673ab037}\label{classScopeGhidra_a8de7736cd5930af6bdcd29b4673ab037}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_a8de7736cd5930af6bdcd29b4673ab037}{set\+Attribute}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 attr)
+\begin{DoxyCompactList}\small\item\em Set boolean \mbox{\hyperlink{classVarnode}{Varnode}} properties on a \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a82f1b5f561b339b03471d39349d108dd}\label{classScopeGhidra_a82f1b5f561b339b03471d39349d108dd}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_a82f1b5f561b339b03471d39349d108dd}{clear\+Attribute}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 attr)
+\begin{DoxyCompactList}\small\item\em Clear boolean \mbox{\hyperlink{classVarnode}{Varnode}} properties on a \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_ae74dd0dfc3b70347a2ed19688adfd155}\label{classScopeGhidra_ae74dd0dfc3b70347a2ed19688adfd155}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_ae74dd0dfc3b70347a2ed19688adfd155}{set\+Display\+Format}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 attr)
+\begin{DoxyCompactList}\small\item\em Set the display format for a \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeGhidra_a214a1a04acaa9ef9ee58b8a3b9ef7875}{adjust\+Caches}} (void)
+\begin{DoxyCompactList}\small\item\em Let scopes internally adjust any caches. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeGhidra_a444989f8c48787af5df27c2a8b234fd3}{find\+Addr}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint) const
+\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classSymbol}{Symbol}} at a given address and {\bfseries{usepoint}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeGhidra_a6b5b1b303d3d6adf93822224aa7bd19f}{find\+Container}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint) const
+\begin{DoxyCompactList}\small\item\em Find the smallest \mbox{\hyperlink{classSymbol}{Symbol}} containing the given memory range. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeGhidra_ace9d46c27a627260abfe9cce2724267b}{find\+Closest\+Fit}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint) const
+\begin{DoxyCompactList}\small\item\em Find \mbox{\hyperlink{classSymbol}{Symbol}} which is the closest fit to the given memory range. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ \mbox{\hyperlink{classScopeGhidra_a8bc17a80d5b2bd69f7900be5b55a382a}{find\+Function}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Find the function starting at the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$ \mbox{\hyperlink{classScopeGhidra_a0de8e7d9e97f48516f8bb7b5edd4dfcd}{find\+External\+Ref}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Find an {\itshape external} {\itshape reference} at the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} $\ast$ \mbox{\hyperlink{classScopeGhidra_a81328af0bc4954612d1e107e592a246a}{find\+Code\+Label}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Find a label \mbox{\hyperlink{classSymbol}{Symbol}} at the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ \mbox{\hyperlink{classScopeGhidra_afdb2e6de63033bb78e6c4168c8e25227}{resolve\+External\+Ref\+Function}} (\mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$sym) const
+\begin{DoxyCompactList}\small\item\em Convert an {\itshape external} {\itshape reference} to the referenced function. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeGhidra_afb59d45c8fa404fe023e054b255d5a3d}{find\+Overlap}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size) const
+\begin{DoxyCompactList}\small\item\em Find first \mbox{\hyperlink{classSymbol}{Symbol}} overlapping the given memory range. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeGhidra_a26072ceb4215a022050d12b9487e3e87}{find\+By\+Name}} (const string \&\mbox{\hyperlink{classScope_abb4900f6409e8a82c1b1cea827e4e2c5}{name}}, vector$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ $>$ \&res) const
+\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classSymbol}{Symbol}} by name within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classScopeGhidra_a553121647ff88d1a2a73da2a0067e0e7}{is\+Name\+Used}} (const string \&nm, const \mbox{\hyperlink{classScope}{Scope}} $\ast$op2) const
+\begin{DoxyCompactList}\small\item\em Check if the given name is occurs within the given scope path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_ad17a63dadd4390989eaf9f20b8cbf173}\label{classScopeGhidra_ad17a63dadd4390989eaf9f20b8cbf173}} 
+virtual \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \mbox{\hyperlink{classScopeGhidra_ad17a63dadd4390989eaf9f20b8cbf173}{begin}} (void) const
+\begin{DoxyCompactList}\small\item\em Beginning iterator to mapped Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a7cf4b95214a2232a84e36ea5bfdd368c}\label{classScopeGhidra_a7cf4b95214a2232a84e36ea5bfdd368c}} 
+virtual \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \mbox{\hyperlink{classScopeGhidra_a7cf4b95214a2232a84e36ea5bfdd368c}{end}} (void) const
+\begin{DoxyCompactList}\small\item\em Ending iterator to mapped Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a4f5b42e5c99ea0581c4819b550c2fc27}\label{classScopeGhidra_a4f5b42e5c99ea0581c4819b550c2fc27}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classScopeGhidra_a4f5b42e5c99ea0581c4819b550c2fc27}{begin\+Dynamic}} (void) const
+\begin{DoxyCompactList}\small\item\em Beginning iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_abbb53b6abc143a87ab2ad12337d9d571}\label{classScopeGhidra_abbb53b6abc143a87ab2ad12337d9d571}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classScopeGhidra_abbb53b6abc143a87ab2ad12337d9d571}{end\+Dynamic}} (void) const
+\begin{DoxyCompactList}\small\item\em Ending iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a9c510456a060e6bbfb503f7e861afd2e}\label{classScopeGhidra_a9c510456a060e6bbfb503f7e861afd2e}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::iterator \mbox{\hyperlink{classScopeGhidra_a9c510456a060e6bbfb503f7e861afd2e}{begin\+Dynamic}} (void)
+\begin{DoxyCompactList}\small\item\em Beginning iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_abeb947fec06dcffbf611e30686a37657}\label{classScopeGhidra_abeb947fec06dcffbf611e30686a37657}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::iterator \mbox{\hyperlink{classScopeGhidra_abeb947fec06dcffbf611e30686a37657}{end\+Dynamic}} (void)
+\begin{DoxyCompactList}\small\item\em Ending iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a7c52834934353c6d92f5ae459d08e2ad}\label{classScopeGhidra_a7c52834934353c6d92f5ae459d08e2ad}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_a7c52834934353c6d92f5ae459d08e2ad}{clear\+Category}} (int4 cat)
+\begin{DoxyCompactList}\small\item\em Clear all symbols of the given category from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a1c8f2ce3c7783b86d375bc6d702c461c}\label{classScopeGhidra_a1c8f2ce3c7783b86d375bc6d702c461c}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_a1c8f2ce3c7783b86d375bc6d702c461c}{clear\+Unlocked\+Category}} (int4 cat)
+\begin{DoxyCompactList}\small\item\em Clear unlocked symbols of the given category from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a32e0189b87b6c66641c7de9baf118457}\label{classScopeGhidra_a32e0189b87b6c66641c7de9baf118457}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_a32e0189b87b6c66641c7de9baf118457}{clear\+Unlocked}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all unlocked symbols from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeGhidra_a0de93cdd506ae1490d939b957738f656}{restrict\+Scope}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Convert {\bfseries{this}} to a local \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_af06e4f5d4391dfb6bff788e93f9baa9d}\label{classScopeGhidra_af06e4f5d4391dfb6bff788e93f9baa9d}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_af06e4f5d4391dfb6bff788e93f9baa9d}{remove\+Symbol\+Mappings}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$symbol)
+\begin{DoxyCompactList}\small\item\em Remove all Symbol\+Entrys from the given \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_af54aaf6bcabc70b6b705fd1b49ecd720}\label{classScopeGhidra_af54aaf6bcabc70b6b705fd1b49ecd720}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_af54aaf6bcabc70b6b705fd1b49ecd720}{remove\+Symbol}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$symbol)
+\begin{DoxyCompactList}\small\item\em Remove the given \mbox{\hyperlink{classSymbol}{Symbol}} from {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_af6476f25701e4bc419644bab003d5513}\label{classScopeGhidra_af6476f25701e4bc419644bab003d5513}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_af6476f25701e4bc419644bab003d5513}{rename\+Symbol}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, const string \&newname)
+\begin{DoxyCompactList}\small\item\em Rename a \mbox{\hyperlink{classSymbol}{Symbol}} within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeGhidra_a086054a08a1916c410fa10b3e8afca76}{retype\+Symbol}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Change the data-\/type of a \mbox{\hyperlink{classSymbol}{Symbol}} within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classScopeGhidra_a458977d1e0a9826d5cf7bca487ecf327}{make\+Name\+Unique}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Produce a version of the given symbol name that won\textquotesingle{}t collide with other names in {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_abb73fa9a07b114dfa8994423f2aae170}\label{classScopeGhidra_abb73fa9a07b114dfa8994423f2aae170}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_abb73fa9a07b114dfa8994423f2aae170}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write out {\bfseries{this}} as a $<$scope$>$ X\+ML tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_ad6efdd1eb3b3189dc6020a0440128be3}\label{classScopeGhidra_ad6efdd1eb3b3189dc6020a0440128be3}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_ad6efdd1eb3b3189dc6020a0440128be3}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}} from a $<$scope$>$ X\+ML tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeGhidra_a6d3865ed7c8917f5f1594f4dd63ade7a}\label{classScopeGhidra_a6d3865ed7c8917f5f1594f4dd63ade7a}} 
+virtual void \mbox{\hyperlink{classScopeGhidra_a6d3865ed7c8917f5f1594f4dd63ade7a}{print\+Entries}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump a description of all \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects to a stream. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classScopeGhidra_a4c6c26ca7dd639659313e8fe86d798c8}{get\+Category\+Size}} (int4 cat) const
+\begin{DoxyCompactList}\small\item\em Get the number of Symbols in the given category. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ \mbox{\hyperlink{classScopeGhidra_aa3b3e331ed319e74af4a5927f7e70660}{get\+Category\+Symbol}} (int4 cat, int4 ind) const
+\begin{DoxyCompactList}\small\item\em Retrieve a \mbox{\hyperlink{classSymbol}{Symbol}} by index within a specific {\itshape category}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeGhidra_aafecf1b8615812bdbd8efeca910594a2}{set\+Category}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, int4 cat, int4 ind)
+\begin{DoxyCompactList}\small\item\em Set the {\itshape category} and index for the given \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An implementation of the \mbox{\hyperlink{classScope}{Scope}} interface by querying a Ghidra client for \mbox{\hyperlink{classSymbol}{Symbol}} information. 
+
+This object is generally instantiated once for an executable and acts as the {\itshape global} {\itshape scope} for the decompiler. Queries for symbol information are forwarded to the Ghidra client and the response is cached. This object fields queries for all scopes above functions. Responses may be for \mbox{\hyperlink{classSymbol}{Symbol}} objects that are not global but belong to sub-\/scopes, like {\itshape namespace} and function Scopes. This object will build any new \mbox{\hyperlink{classScope}{Scope}} or \mbox{\hyperlink{classFuncdata}{Funcdata}}, object as necessary and stick the \mbox{\hyperlink{classSymbol}{Symbol}} in, returning as if the new \mbox{\hyperlink{classScope}{Scope}} had caught the query in the first place. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScopeGhidra_a715046c5b708da35b3547780a3226713}\label{classScopeGhidra_a715046c5b708da35b3547780a3226713}} 
+\index{ScopeGhidra@{ScopeGhidra}!ScopeGhidra@{ScopeGhidra}}
+\index{ScopeGhidra@{ScopeGhidra}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{ScopeGhidra()}{ScopeGhidra()}}
+{\footnotesize\ttfamily Scope\+Ghidra\+::\+Scope\+Ghidra (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitectureGhidra}{Architecture\+Ghidra}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} and connection to the Ghidra client \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScopeGhidra_abb80f5f1b2391d5865f3c75ec1e03644}\label{classScopeGhidra_abb80f5f1b2391d5865f3c75ec1e03644}} 
+\index{ScopeGhidra@{ScopeGhidra}!addSymbol@{addSymbol}}
+\index{addSymbol@{addSymbol}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{addSymbol()}{addSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Ghidra\+::add\+Symbol (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a new \mbox{\hyperlink{classSymbol}{Symbol}} to {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}, given a name, data-\/type, and a single mapping. 
+
+The \mbox{\hyperlink{classSymbol}{Symbol}} object will be created with the given name and data-\/type. A single mapping (\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}) will be created for the \mbox{\hyperlink{classSymbol}{Symbol}} based on a given storage address for the symbol and an address for code that accesses the \mbox{\hyperlink{classSymbol}{Symbol}} at that storage location. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the new name of the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em ct} & is the data-\/type of the new \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em addr} & is the starting address of the \mbox{\hyperlink{classSymbol}{Symbol}} storage \\
+\hline
+{\em usepoint} & is the point accessing that storage (may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} matching the new mapping 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classScope_a7c79f7f535ba4e819fcf95185896a019}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a214a1a04acaa9ef9ee58b8a3b9ef7875}\label{classScopeGhidra_a214a1a04acaa9ef9ee58b8a3b9ef7875}} 
+\index{ScopeGhidra@{ScopeGhidra}!adjustCaches@{adjustCaches}}
+\index{adjustCaches@{adjustCaches}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{adjustCaches()}{adjustCaches()}}
+{\footnotesize\ttfamily virtual void Scope\+Ghidra\+::adjust\+Caches (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Let scopes internally adjust any caches. 
+
+This is called once after \mbox{\hyperlink{classArchitecture}{Architecture}} configuration is complete. 
+
+Implements \mbox{\hyperlink{classScope_a6654289ce3a02ab373eb96e78818d3ca}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a25f55a3495b08a4caafaaeb5c1cf8bed}\label{classScopeGhidra_a25f55a3495b08a4caafaaeb5c1cf8bed}} 
+\index{ScopeGhidra@{ScopeGhidra}!buildUndefinedName@{buildUndefinedName}}
+\index{buildUndefinedName@{buildUndefinedName}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{buildUndefinedName()}{buildUndefinedName()}}
+{\footnotesize\ttfamily virtual string Scope\+Ghidra\+::build\+Undefined\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Build a formal {\bfseries{undefined}} name, used internally when a \mbox{\hyperlink{classSymbol}{Symbol}} is not given a name. 
+
+\begin{DoxyReturn}{Returns}
+a special internal name that won\textquotesingle{}t collide with other names in {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_ac47d5c1c949be84a27a138be0febacb2}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a4a8ab1c82c0d5101e7e2f5cdd5cc8268}\label{classScopeGhidra_a4a8ab1c82c0d5101e7e2f5cdd5cc8268}} 
+\index{ScopeGhidra@{ScopeGhidra}!buildVariableName@{buildVariableName}}
+\index{buildVariableName@{buildVariableName}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{buildVariableName()}{buildVariableName()}}
+{\footnotesize\ttfamily virtual string Scope\+Ghidra\+::build\+Variable\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{pc,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{int4 \&}]{index,  }\item[{uint4}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Given an address and data-\/type, build a suitable generic symbol name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em pc} & is the address at which the name is getting used \\
+\hline
+{\em ct} & is a data-\/type used to inform the name \\
+\hline
+{\em index} & is a reference to an index used to make the name unique, which will be updated \\
+\hline
+{\em flags} & are boolean properties of the variable we need the name for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new variable name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a925baecb33b6f0d9212e42c1b48a64ba}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a444989f8c48787af5df27c2a8b234fd3}\label{classScopeGhidra_a444989f8c48787af5df27c2a8b234fd3}} 
+\index{ScopeGhidra@{ScopeGhidra}!findAddr@{findAddr}}
+\index{findAddr@{findAddr}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findAddr()}{findAddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Ghidra\+::find\+Addr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find a \mbox{\hyperlink{classSymbol}{Symbol}} at a given address and {\bfseries{usepoint}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em usepoint} & is the point at which the \mbox{\hyperlink{classSymbol}{Symbol}} is accessed (may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_aae4ea61f9a55ddfc9defd8548654c8e5}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a26072ceb4215a022050d12b9487e3e87}\label{classScopeGhidra_a26072ceb4215a022050d12b9487e3e87}} 
+\index{ScopeGhidra@{ScopeGhidra}!findByName@{findByName}}
+\index{findByName@{findByName}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findByName()}{findByName()}}
+{\footnotesize\ttfamily virtual void Scope\+Ghidra\+::find\+By\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{vector$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ $>$ \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Find a \mbox{\hyperlink{classSymbol}{Symbol}} by name within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. 
+
+If there are multiple Symbols with the same name, all are passed back. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name to search for \\
+\hline
+{\em res} & will contain any matching Symbols \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_a979222d28577e6e8d07e35f12d38bff7}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_ace9d46c27a627260abfe9cce2724267b}\label{classScopeGhidra_ace9d46c27a627260abfe9cce2724267b}} 
+\index{ScopeGhidra@{ScopeGhidra}!findClosestFit@{findClosestFit}}
+\index{findClosestFit@{findClosestFit}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findClosestFit()}{findClosestFit()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}$\ast$ Scope\+Ghidra\+::find\+Closest\+Fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Find \mbox{\hyperlink{classSymbol}{Symbol}} which is the closest fit to the given memory range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given memory range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+{\em usepoint} & is the point at which the \mbox{\hyperlink{classSymbol}{Symbol}} is accessed (may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_ab679fe786be2fb949af78054cb2041a8}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a81328af0bc4954612d1e107e592a246a}\label{classScopeGhidra_a81328af0bc4954612d1e107e592a246a}} 
+\index{ScopeGhidra@{ScopeGhidra}!findCodeLabel@{findCodeLabel}}
+\index{findCodeLabel@{findCodeLabel}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findCodeLabel()}{findCodeLabel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} $\ast$ Scope\+Ghidra\+::find\+Code\+Label (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find a label \mbox{\hyperlink{classSymbol}{Symbol}} at the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_af4bac52b9d64974b87432c0379cc38c6}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a6b5b1b303d3d6adf93822224aa7bd19f}\label{classScopeGhidra_a6b5b1b303d3d6adf93822224aa7bd19f}} 
+\index{ScopeGhidra@{ScopeGhidra}!findContainer@{findContainer}}
+\index{findContainer@{findContainer}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findContainer()}{findContainer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Ghidra\+::find\+Container (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the smallest \mbox{\hyperlink{classSymbol}{Symbol}} containing the given memory range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given memory range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+{\em usepoint} & is the point at which the \mbox{\hyperlink{classSymbol}{Symbol}} is accessed (may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a609fc1ef47d047717da65827e025cfdd}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a0de8e7d9e97f48516f8bb7b5edd4dfcd}\label{classScopeGhidra_a0de8e7d9e97f48516f8bb7b5edd4dfcd}} 
+\index{ScopeGhidra@{ScopeGhidra}!findExternalRef@{findExternalRef}}
+\index{findExternalRef@{findExternalRef}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findExternalRef()}{findExternalRef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$ Scope\+Ghidra\+::find\+External\+Ref (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find an {\itshape external} {\itshape reference} at the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_af69e0f77b621a3ba6436f8a1c0010d1c}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a8bc17a80d5b2bd69f7900be5b55a382a}\label{classScopeGhidra_a8bc17a80d5b2bd69f7900be5b55a382a}} 
+\index{ScopeGhidra@{ScopeGhidra}!findFunction@{findFunction}}
+\index{findFunction@{findFunction}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findFunction()}{findFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ Scope\+Ghidra\+::find\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the function starting at the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classFuncdata}{Funcdata}} object or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a2c621196f6fdb4b8ce4ee1f3dc953107}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_afb59d45c8fa404fe023e054b255d5a3d}\label{classScopeGhidra_afb59d45c8fa404fe023e054b255d5a3d}} 
+\index{ScopeGhidra@{ScopeGhidra}!findOverlap@{findOverlap}}
+\index{findOverlap@{findOverlap}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{findOverlap()}{findOverlap()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}$\ast$ Scope\+Ghidra\+::find\+Overlap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Find first \mbox{\hyperlink{classSymbol}{Symbol}} overlapping the given memory range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an overlapping \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL if none exists 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a3395b6194a59515caa1ede92fd6ac511}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a4c6c26ca7dd639659313e8fe86d798c8}\label{classScopeGhidra_a4c6c26ca7dd639659313e8fe86d798c8}} 
+\index{ScopeGhidra@{ScopeGhidra}!getCategorySize@{getCategorySize}}
+\index{getCategorySize@{getCategorySize}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{getCategorySize()}{getCategorySize()}}
+{\footnotesize\ttfamily virtual int4 Scope\+Ghidra\+::get\+Category\+Size (\begin{DoxyParamCaption}\item[{int4}]{cat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the number of Symbols in the given category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cat} & is the \mbox{\hyperlink{classSymbol}{Symbol}} {\itshape category} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number in that {\itshape category} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a909e15a7a96c9b402855b56b6bfdbd9f}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_aa3b3e331ed319e74af4a5927f7e70660}\label{classScopeGhidra_aa3b3e331ed319e74af4a5927f7e70660}} 
+\index{ScopeGhidra@{ScopeGhidra}!getCategorySymbol@{getCategorySymbol}}
+\index{getCategorySymbol@{getCategorySymbol}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{getCategorySymbol()}{getCategorySymbol()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classSymbol}{Symbol}}$\ast$ Scope\+Ghidra\+::get\+Category\+Symbol (\begin{DoxyParamCaption}\item[{int4}]{cat,  }\item[{int4}]{ind }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve a \mbox{\hyperlink{classSymbol}{Symbol}} by index within a specific {\itshape category}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cat} & is the \mbox{\hyperlink{classSymbol}{Symbol}} {\itshape category} \\
+\hline
+{\em ind} & is the index (within the category) of the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the indicated \mbox{\hyperlink{classSymbol}{Symbol}} or N\+U\+LL if no \mbox{\hyperlink{classSymbol}{Symbol}} with that index exists 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a491a168d7ea71f00da419dd864901ccb}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a553121647ff88d1a2a73da2a0067e0e7}\label{classScopeGhidra_a553121647ff88d1a2a73da2a0067e0e7}} 
+\index{ScopeGhidra@{ScopeGhidra}!isNameUsed@{isNameUsed}}
+\index{isNameUsed@{isNameUsed}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{isNameUsed()}{isNameUsed()}}
+{\footnotesize\ttfamily virtual bool Scope\+Ghidra\+::is\+Name\+Used (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{classScope}{Scope}} $\ast$}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Check if the given name is occurs within the given scope path. 
+
+Test for the presence of a symbol with the given name in either {\bfseries{this}} scope or an ancestor scope up to but not including the given terminating scope. If the name is used {\bfseries{true}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given name to test \\
+\hline
+{\em op2} & is the terminating ancestor scope (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_a7bc7f2e38bb4a16ad059bd1edd844dcf}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a912898628da7cab6ec50207b9d9bd418}\label{classScopeGhidra_a912898628da7cab6ec50207b9d9bd418}} 
+\index{ScopeGhidra@{ScopeGhidra}!lockDefaultProperties@{lockDefaultProperties}}
+\index{lockDefaultProperties@{lockDefaultProperties}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{lockDefaultProperties()}{lockDefaultProperties()}}
+{\footnotesize\ttfamily void Scope\+Ghidra\+::lock\+Default\+Properties (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Lock in the default state of the boolean property map. 
+
+When {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}} gets created, parsing of .pspec and .cspec files may lay down property information about memory before any the load-\/image is consulted. This method locks creates a copy of this state of memory, so the decompiler can reset to it before decompiling a new function. \mbox{\Hypertarget{classScopeGhidra_a458977d1e0a9826d5cf7bca487ecf327}\label{classScopeGhidra_a458977d1e0a9826d5cf7bca487ecf327}} 
+\index{ScopeGhidra@{ScopeGhidra}!makeNameUnique@{makeNameUnique}}
+\index{makeNameUnique@{makeNameUnique}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{makeNameUnique()}{makeNameUnique()}}
+{\footnotesize\ttfamily virtual string Scope\+Ghidra\+::make\+Name\+Unique (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Produce a version of the given symbol name that won\textquotesingle{}t collide with other names in {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return a unique version of the name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a2e0d945c44f4874743496b2814fbb631}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_afdb2e6de63033bb78e6c4168c8e25227}\label{classScopeGhidra_afdb2e6de63033bb78e6c4168c8e25227}} 
+\index{ScopeGhidra@{ScopeGhidra}!resolveExternalRefFunction@{resolveExternalRefFunction}}
+\index{resolveExternalRefFunction@{resolveExternalRefFunction}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{resolveExternalRefFunction()}{resolveExternalRefFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ Scope\+Ghidra\+::resolve\+External\+Ref\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$}]{sym }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Convert an {\itshape external} {\itshape reference} to the referenced function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} marking the external reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the underlying \mbox{\hyperlink{classFuncdata}{Funcdata}} object or N\+U\+LL if none exists 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_af4c45025894f1996ef0f3556752cd997}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a0de93cdd506ae1490d939b957738f656}\label{classScopeGhidra_a0de93cdd506ae1490d939b957738f656}} 
+\index{ScopeGhidra@{ScopeGhidra}!restrictScope@{restrictScope}}
+\index{restrictScope@{restrictScope}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{restrictScope()}{restrictScope()}}
+{\footnotesize\ttfamily virtual void Scope\+Ghidra\+::restrict\+Scope (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Convert {\bfseries{this}} to a local \mbox{\hyperlink{classScope}{Scope}}. 
+
+Attach {\bfseries{this}} to the given function, which makes {\bfseries{this}} the local scope for the function 
+\begin{DoxyParams}{Parameters}
+{\em f} & is the given function to attach to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classScope_a21556c257fbea888f9004c654599dfe9}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_a086054a08a1916c410fa10b3e8afca76}\label{classScopeGhidra_a086054a08a1916c410fa10b3e8afca76}} 
+\index{ScopeGhidra@{ScopeGhidra}!retypeSymbol@{retypeSymbol}}
+\index{retypeSymbol@{retypeSymbol}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{retypeSymbol()}{retypeSymbol()}}
+{\footnotesize\ttfamily virtual void Scope\+Ghidra\+::retype\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Change the data-\/type of a \mbox{\hyperlink{classSymbol}{Symbol}} within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. 
+
+If the size of the \mbox{\hyperlink{classSymbol}{Symbol}} changes, any mapping (\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}) is adjusted 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em ct} & is the new data-\/type \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_afeef6a133b07fa176c08b67c44064e69}{Scope}}.
+
+\mbox{\Hypertarget{classScopeGhidra_aafecf1b8615812bdbd8efeca910594a2}\label{classScopeGhidra_aafecf1b8615812bdbd8efeca910594a2}} 
+\index{ScopeGhidra@{ScopeGhidra}!setCategory@{setCategory}}
+\index{setCategory@{setCategory}!ScopeGhidra@{ScopeGhidra}}
+\doxysubsubsection{\texorpdfstring{setCategory()}{setCategory()}}
+{\footnotesize\ttfamily virtual void Scope\+Ghidra\+::set\+Category (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{int4}]{cat,  }\item[{int4}]{ind }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the {\itshape category} and index for the given \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em cat} & is the {\itshape category} to set for the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em ind} & is the index position to set (within the category) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_ac807e11df36854d2f7983bdd6779e83a}{Scope}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database__ghidra_8hh}{database\+\_\+ghidra.\+hh}}\item 
+database\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

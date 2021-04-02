@@ -1,0 +1,89 @@
+\hypertarget{classSubtableSymbol}{}\doxysection{Subtable\+Symbol Class Reference}
+\label{classSubtableSymbol}\index{SubtableSymbol@{SubtableSymbol}}
+
+
+Inheritance diagram for Subtable\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classSubtableSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Subtable\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classSubtableSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a8fa634ec34377a831f5a8708ab667192}\label{classSubtableSymbol_a8fa634ec34377a831f5a8708ab667192}} 
+{\bfseries Subtable\+Symbol} (const string \&nm)
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a450730a12be8f17b67c32d4dce1b7638}\label{classSubtableSymbol_a450730a12be8f17b67c32d4dce1b7638}} 
+bool {\bfseries is\+Being\+Built} (void) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a275e20fff6be4489a1ffdb30770e85cd}\label{classSubtableSymbol_a275e20fff6be4489a1ffdb30770e85cd}} 
+bool {\bfseries is\+Error} (void) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_aad4e50c5bc9f1f80c3e8077557568778}\label{classSubtableSymbol_aad4e50c5bc9f1f80c3e8077557568778}} 
+void {\bfseries add\+Constructor} (\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ct)
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a35fa0a80443d8ca5f269c0fc31523625}\label{classSubtableSymbol_a35fa0a80443d8ca5f269c0fc31523625}} 
+void {\bfseries build\+Decision\+Tree} (\mbox{\hyperlink{classDecisionProperties}{Decision\+Properties}} \&props)
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a065893cefe01e3f9ae6310535c593bde}\label{classSubtableSymbol_a065893cefe01e3f9ae6310535c593bde}} 
+\mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} $\ast$ {\bfseries build\+Pattern} (ostream \&s)
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a131d57e0a974bd170fa21fe64c3bc4b0}\label{classSubtableSymbol_a131d57e0a974bd170fa21fe64c3bc4b0}} 
+\mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} $\ast$ {\bfseries get\+Pattern} (void) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a0890d79234a82b73714a3a5657e9730f}\label{classSubtableSymbol_a0890d79234a82b73714a3a5657e9730f}} 
+int4 {\bfseries get\+Num\+Constructors} (void) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_aace2d4dcb93073aa935086357bee4033}\label{classSubtableSymbol_aace2d4dcb93073aa935086357bee4033}} 
+\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ {\bfseries get\+Constructor} (uintm id) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_aeb4624a84c6ef3e18f8de1c43687373d}\label{classSubtableSymbol_aeb4624a84c6ef3e18f8de1c43687373d}} 
+virtual \mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ {\bfseries resolve} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker)
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a103ecc93b2b3fe1a5db3edef893a4d5b}\label{classSubtableSymbol_a103ecc93b2b3fe1a5db3edef893a4d5b}} 
+virtual \mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$ {\bfseries get\+Pattern\+Expression} (void) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_ac06bdc86f6d571f033657702b021bf92}\label{classSubtableSymbol_ac06bdc86f6d571f033657702b021bf92}} 
+virtual void {\bfseries get\+Fixed\+Handle} (\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \&hand, \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a34643b05651a29f4568b69aa208b1e3a}\label{classSubtableSymbol_a34643b05651a29f4568b69aa208b1e3a}} 
+virtual int4 {\bfseries get\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a26cbcfbd3b82eddffb9ba3c3beb0b5ac}\label{classSubtableSymbol_a26cbcfbd3b82eddffb9ba3c3beb0b5ac}} 
+virtual void {\bfseries print} (ostream \&s, \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a793023a4312eb0bc2658097abedcc5bf}\label{classSubtableSymbol_a793023a4312eb0bc2658097abedcc5bf}} 
+virtual void {\bfseries collect\+Local\+Values} (vector$<$ uintb $>$ \&results) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a79fa8a930541c8d4f25a5ce0b5c955e9}\label{classSubtableSymbol_a79fa8a930541c8d4f25a5ce0b5c955e9}} 
+virtual symbol\+\_\+type {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_afe8d899ddb52fcdc4b26510042015b8b}\label{classSubtableSymbol_afe8d899ddb52fcdc4b26510042015b8b}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_a6209b1dc388be3cc89a6834e2660cf24}\label{classSubtableSymbol_a6209b1dc388be3cc89a6834e2660cf24}} 
+virtual void {\bfseries save\+Xml\+Header} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classSubtableSymbol_ac7ee481c0b61d730dab915a4f80e8061}\label{classSubtableSymbol_ac7ee481c0b61d730dab915a4f80e8061}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classSleighBase}{Sleigh\+Base}} $\ast$trans)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghsymbol.\+hh\item 
+slghsymbol.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\hypertarget{classActionMarkExplicit}{}\doxysection{Action\+Mark\+Explicit Class Reference}
+\label{classActionMarkExplicit}\index{ActionMarkExplicit@{ActionMarkExplicit}}
+
+
+Find {\bfseries{explicit}} Varnodes\+: Varnodes that have an explicit token representing them in the output.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Mark\+Explicit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classActionMarkExplicit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Mark\+Explicit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classActionMarkExplicit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionMarkExplicit_a35862d8fd674fcf340ccf3bdd99a18e6}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionMarkExplicit_aea3570d9fb0a90407480fd25cb077f70}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Find {\bfseries{explicit}} Varnodes\+: Varnodes that have an explicit token representing them in the output. 
+
+In the final output of the syntax tree as source code, all variables are characterized as either
+\begin{DoxyItemize}
+\item {\bfseries{explicit}}, having a specific identifier in the source code, or
+\item {\bfseries{implied}}, an intermediate result of an expression with no specific identifier
+\end{DoxyItemize}
+
+This \mbox{\hyperlink{classAction}{Action}} does preliminary scanning of Varnodes to determine which should be explicit in the final output. Basically, if there is symbol information associated, the possibility of aliasing, or if there are too many reads of a \mbox{\hyperlink{classVarnode}{Varnode}}, it should be considered explicit. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionMarkExplicit_aea3570d9fb0a90407480fd25cb077f70}\label{classActionMarkExplicit_aea3570d9fb0a90407480fd25cb077f70}} 
+\index{ActionMarkExplicit@{ActionMarkExplicit}!apply@{apply}}
+\index{apply@{apply}!ActionMarkExplicit@{ActionMarkExplicit}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Mark\+Explicit\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionMarkExplicit_a35862d8fd674fcf340ccf3bdd99a18e6}\label{classActionMarkExplicit_a35862d8fd674fcf340ccf3bdd99a18e6}} 
+\index{ActionMarkExplicit@{ActionMarkExplicit}!clone@{clone}}
+\index{clone@{clone}!ActionMarkExplicit@{ActionMarkExplicit}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Mark\+Explicit\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

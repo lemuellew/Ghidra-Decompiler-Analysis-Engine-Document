@@ -1,0 +1,92 @@
+\hypertarget{classRawBinaryArchitecture}{}\doxysection{Raw\+Binary\+Architecture Class Reference}
+\label{classRawBinaryArchitecture}\index{RawBinaryArchitecture@{RawBinaryArchitecture}}
+
+
+\mbox{\hyperlink{classArchitecture}{Architecture}} that reads its binary as a raw file.  
+
+
+
+
+{\ttfamily \#include $<$raw\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Raw\+Binary\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classRawBinaryArchitecture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Raw\+Binary\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRawBinaryArchitecture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classRawBinaryArchitecture_a3aafb658662f5d6af564e22f5b35aafc}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize this architecture to X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRawBinaryArchitecture_a381c8c1c048d0c8a17322ef8a17ae6ea}{restore\+Xml}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\begin{DoxyCompactList}\small\item\em Restore the \mbox{\hyperlink{classArchitecture}{Architecture}} state from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRawBinaryArchitecture_a790334042332785367ebaf46886da65f}\label{classRawBinaryArchitecture_a790334042332785367ebaf46886da65f}} 
+\mbox{\hyperlink{classRawBinaryArchitecture_a790334042332785367ebaf46886da65f}{Raw\+Binary\+Architecture}} (const string \&fname, const string \&targ, ostream $\ast$estream)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classArchitecture}{Architecture}} that reads its binary as a raw file. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRawBinaryArchitecture_a381c8c1c048d0c8a17322ef8a17ae6ea}\label{classRawBinaryArchitecture_a381c8c1c048d0c8a17322ef8a17ae6ea}} 
+\index{RawBinaryArchitecture@{RawBinaryArchitecture}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!RawBinaryArchitecture@{RawBinaryArchitecture}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Raw\+Binary\+Architecture\+::restore\+Xml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the \mbox{\hyperlink{classArchitecture}{Architecture}} state from an X\+ML stream. 
+
+Read in all the sub-\/component state from a $<$save\+\_\+state$>$ X\+ML tag When adding stuff to this B\+E\+W\+A\+RE\+: The spec file has already initialized stuff 
+\begin{DoxyParams}{Parameters}
+{\em store} & is document store containing the parsed root tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classArchitecture_ab15a398b9f84dd62ad36d1e83895783a}{Architecture}}.
+
+\mbox{\Hypertarget{classRawBinaryArchitecture_a3aafb658662f5d6af564e22f5b35aafc}\label{classRawBinaryArchitecture_a3aafb658662f5d6af564e22f5b35aafc}} 
+\index{RawBinaryArchitecture@{RawBinaryArchitecture}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!RawBinaryArchitecture@{RawBinaryArchitecture}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Raw\+Binary\+Architecture\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize this architecture to X\+ML. 
+
+Write the current state of all types, symbols, functions, etc. an X\+ML stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classArchitecture_af760a127622d4cdd4b6b436122478cb5}{Architecture}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{raw__arch_8hh}{raw\+\_\+arch.\+hh}}\item 
+raw\+\_\+arch.\+cc\end{DoxyCompactItemize}

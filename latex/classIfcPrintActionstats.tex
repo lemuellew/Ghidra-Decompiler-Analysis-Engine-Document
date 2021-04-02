@@ -1,0 +1,62 @@
+\hypertarget{classIfcPrintActionstats}{}\doxysection{Ifc\+Print\+Actionstats Class Reference}
+\label{classIfcPrintActionstats}\index{IfcPrintActionstats@{IfcPrintActionstats}}
+
+
+Print transform statistics for the decompiler engine\+: {\ttfamily print actionstats}  
+
+
+
+
+Inheritance diagram for Ifc\+Print\+Actionstats\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcPrintActionstats__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Print\+Actionstats\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcPrintActionstats__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcPrintActionstats_a46e637cead1a46f203fa2c1571f0b955}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Print transform statistics for the decompiler engine\+: {\ttfamily print actionstats} 
+
+Counts for each \mbox{\hyperlink{classAction}{Action}} and \mbox{\hyperlink{classRule}{Rule}} are displayed; showing the number of attempts, both successful and not, that were made to apply each one. Counts can accumulate over multiple decompilations. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcPrintActionstats_a46e637cead1a46f203fa2c1571f0b955}\label{classIfcPrintActionstats_a46e637cead1a46f203fa2c1571f0b955}} 
+\index{IfcPrintActionstats@{IfcPrintActionstats}!execute@{execute}}
+\index{execute@{execute}!IfcPrintActionstats@{IfcPrintActionstats}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Print\+Actionstats\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

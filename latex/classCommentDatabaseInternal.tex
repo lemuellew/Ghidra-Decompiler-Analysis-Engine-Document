@@ -1,0 +1,247 @@
+\hypertarget{classCommentDatabaseInternal}{}\doxysection{Comment\+Database\+Internal Class Reference}
+\label{classCommentDatabaseInternal}\index{CommentDatabaseInternal@{CommentDatabaseInternal}}
+
+
+An in-\/memory implementation of the \mbox{\hyperlink{classCommentDatabase}{Comment\+Database}} A\+PI.  
+
+
+
+
+{\ttfamily \#include $<$comment.\+hh$>$}
+
+
+
+Inheritance diagram for Comment\+Database\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classCommentDatabaseInternal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Comment\+Database\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classCommentDatabaseInternal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCommentDatabaseInternal_a3a466e50a8124004effddd14e4e71eb4}\label{classCommentDatabaseInternal_a3a466e50a8124004effddd14e4e71eb4}} 
+\mbox{\hyperlink{classCommentDatabaseInternal_a3a466e50a8124004effddd14e4e71eb4}{Comment\+Database\+Internal}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCommentDatabaseInternal_a19c22a8d1e9ea5ea38c321e778e7c063}\label{classCommentDatabaseInternal_a19c22a8d1e9ea5ea38c321e778e7c063}} 
+virtual void \mbox{\hyperlink{classCommentDatabaseInternal_a19c22a8d1e9ea5ea38c321e778e7c063}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all comments from this container. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommentDatabaseInternal_a5ab44b5d53ca52aef756c9ad476e2b34}{clear\+Type}} (const \mbox{\hyperlink{classAddress}{Address}} \&fad, uint4 tp)
+\begin{DoxyCompactList}\small\item\em Clear all comments matching (one of) the indicated types. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommentDatabaseInternal_af6169fd8d7de0aa0d41a80c38a179d6d}{add\+Comment}} (uint4 tp, const \mbox{\hyperlink{classAddress}{Address}} \&fad, const \mbox{\hyperlink{classAddress}{Address}} \&ad, const string \&txt)
+\begin{DoxyCompactList}\small\item\em Add a new comment to the container. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCommentDatabaseInternal_af3ba80fc4fd50954903bf2d0c54f36a8}{add\+Comment\+No\+Duplicate}} (uint4 tp, const \mbox{\hyperlink{classAddress}{Address}} \&fad, const \mbox{\hyperlink{classAddress}{Address}} \&ad, const string \&txt)
+\begin{DoxyCompactList}\small\item\em Add a new comment to the container, making sure there is no duplicate. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommentDatabaseInternal_a623dac65760a7c7a328c652f34ee714a}{delete\+Comment}} (\mbox{\hyperlink{classComment}{Comment}} $\ast$com)
+\begin{DoxyCompactList}\small\item\em Remove the given \mbox{\hyperlink{classComment}{Comment}} object from the container. \end{DoxyCompactList}\item 
+virtual Comment\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classCommentDatabaseInternal_a23097880c0ad74fdbe692772957844f6}{begin\+Comment}} (const \mbox{\hyperlink{classAddress}{Address}} \&fad) const
+\begin{DoxyCompactList}\small\item\em Get an iterator to the beginning of comments for a single function. \end{DoxyCompactList}\item 
+virtual Comment\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classCommentDatabaseInternal_a67ef8bcfd5778dd45acfd533ffd56189}{end\+Comment}} (const \mbox{\hyperlink{classAddress}{Address}} \&fad) const
+\begin{DoxyCompactList}\small\item\em Get an iterator to the ending of comments for a single function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommentDatabaseInternal_ace5b454d66acbc275e8cf20defc0e242}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save all comments in the container to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classCommentDatabaseInternal_a461a9fbe7e898e251637bd605d5758e2}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore all comments from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An in-\/memory implementation of the \mbox{\hyperlink{classCommentDatabase}{Comment\+Database}} A\+PI. 
+
+All \mbox{\hyperlink{classComment}{Comment}} objects are held in memory in a sorted container. This can be used as stand-\/alone database of comments, or it can act as a cache for some other container. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCommentDatabaseInternal_af6169fd8d7de0aa0d41a80c38a179d6d}\label{classCommentDatabaseInternal_af6169fd8d7de0aa0d41a80c38a179d6d}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!addComment@{addComment}}
+\index{addComment@{addComment}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{addComment()}{addComment()}}
+{\footnotesize\ttfamily void Comment\+Database\+Internal\+::add\+Comment (\begin{DoxyParamCaption}\item[{uint4}]{tp,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{fad,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{ad,  }\item[{const string \&}]{txt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a new comment to the container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tp} & is a set of properties to associate with the new comment (may be zero) \\
+\hline
+{\em fad} & is the address of the function to which the comment belongs \\
+\hline
+{\em ad} & is the address to which the comment is attached \\
+\hline
+{\em txt} & is the body of the comment \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_a0e7bd4fd808c28610f4867af22589f0c}{Comment\+Database}}.
+
+\mbox{\Hypertarget{classCommentDatabaseInternal_af3ba80fc4fd50954903bf2d0c54f36a8}\label{classCommentDatabaseInternal_af3ba80fc4fd50954903bf2d0c54f36a8}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!addCommentNoDuplicate@{addCommentNoDuplicate}}
+\index{addCommentNoDuplicate@{addCommentNoDuplicate}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{addCommentNoDuplicate()}{addCommentNoDuplicate()}}
+{\footnotesize\ttfamily bool Comment\+Database\+Internal\+::add\+Comment\+No\+Duplicate (\begin{DoxyParamCaption}\item[{uint4}]{tp,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{fad,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{ad,  }\item[{const string \&}]{txt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a new comment to the container, making sure there is no duplicate. 
+
+If there is already a comment at the same address with the same body, no new comment is added. 
+\begin{DoxyParams}{Parameters}
+{\em tp} & is a set of properties to associate with the new comment (may be zero) \\
+\hline
+{\em fad} & is the address of the function to which the comment belongs \\
+\hline
+{\em ad} & is the address to which the comment is attached \\
+\hline
+{\em txt} & is the body of the comment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a new \mbox{\hyperlink{classComment}{Comment}} was created, {\bfseries{false}} if there was a duplicate 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_a41b306ed1b9ac26a4b2c80a927be3364}{Comment\+Database}}.
+
+\mbox{\Hypertarget{classCommentDatabaseInternal_a23097880c0ad74fdbe692772957844f6}\label{classCommentDatabaseInternal_a23097880c0ad74fdbe692772957844f6}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!beginComment@{beginComment}}
+\index{beginComment@{beginComment}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{beginComment()}{beginComment()}}
+{\footnotesize\ttfamily Comment\+Set\+::const\+\_\+iterator Comment\+Database\+Internal\+::begin\+Comment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{fad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get an iterator to the beginning of comments for a single function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fad} & is the address of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_a4eb1eb37180fc092244b37ea11f7f2a4}{Comment\+Database}}.
+
+\mbox{\Hypertarget{classCommentDatabaseInternal_a5ab44b5d53ca52aef756c9ad476e2b34}\label{classCommentDatabaseInternal_a5ab44b5d53ca52aef756c9ad476e2b34}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!clearType@{clearType}}
+\index{clearType@{clearType}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{clearType()}{clearType()}}
+{\footnotesize\ttfamily void Comment\+Database\+Internal\+::clear\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{fad,  }\item[{uint4}]{tp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear all comments matching (one of) the indicated types. 
+
+Clearing is restricted to comments belonging to a specific function and matching at least one of the given properties 
+\begin{DoxyParams}{Parameters}
+{\em fad} & is the address of the owning function \\
+\hline
+{\em tp} & is a set of one or more properties \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_af4467b35ea8555ddc77e810453051a96}{Comment\+Database}}.
+
+\mbox{\Hypertarget{classCommentDatabaseInternal_a623dac65760a7c7a328c652f34ee714a}\label{classCommentDatabaseInternal_a623dac65760a7c7a328c652f34ee714a}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!deleteComment@{deleteComment}}
+\index{deleteComment@{deleteComment}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{deleteComment()}{deleteComment()}}
+{\footnotesize\ttfamily void Comment\+Database\+Internal\+::delete\+Comment (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classComment}{Comment}} $\ast$}]{com }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove the given \mbox{\hyperlink{classComment}{Comment}} object from the container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em com} & is the given \mbox{\hyperlink{classComment}{Comment}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_ac41202723e47b57dd4996d484629d019}{Comment\+Database}}.
+
+\mbox{\Hypertarget{classCommentDatabaseInternal_a67ef8bcfd5778dd45acfd533ffd56189}\label{classCommentDatabaseInternal_a67ef8bcfd5778dd45acfd533ffd56189}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!endComment@{endComment}}
+\index{endComment@{endComment}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{endComment()}{endComment()}}
+{\footnotesize\ttfamily Comment\+Set\+::const\+\_\+iterator Comment\+Database\+Internal\+::end\+Comment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{fad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get an iterator to the ending of comments for a single function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fad} & is the address of the function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_a51e0634dc24c921507426298910336f4}{Comment\+Database}}.
+
+\mbox{\Hypertarget{classCommentDatabaseInternal_a461a9fbe7e898e251637bd605d5758e2}\label{classCommentDatabaseInternal_a461a9fbe7e898e251637bd605d5758e2}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Comment\+Database\+Internal\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore all comments from X\+ML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$commentdb$>$ element \\
+\hline
+{\em manage} & is a manager for resolving address space references \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_a21e8b98e7f4276e239f6b2ea59191ded}{Comment\+Database}}.
+
+\mbox{\Hypertarget{classCommentDatabaseInternal_ace5b454d66acbc275e8cf20defc0e242}\label{classCommentDatabaseInternal_ace5b454d66acbc275e8cf20defc0e242}} 
+\index{CommentDatabaseInternal@{CommentDatabaseInternal}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!CommentDatabaseInternal@{CommentDatabaseInternal}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Comment\+Database\+Internal\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save all comments in the container to an X\+ML stream. 
+
+Writes a $<$commentdb$>$ tag, with $<$comment$>$ sub-\/tags for each \mbox{\hyperlink{classComment}{Comment}} object. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommentDatabase_ab80e2cbdabe2e275695c5980b8f8eb9a}{Comment\+Database}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{comment_8hh}{comment.\+hh}}\item 
+comment.\+cc\end{DoxyCompactItemize}

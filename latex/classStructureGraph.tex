@@ -1,0 +1,67 @@
+\hypertarget{classStructureGraph}{}\doxysection{Structure\+Graph Class Reference}
+\label{classStructureGraph}\index{StructureGraph@{StructureGraph}}
+
+
+Command to {\bfseries{structure}} a control-\/flow graph.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Structure\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classStructureGraph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Structure\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classStructureGraph__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classStructureGraph_a498c9004314b3845ca36c46f77b43ed6}{raw\+Action}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the action of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to {\bfseries{structure}} a control-\/flow graph. 
+
+An arbitrary control-\/flow is sent as a $<$block$>$ tag, with nested $<$block$>$, $<$bhead$>$, and $<$edge$>$ sub-\/tags. The decompiler structures the control-\/flow using standard {\itshape structured} {\itshape code} elements\+: if/else, loops, switches, etc. The resulting structure information is returned to the client as an X\+ML document.
+
+The command expects 2 string parameters. The first is the encoded integer id of a program in which we assume the control-\/flow graph lives. The second is the X\+ML description of the control-\/flow. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStructureGraph_a498c9004314b3845ca36c46f77b43ed6}\label{classStructureGraph_a498c9004314b3845ca36c46f77b43ed6}} 
+\index{StructureGraph@{StructureGraph}!rawAction@{rawAction}}
+\index{rawAction@{rawAction}!StructureGraph@{StructureGraph}}
+\doxysubsubsection{\texorpdfstring{rawAction()}{rawAction()}}
+{\footnotesize\ttfamily void Structure\+Graph\+::raw\+Action (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the action of the command. 
+
+Configuration is assumed to have happened, and {\bfseries{this}} object can immediately begin examining and manipulating data under the active \mbox{\hyperlink{classArchitecture}{Architecture}} object to perform the command. 
+
+Implements \mbox{\hyperlink{classGhidraCommand_a7d1a5cfedfd8f1d05161d27627302716}{Ghidra\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

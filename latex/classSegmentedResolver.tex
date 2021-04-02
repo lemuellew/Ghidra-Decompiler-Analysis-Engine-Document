@@ -1,0 +1,104 @@
+\hypertarget{classSegmentedResolver}{}\doxysection{Segmented\+Resolver Class Reference}
+\label{classSegmentedResolver}\index{SegmentedResolver@{SegmentedResolver}}
+
+
+A resolver for segmented architectures.  
+
+
+
+
+{\ttfamily \#include $<$architecture.\+hh$>$}
+
+
+
+Inheritance diagram for Segmented\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classSegmentedResolver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Segmented\+Resolver\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classSegmentedResolver__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSegmentedResolver_ab1ab1799920f6045d3fba4388026293c}{Segmented\+Resolver}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$sp, \mbox{\hyperlink{classSegmentOp}{Segment\+Op}} $\ast$sop)
+\item 
+virtual \mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classSegmentedResolver_a0751cdea5d9794b98bacf185bec0773b}{resolve}} (uintb val, int4 sz, const \mbox{\hyperlink{classAddress}{Address}} \&point, uintb \&full\+Encoding)
+\begin{DoxyCompactList}\small\item\em \begin{quote}
+Virtual destructor \end{quote}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A resolver for segmented architectures. 
+
+When the decompiler is attempting to resolve embedded constants as pointers, this class tries to recover segment info for near pointers by looking up tracked registers in context 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSegmentedResolver_ab1ab1799920f6045d3fba4388026293c}\label{classSegmentedResolver_ab1ab1799920f6045d3fba4388026293c}} 
+\index{SegmentedResolver@{SegmentedResolver}!SegmentedResolver@{SegmentedResolver}}
+\index{SegmentedResolver@{SegmentedResolver}!SegmentedResolver@{SegmentedResolver}}
+\doxysubsubsection{\texorpdfstring{SegmentedResolver()}{SegmentedResolver()}}
+{\footnotesize\ttfamily Segmented\+Resolver\+::\+Segmented\+Resolver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{sp,  }\item[{\mbox{\hyperlink{classSegmentOp}{Segment\+Op}} $\ast$}]{sop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Construct a segmented resolver 
+\begin{DoxyParams}{Parameters}
+{\em g} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+{\em sp} & is the segmented space \\
+\hline
+{\em sop} & is the segment operator \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSegmentedResolver_a0751cdea5d9794b98bacf185bec0773b}\label{classSegmentedResolver_a0751cdea5d9794b98bacf185bec0773b}} 
+\index{SegmentedResolver@{SegmentedResolver}!resolve@{resolve}}
+\index{resolve@{resolve}!SegmentedResolver@{SegmentedResolver}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Segmented\+Resolver\+::resolve (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{point,  }\item[{uintb \&}]{full\+Encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\begin{quote}
+Virtual destructor \end{quote}
+
+
+The main resolver method.
+
+Given a native constant in a specific context, resolve what address is being referred to. The constant can be a partially encoded pointer, in which case the full pointer encoding is recovered as well as the address. Whether or not a pointer is partially encoded or not is determined by the {\itshape sz} parameter, indicating the number of bytes in the pointer. A value of -\/1 here indicates that the pointer is known to be a full encoding. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is constant to be resolved to an address \\
+\hline
+{\em sz} & is the size of {\itshape val} in context (or -\/1). \\
+\hline
+{\em point} & is the address at which this constant is being used \\
+\hline
+{\em full\+Encoding} & is used to hold the full pointer encoding if {\bfseries{val}} is a partial encoding \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resolved \mbox{\hyperlink{classAddress}{Address}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAddressResolver_a80c05cd2e1a4ff745967f9f1512d418d}{Address\+Resolver}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{architecture_8hh}{architecture.\+hh}}\item 
+architecture.\+cc\end{DoxyCompactItemize}

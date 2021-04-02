@@ -1,0 +1,80 @@
+\hypertarget{classOptionForLoops}{}\doxysection{Option\+For\+Loops Class Reference}
+\label{classOptionForLoops}\index{OptionForLoops@{OptionForLoops}}
+
+
+Toggle whether the decompiler attempts to recover {\itshape for-\/loop} variables.  
+
+
+
+
+Inheritance diagram for Option\+For\+Loops\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classOptionForLoops__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Option\+For\+Loops\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classOptionForLoops__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classOptionForLoops_a96df834d64f6a7d10c0ca3b5e7a605ec}{apply}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb, const string \&p1, const string \&p2, const string \&p3) const
+\begin{DoxyCompactList}\small\item\em Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Toggle whether the decompiler attempts to recover {\itshape for-\/loop} variables. 
+
+Setting the first parameter to \char`\"{}on\char`\"{} causes the decompiler to search for a suitable loop variable controlling iteration of a {\itshape while-\/do} block. The {\itshape for-\/loop} displays the following on a single line\+:
+\begin{DoxyItemize}
+\item loop variable initializer (optional)
+\item loop condition
+\item loop variable incrementer 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptionForLoops_a96df834d64f6a7d10c0ca3b5e7a605ec}\label{classOptionForLoops_a96df834d64f6a7d10c0ca3b5e7a605ec}} 
+\index{OptionForLoops@{OptionForLoops}!apply@{apply}}
+\index{apply@{apply}!OptionForLoops@{OptionForLoops}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily string Option\+For\+Loops\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb,  }\item[{const string \&}]{p1,  }\item[{const string \&}]{p2,  }\item[{const string \&}]{p3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+This method is overloaded by the different Option classes to provide possible configuration of different parts of the \mbox{\hyperlink{classArchitecture}{Architecture}}. The user can provide up to three optional parameters to tailor a specific type of configuration. The method returns a confirmation/failure message as feedback. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} being configured \\
+\hline
+{\em p1} & is the first optional configuration string \\
+\hline
+{\em p2} & is the second optional configuration string \\
+\hline
+{\em p3} & is the third optional configuration string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a confirmation/failure message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{Arch\+Option}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

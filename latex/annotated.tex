@@ -1,0 +1,1032 @@
+\doxysection{Class List}
+Here are the classes, structs, unions and interfaces with brief descriptions\+:\begin{DoxyCompactList}
+\item\contentsline{section}{\mbox{\hyperlink{classAction}{Action}} \\*Large scale transformations applied to the varnode/op graph }{\pageref{classAction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionActiveParam}{Action\+Active\+Param}} \\*Determine active parameters to sub-\/functions }{\pageref{classActionActiveParam}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionActiveReturn}{Action\+Active\+Return}} \\*Determine which sub-\/functions have active output Varnodes }{\pageref{classActionActiveReturn}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionAssignHigh}{Action\+Assign\+High}} \\*Assign initial high-\/level \mbox{\hyperlink{classHighVariable}{High\+Variable}} objects to each \mbox{\hyperlink{classVarnode}{Varnode}} }{\pageref{classActionAssignHigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionBlockStructure}{Action\+Block\+Structure}} \\*Structure control-\/flow using standard high-\/level code constructs }{\pageref{classActionBlockStructure}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionConditionalConst}{Action\+Conditional\+Const}} \\*Propagate conditional constants }{\pageref{classActionConditionalConst}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionConditionalExe}{Action\+Conditional\+Exe}} \\*Search for and remove various forms of redundant C\+B\+R\+A\+N\+CH operations }{\pageref{classActionConditionalExe}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionConstantPtr}{Action\+Constant\+Ptr}} \\*Check for constants, with pointer type, that correspond to global symbols }{\pageref{classActionConstantPtr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionConstbase}{Action\+Constbase}} \\*Search for input Varnodes that have been officially provided constant values }{\pageref{classActionConstbase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionCopyMarker}{Action\+Copy\+Marker}} \\*Mark C\+O\+PY operations between Varnodes representing the object as {\itshape non-\/printing} }{\pageref{classActionCopyMarker}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDatabase}{Action\+Database}} \\*\mbox{\hyperlink{classDatabase}{Database}} of root \mbox{\hyperlink{classAction}{Action}} objects that can be used to transform a function }{\pageref{classActionDatabase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDeadCode}{Action\+Dead\+Code}} \\*Dead code removal. Eliminate {\itshape dead} p-\/code ops }{\pageref{classActionDeadCode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDefaultParams}{Action\+Default\+Params}} \\*Find a prototype for each sub-\/function }{\pageref{classActionDefaultParams}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDeindirect}{Action\+Deindirect}} \\*Eliminate locally constant indirect calls }{\pageref{classActionDeindirect}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDeterminedBranch}{Action\+Determined\+Branch}} \\*Remove conditional branches if the condition is constant }{\pageref{classActionDeterminedBranch}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDirectWrite}{Action\+Direct\+Write}} \\*Mark Varnodes built out of {\itshape legal} parameters }{\pageref{classActionDirectWrite}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDominantCopy}{Action\+Dominant\+Copy}} \\*Replace C\+O\+P\+Ys from the same source with a single dominant C\+O\+PY }{\pageref{classActionDominantCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDoNothing}{Action\+Do\+Nothing}} \\*Remove blocks that do nothing }{\pageref{classActionDoNothing}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDynamicMapping}{Action\+Dynamic\+Mapping}} \\*Attach {\itshape dynamically} mapped symbols to Varnodes in time for data-\/type propagation }{\pageref{classActionDynamicMapping}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionDynamicSymbols}{Action\+Dynamic\+Symbols}} \\*Make final attachments of {\itshape dynamically} mapped symbols to Varnodes }{\pageref{classActionDynamicSymbols}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionExtraPopSetup}{Action\+Extra\+Pop\+Setup}} \\*Define formal link between stack-\/pointer values before and after sub-\/function calls }{\pageref{classActionExtraPopSetup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionFinalStructure}{Action\+Final\+Structure}} \\*Perform final organization of the control-\/flow structure }{\pageref{classActionFinalStructure}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionForceGoto}{Action\+Force\+Goto}} \\*Apply any overridden forced gotos }{\pageref{classActionForceGoto}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionFuncLink}{Action\+Func\+Link}} \\*Prepare for data-\/flow analysis of function parameters }{\pageref{classActionFuncLink}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionFuncLinkOutOnly}{Action\+Func\+Link\+Out\+Only}} \\*Prepare for data-\/flow analysis of function parameters, when recovery isn\textquotesingle{}t required }{\pageref{classActionFuncLinkOutOnly}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionGroup}{Action\+Group}} \\*A group of actions (generally) applied in sequence }{\pageref{classActionGroup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \\*The list of groups defining a {\itshape root} \mbox{\hyperlink{classAction}{Action}} }{\pageref{classActionGroupList}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionHeritage}{Action\+Heritage}} \\*Build Static Single Assignment (S\+SA) representation for function }{\pageref{classActionHeritage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionHideShadow}{Action\+Hide\+Shadow}} \\*Locate {\itshape shadow} Varnodes and adjust them so they are hidden }{\pageref{classActionHideShadow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionInferTypes}{Action\+Infer\+Types}} \\*Infer and propagate data-\/types }{\pageref{classActionInferTypes}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionInputPrototype}{Action\+Input\+Prototype}} \\*Calculate the prototype for the function }{\pageref{classActionInputPrototype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionLaneDivide}{Action\+Lane\+Divide}} \\*Find Varnodes with a vectorized lane scheme and attempt to split the lanes }{\pageref{classActionLaneDivide}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionLikelyTrash}{Action\+Likely\+Trash}} \\*Get rid of registers with trash values }{\pageref{classActionLikelyTrash}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMapGlobals}{Action\+Map\+Globals}} \\*Create symbols for any discovered global variables in the function }{\pageref{classActionMapGlobals}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMarkExplicit}{Action\+Mark\+Explicit}} \\*Find {\bfseries{explicit}} Varnodes\+: Varnodes that have an explicit token representing them in the output }{\pageref{classActionMarkExplicit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMarkImplied}{Action\+Mark\+Implied}} \\*Mark all the {\itshape implied} \mbox{\hyperlink{classVarnode}{Varnode}} objects, which will have no explicit token in the output }{\pageref{classActionMarkImplied}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMarkIndirectOnly}{Action\+Mark\+Indirect\+Only}} \\*Mark illegal \mbox{\hyperlink{classVarnode}{Varnode}} inputs used only in C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT ops }{\pageref{classActionMarkIndirectOnly}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMergeAdjacent}{Action\+Merge\+Adjacent}} \\*Try to merge an op\textquotesingle{}s input \mbox{\hyperlink{classVarnode}{Varnode}} to its output, if they are at the same storage location }{\pageref{classActionMergeAdjacent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMergeCopy}{Action\+Merge\+Copy}} \\*Try to merge the input and output Varnodes of a C\+P\+U\+I\+\_\+\+C\+O\+PY op }{\pageref{classActionMergeCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMergeMultiEntry}{Action\+Merge\+Multi\+Entry}} \\*Try to merge Varnodes specified by Symbols with multiple Symbol\+Entrys }{\pageref{classActionMergeMultiEntry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMergeRequired}{Action\+Merge\+Required}} \\*Make {\itshape required} \mbox{\hyperlink{classVarnode}{Varnode}} merges as dictated by C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL, C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT, and {\itshape addrtied} property }{\pageref{classActionMergeRequired}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMergeType}{Action\+Merge\+Type}} \\*Try to merge Varnodes of the same type (if they don\textquotesingle{}t hold different values at the same time) }{\pageref{classActionMergeType}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionMultiCse}{Action\+Multi\+Cse}} \\*Perform Common Sub-\/expression Elimination on C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL ops }{\pageref{classActionMultiCse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionNameVars}{Action\+Name\+Vars}} \\*Choose names for all high-\/level variables (High\+Variables) }{\pageref{classActionNameVars}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionNodeJoin}{Action\+Node\+Join}} \\*Look for conditional branch expressions that have been split and rejoin them }{\pageref{classActionNodeJoin}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionNonzeroMask}{Action\+Nonzero\+Mask}} \\*Calculate the non-\/zero mask property on all \mbox{\hyperlink{classVarnode}{Varnode}} objects }{\pageref{classActionNonzeroMask}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionNormalizeBranches}{Action\+Normalize\+Branches}} \\*Flip conditional control-\/flow so that {\itshape preferred} comparison operators are used }{\pageref{classActionNormalizeBranches}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionNormalizeSetup}{Action\+Normalize\+Setup}} \\*Prepare function prototypes for \char`\"{}normalize\char`\"{} simplification }{\pageref{classActionNormalizeSetup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionOutputPrototype}{Action\+Output\+Prototype}} \\*Set the (already) recovered output data-\/type as a formal part of the prototype }{\pageref{classActionOutputPrototype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionParamDouble}{Action\+Param\+Double}} \\*Deal with situations that look like double precision parameters }{\pageref{classActionParamDouble}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionPool}{Action\+Pool}} \\*A pool of Rules that apply simultaneously }{\pageref{classActionPool}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionPreferComplement}{Action\+Prefer\+Complement}} \\*Attempt to normalize symmetric block structures }{\pageref{classActionPreferComplement}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionPrototypeTypes}{Action\+Prototype\+Types}} \\*Lay down locked input and output data-\/type information }{\pageref{classActionPrototypeTypes}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionPrototypeWarnings}{Action\+Prototype\+Warnings}} \\*Add warnings for prototypes that aren\textquotesingle{}t modeled properly }{\pageref{classActionPrototypeWarnings}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionRedundBranch}{Action\+Redund\+Branch}} \\*Get rid of {\bfseries{redundant}} branches\+: duplicate edges between the same input and output block }{\pageref{classActionRedundBranch}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionRestartGroup}{Action\+Restart\+Group}} \\*\mbox{\hyperlink{classAction}{Action}} which checks if restart (sub)actions have been generated and restarts itself }{\pageref{classActionRestartGroup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionRestrictLocal}{Action\+Restrict\+Local}} \\*Restrict possible range of local variables }{\pageref{classActionRestrictLocal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionRestructureHigh}{Action\+Restructure\+High}} \\*Create symbols that map out the local stack-\/frame for the function }{\pageref{classActionRestructureHigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionRestructureVarnode}{Action\+Restructure\+Varnode}} \\*Create symbols that map out the local stack-\/frame for the function }{\pageref{classActionRestructureVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionReturnRecovery}{Action\+Return\+Recovery}} \\*Determine data-\/flow holding the {\itshape return} {\itshape value} of the function }{\pageref{classActionReturnRecovery}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionReturnSplit}{Action\+Return\+Split}} \\*Split the epilog code of the function }{\pageref{classActionReturnSplit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionSegmentize}{Action\+Segmentize}} \\*Make sure pointers into segmented spaces have the correct form }{\pageref{classActionSegmentize}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionSetCasts}{Action\+Set\+Casts}} \\*Fill-\/in C\+P\+U\+I\+\_\+\+C\+A\+ST p-\/code ops as required by the casting strategy }{\pageref{classActionSetCasts}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionShadowVar}{Action\+Shadow\+Var}} \\*Check for one C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL input set defining more than one \mbox{\hyperlink{classVarnode}{Varnode}} }{\pageref{classActionShadowVar}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionSpacebase}{Action\+Spacebase}} \\*Mark \mbox{\hyperlink{classVarnode}{Varnode}} objects that hold stack-\/pointer values and set-\/up special data-\/type }{\pageref{classActionSpacebase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionStackPtrFlow}{Action\+Stack\+Ptr\+Flow}} \\*Analyze change to the stack pointer across sub-\/function calls }{\pageref{classActionStackPtrFlow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionStart}{Action\+Start}} \\*Gather raw p-\/code for a function }{\pageref{classActionStart}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionStartCleanUp}{Action\+Start\+Clean\+Up}} \\*Start clean up after main transform phase }{\pageref{classActionStartCleanUp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionStartTypes}{Action\+Start\+Types}} \\*Allow type recovery to start happening }{\pageref{classActionStartTypes}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionStop}{Action\+Stop}} \\*Do any post-\/processing after decompilation }{\pageref{classActionStop}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionStructureTransform}{Action\+Structure\+Transform}} \\*Give each control-\/flow structure an opportunity to make a final transform }{\pageref{classActionStructureTransform}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionSwitchNorm}{Action\+Switch\+Norm}} \\*Normalize jump-\/table construction }{\pageref{classActionSwitchNorm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionUnjustifiedParams}{Action\+Unjustified\+Params}} \\*Adjust improperly justified parameters }{\pageref{classActionUnjustifiedParams}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionUnreachable}{Action\+Unreachable}} \\*Remove unreachable blocks }{\pageref{classActionUnreachable}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classActionVarnodeProps}{Action\+Varnode\+Props}} \\*Transform based on \mbox{\hyperlink{classVarnode}{Varnode}} properties, such as {\itshape read-\/only} and {\itshape volatile} }{\pageref{classActionVarnodeProps}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structAliasChecker_1_1AddBase}{Alias\+Checker\+::\+Add\+Base}} \\*A helper class holding a \mbox{\hyperlink{classVarnode}{Varnode}} pointer reference and a possible index added to it }{\pageref{structAliasChecker_1_1AddBase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAddForm}{Add\+Form}} }{\pageref{classAddForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAddress}{Address}} \\*A low-\/level machine address for labelling bytes and data }{\pageref{classAddress}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAddressResolver}{Address\+Resolver}} \\*Abstract class for converting native constants to addresses }{\pageref{classAddressResolver}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structAddrLink}{Addr\+Link}} }{\pageref{structAddrLink}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} \\*A region where processor data is stored }{\pageref{classAddrSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} \\*A manager for different address spaces }{\pageref{classAddrSpaceManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAddTreeState}{Add\+Tree\+State}} \\*Structure for sorting out pointer expression trees }{\pageref{classAddTreeState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAliasChecker}{Alias\+Checker}} \\*A light-\/weight class for analyzing pointers and aliasing on the stack }{\pageref{classAliasChecker}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAncestorRealistic}{Ancestor\+Realistic}} \\*Helper class for determining if Varnodes can trace their value from a legitimate source }{\pageref{classAncestorRealistic}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAndExpression}{And\+Expression}} }{\pageref{classAndExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classArchitecture}{Architecture}} \\*Manager for all the major decompiler subsystems }{\pageref{classArchitecture}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classArchitectureCapability}{Architecture\+Capability}} \\*Abstract extension point for building \mbox{\hyperlink{classArchitecture}{Architecture}} objects }{\pageref{classArchitectureCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classArchitectureGhidra}{Architecture\+Ghidra}} \\*An implementation of the \mbox{\hyperlink{classArchitecture}{Architecture}} interface and connection to a Ghidra client }{\pageref{classArchitectureGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classArchOption}{Arch\+Option}} \\*Base class for options classes that affect the configuration of the \mbox{\hyperlink{classArchitecture}{Architecture}} object }{\pageref{classArchOption}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classArrayModifier}{Array\+Modifier}} }{\pageref{classArrayModifier}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} \\*Abstract class for emitting disassembly to an application }{\pageref{classAssemblyEmit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAssemblyRaw}{Assembly\+Raw}} }{\pageref{classAssemblyRaw}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPrintLanguage_1_1Atom}{Print\+Language\+::\+Atom}} \\*A single non-\/operator token emitted by the decompiler }{\pageref{structPrintLanguage_1_1Atom}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classAttributes}{Attributes}} \\*The {\itshape attributes} for a single X\+ML element }{\pageref{classAttributes}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structBadDataError}{Bad\+Data\+Error}} \\*Exception for bad instruction data }{\pageref{structBadDataError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBfdArchitecture}{Bfd\+Architecture}} \\*\mbox{\hyperlink{classArchitecture}{Architecture}} that reads executable files using G\+NU B\+FD libraries }{\pageref{classBfdArchitecture}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBfdArchitectureCapability}{Bfd\+Architecture\+Capability}} \\*Extension point for building a G\+NU B\+FD capable \mbox{\hyperlink{classArchitecture}{Architecture}} }{\pageref{classBfdArchitectureCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBinaryExpression}{Binary\+Expression}} }{\pageref{classBinaryExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBitrangeSymbol}{Bitrange\+Symbol}} }{\pageref{classBitrangeSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} \\*A basic block for p-\/code operations }{\pageref{classBlockBasic}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockCondition}{Block\+Condition}} \\*Two conditional blocks combined into one conditional using B\+O\+O\+L\+\_\+\+A\+ND or B\+O\+O\+L\+\_\+\+OR }{\pageref{classBlockCondition}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockCopy}{Block\+Copy}} \\*This class is used to mirror the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} objects in the fixed control-\/flow graph for a function }{\pageref{classBlockCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}} \\*A loop structure where the condition is checked at the bottom }{\pageref{classBlockDoWhile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structBlockEdge}{Block\+Edge}} \\*A control-\/flow edge between blocks (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}}) }{\pageref{structBlockEdge}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockGoto}{Block\+Goto}} \\*A block that terminates with an unstructured (goto) branch to another block }{\pageref{classBlockGoto}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \\*A control-\/flow block built out of sub-\/components }{\pageref{classBlockGraph}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockIf}{Block\+If}} \\*A basic \char`\"{}if\char`\"{} block }{\pageref{classBlockIf}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}} \\*An infinite loop structure }{\pageref{classBlockInfLoop}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockList}{Block\+List}} \\*A series of blocks that execute in sequence }{\pageref{classBlockList}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockMap}{Block\+Map}} \\*Helper class for resolving cross-\/references while deserializing \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} objects }{\pageref{classBlockMap}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}} \\*A block with multiple edges out, at least one of which is an unstructured (goto) branch }{\pageref{classBlockMultiGoto}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} \\*A structured {\itshape switch} construction }{\pageref{classBlockSwitch}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockVarnode}{Block\+Varnode}} \\*Helper class associating a \mbox{\hyperlink{classVarnode}{Varnode}} with the block where it is defined }{\pageref{classBlockVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} \\*A loop structure where the condition is checked at the top }{\pageref{classBlockWhileDo}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} \\*A breakpoint object }{\pageref{classBreakCallBack}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBreakTable}{Break\+Table}} \\*A collection of breakpoints for the emulator }{\pageref{classBreakTable}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classBreakTableCallBack}{Break\+Table\+Call\+Back}} \\*A basic instantiation of a breakpoint table }{\pageref{classBreakTableCallBack}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCallGraph}{Call\+Graph}} }{\pageref{classCallGraph}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCallGraphEdge}{Call\+Graph\+Edge}} }{\pageref{classCallGraphEdge}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} }{\pageref{classCallGraphNode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCapabilityPoint}{Capability\+Point}} \\*Class for automatically registering extension points to the decompiler }{\pageref{classCapabilityPoint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} \\*A strategy for applying type casts }{\pageref{classCastStrategy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCastStrategyC}{Cast\+StrategyC}} \\*Casting strategies that are specific to the C language }{\pageref{classCastStrategyC}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCastStrategyJava}{Cast\+Strategy\+Java}} \\*Casting strategies that are specific to the Java language }{\pageref{classCastStrategyJava}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCircleRange}{Circle\+Range}} \\*A class for manipulating integer value ranges }{\pageref{classCircleRange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classcircularqueue}{circularqueue$<$ \+\_\+type $>$}} \\*A circular buffer template }{\pageref{classcircularqueue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCodeDataAnalysis}{Code\+Data\+Analysis}} }{\pageref{classCodeDataAnalysis}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCodeUnit}{Code\+Unit}} }{\pageref{classCodeUnit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCollapseStructure}{Collapse\+Structure}} \\*Build a code structure from a control-\/flow graph (\mbox{\hyperlink{classBlockGraph}{Block\+Graph}}) }{\pageref{classCollapseStructure}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCombinePattern}{Combine\+Pattern}} }{\pageref{classCombinePattern}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classComment}{Comment}} \\*A comment attached to a specific function and code address }{\pageref{classComment}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCommentDatabase}{Comment\+Database}} \\*An interface to a container of comments }{\pageref{classCommentDatabase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCommentDatabaseGhidra}{Comment\+Database\+Ghidra}} \\*An implementation of \mbox{\hyperlink{classCommentDatabase}{Comment\+Database}} backed by a Ghidra client }{\pageref{classCommentDatabaseGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCommentDatabaseInternal}{Comment\+Database\+Internal}} \\*An in-\/memory implementation of the \mbox{\hyperlink{classCommentDatabase}{Comment\+Database}} A\+PI }{\pageref{classCommentDatabaseInternal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structCommentOrder}{Comment\+Order}} \\*Compare two \mbox{\hyperlink{classComment}{Comment}} pointers }{\pageref{structCommentOrder}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCommentSorter}{Comment\+Sorter}} \\*A class for sorting comments into and within basic blocks }{\pageref{classCommentSorter}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCompilerTag}{Compiler\+Tag}} \\*Contents of a $<$compiler$>$ tag in a .ldefs file }{\pageref{classCompilerTag}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConditionalExecution}{Conditional\+Execution}} \\*A class for simplifying a series of conditionally executed statements }{\pageref{classConditionalExecution}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConditionalJoin}{Conditional\+Join}} \\*Discover and eliminate {\itshape split} conditions }{\pageref{classConditionalJoin}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConditionMarker}{Condition\+Marker}} \\*A helper class for describing the similarity of the boolean condition between 2 C\+B\+R\+A\+N\+CH operations }{\pageref{classConditionMarker}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConsistencyChecker}{Consistency\+Checker}} }{\pageref{classConsistencyChecker}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConsoleCommands}{Console\+Commands}} \\*A console command run as part of a test sequence }{\pageref{classConsoleCommands}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantAbsolute}{Constant\+Absolute}} }{\pageref{classConstantAbsolute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantConsumed}{Constant\+Consumed}} }{\pageref{classConstantConsumed}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantExpression}{Constant\+Expression}} }{\pageref{classConstantExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantHeritageKnown}{Constant\+Heritage\+Known}} }{\pageref{classConstantHeritageKnown}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantIsConstant}{Constant\+Is\+Constant}} }{\pageref{classConstantIsConstant}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantNamed}{Constant\+Named}} }{\pageref{classConstantNamed}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantNZMask}{Constant\+N\+Z\+Mask}} }{\pageref{classConstantNZMask}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantOffset}{Constant\+Offset}} }{\pageref{classConstantOffset}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantPool}{Constant\+Pool}} \\*An interface to the pool of {\bfseries{constant}} objects for byte-\/code languages }{\pageref{classConstantPool}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantPoolGhidra}{Constant\+Pool\+Ghidra}} \\*An implementation of \mbox{\hyperlink{classConstantPool}{Constant\+Pool}} using a Ghidra client as the backing storage }{\pageref{classConstantPoolGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantPoolInternal}{Constant\+Pool\+Internal}} \\*An implementation of the \mbox{\hyperlink{classConstantPool}{Constant\+Pool}} interface storing records internally in R\+AM }{\pageref{classConstantPoolInternal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantSpace}{Constant\+Space}} \\*Special \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} for representing constants during analysis }{\pageref{classConstantSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantValue}{Constant\+Value}} }{\pageref{classConstantValue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstantVarnodeSize}{Constant\+Varnode\+Size}} }{\pageref{classConstantVarnodeSize}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintBoolean}{Constraint\+Boolean}} }{\pageref{classConstraintBoolean}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintConstCompare}{Constraint\+Const\+Compare}} }{\pageref{classConstraintConstCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintDef}{Constraint\+Def}} }{\pageref{classConstraintDef}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintDescend}{Constraint\+Descend}} }{\pageref{classConstraintDescend}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintGroup}{Constraint\+Group}} }{\pageref{classConstraintGroup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintLoneDescend}{Constraint\+Lone\+Descend}} }{\pageref{classConstraintLoneDescend}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintNamedExpression}{Constraint\+Named\+Expression}} }{\pageref{classConstraintNamedExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintNewOp}{Constraint\+New\+Op}} }{\pageref{classConstraintNewOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintNewUniqueOut}{Constraint\+New\+Unique\+Out}} }{\pageref{classConstraintNewUniqueOut}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOpcode}{Constraint\+Opcode}} }{\pageref{classConstraintOpcode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOpCompare}{Constraint\+Op\+Compare}} }{\pageref{classConstraintOpCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOpCopy}{Constraint\+Op\+Copy}} }{\pageref{classConstraintOpCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOpInput}{Constraint\+Op\+Input}} }{\pageref{classConstraintOpInput}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOpInputAny}{Constraint\+Op\+Input\+Any}} }{\pageref{classConstraintOpInputAny}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOpOutput}{Constraint\+Op\+Output}} }{\pageref{classConstraintOpOutput}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOr}{Constraint\+Or}} }{\pageref{classConstraintOr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintOtherInput}{Constraint\+Other\+Input}} }{\pageref{classConstraintOtherInput}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintParamConst}{Constraint\+Param\+Const}} }{\pageref{classConstraintParamConst}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintParamConstVal}{Constraint\+Param\+Const\+Val}} }{\pageref{classConstraintParamConstVal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintRemoveInput}{Constraint\+Remove\+Input}} }{\pageref{classConstraintRemoveInput}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintSetInput}{Constraint\+Set\+Input}} }{\pageref{classConstraintSetInput}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintSetInputConstVal}{Constraint\+Set\+Input\+Const\+Val}} }{\pageref{classConstraintSetInputConstVal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintSetOpcode}{Constraint\+Set\+Opcode}} }{\pageref{classConstraintSetOpcode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintVarCompare}{Constraint\+Var\+Compare}} }{\pageref{classConstraintVarCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintVarConst}{Constraint\+Var\+Const}} }{\pageref{classConstraintVarConst}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstraintVarnodeCopy}{Constraint\+Varnode\+Copy}} }{\pageref{classConstraintVarnodeCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstructor}{Constructor}} }{\pageref{classConstructor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structConstructState}{Construct\+State}} }{\pageref{structConstructState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} }{\pageref{classConstructTpl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classConstTpl}{Const\+Tpl}} }{\pageref{classConstTpl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContentHandler}{Content\+Handler}} \\*The S\+AX interface for parsing X\+ML documents }{\pageref{classContentHandler}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextBitRange}{Context\+Bit\+Range}} \\*Description of a context variable within the disassembly context {\itshape blob} }{\pageref{classContextBitRange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextCache}{Context\+Cache}} \\*A helper class for caching the active context blob to minimize database lookups }{\pageref{classContextCache}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextChange}{Context\+Change}} }{\pageref{classContextChange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextCommit}{Context\+Commit}} }{\pageref{classContextCommit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextDatabase}{Context\+Database}} \\*An interface to a database of disassembly/decompiler {\bfseries{context}} information }{\pageref{classContextDatabase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextField}{Context\+Field}} }{\pageref{classContextField}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextGhidra}{Context\+Ghidra}} \\*An implementation of a \mbox{\hyperlink{classContextDatabase}{Context\+Database}} obtaining context information via a Ghidra client }{\pageref{classContextGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextInternal}{Context\+Internal}} \\*An in-\/memory implementation of the \mbox{\hyperlink{classContextDatabase}{Context\+Database}} interface }{\pageref{classContextInternal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextOp}{Context\+Op}} }{\pageref{classContextOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextPattern}{Context\+Pattern}} }{\pageref{classContextPattern}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structContextSet}{Context\+Set}} }{\pageref{structContextSet}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classContextSymbol}{Context\+Symbol}} }{\pageref{classContextSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCover}{Cover}} \\*A description of the topological scope of a single variable object }{\pageref{classCover}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \\*The topological scope of a variable within a basic block }{\pageref{classCoverBlock}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCParse}{C\+Parse}} }{\pageref{classCParse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} \\*A description of a byte-\/code object referenced by a constant }{\pageref{classCPoolRecord}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDatabase}{Database}} \\*A manager for symbol scopes for a whole executable }{\pageref{classDatabase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDatatype}{Datatype}} \\*The base datatype class for the decompiler }{\pageref{classDatatype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structDatatypeCompare}{Datatype\+Compare}} \\*Compare two \mbox{\hyperlink{classDatatype}{Datatype}} pointers for equivalence of their description }{\pageref{structDatatypeCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structDatatypeNameCompare}{Datatype\+Name\+Compare}} \\*Compare two \mbox{\hyperlink{classDatatype}{Datatype}} pointers\+: first by name, then by id }{\pageref{structDatatypeNameCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structDataUnavailError}{Data\+Unavail\+Error}} \\*Exception indicating data was not available }{\pageref{structDataUnavailError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} }{\pageref{classDecisionNode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDecisionProperties}{Decision\+Properties}} }{\pageref{classDecisionProperties}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDecompileAt}{Decompile\+At}} \\*Command to {\bfseries{decompile}} a specific function }{\pageref{classDecompileAt}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDeregisterProgram}{Deregister\+Program}} \\*Command to {\bfseries{release}} all resources associated with a Program (executable) in the decompiler }{\pageref{classDeregisterProgram}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDisassemblyCache}{Disassembly\+Cache}} \\*A container for disassembly context used by the S\+L\+E\+I\+GH engine }{\pageref{classDisassemblyCache}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDisassemblyEngine}{Disassembly\+Engine}} }{\pageref{classDisassemblyEngine}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structDisassemblyResult}{Disassembly\+Result}} }{\pageref{structDisassemblyResult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDisjointPattern}{Disjoint\+Pattern}} }{\pageref{classDisjointPattern}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDivExpression}{Div\+Expression}} }{\pageref{classDivExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDocument}{Document}} \\*A complete in-\/memory X\+ML document }{\pageref{classDocument}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \\*A container for parsed X\+ML documents }{\pageref{classDocumentStorage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDummyConstConstraint}{Dummy\+Const\+Constraint}} }{\pageref{classDummyConstConstraint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDummyOpConstraint}{Dummy\+Op\+Constraint}} }{\pageref{classDummyOpConstraint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDummyTranslate}{Dummy\+Translate}} }{\pageref{classDummyTranslate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDummyVarnodeConstraint}{Dummy\+Varnode\+Constraint}} }{\pageref{classDummyVarnodeConstraint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDynamicHash}{Dynamic\+Hash}} \\*A hash utility to uniquely identify a temporary \mbox{\hyperlink{classVarnode}{Varnode}} in data-\/flow }{\pageref{classDynamicHash}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classDynamicRecommend}{Dynamic\+Recommend}} \\*A name recommendation for a particular dynamic storage location }{\pageref{classDynamicRecommend}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEffectRecord}{Effect\+Record}} \\*Description of the indirect effect a sub-\/function has on a memory range }{\pageref{classEffectRecord}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classElement}{Element}} \\*An X\+ML element. A node in the D\+OM tree }{\pageref{classElement}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmitNoXml}{Emit\+No\+Xml}} \\*A trivial emitter that outputs syntax straight to the stream }{\pageref{classEmitNoXml}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmitPrettyPrint}{Emit\+Pretty\+Print}} \\*A generic source code pretty printer }{\pageref{classEmitPrettyPrint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmitXml}{Emit\+Xml}} \\*Base class (and interface) for pretty printing and X\+ML markup of tokens }{\pageref{classEmitXml}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmulate}{Emulate}} \\*A pcode-\/based emulator interface }{\pageref{classEmulate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmulateFunction}{Emulate\+Function}} \\*A light-\/weight emulator to calculate switch targets from switch variables }{\pageref{classEmulateFunction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmulateMemory}{Emulate\+Memory}} \\*An abstract \mbox{\hyperlink{classEmulate}{Emulate}} class using a \mbox{\hyperlink{classMemoryState}{Memory\+State}} object as the backing machine state }{\pageref{classEmulateMemory}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmulatePcodeCache}{Emulate\+Pcode\+Cache}} \\*A S\+L\+E\+I\+GH based implementation of the \mbox{\hyperlink{classEmulate}{Emulate}} interface }{\pageref{classEmulatePcodeCache}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmulatePcodeOp}{Emulate\+Pcode\+Op}} \\*Emulation based on (existing) Pcode\+Ops and Varnodes }{\pageref{classEmulatePcodeOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEmulateSnippet}{Emulate\+Snippet}} \\*\mbox{\hyperlink{classEmulate}{Emulate}} a {\itshape snippet} of Pcode\+Ops out of a functional context }{\pageref{classEmulateSnippet}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEndInstructionValue}{End\+Instruction\+Value}} }{\pageref{classEndInstructionValue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEndSymbol}{End\+Symbol}} }{\pageref{classEndSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSymbolEntry_1_1EntryInitData}{Symbol\+Entry\+::\+Entry\+Init\+Data}} \\*Initialization data for a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} to facilitate a rangemap }{\pageref{classSymbolEntry_1_1EntryInitData}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort}{Symbol\+Entry\+::\+Entry\+Subsort}} \\*Class for sub-\/sorting different \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects at the same address }{\pageref{classSymbolEntry_1_1EntrySubsort}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structEnumerator}{Enumerator}} }{\pageref{structEnumerator}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEpsilonSymbol}{Epsilon\+Symbol}} }{\pageref{classEpsilonSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEqual1Form}{Equal1\+Form}} }{\pageref{classEqual1Form}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEqual2Form}{Equal2\+Form}} }{\pageref{classEqual2Form}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEqual3Form}{Equal3\+Form}} }{\pageref{classEqual3Form}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEqualEquation}{Equal\+Equation}} }{\pageref{classEqualEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEquateSymbol}{Equate\+Symbol}} \\*A \mbox{\hyperlink{classSymbol}{Symbol}} that holds {\bfseries{equate}} information for a constant }{\pageref{classEquateSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classValueSet_1_1Equation}{Value\+Set\+::\+Equation}} \\*An external that can be applied to a \mbox{\hyperlink{classValueSet}{Value\+Set}} }{\pageref{classValueSet_1_1Equation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEquationAnd}{Equation\+And}} }{\pageref{classEquationAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEquationCat}{Equation\+Cat}} }{\pageref{classEquationCat}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEquationLeftEllipsis}{Equation\+Left\+Ellipsis}} }{\pageref{classEquationLeftEllipsis}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEquationOr}{Equation\+Or}} }{\pageref{classEquationOr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classEquationRightEllipsis}{Equation\+Right\+Ellipsis}} }{\pageref{classEquationRightEllipsis}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structEvaluationError}{Evaluation\+Error}} }{\pageref{structEvaluationError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classExecutablePcode}{Executable\+Pcode}} \\*A snippet of p-\/code that can be executed outside of normal analysis }{\pageref{classExecutablePcode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classExecutablePcodeGhidra}{Executable\+Pcode\+Ghidra}} \\*A {\itshape p-\/code} {\itshape script} that uses a Ghidra client to generate the p-\/code ops }{\pageref{classExecutablePcodeGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classExecutablePcodeSleigh}{Executable\+Pcode\+Sleigh}} }{\pageref{classExecutablePcodeSleigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classExprTree}{Expr\+Tree}} }{\pageref{classExprTree}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} \\*A function \mbox{\hyperlink{classSymbol}{Symbol}} referring to an external location }{\pageref{classExternRefSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFamilySymbol}{Family\+Symbol}} }{\pageref{classFamilySymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structFieldContext}{Field\+Context}} }{\pageref{structFieldContext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structFieldQuality}{Field\+Quality}} }{\pageref{structFieldQuality}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFileManage}{File\+Manage}} }{\pageref{classFileManage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structFileStreamState}{File\+Stream\+State}} }{\pageref{structFileStreamState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} }{\pageref{structFixedHandle}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFloatFormat}{Float\+Format}} \\*Encoding information for a single floating-\/point format }{\pageref{classFloatFormat}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFloatingEdge}{Floating\+Edge}} \\*Class for holding an edge while the underlying graph is being manipulated }{\pageref{classFloatingEdge}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\*Description of a control-\/flow block containing Pcode\+Ops }{\pageref{classFlowBlock}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFlowDestSymbol}{Flow\+Dest\+Symbol}} }{\pageref{classFlowDestSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \\*A class for generating the control-\/flow structure for a single function }{\pageref{classFlowInfo}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFlowRefSymbol}{Flow\+Ref\+Symbol}} }{\pageref{classFlowRefSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFlushNative}{Flush\+Native}} \\*Command to {\bfseries{flush}} all symbols associated with a Program (executable) }{\pageref{classFlushNative}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFspecSpace}{Fspec\+Space}} \\*A special space for encoding \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} }{\pageref{classFspecSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} \\*A class for analyzing parameters to a sub-\/function call }{\pageref{classFuncCallSpecs}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFuncdata}{Funcdata}} \\*Container for data structures associated with a single function }{\pageref{classFuncdata}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFuncProto}{Func\+Proto}} \\*A {\bfseries{function}} {\bfseries{prototype}} }{\pageref{classFuncProto}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFunctionModifier}{Function\+Modifier}} }{\pageref{classFunctionModifier}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFunctionSymbol}{Function\+Symbol}} \\*A \mbox{\hyperlink{classSymbol}{Symbol}} representing an executable function }{\pageref{classFunctionSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFunctionTestCollection}{Function\+Test\+Collection}} \\*A collection of tests around a single program/function }{\pageref{classFunctionTestCollection}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classFunctionTestProperty}{Function\+Test\+Property}} \\*A single property to be searched for in the output of a function decompilation }{\pageref{classFunctionTestProperty}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGhidraCapability}{Ghidra\+Capability}} \\*Registration point and dispatcher for commands sent to the decompiler }{\pageref{classGhidraCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGhidraCommand}{Ghidra\+Command}} \\*Base class for a {\itshape command} to the decompiler as issued by a Ghidra client }{\pageref{classGhidraCommand}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGhidraDecompCapability}{Ghidra\+Decomp\+Capability}} \\*The core decompiler commands capability }{\pageref{classGhidraDecompCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGhidraStringManager}{Ghidra\+String\+Manager}} \\*Implementation of the \mbox{\hyperlink{classStringManager}{String\+Manager}} that queries through the ghidra client }{\pageref{classGhidraStringManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGhidraTranslate}{Ghidra\+Translate}} \\*An implementation of \mbox{\hyperlink{classTranslate}{Translate}} that queries a Ghidra client for p-\/code information }{\pageref{classGhidraTranslate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGrammarLexer}{Grammar\+Lexer}} }{\pageref{classGrammarLexer}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGrammarToken}{Grammar\+Token}} }{\pageref{classGrammarToken}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGreaterEqualEquation}{Greater\+Equal\+Equation}} }{\pageref{classGreaterEqualEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGreaterEquation}{Greater\+Equation}} }{\pageref{classGreaterEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classGuardRecord}{Guard\+Record}} \\*A (putative) switch variable \mbox{\hyperlink{classVarnode}{Varnode}} and a constraint imposed by a C\+B\+R\+A\+N\+CH }{\pageref{classGuardRecord}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classHandleTpl}{Handle\+Tpl}} }{\pageref{classHandleTpl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classHeritage}{Heritage}} \\*Manage the construction of Static Single Assignment (S\+SA) form }{\pageref{classHeritage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classHeritageInfo}{Heritage\+Info}} \\*Information about heritage passes performed for a specific address space }{\pageref{classHeritageInfo}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classHighEdge}{High\+Edge}} \\*A record for caching a \mbox{\hyperlink{classCover}{Cover}} intersection test between two \mbox{\hyperlink{classHighVariable}{High\+Variable}} objects }{\pageref{classHighEdge}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classHighVariable}{High\+Variable}} \\*A high-\/level variable modeled as a list of low-\/level variables, each written once }{\pageref{classHighVariable}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structIdentRec}{Ident\+Rec}} }{\pageref{structIdentRec}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceAssemblyEmit}{Iface\+Assembly\+Emit}} \\*Disassembly emitter that prints to a console stream }{\pageref{classIfaceAssemblyEmit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceBaseCommand}{Iface\+Base\+Command}} \\*A root class for a basic set of commands }{\pageref{classIfaceBaseCommand}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceCapability}{Iface\+Capability}} \\*Groups of console commands that are {\itshape discovered} by the loader }{\pageref{classIfaceCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceCodeDataCapability}{Iface\+Code\+Data\+Capability}} }{\pageref{classIfaceCodeDataCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceCodeDataCommand}{Iface\+Code\+Data\+Command}} }{\pageref{classIfaceCodeDataCommand}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} \\*A command that can be executed from the command line }{\pageref{classIfaceCommand}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceCommandDummy}{Iface\+Command\+Dummy}} \\*A dummy command used during parsing }{\pageref{classIfaceCommandDummy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceData}{Iface\+Data}} \\*Data specialized for a particular command module }{\pageref{classIfaceData}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceDecompCapability}{Iface\+Decomp\+Capability}} \\*Interface capability point for all decompiler commands }{\pageref{classIfaceDecompCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceDecompCommand}{Iface\+Decomp\+Command}} \\*Root class for all decompiler specific commands }{\pageref{classIfaceDecompCommand}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceDecompData}{Iface\+Decomp\+Data}} \\*Common data shared by decompiler commands }{\pageref{classIfaceDecompData}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structIfaceError}{Iface\+Error}} \\*An exception specific to the command line interface }{\pageref{structIfaceError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structIfaceExecutionError}{Iface\+Execution\+Error}} \\*An exception throw during the execution of a command }{\pageref{structIfaceExecutionError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structIfaceParseError}{Iface\+Parse\+Error}} \\*An exception describing a parsing error in a command line }{\pageref{structIfaceParseError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} \\*A generic console mode interface and command executor }{\pageref{classIfaceStatus}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfaceTerm}{Iface\+Term}} \\*Implement the command-\/line interface on top of a specific input stream }{\pageref{classIfaceTerm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcAddpath}{Ifc\+Addpath}} }{\pageref{classIfcAddpath}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcAddrrangeLoad}{Ifc\+Addrrange\+Load}} \\*Create a new function at an address\+: {\ttfamily load addr $<$address$>$ \mbox{[}$<$funcname$>$\mbox{]}} }{\pageref{classIfcAddrrangeLoad}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcAdjustVma}{Ifc\+Adjust\+Vma}} \\*Change the base address of the load image\+: {\ttfamily adjust vma 0xabcd0123} }{\pageref{classIfcAdjustVma}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcAnalyzeRange}{Ifc\+Analyze\+Range}} \\*Run value-\/set analysis on the {\itshape current} function\+: {\ttfamily analyze range full$\vert$partial $<$varnode$>$} }{\pageref{classIfcAnalyzeRange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcBreakaction}{Ifc\+Breakaction}} \\*Set a breakpoint when a \mbox{\hyperlink{classRule}{Rule}} or \mbox{\hyperlink{classAction}{Action}} executes\+: {\ttfamily break action $<$actionname$>$} }{\pageref{classIfcBreakaction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcBreakstart}{Ifc\+Breakstart}} \\*Set a break point at the start of an \mbox{\hyperlink{classAction}{Action}}\+: {\ttfamily break start $<$actionname$>$} }{\pageref{classIfcBreakstart}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCallFixup}{Ifc\+Call\+Fixup}} \\*Add a new call fix-\/up to the program\+: {\ttfamily fixup call ...} }{\pageref{classIfcCallFixup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCallGraphBuild}{Ifc\+Call\+Graph\+Build}} \\*Build the call-\/graph for the architecture/program\+: {\ttfamily callgraph build} }{\pageref{classIfcCallGraphBuild}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCallGraphBuildQuick}{Ifc\+Call\+Graph\+Build\+Quick}} \\*Build the call-\/graph using quick analysis\+: {\ttfamily callgraph build quick} }{\pageref{classIfcCallGraphBuildQuick}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCallGraphDump}{Ifc\+Call\+Graph\+Dump}} \\*Write the current call-\/graph to a file\+: {\ttfamily callgraph dump $<$filename$>$} }{\pageref{classIfcCallGraphDump}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCallGraphList}{Ifc\+Call\+Graph\+List}} \\*List all functions in {\itshape leaf} order\+: {\ttfamily callgraph list} }{\pageref{classIfcCallGraphList}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCallGraphLoad}{Ifc\+Call\+Graph\+Load}} \\*Load the call-\/graph from a file\+: {\ttfamily callgraph load $<$filename$>$} }{\pageref{classIfcCallGraphLoad}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCallOtherFixup}{Ifc\+Call\+Other\+Fixup}} \\*Add a new callother fix-\/up to the program\+: {\ttfamily fixup callother ...} }{\pageref{classIfcCallOtherFixup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCleararch}{Ifc\+Cleararch}} \\*Clear the current architecture/program\+: {\ttfamily clear architecture} }{\pageref{classIfcCleararch}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcClosefile}{Ifc\+Closefile}} \\*Close command, closing the current bulk output file }{\pageref{classIfcClosefile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataDumpCrossRefs}{Ifc\+Code\+Data\+Dump\+Cross\+Refs}} }{\pageref{classIfcCodeDataDumpCrossRefs}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataDumpModelHits}{Ifc\+Code\+Data\+Dump\+Model\+Hits}} }{\pageref{classIfcCodeDataDumpModelHits}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataDumpStarts}{Ifc\+Code\+Data\+Dump\+Starts}} }{\pageref{classIfcCodeDataDumpStarts}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataDumpTargetHits}{Ifc\+Code\+Data\+Dump\+Target\+Hits}} }{\pageref{classIfcCodeDataDumpTargetHits}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataDumpUnlinked}{Ifc\+Code\+Data\+Dump\+Unlinked}} }{\pageref{classIfcCodeDataDumpUnlinked}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataInit}{Ifc\+Code\+Data\+Init}} }{\pageref{classIfcCodeDataInit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataRun}{Ifc\+Code\+Data\+Run}} }{\pageref{classIfcCodeDataRun}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCodeDataTarget}{Ifc\+Code\+Data\+Target}} }{\pageref{classIfcCodeDataTarget}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcComment}{Ifc\+Comment}} \\*A comment within a command script\+: {\ttfamily \% A comment in a script} }{\pageref{classIfcComment}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCommentInstr}{Ifc\+Comment\+Instr}} \\*Attach a comment to an address\+: {\ttfamily comment $<$address$>$ comment text...} }{\pageref{classIfcCommentInstr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcContinue}{Ifc\+Continue}} \\*Continue decompilation after a break point\+: {\ttfamily continue} }{\pageref{classIfcContinue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcCountPcode}{Ifc\+Count\+Pcode}} \\*Count p-\/code in the {\itshape current} function\+: {\ttfamily count pcode} }{\pageref{classIfcCountPcode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcDeadcodedelay}{Ifc\+Deadcodedelay}} \\*Change when dead code elimination starts\+: {\ttfamily deadcode delay $<$name$>$ $<$delay$>$} }{\pageref{classIfcDeadcodedelay}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcDecompile}{Ifc\+Decompile}} \\*Decompile the current function\+: {\ttfamily decompile} }{\pageref{classIfcDecompile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcDump}{Ifc\+Dump}} \\*Display bytes in the load image\+: {\ttfamily dump $<$address+size$>$} }{\pageref{classIfcDump}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcDumpbinary}{Ifc\+Dumpbinary}} \\*Dump a memory to file\+: {\ttfamily binary $<$address+size$>$ $<$filename$>$} }{\pageref{classIfcDumpbinary}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcDuplicateHash}{Ifc\+Duplicate\+Hash}} \\*Check for duplicate hashes in functions\+: {\ttfamily duplicate hash} }{\pageref{classIfcDuplicateHash}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcEcho}{Ifc\+Echo}} \\*Echo command to echo the current command line to the bulk output stream }{\pageref{classIfcEcho}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcFlowOverride}{Ifc\+Flow\+Override}} \\*Create a control-\/flow override\+: {\ttfamily override flow $<$address$>$ branch$\vert$call$\vert$callreturn$\vert$return} }{\pageref{classIfcFlowOverride}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcForceDec}{Ifc\+Force\+Dec}} \\*Mark a constant to be printed in decimal format\+: {\ttfamily force dec $<$varnode$>$} }{\pageref{classIfcForceDec}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcForcegoto}{Ifc\+Forcegoto}} \\*Force a branch to be an unstructured {\bfseries{goto\+:}} {\ttfamily force goto $<$branchaddr$>$ $<$targetaddr$>$} }{\pageref{classIfcForcegoto}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcForceHex}{Ifc\+Force\+Hex}} \\*Mark a constant to be printed in hex format\+: {\ttfamily force hex $<$varnode$>$} }{\pageref{classIfcForceHex}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcFuncload}{Ifc\+Funcload}} \\*Make a specific function current\+: {\ttfamily load function $<$functionname$>$} }{\pageref{classIfcFuncload}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcGlobalAdd}{Ifc\+Global\+Add}} \\*Add a memory range as discoverable global variables\+: {\ttfamily global add $<$address+size$>$} }{\pageref{classIfcGlobalAdd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcGlobalify}{Ifc\+Globalify}} \\*Treat all normal memory as discoverable global variables\+: {\ttfamily global spaces} }{\pageref{classIfcGlobalify}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcGlobalRegisters}{Ifc\+Global\+Registers}} \\*Name global registers\+: {\ttfamily global registers} }{\pageref{classIfcGlobalRegisters}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcGlobalRemove}{Ifc\+Global\+Remove}} \\*Remove a memory range from discoverable global variables\+: {\ttfamily global remove $<$address+size$>$} }{\pageref{classIfcGlobalRemove}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcGraphControlflow}{Ifc\+Graph\+Controlflow}} \\*Write a graph representation of control-\/flow to a file\+: {\ttfamily graph controlflow $<$filename$>$} }{\pageref{classIfcGraphControlflow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcGraphDataflow}{Ifc\+Graph\+Dataflow}} \\*Write a graph representation of data-\/flow to a file\+: {\ttfamily graph dataflow $<$filename$>$} }{\pageref{classIfcGraphDataflow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcGraphDom}{Ifc\+Graph\+Dom}} \\*Write the forward dominance graph to a file\+: {\ttfamily graph dom $<$filename$>$} }{\pageref{classIfcGraphDom}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcHistory}{Ifc\+History}} \\*History command to list the most recent successful commands }{\pageref{classIfcHistory}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcJumpOverride}{Ifc\+Jump\+Override}} \\*Provide an overriding jump-\/table for an indirect branch\+: {\ttfamily override jumptable ...} }{\pageref{classIfcJumpOverride}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcListaction}{Ifc\+Listaction}} \\*List all current actions and rules for the decompiler\+: {\ttfamily list action} }{\pageref{classIfcListaction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcListOverride}{Ifc\+List\+Override}} \\*Display any overrides for the current function\+: {\ttfamily list override} }{\pageref{classIfcListOverride}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcListprototypes}{Ifc\+Listprototypes}} \\*List known prototype models\+: {\ttfamily list prototypes} }{\pageref{classIfcListprototypes}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcLoadFile}{Ifc\+Load\+File}} }{\pageref{classIfcLoadFile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcLockPrototype}{Ifc\+Lock\+Prototype}} \\*Lock in the {\itshape current} function\textquotesingle{}s prototype\+: {\ttfamily prototype lock} }{\pageref{classIfcLockPrototype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcMapaddress}{Ifc\+Mapaddress}} \\*Map a new symbol into the program\+: {\ttfamily map address $<$address$>$ $<$typedeclaration$>$} }{\pageref{classIfcMapaddress}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcMapexternalref}{Ifc\+Mapexternalref}} \\*Create an external ref symbol {\ttfamily map externalref $<$address$>$ $<$refaddress$>$ \mbox{[}$<$name$>$\mbox{]}} }{\pageref{classIfcMapexternalref}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcMapfunction}{Ifc\+Mapfunction}} \\*Create a new function\+: {\ttfamily map function $<$address$>$ \mbox{[}$<$functionname$>$\mbox{]} \mbox{[}nocode\mbox{]}} }{\pageref{classIfcMapfunction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcMaphash}{Ifc\+Maphash}} \\*Add a dynamic symbol to the current function\+: {\ttfamily map hash $<$address$>$ $<$hash$>$ $<$typedeclaration$>$} }{\pageref{classIfcMaphash}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcMaplabel}{Ifc\+Maplabel}} \\*Create a code label\+: {\ttfamily map label $<$name$>$ $<$address$>$} }{\pageref{classIfcMaplabel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcNameVarnode}{Ifc\+Name\+Varnode}} \\*Attach a named symbol to a specific \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily name varnode $<$varnode$>$ $<$name$>$} }{\pageref{classIfcNameVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcOpenfile}{Ifc\+Openfile}} \\*Open file command to redirect bulk output to a specific file stream }{\pageref{classIfcOpenfile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcOpenfileAppend}{Ifc\+Openfile\+Append}} \\*Open file command directing bulk output to be appended to a specific file }{\pageref{classIfcOpenfileAppend}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcOption}{Ifc\+Option}} \\*Adjust a decompiler option\+: {\ttfamily option $<$optionname$>$ \mbox{[}$<$param1$>$\mbox{]} \mbox{[}$<$param2$>$\mbox{]} \mbox{[}$<$param3$>$\mbox{]}} }{\pageref{classIfcOption}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcParseFile}{Ifc\+Parse\+File}} \\*Parse a file with C declarations\+: {\ttfamily parse file $<$filename$>$} }{\pageref{classIfcParseFile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcParseLine}{Ifc\+Parse\+Line}} \\*Parse a line of C syntax\+: {\ttfamily parse line ...} }{\pageref{classIfcParseLine}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPreferSplit}{Ifc\+Prefer\+Split}} \\*Mark a storage location to be split\+: {\ttfamily prefersplit $<$address+size$>$ $<$splitsize$>$} }{\pageref{classIfcPreferSplit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintActionstats}{Ifc\+Print\+Actionstats}} \\*Print transform statistics for the decompiler engine\+: {\ttfamily print actionstats} }{\pageref{classIfcPrintActionstats}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintBlocktree}{Ifc\+Print\+Blocktree}} \\*Print a description of the {\itshape current} functions control-\/flow\+: {\ttfamily print tree block} }{\pageref{classIfcPrintBlocktree}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintCFlat}{Ifc\+Print\+C\+Flat}} \\*Print current function without control-\/flow\+: {\ttfamily print C flat} }{\pageref{classIfcPrintCFlat}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintCGlobals}{Ifc\+Print\+C\+Globals}} \\*Print declarations for any known global variables\+: {\ttfamily print C globals} }{\pageref{classIfcPrintCGlobals}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintCover}{Ifc\+Print\+Cover}} \\*Print cover info about a \mbox{\hyperlink{classHighVariable}{High\+Variable}}\+: {\ttfamily print cover high $<$name$>$} }{\pageref{classIfcPrintCover}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintCStruct}{Ifc\+Print\+C\+Struct}} \\*Print the current function using C syntax\+:{\ttfamily print C} }{\pageref{classIfcPrintCStruct}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintCTypes}{Ifc\+Print\+C\+Types}} \\*Print any known type definitions\+: {\ttfamily print C types} }{\pageref{classIfcPrintCTypes}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintCXml}{Ifc\+Print\+C\+Xml}} \\*Print the current function with C syntax and X\+ML markup\+:{\ttfamily print C xml} }{\pageref{classIfcPrintCXml}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintdisasm}{Ifc\+Printdisasm}} \\*Print disassembly of a memory range\+: {\ttfamily disassemble \mbox{[}$<$address1$>$ $<$address2$>$\mbox{]}} }{\pageref{classIfcPrintdisasm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintExtrapop}{Ifc\+Print\+Extrapop}} \\*Print change to stack pointer for called function\+: {\ttfamily print extrapop \mbox{[}$<$functionname$>$\mbox{]}} }{\pageref{classIfcPrintExtrapop}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintHigh}{Ifc\+Print\+High}} \\*Display all Varnodes in a \mbox{\hyperlink{classHighVariable}{High\+Variable}}\+: {\ttfamily print high $<$name$>$} }{\pageref{classIfcPrintHigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintInputs}{Ifc\+Print\+Inputs}} \\*Print info about the current function\textquotesingle{}s input Varnodes\+: {\ttfamily print inputs} }{\pageref{classIfcPrintInputs}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintInputsAll}{Ifc\+Print\+Inputs\+All}} \\*Print info about input Varnodes for all functions\+: {\ttfamily print inputs all} }{\pageref{classIfcPrintInputsAll}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintLanguage}{Ifc\+Print\+Language}} \\*Print current output using a specific language\+: {\ttfamily print language $<$langname$>$} }{\pageref{classIfcPrintLanguage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintLocalrange}{Ifc\+Print\+Localrange}} \\*Print range of locals on the stack\+: {\ttfamily print localrange} }{\pageref{classIfcPrintLocalrange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintMap}{Ifc\+Print\+Map}} \\*Print info about a scope/namespace\+: {\ttfamily print map $<$name$>$} }{\pageref{classIfcPrintMap}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintParamMeasures}{Ifc\+Print\+Param\+Measures}} \\*Perform parameter-\/id analysis on the {\itshape current} function\+: {\ttfamily print parammeasures} }{\pageref{classIfcPrintParamMeasures}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintRaw}{Ifc\+Print\+Raw}} \\*Print the raw p-\/code for the {\itshape current} function\+: {\ttfamily print raw} }{\pageref{classIfcPrintRaw}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintSpaces}{Ifc\+Print\+Spaces}} \\*Print all address spaces\+: {\ttfamily print spaces} }{\pageref{classIfcPrintSpaces}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintTree}{Ifc\+Print\+Tree}} \\*Print all Varnodes in the {\itshape current} function\+: {\ttfamily print tree varnode} }{\pageref{classIfcPrintTree}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcPrintVarnode}{Ifc\+Print\+Varnode}} \\*Print information about a \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily print varnode $<$varnode$>$} }{\pageref{classIfcPrintVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcProduceC}{Ifc\+ProduceC}} \\*Write decompilation for all functions to a file\+: {\ttfamily produce C $<$filename$>$} }{\pageref{classIfcProduceC}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcProducePrototypes}{Ifc\+Produce\+Prototypes}} \\*Determine the prototype model for all functions\+: {\ttfamily produce prototypes} }{\pageref{classIfcProducePrototypes}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcProtooverride}{Ifc\+Protooverride}} \\*\mbox{\hyperlink{classOverride}{Override}} the prototype of a called function\+: {\ttfamily override prototype $<$address$>$ $<$declaration$>$} }{\pageref{classIfcProtooverride}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcQuit}{Ifc\+Quit}} \\*Quit command to terminate processing from the given interface }{\pageref{classIfcQuit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcReadonly}{Ifc\+Readonly}} \\*Mark a memory range as read-\/only\+: {\ttfamily readonly $<$address+size$>$} }{\pageref{classIfcReadonly}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcReadSymbols}{Ifc\+Read\+Symbols}} \\*Read in symbols from the load image\+: {\ttfamily read symbols} }{\pageref{classIfcReadSymbols}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcRemove}{Ifc\+Remove}} \\*Remove a symbol by name\+: {\ttfamily remove $<$varname$>$} }{\pageref{classIfcRemove}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcRename}{Ifc\+Rename}} \\*Rename a variable\+: {\ttfamily rename $<$oldname$>$ $<$newname$>$} }{\pageref{classIfcRename}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcResetActionstats}{Ifc\+Reset\+Actionstats}} \\*Reset transform statistics for the decompiler engine\+: {\ttfamily reset actionstats} }{\pageref{classIfcResetActionstats}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcRestore}{Ifc\+Restore}} }{\pageref{classIfcRestore}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcRetype}{Ifc\+Retype}} \\*Change the data-\/type of a symbol\+: {\ttfamily retype $<$varname$>$ $<$typedeclaration$>$} }{\pageref{classIfcRetype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcSave}{Ifc\+Save}} }{\pageref{classIfcSave}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcSetcontextrange}{Ifc\+Setcontextrange}} \\*Set a context variable\+: {\ttfamily set context $<$name$>$ $<$value$>$ \mbox{[}$<$startaddress$>$ $<$endaddress$>$\mbox{]}} }{\pageref{classIfcSetcontextrange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcSettrackedrange}{Ifc\+Settrackedrange}} \\*Set the value of a register\+: {\ttfamily set track $<$name$>$ $<$value$>$ \mbox{[}$<$startaddress$>$ $<$endaddress$>$\mbox{]}} }{\pageref{classIfcSettrackedrange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcSource}{Ifc\+Source}} \\*Execute a command script \+: {\ttfamily source $<$filename$>$} }{\pageref{classIfcSource}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcStructureBlocks}{Ifc\+Structure\+Blocks}} \\*Structure an external control-\/flow graph\+: {\ttfamily structure blocks $<$infile$>$ $<$outfile$>$} }{\pageref{classIfcStructureBlocks}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcTypeVarnode}{Ifc\+Type\+Varnode}} \\*Attach a typed symbol to a specific \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily type varnode $<$varnode$>$ $<$typedeclaration$>$} }{\pageref{classIfcTypeVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcUnlockPrototype}{Ifc\+Unlock\+Prototype}} \\*Unlock the {\itshape current} function\textquotesingle{}s prototype\+: {\ttfamily prototype unlock} }{\pageref{classIfcUnlockPrototype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcVarnodeCover}{Ifc\+Varnode\+Cover}} \\*Print cover information about a \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily print cover varnode $<$varnode$>$} }{\pageref{classIfcVarnodeCover}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcVarnodehighCover}{Ifc\+Varnodehigh\+Cover}} \\*Print cover info about a \mbox{\hyperlink{classHighVariable}{High\+Variable}}\+: {\ttfamily print cover varnodehigh $<$varnode$>$} }{\pageref{classIfcVarnodehighCover}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIfcVolatile}{Ifc\+Volatile}} \\*Mark a memory range as volatile\+: {\ttfamily volatile $<$address+size$>$} }{\pageref{classIfcVolatile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structImportRecord}{Import\+Record}} }{\pageref{structImportRecord}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIndirectForm}{Indirect\+Form}} }{\pageref{classIndirectForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectCallfixupGhidra}{Inject\+Callfixup\+Ghidra}} \\*A call-\/fixup injection that uses a Ghidra client to generate the p-\/code ops }{\pageref{classInjectCallfixupGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectCallotherGhidra}{Inject\+Callother\+Ghidra}} \\*A callother-\/fixup injection that uses a Ghidra client to generate the p-\/code ops }{\pageref{classInjectCallotherGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \\*Context needed to emit a p-\/code injection as a full set of p-\/code operations }{\pageref{classInjectContext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectContextGhidra}{Inject\+Context\+Ghidra}} \\*An injection context that can be serialized and sent to the Ghidra client }{\pageref{classInjectContextGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectContextSleigh}{Inject\+Context\+Sleigh}} }{\pageref{classInjectContextSleigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectedUserOp}{Injected\+User\+Op}} \\*A user defined operation that is injected with other p-\/code }{\pageref{classInjectedUserOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectParameter}{Inject\+Parameter}} \\*An input or output parameter to a p-\/code injection payload }{\pageref{classInjectParameter}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} \\*An active container for a set of p-\/code operations that can be injected into data-\/flow }{\pageref{classInjectPayload}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectPayloadCallfixup}{Inject\+Payload\+Callfixup}} }{\pageref{classInjectPayloadCallfixup}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectPayloadCallother}{Inject\+Payload\+Callother}} }{\pageref{classInjectPayloadCallother}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectPayloadDynamic}{Inject\+Payload\+Dynamic}} }{\pageref{classInjectPayloadDynamic}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectPayloadGhidra}{Inject\+Payload\+Ghidra}} \\*An injection payload that uses a Ghidra client to generate the p-\/code ops }{\pageref{classInjectPayloadGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInjectPayloadSleigh}{Inject\+Payload\+Sleigh}} }{\pageref{classInjectPayloadSleigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classInstructionPattern}{Instruction\+Pattern}} }{\pageref{classInstructionPattern}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classIopSpace}{Iop\+Space}} \\*Space for storing internal \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} pointers as addresses }{\pageref{classIopSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structJavaError}{Java\+Error}} \\*Exception that mirrors exceptions thrown by the Ghidra client }{\pageref{structJavaError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJoinRecord}{Join\+Record}} \\*A record describing how logical values are split }{\pageref{classJoinRecord}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structJoinRecordCompare}{Join\+Record\+Compare}} \\*Comparator for \mbox{\hyperlink{classJoinRecord}{Join\+Record}} objects }{\pageref{structJoinRecordCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJoinSpace}{Join\+Space}} \\*The pool of logically joined variables }{\pageref{classJoinSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpAssisted}{Jump\+Assisted}} \\*A jump-\/table model assisted by pseudo-\/op directives in the code }{\pageref{classJumpAssisted}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpAssistOp}{Jump\+Assist\+Op}} \\*A user defined p-\/code op for assisting the recovery of jump tables }{\pageref{classJumpAssistOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpBasic}{Jump\+Basic}} \\*The basic switch model }{\pageref{classJumpBasic}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpBasic2}{Jump\+Basic2}} \\*A basic jump-\/table model with an added default address path }{\pageref{classJumpBasic2}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpBasicOverride}{Jump\+Basic\+Override}} \\*A basic jump-\/table model incorporating manual override information }{\pageref{classJumpBasicOverride}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpModel}{Jump\+Model}} \\*A jump-\/table execution model }{\pageref{classJumpModel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpModelTrivial}{Jump\+Model\+Trivial}} \\*A trivial jump-\/table model, where the B\+R\+A\+N\+C\+H\+I\+ND input \mbox{\hyperlink{classVarnode}{Varnode}} is the switch variable }{\pageref{classJumpModelTrivial}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpTable}{Jump\+Table}} \\*A map from values to control-\/flow targets within a function }{\pageref{classJumpTable}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structJumptableNotReachableError}{Jumptable\+Not\+Reachable\+Error}} \\*Exception thrown is there are no legal flows to a switch }{\pageref{structJumptableNotReachableError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structJumptableThunkError}{Jumptable\+Thunk\+Error}} \\*Exception thrown for a thunk mechanism that looks like a jump-\/table }{\pageref{structJumptableThunkError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpValues}{Jump\+Values}} \\*An iterator over values a switch variable can take }{\pageref{classJumpValues}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpValuesRange}{Jump\+Values\+Range}} \\*Single entry switch variable that can take a range of values }{\pageref{classJumpValuesRange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classJumpValuesRangeDefault}{Jump\+Values\+Range\+Default}} \\*A jump-\/table starting range with two possible execution paths }{\pageref{classJumpValuesRangeDefault}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLabelSymbol}{Label\+Symbol}} }{\pageref{classLabelSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} \\*A \mbox{\hyperlink{classSymbol}{Symbol}} that labels code internal to a function }{\pageref{classLabSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \\*Description of logical lanes within a {\bfseries{big}} \mbox{\hyperlink{classVarnode}{Varnode}} }{\pageref{classLaneDescription}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLanedRegister_1_1LanedIterator}{Laned\+Register\+::\+Laned\+Iterator}} \\*Class for iterating over possible lane sizes }{\pageref{classLanedRegister_1_1LanedIterator}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLaneDivide}{Lane\+Divide}} \\*Class for splitting data-\/flow on {\itshape laned} registers }{\pageref{classLaneDivide}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLanedRegister}{Laned\+Register}} \\*Describes a (register) storage location and the ways it might be split into lanes }{\pageref{classLanedRegister}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLanguageDescription}{Language\+Description}} \\*Contents of the $<$language$>$ tag in a .ldefs file }{\pageref{classLanguageDescription}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structLeafIterator}{Leaf\+Iterator}} }{\pageref{structLeafIterator}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLeftShiftExpression}{Left\+Shift\+Expression}} }{\pageref{classLeftShiftExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLessConstForm}{Less\+Const\+Form}} }{\pageref{classLessConstForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLessEqualEquation}{Less\+Equal\+Equation}} }{\pageref{classLessEqualEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLessEquation}{Less\+Equation}} }{\pageref{classLessEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLessThreeWay}{Less\+Three\+Way}} }{\pageref{classLessThreeWay}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadGuard}{Load\+Guard}} \\*Description of a L\+O\+AD operation that needs to be guarded }{\pageref{classLoadGuard}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadImage}{Load\+Image}} \\*An interface into a particular binary executable image }{\pageref{classLoadImage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadImageBfd}{Load\+Image\+Bfd}} }{\pageref{classLoadImageBfd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}} \\*A record indicating a function symbol }{\pageref{structLoadImageFunc}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadImageGhidra}{Load\+Image\+Ghidra}} \\*An implementation of the \mbox{\hyperlink{classLoadImage}{Load\+Image}} interface using a Ghidra client as the back-\/end }{\pageref{classLoadImageGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structLoadImageSection}{Load\+Image\+Section}} \\*A record describing a section bytes in the executable }{\pageref{structLoadImageSection}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadImageXml}{Load\+Image\+Xml}} \\*Implementation of the \mbox{\hyperlink{classLoadImage}{Load\+Image}} interface using underlying data stored in an X\+ML format }{\pageref{classLoadImageXml}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoadTable}{Load\+Table}} \\*A description where and how data was loaded from memory }{\pageref{classLoadTable}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLocation}{Location}} }{\pageref{classLocation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLocationMap}{Location\+Map}} \\*Map object for keeping track of which address ranges have been heritaged }{\pageref{classLocationMap}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLogicalForm}{Logical\+Form}} }{\pageref{classLogicalForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classLoopBody}{Loop\+Body}} \\*A description of the body of a loop }{\pageref{classLoopBody}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structLowlevelError}{Lowlevel\+Error}} \\*The lowest level error generated by the decompiler }{\pageref{structLowlevelError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMacroBuilder}{Macro\+Builder}} }{\pageref{classMacroBuilder}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMacroSymbol}{Macro\+Symbol}} }{\pageref{classMacroSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \\*An iterator over \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects in multiple address spaces }{\pageref{classMapIterator}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMapState}{Map\+State}} \\*A container for hints about the data-\/type layout of an address space }{\pageref{classMapState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} \\*Memory storage/state for a single Address\+Space }{\pageref{classMemoryBank}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMemoryHashOverlay}{Memory\+Hash\+Overlay}} \\*A memory bank that implements reads and writes using a hash table }{\pageref{classMemoryHashOverlay}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMemoryImage}{Memory\+Image}} \\*A kind of \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} which retrieves its data from an underlying \mbox{\hyperlink{classLoadImage}{Load\+Image}} }{\pageref{classMemoryImage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMemoryPageOverlay}{Memory\+Page\+Overlay}} \\*Memory bank that overlays some other memory bank, using a \char`\"{}copy on write\char`\"{} behavior }{\pageref{classMemoryPageOverlay}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMemoryState}{Memory\+State}} \\*All storage/state for a pcode machine }{\pageref{classMemoryState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMerge}{Merge}} \\*Class for merging low-\/level Varnodes into high-\/level High\+Variables }{\pageref{classMerge}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMinusExpression}{Minus\+Expression}} }{\pageref{classMinusExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMultExpression}{Mult\+Expression}} }{\pageref{classMultExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMultForm}{Mult\+Form}} }{\pageref{classMultForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classMyLoadImage}{My\+Load\+Image}} }{\pageref{classMyLoadImage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classNameRecommend}{Name\+Recommend}} \\*A symbol name recommendation with its associated storage location }{\pageref{classNameRecommend}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classNameSymbol}{Name\+Symbol}} }{\pageref{classNameSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structNameValue}{Name\+Value}} \\*A parsed name/value pair }{\pageref{structNameValue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPrintLanguage_1_1NodePending}{Print\+Language\+::\+Node\+Pending}} \\*A pending data-\/flow node; waiting to be placed on the reverse polish notation stack }{\pageref{structPrintLanguage_1_1NodePending}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classNotEqualEquation}{Not\+Equal\+Equation}} }{\pageref{classNotEqualEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classNotExpression}{Not\+Expression}} }{\pageref{classNotExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} \\*Class encapsulating the action/behavior of specific pcode opcodes }{\pageref{classOpBehavior}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorBoolAnd}{Op\+Behavior\+Bool\+And}} \\*C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+A\+ND behavior }{\pageref{classOpBehaviorBoolAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorBoolNegate}{Op\+Behavior\+Bool\+Negate}} \\*C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE behavior }{\pageref{classOpBehaviorBoolNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorBoolOr}{Op\+Behavior\+Bool\+Or}} \\*C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+OR behavior }{\pageref{classOpBehaviorBoolOr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorBoolXor}{Op\+Behavior\+Bool\+Xor}} \\*C\+P\+U\+I\+\_\+\+B\+O\+O\+L\+\_\+\+X\+OR behavior }{\pageref{classOpBehaviorBoolXor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorCopy}{Op\+Behavior\+Copy}} \\*C\+P\+U\+I\+\_\+\+C\+O\+PY behavior }{\pageref{classOpBehaviorCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorEqual}{Op\+Behavior\+Equal}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+E\+Q\+U\+AL behavior }{\pageref{classOpBehaviorEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatAbs}{Op\+Behavior\+Float\+Abs}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+A\+BS behavior }{\pageref{classOpBehaviorFloatAbs}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatAdd}{Op\+Behavior\+Float\+Add}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+A\+DD behavior }{\pageref{classOpBehaviorFloatAdd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatCeil}{Op\+Behavior\+Float\+Ceil}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+C\+E\+IL behavior }{\pageref{classOpBehaviorFloatCeil}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatDiv}{Op\+Behavior\+Float\+Div}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+D\+IV behavior }{\pageref{classOpBehaviorFloatDiv}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatEqual}{Op\+Behavior\+Float\+Equal}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+E\+Q\+U\+AL behavior }{\pageref{classOpBehaviorFloatEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatFloat2Float}{Op\+Behavior\+Float\+Float2\+Float}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT behavior }{\pageref{classOpBehaviorFloatFloat2Float}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatFloor}{Op\+Behavior\+Float\+Floor}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+OR behavior }{\pageref{classOpBehaviorFloatFloor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatInt2Float}{Op\+Behavior\+Float\+Int2\+Float}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+I\+N\+T2\+F\+L\+O\+AT behavior }{\pageref{classOpBehaviorFloatInt2Float}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatLess}{Op\+Behavior\+Float\+Less}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+L\+E\+SS behavior }{\pageref{classOpBehaviorFloatLess}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatLessEqual}{Op\+Behavior\+Float\+Less\+Equal}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL behavior }{\pageref{classOpBehaviorFloatLessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatMult}{Op\+Behavior\+Float\+Mult}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+M\+U\+LT behavior }{\pageref{classOpBehaviorFloatMult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatNan}{Op\+Behavior\+Float\+Nan}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+AN behavior }{\pageref{classOpBehaviorFloatNan}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatNeg}{Op\+Behavior\+Float\+Neg}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+EG behavior }{\pageref{classOpBehaviorFloatNeg}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatNotEqual}{Op\+Behavior\+Float\+Not\+Equal}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL behavior }{\pageref{classOpBehaviorFloatNotEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatRound}{Op\+Behavior\+Float\+Round}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+R\+O\+U\+ND behavior }{\pageref{classOpBehaviorFloatRound}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatSqrt}{Op\+Behavior\+Float\+Sqrt}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+S\+Q\+RT behavior }{\pageref{classOpBehaviorFloatSqrt}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatSub}{Op\+Behavior\+Float\+Sub}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+S\+UB behavior }{\pageref{classOpBehaviorFloatSub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorFloatTrunc}{Op\+Behavior\+Float\+Trunc}} \\*C\+P\+U\+I\+\_\+\+F\+L\+O\+A\+T\+\_\+\+T\+R\+U\+NC behavior }{\pageref{classOpBehaviorFloatTrunc}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorInt2Comp}{Op\+Behavior\+Int2\+Comp}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+2\+C\+O\+MP behavior }{\pageref{classOpBehaviorInt2Comp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntAdd}{Op\+Behavior\+Int\+Add}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+DD behavior }{\pageref{classOpBehaviorIntAdd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntAnd}{Op\+Behavior\+Int\+And}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+ND behavior }{\pageref{classOpBehaviorIntAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntCarry}{Op\+Behavior\+Int\+Carry}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+C\+A\+R\+RY behavior }{\pageref{classOpBehaviorIntCarry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntDiv}{Op\+Behavior\+Int\+Div}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+D\+IV behavior }{\pageref{classOpBehaviorIntDiv}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntLeft}{Op\+Behavior\+Int\+Left}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+FT behavior }{\pageref{classOpBehaviorIntLeft}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntLess}{Op\+Behavior\+Int\+Less}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+SS behavior }{\pageref{classOpBehaviorIntLess}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntLessEqual}{Op\+Behavior\+Int\+Less\+Equal}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL behavior }{\pageref{classOpBehaviorIntLessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntMult}{Op\+Behavior\+Int\+Mult}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+M\+U\+LT behavior }{\pageref{classOpBehaviorIntMult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntNegate}{Op\+Behavior\+Int\+Negate}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+N\+E\+G\+A\+TE behavior }{\pageref{classOpBehaviorIntNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntOr}{Op\+Behavior\+Int\+Or}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+OR behavior }{\pageref{classOpBehaviorIntOr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntRem}{Op\+Behavior\+Int\+Rem}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+EM behavior }{\pageref{classOpBehaviorIntRem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntRight}{Op\+Behavior\+Int\+Right}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+I\+G\+HT behavior }{\pageref{classOpBehaviorIntRight}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSborrow}{Op\+Behavior\+Int\+Sborrow}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW behavior }{\pageref{classOpBehaviorIntSborrow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntScarry}{Op\+Behavior\+Int\+Scarry}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+C\+A\+R\+RY behavior }{\pageref{classOpBehaviorIntScarry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSdiv}{Op\+Behavior\+Int\+Sdiv}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+D\+IV behavior }{\pageref{classOpBehaviorIntSdiv}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSext}{Op\+Behavior\+Int\+Sext}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+E\+XT behavior }{\pageref{classOpBehaviorIntSext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSless}{Op\+Behavior\+Int\+Sless}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+L\+E\+SS behavior }{\pageref{classOpBehaviorIntSless}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSlessEqual}{Op\+Behavior\+Int\+Sless\+Equal}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+L\+E\+S\+S\+E\+Q\+U\+AL behavior }{\pageref{classOpBehaviorIntSlessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSrem}{Op\+Behavior\+Int\+Srem}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+R\+EM behavior }{\pageref{classOpBehaviorIntSrem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSright}{Op\+Behavior\+Int\+Sright}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+R\+I\+G\+HT behavior }{\pageref{classOpBehaviorIntSright}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntSub}{Op\+Behavior\+Int\+Sub}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+S\+UB behavior }{\pageref{classOpBehaviorIntSub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntXor}{Op\+Behavior\+Int\+Xor}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+X\+OR behavior }{\pageref{classOpBehaviorIntXor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorIntZext}{Op\+Behavior\+Int\+Zext}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+Z\+E\+XT behavior }{\pageref{classOpBehaviorIntZext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorNotEqual}{Op\+Behavior\+Not\+Equal}} \\*C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL behavior }{\pageref{classOpBehaviorNotEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorPiece}{Op\+Behavior\+Piece}} \\*C\+P\+U\+I\+\_\+\+P\+I\+E\+CE behavior }{\pageref{classOpBehaviorPiece}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorPopcount}{Op\+Behavior\+Popcount}} \\*C\+P\+U\+I\+\_\+\+P\+O\+P\+C\+O\+U\+NT behavior }{\pageref{classOpBehaviorPopcount}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpBehaviorSubpiece}{Op\+Behavior\+Subpiece}} \\*C\+P\+U\+I\+\_\+\+S\+U\+B\+P\+I\+E\+CE behavior }{\pageref{classOpBehaviorSubpiece}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOperandEquation}{Operand\+Equation}} }{\pageref{classOperandEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structOperandResolve}{Operand\+Resolve}} }{\pageref{structOperandResolve}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOperandSymbol}{Operand\+Symbol}} }{\pageref{classOperandSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOperandValue}{Operand\+Value}} }{\pageref{classOperandValue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structOpFollow}{Op\+Follow}} \\*A simple node used to dynamically define a sequence of operations }{\pageref{structOpFollow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionAliasBlock}{Option\+Alias\+Block}} \\*Set how locked data-\/types on the stack affect alias heuristics }{\pageref{classOptionAliasBlock}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionAllowContextSet}{Option\+Allow\+Context\+Set}} \\*Toggle whether the disassembly engine is allowed to modify context }{\pageref{classOptionAllowContextSet}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionCommentHeader}{Option\+Comment\+Header}} \\*Toggle whether different comment {\itshape types} are emitted by the decompiler in the header for a function }{\pageref{classOptionCommentHeader}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionCommentIndent}{Option\+Comment\+Indent}} \\*How many characters to indent comment lines }{\pageref{classOptionCommentIndent}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionCommentInstruction}{Option\+Comment\+Instruction}} \\*Toggle whether different comment {\itshape types} are emitted by the decompiler in the body of a function }{\pageref{classOptionCommentInstruction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionCommentStyle}{Option\+Comment\+Style}} \\*Set the style of comment emitted by the decompiler }{\pageref{classOptionCommentStyle}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionConventionPrinting}{Option\+Convention\+Printing}} \\*Toggle whether the {\itshape calling} {\itshape convention} is printed when emitting function prototypes }{\pageref{classOptionConventionPrinting}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionCurrentAction}{Option\+Current\+Action}} \\*Toggle a sub-\/group of actions within a root \mbox{\hyperlink{classAction}{Action}} }{\pageref{classOptionCurrentAction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionDatabase}{Option\+Database}} \\*A Dispatcher for possible \mbox{\hyperlink{classArchOption}{Arch\+Option}} commands }{\pageref{classOptionDatabase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionDefaultPrototype}{Option\+Default\+Prototype}} \\*Set the default prototype model for analyzing unknown functions }{\pageref{classOptionDefaultPrototype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionErrorReinterpreted}{Option\+Error\+Reinterpreted}} \\*Toggle whether off-\/cut reinterpretation of an instruction is a fatal error }{\pageref{classOptionErrorReinterpreted}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionErrorTooManyInstructions}{Option\+Error\+Too\+Many\+Instructions}} \\*Toggle whether too many instructions in one function body is considered a fatal error }{\pageref{classOptionErrorTooManyInstructions}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionErrorUnimplemented}{Option\+Error\+Unimplemented}} \\*Toggle whether unimplemented instructions are treated as a fatal error }{\pageref{classOptionErrorUnimplemented}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionExtraPop}{Option\+Extra\+Pop}} \\*Set the {\bfseries{extrapop}} parameter used by the (default) prototype model }{\pageref{classOptionExtraPop}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionForLoops}{Option\+For\+Loops}} \\*Toggle whether the decompiler attempts to recover {\itshape for-\/loop} variables }{\pageref{classOptionForLoops}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionHideExtensions}{Option\+Hide\+Extensions}} \\*Toggle whether implied extensions (Z\+E\+XT or S\+E\+XT) are printed }{\pageref{classOptionHideExtensions}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionIgnoreUnimplemented}{Option\+Ignore\+Unimplemented}} \\*Toggle whether unimplemented instructions are treated as a {\itshape no-\/operation} }{\pageref{classOptionIgnoreUnimplemented}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionIndentIncrement}{Option\+Indent\+Increment}} \\*Set the number of characters to indent per nested scope }{\pageref{classOptionIndentIncrement}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionInferConstPtr}{Option\+Infer\+Const\+Ptr}} \\*Toggle whether the decompiler attempts to infer constant pointers }{\pageref{classOptionInferConstPtr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionInline}{Option\+Inline}} \\*Mark/unmark a specific function as {\itshape inline} }{\pageref{classOptionInline}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionInPlaceOps}{Option\+In\+Place\+Ops}} \\*Toggle whether {\itshape in-\/place} operators (+=, $\ast$=, \&=, etc.) are emitted by the decompiler }{\pageref{classOptionInPlaceOps}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionIntegerFormat}{Option\+Integer\+Format}} \\*Set the formatting strategy used by the decompiler to emit integers }{\pageref{classOptionIntegerFormat}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionJumpLoad}{Option\+Jump\+Load}} \\*Toggle whether the decompiler should try to recover the table used to evaluate a switch }{\pageref{classOptionJumpLoad}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionMaxInstruction}{Option\+Max\+Instruction}} \\*Maximum number of instructions that can be processed in a single function }{\pageref{classOptionMaxInstruction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionMaxLineWidth}{Option\+Max\+Line\+Width}} \\*Set the maximum number of characters per decompiled line }{\pageref{classOptionMaxLineWidth}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionNamespaceStrategy}{Option\+Namespace\+Strategy}} \\*How should namespace tokens be displayed }{\pageref{classOptionNamespaceStrategy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionNoCastPrinting}{Option\+No\+Cast\+Printing}} \\*Toggle whether {\itshape cast} syntax is emitted by the decompiler or stripped }{\pageref{classOptionNoCastPrinting}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionNoReturn}{Option\+No\+Return}} \\*Mark/unmark a specific function with the {\itshape noreturn} property }{\pageref{classOptionNoReturn}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionNullPrinting}{Option\+Null\+Printing}} \\*Toggle whether null pointers should be printed as the string \char`\"{}\+N\+U\+L\+L\char`\"{} }{\pageref{classOptionNullPrinting}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionProtoEval}{Option\+Proto\+Eval}} \\*Set the prototype model to use when evaluating the parameters of the {\itshape current} function }{\pageref{classOptionProtoEval}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionReadOnly}{Option\+Read\+Only}} \\*Toggle whether read-\/only memory locations have their value propagated }{\pageref{classOptionReadOnly}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionSetAction}{Option\+Set\+Action}} \\*Establish a new root \mbox{\hyperlink{classAction}{Action}} for the decompiler }{\pageref{classOptionSetAction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionSetLanguage}{Option\+Set\+Language}} \\*Set the current language emitted by the decompiler }{\pageref{classOptionSetLanguage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionStructAlign}{Option\+Struct\+Align}} \\*Alter the \char`\"{}structure alignment\char`\"{} data organization setting }{\pageref{classOptionStructAlign}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionToggleRule}{Option\+Toggle\+Rule}} \\*Toggle whether a specific \mbox{\hyperlink{classRule}{Rule}} is applied in the current \mbox{\hyperlink{classAction}{Action}} }{\pageref{classOptionToggleRule}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOptionWarning}{Option\+Warning}} \\*Toggle whether a warning should be issued if a specific action/rule is applied }{\pageref{classOptionWarning}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpToken}{Op\+Token}} \\*A token representing an operator in the high-\/level language }{\pageref{classOpToken}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} }{\pageref{classOpTpl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOrExpression}{Or\+Expression}} }{\pageref{classOrExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOrPattern}{Or\+Pattern}} }{\pageref{classOrPattern}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOtherSpace}{Other\+Space}} \\*Special \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} for special/user-\/defined address spaces }{\pageref{classOtherSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOverlaySpace}{Overlay\+Space}} \\*An overlay space }{\pageref{classOverlaySpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classOverride}{Override}} \\*A container of commands that override the decompiler\textquotesingle{}s default behavior for a single function }{\pageref{classOverride}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamActive}{Param\+Active}} \\*Container class for \mbox{\hyperlink{classParamTrial}{Param\+Trial}} objects }{\pageref{classParamActive}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamEntry}{Param\+Entry}} \\*A contiguous range of memory that can be used to pass parameters }{\pageref{classParamEntry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamEntryRange}{Param\+Entry\+Range}} \\*Class for storing \mbox{\hyperlink{classParamEntry}{Param\+Entry}} objects in an interval range (rangemap) }{\pageref{classParamEntryRange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParameterBasic}{Parameter\+Basic}} \\*A stand-\/alone parameter with no backing symbol }{\pageref{classParameterBasic}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \\*Basic elements of a parameter\+: address, data-\/type, properties }{\pageref{structParameterPieces}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParameterSymbol}{Parameter\+Symbol}} \\*A parameter with a formal backing \mbox{\hyperlink{classSymbol}{Symbol}} }{\pageref{classParameterSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamIDAnalysis}{Param\+I\+D\+Analysis}} }{\pageref{classParamIDAnalysis}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamList}{Param\+List}} }{\pageref{classParamList}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamListMerged}{Param\+List\+Merged}} \\*A union of other input parameter passing models }{\pageref{classParamListMerged}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamListRegister}{Param\+List\+Register}} \\*An unstructured model for passing input parameters to a function }{\pageref{classParamListRegister}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamListStandard}{Param\+List\+Standard}} \\*A standard model for parameters as an ordered list of storage resources }{\pageref{classParamListStandard}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamListStandardOut}{Param\+List\+Standard\+Out}} \\*A standard model for passing back return values from a function }{\pageref{classParamListStandardOut}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamMeasure}{Param\+Measure}} }{\pageref{classParamMeasure}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParamTrial}{Param\+Trial}} \\*A register or memory register that may be used to pass a parameter or return value }{\pageref{classParamTrial}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structParamUnassignedError}{Param\+Unassigned\+Error}} \\*Exception thrown when a prototype can\textquotesingle{}t be modeled properly }{\pageref{structParamUnassignedError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structParseError}{Parse\+Error}} \\*An error generated while parsing a command or language }{\pageref{structParseError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParserContext}{Parser\+Context}} }{\pageref{classParserContext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} }{\pageref{classParserWalker}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classParserWalkerChange}{Parser\+Walker\+Change}} }{\pageref{classParserWalkerChange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPartialSymbolEntry}{Partial\+Symbol\+Entry}} \\*A structure for pushing nested fields to the R\+PN stack }{\pageref{structPartialSymbolEntry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classrangemap_1_1PartIterator}{rangemap$<$ \+\_\+recordtype $>$\+::\+Part\+Iterator}} \\*An iterator into the interval map container }{\pageref{classrangemap_1_1PartIterator}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPartition}{Partition}} \\*A range of nodes (within the weak topological ordering) that are iterated together }{\pageref{classPartition}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classpartmap}{partmap$<$ \+\_\+linetype, \+\_\+valuetype $>$}} \\*A map from a linear space to value objects }{\pageref{classpartmap}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPathMeld}{Path\+Meld}} \\*All paths from a (putative) switch variable to the C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND }{\pageref{classPathMeld}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPattern}{Pattern}} }{\pageref{classPattern}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPatternBlock}{Pattern\+Block}} }{\pageref{classPatternBlock}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPatternEquation}{Pattern\+Equation}} }{\pageref{classPatternEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} }{\pageref{classPatternExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPatternlessSymbol}{Patternless\+Symbol}} }{\pageref{classPatternlessSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPatternValue}{Pattern\+Value}} }{\pageref{classPatternValue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeBuilder}{Pcode\+Builder}} }{\pageref{classPcodeBuilder}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeCacher}{Pcode\+Cacher}} \\*Class for caching a chunk of p-\/code, prior to emitting }{\pageref{classPcodeCacher}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeCompile}{Pcode\+Compile}} }{\pageref{classPcodeCompile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPcodeData}{Pcode\+Data}} \\*Data for building one p-\/code instruction }{\pageref{structPcodeData}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \\*Abstract class for emitting pcode to an application }{\pageref{classPcodeEmit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeEmitCache}{Pcode\+Emit\+Cache}} \\*P-\/code emitter that dumps its raw Varnodes and Pcode\+Ops to an in memory cache }{\pageref{classPcodeEmitCache}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeEmitFd}{Pcode\+Emit\+Fd}} \\*A p-\/code emitter for building \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects }{\pageref{classPcodeEmitFd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeInjectLibrary}{Pcode\+Inject\+Library}} \\*A collection of p-\/code injection payloads }{\pageref{classPcodeInjectLibrary}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeInjectLibraryGhidra}{Pcode\+Inject\+Library\+Ghidra}} \\*A p-\/code injection library that uses a Ghidra client to generate/compile the injection p-\/code }{\pageref{classPcodeInjectLibraryGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeInjectLibrarySleigh}{Pcode\+Inject\+Library\+Sleigh}} }{\pageref{classPcodeInjectLibrarySleigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeLexer}{Pcode\+Lexer}} }{\pageref{classPcodeLexer}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\*Lowest level operation of the {\bfseries{p-\/code}} language }{\pageref{classPcodeOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}} \\*Container class for Pcode\+Ops associated with a single function }{\pageref{classPcodeOpBank}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeOpEdge}{Pcode\+Op\+Edge}} \\*Class representing a {\itshape term} in an additive expression }{\pageref{classPcodeOpEdge}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}} \\*An edge in a data-\/flow path or graph }{\pageref{structPcodeOpNode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} \\*A low-\/level representation of a single pcode operation }{\pageref{classPcodeOpRaw}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeRawOut}{Pcode\+Raw\+Out}} }{\pageref{classPcodeRawOut}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPcodeSnippet}{Pcode\+Snippet}} }{\pageref{classPcodeSnippet}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPhiForm}{Phi\+Form}} }{\pageref{classPhiForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPlusExpression}{Plus\+Expression}} }{\pageref{classPlusExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPointerModifier}{Pointer\+Modifier}} }{\pageref{classPointerModifier}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPreferSplitManager}{Prefer\+Split\+Manager}} }{\pageref{classPreferSplitManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPreferSplitRecord}{Prefer\+Split\+Record}} }{\pageref{structPreferSplitRecord}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPrintC}{PrintC}} \\*The c-\/language token emitter }{\pageref{classPrintC}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPrintCCapability}{Print\+C\+Capability}} \\*Factory and static initializer for the \char`\"{}c-\/language\char`\"{} back-\/end to the decompiler }{\pageref{classPrintCCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPrintfCallBack}{Printf\+Call\+Back}} }{\pageref{classPrintfCallBack}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPrintJava}{Print\+Java}} \\*The java-\/language token emitter }{\pageref{classPrintJava}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPrintJavaCapability}{Print\+Java\+Capability}} \\*Factory and static initializer for the \char`\"{}java-\/language\char`\"{} back-\/end to the decompiler }{\pageref{classPrintJavaCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} \\*The base class A\+PI for emitting a high-\/level language }{\pageref{classPrintLanguage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPrintLanguageCapability}{Print\+Language\+Capability}} \\*Base class for high-\/level language capabilities }{\pageref{classPrintLanguageCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPriorityQueue}{Priority\+Queue}} \\*Priority queue for the phi-\/node (M\+U\+L\+T\+I\+E\+Q\+U\+AL) placement algorithm }{\pageref{classPriorityQueue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPropagationState}{Propagation\+State}} \\*A class that holds a data-\/type traversal state during type propagation }{\pageref{classPropagationState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} \\*A {\bfseries{prototype}} {\bfseries{model\+:}} a model for passing parameters between functions }{\pageref{classProtoModel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classProtoModelMerged}{Proto\+Model\+Merged}} \\*A prototype model made by merging together other models }{\pageref{classProtoModelMerged}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} \\*A function parameter viewed as a name, data-\/type, and storage address }{\pageref{classProtoParameter}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classProtoStore}{Proto\+Store}} \\*A collection parameter descriptions making up a function prototype }{\pageref{classProtoStore}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classProtoStoreInternal}{Proto\+Store\+Internal}} \\*A collection of parameter descriptions without backing symbols }{\pageref{classProtoStoreInternal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classProtoStoreSymbol}{Proto\+Store\+Symbol}} \\*A collection of parameter descriptions backed by \mbox{\hyperlink{classSymbol}{Symbol}} information }{\pageref{classProtoStoreSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPrototypePieces}{Prototype\+Pieces}} \\*Raw components of a function prototype (obtained from parsing source code) }{\pageref{structPrototypePieces}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classPutsCallBack}{Puts\+Call\+Back}} }{\pageref{classPutsCallBack}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRange}{Range}} \\*A contiguous range of bytes in some address space }{\pageref{classRange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRangeHint}{Range\+Hint}} \\*Partial data-\/type information mapped to a specific range of bytes }{\pageref{classRangeHint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRangeList}{Range\+List}} \\*A disjoint set of Ranges, possibly across multiple address spaces }{\pageref{classRangeList}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classrangemap}{rangemap$<$ \+\_\+recordtype $>$}} \\*An interval map container }{\pageref{classrangemap}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRawBinaryArchitecture}{Raw\+Binary\+Architecture}} \\*\mbox{\hyperlink{classArchitecture}{Architecture}} that reads its binary as a raw file }{\pageref{classRawBinaryArchitecture}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRawBinaryArchitectureCapability}{Raw\+Binary\+Architecture\+Capability}} \\*Extension point for building an \mbox{\hyperlink{classArchitecture}{Architecture}} that reads in raw images }{\pageref{classRawBinaryArchitectureCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRawLoadImage}{Raw\+Load\+Image}} \\*A simple raw binary loadimage }{\pageref{classRawLoadImage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structRecovError}{Recov\+Error}} \\*A generic recoverable error }{\pageref{structRecovError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRegisterProgram}{Register\+Program}} \\*Command to {\bfseries{register}} a new Program (executable) with the decompiler }{\pageref{classRegisterProgram}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structRelativeRecord}{Relative\+Record}} \\*Class for describing a relative p-\/code branch destination }{\pageref{structRelativeRecord}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structPrintLanguage_1_1ReversePolish}{Print\+Language\+::\+Reverse\+Polish}} \\*An entry on the reverse polish notation (R\+PN) stack }{\pageref{structPrintLanguage_1_1ReversePolish}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRHSConstant}{R\+H\+S\+Constant}} }{\pageref{classRHSConstant}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRightShiftExpression}{Right\+Shift\+Expression}} }{\pageref{classRightShiftExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structRtlPair}{Rtl\+Pair}} }{\pageref{structRtlPair}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRule}{Rule}} \\*Class for performing a single transformation on a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} or \mbox{\hyperlink{classVarnode}{Varnode}} }{\pageref{classRule}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRule2Comp2Mult}{Rule2\+Comp2\+Mult}} \\*Eliminate I\+N\+T\+\_\+2\+C\+O\+MP\+: {\ttfamily -\/V =$>$ V $\ast$ -\/1} }{\pageref{classRule2Comp2Mult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRule2Comp2Sub}{Rule2\+Comp2\+Sub}} \\*Cleanup\+: Convert I\+N\+T\+\_\+\+A\+DD back to I\+N\+T\+\_\+\+S\+UB\+: {\ttfamily V + -\/W ==$>$ V -\/ W} }{\pageref{classRule2Comp2Sub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAddMultCollapse}{Rule\+Add\+Mult\+Collapse}} \\*Collapse constants in an additive or multiplicative expression }{\pageref{classRuleAddMultCollapse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAddUnsigned}{Rule\+Add\+Unsigned}} \\*Cleanup\+: Convert I\+N\+T\+\_\+\+A\+DD of constants to I\+N\+T\+\_\+\+S\+UB\+: {\ttfamily V + 0xff... =$>$ V -\/ 0x00...} }{\pageref{classRuleAddUnsigned}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAndCommute}{Rule\+And\+Commute}} \\*Commute I\+N\+T\+\_\+\+A\+ND with I\+N\+T\+\_\+\+L\+E\+FT and I\+N\+T\+\_\+\+R\+I\+G\+HT\+: {\ttfamily (V $<$$<$ W) \& d =$>$ (V \& (W $>$$>$ c)) $<$$<$ c} }{\pageref{classRuleAndCommute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAndCompare}{Rule\+And\+Compare}} \\*Simplify I\+N\+T\+\_\+\+Z\+E\+XT and S\+U\+B\+P\+I\+E\+CE in masked comparison\+: {\ttfamily zext(\+V) \& c == 0 =$>$ V \& (c \& mask) == 0} }{\pageref{classRuleAndCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAndDistribute}{Rule\+And\+Distribute}} \\*Distribute I\+N\+T\+\_\+\+A\+ND through I\+N\+T\+\_\+\+OR if result is simpler }{\pageref{classRuleAndDistribute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAndMask}{Rule\+And\+Mask}} \\*Collapse unnecessary I\+N\+T\+\_\+\+A\+ND }{\pageref{classRuleAndMask}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAndOrLump}{Rule\+And\+Or\+Lump}} \\*Collapse constants in logical expressions\+: {\ttfamily (V \& c) \& d =$>$ V \& (c \& d)} }{\pageref{classRuleAndOrLump}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleAndPiece}{Rule\+And\+Piece}} \\*Convert P\+I\+E\+CE to I\+N\+T\+\_\+\+Z\+E\+XT where appropriate\+: {\ttfamily V \& concat(\+W,\+X) =$>$ zext(\+X)} }{\pageref{classRuleAndPiece}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleBitUndistribute}{Rule\+Bit\+Undistribute}} \\*Undo distributed operations through I\+N\+T\+\_\+\+A\+ND, I\+N\+T\+\_\+\+OR, and I\+N\+T\+\_\+\+X\+OR }{\pageref{classRuleBitUndistribute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleBooleanNegate}{Rule\+Boolean\+Negate}} \\*Simplify comparisons with boolean values\+: {\ttfamily V == false =$>$ !V, V == true =$>$ V} }{\pageref{classRuleBooleanNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleBoolNegate}{Rule\+Bool\+Negate}} \\*Apply a set of identities involving B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE }{\pageref{classRuleBoolNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleBoolZext}{Rule\+Bool\+Zext}} \\*Simplify boolean expressions of the form zext(\+V) $\ast$ -\/1 }{\pageref{classRuleBoolZext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleBxor2NotEqual}{Rule\+Bxor2\+Not\+Equal}} \\*Eliminate B\+O\+O\+L\+\_\+\+X\+OR\+: {\ttfamily V $^\wedge$$^\wedge$ W =$>$ V != W} }{\pageref{classRuleBxor2NotEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleCarryElim}{Rule\+Carry\+Elim}} \\*Transform I\+N\+T\+\_\+\+C\+A\+R\+RY using a constant\+: {\ttfamily carry(\+V,c) =$>$ -\/c $<$= V} }{\pageref{classRuleCarryElim}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleCollapseConstants}{Rule\+Collapse\+Constants}} \\*Collapse constant expressions }{\pageref{classRuleCollapseConstants}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleCollectTerms}{Rule\+Collect\+Terms}} \\*Collect terms in a sum\+: {\ttfamily V $\ast$ c + V $\ast$ d =$>$ V $\ast$ (c + d)} }{\pageref{classRuleCollectTerms}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleCompile}{Rule\+Compile}} }{\pageref{classRuleCompile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleConcatCommute}{Rule\+Concat\+Commute}} \\*Commute P\+I\+E\+CE with I\+N\+T\+\_\+\+A\+ND, I\+N\+T\+\_\+\+OR, and I\+N\+T\+\_\+\+X\+OR }{\pageref{classRuleConcatCommute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleConcatLeftShift}{Rule\+Concat\+Left\+Shift}} \\*Simplify concatenation of extended value\+: {\ttfamily concat(V, zext(\+W) $<$$<$ c) =$>$ concat( concat(\+V,\+W), 0)} }{\pageref{classRuleConcatLeftShift}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleConcatShift}{Rule\+Concat\+Shift}} \\*Simplify I\+N\+T\+\_\+\+R\+I\+G\+HT canceling P\+I\+E\+CE\+: {\ttfamily concat(\+V,\+W) $>$$>$ c =$>$ zext(\+V)} }{\pageref{classRuleConcatShift}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleConcatZero}{Rule\+Concat\+Zero}} \\*Simplify concatenation with zero\+: {\ttfamily concat(\+V,0) =$>$ zext(\+V) $<$$<$ c} }{\pageref{classRuleConcatZero}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleConcatZext}{Rule\+Concat\+Zext}} \\*Commute P\+I\+E\+CE with I\+N\+T\+\_\+\+Z\+E\+XT\+: {\ttfamily concat(zext(\+V),\+W) =$>$ zext(concat(\+V,\+W))} }{\pageref{classRuleConcatZext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleConditionalMove}{Rule\+Conditional\+Move}} \\*Simplify various conditional move situations }{\pageref{classRuleConditionalMove}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleCondNegate}{Rule\+Cond\+Negate}} \\*Flip conditions to match structuring cues }{\pageref{classRuleCondNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDivOpt}{Rule\+Div\+Opt}} \\*Convert I\+N\+T\+\_\+\+M\+U\+LT and shift forms into I\+N\+T\+\_\+\+D\+IV or I\+N\+T\+\_\+\+S\+D\+IV }{\pageref{classRuleDivOpt}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDivTermAdd}{Rule\+Div\+Term\+Add}} \\*Simplify expressions associated with optimized division expressions }{\pageref{classRuleDivTermAdd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDivTermAdd2}{Rule\+Div\+Term\+Add2}} \\*Simplify another expression associated with optimized division }{\pageref{classRuleDivTermAdd2}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDoubleArithShift}{Rule\+Double\+Arith\+Shift}} \\*Simplify two sequential I\+N\+T\+\_\+\+S\+R\+I\+G\+HT\+: {\ttfamily (x s$>$$>$ \#c) s$>$$>$ \#d =$>$ x s$>$$>$ saturate(\#c + \#d)} }{\pageref{classRuleDoubleArithShift}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDoubleIn}{Rule\+Double\+In}} }{\pageref{classRuleDoubleIn}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDoubleLoad}{Rule\+Double\+Load}} }{\pageref{classRuleDoubleLoad}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDoubleShift}{Rule\+Double\+Shift}} \\*Simplify chained shifts I\+N\+T\+\_\+\+L\+E\+FT and I\+N\+T\+\_\+\+R\+I\+G\+HT }{\pageref{classRuleDoubleShift}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDoubleSub}{Rule\+Double\+Sub}} \\*Simplify chained S\+U\+B\+P\+I\+E\+CE\+: {\ttfamily sub( sub(\+V,c), d) =$>$ sub(V, c+d)} }{\pageref{classRuleDoubleSub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleDumptyHump}{Rule\+Dumpty\+Hump}} \\*Simplify join and break apart\+: {\ttfamily sub( concat(\+V,\+W), c) =$>$ sub(\+W,c)} }{\pageref{classRuleDumptyHump}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleEarlyRemoval}{Rule\+Early\+Removal}} \\*Get rid of unused \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects where we can guarantee the output is unused }{\pageref{classRuleEarlyRemoval}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleEmbed}{Rule\+Embed}} \\*Simplify P\+I\+E\+CE intended as embedding\+: {\ttfamily concat(\+V, sub(\+W,0)) =$>$ W \& 0xff $\vert$ (zext(\+W) $<$$<$ 8)} }{\pageref{classRuleEmbed}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleEqual2Constant}{Rule\+Equal2\+Constant}} \\*Simplify I\+N\+T\+\_\+\+E\+Q\+U\+AL applied to arithmetic expressions }{\pageref{classRuleEqual2Constant}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleEqual2Zero}{Rule\+Equal2\+Zero}} \\*Simplify I\+N\+T\+\_\+\+E\+Q\+U\+AL applied to 0\+: {\ttfamily 0 == V + W $\ast$ -\/1 =$>$ V == W or 0 == V + c =$>$ V == -\/c} }{\pageref{classRuleEqual2Zero}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleEquality}{Rule\+Equality}} \\*Collapse I\+N\+T\+\_\+\+E\+Q\+U\+AL and I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL\+: {\ttfamily f(\+V,\+W) == f(\+V,\+W) =$>$ true} }{\pageref{classRuleEquality}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleFloatCast}{Rule\+Float\+Cast}} \\*Replace (casttosmall)(casttobig)V with identity or with single cast }{\pageref{classRuleFloatCast}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleFloatRange}{Rule\+Float\+Range}} \\*\mbox{\hyperlink{classMerge}{Merge}} range conditions of the form\+: {\ttfamily V f$<$ c, c f$<$ V, V f== c} etc }{\pageref{classRuleFloatRange}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleFuncPtrEncoding}{Rule\+Func\+Ptr\+Encoding}} \\*Eliminate A\+R\+M/\+T\+H\+U\+MB style masking of the low order bits on function pointers }{\pageref{classRuleFuncPtrEncoding}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleGeneric}{Rule\+Generic}} }{\pageref{classRuleGeneric}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleHighOrderAnd}{Rule\+High\+Order\+And}} \\*Simplify I\+N\+T\+\_\+\+A\+ND when applied to aligned I\+N\+T\+\_\+\+A\+DD\+: {\ttfamily (V + c) \& 0xfff0 =$>$ V + (c \& 0xfff0)} }{\pageref{classRuleHighOrderAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleHumptyDumpty}{Rule\+Humpty\+Dumpty}} \\*Simplify break and rejoin\+: {\ttfamily concat( sub(\+V,c), sub(\+V,0) ) =$>$ V} }{\pageref{classRuleHumptyDumpty}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleHumptyOr}{Rule\+Humpty\+Or}} \\*Simplify masked pieces I\+N\+T\+\_\+\+O\+Red together\+: {\ttfamily (V \& ff00) $\vert$ (V \& 00ff) =$>$ V} }{\pageref{classRuleHumptyOr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleIdentityEl}{Rule\+Identity\+El}} \\*Collapse operations using identity element\+: {\ttfamily V + 0 =$>$ V} }{\pageref{classRuleIdentityEl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleIgnoreNan}{Rule\+Ignore\+Nan}} \\*Treat F\+L\+O\+A\+T\+\_\+\+N\+AN as always evaluating to false }{\pageref{classRuleIgnoreNan}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleIndirectCollapse}{Rule\+Indirect\+Collapse}} \\*Remove a C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT if its blocking \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is dead }{\pageref{classRuleIndirectCollapse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleIntLessEqual}{Rule\+Int\+Less\+Equal}} \\*Convert L\+E\+S\+S\+E\+Q\+U\+AL to L\+E\+SS\+: {\ttfamily V $<$= c =$>$ V $<$ (c+1)} }{\pageref{classRuleIntLessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLeftRight}{Rule\+Left\+Right}} \\*Transform canceling I\+N\+T\+\_\+\+R\+I\+G\+HT or I\+N\+T\+\_\+\+S\+R\+I\+G\+HT of I\+N\+T\+\_\+\+L\+E\+FT }{\pageref{classRuleLeftRight}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLess2Zero}{Rule\+Less2\+Zero}} \\*Simplify I\+N\+T\+\_\+\+L\+E\+SS applied to extremal constants }{\pageref{classRuleLess2Zero}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLessEqual}{Rule\+Less\+Equal}} \\*Simplify \textquotesingle{}less than or equal\textquotesingle{}\+: {\ttfamily V $<$ W $\vert$$\vert$ V == W =$>$ V $<$= W} }{\pageref{classRuleLessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLessEqual2Zero}{Rule\+Less\+Equal2\+Zero}} \\*Simplify I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL applied to extremal constants }{\pageref{classRuleLessEqual2Zero}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLessNotEqual}{Rule\+Less\+Not\+Equal}} \\*Simplify I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL \&\& I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL\+: {\ttfamily V $<$= W \&\& V != W =$>$ V $<$ W} }{\pageref{classRuleLessNotEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLessOne}{Rule\+Less\+One}} \\*Transform I\+N\+T\+\_\+\+L\+E\+SS of 0 or 1\+: {\ttfamily V $<$ 1 =$>$ V == 0, V $<$= 0 =$>$ V == 0} }{\pageref{classRuleLessOne}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLexer}{Rule\+Lexer}} }{\pageref{classRuleLexer}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLoadVarnode}{Rule\+Load\+Varnode}} \\*Convert L\+O\+AD operations using a constant offset to C\+O\+PY }{\pageref{classRuleLoadVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleLogic2Bool}{Rule\+Logic2\+Bool}} \\*Convert logical to boolean operations\+: {\ttfamily V \& W =$>$ V \&\& W, V $\vert$ W =$>$ V $\vert$$\vert$ W} }{\pageref{classRuleLogic2Bool}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleModOpt}{Rule\+Mod\+Opt}} \\*Simplify expressions that optimize I\+N\+T\+\_\+\+R\+EM and I\+N\+T\+\_\+\+S\+R\+EM }{\pageref{classRuleModOpt}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleMultiCollapse}{Rule\+Multi\+Collapse}} \\*Collapse M\+U\+L\+T\+I\+E\+Q\+U\+AL whose inputs all trace to the same value }{\pageref{classRuleMultiCollapse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleMultNegOne}{Rule\+Mult\+Neg\+One}} \\*Cleanup\+: Convert I\+N\+T\+\_\+2\+C\+O\+MP from I\+N\+T\+\_\+\+M\+U\+LT\+: {\ttfamily V $\ast$ -\/1 =$>$ -\/V} }{\pageref{classRuleMultNegOne}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleNegateIdentity}{Rule\+Negate\+Identity}} \\*Apply I\+N\+T\+\_\+\+N\+E\+G\+A\+TE identities\+: {\ttfamily V \& $\sim$V =$>$ \#0, V $\vert$ $\sim$V -\/$>$ \#-\/1} }{\pageref{classRuleNegateIdentity}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleNegateNegate}{Rule\+Negate\+Negate}} \\*Simplify I\+N\+T\+\_\+\+N\+E\+G\+A\+TE chains\+: {\ttfamily $\sim$$\sim$V =$>$ V} }{\pageref{classRuleNegateNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleNotDistribute}{Rule\+Not\+Distribute}} \\*Distribute B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE\+: {\ttfamily !(V \&\& W) =$>$ !V $\vert$$\vert$ !W} }{\pageref{classRuleNotDistribute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleOrCollapse}{Rule\+Or\+Collapse}} \\*Collapse unnecessary I\+N\+T\+\_\+\+OR }{\pageref{classRuleOrCollapse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleOrConsume}{Rule\+Or\+Consume}} \\*Simply OR with unconsumed input\+: \`{}V = A $\vert$ B =$>$ V = B if nzm(\+A) \& consume(\+V) == 0 }{\pageref{classRuleOrConsume}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleOrMask}{Rule\+Or\+Mask}} \\*Simplify I\+N\+T\+\_\+\+OR with full mask\+: {\ttfamily V = W $\vert$ 0xffff =$>$ V = W} }{\pageref{classRuleOrMask}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleOrPredicate}{Rule\+Or\+Predicate}} \\*Simplify predication constructions involving the I\+N\+T\+\_\+\+OR operator }{\pageref{classRuleOrPredicate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePiece2Sext}{Rule\+Piece2\+Sext}} \\*Concatenation with sign bits becomes an extension\+: {\ttfamily concat( V s$>$$>$ \#0x1f , V) =$>$ sext(\+V)} }{\pageref{classRulePiece2Sext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePiece2Zext}{Rule\+Piece2\+Zext}} \\*Concatenation with 0 becomes an extension\+: {\ttfamily V = concat(\#0,W) =$>$ V = zext(\+W)} }{\pageref{classRulePiece2Zext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePiecePathology}{Rule\+Piece\+Pathology}} \\*Search for concatenations with unlikely things to inform return/parameter consumption calculation }{\pageref{classRulePiecePathology}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePopcountBoolXor}{Rule\+Popcount\+Bool\+Xor}} \\*Simplify boolean expressions that are combined through P\+O\+P\+C\+O\+U\+NT }{\pageref{classRulePopcountBoolXor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePositiveDiv}{Rule\+Positive\+Div}} \\*Signed division of positive values is unsigned division }{\pageref{classRulePositiveDiv}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePropagateCopy}{Rule\+Propagate\+Copy}} \\*Propagate the input of a C\+O\+PY to all the places that read the output }{\pageref{classRulePropagateCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePtraddUndo}{Rule\+Ptradd\+Undo}} \\*Remove P\+T\+R\+A\+DD operations with mismatched data-\/type information }{\pageref{classRulePtraddUndo}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePtrArith}{Rule\+Ptr\+Arith}} \\*Transform pointer arithmetic }{\pageref{classRulePtrArith}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePtrFlow}{Rule\+Ptr\+Flow}} \\*Mark \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects that are carrying or operating on pointers }{\pageref{classRulePtrFlow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePtrsubCharConstant}{Rule\+Ptrsub\+Char\+Constant}} \\*Cleanup\+: Set-\/up to print string constants }{\pageref{classRulePtrsubCharConstant}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePtrsubUndo}{Rule\+Ptrsub\+Undo}} \\*Remove P\+T\+R\+S\+UB operations with mismatched data-\/type information }{\pageref{classRulePtrsubUndo}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePullsubIndirect}{Rule\+Pullsub\+Indirect}} \\*Pull-\/back S\+U\+B\+P\+I\+E\+CE through I\+N\+D\+I\+R\+E\+CT }{\pageref{classRulePullsubIndirect}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePullsubMulti}{Rule\+Pullsub\+Multi}} \\*Pull S\+U\+B\+P\+I\+E\+CE back through M\+U\+L\+T\+I\+E\+Q\+U\+AL }{\pageref{classRulePullsubMulti}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePushMulti}{Rule\+Push\+Multi}} \\*Simplify M\+U\+L\+T\+I\+E\+Q\+U\+AL operations where the branches hold the same value }{\pageref{classRulePushMulti}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRulePushPtr}{Rule\+Push\+Ptr}} \\*Push a \mbox{\hyperlink{classVarnode}{Varnode}} with known pointer data-\/type to the bottom of its additive expression }{\pageref{classRulePushPtr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleRangeMeld}{Rule\+Range\+Meld}} \\*\mbox{\hyperlink{classMerge}{Merge}} range conditions of the form\+: {\ttfamily V s$<$ c, c s$<$ V, V == c, V != c} }{\pageref{classRuleRangeMeld}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleRightShiftAnd}{Rule\+Right\+Shift\+And}} \\*Simplify I\+N\+T\+\_\+\+R\+I\+G\+HT and I\+N\+T\+\_\+\+S\+R\+I\+G\+HT ops where an I\+N\+T\+\_\+\+A\+ND mask becomes unnecessary }{\pageref{classRuleRightShiftAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSborrow}{Rule\+Sborrow}} \\*Simplify signed comparisons using I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW }{\pageref{classRuleSborrow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSegment}{Rule\+Segment}} \\*Propagate constants through a S\+E\+G\+M\+E\+N\+T\+OP }{\pageref{classRuleSegment}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSelectCse}{Rule\+Select\+Cse}} \\*Look for common sub-\/expressions (built out of a restricted set of ops) }{\pageref{classRuleSelectCse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleShift2Mult}{Rule\+Shift2\+Mult}} \\*Convert I\+N\+T\+\_\+\+L\+E\+FT to I\+N\+T\+\_\+\+M\+U\+LT\+: {\ttfamily V $<$$<$ 2 =$>$ V $\ast$ 4} }{\pageref{classRuleShift2Mult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleShiftAnd}{Rule\+Shift\+And}} \\*Eliminate any I\+N\+T\+\_\+\+A\+ND when the bits it zeroes out are discarded by a shift }{\pageref{classRuleShiftAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleShiftBitops}{Rule\+Shift\+Bitops}} \\*Shifting away all non-\/zero bits of one-\/side of a logical/arithmetic op }{\pageref{classRuleShiftBitops}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleShiftCompare}{Rule\+Shift\+Compare}} \\*Transform shifts in comparisons\+: {\ttfamily V $>$$>$ c == d =$>$ V == (d $<$$<$ c)} }{\pageref{classRuleShiftCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleShiftPiece}{Rule\+Shift\+Piece}} \\*Convert \char`\"{}shift and add\char`\"{} to P\+I\+E\+CE\+: (zext(\+V) $<$$<$ 16) + zext(\+W) =$>$ concat(\+V,\+W) }{\pageref{classRuleShiftPiece}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleShiftSub}{Rule\+Shift\+Sub}} \\*Simplify S\+U\+B\+P\+I\+E\+CE applied to I\+N\+T\+\_\+\+L\+E\+FT\+: {\ttfamily sub( V $<$$<$ 8$\ast$c, c) =$>$ sub(\+V,0)} }{\pageref{classRuleShiftSub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSignDiv2}{Rule\+Sign\+Div2}} \\*Convert I\+N\+T\+\_\+\+S\+R\+I\+G\+HT form into I\+N\+T\+\_\+\+S\+D\+IV\+: {\ttfamily (V + -\/1$\ast$(V s$>$$>$ 31)) s$>$$>$ 1 =$>$ V s/ 2} }{\pageref{classRuleSignDiv2}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSignForm}{Rule\+Sign\+Form}} \\*Normalize sign extraction\+: {\ttfamily sub(sext(\+V),c) =$>$ V s$>$$>$ 31} }{\pageref{classRuleSignForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSignNearMult}{Rule\+Sign\+Near\+Mult}} \\*Simplify division form\+: {\ttfamily (V + (V s$>$$>$ 0x1f)$>$$>$(32-\/n)) \& (-\/1$<$$<$n) =$>$ (V s/ 2$^\wedge$n) $\ast$ 2$^\wedge$n} }{\pageref{classRuleSignNearMult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSignShift}{Rule\+Sign\+Shift}} \\*Normalize sign-\/bit extraction\+: {\ttfamily V $>$$>$ 0x1f =$>$ (V s$>$$>$ 0x1f) $\ast$ -\/1} }{\pageref{classRuleSignShift}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSLess2Zero}{Rule\+S\+Less2\+Zero}} \\*Simplify I\+N\+T\+\_\+\+S\+L\+E\+SS applied to 0 or -\/1 }{\pageref{classRuleSLess2Zero}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSlessToLess}{Rule\+Sless\+To\+Less}} \\*Convert I\+N\+T\+\_\+\+S\+L\+E\+SS to I\+N\+T\+\_\+\+L\+E\+SS when comparing positive values }{\pageref{classRuleSlessToLess}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSplitFlow}{Rule\+Split\+Flow}} \\*Try to detect and split artificially joined Varnodes }{\pageref{classRuleSplitFlow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleStoreVarnode}{Rule\+Store\+Varnode}} \\*Convert S\+T\+O\+RE operations using a constant offset to C\+O\+PY }{\pageref{classRuleStoreVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleStructOffset0}{Rule\+Struct\+Offset0}} \\*Convert a L\+O\+AD or S\+T\+O\+RE to the first element of a structure to a P\+T\+R\+S\+UB }{\pageref{classRuleStructOffset0}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSub2Add}{Rule\+Sub2\+Add}} \\*Eliminate I\+N\+T\+\_\+\+S\+UB\+: {\ttfamily V -\/ W =$>$ V + W $\ast$ -\/1} }{\pageref{classRuleSub2Add}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubCancel}{Rule\+Sub\+Cancel}} \\*Simplify composition of S\+U\+B\+P\+I\+E\+CE with I\+N\+T\+\_\+\+Z\+E\+XT or I\+N\+T\+\_\+\+S\+E\+XT }{\pageref{classRuleSubCancel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubCommute}{Rule\+Sub\+Commute}} \\*Commute S\+U\+B\+P\+I\+E\+CE operations with earlier operations where possible }{\pageref{classRuleSubCommute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubExtComm}{Rule\+Sub\+Ext\+Comm}} \\*Commute S\+U\+B\+P\+I\+E\+CE and I\+N\+T\+\_\+\+Z\+E\+XT\+: {\ttfamily sub(zext(\+V),c) =$>$ zext(sub(\+V,c))} }{\pageref{classRuleSubExtComm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubfloatConvert}{Rule\+Subfloat\+Convert}} \\*Perform \mbox{\hyperlink{classSubfloatFlow}{Subfloat\+Flow}} analysis triggered by F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT }{\pageref{classRuleSubfloatConvert}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubNormal}{Rule\+Sub\+Normal}} \\*Pull-\/back S\+U\+B\+P\+I\+E\+CE through I\+N\+T\+\_\+\+R\+I\+G\+HT and I\+N\+T\+\_\+\+S\+R\+I\+G\+HT }{\pageref{classRuleSubNormal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubRight}{Rule\+Sub\+Right}} \\*Cleanup\+: Convert truncation to cast\+: {\ttfamily sub(\+V,c) =$>$ sub(V$>$$>$c$\ast$8,0)} }{\pageref{classRuleSubRight}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubvarAnd}{Rule\+Subvar\+And}} \\*Perform Sub\+Variable\+Flow analysis triggered by I\+N\+T\+\_\+\+A\+ND }{\pageref{classRuleSubvarAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubvarCompZero}{Rule\+Subvar\+Comp\+Zero}} \\*Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by testing of a single bit }{\pageref{classRuleSubvarCompZero}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubvarSext}{Rule\+Subvar\+Sext}} \\*Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by I\+N\+T\+\_\+\+S\+E\+XT }{\pageref{classRuleSubvarSext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubvarShift}{Rule\+Subvar\+Shift}} \\*Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by I\+N\+T\+\_\+\+R\+I\+G\+HT }{\pageref{classRuleSubvarShift}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubvarSubpiece}{Rule\+Subvar\+Subpiece}} \\*Perform Sub\+Variable\+Flow analysis triggered by S\+U\+B\+P\+I\+E\+CE }{\pageref{classRuleSubvarSubpiece}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubvarZext}{Rule\+Subvar\+Zext}} \\*Perform \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} analysis triggered by I\+N\+T\+\_\+\+Z\+E\+XT }{\pageref{classRuleSubvarZext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSubZext}{Rule\+Sub\+Zext}} \\*Simplify I\+N\+T\+\_\+\+Z\+E\+XT applied to S\+U\+B\+P\+I\+E\+CE expressions }{\pageref{classRuleSubZext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleSwitchSingle}{Rule\+Switch\+Single}} \\*Convert B\+R\+A\+N\+C\+H\+I\+ND with only one computed destination to a B\+R\+A\+N\+CH }{\pageref{classRuleSwitchSingle}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleTermOrder}{Rule\+Term\+Order}} \\*Order the inputs to commutative operations }{\pageref{classRuleTermOrder}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleTestSign}{Rule\+Test\+Sign}} \\*Convert sign-\/bit test to signed comparison\+: {\ttfamily (V s$>$$>$ 0x1f) != 0 =$>$ V s$<$ 0} }{\pageref{classRuleTestSign}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleThreeWayCompare}{Rule\+Three\+Way\+Compare}} \\*Simplify expressions involving {\itshape three-\/way} comparisons }{\pageref{classRuleThreeWayCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleTransformCpool}{Rule\+Transform\+Cpool}} \\*Transform C\+P\+O\+O\+L\+R\+EF operations by looking up the value in the constant pool }{\pageref{classRuleTransformCpool}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleTrivialArith}{Rule\+Trivial\+Arith}} \\*Simplify trivial arithmetic expressions }{\pageref{classRuleTrivialArith}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleTrivialBool}{Rule\+Trivial\+Bool}} \\*Simplify boolean expressions when one side is constant }{\pageref{classRuleTrivialBool}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleTrivialShift}{Rule\+Trivial\+Shift}} \\*Simplify trivial shifts\+: {\ttfamily V $<$$<$ 0 =$>$ V, V $<$$<$ \#64 =$>$ 0} }{\pageref{classRuleTrivialShift}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleXorCollapse}{Rule\+Xor\+Collapse}} \\*Eliminate I\+N\+T\+\_\+\+X\+OR in comparisons\+: {\ttfamily (V $^\wedge$ W) == 0 =$>$ V == W} }{\pageref{classRuleXorCollapse}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleXorSwap}{Rule\+Xor\+Swap}} \\*Simplify limited chains of X\+OR operations }{\pageref{classRuleXorSwap}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleZextCommute}{Rule\+Zext\+Commute}} \\*Commute I\+N\+T\+\_\+\+Z\+E\+XT with I\+N\+T\+\_\+\+R\+I\+G\+HT\+: {\ttfamily zext(\+V) $>$$>$ W =$>$ zext(V $>$$>$ W)} }{\pageref{classRuleZextCommute}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleZextEliminate}{Rule\+Zext\+Eliminate}} \\*Eliminate I\+N\+T\+\_\+\+Z\+E\+XT in comparisons\+: {\ttfamily zext(\+V) == c =$>$ V == c} }{\pageref{classRuleZextEliminate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleZextShiftZext}{Rule\+Zext\+Shift\+Zext}} \\*Simplify multiple I\+N\+T\+\_\+\+Z\+E\+XT operations\+: {\ttfamily zext( zext(\+V) $<$$<$ c ) =$>$ zext(\+V) $<$$<$ c} }{\pageref{classRuleZextShiftZext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classRuleZextSless}{Rule\+Zext\+Sless}} \\*Transform I\+N\+T\+\_\+\+Z\+E\+XT and I\+N\+T\+\_\+\+S\+L\+E\+SS\+: {\ttfamily zext(\+V) s$<$ c =$>$ V $<$ c} }{\pageref{classRuleZextSless}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScope}{Scope}} \\*A collection of \mbox{\hyperlink{classSymbol}{Symbol}} objects within a single (namespace or functional) scope }{\pageref{classScope}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScopeGhidra}{Scope\+Ghidra}} \\*An implementation of the \mbox{\hyperlink{classScope}{Scope}} interface by querying a Ghidra client for \mbox{\hyperlink{classSymbol}{Symbol}} information }{\pageref{classScopeGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScopeGhidraNamespace}{Scope\+Ghidra\+Namespace}} \\*A global {\itshape namespace} \mbox{\hyperlink{classScope}{Scope}} }{\pageref{classScopeGhidraNamespace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScopeInternal}{Scope\+Internal}} \\*An in-\/memory implementation of the \mbox{\hyperlink{classScope}{Scope}} interface }{\pageref{classScopeInternal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScopeLocal}{Scope\+Local}} \\*A \mbox{\hyperlink{classSymbol}{Symbol}} scope for {\itshape local} variables of a particular function }{\pageref{classScopeLocal}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScopeMapper}{Scope\+Mapper}} \\*An \mbox{\hyperlink{classAddress}{Address}} range associated with the symbol \mbox{\hyperlink{classScope}{Scope}} that owns it }{\pageref{classScopeMapper}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classScoreProtoModel}{Score\+Proto\+Model}} \\*Class for calculating \char`\"{}goodness of fit\char`\"{} of parameter trials against a prototype model }{\pageref{classScoreProtoModel}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSectionSymbol}{Section\+Symbol}} }{\pageref{classSectionSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSectionVector}{Section\+Vector}} }{\pageref{classSectionVector}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSegmentedResolver}{Segmented\+Resolver}} \\*A resolver for segmented architectures }{\pageref{classSegmentedResolver}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSegmentOp}{Segment\+Op}} \\*The {\itshape segmented} {\itshape address} operator }{\pageref{classSegmentOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSeqNum}{Seq\+Num}} \\*A class for uniquely labelling and comparing Pcode\+Ops }{\pageref{classSeqNum}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSetAction}{Set\+Action}} \\*Command to {\bfseries{set}} the {\itshape root} \mbox{\hyperlink{classAction}{Action}} used by the decompiler or {\bfseries{toggle}} output components }{\pageref{classSetAction}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSetOptions}{Set\+Options}} \\*Command to {\bfseries{toggle}} {\bfseries{options}} within the decompiler }{\pageref{classSetOptions}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classShiftForm}{Shift\+Form}} }{\pageref{classShiftForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSizePass}{Size\+Pass}} \\*Label for describing extent of address range that has been heritaged }{\pageref{structSizePass}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSleigh}{Sleigh}} \\*A full S\+L\+E\+I\+GH engine }{\pageref{classSleigh}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSleighArchitecture}{Sleigh\+Architecture}} \\*An \mbox{\hyperlink{classArchitecture}{Architecture}} that uses the decompiler\textquotesingle{}s native S\+L\+E\+I\+GH translation engine }{\pageref{classSleighArchitecture}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSleighBase}{Sleigh\+Base}} \\*Common core of classes that read or write S\+L\+E\+I\+GH specification files natively }{\pageref{classSleighBase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSleighBuilder}{Sleigh\+Builder}} \\*Build p-\/code from a pre-\/parsed instruction }{\pageref{classSleighBuilder}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSleighCompile}{Sleigh\+Compile}} }{\pageref{classSleighCompile}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSleighError}{Sleigh\+Error}} }{\pageref{structSleighError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSleighPcode}{Sleigh\+Pcode}} }{\pageref{classSleighPcode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} }{\pageref{classSleighSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSourceFileIndexer}{Source\+File\+Indexer}} \\*Class for recording source file information for S\+L\+E\+I\+GH constructors }{\pageref{classSourceFileIndexer}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSpacebaseSpace}{Spacebase\+Space}} \\*A virtual space {\itshape stack} space }{\pageref{classSpacebaseSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSpaceQuality}{Space\+Quality}} }{\pageref{structSpaceQuality}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSpaceSymbol}{Space\+Symbol}} }{\pageref{classSpaceSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSpecificSymbol}{Specific\+Symbol}} }{\pageref{classSpecificSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSplitFlow}{Split\+Flow}} \\*Class for splitting up Varnodes that hold 2 logical variables }{\pageref{classSplitFlow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSplitVarnode}{Split\+Varnode}} }{\pageref{classSplitVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structStackEqn}{Stack\+Eqn}} \\*A stack equation }{\pageref{structStackEqn}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStackSolver}{Stack\+Solver}} \\*A class that solves for stack-\/pointer changes across unknown sub-\/functions }{\pageref{classStackSolver}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structStarQuality}{Star\+Quality}} }{\pageref{structStarQuality}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStartInstructionValue}{Start\+Instruction\+Value}} }{\pageref{classStartInstructionValue}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStartSymbol}{Start\+Symbol}} }{\pageref{classStartSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStringManager_1_1StringData}{String\+Manager\+::\+String\+Data}} \\*String data (a sequence of bytes) stored by \mbox{\hyperlink{classStringManager}{String\+Manager}} }{\pageref{classStringManager_1_1StringData}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStringManager}{String\+Manager}} \\*Storage for decoding and storing strings associated with an address }{\pageref{classStringManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStringManagerUnicode}{String\+Manager\+Unicode}} \\*An implementation of \mbox{\hyperlink{classStringManager}{String\+Manager}} that understands terminated unicode strings }{\pageref{classStringManagerUnicode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classStructureGraph}{Structure\+Graph}} \\*Command to {\bfseries{structure}} a control-\/flow graph }{\pageref{classStructureGraph}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSubExpression}{Sub\+Expression}} }{\pageref{classSubExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSubfloatFlow}{Subfloat\+Flow}} \\*Class for tracing changes of precision in floating point variables }{\pageref{classSubfloatFlow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSubForm}{Sub\+Form}} }{\pageref{classSubForm}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSubtableSymbol}{Subtable\+Symbol}} }{\pageref{classSubtableSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} \\*Class for shrinking big Varnodes carrying smaller logical values }{\pageref{classSubvariableFlow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSymbol}{Symbol}} \\*The base class for a symbol in a symbol table or scope }{\pageref{classSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structSymbolCompare}{Symbol\+Compare}} }{\pageref{structSymbolCompare}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSymbolCompareName}{Symbol\+Compare\+Name}} \\*Comparator for sorting \mbox{\hyperlink{classSymbol}{Symbol}} objects by name }{\pageref{classSymbolCompareName}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} \\*A storage location for a particular \mbox{\hyperlink{classSymbol}{Symbol}} }{\pageref{classSymbolEntry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSymbolScope}{Symbol\+Scope}} }{\pageref{classSymbolScope}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classSymbolTable}{Symbol\+Table}} }{\pageref{classSymbolTable}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTargetFeature}{Target\+Feature}} }{\pageref{structTargetFeature}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTargetHit}{Target\+Hit}} }{\pageref{classTargetHit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTerminateCallBack}{Terminate\+Call\+Back}} }{\pageref{classTerminateCallBack}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTermOrder}{Term\+Order}} \\*A class for ordering \mbox{\hyperlink{classVarnode}{Varnode}} terms in an additive expression }{\pageref{classTermOrder}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTermPatternOp}{Term\+Pattern\+Op}} \\*A user defined p-\/code op that has a dynamically defined procedure }{\pageref{classTermPatternOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classToken}{Token}} }{\pageref{classToken}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTokenField}{Token\+Field}} }{\pageref{classTokenField}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} }{\pageref{classTokenPattern}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTokenSplit}{Token\+Split}} \\*A token/command object in the pretty printing stream }{\pageref{classTokenSplit}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTokenSymbol}{Token\+Symbol}} }{\pageref{classTokenSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classToOpEdge}{To\+Op\+Edge}} \\*An edge between a \mbox{\hyperlink{classVarnode}{Varnode}} and a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} }{\pageref{classToOpEdge}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTraceDAG}{Trace\+D\+AG}} \\*Algorithm for selecting unstructured edges based an Directed Acyclic Graphs (D\+AG) }{\pageref{classTraceDAG}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTrackedContext}{Tracked\+Context}} \\*A tracked register (\mbox{\hyperlink{classVarnode}{Varnode}}) and the value it contains }{\pageref{structTrackedContext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTransformManager}{Transform\+Manager}} \\*Class for splitting larger registers holding smaller logical lanes }{\pageref{classTransformManager}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTransformOp}{Transform\+Op}} \\*Placeholder node for \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that will exist after a transform is applied to a function }{\pageref{classTransformOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTransformVar}{Transform\+Var}} \\*Placeholder node for \mbox{\hyperlink{classVarnode}{Varnode}} that will exist after a transform is applied to a function }{\pageref{classTransformVar}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTranslate}{Translate}} \\*The interface to a translation engine for a processor }{\pageref{classTranslate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTraverseConstraint}{Traverse\+Constraint}} }{\pageref{classTraverseConstraint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTraverseCountState}{Traverse\+Count\+State}} }{\pageref{classTraverseCountState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTraverseDescendState}{Traverse\+Descend\+State}} }{\pageref{classTraverseDescendState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTraverseGroupState}{Traverse\+Group\+State}} }{\pageref{classTraverseGroupState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTreeHandler}{Tree\+Handler}} \\*A S\+AX interface implementation for constructing an in-\/memory D\+OM model }{\pageref{classTreeHandler}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTripleSymbol}{Triple\+Symbol}} }{\pageref{classTripleSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTruncationTag}{Truncation\+Tag}} \\*Object for describing how a space should be truncated }{\pageref{classTruncationTag}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeArray}{Type\+Array}} \\*\mbox{\hyperlink{classDatatype}{Datatype}} object representing an array of elements }{\pageref{classTypeArray}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeBase}{Type\+Base}} \\*Base class for the fundamental atomic types }{\pageref{classTypeBase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeChar}{Type\+Char}} \\*Base type for character data-\/types\+: i.\+e. char }{\pageref{classTypeChar}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeCode}{Type\+Code}} \\*\mbox{\hyperlink{classDatatype}{Datatype}} object representing executable code }{\pageref{classTypeCode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeDeclarator}{Type\+Declarator}} }{\pageref{classTypeDeclarator}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeEnum}{Type\+Enum}} \\*An enumerated \mbox{\hyperlink{classDatatype}{Datatype}} object\+: an integer with named values }{\pageref{classTypeEnum}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \\*Container class for all \mbox{\hyperlink{classDatatype}{Datatype}} objects in an \mbox{\hyperlink{classArchitecture}{Architecture}} }{\pageref{classTypeFactory}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeFactoryGhidra}{Type\+Factory\+Ghidra}} \\*An implementation of the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} interface, query a Ghidra client for data-\/type information }{\pageref{classTypeFactoryGhidra}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTypeField}{Type\+Field}} \\*Specifies subfields of a structure or what a pointer points to }{\pageref{structTypeField}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeModifier}{Type\+Modifier}} }{\pageref{classTypeModifier}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOp}{Type\+Op}} \\*Associate data-\/type and behavior information with a specific p-\/code op-\/code }{\pageref{classTypeOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpBinary}{Type\+Op\+Binary}} \\*A generic binary operator\+: two inputs and one output }{\pageref{classTypeOpBinary}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpBoolAnd}{Type\+Op\+Bool\+And}} \\*Information about the B\+O\+O\+L\+\_\+\+A\+ND op-\/code }{\pageref{classTypeOpBoolAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpBoolNegate}{Type\+Op\+Bool\+Negate}} \\*Information about the B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE op-\/code }{\pageref{classTypeOpBoolNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpBoolOr}{Type\+Op\+Bool\+Or}} \\*Information about the B\+O\+O\+L\+\_\+\+OR op-\/code }{\pageref{classTypeOpBoolOr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpBoolXor}{Type\+Op\+Bool\+Xor}} \\*Information about the B\+O\+O\+L\+\_\+\+X\+OR op-\/code }{\pageref{classTypeOpBoolXor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpBranch}{Type\+Op\+Branch}} \\*Information about the B\+R\+A\+N\+CH op-\/code }{\pageref{classTypeOpBranch}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpBranchind}{Type\+Op\+Branchind}} \\*Information about the B\+R\+A\+N\+C\+H\+I\+ND op-\/code }{\pageref{classTypeOpBranchind}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpCall}{Type\+Op\+Call}} \\*Information about the C\+A\+LL op-\/code }{\pageref{classTypeOpCall}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpCallind}{Type\+Op\+Callind}} \\*Information about the C\+A\+L\+L\+I\+ND op-\/code }{\pageref{classTypeOpCallind}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpCallother}{Type\+Op\+Callother}} \\*Information about the C\+A\+L\+L\+O\+T\+H\+ER op-\/code (user defined p-\/code operations) }{\pageref{classTypeOpCallother}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpCast}{Type\+Op\+Cast}} \\*Information about the C\+A\+ST op-\/code }{\pageref{classTypeOpCast}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpCbranch}{Type\+Op\+Cbranch}} \\*Information about the C\+B\+R\+A\+N\+CH op-\/code }{\pageref{classTypeOpCbranch}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpCopy}{Type\+Op\+Copy}} \\*Information about the C\+O\+PY op-\/code }{\pageref{classTypeOpCopy}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpCpoolref}{Type\+Op\+Cpoolref}} \\*Information about the C\+P\+O\+O\+L\+R\+EF op-\/code }{\pageref{classTypeOpCpoolref}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpEqual}{Type\+Op\+Equal}} \\*Information about the I\+N\+T\+\_\+\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpExtract}{Type\+Op\+Extract}} \\*Information about the E\+X\+T\+R\+A\+CT op-\/code }{\pageref{classTypeOpExtract}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatAbs}{Type\+Op\+Float\+Abs}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+A\+BS op-\/code }{\pageref{classTypeOpFloatAbs}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatAdd}{Type\+Op\+Float\+Add}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+A\+DD op-\/code }{\pageref{classTypeOpFloatAdd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatCeil}{Type\+Op\+Float\+Ceil}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+C\+E\+IL op-\/code }{\pageref{classTypeOpFloatCeil}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatDiv}{Type\+Op\+Float\+Div}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+D\+IV op-\/code }{\pageref{classTypeOpFloatDiv}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatEqual}{Type\+Op\+Float\+Equal}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpFloatEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatFloat2Float}{Type\+Op\+Float\+Float2\+Float}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+A\+T2\+F\+L\+O\+AT op-\/code }{\pageref{classTypeOpFloatFloat2Float}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatFloor}{Type\+Op\+Float\+Floor}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+F\+L\+O\+OR op-\/code }{\pageref{classTypeOpFloatFloor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatInt2Float}{Type\+Op\+Float\+Int2\+Float}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+I\+N\+T2\+F\+L\+O\+AT op-\/code }{\pageref{classTypeOpFloatInt2Float}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatLess}{Type\+Op\+Float\+Less}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+L\+E\+SS op-\/code }{\pageref{classTypeOpFloatLess}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatLessEqual}{Type\+Op\+Float\+Less\+Equal}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpFloatLessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatMult}{Type\+Op\+Float\+Mult}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+M\+U\+LT op-\/code }{\pageref{classTypeOpFloatMult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatNan}{Type\+Op\+Float\+Nan}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+N\+AN op-\/code }{\pageref{classTypeOpFloatNan}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatNeg}{Type\+Op\+Float\+Neg}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+N\+EG op-\/code }{\pageref{classTypeOpFloatNeg}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatNotEqual}{Type\+Op\+Float\+Not\+Equal}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpFloatNotEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatRound}{Type\+Op\+Float\+Round}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+R\+O\+U\+ND op-\/code }{\pageref{classTypeOpFloatRound}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatSqrt}{Type\+Op\+Float\+Sqrt}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+S\+Q\+RT op-\/code }{\pageref{classTypeOpFloatSqrt}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatSub}{Type\+Op\+Float\+Sub}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+S\+UB op-\/code }{\pageref{classTypeOpFloatSub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFloatTrunc}{Type\+Op\+Float\+Trunc}} \\*Information about the F\+L\+O\+A\+T\+\_\+\+T\+R\+U\+NC op-\/code }{\pageref{classTypeOpFloatTrunc}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpFunc}{Type\+Op\+Func}} \\*A generic functional operator }{\pageref{classTypeOpFunc}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIndirect}{Type\+Op\+Indirect}} \\*Information about the I\+N\+D\+I\+R\+E\+CT op-\/code }{\pageref{classTypeOpIndirect}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpInsert}{Type\+Op\+Insert}} \\*Information about the I\+N\+S\+E\+RT op-\/code }{\pageref{classTypeOpInsert}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpInt2Comp}{Type\+Op\+Int2\+Comp}} \\*Information about the I\+N\+T\+\_\+2\+C\+O\+MP op-\/code }{\pageref{classTypeOpInt2Comp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntAdd}{Type\+Op\+Int\+Add}} \\*Information about the I\+N\+T\+\_\+\+A\+DD op-\/code }{\pageref{classTypeOpIntAdd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntAnd}{Type\+Op\+Int\+And}} \\*Information about the I\+N\+T\+\_\+\+A\+ND op-\/code }{\pageref{classTypeOpIntAnd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntCarry}{Type\+Op\+Int\+Carry}} \\*Information about the I\+N\+T\+\_\+\+C\+A\+R\+RY op-\/code }{\pageref{classTypeOpIntCarry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntDiv}{Type\+Op\+Int\+Div}} \\*Information about the I\+N\+T\+\_\+\+D\+IV op-\/code }{\pageref{classTypeOpIntDiv}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntLeft}{Type\+Op\+Int\+Left}} \\*Information about the I\+N\+T\+\_\+\+L\+E\+FT op-\/code }{\pageref{classTypeOpIntLeft}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntLess}{Type\+Op\+Int\+Less}} \\*Information about the I\+N\+T\+\_\+\+L\+E\+SS op-\/code }{\pageref{classTypeOpIntLess}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntLessEqual}{Type\+Op\+Int\+Less\+Equal}} \\*Information about the I\+N\+T\+\_\+\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpIntLessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntMult}{Type\+Op\+Int\+Mult}} \\*Information about the I\+N\+T\+\_\+\+M\+U\+LT op-\/code }{\pageref{classTypeOpIntMult}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntNegate}{Type\+Op\+Int\+Negate}} \\*Information about the I\+N\+T\+\_\+\+N\+E\+G\+A\+TE op-\/code }{\pageref{classTypeOpIntNegate}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntOr}{Type\+Op\+Int\+Or}} \\*Information about the I\+N\+T\+\_\+\+OR op-\/code }{\pageref{classTypeOpIntOr}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntRem}{Type\+Op\+Int\+Rem}} \\*Information about the I\+N\+T\+\_\+\+R\+EM op-\/code }{\pageref{classTypeOpIntRem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntRight}{Type\+Op\+Int\+Right}} \\*Information about the I\+N\+T\+\_\+\+R\+I\+G\+HT op-\/code }{\pageref{classTypeOpIntRight}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSborrow}{Type\+Op\+Int\+Sborrow}} \\*Information about the I\+N\+T\+\_\+\+S\+B\+O\+R\+R\+OW op-\/code }{\pageref{classTypeOpIntSborrow}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntScarry}{Type\+Op\+Int\+Scarry}} \\*Information about the I\+N\+T\+\_\+\+S\+C\+A\+R\+RY op-\/code }{\pageref{classTypeOpIntScarry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSdiv}{Type\+Op\+Int\+Sdiv}} \\*Information about the I\+N\+T\+\_\+\+S\+D\+IV op-\/code }{\pageref{classTypeOpIntSdiv}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSext}{Type\+Op\+Int\+Sext}} \\*Information about the I\+N\+T\+\_\+\+S\+E\+XT op-\/code }{\pageref{classTypeOpIntSext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSless}{Type\+Op\+Int\+Sless}} \\*Information about the I\+N\+T\+\_\+\+S\+L\+E\+SS op-\/code }{\pageref{classTypeOpIntSless}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSlessEqual}{Type\+Op\+Int\+Sless\+Equal}} \\*Information about the I\+N\+T\+\_\+\+S\+L\+E\+S\+S\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpIntSlessEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSrem}{Type\+Op\+Int\+Srem}} \\*Information about the I\+N\+T\+\_\+\+S\+R\+EM op-\/code }{\pageref{classTypeOpIntSrem}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSright}{Type\+Op\+Int\+Sright}} \\*Information about the I\+N\+T\+\_\+\+S\+R\+I\+G\+HT op-\/code }{\pageref{classTypeOpIntSright}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntSub}{Type\+Op\+Int\+Sub}} \\*Information about the I\+N\+T\+\_\+\+S\+UB op-\/code }{\pageref{classTypeOpIntSub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntXor}{Type\+Op\+Int\+Xor}} \\*Information about the I\+N\+T\+\_\+\+X\+OR op-\/code }{\pageref{classTypeOpIntXor}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpIntZext}{Type\+Op\+Int\+Zext}} \\*Information about the I\+N\+T\+\_\+\+Z\+E\+XT op-\/code }{\pageref{classTypeOpIntZext}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpLoad}{Type\+Op\+Load}} \\*Information about the L\+O\+AD op-\/code }{\pageref{classTypeOpLoad}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpMulti}{Type\+Op\+Multi}} \\*Information about the M\+U\+L\+T\+I\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpMulti}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpNew}{Type\+Op\+New}} \\*Information about the N\+EW op-\/code }{\pageref{classTypeOpNew}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpNotEqual}{Type\+Op\+Not\+Equal}} \\*Information about the I\+N\+T\+\_\+\+N\+O\+T\+E\+Q\+U\+AL op-\/code }{\pageref{classTypeOpNotEqual}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpPiece}{Type\+Op\+Piece}} \\*Information about the P\+I\+E\+CE op-\/code }{\pageref{classTypeOpPiece}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpPopcount}{Type\+Op\+Popcount}} \\*Information about the P\+O\+P\+C\+O\+U\+NT op-\/code }{\pageref{classTypeOpPopcount}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpPtradd}{Type\+Op\+Ptradd}} \\*Information about the P\+T\+R\+A\+DD op-\/code }{\pageref{classTypeOpPtradd}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpPtrsub}{Type\+Op\+Ptrsub}} \\*Information about the P\+T\+R\+S\+UB op-\/code }{\pageref{classTypeOpPtrsub}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpReturn}{Type\+Op\+Return}} \\*Information about the R\+E\+T\+U\+RN op-\/code }{\pageref{classTypeOpReturn}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpSegment}{Type\+Op\+Segment}} \\*Information about the S\+E\+G\+M\+E\+N\+T\+OP op-\/code }{\pageref{classTypeOpSegment}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpStore}{Type\+Op\+Store}} \\*Information about the S\+T\+O\+RE op-\/code }{\pageref{classTypeOpStore}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpSubpiece}{Type\+Op\+Subpiece}} \\*Information about the S\+U\+B\+P\+I\+E\+CE op-\/code }{\pageref{classTypeOpSubpiece}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeOpUnary}{Type\+Op\+Unary}} \\*A generic unary operator\+: one input and one output }{\pageref{classTypeOpUnary}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypePointer}{Type\+Pointer}} \\*\mbox{\hyperlink{classDatatype}{Datatype}} object representing a pointer }{\pageref{classTypePointer}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeRecommend}{Type\+Recommend}} \\*Data-\/type for a storage location when there is no \mbox{\hyperlink{classSymbol}{Symbol}} (yet) }{\pageref{classTypeRecommend}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeSpacebase}{Type\+Spacebase}} \\*Special \mbox{\hyperlink{classDatatype}{Datatype}} object used to describe pointers that index into the symbol table }{\pageref{classTypeSpacebase}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structTypeSpecifiers}{Type\+Specifiers}} }{\pageref{structTypeSpecifiers}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeStruct}{Type\+Struct}} \\*A composite \mbox{\hyperlink{classDatatype}{Datatype}} object\+: A \char`\"{}structure\char`\"{} with component \char`\"{}fields\char`\"{} }{\pageref{classTypeStruct}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeUnicode}{Type\+Unicode}} \\*The unicode data-\/type\+: i.\+e. wchar }{\pageref{classTypeUnicode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classTypeVoid}{Type\+Void}} \\*Formal \char`\"{}void\char`\"{} data-\/type object }{\pageref{classTypeVoid}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUnaryExpression}{Unary\+Expression}} }{\pageref{classUnaryExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUnconstrainedEquation}{Unconstrained\+Equation}} }{\pageref{classUnconstrainedEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} }{\pageref{classUnifyConstraint}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUnifyCPrinter}{Unify\+C\+Printer}} }{\pageref{classUnifyCPrinter}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUnifyDatatype}{Unify\+Datatype}} }{\pageref{classUnifyDatatype}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUnifyState}{Unify\+State}} }{\pageref{classUnifyState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structUnimplError}{Unimpl\+Error}} \\*Exception for encountering unimplemented pcode }{\pageref{structUnimplError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUniqueSpace}{Unique\+Space}} \\*The pool of temporary storage registers }{\pageref{classUniqueSpace}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structUnitTest}{Unit\+Test}} \\*Simple unit test class }{\pageref{structUnitTest}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUnspecializedPcodeOp}{Unspecialized\+Pcode\+Op}} \\*A user defined p-\/code op with no specialization }{\pageref{classUnspecializedPcodeOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUserOpManage}{User\+Op\+Manage}} \\*Manager/container for description objects (\mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}}) of user defined p-\/code ops }{\pageref{classUserOpManage}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUserOpSymbol}{User\+Op\+Symbol}} }{\pageref{classUserOpSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}} \\*The base class for a detailed definition of a user-\/defined p-\/code operation }{\pageref{classUserPcodeOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classValExpressEquation}{Val\+Express\+Equation}} }{\pageref{classValExpressEquation}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classValueMapSymbol}{Value\+Map\+Symbol}} }{\pageref{classValueMapSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classValueSet}{Value\+Set}} \\*A range of values attached to a \mbox{\hyperlink{classVarnode}{Varnode}} within a data-\/flow subsystem }{\pageref{classValueSet}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classValueSetRead}{Value\+Set\+Read}} \\*A special form of \mbox{\hyperlink{classValueSet}{Value\+Set}} associated with the {\itshape read} {\itshape point} of a \mbox{\hyperlink{classVarnode}{Varnode}} }{\pageref{classValueSetRead}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classValueSetSolver}{Value\+Set\+Solver}} \\*Class that determines a \mbox{\hyperlink{classValueSet}{Value\+Set}} for each \mbox{\hyperlink{classVarnode}{Varnode}} in a data-\/flow system }{\pageref{classValueSetSolver}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classValueSymbol}{Value\+Symbol}} }{\pageref{classValueSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVarnode}{Varnode}} \\*A low-\/level variable or contiguous set of bytes described by an \mbox{\hyperlink{classAddress}{Address}} and a size }{\pageref{classVarnode}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVarnodeBank}{Varnode\+Bank}} \\*A container for \mbox{\hyperlink{classVarnode}{Varnode}} objects from a specific function }{\pageref{classVarnodeBank}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structVarnodeCompareDefLoc}{Varnode\+Compare\+Def\+Loc}} \\*Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by definition then location }{\pageref{structVarnodeCompareDefLoc}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structVarnodeCompareLocDef}{Varnode\+Compare\+Loc\+Def}} \\*Compare two \mbox{\hyperlink{classVarnode}{Varnode}} pointers by location then definition }{\pageref{structVarnodeCompareLocDef}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \\*Data defining a specific memory location }{\pageref{structVarnodeData}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVarnodeListSymbol}{Varnode\+List\+Symbol}} }{\pageref{classVarnodeListSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVarnodeSymbol}{Varnode\+Symbol}} }{\pageref{classVarnodeSymbol}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} }{\pageref{classVarnodeTpl}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVolatileOp}{Volatile\+Op}} \\*A base class for operations that access volatile memory }{\pageref{classVolatileOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVolatileReadOp}{Volatile\+Read\+Op}} \\*An operation that reads from volatile memory }{\pageref{classVolatileReadOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classVolatileWriteOp}{Volatile\+Write\+Op}} \\*An operation that writes to volatile memory }{\pageref{classVolatileWriteOp}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structParamMeasure_1_1WalkState}{Param\+Measure\+::\+Walk\+State}} }{\pageref{structParamMeasure_1_1WalkState}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classWidener}{Widener}} \\*Class holding a particular widening strategy for the \mbox{\hyperlink{classValueSetSolver}{Value\+Set\+Solver}} iteration algorithm }{\pageref{classWidener}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classWidenerFull}{Widener\+Full}} \\*Class for doing normal widening }{\pageref{classWidenerFull}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classWidenerNone}{Widener\+None}} \\*Class for freezing value sets at a specific iteration (to accelerate convergence) }{\pageref{classWidenerNone}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classWithBlock}{With\+Block}} }{\pageref{classWithBlock}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classXmlArchitecture}{Xml\+Architecture}} \\*An \mbox{\hyperlink{classArchitecture}{Architecture}} that loads executables using an X\+ML format }{\pageref{classXmlArchitecture}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classXmlArchitectureCapability}{Xml\+Architecture\+Capability}} \\*Extension for building an X\+ML format capable \mbox{\hyperlink{classArchitecture}{Architecture}} }{\pageref{classXmlArchitectureCapability}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structXmlError}{Xml\+Error}} \\*An exception thrown by the X\+ML parser }{\pageref{structXmlError}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classXmlScan}{Xml\+Scan}} \\*The X\+ML character scanner }{\pageref{classXmlScan}}{}
+\item\contentsline{section}{\mbox{\hyperlink{classXorExpression}{Xor\+Expression}} }{\pageref{classXorExpression}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structyy__buffer__state}{yy\+\_\+buffer\+\_\+state}} }{\pageref{structyy__buffer__state}}{}
+\item\contentsline{section}{\mbox{\hyperlink{structyy__trans__info}{yy\+\_\+trans\+\_\+info}} }{\pageref{structyy__trans__info}}{}
+\item\contentsline{section}{\mbox{\hyperlink{unionyyalloc}{yyalloc}} }{\pageref{unionyyalloc}}{}
+\item\contentsline{section}{\mbox{\hyperlink{unionYYSTYPE}{Y\+Y\+S\+T\+Y\+PE}} }{\pageref{unionYYSTYPE}}{}
+\end{DoxyCompactList}

@@ -1,0 +1,75 @@
+\hypertarget{classOptionWarning}{}\doxysection{Option\+Warning Class Reference}
+\label{classOptionWarning}\index{OptionWarning@{OptionWarning}}
+
+
+Toggle whether a warning should be issued if a specific action/rule is applied.  
+
+
+
+
+Inheritance diagram for Option\+Warning\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classOptionWarning__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Option\+Warning\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classOptionWarning__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classOptionWarning_af3b3ebf05120fe85d740e03a2e27b644}{apply}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb, const string \&p1, const string \&p2, const string \&p3) const
+\begin{DoxyCompactList}\small\item\em Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Toggle whether a warning should be issued if a specific action/rule is applied. 
+
+The first parameter gives the name of the \mbox{\hyperlink{classAction}{Action}} or Rule\+Action. The second parameter is \char`\"{}on\char`\"{} to turn on warnings, \char`\"{}off\char`\"{} to turn them off. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptionWarning_af3b3ebf05120fe85d740e03a2e27b644}\label{classOptionWarning_af3b3ebf05120fe85d740e03a2e27b644}} 
+\index{OptionWarning@{OptionWarning}!apply@{apply}}
+\index{apply@{apply}!OptionWarning@{OptionWarning}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily string Option\+Warning\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb,  }\item[{const string \&}]{p1,  }\item[{const string \&}]{p2,  }\item[{const string \&}]{p3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+This method is overloaded by the different Option classes to provide possible configuration of different parts of the \mbox{\hyperlink{classArchitecture}{Architecture}}. The user can provide up to three optional parameters to tailor a specific type of configuration. The method returns a confirmation/failure message as feedback. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} being configured \\
+\hline
+{\em p1} & is the first optional configuration string \\
+\hline
+{\em p2} & is the second optional configuration string \\
+\hline
+{\em p3} & is the third optional configuration string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a confirmation/failure message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{Arch\+Option}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

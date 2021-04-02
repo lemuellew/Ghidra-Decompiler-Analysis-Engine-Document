@@ -1,0 +1,314 @@
+\hypertarget{classMemoryBank}{}\doxysection{Memory\+Bank Class Reference}
+\label{classMemoryBank}\index{MemoryBank@{MemoryBank}}
+
+
+Memory storage/state for a single Address\+Space.  
+
+
+
+
+{\ttfamily \#include $<$memstate.\+hh$>$}
+
+
+
+Inheritance diagram for Memory\+Bank\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classMemoryBank__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMemoryBank_a87f6e0315637453fa0e1bd5110b9bdc9}{Memory\+Bank}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, int4 ws, int4 ps)
+\begin{DoxyCompactList}\small\item\em Generic constructor for a memory bank. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classMemoryBank_a996d7c04af8f8bf02ce7abb91d693dc5}{get\+Word\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of bytes in a word for this memory bank. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classMemoryBank_a020cac2b86f83b069c2f1914bc70cb2b}{get\+Page\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of bytes in a page for this memory bank. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classMemoryBank_a8e8f3ea79a07142e2d655eccf4ebc0f0}{get\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the address space associated with this memory bank. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryBank_a331f70cbc9d2c7172ebbaaa7e185c1e9}{set\+Value}} (uintb offset, int4 size, uintb val)
+\begin{DoxyCompactList}\small\item\em Set the value of a (small) range of bytes. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classMemoryBank_a8149ad04fb877f78b56abd1b67962b31}{get\+Value}} (uintb offset, int4 size) const
+\begin{DoxyCompactList}\small\item\em Retrieve the value encoded in a (small) range of bytes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryBank_a99ed4c66d1ea57306e6bd9ed1a5de787}{set\+Chunk}} (uintb offset, int4 size, const uint1 $\ast$val)
+\begin{DoxyCompactList}\small\item\em Set values of an arbitrary sequence of bytes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMemoryBank_af45a81a70ff478940fac0399a2cfbe86}{get\+Chunk}} (uintb offset, int4 size, uint1 $\ast$res) const
+\begin{DoxyCompactList}\small\item\em Retrieve an arbitrary sequence of bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uintb \mbox{\hyperlink{classMemoryBank_aeba21f6794e4fa90b9acf48f4bef7278}{construct\+Value}} (const uint1 $\ast$ptr, int4 size, bool bigendian)
+\begin{DoxyCompactList}\small\item\em Decode bytes to value. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classMemoryBank_ab0cc660245fbe563982d49d68b6d2e02}{deconstruct\+Value}} (uint1 $\ast$ptr, uintb val, int4 size, bool bigendian)
+\begin{DoxyCompactList}\small\item\em Encode value to bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMemoryBank_abccbb8ba1e2c2ae941b372e90f454e5f}\label{classMemoryBank_abccbb8ba1e2c2ae941b372e90f454e5f}} 
+virtual void \mbox{\hyperlink{classMemoryBank_abccbb8ba1e2c2ae941b372e90f454e5f}{insert}} (uintb addr, uintb val)=0
+\begin{DoxyCompactList}\small\item\em Insert a word in memory bank at an aligned location. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMemoryBank_a421a5b8dd872d0c3e462d9055fa4266d}\label{classMemoryBank_a421a5b8dd872d0c3e462d9055fa4266d}} 
+virtual uintb \mbox{\hyperlink{classMemoryBank_a421a5b8dd872d0c3e462d9055fa4266d}{find}} (uintb addr) const =0
+\begin{DoxyCompactList}\small\item\em Retrieve a word from memory bank at an aligned location. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMemoryBank_ac48e5c77befa62116190b34611ad4339}{get\+Page}} (uintb addr, uint1 $\ast$res, int4 skip, int4 size) const
+\begin{DoxyCompactList}\small\item\em Retrieve data from a memory {\itshape page}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classMemoryBank_a68bf2318442e1f7da99ae85f63f9df19}{set\+Page}} (uintb addr, const uint1 $\ast$val, int4 skip, int4 size)
+\begin{DoxyCompactList}\small\item\em Write data into a memory page. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMemoryBank_abfa1478e94e6c9f59f450ea1a3394466}\label{classMemoryBank_abfa1478e94e6c9f59f450ea1a3394466}} 
+class {\bfseries Memory\+Page\+Overlay}
+\item 
+\mbox{\Hypertarget{classMemoryBank_aaef831bed4bde79676024649093dec95}\label{classMemoryBank_aaef831bed4bde79676024649093dec95}} 
+class {\bfseries Memory\+Hash\+Overlay}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Memory storage/state for a single Address\+Space. 
+
+Class for setting and getting memory values within a space The basic A\+PI is to get/set arrays of byte values via offset within the space. Helper functions get\+Value and set\+Value easily retrieve/store integers of various sizes from memory, using the endianness encoding specified by the space. Accesses through the public interface, are automatically broken down into {\bfseries{word}} accesses, through the private insert/find methods, and {\bfseries{page}} accesses through get\+Page/set\+Page. So these are the virtual methods that need to be overridden in the derived classes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMemoryBank_a87f6e0315637453fa0e1bd5110b9bdc9}\label{classMemoryBank_a87f6e0315637453fa0e1bd5110b9bdc9}} 
+\index{MemoryBank@{MemoryBank}!MemoryBank@{MemoryBank}}
+\index{MemoryBank@{MemoryBank}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{MemoryBank()}{MemoryBank()}}
+{\footnotesize\ttfamily Memory\+Bank\+::\+Memory\+Bank (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{int4}]{ws,  }\item[{int4}]{ps }\end{DoxyParamCaption})}
+
+
+
+Generic constructor for a memory bank. 
+
+A \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} must be associated with a specific address space, have a preferred or natural {\itshape wordsize} and a natural {\itshape pagesize}. Both the {\itshape wordsize} and {\itshape pagesize} must be a power of 2. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the associated address space \\
+\hline
+{\em ws} & is the number of bytes in the preferred wordsize \\
+\hline
+{\em ps} & is the number of bytes in a page \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMemoryBank_aeba21f6794e4fa90b9acf48f4bef7278}\label{classMemoryBank_aeba21f6794e4fa90b9acf48f4bef7278}} 
+\index{MemoryBank@{MemoryBank}!constructValue@{constructValue}}
+\index{constructValue@{constructValue}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{constructValue()}{constructValue()}}
+{\footnotesize\ttfamily uintb Memory\+Bank\+::construct\+Value (\begin{DoxyParamCaption}\item[{const uint1 $\ast$}]{ptr,  }\item[{int4}]{size,  }\item[{bool}]{bigendian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Decode bytes to value. 
+
+This is a static convenience routine for decoding a value from a sequence of bytes depending on the desired endianness 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the pointer to the bytes to decode \\
+\hline
+{\em size} & is the number of bytes \\
+\hline
+{\em bigendian} & is {\bfseries{true}} if the bytes are encoded in big endian form \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryBank_ab0cc660245fbe563982d49d68b6d2e02}\label{classMemoryBank_ab0cc660245fbe563982d49d68b6d2e02}} 
+\index{MemoryBank@{MemoryBank}!deconstructValue@{deconstructValue}}
+\index{deconstructValue@{deconstructValue}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{deconstructValue()}{deconstructValue()}}
+{\footnotesize\ttfamily void Memory\+Bank\+::deconstruct\+Value (\begin{DoxyParamCaption}\item[{uint1 $\ast$}]{ptr,  }\item[{uintb}]{val,  }\item[{int4}]{size,  }\item[{bool}]{bigendian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Encode value to bytes. 
+
+This is a static convenience routine for encoding bytes from a given value, depending on the desired endianness 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is a pointer to the location to write the encoded bytes \\
+\hline
+{\em val} & is the value to be encoded \\
+\hline
+{\em size} & is the number of bytes to encode \\
+\hline
+{\em bigendian} & is {\bfseries{true}} if a big endian encoding is desired \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryBank_af45a81a70ff478940fac0399a2cfbe86}\label{classMemoryBank_af45a81a70ff478940fac0399a2cfbe86}} 
+\index{MemoryBank@{MemoryBank}!getChunk@{getChunk}}
+\index{getChunk@{getChunk}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{getChunk()}{getChunk()}}
+{\footnotesize\ttfamily void Memory\+Bank\+::get\+Chunk (\begin{DoxyParamCaption}\item[{uintb}]{offset,  }\item[{int4}]{size,  }\item[{uint1 $\ast$}]{res }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve an arbitrary sequence of bytes. 
+
+This is the most general method for reading a sequence of bytes from the memory bank. There is no restriction on the offset or the number of bytes to read, except that the range must be contained in the address space. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is the start of the byte range to read \\
+\hline
+{\em size} & is the number of bytes to read \\
+\hline
+{\em res} & is a pointer to where the retrieved bytes should be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryBank_ac48e5c77befa62116190b34611ad4339}\label{classMemoryBank_ac48e5c77befa62116190b34611ad4339}} 
+\index{MemoryBank@{MemoryBank}!getPage@{getPage}}
+\index{getPage@{getPage}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{getPage()}{getPage()}}
+{\footnotesize\ttfamily void Memory\+Bank\+::get\+Page (\begin{DoxyParamCaption}\item[{uintb}]{addr,  }\item[{uint1 $\ast$}]{res,  }\item[{int4}]{skip,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve data from a memory {\itshape page}. 
+
+This routine only retrieves data from a single {\itshape page} in the memory bank. Bytes need not be retrieved from the exact start of a page, but all bytes must come from {\itshape one} page. A page is a fixed number of bytes, and the address of a page is always aligned based on that number of bytes. This routine may be overridden for a page based implementation of the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}}. The default implementation retrieves the page as aligned words using the find method. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the {\itshape aligned} offset of the desired page \\
+\hline
+{\em res} & is a pointer to where fetched data should be written \\
+\hline
+{\em skip} & is the offset {\itshape into} {\itshape the} {\itshape page} to get the bytes from \\
+\hline
+{\em size} & is the number of bytes to retrieve \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classMemoryPageOverlay_a0b502920d00bee935fdd15a2e2d823f2}{Memory\+Page\+Overlay}}, and \mbox{\hyperlink{classMemoryImage_abcf3229adb6b824702b627d1de5a9f10}{Memory\+Image}}.
+
+\mbox{\Hypertarget{classMemoryBank_a020cac2b86f83b069c2f1914bc70cb2b}\label{classMemoryBank_a020cac2b86f83b069c2f1914bc70cb2b}} 
+\index{MemoryBank@{MemoryBank}!getPageSize@{getPageSize}}
+\index{getPageSize@{getPageSize}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{getPageSize()}{getPageSize()}}
+{\footnotesize\ttfamily int4 Memory\+Bank\+::get\+Page\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of bytes in a page for this memory bank. 
+
+A \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} is instantiated with a {\itshape natural} page size. Requests for large chunks of data may be broken down into units of this size. \begin{DoxyReturn}{Returns}
+the number of bytes in a {\itshape page}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryBank_a8e8f3ea79a07142e2d655eccf4ebc0f0}\label{classMemoryBank_a8e8f3ea79a07142e2d655eccf4ebc0f0}} 
+\index{MemoryBank@{MemoryBank}!getSpace@{getSpace}}
+\index{getSpace@{getSpace}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{getSpace()}{getSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Memory\+Bank\+::get\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the address space associated with this memory bank. 
+
+A \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} is a contiguous sequence of bytes associated with a particular address space. \begin{DoxyReturn}{Returns}
+the Address\+Space associated with this bank. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryBank_a8149ad04fb877f78b56abd1b67962b31}\label{classMemoryBank_a8149ad04fb877f78b56abd1b67962b31}} 
+\index{MemoryBank@{MemoryBank}!getValue@{getValue}}
+\index{getValue@{getValue}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily uintb Memory\+Bank\+::get\+Value (\begin{DoxyParamCaption}\item[{uintb}]{offset,  }\item[{int4}]{size }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the value encoded in a (small) range of bytes. 
+
+This routine gets the value from a range of bytes at an arbitrary address. It takes into account the endianness of the underlying space when decoding the value. The value is constructed by making one or more aligned word queries, using the find method. The desired value may span multiple words and is reconstructed properly. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is the start of the byte range encoding the value \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryBank_a996d7c04af8f8bf02ce7abb91d693dc5}\label{classMemoryBank_a996d7c04af8f8bf02ce7abb91d693dc5}} 
+\index{MemoryBank@{MemoryBank}!getWordSize@{getWordSize}}
+\index{getWordSize@{getWordSize}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{getWordSize()}{getWordSize()}}
+{\footnotesize\ttfamily int4 Memory\+Bank\+::get\+Word\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of bytes in a word for this memory bank. 
+
+A \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} is instantiated with a {\itshape natural} word size. Requests for arbitrary byte ranges may be broken down into units of this size. \begin{DoxyReturn}{Returns}
+the number of bytes in a {\itshape word}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMemoryBank_a99ed4c66d1ea57306e6bd9ed1a5de787}\label{classMemoryBank_a99ed4c66d1ea57306e6bd9ed1a5de787}} 
+\index{MemoryBank@{MemoryBank}!setChunk@{setChunk}}
+\index{setChunk@{setChunk}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{setChunk()}{setChunk()}}
+{\footnotesize\ttfamily void Memory\+Bank\+::set\+Chunk (\begin{DoxyParamCaption}\item[{uintb}]{offset,  }\item[{int4}]{size,  }\item[{const uint1 $\ast$}]{val }\end{DoxyParamCaption})}
+
+
+
+Set values of an arbitrary sequence of bytes. 
+
+This the most general method for writing a sequence of bytes into the memory bank. There is no restriction on the offset to write to or the number of bytes to be written, except that the range must be contained in the address space. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is the start of the byte range to be written \\
+\hline
+{\em size} & is the number of bytes to write \\
+\hline
+{\em val} & is a pointer to the sequence of bytes to be written into the bank \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMemoryBank_a68bf2318442e1f7da99ae85f63f9df19}\label{classMemoryBank_a68bf2318442e1f7da99ae85f63f9df19}} 
+\index{MemoryBank@{MemoryBank}!setPage@{setPage}}
+\index{setPage@{setPage}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{setPage()}{setPage()}}
+{\footnotesize\ttfamily void Memory\+Bank\+::set\+Page (\begin{DoxyParamCaption}\item[{uintb}]{addr,  }\item[{const uint1 $\ast$}]{val,  }\item[{int4}]{skip,  }\item[{int4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write data into a memory page. 
+
+This routine writes data only to a single {\itshape page} of the memory bank. Bytes need not be written to the exact start of the page, but all bytes must be written to only one page when using this routine. A page is a fixed number of bytes, and the address of a page is always aligned based on this size. This routine may be overridden for a page based implementation of the \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}}. The default implementation writes the page as a sequence of aligned words, using the insert method. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the {\itshape aligned} offset of the desired page \\
+\hline
+{\em val} & is a pointer to the bytes to be written into the page \\
+\hline
+{\em skip} & is the offset {\itshape into} {\itshape the} {\itshape page} where bytes will be written \\
+\hline
+{\em size} & is the number of bytes to be written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classMemoryPageOverlay_a1d713334ec06e47cfdfcf76f0649eb71}{Memory\+Page\+Overlay}}.
+
+\mbox{\Hypertarget{classMemoryBank_a331f70cbc9d2c7172ebbaaa7e185c1e9}\label{classMemoryBank_a331f70cbc9d2c7172ebbaaa7e185c1e9}} 
+\index{MemoryBank@{MemoryBank}!setValue@{setValue}}
+\index{setValue@{setValue}!MemoryBank@{MemoryBank}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void Memory\+Bank\+::set\+Value (\begin{DoxyParamCaption}\item[{uintb}]{offset,  }\item[{int4}]{size,  }\item[{uintb}]{val }\end{DoxyParamCaption})}
+
+
+
+Set the value of a (small) range of bytes. 
+
+This routine is used to set a single value in the memory bank at an arbitrary address It takes into account the endianness of the associated address space when encoding the value as bytes in the bank. The value is broken up into aligned pieces of {\itshape wordsize} and the actual {\bfseries{write}} is performed with the insert routine. If only parts of aligned words are written to, then the remaining parts are filled in with the original value, via the find routine. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is the start of the byte range to write \\
+\hline
+{\em size} & is the number of bytes in the range to write \\
+\hline
+{\em val} & is the value to be written \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{memstate_8hh}{memstate.\+hh}}\item 
+memstate.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,154 @@
+\hypertarget{classTypeOpSegment}{}\doxysection{Type\+Op\+Segment Class Reference}
+\label{classTypeOpSegment}\index{TypeOpSegment@{TypeOpSegment}}
+
+
+Information about the S\+E\+G\+M\+E\+N\+T\+OP op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Segment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classTypeOpSegment__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Segment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpSegment__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpSegment_a91d95ddefbd20fbc9b8ae2cb26aa4139}\label{classTypeOpSegment_a91d95ddefbd20fbc9b8ae2cb26aa4139}} 
+\mbox{\hyperlink{classTypeOpSegment_a91d95ddefbd20fbc9b8ae2cb26aa4139}{Type\+Op\+Segment}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpSegment_abc93e6a0769d61082a6d44577ac9abf6}{get\+Input\+Cast}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot, const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$cast\+Strategy) const
+\begin{DoxyCompactList}\small\item\em Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpSegment_a266bcb14bb682b5ebc298e06f7a9c12e}{get\+Output\+Token}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$cast\+Strategy) const
+\begin{DoxyCompactList}\small\item\em Find the data-\/type of the output that would be assigned by a compiler. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpSegment_a0de6c0b94eeeff5191542905fa6543c3}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpSegment_aa0faf7a0a8f5094b7b851bcefca5051f}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the S\+E\+G\+M\+E\+N\+T\+OP op-\/code. 
+
+The segment operator is a placeholder for address mappings (i.\+e. from virtual to physical) that a compiler (or processor) may generate as part of its memory model. Typically this is of little concern to the high-\/level code, so this scheme allows the decompiler to track it but ignore it where appropriate, such as in type propagation and printing high-\/level expressions 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpSegment_abc93e6a0769d61082a6d44577ac9abf6}\label{classTypeOpSegment_abc93e6a0769d61082a6d44577ac9abf6}} 
+\index{TypeOpSegment@{TypeOpSegment}!getInputCast@{getInputCast}}
+\index{getInputCast@{getInputCast}!TypeOpSegment@{TypeOpSegment}}
+\doxysubsubsection{\texorpdfstring{getInputCast()}{getInputCast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Segment\+::get\+Input\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot,  }\item[{const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$}]{cast\+Strategy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+Calculate the actual data-\/type of the input to the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. A {\bfseries{null}} result indicates the input data-\/type is the same as or otherwise doesn\textquotesingle{}t need a cast from the data-\/type of the actual input \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em slot} & is the input to consider \\
+\hline
+{\em cast\+Strategy} & is the current casting strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a950c417e4af100d176a701af5816b5ab}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpSegment_a266bcb14bb682b5ebc298e06f7a9c12e}\label{classTypeOpSegment_a266bcb14bb682b5ebc298e06f7a9c12e}} 
+\index{TypeOpSegment@{TypeOpSegment}!getOutputToken@{getOutputToken}}
+\index{getOutputToken@{getOutputToken}!TypeOpSegment@{TypeOpSegment}}
+\doxysubsubsection{\texorpdfstring{getOutputToken()}{getOutputToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Segment\+::get\+Output\+Token (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$}]{cast\+Strategy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the data-\/type of the output that would be assigned by a compiler. 
+
+Calculate the actual data-\/type of the output for a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as would be assigned by a C compiler parsing a grammar containing this op. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em cast\+Strategy} & is the current casting strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a7150ac93bb03a993735c829deb5237e7}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpSegment_aa0faf7a0a8f5094b7b851bcefca5051f}\label{classTypeOpSegment_aa0faf7a0a8f5094b7b851bcefca5051f}} 
+\index{TypeOpSegment@{TypeOpSegment}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeOpSegment@{TypeOpSegment}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Op\+Segment\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to print \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpSegment_a0de6c0b94eeeff5191542905fa6543c3}\label{classTypeOpSegment_a0de6c0b94eeeff5191542905fa6543c3}} 
+\index{TypeOpSegment@{TypeOpSegment}!push@{push}}
+\index{push@{push}!TypeOpSegment@{TypeOpSegment}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Segment\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

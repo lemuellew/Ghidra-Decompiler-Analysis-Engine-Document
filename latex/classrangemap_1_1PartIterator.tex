@@ -1,0 +1,24 @@
+\hypertarget{classrangemap_1_1PartIterator}{}\doxysection{rangemap$<$ \+\_\+recordtype $>$\+::Part\+Iterator Class Reference}
+\label{classrangemap_1_1PartIterator}\index{rangemap$<$ \_recordtype $>$::PartIterator@{rangemap$<$ \_recordtype $>$::PartIterator}}
+
+
+An iterator into the interval map container.  
+
+
+
+
+{\ttfamily \#include $<$rangemap.\+hh$>$}
+
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+recordtype$>$\newline
+class rangemap$<$ \+\_\+recordtype $>$\+::\+Part\+Iterator}
+
+An iterator into the interval map container. 
+
+This is really an iterator to the underlying multiset, but dereferencing it returns the {\bfseries{recordtype}}. Iteration occurs over the disjoint sub-\/ranges, thus the same {\bfseries{recordtype}} may be visited multiple times by the iterator, depending on how much it overlaps other {\bfseries{recordtypes}}. The sub-\/ranges are sorted in linear order, then depending on the {\bfseries{subsorttype}}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rangemap_8hh}{rangemap.\+hh}}\end{DoxyCompactItemize}

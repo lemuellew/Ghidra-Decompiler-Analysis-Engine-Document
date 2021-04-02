@@ -1,0 +1,112 @@
+\hypertarget{classBreakTable}{}\doxysection{Break\+Table Class Reference}
+\label{classBreakTable}\index{BreakTable@{BreakTable}}
+
+
+A collection of breakpoints for the emulator.  
+
+
+
+
+{\ttfamily \#include $<$emulate.\+hh$>$}
+
+
+
+Inheritance diagram for Break\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classBreakTable__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classBreakTable_a7efdfc549d576cf17235aa74bbf19a79}{set\+Emulate}} (\mbox{\hyperlink{classEmulate}{Emulate}} $\ast$emu)=0
+\begin{DoxyCompactList}\small\item\em Associate a particular emulator with breakpoints in this table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBreakTable_af8829327f29c768f834825fe40b54bad}{do\+Pcode\+Op\+Break}} (\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$curop)=0
+\begin{DoxyCompactList}\small\item\em Invoke any breakpoints associated with this particular pcodeop. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBreakTable_a7833a73318fadd483f73fbd33bdffd23}{do\+Address\+Break}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)=0
+\begin{DoxyCompactList}\small\item\em Invoke any breakpoints associated with this machine address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collection of breakpoints for the emulator. 
+
+A \mbox{\hyperlink{classBreakTable}{Break\+Table}} keeps track of an arbitrary number of breakpoints for an emulator. Breakpoints are either associated with a particular user-\/defined pcode op, or with a specific machine address (as in a standard debugger). Through the \mbox{\hyperlink{classBreakTable}{Break\+Table}} object, an emulator can invoke breakpoints through the two methods
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classBreakTable_af8829327f29c768f834825fe40b54bad}{do\+Pcode\+Op\+Break()}}
+\item \mbox{\hyperlink{classBreakTable_a7833a73318fadd483f73fbd33bdffd23}{do\+Address\+Break()}}
+\end{DoxyItemize}
+
+depending on the type of breakpoint they currently want to invoke 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBreakTable_a7833a73318fadd483f73fbd33bdffd23}\label{classBreakTable_a7833a73318fadd483f73fbd33bdffd23}} 
+\index{BreakTable@{BreakTable}!doAddressBreak@{doAddressBreak}}
+\index{doAddressBreak@{doAddressBreak}!BreakTable@{BreakTable}}
+\doxysubsubsection{\texorpdfstring{doAddressBreak()}{doAddressBreak()}}
+{\footnotesize\ttfamily virtual bool Break\+Table\+::do\+Address\+Break (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Invoke any breakpoints associated with this machine address. 
+
+Within the table, the first breakpoint which is designed to work with at this address is invoked. If there was a breakpoint, and if it was designed to {\itshape replace} the action of the machine instruction, then {\bfseries{true}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is address to test for breakpoints \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the machine instruction has been replaced by a breakpoint 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBreakTableCallBack_af2d28bc35a414feed38205b41f387afc}{Break\+Table\+Call\+Back}}.
+
+\mbox{\Hypertarget{classBreakTable_af8829327f29c768f834825fe40b54bad}\label{classBreakTable_af8829327f29c768f834825fe40b54bad}} 
+\index{BreakTable@{BreakTable}!doPcodeOpBreak@{doPcodeOpBreak}}
+\index{doPcodeOpBreak@{doPcodeOpBreak}!BreakTable@{BreakTable}}
+\doxysubsubsection{\texorpdfstring{doPcodeOpBreak()}{doPcodeOpBreak()}}
+{\footnotesize\ttfamily virtual bool Break\+Table\+::do\+Pcode\+Op\+Break (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$}]{curop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Invoke any breakpoints associated with this particular pcodeop. 
+
+Within the table, the first breakpoint which is designed to work with this particular kind of pcode operation is invoked. If there was a breakpoint and it was designed to {\itshape replace} the action of the pcode op, then {\bfseries{true}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em curop} & is the instance of a pcode op to test for breakpoints \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the action of the pcode op is performed by the breakpoint 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classBreakTableCallBack_a16b989de8c0b55d15940ac41bf7cdd73}{Break\+Table\+Call\+Back}}.
+
+\mbox{\Hypertarget{classBreakTable_a7efdfc549d576cf17235aa74bbf19a79}\label{classBreakTable_a7efdfc549d576cf17235aa74bbf19a79}} 
+\index{BreakTable@{BreakTable}!setEmulate@{setEmulate}}
+\index{setEmulate@{setEmulate}!BreakTable@{BreakTable}}
+\doxysubsubsection{\texorpdfstring{setEmulate()}{setEmulate()}}
+{\footnotesize\ttfamily virtual void Break\+Table\+::set\+Emulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmulate}{Emulate}} $\ast$}]{emu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Associate a particular emulator with breakpoints in this table. 
+
+Breakpoints may need access to the context in which they are invoked. This routine provides the context for all breakpoints in the table. 
+\begin{DoxyParams}{Parameters}
+{\em emu} & is the \mbox{\hyperlink{classEmulate}{Emulate}} context \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classBreakTableCallBack_a341d8841e68c7237e1502e2643016abc}{Break\+Table\+Call\+Back}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{emulate_8hh}{emulate.\+hh}}\end{DoxyCompactItemize}

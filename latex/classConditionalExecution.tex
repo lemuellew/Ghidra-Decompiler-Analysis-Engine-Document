@@ -1,0 +1,104 @@
+\hypertarget{classConditionalExecution}{}\doxysection{Conditional\+Execution Class Reference}
+\label{classConditionalExecution}\index{ConditionalExecution@{ConditionalExecution}}
+
+
+A class for simplifying a series of conditionally executed statements.  
+
+
+
+
+{\ttfamily \#include $<$condexe.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classConditionalExecution_a8070a0147522c29ebcce9ff781a53575}{Conditional\+Execution}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classConditionalExecution_abf756d499c20aba093c6f3d4214cb4a5}{trial}} (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$ib)
+\begin{DoxyCompactList}\small\item\em Test for a modifiable configuration around the given block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConditionalExecution_afc3956000baa5c9338bdb728ba3034b3}{execute}} (void)
+\begin{DoxyCompactList}\small\item\em Eliminate the unnecessary path join at {\bfseries{iblock}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for simplifying a series of conditionally executed statements. 
+
+This class tries to perform transformations like the following\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (a) \{           \textcolor{keywordflow}{if} (a) \{}
+\DoxyCodeLine{   BODY1}
+\DoxyCodeLine{\}          ==>       BODY1}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (a) \{             BODY2}
+\DoxyCodeLine{   BODY2}
+\DoxyCodeLine{\}                  \}}
+\end{DoxyCode}
+ Other similar configurations where two C\+B\+R\+A\+N\+C\+Hs are based on the same condition are handled. The main variation, referred to as a {\bfseries{directsplit}} in the code looks like\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (a) \{                      \textcolor{keywordflow}{if} (a \&\& new\_boolean()) \{}
+\DoxyCodeLine{   a = new\_boolean();}
+\DoxyCodeLine{\}                      ==>      BODY1}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (a) \{}
+\DoxyCodeLine{   BODY1}
+\DoxyCodeLine{\}                             \}}
+\end{DoxyCode}
+ The value of \textquotesingle{}a\textquotesingle{} doesn\textquotesingle{}t need to be reevaluated if it is false.
+
+In the first scenario, there is a block where two flows come together but don\textquotesingle{}t need to, as the evaluation of the boolean is redundant. This block is the {\bfseries{iblock}}. The original evaluation of the boolean occurs in {\bfseries{initblock}}. There are two paths from here to {\bfseries{iblock}}, called the {\bfseries{prea}} path and {\bfseries{preb}} path, either of which may contain additional 1in/1out blocks. There are also two paths out of {\bfseries{iblock}}, {\bfseries{posta}}, and {\bfseries{postb}}. The \mbox{\hyperlink{classConditionalExecution}{Conditional\+Execution}} class determines if the C\+B\+R\+A\+N\+CH in {\bfseries{iblock}} is redundant by determining if the boolean value is either the same as, or the complement of, the boolean value in {\bfseries{initblock}}. If the C\+B\+R\+A\+N\+CH is redundant, {\bfseries{iblock}} is removed, linking {\bfseries{prea}} to {\bfseries{posta}} and {\bfseries{preb}} to {\bfseries{postb}} (or vice versa depending on whether the booleans are complements of each other). If {\bfseries{iblock}} is to be removed, modifications to data-\/flow made by {\bfseries{iblock}} must be preserved. For M\+U\+L\+T\+I\+E\+Q\+U\+A\+Ls in {\bfseries{iblock}}, reads are examined to see if they came from the {\bfseries{posta}} path, or the {\bfseries{postb}} path, then the are replaced by the M\+U\+L\+T\+I\+E\+Q\+U\+AL slot corresponding to the matching {\bfseries{prea}} or {\bfseries{preb}} branch. If {\bfseries{posta}} and {\bfseries{postb}} merge at an {\bfseries{exitblock}}, the M\+U\+L\+T\+I\+E\+Q\+U\+AL must be pushed into the {\bfseries{exitblock}} and reads which can\textquotesingle{}t be attributed to the {\bfseries{posta}} or {\bfseries{postb}} path are replaced by the {\bfseries{exitblock}} M\+U\+L\+T\+I\+E\+Q\+U\+AL.
+
+In theory, other operations performed in {\bfseries{iblock}} could be pushed into {\bfseries{exitblock}} if they are not read in the {\bfseries{posta}} or {\bfseries{postb}} paths, but currently non M\+U\+L\+T\+I\+E\+Q\+U\+AL operations in {\bfseries{iblock}} terminate the action.
+
+In the second scenario, the boolean evaluated in {\bfseries{initblock}} remains unmodified along only one of the two paths out, {\bfseries{prea}} or {\bfseries{reb}}. The boolean in {\bfseries{iblock}} (modulo complementing) will evaluate in the same way. We define {\bfseries{posta}} as the path out of {\bfseries{iblock}} that will be followed by this unmodified path. The transform that needs to be made is to have the unmodified path out of {\bfseries{initblock}} flow immediately into the {\bfseries{posta}} path without having to reevalute the condition in {\bfseries{iblock}}. {\bfseries{iblock}} is not removed because flow from the \char`\"{}modified\char`\"{} path may also flow into {\bfseries{posta}}, depending on how the boolean was modified. Adjustments to data-\/flow are similar to the first scenario but slightly more complicated. The first block along the {\bfseries{posta}} path is referred to as the {\bfseries{posta\+\_\+block}}, this block will have a new block flowing into it. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConditionalExecution_a8070a0147522c29ebcce9ff781a53575}\label{classConditionalExecution_a8070a0147522c29ebcce9ff781a53575}} 
+\index{ConditionalExecution@{ConditionalExecution}!ConditionalExecution@{ConditionalExecution}}
+\index{ConditionalExecution@{ConditionalExecution}!ConditionalExecution@{ConditionalExecution}}
+\doxysubsubsection{\texorpdfstring{ConditionalExecution()}{ConditionalExecution()}}
+{\footnotesize\ttfamily Conditional\+Execution\+::\+Conditional\+Execution (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+Set up for testing \mbox{\hyperlink{classConditionalExecution}{Conditional\+Execution}} on multiple iblocks 
+\begin{DoxyParams}{Parameters}
+{\em f} & is the function to do testing on \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConditionalExecution_afc3956000baa5c9338bdb728ba3034b3}\label{classConditionalExecution_afc3956000baa5c9338bdb728ba3034b3}} 
+\index{ConditionalExecution@{ConditionalExecution}!execute@{execute}}
+\index{execute@{execute}!ConditionalExecution@{ConditionalExecution}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Conditional\+Execution\+::execute (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Eliminate the unnecessary path join at {\bfseries{iblock}}. 
+
+We assume the last call to verify() returned {\bfseries{true}}. \mbox{\Hypertarget{classConditionalExecution_abf756d499c20aba093c6f3d4214cb4a5}\label{classConditionalExecution_abf756d499c20aba093c6f3d4214cb4a5}} 
+\index{ConditionalExecution@{ConditionalExecution}!trial@{trial}}
+\index{trial@{trial}!ConditionalExecution@{ConditionalExecution}}
+\doxysubsubsection{\texorpdfstring{trial()}{trial()}}
+{\footnotesize\ttfamily bool Conditional\+Execution\+::trial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$}]{ib }\end{DoxyParamCaption})}
+
+
+
+Test for a modifiable configuration around the given block. 
+
+The given block is tested as a possible {\bfseries{iblock}}. If this configuration works and is not a {\bfseries{directsplit}}, {\bfseries{true}} is returned. If the configuration works as a {\bfseries{directsplit}}, then recursively check that its {\bfseries{posta\+\_\+block}} works as an {\bfseries{iblock}}. If it does work, keep this {\bfseries{iblock}}, otherwise revert to the {\bfseries{directsplit}} configuration. In either case return {\bfseries{true}}. Processing the {\bfseries{directsplit}} first may prevent posta\+\_\+block from being an {\bfseries{iblock}}. 
+\begin{DoxyParams}{Parameters}
+{\em ib} & is the trial {\bfseries{iblock}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if (some) configuration is recognized and can be modified 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{condexe_8hh}{condexe.\+hh}}\item 
+condexe.\+cc\end{DoxyCompactItemize}

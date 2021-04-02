@@ -1,0 +1,505 @@
+\hypertarget{classSymbol}{}\doxysection{Symbol Class Reference}
+\label{classSymbol}\index{Symbol@{Symbol}}
+
+
+The base class for a symbol in a symbol table or scope.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+
+
+Inheritance diagram for Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a3145c215e9f543a9c7841bb2dc343136}{force\+\_\+hex}} = 1, 
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a70ade8d38756a2876f47a21c889b6a8d}{force\+\_\+dec}} = 2, 
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a28a7364990a6437cacd7784803294adb}{force\+\_\+oct}} = 3, 
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a6423becb4a1dfab9a402260086c5673a}{force\+\_\+bin}} = 4, 
+\newline
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803ab0cb7096ee9806459711369aeddd68fb}{force\+\_\+char}} = 5, 
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a8009db83ae79a27a721a9b451b6ab102}{size\+\_\+typelock}} = 8, 
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803aff7a6486ed09c6948f788d90500fdff3}{isolate}} = 16, 
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a27fbbcd7b20d0066c357fefade21f46c}{merge\+\_\+problems}} = 32, 
+\newline
+\mbox{\hyperlink{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803aeae1f2ebd85136f7a9669778cf0f36d8}{is\+\_\+this\+\_\+ptr}} = 64
+ \}
+\begin{DoxyCompactList}\small\item\em Possible display (dispflag) properties for a \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSymbol_a5188e6395f982732c218279809b92a8e}{Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc, const string \&nm, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Construct given a name and data-\/type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbol_a133463e4ef55968c58bd483ab683a0c1}{Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em Construct for use with \mbox{\hyperlink{classSymbol_a3266a5752c208bdfa5a28e792de67604}{restore\+Xml()}} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSymbol_a9454755130e3ed3980ec3340d1da663e}{is\+Name\+Undefined}} (void) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} have an undefined name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbol_a24c8e25a4ee1cb2ff18327503d7cf514}{set\+Isolated}} (bool val)
+\begin{DoxyCompactList}\small\item\em Set whether {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} should be speculatively merged. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classSymbol_a9176f3c0f44f3373ef092043486a147b}{get\+First\+Whole\+Map}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the first entire mapping of the symbol. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classSymbol_a0f86b85ac74fc36f1df80b48b658af1c}{get\+Map\+Entry}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Get first mapping of the symbol that contains the given \mbox{\hyperlink{classAddress}{Address}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classSymbol_a62d9ffc80a6c63b02d365e6844bdd890}{get\+Map\+Entry\+Position}} (const \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$entry) const
+\begin{DoxyCompactList}\small\item\em Position of given \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} within {\bfseries{this}} multi-\/entry \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classSymbol_ac41dd1d2365557f0e8d66bdb992a0d45}{get\+Resolution\+Depth}} (const \mbox{\hyperlink{classScope}{Scope}} $\ast$use\+Scope) const
+\begin{DoxyCompactList}\small\item\em Get number of scope names needed to resolve {\bfseries{this}} symbol. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbol_a3aad352e6eb26be6cff727b66e86a9d4}{save\+Xml\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save basic \mbox{\hyperlink{classSymbol}{Symbol}} properties as X\+ML attributes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbol_aa566c1619067211810c030f5e15f69e3}{restore\+Xml\+Header}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore basic \mbox{\hyperlink{classSymbol}{Symbol}} properties from X\+ML. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbol_aa3e9088abdd64c84b7905c29b944a72c}{save\+Xml\+Body}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save details of the \mbox{\hyperlink{classSymbol}{Symbol}} to X\+ML. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbol_ab569bc89bca664b5a6128209f5f3f167}{restore\+Xml\+Body}} (List\+::const\+\_\+iterator iter)
+\begin{DoxyCompactList}\small\item\em Restore details of the \mbox{\hyperlink{classSymbol}{Symbol}} from X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSymbol_a0ef928814feb0a17fe95d006340eb499}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSymbol_a3266a5752c208bdfa5a28e792de67604}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSymbol_a2140bc57fb92842c2d1cc8526ef08cf1}{get\+Bytes\+Consumed}} (void) const
+\begin{DoxyCompactList}\small\item\em Get number of bytes consumed within the address-\/$>$symbol map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSymbol_a5f4e7f3473a57765372f4bcdd52dce9f}\label{classSymbol_a5f4e7f3473a57765372f4bcdd52dce9f}} 
+static uint8 \mbox{\hyperlink{classSymbol_a5f4e7f3473a57765372f4bcdd52dce9f}{I\+D\+\_\+\+B\+A\+SE}} = 0x4000000000000000L
+\begin{DoxyCompactList}\small\item\em Base of internal ID\textquotesingle{}s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSymbol_a13e0266010d85bcff19e91ee7404418b}{set\+Display\+Format}} (uint4 val)
+\begin{DoxyCompactList}\small\item\em Set the display format for {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbol_a879a1fc513f5ffac31a0ed86a52c562c}{check\+Size\+Type\+Lock}} (void)
+\begin{DoxyCompactList}\small\item\em Calculate if {\bfseries{size\+\_\+typelock}} property is on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSymbol_a965559b2c6441d16082b2e85a1f1b055}{set\+This\+Pointer}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether {\bfseries{this}} is the \char`\"{}this\char`\"{} pointer for a class method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSymbol_a25a177c969ab3aa6b2bbd6e817deb0f4}\label{classSymbol_a25a177c969ab3aa6b2bbd6e817deb0f4}} 
+\mbox{\hyperlink{classScope}{Scope}} $\ast$ \mbox{\hyperlink{classSymbol_a25a177c969ab3aa6b2bbd6e817deb0f4}{scope}}
+\begin{DoxyCompactList}\small\item\em The scope that owns this symbol. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_a0254b578a75d2bd6f7e145fe081cb6dd}\label{classSymbol_a0254b578a75d2bd6f7e145fe081cb6dd}} 
+string \mbox{\hyperlink{classSymbol_a0254b578a75d2bd6f7e145fe081cb6dd}{name}}
+\begin{DoxyCompactList}\small\item\em The local name of the symbol. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_ab760cde69e8bb98988ba37871cb6fd63}\label{classSymbol_ab760cde69e8bb98988ba37871cb6fd63}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classSymbol_ab760cde69e8bb98988ba37871cb6fd63}{type}}
+\begin{DoxyCompactList}\small\item\em The symbol\textquotesingle{}s data-\/type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_afe1f39b8146a552928c3d0d505a03efa}\label{classSymbol_afe1f39b8146a552928c3d0d505a03efa}} 
+uint4 \mbox{\hyperlink{classSymbol_afe1f39b8146a552928c3d0d505a03efa}{name\+Dedup}}
+\begin{DoxyCompactList}\small\item\em id to distinguish symbols with the same name \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_ae27fc3f664b0edbd5cedf859acfb0707}\label{classSymbol_ae27fc3f664b0edbd5cedf859acfb0707}} 
+uint4 \mbox{\hyperlink{classSymbol_ae27fc3f664b0edbd5cedf859acfb0707}{flags}}
+\begin{DoxyCompactList}\small\item\em Varnode-\/like properties of the symbol. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_a58776a81e4ba35c90bb0d3bf2fea5c32}\label{classSymbol_a58776a81e4ba35c90bb0d3bf2fea5c32}} 
+uint4 \mbox{\hyperlink{classSymbol_a58776a81e4ba35c90bb0d3bf2fea5c32}{dispflags}}
+\begin{DoxyCompactList}\small\item\em Flags affecting the display of this symbol. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_a4cbfc5ebf286a35b8f961618c2f2034c}\label{classSymbol_a4cbfc5ebf286a35b8f961618c2f2034c}} 
+int2 \mbox{\hyperlink{classSymbol_a4cbfc5ebf286a35b8f961618c2f2034c}{category}}
+\begin{DoxyCompactList}\small\item\em Special category (-\/1==none 0=parameter 1=equate) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_a3f20efe66a14d812fd95a57c3a0497cd}\label{classSymbol_a3f20efe66a14d812fd95a57c3a0497cd}} 
+uint2 \mbox{\hyperlink{classSymbol_a3f20efe66a14d812fd95a57c3a0497cd}{catindex}}
+\begin{DoxyCompactList}\small\item\em Index within category. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_a384278089030587a93509f60e35b134b}\label{classSymbol_a384278089030587a93509f60e35b134b}} 
+uint8 \mbox{\hyperlink{classSymbol_a384278089030587a93509f60e35b134b}{symbol\+Id}}
+\begin{DoxyCompactList}\small\item\em Unique id, 0=unassigned. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_af272879c187d3158f51e8ed58641f7b5}\label{classSymbol_af272879c187d3158f51e8ed58641f7b5}} 
+vector$<$ list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::iterator $>$ \mbox{\hyperlink{classSymbol_af272879c187d3158f51e8ed58641f7b5}{mapentry}}
+\begin{DoxyCompactList}\small\item\em List of storage locations labeled with {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_afeaad42c7f817dab09147c49ba7c5fd6}\label{classSymbol_afeaad42c7f817dab09147c49ba7c5fd6}} 
+const \mbox{\hyperlink{classScope}{Scope}} $\ast$ \mbox{\hyperlink{classSymbol_afeaad42c7f817dab09147c49ba7c5fd6}{depth\+Scope}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classScope}{Scope}} associated with current depth resolution. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_ad48ee897e3e0612b2039b83d522017fa}\label{classSymbol_ad48ee897e3e0612b2039b83d522017fa}} 
+int4 \mbox{\hyperlink{classSymbol_ad48ee897e3e0612b2039b83d522017fa}{depth\+Resolution}}
+\begin{DoxyCompactList}\small\item\em Number of namespace elements required to resolve symbol in current scope. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbol_a2a5f0847c5006c6b30bda59525daa541}\label{classSymbol_a2a5f0847c5006c6b30bda59525daa541}} 
+uint4 \mbox{\hyperlink{classSymbol_a2a5f0847c5006c6b30bda59525daa541}{whole\+Count}}
+\begin{DoxyCompactList}\small\item\em Number of Symbol\+Entries that map to the whole \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSymbol_a921193447f6e42f596ac0a7694b02830}\label{classSymbol_a921193447f6e42f596ac0a7694b02830}} 
+class {\bfseries Scope}
+\item 
+\mbox{\Hypertarget{classSymbol_ac98dfa3807028fa4c8b288caf93501fc}\label{classSymbol_ac98dfa3807028fa4c8b288caf93501fc}} 
+class {\bfseries Scope\+Internal}
+\item 
+\mbox{\Hypertarget{classSymbol_ad07a9e8085d45ac5b2f79a212fb1443d}\label{classSymbol_ad07a9e8085d45ac5b2f79a212fb1443d}} 
+class {\bfseries Symbol\+Compare\+Name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The base class for a symbol in a symbol table or scope. 
+
+At its most basic, a \mbox{\hyperlink{classSymbol}{Symbol}} is a {\bfseries{name}} and a {\bfseries{data-\/type}}. Practically a \mbox{\hyperlink{classSymbol}{Symbol}} knows what \mbox{\hyperlink{classScope}{Scope}} its in, how it should be displayed, and the symbols {\itshape category}. A category is a subset of symbols that are stored together for quick access. The {\bfseries{category}} field can be\+:
+\begin{DoxyItemize}
+\item -\/1 for no category
+\item 0 indicates a function parameter
+\item 1 indicates an equate symbol 
+\end{DoxyItemize}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Possible display (dispflag) properties for a \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_hex@{force\_hex}!Symbol@{Symbol}}\index{Symbol@{Symbol}!force\_hex@{force\_hex}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a3145c215e9f543a9c7841bb2dc343136}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a3145c215e9f543a9c7841bb2dc343136}} 
+force\+\_\+hex&Force hexadecimal printing of constant symbol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_dec@{force\_dec}!Symbol@{Symbol}}\index{Symbol@{Symbol}!force\_dec@{force\_dec}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a70ade8d38756a2876f47a21c889b6a8d}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a70ade8d38756a2876f47a21c889b6a8d}} 
+force\+\_\+dec&Force decimal printing of constant symbol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_oct@{force\_oct}!Symbol@{Symbol}}\index{Symbol@{Symbol}!force\_oct@{force\_oct}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a28a7364990a6437cacd7784803294adb}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a28a7364990a6437cacd7784803294adb}} 
+force\+\_\+oct&Force octal printing of constant symbol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_bin@{force\_bin}!Symbol@{Symbol}}\index{Symbol@{Symbol}!force\_bin@{force\_bin}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a6423becb4a1dfab9a402260086c5673a}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a6423becb4a1dfab9a402260086c5673a}} 
+force\+\_\+bin&Force binary printing of constant symbol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{force\_char@{force\_char}!Symbol@{Symbol}}\index{Symbol@{Symbol}!force\_char@{force\_char}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803ab0cb7096ee9806459711369aeddd68fb}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803ab0cb7096ee9806459711369aeddd68fb}} 
+force\+\_\+char&Force integer to be printed as a character constant. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{size\_typelock@{size\_typelock}!Symbol@{Symbol}}\index{Symbol@{Symbol}!size\_typelock@{size\_typelock}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a8009db83ae79a27a721a9b451b6ab102}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a8009db83ae79a27a721a9b451b6ab102}} 
+size\+\_\+typelock&Only the size of the symbol is typelocked. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{isolate@{isolate}!Symbol@{Symbol}}\index{Symbol@{Symbol}!isolate@{isolate}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803aff7a6486ed09c6948f788d90500fdff3}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803aff7a6486ed09c6948f788d90500fdff3}} 
+isolate&\mbox{\hyperlink{classSymbol}{Symbol}} should not speculatively merge automatically. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{merge\_problems@{merge\_problems}!Symbol@{Symbol}}\index{Symbol@{Symbol}!merge\_problems@{merge\_problems}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a27fbbcd7b20d0066c357fefade21f46c}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803a27fbbcd7b20d0066c357fefade21f46c}} 
+merge\+\_\+problems&Set if some Symbol\+Entrys did not get merged. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{is\_this\_ptr@{is\_this\_ptr}!Symbol@{Symbol}}\index{Symbol@{Symbol}!is\_this\_ptr@{is\_this\_ptr}}}\mbox{\Hypertarget{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803aeae1f2ebd85136f7a9669778cf0f36d8}\label{classSymbol_ab1ec802c89320587a8c3a59bfa4fa803aeae1f2ebd85136f7a9669778cf0f36d8}} 
+is\+\_\+this\+\_\+ptr&We are the \char`\"{}this\char`\"{} symbol for a class method. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSymbol_a5188e6395f982732c218279809b92a8e}\label{classSymbol_a5188e6395f982732c218279809b92a8e}} 
+\index{Symbol@{Symbol}!Symbol@{Symbol}}
+\index{Symbol@{Symbol}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{Symbol()}{Symbol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Symbol\+::\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{sc,  }\item[{const string \&}]{nm,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct given a name and data-\/type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the scope containing the new symbol \\
+\hline
+{\em nm} & is the local name of the symbol \\
+\hline
+{\em ct} & is the data-\/type of the symbol \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbol_a133463e4ef55968c58bd483ab683a0c1}\label{classSymbol_a133463e4ef55968c58bd483ab683a0c1}} 
+\index{Symbol@{Symbol}!Symbol@{Symbol}}
+\index{Symbol@{Symbol}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{Symbol()}{Symbol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Symbol\+::\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{sc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct for use with \mbox{\hyperlink{classSymbol_a3266a5752c208bdfa5a28e792de67604}{restore\+Xml()}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the scope containing the new symbol \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSymbol_a879a1fc513f5ffac31a0ed86a52c562c}\label{classSymbol_a879a1fc513f5ffac31a0ed86a52c562c}} 
+\index{Symbol@{Symbol}!checkSizeTypeLock@{checkSizeTypeLock}}
+\index{checkSizeTypeLock@{checkSizeTypeLock}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{checkSizeTypeLock()}{checkSizeTypeLock()}}
+{\footnotesize\ttfamily void Symbol\+::check\+Size\+Type\+Lock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculate if {\bfseries{size\+\_\+typelock}} property is on. 
+
+Examine the data-\/type to decide if the \mbox{\hyperlink{classSymbol}{Symbol}} has the special property called {\bfseries{size\+\_\+typelock}}, which indicates the {\itshape size} of the \mbox{\hyperlink{classSymbol}{Symbol}} is locked, but the data-\/type is not locked (and can float) \mbox{\Hypertarget{classSymbol_a2140bc57fb92842c2d1cc8526ef08cf1}\label{classSymbol_a2140bc57fb92842c2d1cc8526ef08cf1}} 
+\index{Symbol@{Symbol}!getBytesConsumed@{getBytesConsumed}}
+\index{getBytesConsumed@{getBytesConsumed}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{getBytesConsumed()}{getBytesConsumed()}}
+{\footnotesize\ttfamily int4 Symbol\+::get\+Bytes\+Consumed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get number of bytes consumed within the address-\/$>$symbol map. 
+
+Get the number of bytes consumed by a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} representing {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}}. By default, this is the number of bytes consumed by the \mbox{\hyperlink{classSymbol}{Symbol}}\textquotesingle{}s data-\/type. This gives the amount of leeway a search has when the address queried does not match the exact address of the \mbox{\hyperlink{classSymbol}{Symbol}}. With functions, the bytes consumed by a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} may not match the data-\/type size. \begin{DoxyReturn}{Returns}
+the number of bytes in a default \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classFunctionSymbol_a4bfa900c03ee8fdf82723b7f2319b78c}{Function\+Symbol}}.
+
+\mbox{\Hypertarget{classSymbol_a9176f3c0f44f3373ef092043486a147b}\label{classSymbol_a9176f3c0f44f3373ef092043486a147b}} 
+\index{Symbol@{Symbol}!getFirstWholeMap@{getFirstWholeMap}}
+\index{getFirstWholeMap@{getFirstWholeMap}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{getFirstWholeMap()}{getFirstWholeMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Symbol\+::get\+First\+Whole\+Map (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the first entire mapping of the symbol. 
+
+\begin{DoxyReturn}{Returns}
+the first \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbol_a0f86b85ac74fc36f1df80b48b658af1c}\label{classSymbol_a0f86b85ac74fc36f1df80b48b658af1c}} 
+\index{Symbol@{Symbol}!getMapEntry@{getMapEntry}}
+\index{getMapEntry@{getMapEntry}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{getMapEntry()}{getMapEntry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Symbol\+::get\+Map\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Get first mapping of the symbol that contains the given \mbox{\hyperlink{classAddress}{Address}}. 
+
+This method may return a {\itshape partial} entry, where the \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} is only holding part of the whole \mbox{\hyperlink{classSymbol}{Symbol}}. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is an address within the desired storage location of the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the first matching \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbol_a62d9ffc80a6c63b02d365e6844bdd890}\label{classSymbol_a62d9ffc80a6c63b02d365e6844bdd890}} 
+\index{Symbol@{Symbol}!getMapEntryPosition@{getMapEntryPosition}}
+\index{getMapEntryPosition@{getMapEntryPosition}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{getMapEntryPosition()}{getMapEntryPosition()}}
+{\footnotesize\ttfamily int4 Symbol\+::get\+Map\+Entry\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$}]{entry }\end{DoxyParamCaption}) const}
+
+
+
+Position of given \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} within {\bfseries{this}} multi-\/entry \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+Among all the Symbol\+Entrys that map {\bfseries{this}} entire \mbox{\hyperlink{classSymbol}{Symbol}}, calculate the position of the given \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} within the list. 
+\begin{DoxyParams}{Parameters}
+{\em entry} & is the given \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+its position within the list or -\/1 if it is not in the list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbol_ac41dd1d2365557f0e8d66bdb992a0d45}\label{classSymbol_ac41dd1d2365557f0e8d66bdb992a0d45}} 
+\index{Symbol@{Symbol}!getResolutionDepth@{getResolutionDepth}}
+\index{getResolutionDepth@{getResolutionDepth}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{getResolutionDepth()}{getResolutionDepth()}}
+{\footnotesize\ttfamily int4 Symbol\+::get\+Resolution\+Depth (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classScope}{Scope}} $\ast$}]{use\+Scope }\end{DoxyParamCaption}) const}
+
+
+
+Get number of scope names needed to resolve {\bfseries{this}} symbol. 
+
+For a given context scope where {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} is used, determine how many elements of the full namespace path need to be printed to correctly distinguish it. A value of 0 means the base symbol name is visible and not overridden in the context scope. A value of 1 means the base name may be overridden, but the parent scope name is not. The minimal number of names that distinguishes the symbol name uniquely within the use scope is returned. 
+\begin{DoxyParams}{Parameters}
+{\em use\+Scope} & is the given scope where the symbol is being used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of (extra) names needed to distinguish the symbol 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbol_a9454755130e3ed3980ec3340d1da663e}\label{classSymbol_a9454755130e3ed3980ec3340d1da663e}} 
+\index{Symbol@{Symbol}!isNameUndefined@{isNameUndefined}}
+\index{isNameUndefined@{isNameUndefined}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{isNameUndefined()}{isNameUndefined()}}
+{\footnotesize\ttfamily bool Symbol\+::is\+Name\+Undefined (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Does {\bfseries{this}} have an undefined name. 
+
+The name for a \mbox{\hyperlink{classSymbol}{Symbol}} can be unspecified. See \mbox{\hyperlink{classScopeInternal_a17225ae39210e0dbf1efb1a3ee847d72}{Scope\+Internal\+::build\+Undefined\+Name}} \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the name of {\bfseries{this}} is undefined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSymbol_a3266a5752c208bdfa5a28e792de67604}\label{classSymbol_a3266a5752c208bdfa5a28e792de67604}} 
+\index{Symbol@{Symbol}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Symbol\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML tag of the symbol \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classExternRefSymbol_a84cae4cba0ca0ec757c93c63cd55921e}{Extern\+Ref\+Symbol}}, \mbox{\hyperlink{classLabSymbol_a856b8496e06601889db4abc4ac76fa71}{Lab\+Symbol}}, \mbox{\hyperlink{classEquateSymbol_ab4aa7cdacdd28777f82bf0be1ad55454}{Equate\+Symbol}}, and \mbox{\hyperlink{classFunctionSymbol_afba4e81eed1ad378ae7f0531ec8f3d2b}{Function\+Symbol}}.
+
+\mbox{\Hypertarget{classSymbol_ab569bc89bca664b5a6128209f5f3f167}\label{classSymbol_ab569bc89bca664b5a6128209f5f3f167}} 
+\index{Symbol@{Symbol}!restoreXmlBody@{restoreXmlBody}}
+\index{restoreXmlBody@{restoreXmlBody}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{restoreXmlBody()}{restoreXmlBody()}}
+{\footnotesize\ttfamily void Symbol\+::restore\+Xml\+Body (\begin{DoxyParamCaption}\item[{List\+::const\+\_\+iterator}]{iter }\end{DoxyParamCaption})}
+
+
+
+Restore details of the \mbox{\hyperlink{classSymbol}{Symbol}} from X\+ML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iter} & iterates over X\+ML children of the root $<$symbol$>$ tag \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbol_aa566c1619067211810c030f5e15f69e3}\label{classSymbol_aa566c1619067211810c030f5e15f69e3}} 
+\index{Symbol@{Symbol}!restoreXmlHeader@{restoreXmlHeader}}
+\index{restoreXmlHeader@{restoreXmlHeader}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{restoreXmlHeader()}{restoreXmlHeader()}}
+{\footnotesize\ttfamily void Symbol\+::restore\+Xml\+Header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Restore basic \mbox{\hyperlink{classSymbol}{Symbol}} properties from X\+ML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML $<$symbol$>$ element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbol_a0ef928814feb0a17fe95d006340eb499}\label{classSymbol_a0ef928814feb0a17fe95d006340eb499}} 
+\index{Symbol@{Symbol}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Symbol\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classExternRefSymbol_aaff9d3efb4a2594f857799db35eddc1d}{Extern\+Ref\+Symbol}}, \mbox{\hyperlink{classLabSymbol_aa923d358bf51dff4957f202e34d140be}{Lab\+Symbol}}, \mbox{\hyperlink{classEquateSymbol_ac116a5483c48693a6c252687c0319739}{Equate\+Symbol}}, and \mbox{\hyperlink{classFunctionSymbol_a0947d5735918439e8de8f4e6084239f2}{Function\+Symbol}}.
+
+\mbox{\Hypertarget{classSymbol_aa3e9088abdd64c84b7905c29b944a72c}\label{classSymbol_aa3e9088abdd64c84b7905c29b944a72c}} 
+\index{Symbol@{Symbol}!saveXmlBody@{saveXmlBody}}
+\index{saveXmlBody@{saveXmlBody}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{saveXmlBody()}{saveXmlBody()}}
+{\footnotesize\ttfamily void Symbol\+::save\+Xml\+Body (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save details of the \mbox{\hyperlink{classSymbol}{Symbol}} to X\+ML. 
+
+Save the data-\/type for the \mbox{\hyperlink{classSymbol}{Symbol}} 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbol_a3aad352e6eb26be6cff727b66e86a9d4}\label{classSymbol_a3aad352e6eb26be6cff727b66e86a9d4}} 
+\index{Symbol@{Symbol}!saveXmlHeader@{saveXmlHeader}}
+\index{saveXmlHeader@{saveXmlHeader}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{saveXmlHeader()}{saveXmlHeader()}}
+{\footnotesize\ttfamily void Symbol\+::save\+Xml\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save basic \mbox{\hyperlink{classSymbol}{Symbol}} properties as X\+ML attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbol_a13e0266010d85bcff19e91ee7404418b}\label{classSymbol_a13e0266010d85bcff19e91ee7404418b}} 
+\index{Symbol@{Symbol}!setDisplayFormat@{setDisplayFormat}}
+\index{setDisplayFormat@{setDisplayFormat}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{setDisplayFormat()}{setDisplayFormat()}}
+{\footnotesize\ttfamily void Symbol\+::set\+Display\+Format (\begin{DoxyParamCaption}\item[{uint4}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Set the display format for {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+Force a specific display format for constant symbols 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the format\+: force\+\_\+hex, force\+\_\+dec, force\+\_\+oct, etc. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbol_a24c8e25a4ee1cb2ff18327503d7cf514}\label{classSymbol_a24c8e25a4ee1cb2ff18327503d7cf514}} 
+\index{Symbol@{Symbol}!setIsolated@{setIsolated}}
+\index{setIsolated@{setIsolated}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{setIsolated()}{setIsolated()}}
+{\footnotesize\ttfamily void Symbol\+::set\+Isolated (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Set whether {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} should be speculatively merged. 
+
+If the given value is {\bfseries{true}}, any Varnodes that map directly to {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}}, will not be speculatively merged with other Varnodes. (Required merges will still happen). 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the given boolean value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSymbol_a965559b2c6441d16082b2e85a1f1b055}\label{classSymbol_a965559b2c6441d16082b2e85a1f1b055}} 
+\index{Symbol@{Symbol}!setThisPointer@{setThisPointer}}
+\index{setThisPointer@{setThisPointer}!Symbol@{Symbol}}
+\doxysubsubsection{\texorpdfstring{setThisPointer()}{setThisPointer()}}
+{\footnotesize\ttfamily void Symbol\+::set\+This\+Pointer (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Toggle whether {\bfseries{this}} is the \char`\"{}this\char`\"{} pointer for a class method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} if we are the \char`\"{}this\char`\"{} pointer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

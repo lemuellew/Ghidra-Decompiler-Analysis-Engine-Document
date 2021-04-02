@@ -1,0 +1,745 @@
+\hypertarget{classAddrSpaceManager}{}\doxysection{Addr\+Space\+Manager Class Reference}
+\label{classAddrSpaceManager}\index{AddrSpaceManager@{AddrSpaceManager}}
+
+
+A manager for different address spaces.  
+
+
+
+
+{\ttfamily \#include $<$translate.\+hh$>$}
+
+
+
+Inheritance diagram for Addr\+Space\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAddrSpaceManager__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddrSpaceManager_a7012cd8aa3869a8db478ef71dfd04756}{Addr\+Space\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Construct an empty address space manager. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAddrSpaceManager_afca145540a3af8f6d35dfc2037580818}{$\sim$\+Addr\+Space\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Destroy the manager. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddrSpaceManager_ab1b808345dc85dc7e4f8e993fd739f96}{get\+Default\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get size of addresses for the default space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_a24efffb904ebb1a0a541fa74cafd51fc}{get\+Space\+By\+Name}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Get address space by name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_aa69937486b7d2b062011ac39d5513ee3}{get\+Space\+By\+Shortcut}} (char sc) const
+\begin{DoxyCompactList}\small\item\em Get address space from its shortcut. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_a2175a095b07fef420632724cacc10354}{get\+Iop\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the internal pcode op space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_a734131c0626a1cfbbfd3cb0e93ecba28}{get\+Fspec\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the internal callspec space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_addc2a210ade7c84962711a962e27dc32}{get\+Join\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the joining space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_a00f3afd0adb68f208c31a9716abe5a4f}{get\+Stack\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the stack space for this processor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_ab7428d74e76200ecc3c99a0e1ad7f613}{get\+Unique\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the temporary register space for this processor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}{get\+Default\+Code\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the default address space of this processor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_ab2aeddbc1955a52c5cfd8c969fc1d9d1}{get\+Default\+Data\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the default address space where data is stored. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_ab7dec6a4f5671fffb5d5645ebd2cb1f4}{get\+Constant\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the constant space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddrSpaceManager_aadd44852a41fe18966cce35b5abd15de}{get\+Constant}} (uintb val) const
+\begin{DoxyCompactList}\small\item\em Get a constant encoded as an \mbox{\hyperlink{classAddress}{Address}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddrSpaceManager_a5dc6c782b2b4c4c300aaa491e40719b8}{create\+Const\+From\+Space}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc) const
+\begin{DoxyCompactList}\small\item\em Create a constant address encoding an address space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddrSpaceManager_aefc16df2604d30c067d1b604889891a0}{resolve\+Constant}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb val, int4 sz, const \mbox{\hyperlink{classAddress}{Address}} \&point, uintb \&full\+Encoding) const
+\begin{DoxyCompactList}\small\item\em Resolve a native constant into an \mbox{\hyperlink{classAddress}{Address}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddrSpaceManager_ae2d22102a7ce6080918e82daafabbdfa}{num\+Spaces}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of address spaces for this processor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_ad1a9a620e767ffe8bd929913f882e2a4}{get\+Space}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get an address space via its index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_abe31b83fccddf3c6d9d35e981f203b19}{get\+Next\+Space\+In\+Order}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc) const
+\begin{DoxyCompactList}\small\item\em Get the next {\itshape contiguous} address space. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJoinRecord}{Join\+Record}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_a1b9e7e934e22b6bea3b2b949fd2b2159}{find\+Add\+Join}} (const vector$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $>$ \&pieces, uint4 logicalsize)
+\begin{DoxyCompactList}\small\item\em Get (or create) \mbox{\hyperlink{classJoinRecord}{Join\+Record}} for {\itshape pieces}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJoinRecord}{Join\+Record}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_adff0f9e662ebffdf724dca82b6b544bb}{find\+Join}} (uintb offset) const
+\begin{DoxyCompactList}\small\item\em Find \mbox{\hyperlink{classJoinRecord}{Join\+Record}} for {\itshape offset} in the join space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_ae82d08eab20f86a31fe366a9bcd58629}{set\+Deadcode\+Delay}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, int4 delaydelta)
+\begin{DoxyCompactList}\small\item\em Set the deadcodedelay for a specific space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_aef7d980ea2fc0c6450e941fd7dbec7e6}{truncate\+Space}} (const \mbox{\hyperlink{classTruncationTag}{Truncation\+Tag}} \&tag)
+\begin{DoxyCompactList}\small\item\em Mark a space as truncated from its original size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddrSpaceManager_aed824a71a1d12bb5d167a7a488eb7198}{construct\+Float\+Extension\+Address}} (const \mbox{\hyperlink{classAddress}{Address}} \&realaddr, int4 realsize, int4 logicalsize)
+\begin{DoxyCompactList}\small\item\em Build a logically lower precision storage location for a bigger floating point register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classAddrSpaceManager_a1cfc5383270584be6e9b974114e65f13}{construct\+Join\+Address}} (const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$translate, const \mbox{\hyperlink{classAddress}{Address}} \&hiaddr, int4 hisz, const \mbox{\hyperlink{classAddress}{Address}} \&loaddr, int4 losz)
+\begin{DoxyCompactList}\small\item\em Build a logical whole from register pairs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a68cf42a54806161d8bf3c1fa283036dd}{renormalize\+Join\+Address}} (\mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size)
+\begin{DoxyCompactList}\small\item\em Make sure a possibly offset {\itshape join} address has a proper \mbox{\hyperlink{classJoinRecord}{Join\+Record}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_a107cb2ba1e4c562090ac1ad3b94cd16b}{restore\+Xml\+Space}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em Add a space to the model based an on X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a196d3c70790942337861ae7d571c5e31}{restore\+Xml\+Spaces}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em Restore address spaces in the model from an X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a9001bbb4f273b895325e1cad6a8930d6}{set\+Default\+Code\+Space}} (int4 index)
+\begin{DoxyCompactList}\small\item\em Set the default address space (for code) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a5889b07364f07bbc30f79cda62a68d23}{set\+Default\+Data\+Space}} (int4 index)
+\begin{DoxyCompactList}\small\item\em Set the default address space for data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_abdab85595c68e18ab86dd42af914f35b}{set\+Reverse\+Justified}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\begin{DoxyCompactList}\small\item\em Set reverse justified property on this space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a9d5300e7a40dba53c7c78fdacebfc6ed}{assign\+Shortcut}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\begin{DoxyCompactList}\small\item\em Select a shortcut character for a new space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_aba1c818ccc3950c188e06df08746725f}{mark\+Near\+Pointers}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, int4 size)
+\begin{DoxyCompactList}\small\item\em Mark that given space can be accessed with near pointers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a89658bd677414a271a918f0f37af0bd6}{insert\+Space}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc)
+\begin{DoxyCompactList}\small\item\em Add a new address space to the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a45068bcc8331bebc780f00e51bd85250}{copy\+Spaces}} (const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$op2)
+\begin{DoxyCompactList}\small\item\em Copy spaces from another manager. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a6dd0ab3084fd8bb9cb4ea5a84885704d}{add\+Spacebase\+Pointer}} (\mbox{\hyperlink{classSpacebaseSpace}{Spacebase\+Space}} $\ast$basespace, const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&ptrdata, int4 trunc\+Size, bool stack\+Growth)
+\begin{DoxyCompactList}\small\item\em Set the base register of a spacebase space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a6330481f1f40a24d860c820a5a2b64f5}{insert\+Resolver}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, \mbox{\hyperlink{classAddressResolver}{Address\+Resolver}} $\ast$rsolv)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classOverride}{Override}} the base resolver for a space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpaceManager_a3271657111f46abc8b10bfdeb56e881d}{set\+Infer\+Ptr\+Bounds}} (const \mbox{\hyperlink{classRange}{Range}} \&range)
+\begin{DoxyCompactList}\small\item\em Set the range of addresses that can be inferred as pointers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJoinRecord}{Join\+Record}} $\ast$ \mbox{\hyperlink{classAddrSpaceManager_ad79ba636cc911bcd83371f00436f1dc5}{find\+Join\+Internal}} (uintb offset) const
+\begin{DoxyCompactList}\small\item\em Find \mbox{\hyperlink{classJoinRecord}{Join\+Record}} for {\itshape offset} in the join space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A manager for different address spaces. 
+
+Allow creation, lookup by name, lookup by shortcut, lookup by name, and iteration over address spaces 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAddrSpaceManager_a7012cd8aa3869a8db478ef71dfd04756}\label{classAddrSpaceManager_a7012cd8aa3869a8db478ef71dfd04756}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!AddrSpaceManager@{AddrSpaceManager}}
+\index{AddrSpaceManager@{AddrSpaceManager}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{AddrSpaceManager()}{AddrSpaceManager()}}
+{\footnotesize\ttfamily Addr\+Space\+Manager\+::\+Addr\+Space\+Manager (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Construct an empty address space manager. 
+
+Initialize manager containing no address spaces. All the cached space slots are set to null. \mbox{\Hypertarget{classAddrSpaceManager_afca145540a3af8f6d35dfc2037580818}\label{classAddrSpaceManager_afca145540a3af8f6d35dfc2037580818}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!````~AddrSpaceManager@{$\sim$AddrSpaceManager}}
+\index{````~AddrSpaceManager@{$\sim$AddrSpaceManager}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$AddrSpaceManager()}{~AddrSpaceManager()}}
+{\footnotesize\ttfamily Addr\+Space\+Manager\+::$\sim$\+Addr\+Space\+Manager (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the manager. 
+
+Base destructor class, cleans up \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} pointers which must be explicited created via {\itshape new} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAddrSpaceManager_a6dd0ab3084fd8bb9cb4ea5a84885704d}\label{classAddrSpaceManager_a6dd0ab3084fd8bb9cb4ea5a84885704d}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!addSpacebasePointer@{addSpacebasePointer}}
+\index{addSpacebasePointer@{addSpacebasePointer}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{addSpacebasePointer()}{addSpacebasePointer()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::add\+Spacebase\+Pointer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSpacebaseSpace}{Spacebase\+Space}} $\ast$}]{basespace,  }\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{ptrdata,  }\item[{int4}]{trunc\+Size,  }\item[{bool}]{stack\+Growth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set the base register of a spacebase space. 
+
+Perform the {\itshape privileged} act of associating a base register with an existing {\itshape virtual} space 
+\begin{DoxyParams}{Parameters}
+{\em basespace} & is the virtual space \\
+\hline
+{\em ptrdata} & is the location data for the base register \\
+\hline
+{\em trunc\+Size} & is the size of the space covered by the base register \\
+\hline
+{\em stack\+Growth} & is true if the stack grows \char`\"{}normally\char`\"{} towards address 0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_a9d5300e7a40dba53c7c78fdacebfc6ed}\label{classAddrSpaceManager_a9d5300e7a40dba53c7c78fdacebfc6ed}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!assignShortcut@{assignShortcut}}
+\index{assignShortcut@{assignShortcut}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{assignShortcut()}{assignShortcut()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::assign\+Shortcut (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Select a shortcut character for a new space. 
+
+Assign a {\itshape shortcut} character to the given address space. This routine makes use of the desired type of the new space and info about shortcuts for spaces that already exist to pick a unique and consistent character. This method also builds up a map from short to \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} object. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the given \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_aed824a71a1d12bb5d167a7a488eb7198}\label{classAddrSpaceManager_aed824a71a1d12bb5d167a7a488eb7198}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!constructFloatExtensionAddress@{constructFloatExtensionAddress}}
+\index{constructFloatExtensionAddress@{constructFloatExtensionAddress}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{constructFloatExtensionAddress()}{constructFloatExtensionAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Addr\+Space\+Manager\+::construct\+Float\+Extension\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{realaddr,  }\item[{int4}]{realsize,  }\item[{int4}]{logicalsize }\end{DoxyParamCaption})}
+
+
+
+Build a logically lower precision storage location for a bigger floating point register. 
+
+This handles the situation where we need to find a logical address to hold the lower precision floating-\/point value that is stored in a bigger register If the logicalsize (precision) requested matches the -\/realsize-\/ of the register just return the real address. Otherwise construct a join address to hold the logical value 
+\begin{DoxyParams}{Parameters}
+{\em realaddr} & is the address of the real floating-\/point register \\
+\hline
+{\em realsize} & is the size of the real floating-\/point register \\
+\hline
+{\em logicalsize} & is the size (lower precision) size of the logical value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_a1cfc5383270584be6e9b974114e65f13}\label{classAddrSpaceManager_a1cfc5383270584be6e9b974114e65f13}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!constructJoinAddress@{constructJoinAddress}}
+\index{constructJoinAddress@{constructJoinAddress}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{constructJoinAddress()}{constructJoinAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Addr\+Space\+Manager\+::construct\+Join\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{translate,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{hiaddr,  }\item[{int4}]{hisz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loaddr,  }\item[{int4}]{losz }\end{DoxyParamCaption})}
+
+
+
+Build a logical whole from register pairs. 
+
+This handles the common case, of trying to find a join address given a high location and a low location. This may not return an address in the {\itshape join} address space. It checks for the case where the two pieces are contiguous locations in a mappable space, in which case it just returns the containing address 
+\begin{DoxyParams}{Parameters}
+{\em translate} & is the \mbox{\hyperlink{classTranslate}{Translate}} object used to find registers \\
+\hline
+{\em hiaddr} & is the address of the most significant piece to be joined \\
+\hline
+{\em hisz} & is the size of the most significant piece \\
+\hline
+{\em loaddr} & is the address of the least significant piece \\
+\hline
+{\em losz} & is the size of the least significant piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an address representing the start of the joined range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a45068bcc8331bebc780f00e51bd85250}\label{classAddrSpaceManager_a45068bcc8331bebc780f00e51bd85250}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!copySpaces@{copySpaces}}
+\index{copySpaces@{copySpaces}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{copySpaces()}{copySpaces()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::copy\+Spaces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{op2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Copy spaces from another manager. 
+
+Different managers may need to share the same spaces. I.\+e. if different programs being analyzed share the same processor. This routine pulls in a reference of every space in -\/op2-\/ in order to manage it from within -\/this-\/ 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is a pointer to space manager being copied \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_a5dc6c782b2b4c4c300aaa491e40719b8}\label{classAddrSpaceManager_a5dc6c782b2b4c4c300aaa491e40719b8}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!createConstFromSpace@{createConstFromSpace}}
+\index{createConstFromSpace@{createConstFromSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{createConstFromSpace()}{createConstFromSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Addr\+Space\+Manager\+::create\+Const\+From\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a constant address encoding an address space. 
+
+This routine is used to encode a pointer to an address space as a {\itshape constant} \mbox{\hyperlink{classAddress}{Address}}, for use in {\bfseries{L\+O\+AD}} and {\bfseries{S\+T\+O\+RE}} operations. This is used internally and is slightly more efficient than storing the formal index of the space param spc is the space pointer to be encoded \begin{DoxyReturn}{Returns}
+the encoded \mbox{\hyperlink{classAddress}{Address}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a1b9e7e934e22b6bea3b2b949fd2b2159}\label{classAddrSpaceManager_a1b9e7e934e22b6bea3b2b949fd2b2159}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!findAddJoin@{findAddJoin}}
+\index{findAddJoin@{findAddJoin}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{findAddJoin()}{findAddJoin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJoinRecord}{Join\+Record}} $\ast$ Addr\+Space\+Manager\+::find\+Add\+Join (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $>$ \&}]{pieces,  }\item[{uint4}]{logicalsize }\end{DoxyParamCaption})}
+
+
+
+Get (or create) \mbox{\hyperlink{classJoinRecord}{Join\+Record}} for {\itshape pieces}. 
+
+Given a list of memory locations, the {\itshape pieces}, either find a pre-\/existing \mbox{\hyperlink{classJoinRecord}{Join\+Record}} or create a \mbox{\hyperlink{classJoinRecord}{Join\+Record}} that represents the logical joining of the pieces. 
+\begin{DoxyParams}{Parameters}
+{\em pieces} & if the list memory locations to be joined \\
+\hline
+{\em logicalsize} & of a {\itshape single} {\itshape piece} join, or zero \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the \mbox{\hyperlink{classJoinRecord}{Join\+Record}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_adff0f9e662ebffdf724dca82b6b544bb}\label{classAddrSpaceManager_adff0f9e662ebffdf724dca82b6b544bb}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!findJoin@{findJoin}}
+\index{findJoin@{findJoin}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{findJoin()}{findJoin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJoinRecord}{Join\+Record}} $\ast$ Addr\+Space\+Manager\+::find\+Join (\begin{DoxyParamCaption}\item[{uintb}]{offset }\end{DoxyParamCaption}) const}
+
+
+
+Find \mbox{\hyperlink{classJoinRecord}{Join\+Record}} for {\itshape offset} in the join space. 
+
+Given a specific {\itshape offset} into the {\itshape join} address space, recover the \mbox{\hyperlink{classJoinRecord}{Join\+Record}} that lists the pieces corresponding to that offset. The offset must originally have come from a \mbox{\hyperlink{classJoinRecord}{Join\+Record}} returned by {\bfseries{find\+Add\+Join}}, otherwise this method throws an exception. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is an offset into the join space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classJoinRecord}{Join\+Record}} for that offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_ad79ba636cc911bcd83371f00436f1dc5}\label{classAddrSpaceManager_ad79ba636cc911bcd83371f00436f1dc5}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!findJoinInternal@{findJoinInternal}}
+\index{findJoinInternal@{findJoinInternal}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{findJoinInternal()}{findJoinInternal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classJoinRecord}{Join\+Record}} $\ast$ Addr\+Space\+Manager\+::find\+Join\+Internal (\begin{DoxyParamCaption}\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Find \mbox{\hyperlink{classJoinRecord}{Join\+Record}} for {\itshape offset} in the join space. 
+
+Given a specific {\itshape offset} into the {\itshape join} address space, recover the \mbox{\hyperlink{classJoinRecord}{Join\+Record}} that contains the offset, as a range in the {\itshape join} address space. If there is no existing record, null is returned. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is an offset into the join space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classJoinRecord}{Join\+Record}} containing that offset or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_aadd44852a41fe18966cce35b5abd15de}\label{classAddrSpaceManager_aadd44852a41fe18966cce35b5abd15de}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getConstant@{getConstant}}
+\index{getConstant@{getConstant}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getConstant()}{getConstant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Addr\+Space\+Manager\+::get\+Constant (\begin{DoxyParamCaption}\item[{uintb}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a constant encoded as an \mbox{\hyperlink{classAddress}{Address}}. 
+
+This routine encodes a specific value as a {\itshape constant} address. I.\+e. the address space of the resulting \mbox{\hyperlink{classAddress}{Address}} will be the {\bfseries{constant}} space, and the offset will be the value. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the constant value to encode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the {\itshape constant} address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_ab7dec6a4f5671fffb5d5645ebd2cb1f4}\label{classAddrSpaceManager_ab7dec6a4f5671fffb5d5645ebd2cb1f4}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getConstantSpace@{getConstantSpace}}
+\index{getConstantSpace@{getConstantSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getConstantSpace()}{getConstantSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Constant\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the constant space. 
+
+Pcode represents constant values within an operation as offsets within a special {\itshape constant} address space. (See \mbox{\hyperlink{classConstantSpace}{Constant\+Space}}) \begin{DoxyReturn}{Returns}
+a pointer to the {\bfseries{constant}} space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}\label{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getDefaultCodeSpace@{getDefaultCodeSpace}}
+\index{getDefaultCodeSpace@{getDefaultCodeSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getDefaultCodeSpace()}{getDefaultCodeSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Default\+Code\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the default address space of this processor. 
+
+Most processors have a main address bus, on which the bulk of the processor\textquotesingle{}s R\+AM is mapped. This matches S\+L\+E\+I\+GH\textquotesingle{}s notion of the {\itshape default} space. For Harvard architectures, this is the space where code exists (as opposed to data). \begin{DoxyReturn}{Returns}
+a pointer to the {\itshape default} code space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_ab2aeddbc1955a52c5cfd8c969fc1d9d1}\label{classAddrSpaceManager_ab2aeddbc1955a52c5cfd8c969fc1d9d1}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getDefaultDataSpace@{getDefaultDataSpace}}
+\index{getDefaultDataSpace@{getDefaultDataSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getDefaultDataSpace()}{getDefaultDataSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Default\+Data\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the default address space where data is stored. 
+
+Return the default address space for holding data. For most processors, this is just the main R\+AM space and is the same as the default {\itshape code} space. For Harvard architectures, this is the space where data is stored (as opposed to code). \begin{DoxyReturn}{Returns}
+a pointer to the {\itshape default} data space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_ab1b808345dc85dc7e4f8e993fd739f96}\label{classAddrSpaceManager_ab1b808345dc85dc7e4f8e993fd739f96}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getDefaultSize@{getDefaultSize}}
+\index{getDefaultSize@{getDefaultSize}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getDefaultSize()}{getDefaultSize()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+Manager\+::get\+Default\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get size of addresses for the default space. 
+
+Return the size of addresses for the processor\textquotesingle{}s official default space. This space is usually the main R\+AM databus. \begin{DoxyReturn}{Returns}
+the size of an address in bytes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a734131c0626a1cfbbfd3cb0e93ecba28}\label{classAddrSpaceManager_a734131c0626a1cfbbfd3cb0e93ecba28}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getFspecSpace@{getFspecSpace}}
+\index{getFspecSpace@{getFspecSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getFspecSpace()}{getFspecSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Fspec\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the internal callspec space. 
+
+There is a special address space reserved for encoding pointers to the \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} object as addresses. This allows direct pointers to be {\itshape hidden} within an operation, when manipulating pcode internally. (See \mbox{\hyperlink{classFspecSpace}{Fspec\+Space}}) \begin{DoxyReturn}{Returns}
+a pointer to the address space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a2175a095b07fef420632724cacc10354}\label{classAddrSpaceManager_a2175a095b07fef420632724cacc10354}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getIopSpace@{getIopSpace}}
+\index{getIopSpace@{getIopSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getIopSpace()}{getIopSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Iop\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the internal pcode op space. 
+
+There is a special address space reserved for encoding pointers to pcode operations as addresses. This allows a direct pointer to be {\itshape hidden} within an operation, when manipulating pcode internally. (See \mbox{\hyperlink{classIopSpace}{Iop\+Space}}) \begin{DoxyReturn}{Returns}
+a pointer to the address space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_addc2a210ade7c84962711a962e27dc32}\label{classAddrSpaceManager_addc2a210ade7c84962711a962e27dc32}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getJoinSpace@{getJoinSpace}}
+\index{getJoinSpace@{getJoinSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getJoinSpace()}{getJoinSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Join\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the joining space. 
+
+There is a special address space reserved for providing a logical contiguous memory location for variables that are really split between two physical locations. This allows the the decompiler to work with the logical value. (See \mbox{\hyperlink{classJoinSpace}{Join\+Space}}) \begin{DoxyReturn}{Returns}
+a pointer to the address space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_abe31b83fccddf3c6d9d35e981f203b19}\label{classAddrSpaceManager_abe31b83fccddf3c6d9d35e981f203b19}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getNextSpaceInOrder@{getNextSpaceInOrder}}
+\index{getNextSpaceInOrder@{getNextSpaceInOrder}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getNextSpaceInOrder()}{getNextSpaceInOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Next\+Space\+In\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption}) const}
+
+
+
+Get the next {\itshape contiguous} address space. 
+
+Get the next space in the absolute order of addresses. This ordering is determined by the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} index. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the pointer to the space being queried \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pointer to the next space in absolute order 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_ad1a9a620e767ffe8bd929913f882e2a4}\label{classAddrSpaceManager_ad1a9a620e767ffe8bd929913f882e2a4}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getSpace@{getSpace}}
+\index{getSpace@{getSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getSpace()}{getSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Space (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an address space via its index. 
+
+This retrieves a specific address space via its formal index. All spaces have an index, and in conjunction with the num\+Spaces method, this method can be used to iterate over all spaces. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the desired space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a24efffb904ebb1a0a541fa74cafd51fc}\label{classAddrSpaceManager_a24efffb904ebb1a0a541fa74cafd51fc}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getSpaceByName@{getSpaceByName}}
+\index{getSpaceByName@{getSpaceByName}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getSpaceByName()}{getSpaceByName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Space\+By\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Get address space by name. 
+
+All address spaces have a unique name associated with them. This routine retrieves the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} object based on the desired name. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_aa69937486b7d2b062011ac39d5513ee3}\label{classAddrSpaceManager_aa69937486b7d2b062011ac39d5513ee3}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getSpaceByShortcut@{getSpaceByShortcut}}
+\index{getSpaceByShortcut@{getSpaceByShortcut}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getSpaceByShortcut()}{getSpaceByShortcut()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Space\+By\+Shortcut (\begin{DoxyParamCaption}\item[{char}]{sc }\end{DoxyParamCaption}) const}
+
+
+
+Get address space from its shortcut. 
+
+All address spaces have a unique shortcut (A\+S\+C\+II) character assigned to them. This routine retrieves an \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} object given a specific shortcut. 
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the shortcut character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to an \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a00f3afd0adb68f208c31a9716abe5a4f}\label{classAddrSpaceManager_a00f3afd0adb68f208c31a9716abe5a4f}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getStackSpace@{getStackSpace}}
+\index{getStackSpace@{getStackSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getStackSpace()}{getStackSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Stack\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the stack space for this processor. 
+
+Most processors have registers and instructions that are reserved for implementing a stack. In the pcode translation, these are translated into locations and operations on a dedicated {\bfseries{stack}} address space. (See \mbox{\hyperlink{classSpacebaseSpace}{Spacebase\+Space}}) \begin{DoxyReturn}{Returns}
+a pointer to the {\bfseries{stack}} space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_ab7428d74e76200ecc3c99a0e1ad7f613}\label{classAddrSpaceManager_ab7428d74e76200ecc3c99a0e1ad7f613}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!getUniqueSpace@{getUniqueSpace}}
+\index{getUniqueSpace@{getUniqueSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{getUniqueSpace()}{getUniqueSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::get\+Unique\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the temporary register space for this processor. 
+
+Both the pcode translation process and the simplification process need access to a pool of temporary registers that can be used for moving data around without affecting the address spaces used to formally model the processor\textquotesingle{}s R\+AM and registers. These temporary locations are all allocated from a dedicated address space, referred to as the {\bfseries{unique}} space. (See \mbox{\hyperlink{classUniqueSpace}{Unique\+Space}}) \begin{DoxyReturn}{Returns}
+a pointer to the {\bfseries{unique}} space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a6330481f1f40a24d860c820a5a2b64f5}\label{classAddrSpaceManager_a6330481f1f40a24d860c820a5a2b64f5}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!insertResolver@{insertResolver}}
+\index{insertResolver@{insertResolver}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{insertResolver()}{insertResolver()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::insert\+Resolver (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{\mbox{\hyperlink{classAddressResolver}{Address\+Resolver}} $\ast$}]{rsolv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classOverride}{Override}} the base resolver for a space. 
+
+Provide a new specialized resolver for a specific \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}. The manager takes ownership of resolver. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the space to which the resolver is associated \\
+\hline
+{\em rsolv} & is the new resolver object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_a89658bd677414a271a918f0f37af0bd6}\label{classAddrSpaceManager_a89658bd677414a271a918f0f37af0bd6}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!insertSpace@{insertSpace}}
+\index{insertSpace@{insertSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{insertSpace()}{insertSpace()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::insert\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add a new address space to the model. 
+
+This adds a previously instantiated address space (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}}) to the model for this processor. It checks a set of indexing and naming conventions for the space and throws an exception if the conventions are violated. Should only be called during initialization. \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]This really shouldn\textquotesingle{}t be public. Need to move the allocation of {\bfseries{iop}}, {\bfseries{fspec}}, and {\bfseries{join}} out of \mbox{\hyperlink{classArchitecture}{Architecture}} \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em spc} & the address space to insert \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_aba1c818ccc3950c188e06df08746725f}\label{classAddrSpaceManager_aba1c818ccc3950c188e06df08746725f}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!markNearPointers@{markNearPointers}}
+\index{markNearPointers@{markNearPointers}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{markNearPointers()}{markNearPointers()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::mark\+Near\+Pointers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{int4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mark that given space can be accessed with near pointers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} to mark \\
+\hline
+{\em size} & is the (minimum) size of a near pointer in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_ae2d22102a7ce6080918e82daafabbdfa}\label{classAddrSpaceManager_ae2d22102a7ce6080918e82daafabbdfa}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!numSpaces@{numSpaces}}
+\index{numSpaces@{numSpaces}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{numSpaces()}{numSpaces()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+Manager\+::num\+Spaces (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of address spaces for this processor. 
+
+This returns the total number of address spaces used by the processor, including all special spaces, like the {\bfseries{constant}} space and the {\bfseries{iop}} space. \begin{DoxyReturn}{Returns}
+the number of spaces 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a68cf42a54806161d8bf3c1fa283036dd}\label{classAddrSpaceManager_a68cf42a54806161d8bf3c1fa283036dd}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!renormalizeJoinAddress@{renormalizeJoinAddress}}
+\index{renormalizeJoinAddress@{renormalizeJoinAddress}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{renormalizeJoinAddress()}{renormalizeJoinAddress()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::renormalize\+Join\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Make sure a possibly offset {\itshape join} address has a proper \mbox{\hyperlink{classJoinRecord}{Join\+Record}}. 
+
+If an \mbox{\hyperlink{classAddress}{Address}} in the {\itshape join} Address\+Space is shifted from its original offset, it may no longer have a valid \mbox{\hyperlink{classJoinRecord}{Join\+Record}}. The shift or size change may even make the address of one of the pieces a more natural representation. Given a new \mbox{\hyperlink{classAddress}{Address}} and size, this method decides if there is a matching \mbox{\hyperlink{classJoinRecord}{Join\+Record}}. If not it either constructs a new \mbox{\hyperlink{classJoinRecord}{Join\+Record}} or computes the address within the containing piece. The given \mbox{\hyperlink{classAddress}{Address}} is changed if necessary either to the offset corresponding to the new \mbox{\hyperlink{classJoinRecord}{Join\+Record}} or to a normal {\itshape non-\/join} \mbox{\hyperlink{classAddress}{Address}}. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given \mbox{\hyperlink{classAddress}{Address}} \\
+\hline
+{\em size} & is the size of the range in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_aefc16df2604d30c067d1b604889891a0}\label{classAddrSpaceManager_aefc16df2604d30c067d1b604889891a0}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!resolveConstant@{resolveConstant}}
+\index{resolveConstant@{resolveConstant}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{resolveConstant()}{resolveConstant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Addr\+Space\+Manager\+::resolve\+Constant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{val,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{point,  }\item[{uintb \&}]{full\+Encoding }\end{DoxyParamCaption}) const}
+
+
+
+Resolve a native constant into an \mbox{\hyperlink{classAddress}{Address}}. 
+
+If there is a special resolver for the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}, this is invoked, otherwise basic wordsize conversion and wrapping is performed. If the address encoding is partial (as in a {\itshape near} pointer) and the full encoding can be recovered, it is passed back. The {\itshape sz} parameter indicates the number of bytes in constant and is used to determine if the constant is a partial or full pointer encoding. A value of -\/1 indicates the value is known to be a full encoding. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the space to generate the address from \\
+\hline
+{\em val} & is the constant encoding of the address \\
+\hline
+{\em sz} & is the size of the constant encoding (or -\/1) \\
+\hline
+{\em point} & is the context address (for recovering full encoding info if necessary) \\
+\hline
+{\em full\+Encoding} & is used to pass back the recovered full encoding of the pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the formal \mbox{\hyperlink{classAddress}{Address}} associated with the encoding 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a107cb2ba1e4c562090ac1ad3b94cd16b}\label{classAddrSpaceManager_a107cb2ba1e4c562090ac1ad3b94cd16b}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!restoreXmlSpace@{restoreXmlSpace}}
+\index{restoreXmlSpace@{restoreXmlSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{restoreXmlSpace()}{restoreXmlSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+Manager\+::restore\+Xml\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{trans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Add a space to the model based an on X\+ML tag. 
+
+The initialization of address spaces is the same across all variants of the \mbox{\hyperlink{classTranslate}{Translate}} object. This routine initializes a single address space from a parsed X\+ML tag. It knows which class derived from \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} to instantiate based on the tag name. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML tag \\
+\hline
+{\em trans} & is the translator object to be associated with the new space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the initialized \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpaceManager_a196d3c70790942337861ae7d571c5e31}\label{classAddrSpaceManager_a196d3c70790942337861ae7d571c5e31}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!restoreXmlSpaces@{restoreXmlSpaces}}
+\index{restoreXmlSpaces@{restoreXmlSpaces}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{restoreXmlSpaces()}{restoreXmlSpaces()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::restore\+Xml\+Spaces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{trans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Restore address spaces in the model from an X\+ML tag. 
+
+This routine initializes (almost) all the address spaces used for a particular processor by using a {\bfseries{$<$spaces$>$}} tag, which contains subtags for the specific address spaces. This also instantiates the builtin {\itshape constant} space. It should probably also instantiate the {\bfseries{iop}}, {\bfseries{fspec}}, and {\bfseries{join}} spaces, but this is currently done by the \mbox{\hyperlink{classArchitecture}{Architecture}} class. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed {\bfseries{$<$spaces$>$}} tag \\
+\hline
+{\em trans} & is the processor translator to be associated with the spaces \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_ae82d08eab20f86a31fe366a9bcd58629}\label{classAddrSpaceManager_ae82d08eab20f86a31fe366a9bcd58629}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!setDeadcodeDelay@{setDeadcodeDelay}}
+\index{setDeadcodeDelay@{setDeadcodeDelay}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{setDeadcodeDelay()}{setDeadcodeDelay()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::set\+Deadcode\+Delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{int4}]{delaydelta }\end{DoxyParamCaption})}
+
+
+
+Set the deadcodedelay for a specific space. 
+
+Set the number of passes for a specific \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} before deadcode removal is allowed for that space. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} to change \\
+\hline
+{\em delaydelta} & is the number of rounds to the delay should be set to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_a9001bbb4f273b895325e1cad6a8930d6}\label{classAddrSpaceManager_a9001bbb4f273b895325e1cad6a8930d6}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!setDefaultCodeSpace@{setDefaultCodeSpace}}
+\index{setDefaultCodeSpace@{setDefaultCodeSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{setDefaultCodeSpace()}{setDefaultCodeSpace()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::set\+Default\+Code\+Space (\begin{DoxyParamCaption}\item[{int4}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set the default address space (for code) 
+
+Once all the address spaces have been initialized, this routine should be called once to establish the official {\itshape default} space for the processor, via its index. Should only be called during initialization. 
+\begin{DoxyParams}{Parameters}
+{\em index} & is the index of the desired default space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_a5889b07364f07bbc30f79cda62a68d23}\label{classAddrSpaceManager_a5889b07364f07bbc30f79cda62a68d23}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!setDefaultDataSpace@{setDefaultDataSpace}}
+\index{setDefaultDataSpace@{setDefaultDataSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{setDefaultDataSpace()}{setDefaultDataSpace()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::set\+Default\+Data\+Space (\begin{DoxyParamCaption}\item[{int4}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set the default address space for data. 
+
+If the architecture has different code and data spaces, this routine can be called to set the {\itshape data} space after the {\itshape code} space has been set. 
+\begin{DoxyParams}{Parameters}
+{\em index} & is the index of the desired default space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_a3271657111f46abc8b10bfdeb56e881d}\label{classAddrSpaceManager_a3271657111f46abc8b10bfdeb56e881d}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!setInferPtrBounds@{setInferPtrBounds}}
+\index{setInferPtrBounds@{setInferPtrBounds}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{setInferPtrBounds()}{setInferPtrBounds()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::set\+Infer\+Ptr\+Bounds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRange}{Range}} \&}]{range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set the range of addresses that can be inferred as pointers. 
+
+This method establishes for a single address space, what range of constants are checked as possible symbol starts, when it is not known apriori that a constant is a pointer. 
+\begin{DoxyParams}{Parameters}
+{\em range} & is the range of values for a single address space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpaceManager_abdab85595c68e18ab86dd42af914f35b}\label{classAddrSpaceManager_abdab85595c68e18ab86dd42af914f35b}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!setReverseJustified@{setReverseJustified}}
+\index{setReverseJustified@{setReverseJustified}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{setReverseJustified()}{setReverseJustified()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::set\+Reverse\+Justified (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set reverse justified property on this space. 
+
+For spaces with alignment restrictions, the address of a small variable must be justified within a larger aligned memory word, usually either to the left boundary for little endian encoding or to the right boundary for big endian encoding. Some compilers justify small variables to the opposite side of the one indicated by the endianness. Setting this property on a space causes the decompiler to use this justification \mbox{\Hypertarget{classAddrSpaceManager_aef7d980ea2fc0c6450e941fd7dbec7e6}\label{classAddrSpaceManager_aef7d980ea2fc0c6450e941fd7dbec7e6}} 
+\index{AddrSpaceManager@{AddrSpaceManager}!truncateSpace@{truncateSpace}}
+\index{truncateSpace@{truncateSpace}!AddrSpaceManager@{AddrSpaceManager}}
+\doxysubsubsection{\texorpdfstring{truncateSpace()}{truncateSpace()}}
+{\footnotesize\ttfamily void Addr\+Space\+Manager\+::truncate\+Space (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTruncationTag}{Truncation\+Tag}} \&}]{tag }\end{DoxyParamCaption})}
+
+
+
+Mark a space as truncated from its original size. 
+
+Mark the named space as truncated from its original size 
+\begin{DoxyParams}{Parameters}
+{\em tag} & is a description of the space and how it should be truncated \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{translate_8hh}{translate.\+hh}}\item 
+translate.\+cc\end{DoxyCompactItemize}

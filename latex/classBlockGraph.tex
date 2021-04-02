@@ -1,0 +1,922 @@
+\hypertarget{classBlockGraph}{}\doxysection{Block\+Graph Class Reference}
+\label{classBlockGraph}\index{BlockGraph@{BlockGraph}}
+
+
+A control-\/flow block built out of sub-\/components.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBlockGraph__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+Graph\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classBlockGraph__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockGraph_a1220886c0c0cad9c8f482afe53dba5d4}\label{classBlockGraph_a1220886c0c0cad9c8f482afe53dba5d4}} 
+void \mbox{\hyperlink{classBlockGraph_a1220886c0c0cad9c8f482afe53dba5d4}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGraph_a8e542e109e0acc977218ceaf3c248153}\label{classBlockGraph_a8e542e109e0acc977218ceaf3c248153}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classBlockGraph_a57ca5980b8c1ba97c468f82888bf0033}\label{classBlockGraph_a57ca5980b8c1ba97c468f82888bf0033}} 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries sub\+Block} (int4 i) const
+\item 
+\mbox{\Hypertarget{classBlockGraph_a6047a66449b05bf62b33a2bef8642033}\label{classBlockGraph_a6047a66449b05bf62b33a2bef8642033}} 
+virtual void {\bfseries mark\+Unstructured} (void)
+\item 
+virtual void \mbox{\hyperlink{classBlockGraph_a67e2a75a80e60655a9936045d40983f6}{mark\+Label\+Bump\+Up}} (bool bump)
+\begin{DoxyCompactList}\small\item\em Let hierarchical blocks steal labels of their (first) components. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGraph_a55618dfd49266bd4185d119f08e8b630}\label{classBlockGraph_a55618dfd49266bd4185d119f08e8b630}} 
+virtual void {\bfseries scope\+Break} (int4 curexit, int4 curloopexit)
+\item 
+virtual void \mbox{\hyperlink{classBlockGraph_add1908219c53b2687c4d1c6c9132c11e}{print\+Tree}} (ostream \&s, int4 level) const
+\begin{DoxyCompactList}\small\item\em Print tree structure of any blocks owned by {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGraph_abcae771fc675bcc52c78b2f1dc0ab98a}\label{classBlockGraph_abcae771fc675bcc52c78b2f1dc0ab98a}} 
+virtual void {\bfseries print\+Raw} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGraph_aa758c6107b22a46ebde4a5c4740cdae9}\label{classBlockGraph_aa758c6107b22a46ebde4a5c4740cdae9}} 
+virtual void {\bfseries final\+Transform} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\item 
+\mbox{\Hypertarget{classBlockGraph_afa6cff5369f4a14a431a7d668d20b927}\label{classBlockGraph_afa6cff5369f4a14a431a7d668d20b927}} 
+virtual void {\bfseries finalize\+Printing} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data) const
+\item 
+\mbox{\Hypertarget{classBlockGraph_a881076195239ce5c2e5c865f22714d03}\label{classBlockGraph_a881076195239ce5c2e5c865f22714d03}} 
+virtual void {\bfseries save\+Xml\+Body} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classBlockGraph_a7a1c54e577b11af83f2635f9c5ad0545}{restore\+Xml\+Body}} (List\+::const\+\_\+iterator \&iter, List\+::const\+\_\+iterator enditer, \mbox{\hyperlink{classBlockMap}{Block\+Map}} \&resolver)
+\begin{DoxyCompactList}\small\item\em Restore details about {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a90d67a53a21174345f5f376c75ca6067}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} from an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a0bd135694f8274979c03d005d796d81f}{add\+Edge}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$begin, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$end)
+\begin{DoxyCompactList}\small\item\em Add a directed edge between component Flow\+Blocks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_af4f0c927ad7c32721de2474b6180cb48}{add\+Loop\+Edge}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$begin, int4 outindex)
+\begin{DoxyCompactList}\small\item\em Mark a given edge as a {\itshape loop} edge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a2fe87e9f6a5a250a09869028bf1bb11d}{remove\+Edge}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$begin, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$end)
+\begin{DoxyCompactList}\small\item\em Remove an edge between component Flow\+Blocks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a238a3ecac594008e2893b2fa1f85d95b}{switch\+Edge}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$in, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$outbefore, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$outafter)
+\begin{DoxyCompactList}\small\item\em Move an edge from one out \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to another. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a4a1dcf88374cbf4b9886d26dced7c533}{move\+Out\+Edge}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$blold, int4 slot, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$blnew)
+\begin{DoxyCompactList}\small\item\em Move indicated {\itshape out} edge to a new \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a566cbe393f781703c640a691e27a4f90}{remove\+Block}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Remove a \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from {\bfseries{this}} \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_ae61430ab00f3437f85016b0c76907e94}{remove\+From\+Flow}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Remove given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} preserving flow in {\bfseries{this}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a8c6e3329fe131f587a472413dfd60fcd}{remove\+From\+Flow\+Split}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl, bool flipflow)
+\begin{DoxyCompactList}\small\item\em Remove \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} splitting flow between input and output edges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a4f6da43f90aeadf0b19ddbcd95544fd3}{splice\+Block}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Splice given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} together with its output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a8bc1763c69f71a1c6a088340ae4a256f}{set\+Start\+Block}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Set the entry point \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} for {\bfseries{this}} graph. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockGraph_ae4f8f8599ed5e3eb803536f1c9595f09}{get\+Start\+Block}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the entry point \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockGraph_aa8afd0ba5e6abe328dee3b21473f0e2c}{new\+Block}} (void)
+\begin{DoxyCompactList}\small\item\em Build a new plain \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$ \mbox{\hyperlink{classBlockGraph_a0d05f223a305365c86c4b6efea82f1c0}{new\+Block\+Basic}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockBasic}{Block\+Basic}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockCopy}{Block\+Copy}} $\ast$ \mbox{\hyperlink{classBlockGraph_a29ab85a9a7a5d1f6785d2e93ce1e502d}{new\+Block\+Copy}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockGoto}{Block\+Goto}} $\ast$ \mbox{\hyperlink{classBlockGraph_a1f0931166f699006e3a6335c60138ee7}{new\+Block\+Goto}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockGoto}{Block\+Goto}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}} $\ast$ \mbox{\hyperlink{classBlockGraph_aea5dbfcf345da8fe5fa335b07613e1af}{new\+Block\+Multi\+Goto}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl, int4 outedge)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockList}{Block\+List}} $\ast$ \mbox{\hyperlink{classBlockGraph_aafe64866a81e07fdb5eb92ab74a171ac}{new\+Block\+List}} (const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&nodes)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockList}{Block\+List}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockCondition}{Block\+Condition}} $\ast$ \mbox{\hyperlink{classBlockGraph_a9b468774a4463d9abc43c21d032a850b}{new\+Block\+Condition}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$b1, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockCondition}{Block\+Condition}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$ \mbox{\hyperlink{classBlockGraph_ad25eb345760dc1732c0117f7bb0a72ce}{new\+Block\+If\+Goto}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$cond)
+\begin{DoxyCompactList}\small\item\em Build a new Block\+If\+Goto. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$ \mbox{\hyperlink{classBlockGraph_a76871ba6558fd5899d92cb5bfb6d9b60}{new\+Block\+If}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$cond, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$tc)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockIf}{Block\+If}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$ \mbox{\hyperlink{classBlockGraph_acea0ea1a425020062f5d6e3b87a69fe0}{new\+Block\+If\+Else}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$cond, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$tc, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$fc)
+\begin{DoxyCompactList}\small\item\em Build a new Block\+If\+Else. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} $\ast$ \mbox{\hyperlink{classBlockGraph_af1dfcc22ff51892b053cfe62cc7bf124}{new\+Block\+While\+Do}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$cond, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$cl)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}} $\ast$ \mbox{\hyperlink{classBlockGraph_ae61c4c6c6ab865760a6855ced92ae809}{new\+Block\+Do\+While}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$condcl)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}} $\ast$ \mbox{\hyperlink{classBlockGraph_a4729c7a662b511b4112361e063336c36}{new\+Block\+Inf\+Loop}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$body)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} $\ast$ \mbox{\hyperlink{classBlockGraph_aef156aa1430bff4933651426eb944b1f}{new\+Block\+Switch}} (const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&cs, bool has\+Exit)
+\begin{DoxyCompactList}\small\item\em Build a new \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a1da91d469ca3583ac7408e90443f0e09}{order\+Blocks}} (void)
+\item 
+void \mbox{\hyperlink{classBlockGraph_a85422522e8c61496c5253f410f140fcc}{build\+Copy}} (const \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&graph)
+\begin{DoxyCompactList}\small\item\em Build a copy of a \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGraph_ad5a3ac8db8d8d2e4fc0ddc1c6b1dab0d}\label{classBlockGraph_ad5a3ac8db8d8d2e4fc0ddc1c6b1dab0d}} 
+void \mbox{\hyperlink{classBlockGraph_ad5a3ac8db8d8d2e4fc0ddc1c6b1dab0d}{clear\+Visit\+Count}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the visit count in all node Flow\+Blocks. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a9026a993cc70a3e67c5eeb19d33a9d98}{calc\+Forward\+Dominator}} (const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&rootlist)
+\begin{DoxyCompactList}\small\item\em Calculate forward dominators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_ab762df4b2281775e41b38a38d9f5509f}{build\+Dom\+Tree}} (vector$<$ vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ $>$ \&child) const
+\begin{DoxyCompactList}\small\item\em Build the dominator tree. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classBlockGraph_afc33c821dd221280e2d73d24011a5aa7}{build\+Dom\+Depth}} (vector$<$ int4 $>$ \&depth) const
+\begin{DoxyCompactList}\small\item\em Calculate dominator depths. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a044fa551f0aae9c919884772774e11ee}{build\+Dom\+Sub\+Tree}} (vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&res, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$root) const
+\begin{DoxyCompactList}\small\item\em Collect nodes from a dominator sub-\/tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_aa65051f403ce79d384a76c4399cdad80}{calc\+Loop}} (void)
+\begin{DoxyCompactList}\small\item\em Calculate loop edges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a48b70c7238548053a1cc3629b8df081b}{collect\+Reachable}} (vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&res, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl, bool un) const
+\begin{DoxyCompactList}\small\item\em Collect reachable/unreachable Flow\+Blocks from a given start \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockGraph_a468717bd5cf1e3bd34e5221a5d425bd9}{structure\+Loops}} (vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&rootlist)
+\begin{DoxyCompactList}\small\item\em Label loop edges. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBlockGraph_ab7f8b2b90699d158b7b617012598f61c}{swap\+Blocks}} (int4 i, int4 j)
+\begin{DoxyCompactList}\small\item\em Swap the positions two component Flow\+Blocks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classBlockGraph_ad522a7201e4327411cd161b04d57f1da}{mark\+Copy\+Block}} (\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl, uint4 fl)
+\begin{DoxyCompactList}\small\item\em Set properties on the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A control-\/flow block built out of sub-\/components. 
+
+This is the core class for building a hierarchy of control-\/flow blocks. A set of control-\/flow blocks can be grouped together and viewed as a single block, with its own input and output blocks. All the code structuring elements (\mbox{\hyperlink{classBlockList}{Block\+List}}, \mbox{\hyperlink{classBlockIf}{Block\+If}}, \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}}, etc.) derive from this. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockGraph_a0bd135694f8274979c03d005d796d81f}\label{classBlockGraph_a0bd135694f8274979c03d005d796d81f}} 
+\index{BlockGraph@{BlockGraph}!addEdge@{addEdge}}
+\index{addEdge@{addEdge}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{addEdge()}{addEdge()}}
+{\footnotesize\ttfamily void Block\+Graph\+::add\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{begin,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{end }\end{DoxyParamCaption})}
+
+
+
+Add a directed edge between component Flow\+Blocks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & is the start \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em end} & is the stop \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_af4f0c927ad7c32721de2474b6180cb48}\label{classBlockGraph_af4f0c927ad7c32721de2474b6180cb48}} 
+\index{BlockGraph@{BlockGraph}!addLoopEdge@{addLoopEdge}}
+\index{addLoopEdge@{addLoopEdge}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{addLoopEdge()}{addLoopEdge()}}
+{\footnotesize\ttfamily void Block\+Graph\+::add\+Loop\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{begin,  }\item[{int4}]{outindex }\end{DoxyParamCaption})}
+
+
+
+Mark a given edge as a {\itshape loop} edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin} & is a given component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em outindex} & is the index of the {\itshape out} edge to mark as a loop \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a85422522e8c61496c5253f410f140fcc}\label{classBlockGraph_a85422522e8c61496c5253f410f140fcc}} 
+\index{BlockGraph@{BlockGraph}!buildCopy@{buildCopy}}
+\index{buildCopy@{buildCopy}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{buildCopy()}{buildCopy()}}
+{\footnotesize\ttfamily void Block\+Graph\+::build\+Copy (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&}]{graph }\end{DoxyParamCaption})}
+
+
+
+Build a copy of a \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}. 
+
+Construct a copy of the given \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} in {\bfseries{this}}. The nodes of the copy will be official \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} objects which will contain a reference to their corresponding \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} in the given graph. All edges will be duplicated. 
+\begin{DoxyParams}{Parameters}
+{\em graph} & is the given \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} to copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_afc33c821dd221280e2d73d24011a5aa7}\label{classBlockGraph_afc33c821dd221280e2d73d24011a5aa7}} 
+\index{BlockGraph@{BlockGraph}!buildDomDepth@{buildDomDepth}}
+\index{buildDomDepth@{buildDomDepth}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{buildDomDepth()}{buildDomDepth()}}
+{\footnotesize\ttfamily int4 Block\+Graph\+::build\+Dom\+Depth (\begin{DoxyParamCaption}\item[{vector$<$ int4 $>$ \&}]{depth }\end{DoxyParamCaption}) const}
+
+
+
+Calculate dominator depths. 
+
+Associate every \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} node in {\bfseries{this}} graph with its depth in the dominator tree. The dominator root has depth 1, the nodes it immediately dominates have depth 2, etc. 
+\begin{DoxyParams}{Parameters}
+{\em depth} & is array that will be populated with depths \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the maximum depth across all nodes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_a044fa551f0aae9c919884772774e11ee}\label{classBlockGraph_a044fa551f0aae9c919884772774e11ee}} 
+\index{BlockGraph@{BlockGraph}!buildDomSubTree@{buildDomSubTree}}
+\index{buildDomSubTree@{buildDomSubTree}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{buildDomSubTree()}{buildDomSubTree()}}
+{\footnotesize\ttfamily void Block\+Graph\+::build\+Dom\+Sub\+Tree (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{res,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{root }\end{DoxyParamCaption}) const}
+
+
+
+Collect nodes from a dominator sub-\/tree. 
+
+Collect all nodes in the dominator sub-\/tree starting at a given root \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. We assume blocks in are reverse post order. 
+\begin{DoxyParams}{Parameters}
+{\em res} & will hold the list of nodes in the sub-\/tree \\
+\hline
+{\em root} & is the given root \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_ab762df4b2281775e41b38a38d9f5509f}\label{classBlockGraph_ab762df4b2281775e41b38a38d9f5509f}} 
+\index{BlockGraph@{BlockGraph}!buildDomTree@{buildDomTree}}
+\index{buildDomTree@{buildDomTree}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{buildDomTree()}{buildDomTree()}}
+{\footnotesize\ttfamily void Block\+Graph\+::build\+Dom\+Tree (\begin{DoxyParamCaption}\item[{vector$<$ vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ $>$ \&}]{child }\end{DoxyParamCaption}) const}
+
+
+
+Build the dominator tree. 
+
+Associate dominator children with each node via a list (of lists) indexed by the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} index. 
+\begin{DoxyParams}{Parameters}
+{\em child} & is the initially empty list of lists \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a9026a993cc70a3e67c5eeb19d33a9d98}\label{classBlockGraph_a9026a993cc70a3e67c5eeb19d33a9d98}} 
+\index{BlockGraph@{BlockGraph}!calcForwardDominator@{calcForwardDominator}}
+\index{calcForwardDominator@{calcForwardDominator}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{calcForwardDominator()}{calcForwardDominator()}}
+{\footnotesize\ttfamily void Block\+Graph\+::calc\+Forward\+Dominator (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{rootlist }\end{DoxyParamCaption})}
+
+
+
+Calculate forward dominators. 
+
+Calculate the immediate dominator for each \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} node in {\bfseries{this}} \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}, for forward control-\/flow. The algorithm must be provided a list of entry points for the graph. We assume the blocks are in reverse post-\/order and this is reflected in the index field. Using an algorithm by Cooper, Harvey, and Kennedy. Softw. Pract. Exper. 2001; 4\+: 1-\/10 
+\begin{DoxyParams}{Parameters}
+{\em rootlist} & is the list of entry point Flow\+Blocks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_aa65051f403ce79d384a76c4399cdad80}\label{classBlockGraph_aa65051f403ce79d384a76c4399cdad80}} 
+\index{BlockGraph@{BlockGraph}!calcLoop@{calcLoop}}
+\index{calcLoop@{calcLoop}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{calcLoop()}{calcLoop()}}
+{\footnotesize\ttfamily void Block\+Graph\+::calc\+Loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Calculate loop edges. 
+
+This algorithm identifies a set of edges such that, if the edges are removed, the remaining graph has NO directed cycles The algorithm works as follows\+: Starting from the start block, do a depth first search through the \char`\"{}out\char`\"{} edges of the block. If the outblock is already on the current path from root to node, we have found a cycle, we add the last edge to the list and continue pretending that edge didn\textquotesingle{}t exist. If the outblock is not on the current path but has been visited before, we can truncate the search. This is now only applied as a failsafe if the graph has irreducible edges. \mbox{\Hypertarget{classBlockGraph_a48b70c7238548053a1cc3629b8df081b}\label{classBlockGraph_a48b70c7238548053a1cc3629b8df081b}} 
+\index{BlockGraph@{BlockGraph}!collectReachable@{collectReachable}}
+\index{collectReachable@{collectReachable}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{collectReachable()}{collectReachable()}}
+{\footnotesize\ttfamily void Block\+Graph\+::collect\+Reachable (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{res,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl,  }\item[{bool}]{un }\end{DoxyParamCaption}) const}
+
+
+
+Collect reachable/unreachable Flow\+Blocks from a given start \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+If the boolean {\bfseries{un}} is {\bfseries{true}}, collect unreachable blocks. Otherwise collect reachable blocks. 
+\begin{DoxyParams}{Parameters}
+{\em res} & will hold the reachable or unreachable Flow\+Blocks \\
+\hline
+{\em bl} & is the starting \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em un} & toggles reachable,unreachable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}\label{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}} 
+\index{BlockGraph@{BlockGraph}!emit@{emit}}
+\index{emit@{emit}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+Graph\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a9baddec2635c95a5ac9019d6b21d3eab}{Flow\+Block}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classBlockSwitch_ad1102b97e80c4dd7afa66891eb67a0d6}{Block\+Switch}}, \mbox{\hyperlink{classBlockInfLoop_aa86634144acbb9f7b6b580b9f4566bfe}{Block\+Inf\+Loop}}, \mbox{\hyperlink{classBlockDoWhile_aa3ab4da82b72f8de35ad9de5f5dff9a2}{Block\+Do\+While}}, \mbox{\hyperlink{classBlockWhileDo_a8596786848701d23bc4e4a7fc3730889}{Block\+While\+Do}}, \mbox{\hyperlink{classBlockIf_a81d526be9d8cca137f9008ac7a12d410}{Block\+If}}, \mbox{\hyperlink{classBlockCondition_a952361756ea8b84dc0234d00d628c164}{Block\+Condition}}, \mbox{\hyperlink{classBlockList_a391529d850ca5f97c74acee00c080c43}{Block\+List}}, \mbox{\hyperlink{classBlockMultiGoto_a8eee38e26a13873ceaff6d37b46eaafd}{Block\+Multi\+Goto}}, and \mbox{\hyperlink{classBlockGoto_a0efc3af4b5fda8bf5f04b0fbca784935}{Block\+Goto}}.
+
+\mbox{\Hypertarget{classBlockGraph_ae4f8f8599ed5e3eb803536f1c9595f09}\label{classBlockGraph_ae4f8f8599ed5e3eb803536f1c9595f09}} 
+\index{BlockGraph@{BlockGraph}!getStartBlock@{getStartBlock}}
+\index{getStartBlock@{getStartBlock}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{getStartBlock()}{getStartBlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Graph\+::get\+Start\+Block (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the entry point \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Throw an exception if no entry point is registered \begin{DoxyReturn}{Returns}
+the entry point \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_ad522a7201e4327411cd161b04d57f1da}\label{classBlockGraph_ad522a7201e4327411cd161b04d57f1da}} 
+\index{BlockGraph@{BlockGraph}!markCopyBlock@{markCopyBlock}}
+\index{markCopyBlock@{markCopyBlock}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{markCopyBlock()}{markCopyBlock()}}
+{\footnotesize\ttfamily void Block\+Graph\+::mark\+Copy\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl,  }\item[{uint4}]{fl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Set properties on the first leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+For the given \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} find the first component leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} and set its properties 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \\
+\hline
+{\em fl} & is the property to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a67e2a75a80e60655a9936045d40983f6}\label{classBlockGraph_a67e2a75a80e60655a9936045d40983f6}} 
+\index{BlockGraph@{BlockGraph}!markLabelBumpUp@{markLabelBumpUp}}
+\index{markLabelBumpUp@{markLabelBumpUp}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{markLabelBumpUp()}{markLabelBumpUp()}}
+{\footnotesize\ttfamily void Block\+Graph\+::mark\+Label\+Bump\+Up (\begin{DoxyParamCaption}\item[{bool}]{bump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Let hierarchical blocks steal labels of their (first) components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bump} & if {\bfseries{true}}, mark that labels for this block are printed by somebody higher in hierarchy \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0882ce85a017e4988eda779de6a86089}{Flow\+Block}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classBlockInfLoop_a4b07279f936c69240ceacf4d5e8dfebc}{Block\+Inf\+Loop}}, \mbox{\hyperlink{classBlockDoWhile_ab391ccd9276eec9200396ea6e8db7a96}{Block\+Do\+While}}, and \mbox{\hyperlink{classBlockWhileDo_ac850d56fa3365a195b91373ef00d7bd3}{Block\+While\+Do}}.
+
+\mbox{\Hypertarget{classBlockGraph_a4a1dcf88374cbf4b9886d26dced7c533}\label{classBlockGraph_a4a1dcf88374cbf4b9886d26dced7c533}} 
+\index{BlockGraph@{BlockGraph}!moveOutEdge@{moveOutEdge}}
+\index{moveOutEdge@{moveOutEdge}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{moveOutEdge()}{moveOutEdge()}}
+{\footnotesize\ttfamily void Block\+Graph\+::move\+Out\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{blold,  }\item[{int4}]{slot,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{blnew }\end{DoxyParamCaption})}
+
+
+
+Move indicated {\itshape out} edge to a new \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Given an edge specified by its input \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, replace that input with new \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+\begin{DoxyParams}{Parameters}
+{\em blold} & is the original input \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em slot} & is the index of the {\itshape out} edge of {\bfseries{blold}} \\
+\hline
+{\em blnew} & is the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will become the input to the edge \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_aa8afd0ba5e6abe328dee3b21473f0e2c}\label{classBlockGraph_aa8afd0ba5e6abe328dee3b21473f0e2c}} 
+\index{BlockGraph@{BlockGraph}!newBlock@{newBlock}}
+\index{newBlock@{newBlock}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlock()}{newBlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Graph\+::new\+Block (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Build a new plain \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Add the new \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to {\bfseries{this}} \begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_a0d05f223a305365c86c4b6efea82f1c0}\label{classBlockGraph_a0d05f223a305365c86c4b6efea82f1c0}} 
+\index{BlockGraph@{BlockGraph}!newBlockBasic@{newBlockBasic}}
+\index{newBlockBasic@{newBlockBasic}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockBasic()}{newBlockBasic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$ Block\+Graph\+::new\+Block\+Basic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockBasic}{Block\+Basic}}. 
+
+Add the new \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} to {\bfseries{this}} 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function underlying the basic block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_a9b468774a4463d9abc43c21d032a850b}\label{classBlockGraph_a9b468774a4463d9abc43c21d032a850b}} 
+\index{BlockGraph@{BlockGraph}!newBlockCondition@{newBlockCondition}}
+\index{newBlockCondition@{newBlockCondition}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockCondition()}{newBlockCondition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockCondition}{Block\+Condition}} $\ast$ Block\+Graph\+::new\+Block\+Condition (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{b1,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{b2 }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockCondition}{Block\+Condition}}. 
+
+Add the new \mbox{\hyperlink{classBlockCondition}{Block\+Condition}} to {\bfseries{this}}, collapsing its pieces into it. 
+\begin{DoxyParams}{Parameters}
+{\em b1} & is the first \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} piece \\
+\hline
+{\em b2} & is the second \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} piece \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockCondition}{Block\+Condition}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_a29ab85a9a7a5d1f6785d2e93ce1e502d}\label{classBlockGraph_a29ab85a9a7a5d1f6785d2e93ce1e502d}} 
+\index{BlockGraph@{BlockGraph}!newBlockCopy@{newBlockCopy}}
+\index{newBlockCopy@{newBlockCopy}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockCopy()}{newBlockCopy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} $\ast$ Block\+Graph\+::new\+Block\+Copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}. 
+
+Add the new \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} to {\bfseries{this}} 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} underlying the copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_ae61c4c6c6ab865760a6855ced92ae809}\label{classBlockGraph_ae61c4c6c6ab865760a6855ced92ae809}} 
+\index{BlockGraph@{BlockGraph}!newBlockDoWhile@{newBlockDoWhile}}
+\index{newBlockDoWhile@{newBlockDoWhile}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockDoWhile()}{newBlockDoWhile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}} $\ast$ Block\+Graph\+::new\+Block\+Do\+While (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{condcl }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}}. 
+
+Add the new \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}} to {\bfseries{this}}, collapsing the condition clause \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} into it. 
+\begin{DoxyParams}{Parameters}
+{\em condcl} & is the condition clause \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_a1f0931166f699006e3a6335c60138ee7}\label{classBlockGraph_a1f0931166f699006e3a6335c60138ee7}} 
+\index{BlockGraph@{BlockGraph}!newBlockGoto@{newBlockGoto}}
+\index{newBlockGoto@{newBlockGoto}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockGoto()}{newBlockGoto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockGoto}{Block\+Goto}} $\ast$ Block\+Graph\+::new\+Block\+Goto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockGoto}{Block\+Goto}}. 
+
+Add the new \mbox{\hyperlink{classBlockGoto}{Block\+Goto}} to {\bfseries{this}}, incorporating the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} whose outgoing edge is to be marked as a {\itshape goto} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockGoto}{Block\+Goto}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_a76871ba6558fd5899d92cb5bfb6d9b60}\label{classBlockGraph_a76871ba6558fd5899d92cb5bfb6d9b60}} 
+\index{BlockGraph@{BlockGraph}!newBlockIf@{newBlockIf}}
+\index{newBlockIf@{newBlockIf}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockIf()}{newBlockIf()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$ Block\+Graph\+::new\+Block\+If (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{cond,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{tc }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockIf}{Block\+If}}. 
+
+Add the new \mbox{\hyperlink{classBlockIf}{Block\+If}} to {\bfseries{this}}, collapsing the condition and body Flow\+Blocks into it. 
+\begin{DoxyParams}{Parameters}
+{\em cond} & is the condition \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em tc} & is the body \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockIf}{Block\+If}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_acea0ea1a425020062f5d6e3b87a69fe0}\label{classBlockGraph_acea0ea1a425020062f5d6e3b87a69fe0}} 
+\index{BlockGraph@{BlockGraph}!newBlockIfElse@{newBlockIfElse}}
+\index{newBlockIfElse@{newBlockIfElse}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockIfElse()}{newBlockIfElse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$ Block\+Graph\+::new\+Block\+If\+Else (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{cond,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{tc,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{fc }\end{DoxyParamCaption})}
+
+
+
+Build a new Block\+If\+Else. 
+
+Add the new Block\+If\+Else to {\bfseries{this}}, collapsing the condition, true clause, and false clause into it. 
+\begin{DoxyParams}{Parameters}
+{\em cond} & is the condition \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em tc} & is the true clause \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em fc} & is the false clause \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockIf}{Block\+If}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_ad25eb345760dc1732c0117f7bb0a72ce}\label{classBlockGraph_ad25eb345760dc1732c0117f7bb0a72ce}} 
+\index{BlockGraph@{BlockGraph}!newBlockIfGoto@{newBlockIfGoto}}
+\index{newBlockIfGoto@{newBlockIfGoto}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockIfGoto()}{newBlockIfGoto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockIf}{Block\+If}} $\ast$ Block\+Graph\+::new\+Block\+If\+Goto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{cond }\end{DoxyParamCaption})}
+
+
+
+Build a new Block\+If\+Goto. 
+
+Add the new Block\+If\+Goto to {\bfseries{this}}, collapsing the given condition \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} into it. 
+\begin{DoxyParams}{Parameters}
+{\em cond} & is the given condition \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new Block\+If\+Goto 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_a4729c7a662b511b4112361e063336c36}\label{classBlockGraph_a4729c7a662b511b4112361e063336c36}} 
+\index{BlockGraph@{BlockGraph}!newBlockInfLoop@{newBlockInfLoop}}
+\index{newBlockInfLoop@{newBlockInfLoop}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockInfLoop()}{newBlockInfLoop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}} $\ast$ Block\+Graph\+::new\+Block\+Inf\+Loop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{body }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}}. 
+
+Add the new \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}} to {\bfseries{this}}, collapsing the body \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} into it. 
+\begin{DoxyParams}{Parameters}
+{\em body} & is the body \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockInfLoop}{Block\+Inf\+Loop}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_aafe64866a81e07fdb5eb92ab74a171ac}\label{classBlockGraph_aafe64866a81e07fdb5eb92ab74a171ac}} 
+\index{BlockGraph@{BlockGraph}!newBlockList@{newBlockList}}
+\index{newBlockList@{newBlockList}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockList()}{newBlockList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockList}{Block\+List}} $\ast$ Block\+Graph\+::new\+Block\+List (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{nodes }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockList}{Block\+List}}. 
+
+Add the new \mbox{\hyperlink{classBlockList}{Block\+List}} to {\bfseries{this}}, collapsing the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} components into it. 
+\begin{DoxyParams}{Parameters}
+{\em nodes} & is the given set of Flow\+Blocks components \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockList}{Block\+List}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_aea5dbfcf345da8fe5fa335b07613e1af}\label{classBlockGraph_aea5dbfcf345da8fe5fa335b07613e1af}} 
+\index{BlockGraph@{BlockGraph}!newBlockMultiGoto@{newBlockMultiGoto}}
+\index{newBlockMultiGoto@{newBlockMultiGoto}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockMultiGoto()}{newBlockMultiGoto()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}} $\ast$ Block\+Graph\+::new\+Block\+Multi\+Goto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl,  }\item[{int4}]{outedge }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}}. 
+
+The given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} may already be a \mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}}, otherwise we add the new \mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}} to {\bfseries{this}}. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} with the new {\itshape goto} edge \\
+\hline
+{\em outedge} & is the index of the outgoing edge to make into a {\itshape goto} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (possibly new) \mbox{\hyperlink{classBlockMultiGoto}{Block\+Multi\+Goto}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_aef156aa1430bff4933651426eb944b1f}\label{classBlockGraph_aef156aa1430bff4933651426eb944b1f}} 
+\index{BlockGraph@{BlockGraph}!newBlockSwitch@{newBlockSwitch}}
+\index{newBlockSwitch@{newBlockSwitch}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockSwitch()}{newBlockSwitch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} $\ast$ Block\+Graph\+::new\+Block\+Switch (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{cs,  }\item[{bool}]{has\+Exit }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}}. 
+
+Add the new \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} to {\bfseries{this}}, collapsing all the case Flow\+Blocks into it. 
+\begin{DoxyParams}{Parameters}
+{\em cs} & is the list of case Flow\+Blocks \\
+\hline
+{\em has\+Exit} & is {\bfseries{true}} if the switch has a formal exit \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockSwitch}{Block\+Switch}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_af1dfcc22ff51892b053cfe62cc7bf124}\label{classBlockGraph_af1dfcc22ff51892b053cfe62cc7bf124}} 
+\index{BlockGraph@{BlockGraph}!newBlockWhileDo@{newBlockWhileDo}}
+\index{newBlockWhileDo@{newBlockWhileDo}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{newBlockWhileDo()}{newBlockWhileDo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} $\ast$ Block\+Graph\+::new\+Block\+While\+Do (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{cond,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{cl }\end{DoxyParamCaption})}
+
+
+
+Build a new \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}}. 
+
+Add the new \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} to {\bfseries{this}}, collapsing the condition and clause into it. 
+\begin{DoxyParams}{Parameters}
+{\em cond} & is the condition \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em cl} & is the clause \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{classBlockWhileDo}{Block\+While\+Do}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}\label{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}} 
+\index{BlockGraph@{BlockGraph}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Graph\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a400c220d6c728958396286f54de6dd9e}{Flow\+Block}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classBlockSwitch_ae13e717fc62265c1f9b5024cb0e9cd1a}{Block\+Switch}}, \mbox{\hyperlink{classBlockInfLoop_a10ef0de99961f931b7432b2662ac2677}{Block\+Inf\+Loop}}, \mbox{\hyperlink{classBlockDoWhile_a996ef387d4f6d645c38544d2aa4ba438}{Block\+Do\+While}}, \mbox{\hyperlink{classBlockWhileDo_a28f4f91e7ec3b4cc2bde0a0d432e0fe8}{Block\+While\+Do}}, \mbox{\hyperlink{classBlockIf_adbc4cd5fb6cad60aa333c12532b55e1f}{Block\+If}}, \mbox{\hyperlink{classBlockCondition_aefdc0e19b1623ebefa07b05b5bd85408}{Block\+Condition}}, \mbox{\hyperlink{classBlockMultiGoto_a44d0021262e569ac4ecf6ecddbdf1d41}{Block\+Multi\+Goto}}, and \mbox{\hyperlink{classBlockGoto_acc1628a26572e23d61f4b4dad717816e}{Block\+Goto}}.
+
+\mbox{\Hypertarget{classBlockGraph_a1da91d469ca3583ac7408e90443f0e09}\label{classBlockGraph_a1da91d469ca3583ac7408e90443f0e09}} 
+\index{BlockGraph@{BlockGraph}!orderBlocks@{orderBlocks}}
+\index{orderBlocks@{orderBlocks}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{orderBlocks()}{orderBlocks()}}
+{\footnotesize\ttfamily void Block\+Graph\+::order\+Blocks (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+$<$ Sort blocks using the final ordering\mbox{\Hypertarget{classBlockGraph_add1908219c53b2687c4d1c6c9132c11e}\label{classBlockGraph_add1908219c53b2687c4d1c6c9132c11e}} 
+\index{BlockGraph@{BlockGraph}!printTree@{printTree}}
+\index{printTree@{printTree}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{printTree()}{printTree()}}
+{\footnotesize\ttfamily void Block\+Graph\+::print\+Tree (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print tree structure of any blocks owned by {\bfseries{this}}. 
+
+Recursively print out the hierarchical structure of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em level} & is the current level of indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_ae00f14fc1916599ec34074fbb010c74b}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockGraph_a566cbe393f781703c640a691e27a4f90}\label{classBlockGraph_a566cbe393f781703c640a691e27a4f90}} 
+\index{BlockGraph@{BlockGraph}!removeBlock@{removeBlock}}
+\index{removeBlock@{removeBlock}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{removeBlock()}{removeBlock()}}
+{\footnotesize\ttfamily void Block\+Graph\+::remove\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})}
+
+
+
+Remove a \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from {\bfseries{this}} \mbox{\hyperlink{classBlockGraph}{Block\+Graph}}. 
+
+The indicated block is pulled out of the component list and deleted. Any edges between it and the rest of the \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} are simply removed. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the indicated block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a2fe87e9f6a5a250a09869028bf1bb11d}\label{classBlockGraph_a2fe87e9f6a5a250a09869028bf1bb11d}} 
+\index{BlockGraph@{BlockGraph}!removeEdge@{removeEdge}}
+\index{removeEdge@{removeEdge}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{removeEdge()}{removeEdge()}}
+{\footnotesize\ttfamily void Block\+Graph\+::remove\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{begin,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{end }\end{DoxyParamCaption})}
+
+
+
+Remove an edge between component Flow\+Blocks. 
+
+The edge must already exist 
+\begin{DoxyParams}{Parameters}
+{\em begin} & is the incoming \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} of the edge \\
+\hline
+{\em end} & is the outgoing \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_ae61430ab00f3437f85016b0c76907e94}\label{classBlockGraph_ae61430ab00f3437f85016b0c76907e94}} 
+\index{BlockGraph@{BlockGraph}!removeFromFlow@{removeFromFlow}}
+\index{removeFromFlow@{removeFromFlow}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{removeFromFlow()}{removeFromFlow()}}
+{\footnotesize\ttfamily void Block\+Graph\+::remove\+From\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})}
+
+
+
+Remove given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} preserving flow in {\bfseries{this}}. 
+
+This should be applied only if the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} has 0 or 1 outputs. If there is an output \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, all incoming edges to the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} are moved so they flow into the output \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, then all remaining edges into or out of the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} are removed. The given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} is {\bfseries{not}} removed from {\bfseries{this}}. This routine doesn\textquotesingle{}t preserve loopedge information 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} component \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a8c6e3329fe131f587a472413dfd60fcd}\label{classBlockGraph_a8c6e3329fe131f587a472413dfd60fcd}} 
+\index{BlockGraph@{BlockGraph}!removeFromFlowSplit@{removeFromFlowSplit}}
+\index{removeFromFlowSplit@{removeFromFlowSplit}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{removeFromFlowSplit()}{removeFromFlowSplit()}}
+{\footnotesize\ttfamily void Block\+Graph\+::remove\+From\+Flow\+Split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl,  }\item[{bool}]{flipflow }\end{DoxyParamCaption})}
+
+
+
+Remove \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} splitting flow between input and output edges. 
+
+Remove the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from the flow of the graph. It must have 2 inputs, and 2 outputs. The edges will be remapped so that
+\begin{DoxyItemize}
+\item In(0) -\/$>$ Out(0) and
+\item In(1) -\/$>$ Out(1)
+\end{DoxyItemize}
+
+Or if {\bfseries{flipflow}} is true\+:
+\begin{DoxyItemize}
+\item In(0) -\/$>$ Out(1)
+\item In(1) -\/$>$ Out(0) 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em flipflow} & indicates how the edges are remapped \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classBlockGraph_a90d67a53a21174345f5f376c75ca6067}\label{classBlockGraph_a90d67a53a21174345f5f376c75ca6067}} 
+\index{BlockGraph@{BlockGraph}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Block\+Graph\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} from an X\+ML stream. 
+
+This is currently just a wrapper around the \mbox{\hyperlink{classFlowBlock_a002ddc14dc84098dcb14b513f8b973c1}{Flow\+Block\+::restore\+Xml()}} that sets of the \mbox{\hyperlink{classBlockMap}{Block\+Map}} resolver 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$block$>$ tag \\
+\hline
+{\em m} & is the address space manager \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a7a1c54e577b11af83f2635f9c5ad0545}\label{classBlockGraph_a7a1c54e577b11af83f2635f9c5ad0545}} 
+\index{BlockGraph@{BlockGraph}!restoreXmlBody@{restoreXmlBody}}
+\index{restoreXmlBody@{restoreXmlBody}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{restoreXmlBody()}{restoreXmlBody()}}
+{\footnotesize\ttfamily void Block\+Graph\+::restore\+Xml\+Body (\begin{DoxyParamCaption}\item[{List\+::const\+\_\+iterator \&}]{iter,  }\item[{List\+::const\+\_\+iterator}]{enditer,  }\item[{\mbox{\hyperlink{classBlockMap}{Block\+Map}} \&}]{resolver }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore details about {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em iter} & is an iterator to X\+ML elements containing component tags etc. \\
+\hline
+{\em enditer} & marks the end of the X\+ML tags \\
+\hline
+{\em resolver} & is used to recover \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} objects based on X\+ML references \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_aea33ed5d172e8486557198c2e18c88ae}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockGraph_a8bc1763c69f71a1c6a088340ae4a256f}\label{classBlockGraph_a8bc1763c69f71a1c6a088340ae4a256f}} 
+\index{BlockGraph@{BlockGraph}!setStartBlock@{setStartBlock}}
+\index{setStartBlock@{setStartBlock}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{setStartBlock()}{setStartBlock()}}
+{\footnotesize\ttfamily void Block\+Graph\+::set\+Start\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})}
+
+
+
+Set the entry point \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} for {\bfseries{this}} graph. 
+
+The component list is reordered to make the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} first. The {\itshape f\+\_\+entry\+\_\+point} property is updated. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to make the entry point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a4f6da43f90aeadf0b19ddbcd95544fd3}\label{classBlockGraph_a4f6da43f90aeadf0b19ddbcd95544fd3}} 
+\index{BlockGraph@{BlockGraph}!spliceBlock@{spliceBlock}}
+\index{spliceBlock@{spliceBlock}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{spliceBlock()}{spliceBlock()}}
+{\footnotesize\ttfamily void Block\+Graph\+::splice\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption})}
+
+
+
+Splice given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} together with its output. 
+
+The given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} must have exactly one output. That output must have exactly one input. The output \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} is removed and any outgoing edges it has become outgoing edge of the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. The output \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} is permanently removed. It is viewed as being {\itshape spliced} together with the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a468717bd5cf1e3bd34e5221a5d425bd9}\label{classBlockGraph_a468717bd5cf1e3bd34e5221a5d425bd9}} 
+\index{BlockGraph@{BlockGraph}!structureLoops@{structureLoops}}
+\index{structureLoops@{structureLoops}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{structureLoops()}{structureLoops()}}
+{\footnotesize\ttfamily void Block\+Graph\+::structure\+Loops (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ $>$ \&}]{rootlist }\end{DoxyParamCaption})}
+
+
+
+Label loop edges. 
+
+
+\begin{DoxyItemize}
+\item Find irreducible edges
+\item Find a spanning tree
+\item Set \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} indices in reverse-\/post order
+\item Label tree-\/edges, forward-\/edges, cross-\/edges, and back-\/edges 
+\begin{DoxyParams}{Parameters}
+{\em rootlist} & will contain the entry points for the graph \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classBlockGraph_ab7f8b2b90699d158b7b617012598f61c}\label{classBlockGraph_ab7f8b2b90699d158b7b617012598f61c}} 
+\index{BlockGraph@{BlockGraph}!swapBlocks@{swapBlocks}}
+\index{swapBlocks@{swapBlocks}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{swapBlocks()}{swapBlocks()}}
+{\footnotesize\ttfamily void Block\+Graph\+::swap\+Blocks (\begin{DoxyParamCaption}\item[{int4}]{i,  }\item[{int4}]{j }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Swap the positions two component Flow\+Blocks. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & is the position of the first \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to swap \\
+\hline
+{\em j} & is the position of the second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockGraph_a238a3ecac594008e2893b2fa1f85d95b}\label{classBlockGraph_a238a3ecac594008e2893b2fa1f85d95b}} 
+\index{BlockGraph@{BlockGraph}!switchEdge@{switchEdge}}
+\index{switchEdge@{switchEdge}!BlockGraph@{BlockGraph}}
+\doxysubsubsection{\texorpdfstring{switchEdge()}{switchEdge()}}
+{\footnotesize\ttfamily void Block\+Graph\+::switch\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{in,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{outbefore,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{outafter }\end{DoxyParamCaption})}
+
+
+
+Move an edge from one out \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to another. 
+
+The edge from {\bfseries{in}} to {\bfseries{outbefore}} must already exist. It will get removed and replaced with an edge from {\bfseries{in}} to {\bfseries{outafter}}. The new edge index will be the same as the removed edge, and all other edge ordering will be preserved. 
+\begin{DoxyParams}{Parameters}
+{\em in} & is the input \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em outbefore} & is the initial output \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+{\em outafter} & is the new output \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

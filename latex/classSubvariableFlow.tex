@@ -1,0 +1,76 @@
+\hypertarget{classSubvariableFlow}{}\doxysection{Subvariable\+Flow Class Reference}
+\label{classSubvariableFlow}\index{SubvariableFlow@{SubvariableFlow}}
+
+
+Class for shrinking big Varnodes carrying smaller logical values.  
+
+
+
+
+{\ttfamily \#include $<$subflow.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSubvariableFlow_a64ea117213dcf604786d194e90806480}{Subvariable\+Flow}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$root, uintb mask, bool aggr, bool sext, bool big)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSubvariableFlow_ad6b6ba93a3249ba31526a01198111496}{do\+Trace}} (void)
+\begin{DoxyCompactList}\small\item\em Trace logical value through data-\/flow, constructing transform. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSubvariableFlow_a75dd5e28aa46641f1561b1c51f0876c1}\label{classSubvariableFlow_a75dd5e28aa46641f1561b1c51f0876c1}} 
+void \mbox{\hyperlink{classSubvariableFlow_a75dd5e28aa46641f1561b1c51f0876c1}{do\+Replacement}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the discovered transform, making logical values explicit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for shrinking big Varnodes carrying smaller logical values. 
+
+Given a root within the syntax tree and dimensions of a logical variable, this class traces the flow of this logical variable through its containing Varnodes. It then creates a subgraph of this flow, where there is a correspondence between nodes in the subgraph and nodes in the original graph containing the logical variable. When do\+Replacement is called, this subgraph is duplicated as a new separate piece within the syntax tree. Ops are replaced to reflect the manipulation of of the logical variable, rather than the containing variable. Operations in the original graph which pluck out the logical variable from the containing variable, are replaced with copies from the corresponding node in the new section of the graph, which frequently causes the operations on the original container Varnodes to becomes dead code. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSubvariableFlow_a64ea117213dcf604786d194e90806480}\label{classSubvariableFlow_a64ea117213dcf604786d194e90806480}} 
+\index{SubvariableFlow@{SubvariableFlow}!SubvariableFlow@{SubvariableFlow}}
+\index{SubvariableFlow@{SubvariableFlow}!SubvariableFlow@{SubvariableFlow}}
+\doxysubsubsection{\texorpdfstring{SubvariableFlow()}{SubvariableFlow()}}
+{\footnotesize\ttfamily Subvariable\+Flow\+::\+Subvariable\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{root,  }\item[{uintb}]{mask,  }\item[{bool}]{aggr,  }\item[{bool}]{sext,  }\item[{bool}]{big }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & is the function to attempt the subvariable transform on \\
+\hline
+{\em root} & is a starting \mbox{\hyperlink{classVarnode}{Varnode}} containing a smaller logical value \\
+\hline
+{\em mask} & is a mask where 1 bits indicate the position of the logical value within the {\itshape root} \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em aggr} & is {\bfseries{true}} if we should use aggressive (less restrictive) tests during the trace \\
+\hline
+{\em sext} & is {\bfseries{true}} if we should assume sign extensions from the logical value into its container \\
+\hline
+{\em big} & is {\bfseries{true}} if we look for subvariable flow for {\itshape big} (8-\/byte) logical values \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSubvariableFlow_ad6b6ba93a3249ba31526a01198111496}\label{classSubvariableFlow_ad6b6ba93a3249ba31526a01198111496}} 
+\index{SubvariableFlow@{SubvariableFlow}!doTrace@{doTrace}}
+\index{doTrace@{doTrace}!SubvariableFlow@{SubvariableFlow}}
+\doxysubsubsection{\texorpdfstring{doTrace()}{doTrace()}}
+{\footnotesize\ttfamily bool Subvariable\+Flow\+::do\+Trace (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Trace logical value through data-\/flow, constructing transform. 
+
+Push the logical value around, setting up explicit transforms as we go that convert them into explicit Varnodes. If at any point, we cannot naturally interpret the flow of the logical value, return {\bfseries{false}}. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a full transform has been constructed that can make logical values into explicit Varnodes 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{subflow_8hh}{subflow.\+hh}}\item 
+subflow.\+cc\end{DoxyCompactItemize}

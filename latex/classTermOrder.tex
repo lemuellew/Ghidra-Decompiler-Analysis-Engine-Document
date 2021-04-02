@@ -1,0 +1,43 @@
+\hypertarget{classTermOrder}{}\doxysection{Term\+Order Class Reference}
+\label{classTermOrder}\index{TermOrder@{TermOrder}}
+
+
+A class for ordering \mbox{\hyperlink{classVarnode}{Varnode}} terms in an additive expression.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTermOrder_aa9539a5ed4aa2029cf780dbd18db4370}{collect}} (void)
+\begin{DoxyCompactList}\small\item\em Collect all the terms in the expression. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTermOrder_aa90a1457bc5dd8acd997cf59ff966893}\label{classTermOrder_aa90a1457bc5dd8acd997cf59ff966893}} 
+void \mbox{\hyperlink{classTermOrder_aa90a1457bc5dd8acd997cf59ff966893}{sort\+Terms}} (void)
+\begin{DoxyCompactList}\small\item\em Sort the terms using additive\+Compare() \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for ordering \mbox{\hyperlink{classVarnode}{Varnode}} terms in an additive expression. 
+
+Given the final \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} in a data-\/flow expression that sums 2 or more \mbox{\hyperlink{classVarnode}{Varnode}} {\itshape terms}, this class collects all the terms then allows sorting of the terms to facilitate constant collapse and factoring simplifications. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTermOrder_aa9539a5ed4aa2029cf780dbd18db4370}\label{classTermOrder_aa9539a5ed4aa2029cf780dbd18db4370}} 
+\index{TermOrder@{TermOrder}!collect@{collect}}
+\index{collect@{collect}!TermOrder@{TermOrder}}
+\doxysubsubsection{\texorpdfstring{collect()}{collect()}}
+{\footnotesize\ttfamily void Term\+Order\+::collect (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Collect all the terms in the expression. 
+
+Assuming root-\/$>$get\+Out() is the root of an expression formed with the C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+A\+DD op, collect all the \mbox{\hyperlink{classVarnode}{Varnode}} {\itshape terms} of the expression. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

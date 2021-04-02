@@ -1,0 +1,127 @@
+\hypertarget{classTypeOpIntSext}{}\doxysection{Type\+Op\+Int\+Sext Class Reference}
+\label{classTypeOpIntSext}\index{TypeOpIntSext@{TypeOpIntSext}}
+
+
+Information about the I\+N\+T\+\_\+\+S\+E\+XT op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Int\+Sext\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classTypeOpIntSext__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Int\+Sext\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpIntSext__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpIntSext_ae0ff398724826a1b5e5d60e3b8a976bf}\label{classTypeOpIntSext_ae0ff398724826a1b5e5d60e3b8a976bf}} 
+\mbox{\hyperlink{classTypeOpIntSext_ae0ff398724826a1b5e5d60e3b8a976bf}{Type\+Op\+Int\+Sext}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpIntSext_a3e8b2d3ff71c4eea7fbba1b270c7ce96}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classTypeOpIntSext_abffb4d378c42466a11615363162d9fdb}{get\+Operator\+Name}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Get the name of the op-\/code as it should be displayed in context. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpIntSext_a31eb9e0cd6e259e779d2b045604323dd}{get\+Input\+Cast}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot, const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$cast\+Strategy) const
+\begin{DoxyCompactList}\small\item\em Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the I\+N\+T\+\_\+\+S\+E\+XT op-\/code. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpIntSext_a31eb9e0cd6e259e779d2b045604323dd}\label{classTypeOpIntSext_a31eb9e0cd6e259e779d2b045604323dd}} 
+\index{TypeOpIntSext@{TypeOpIntSext}!getInputCast@{getInputCast}}
+\index{getInputCast@{getInputCast}!TypeOpIntSext@{TypeOpIntSext}}
+\doxysubsubsection{\texorpdfstring{getInputCast()}{getInputCast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Int\+Sext\+::get\+Input\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot,  }\item[{const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$}]{cast\+Strategy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+Calculate the actual data-\/type of the input to the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. A {\bfseries{null}} result indicates the input data-\/type is the same as or otherwise doesn\textquotesingle{}t need a cast from the data-\/type of the actual input \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em slot} & is the input to consider \\
+\hline
+{\em cast\+Strategy} & is the current casting strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a950c417e4af100d176a701af5816b5ab}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpIntSext_abffb4d378c42466a11615363162d9fdb}\label{classTypeOpIntSext_abffb4d378c42466a11615363162d9fdb}} 
+\index{TypeOpIntSext@{TypeOpIntSext}!getOperatorName@{getOperatorName}}
+\index{getOperatorName@{getOperatorName}!TypeOpIntSext@{TypeOpIntSext}}
+\doxysubsubsection{\texorpdfstring{getOperatorName()}{getOperatorName()}}
+{\footnotesize\ttfamily string Type\+Op\+Int\+Sext\+::get\+Operator\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the name of the op-\/code as it should be displayed in context. 
+
+Depending on the context, the same op-\/code may get displayed in different ways. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the display token 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a42a1ffa77f998df24efdb44405b33ac5}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpIntSext_a3e8b2d3ff71c4eea7fbba1b270c7ce96}\label{classTypeOpIntSext_a3e8b2d3ff71c4eea7fbba1b270c7ce96}} 
+\index{TypeOpIntSext@{TypeOpIntSext}!push@{push}}
+\index{push@{push}!TypeOpIntSext@{TypeOpIntSext}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Int\+Sext\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

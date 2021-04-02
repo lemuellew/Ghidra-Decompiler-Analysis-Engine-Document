@@ -1,0 +1,205 @@
+\hypertarget{classPcodeInjectLibrarySleigh}{}\doxysection{Pcode\+Inject\+Library\+Sleigh Class Reference}
+\label{classPcodeInjectLibrarySleigh}\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+
+
+Inheritance diagram for Pcode\+Inject\+Library\+Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classPcodeInjectLibrarySleigh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pcode\+Inject\+Library\+Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPcodeInjectLibrarySleigh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_a25188bce489eae0287ce89d8588b961a}\label{classPcodeInjectLibrarySleigh_a25188bce489eae0287ce89d8588b961a}} 
+{\bfseries Pcode\+Inject\+Library\+Sleigh} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, uintb tmpbase)
+\item 
+virtual void \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a121a82e796311b4d5b163cdf773e2235}{restore\+Debug}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em A method for reading in p-\/code generated externally for use in debugging. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a4cce009469fb3679881ea73bc2ed9284}{manual\+Call\+Fixup}} (const string \&name, const string \&snippetstring)
+\begin{DoxyCompactList}\small\item\em Manually add a call-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a5effe6ebe2d5b20644c2066d427283ae}{manual\+Call\+Other\+Fixup}} (const string \&name, const string \&outname, const vector$<$ string $>$ \&inname, const string \&snippet)
+\begin{DoxyCompactList}\small\item\em Manually add a callother-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classInjectContext}{Inject\+Context}} \& \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a37471f5a78e16c84fc26cfaff1a7434b}{get\+Cached\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieve a reusable context object for {\bfseries{this}} library. \end{DoxyCompactList}\item 
+virtual const vector$<$ \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ $>$ \& \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a878ef6bdf58bd19fa82318248836b3d8}{get\+Behaviors}} (void)
+\begin{DoxyCompactList}\small\item\em Get the array of op-\/code behaviors for initializing and emulator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int4 \mbox{\hyperlink{classPcodeInjectLibrarySleigh_abb567ddc0d8f5e05d96fc87a87f72c34}{allocate\+Inject}} (const string \&source\+Name, const string \&name, int4 type)
+\begin{DoxyCompactList}\small\item\em Allocate a new \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a8aa3b83b22fef0799e95dfaf346ca89e}{register\+Inject}} (int4 injectid)
+\begin{DoxyCompactList}\small\item\em Finalize a payload within the library, once the payload is initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_abb567ddc0d8f5e05d96fc87a87f72c34}\label{classPcodeInjectLibrarySleigh_abb567ddc0d8f5e05d96fc87a87f72c34}} 
+\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}!allocateInject@{allocateInject}}
+\index{allocateInject@{allocateInject}!PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+\doxysubsubsection{\texorpdfstring{allocateInject()}{allocateInject()}}
+{\footnotesize\ttfamily int4 Pcode\+Inject\+Library\+Sleigh\+::allocate\+Inject (\begin{DoxyParamCaption}\item[{const string \&}]{source\+Name,  }\item[{const string \&}]{name,  }\item[{int4}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Allocate a new \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object. 
+
+This acts as an \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} factory. The formal name and type of the payload are given, {\bfseries{this}} library allocates a new object that fits with its storage scheme and returns the id. 
+\begin{DoxyParams}{Parameters}
+{\em source\+Name} & is a string describing the source of the new payload \\
+\hline
+{\em name} & is the formal name of the payload \\
+\hline
+{\em type} & is the formal type (C\+A\+L\+L\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE, C\+A\+L\+L\+O\+T\+H\+E\+R\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE, etc.) of the payload \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id associated with the new \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPcodeInjectLibrary_a386a617992fcdd31d9abbf0728126686}{Pcode\+Inject\+Library}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_a878ef6bdf58bd19fa82318248836b3d8}\label{classPcodeInjectLibrarySleigh_a878ef6bdf58bd19fa82318248836b3d8}} 
+\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}!getBehaviors@{getBehaviors}}
+\index{getBehaviors@{getBehaviors}!PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+\doxysubsubsection{\texorpdfstring{getBehaviors()}{getBehaviors()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ $>$ \& Pcode\+Inject\+Library\+Sleigh\+::get\+Behaviors (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the array of op-\/code behaviors for initializing and emulator. 
+
+Behaviors are pulled from the underlying architecture in order to initialize the \mbox{\hyperlink{classEmulate}{Emulate}} object which services the {\itshape p-\/code} {\itshape script} payloads. \begin{DoxyReturn}{Returns}
+the array of \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} objects indexed by op-\/code 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPcodeInjectLibrary_aa2c520dab5db72d968e383b56d1ea8f6}{Pcode\+Inject\+Library}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_a37471f5a78e16c84fc26cfaff1a7434b}\label{classPcodeInjectLibrarySleigh_a37471f5a78e16c84fc26cfaff1a7434b}} 
+\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}!getCachedContext@{getCachedContext}}
+\index{getCachedContext@{getCachedContext}!PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+\doxysubsubsection{\texorpdfstring{getCachedContext()}{getCachedContext()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classInjectContext}{Inject\+Context}}\& Pcode\+Inject\+Library\+Sleigh\+::get\+Cached\+Context (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Retrieve a reusable context object for {\bfseries{this}} library. 
+
+The object returned by this method gets passed to the payload inject() method. The clear() method must be called between uses. \begin{DoxyReturn}{Returns}
+the cached context object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPcodeInjectLibrary_a3a1ca9f7ea2cea02de1141cc35c79b18}{Pcode\+Inject\+Library}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_a4cce009469fb3679881ea73bc2ed9284}\label{classPcodeInjectLibrarySleigh_a4cce009469fb3679881ea73bc2ed9284}} 
+\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}!manualCallFixup@{manualCallFixup}}
+\index{manualCallFixup@{manualCallFixup}!PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+\doxysubsubsection{\texorpdfstring{manualCallFixup()}{manualCallFixup()}}
+{\footnotesize\ttfamily int4 Pcode\+Inject\+Library\+Sleigh\+::manual\+Call\+Fixup (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{snippetstring }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Manually add a call-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. 
+
+The snippet is compiled immediately to produce the payload. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the formal name of the new payload \\
+\hline
+{\em snippetstring} & is the compilable snippet of p-\/code {\itshape source} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the new payload 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPcodeInjectLibrary_a0e360443cbc6ff94ea71d197882c55a8}{Pcode\+Inject\+Library}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_a5effe6ebe2d5b20644c2066d427283ae}\label{classPcodeInjectLibrarySleigh_a5effe6ebe2d5b20644c2066d427283ae}} 
+\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}!manualCallOtherFixup@{manualCallOtherFixup}}
+\index{manualCallOtherFixup@{manualCallOtherFixup}!PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+\doxysubsubsection{\texorpdfstring{manualCallOtherFixup()}{manualCallOtherFixup()}}
+{\footnotesize\ttfamily int4 Pcode\+Inject\+Library\+Sleigh\+::manual\+Call\+Other\+Fixup (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{outname,  }\item[{const vector$<$ string $>$ \&}]{inname,  }\item[{const string \&}]{snippet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Manually add a callother-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. 
+
+The snippet is compiled immediately to produce the payload. \mbox{\hyperlink{classSymbol}{Symbol}} names for input and output parameters must be provided to the compiler. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the formal name of the new payload \\
+\hline
+{\em outname} & is the name of the output symbol \\
+\hline
+{\em inname} & is the ordered list of input symbol names \\
+\hline
+{\em snippet} & is the compilable snippet of p-\/code {\itshape source} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the new payload 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPcodeInjectLibrary_a93f4e4b0f75d81b96bd92623d392269a}{Pcode\+Inject\+Library}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_a8aa3b83b22fef0799e95dfaf346ca89e}\label{classPcodeInjectLibrarySleigh_a8aa3b83b22fef0799e95dfaf346ca89e}} 
+\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}!registerInject@{registerInject}}
+\index{registerInject@{registerInject}!PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+\doxysubsubsection{\texorpdfstring{registerInject()}{registerInject()}}
+{\footnotesize\ttfamily void Pcode\+Inject\+Library\+Sleigh\+::register\+Inject (\begin{DoxyParamCaption}\item[{int4}]{injectid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Finalize a payload within the library, once the payload is initialized. 
+
+This provides the derived class the opportunity to add the payload name to the symbol tables or do anything else it needs to once the \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object has been fully initialized. 
+\begin{DoxyParams}{Parameters}
+{\em injectid} & is the id of the \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} to finalize \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPcodeInjectLibrary_a0b75b562fb736f23269114fec5ca36d9}{Pcode\+Inject\+Library}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrarySleigh_a121a82e796311b4d5b163cdf773e2235}\label{classPcodeInjectLibrarySleigh_a121a82e796311b4d5b163cdf773e2235}} 
+\index{PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}!restoreDebug@{restoreDebug}}
+\index{restoreDebug@{restoreDebug}!PcodeInjectLibrarySleigh@{PcodeInjectLibrarySleigh}}
+\doxysubsubsection{\texorpdfstring{restoreDebug()}{restoreDebug()}}
+{\footnotesize\ttfamily void Pcode\+Inject\+Library\+Sleigh\+::restore\+Debug (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+A method for reading in p-\/code generated externally for use in debugging. 
+
+Instantiate a special \mbox{\hyperlink{classInjectPayloadDynamic}{Inject\+Payload\+Dynamic}} object initialized with an $<$injectdebug$>$ tag. Within the library, this replaces the original \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}}, allowing its p-\/code to be {\itshape replayed} for debugging purposes. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the $<$injectdebug$>$ element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classPcodeInjectLibrary_a48cebdddd48a1fa5db300d80ed6bdaa2}{Pcode\+Inject\+Library}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inject\+\_\+sleigh.\+hh\item 
+inject\+\_\+sleigh.\+cc\end{DoxyCompactItemize}

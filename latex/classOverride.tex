@@ -1,0 +1,443 @@
+\hypertarget{classOverride}{}\doxysection{Override Class Reference}
+\label{classOverride}\index{Override@{Override}}
+
+
+A container of commands that override the decompiler\textquotesingle{}s default behavior for a single function.  
+
+
+
+
+{\ttfamily \#include $<$override.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classOverride_aecba34c4e58da67817bfca086b5e97bea77cee281d3ed540cfda0853197f23586}{N\+O\+NE}} = 0, 
+\mbox{\hyperlink{classOverride_aecba34c4e58da67817bfca086b5e97bea671a485ec597132fbd7b17e4a012785f}{B\+R\+A\+N\+CH}} = 1, 
+\mbox{\hyperlink{classOverride_aecba34c4e58da67817bfca086b5e97bea510fe02fbf062cd86c8152d14c5a6ef0}{C\+A\+LL}} = 2, 
+\mbox{\hyperlink{classOverride_aecba34c4e58da67817bfca086b5e97bea5a94fa28e25fe8babb186322b2918e4c}{C\+A\+L\+L\+\_\+\+R\+E\+T\+U\+RN}} = 3, 
+\newline
+\mbox{\hyperlink{classOverride_aecba34c4e58da67817bfca086b5e97bea17d939b7a8f01dbb37e53d903dfe246e}{R\+E\+T\+U\+RN}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of possible branch overrides. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classOverride_a124d24114684c22e3f001c910763fae1}{insert\+Force\+Goto}} (const \mbox{\hyperlink{classAddress}{Address}} \&targetpc, const \mbox{\hyperlink{classAddress}{Address}} \&destpc)
+\begin{DoxyCompactList}\small\item\em Force a specific branch instruction to be an unstructured {\itshape goto}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a2e55dd5f8157f3f7660c863eb7d036f9}{insert\+Deadcode\+Delay}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, int4 delay)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classOverride}{Override}} the number of passes that are executed before {\itshape dead-\/code} elimination starts. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classOverride_a3845c19e46f983d2034e06bb1980b672}{has\+Deadcode\+Delay}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc) const
+\begin{DoxyCompactList}\small\item\em Check if a delay override is already installed for an address space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a244525d6ba415aab3769255c79ab7ba8}{insert\+Indirect\+Override}} (const \mbox{\hyperlink{classAddress}{Address}} \&callpoint, const \mbox{\hyperlink{classAddress}{Address}} \&directcall)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classOverride}{Override}} an indirect call turning it into a direct call. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_abf08af570f603eaf60f36f61c3a275ae}{insert\+Proto\+Override}} (const \mbox{\hyperlink{classAddress}{Address}} \&callpoint, \mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classOverride}{Override}} the assumed function prototype at a specific call site. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a0922bffef45d1f3916dd63b12ace98ec}{insert\+Multistage\+Jump}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Flag an indirect jump for multistage analysis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a840df7b308ba3fd78e1b16b23780f2bc}{insert\+Flow\+Override}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, uint4 type)
+\begin{DoxyCompactList}\small\item\em Mark a branch instruction with a different flow type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a33eb920b5801c9c7cbd2334b16478ece}{apply\+Prototype}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} \&fspecs) const
+\begin{DoxyCompactList}\small\item\em Look for and apply a function prototype override. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_aa3bc812ae7fb2d03f14d2d67adbb6ede}{apply\+Indirect}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} \&fspecs) const
+\begin{DoxyCompactList}\small\item\em Look for and apply destination overrides of indirect calls. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classOverride_a49748ed2ed69fc5be1baf9921d8f7028}{query\+Multistage\+Jumptable}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Check for a multistage marker for a specific indirect jump. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_ae1c4b43226ff096764f6d98f325ae759}{apply\+Dead\+Code\+Delay}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data) const
+\begin{DoxyCompactList}\small\item\em Apply any dead-\/code delay overrides. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a7920e3b6030b283342a0da67fbc69505}{apply\+Force\+Goto}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data) const
+\begin{DoxyCompactList}\small\item\em Push all the force-\/goto overrides into the function. \end{DoxyCompactList}\item 
+uint4 \mbox{\hyperlink{classOverride_ab15cf0bc049c1faf14ad8ddbba898821}{get\+Flow\+Override}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Return the particular flow override at a given address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a8892cbe3b73a6deb23345088f86f5593}{print\+Raw}} (ostream \&s, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb) const
+\begin{DoxyCompactList}\small\item\em Dump a description of the overrides to stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a6d27df21e6a0448729260d0179d35500}{generate\+Override\+Messages}} (vector$<$ string $>$ \&messagelist, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb) const
+\begin{DoxyCompactList}\small\item\em Create warning messages that describe current overrides. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_ab983057b1943546a6ed8ef1b2bbd3627}{save\+Xml}} (ostream \&s, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb) const
+\begin{DoxyCompactList}\small\item\em Write the override commands to an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOverride_a81f34dfc11c427ea0873358bef93ada3}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Read in override commands from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classOverride_a33a4d3c7956892c27e2ab851c04bd6b7}{type\+To\+String}} (uint4 tp)
+\begin{DoxyCompactList}\small\item\em Convert a flow override type to a string. \end{DoxyCompactList}\item 
+static uint4 \mbox{\hyperlink{classOverride_a7456d7f93fb0f67cdebb42ac1bca5c46}{string\+To\+Type}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Convert a string to a flow override type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container of commands that override the decompiler\textquotesingle{}s default behavior for a single function. 
+
+Information about a particular function that can be overridden includes\+:
+\begin{DoxyItemize}
+\item sub-\/functions\+: How they are called and where they call to
+\item jumptables\+: Mark indirect jumps that need multistage analysis
+\item deadcode\+: Details about how dead code is eliminated
+\item data-\/flow\+: \mbox{\hyperlink{classOverride}{Override}} the interpretation of specific branch instructions
+\end{DoxyItemize}
+
+Commands exist independently of the main data-\/flow, control-\/flow, and symbol structures and survive decompilation restart. A few analyses, mid transformation, insert a new command to fix a problem that was discovered too late and then force a restart via \mbox{\hyperlink{classFuncdata_af21c852eb9f606c5cd19fb2456927ecd}{Funcdata\+::set\+Restart\+Pending()}}
+
+The class accept new commands via the insert$\ast$ methods. The decompiler applies them by calling the apply$\ast$ or get$\ast$ methods. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classOverride_aecba34c4e58da67817bfca086b5e97be}\label{classOverride_aecba34c4e58da67817bfca086b5e97be}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Enumeration of possible branch overrides. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!Override@{Override}}\index{Override@{Override}!NONE@{NONE}}}\mbox{\Hypertarget{classOverride_aecba34c4e58da67817bfca086b5e97bea77cee281d3ed540cfda0853197f23586}\label{classOverride_aecba34c4e58da67817bfca086b5e97bea77cee281d3ed540cfda0853197f23586}} 
+N\+O\+NE&No override. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BRANCH@{BRANCH}!Override@{Override}}\index{Override@{Override}!BRANCH@{BRANCH}}}\mbox{\Hypertarget{classOverride_aecba34c4e58da67817bfca086b5e97bea671a485ec597132fbd7b17e4a012785f}\label{classOverride_aecba34c4e58da67817bfca086b5e97bea671a485ec597132fbd7b17e4a012785f}} 
+B\+R\+A\+N\+CH&Replace primary C\+A\+LL or R\+E\+T\+U\+RN with suitable B\+R\+A\+N\+CH operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALL@{CALL}!Override@{Override}}\index{Override@{Override}!CALL@{CALL}}}\mbox{\Hypertarget{classOverride_aecba34c4e58da67817bfca086b5e97bea510fe02fbf062cd86c8152d14c5a6ef0}\label{classOverride_aecba34c4e58da67817bfca086b5e97bea510fe02fbf062cd86c8152d14c5a6ef0}} 
+C\+A\+LL&Replace primary B\+R\+A\+N\+CH or R\+E\+T\+U\+RN with suitable C\+A\+LL operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALL\_RETURN@{CALL\_RETURN}!Override@{Override}}\index{Override@{Override}!CALL\_RETURN@{CALL\_RETURN}}}\mbox{\Hypertarget{classOverride_aecba34c4e58da67817bfca086b5e97bea5a94fa28e25fe8babb186322b2918e4c}\label{classOverride_aecba34c4e58da67817bfca086b5e97bea5a94fa28e25fe8babb186322b2918e4c}} 
+C\+A\+L\+L\+\_\+\+R\+E\+T\+U\+RN&Replace primary B\+R\+A\+N\+CH or R\+E\+T\+U\+RN with suitable C\+A\+L\+L/\+R\+E\+T\+U\+RN operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RETURN@{RETURN}!Override@{Override}}\index{Override@{Override}!RETURN@{RETURN}}}\mbox{\Hypertarget{classOverride_aecba34c4e58da67817bfca086b5e97bea17d939b7a8f01dbb37e53d903dfe246e}\label{classOverride_aecba34c4e58da67817bfca086b5e97bea17d939b7a8f01dbb37e53d903dfe246e}} 
+R\+E\+T\+U\+RN&Replace primary B\+R\+A\+N\+CH or C\+A\+LL with a suitable R\+E\+T\+U\+RN operation. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOverride_ae1c4b43226ff096764f6d98f325ae759}\label{classOverride_ae1c4b43226ff096764f6d98f325ae759}} 
+\index{Override@{Override}!applyDeadCodeDelay@{applyDeadCodeDelay}}
+\index{applyDeadCodeDelay@{applyDeadCodeDelay}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{applyDeadCodeDelay()}{applyDeadCodeDelay()}}
+{\footnotesize\ttfamily void Override\+::apply\+Dead\+Code\+Delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption}) const}
+
+
+
+Apply any dead-\/code delay overrides. 
+
+Look for delays of each address space and apply them to the \mbox{\hyperlink{classHeritage}{Heritage}} object 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a7920e3b6030b283342a0da67fbc69505}\label{classOverride_a7920e3b6030b283342a0da67fbc69505}} 
+\index{Override@{Override}!applyForceGoto@{applyForceGoto}}
+\index{applyForceGoto@{applyForceGoto}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{applyForceGoto()}{applyForceGoto()}}
+{\footnotesize\ttfamily void Override\+::apply\+Force\+Goto (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption}) const}
+
+
+
+Push all the force-\/goto overrides into the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_aa3bc812ae7fb2d03f14d2d67adbb6ede}\label{classOverride_aa3bc812ae7fb2d03f14d2d67adbb6ede}} 
+\index{Override@{Override}!applyIndirect@{applyIndirect}}
+\index{applyIndirect@{applyIndirect}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{applyIndirect()}{applyIndirect()}}
+{\footnotesize\ttfamily void Override\+::apply\+Indirect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} \&}]{fspecs }\end{DoxyParamCaption}) const}
+
+
+
+Look for and apply destination overrides of indirect calls. 
+
+Given an indirect call, look for any overrides, then copy in the overriding target address of the direct call 
+\begin{DoxyParams}{Parameters}
+{\em data} & is (calling) function \\
+\hline
+{\em fspecs} & is a reference to the call specification \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a33eb920b5801c9c7cbd2334b16478ece}\label{classOverride_a33eb920b5801c9c7cbd2334b16478ece}} 
+\index{Override@{Override}!applyPrototype@{applyPrototype}}
+\index{applyPrototype@{applyPrototype}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{applyPrototype()}{applyPrototype()}}
+{\footnotesize\ttfamily void Override\+::apply\+Prototype (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} \&}]{fspecs }\end{DoxyParamCaption}) const}
+
+
+
+Look for and apply a function prototype override. 
+
+Given a call point, look for a prototype override and copy the call specification in 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the (calling) function \\
+\hline
+{\em fspecs} & is a reference to the call specification \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a6d27df21e6a0448729260d0179d35500}\label{classOverride_a6d27df21e6a0448729260d0179d35500}} 
+\index{Override@{Override}!generateOverrideMessages@{generateOverrideMessages}}
+\index{generateOverrideMessages@{generateOverrideMessages}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{generateOverrideMessages()}{generateOverrideMessages()}}
+{\footnotesize\ttfamily void Override\+::generate\+Override\+Messages (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{messagelist,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption}) const}
+
+
+
+Create warning messages that describe current overrides. 
+
+Message are designed to be displayed in the function header comment 
+\begin{DoxyParams}{Parameters}
+{\em messagelist} & will hold the generated list of messages \\
+\hline
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_ab15cf0bc049c1faf14ad8ddbba898821}\label{classOverride_ab15cf0bc049c1faf14ad8ddbba898821}} 
+\index{Override@{Override}!getFlowOverride@{getFlowOverride}}
+\index{getFlowOverride@{getFlowOverride}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{getFlowOverride()}{getFlowOverride()}}
+{\footnotesize\ttfamily uint4 Override\+::get\+Flow\+Override (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Return the particular flow override at a given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address of a branch instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the override type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOverride_a3845c19e46f983d2034e06bb1980b672}\label{classOverride_a3845c19e46f983d2034e06bb1980b672}} 
+\index{Override@{Override}!hasDeadcodeDelay@{hasDeadcodeDelay}}
+\index{hasDeadcodeDelay@{hasDeadcodeDelay}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{hasDeadcodeDelay()}{hasDeadcodeDelay()}}
+{\footnotesize\ttfamily bool Override\+::has\+Deadcode\+Delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc }\end{DoxyParamCaption}) const}
+
+
+
+Check if a delay override is already installed for an address space. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if an override has already been installed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOverride_a2e55dd5f8157f3f7660c863eb7d036f9}\label{classOverride_a2e55dd5f8157f3f7660c863eb7d036f9}} 
+\index{Override@{Override}!insertDeadcodeDelay@{insertDeadcodeDelay}}
+\index{insertDeadcodeDelay@{insertDeadcodeDelay}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{insertDeadcodeDelay()}{insertDeadcodeDelay()}}
+{\footnotesize\ttfamily void Override\+::insert\+Deadcode\+Delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{int4}]{delay }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classOverride}{Override}} the number of passes that are executed before {\itshape dead-\/code} elimination starts. 
+
+Every address space has an assigned {\itshape delay} (which may be zero) before a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} involving a \mbox{\hyperlink{classVarnode}{Varnode}} in that address space can be eliminated. This command allows the delay for a specific address space to be increased so that new \mbox{\hyperlink{classVarnode}{Varnode}} accesses can be discovered. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space to modify \\
+\hline
+{\em delay} & is the size of the delay (in passes) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a840df7b308ba3fd78e1b16b23780f2bc}\label{classOverride_a840df7b308ba3fd78e1b16b23780f2bc}} 
+\index{Override@{Override}!insertFlowOverride@{insertFlowOverride}}
+\index{insertFlowOverride@{insertFlowOverride}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{insertFlowOverride()}{insertFlowOverride()}}
+{\footnotesize\ttfamily void Override\+::insert\+Flow\+Override (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uint4}]{type }\end{DoxyParamCaption})}
+
+
+
+Mark a branch instruction with a different flow type. 
+
+Change the interpretation of a B\+R\+A\+N\+CH, C\+A\+LL, or R\+E\+T\+U\+RN 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address of the branch instruction \\
+\hline
+{\em type} & is the type of flow that should be forced \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a124d24114684c22e3f001c910763fae1}\label{classOverride_a124d24114684c22e3f001c910763fae1}} 
+\index{Override@{Override}!insertForceGoto@{insertForceGoto}}
+\index{insertForceGoto@{insertForceGoto}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{insertForceGoto()}{insertForceGoto()}}
+{\footnotesize\ttfamily void Override\+::insert\+Force\+Goto (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{targetpc,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{destpc }\end{DoxyParamCaption})}
+
+
+
+Force a specific branch instruction to be an unstructured {\itshape goto}. 
+
+The command is specified as the address of the branch instruction and the destination address of the branch. The decompiler will automatically mark this as a {\itshape unstructured}, when trying to structure the control-\/flow 
+\begin{DoxyParams}{Parameters}
+{\em targetpc} & is the address of the branch instruction \\
+\hline
+{\em destpc} & is the destination address of the branch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a244525d6ba415aab3769255c79ab7ba8}\label{classOverride_a244525d6ba415aab3769255c79ab7ba8}} 
+\index{Override@{Override}!insertIndirectOverride@{insertIndirectOverride}}
+\index{insertIndirectOverride@{insertIndirectOverride}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{insertIndirectOverride()}{insertIndirectOverride()}}
+{\footnotesize\ttfamily void Override\+::insert\+Indirect\+Override (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{callpoint,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{directcall }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classOverride}{Override}} an indirect call turning it into a direct call. 
+
+The command consists of the address of the indirect call instruction and the target address of the direct address 
+\begin{DoxyParams}{Parameters}
+{\em callpoint} & is the address of the indirect call \\
+\hline
+{\em directcall} & is the target address of the direct call \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a0922bffef45d1f3916dd63b12ace98ec}\label{classOverride_a0922bffef45d1f3916dd63b12ace98ec}} 
+\index{Override@{Override}!insertMultistageJump@{insertMultistageJump}}
+\index{insertMultistageJump@{insertMultistageJump}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{insertMultistageJump()}{insertMultistageJump()}}
+{\footnotesize\ttfamily void Override\+::insert\+Multistage\+Jump (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Flag an indirect jump for multistage analysis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address of the indirect jump \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_abf08af570f603eaf60f36f61c3a275ae}\label{classOverride_abf08af570f603eaf60f36f61c3a275ae}} 
+\index{Override@{Override}!insertProtoOverride@{insertProtoOverride}}
+\index{insertProtoOverride@{insertProtoOverride}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{insertProtoOverride()}{insertProtoOverride()}}
+{\footnotesize\ttfamily void Override\+::insert\+Proto\+Override (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{callpoint,  }\item[{\mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$}]{p }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classOverride}{Override}} the assumed function prototype at a specific call site. 
+
+The exact input and output storage locations are overridden for a specific call instruction (direct or indirect). 
+\begin{DoxyParams}{Parameters}
+{\em callpoint} & is the address of the call instruction \\
+\hline
+{\em p} & is the overriding function prototype \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a8892cbe3b73a6deb23345088f86f5593}\label{classOverride_a8892cbe3b73a6deb23345088f86f5593}} 
+\index{Override@{Override}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Override\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption}) const}
+
+
+
+Dump a description of the overrides to stream. 
+
+Give a description of each override, one per line, that is suitable for debug 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a49748ed2ed69fc5be1baf9921d8f7028}\label{classOverride_a49748ed2ed69fc5be1baf9921d8f7028}} 
+\index{Override@{Override}!queryMultistageJumptable@{queryMultistageJumptable}}
+\index{queryMultistageJumptable@{queryMultistageJumptable}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{queryMultistageJumptable()}{queryMultistageJumptable()}}
+{\footnotesize\ttfamily bool Override\+::query\+Multistage\+Jumptable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Check for a multistage marker for a specific indirect jump. 
+
+Given the address of an indirect jump, look for the multistate command 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address of the indirect jump \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a81f34dfc11c427ea0873358bef93ada3}\label{classOverride_a81f34dfc11c427ea0873358bef93ada3}} 
+\index{Override@{Override}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Override\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Read in override commands from X\+ML. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$override$>$ element \\
+\hline
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_ab983057b1943546a6ed8ef1b2bbd3627}\label{classOverride_ab983057b1943546a6ed8ef1b2bbd3627}} 
+\index{Override@{Override}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Override\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption}) const}
+
+
+
+Write the override commands to an X\+ML stream. 
+
+All the commands are written as sub-\/tags of a root $<$override$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOverride_a7456d7f93fb0f67cdebb42ac1bca5c46}\label{classOverride_a7456d7f93fb0f67cdebb42ac1bca5c46}} 
+\index{Override@{Override}!stringToType@{stringToType}}
+\index{stringToType@{stringToType}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{stringToType()}{stringToType()}}
+{\footnotesize\ttfamily uint4 Override\+::string\+To\+Type (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a string to a flow override type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the override name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the override enumeration type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOverride_a33a4d3c7956892c27e2ab851c04bd6b7}\label{classOverride_a33a4d3c7956892c27e2ab851c04bd6b7}} 
+\index{Override@{Override}!typeToString@{typeToString}}
+\index{typeToString@{typeToString}!Override@{Override}}
+\doxysubsubsection{\texorpdfstring{typeToString()}{typeToString()}}
+{\footnotesize\ttfamily string Override\+::type\+To\+String (\begin{DoxyParamCaption}\item[{uint4}]{tp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert a flow override type to a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tp} & is the override type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding name string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{override_8hh}{override.\+hh}}\item 
+override.\+cc\end{DoxyCompactItemize}

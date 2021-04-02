@@ -1,0 +1,90 @@
+\hypertarget{classLaneDivide}{}\doxysection{Lane\+Divide Class Reference}
+\label{classLaneDivide}\index{LaneDivide@{LaneDivide}}
+
+
+Class for splitting data-\/flow on {\itshape laned} registers.  
+
+
+
+
+{\ttfamily \#include $<$subflow.\+hh$>$}
+
+
+
+Inheritance diagram for Lane\+Divide\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classLaneDivide__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Lane\+Divide\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classLaneDivide__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLaneDivide_aa0f7e3ae134af591f88bc3950da460d1}{Lane\+Divide}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$root, const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&desc, bool allow\+Downcast)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLaneDivide_ae5f598f2a49cc5813d759441125cc4b3}{do\+Trace}} (void)
+\begin{DoxyCompactList}\small\item\em Trace lanes as far as possible from the root \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for splitting data-\/flow on {\itshape laned} registers. 
+
+From a root \mbox{\hyperlink{classVarnode}{Varnode}} and a description of its {\itshape lanes}, trace data-\/flow as far as possible through the function, propagating each lane, using the \mbox{\hyperlink{classLaneDivide_ae5f598f2a49cc5813d759441125cc4b3}{do\+Trace()}} method. Then using the \mbox{\hyperlink{classTransformManager_a2dcee2b69511dfb160421566ad1e9ce8}{apply()}} method, data-\/flow can be split, making each lane in every traced register into an explicit \mbox{\hyperlink{classVarnode}{Varnode}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLaneDivide_aa0f7e3ae134af591f88bc3950da460d1}\label{classLaneDivide_aa0f7e3ae134af591f88bc3950da460d1}} 
+\index{LaneDivide@{LaneDivide}!LaneDivide@{LaneDivide}}
+\index{LaneDivide@{LaneDivide}!LaneDivide@{LaneDivide}}
+\doxysubsubsection{\texorpdfstring{LaneDivide()}{LaneDivide()}}
+{\footnotesize\ttfamily Lane\+Divide\+::\+Lane\+Divide (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{root,  }\item[{const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&}]{desc,  }\item[{bool}]{allow\+Downcast }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & is the function being transformed \\
+\hline
+{\em root} & is the root \mbox{\hyperlink{classVarnode}{Varnode}} to start tracing lanes from \\
+\hline
+{\em desc} & is a description of the lanes on the root \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em allow\+Downcast} & is {\bfseries{true}} if we all S\+U\+B\+P\+I\+E\+CE to be treated as terminating \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLaneDivide_ae5f598f2a49cc5813d759441125cc4b3}\label{classLaneDivide_ae5f598f2a49cc5813d759441125cc4b3}} 
+\index{LaneDivide@{LaneDivide}!doTrace@{doTrace}}
+\index{doTrace@{doTrace}!LaneDivide@{LaneDivide}}
+\doxysubsubsection{\texorpdfstring{doTrace()}{doTrace()}}
+{\footnotesize\ttfamily bool Lane\+Divide\+::do\+Trace (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Trace lanes as far as possible from the root \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Push the lanes around from the root, setting up the explicit transforms as we go. If at any point, the lanes cannot be naturally pushed, return {\bfseries{false}}. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a full transform has been constructed that can split into explicit lanes 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{subflow_8hh}{subflow.\+hh}}\item 
+subflow.\+cc\end{DoxyCompactItemize}

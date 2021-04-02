@@ -1,0 +1,124 @@
+\hypertarget{classTypeOpIndirect}{}\doxysection{Type\+Op\+Indirect Class Reference}
+\label{classTypeOpIndirect}\index{TypeOpIndirect@{TypeOpIndirect}}
+
+
+Information about the I\+N\+D\+I\+R\+E\+CT op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Indirect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classTypeOpIndirect__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Indirect\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpIndirect__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOpIndirect_a37fc44cced41547f3430c42687dcaa45}\label{classTypeOpIndirect_a37fc44cced41547f3430c42687dcaa45}} 
+\mbox{\hyperlink{classTypeOpIndirect_a37fc44cced41547f3430c42687dcaa45}{Type\+Op\+Indirect}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpIndirect_a556bb0789c0ef43a825befed5f4068c4}{get\+Input\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpIndirect_a66118bb30f8d17e1baeb5fca73429feb}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpIndirect_a26e28dde9299bf0eb6ba5277ea7000c0}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Information about the I\+N\+D\+I\+R\+E\+CT op-\/code. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpIndirect_a556bb0789c0ef43a825befed5f4068c4}\label{classTypeOpIndirect_a556bb0789c0ef43a825befed5f4068c4}} 
+\index{TypeOpIndirect@{TypeOpIndirect}!getInputLocal@{getInputLocal}}
+\index{getInputLocal@{getInputLocal}!TypeOpIndirect@{TypeOpIndirect}}
+\doxysubsubsection{\texorpdfstring{getInputLocal()}{getInputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Indirect\+::get\+Input\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the input) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+{\em slot} & is the input being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_abe2e4b619932cf94bafb084963a0fc66}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpIndirect_a26e28dde9299bf0eb6ba5277ea7000c0}\label{classTypeOpIndirect_a26e28dde9299bf0eb6ba5277ea7000c0}} 
+\index{TypeOpIndirect@{TypeOpIndirect}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeOpIndirect@{TypeOpIndirect}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Op\+Indirect\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to print \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpIndirect_a66118bb30f8d17e1baeb5fca73429feb}\label{classTypeOpIndirect_a66118bb30f8d17e1baeb5fca73429feb}} 
+\index{TypeOpIndirect@{TypeOpIndirect}!push@{push}}
+\index{push@{push}!TypeOpIndirect@{TypeOpIndirect}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+Indirect\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

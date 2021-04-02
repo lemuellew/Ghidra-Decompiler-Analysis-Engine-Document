@@ -1,0 +1,119 @@
+\hypertarget{classAliasChecker}{}\doxysection{Alias\+Checker Class Reference}
+\label{classAliasChecker}\index{AliasChecker@{AliasChecker}}
+
+
+A light-\/weight class for analyzing pointers and aliasing on the stack.  
+
+
+
+
+{\ttfamily \#include $<$varmap.\+hh$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structAliasChecker_1_1AddBase}{Add\+Base}}
+\begin{DoxyCompactList}\small\item\em A helper class holding a \mbox{\hyperlink{classVarnode}{Varnode}} pointer reference and a possible index added to it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAliasChecker_a66092e26df7c31f66bb375abc184a490}{gather}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, bool defer)
+\begin{DoxyCompactList}\small\item\em Gather Varnodes that point on the stack. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAliasChecker_a2bcaccaa3b0553741c68abf06115e113}{has\+Local\+Alias}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if it looks like the given \mbox{\hyperlink{classVarnode}{Varnode}} is aliased by a pointer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAliasChecker_ad37b8720b4894d92a2c3904576aa8b70}\label{classAliasChecker_ad37b8720b4894d92a2c3904576aa8b70}} 
+void \mbox{\hyperlink{classAliasChecker_ad37b8720b4894d92a2c3904576aa8b70}{sort\+Alias}} (void) const
+\begin{DoxyCompactList}\small\item\em Sort the alias starting offsets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classAliasChecker_a3a5fa2b60bb9d039a77105a26a04604d}{gather\+Additive\+Base}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$startvn, vector$<$ \mbox{\hyperlink{structAliasChecker_1_1AddBase}{Add\+Base}} $>$ \&addbase)
+\begin{DoxyCompactList}\small\item\em Gather result Varnodes for all {\itshape sums} that the given starting \mbox{\hyperlink{classVarnode}{Varnode}} is involved in. \end{DoxyCompactList}\item 
+static uintb \mbox{\hyperlink{classAliasChecker_af74df8f4fb5c4c3678180456bcc42b81}{gather\+Offset}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em If the given \mbox{\hyperlink{classVarnode}{Varnode}} is a sum result, return the constant portion of this sum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A light-\/weight class for analyzing pointers and aliasing on the stack. 
+
+The \mbox{\hyperlink{classAliasChecker_a66092e26df7c31f66bb375abc184a490}{gather()}} method looks for pointer references into a specific Address\+Space (usually the stack). Then \mbox{\hyperlink{classAliasChecker_a2bcaccaa3b0553741c68abf06115e113}{has\+Local\+Alias()}} checks if a specific \mbox{\hyperlink{classVarnode}{Varnode}} within the Address\+Space is (possibly) aliased by one of the gathered pointer references. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAliasChecker_a66092e26df7c31f66bb375abc184a490}\label{classAliasChecker_a66092e26df7c31f66bb375abc184a490}} 
+\index{AliasChecker@{AliasChecker}!gather@{gather}}
+\index{gather@{gather}!AliasChecker@{AliasChecker}}
+\doxysubsubsection{\texorpdfstring{gather()}{gather()}}
+{\footnotesize\ttfamily void Alias\+Checker\+::gather (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{bool}]{defer }\end{DoxyParamCaption})}
+
+
+
+Gather Varnodes that point on the stack. 
+
+For the given function and address space, gather all Varnodes that are pointers into the address space. The actual calculation can be deferred until the first time \mbox{\hyperlink{classAliasChecker_a2bcaccaa3b0553741c68abf06115e113}{has\+Local\+Alias()}} is called. 
+\begin{DoxyParams}{Parameters}
+{\em f} & is the given function \\
+\hline
+{\em spc} & is the given address space \\
+\hline
+{\em defer} & is {\bfseries{true}} is gathering is deferred \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAliasChecker_a3a5fa2b60bb9d039a77105a26a04604d}\label{classAliasChecker_a3a5fa2b60bb9d039a77105a26a04604d}} 
+\index{AliasChecker@{AliasChecker}!gatherAdditiveBase@{gatherAdditiveBase}}
+\index{gatherAdditiveBase@{gatherAdditiveBase}!AliasChecker@{AliasChecker}}
+\doxysubsubsection{\texorpdfstring{gatherAdditiveBase()}{gatherAdditiveBase()}}
+{\footnotesize\ttfamily void Alias\+Checker\+::gather\+Additive\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{startvn,  }\item[{vector$<$ \mbox{\hyperlink{structAliasChecker_1_1AddBase}{Add\+Base}} $>$ \&}]{addbase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gather result Varnodes for all {\itshape sums} that the given starting \mbox{\hyperlink{classVarnode}{Varnode}} is involved in. 
+
+For every sum that involves {\bfseries{startvn}}, collect the final result \mbox{\hyperlink{classVarnode}{Varnode}} of the sum. A sum is any expression involving only the additive operators I\+N\+T\+\_\+\+A\+DD, I\+N\+T\+\_\+\+S\+UB, P\+T\+R\+A\+DD, P\+T\+R\+S\+UB, and S\+E\+G\+M\+E\+N\+T\+OP. The routine traverses forward recursively through all descendants of {\bfseries{vn}} that are additive operations and collects all the roots of the traversed trees. 
+\begin{DoxyParams}{Parameters}
+{\em startvn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to trace \\
+\hline
+{\em addbase} & will contain all the collected roots \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAliasChecker_af74df8f4fb5c4c3678180456bcc42b81}\label{classAliasChecker_af74df8f4fb5c4c3678180456bcc42b81}} 
+\index{AliasChecker@{AliasChecker}!gatherOffset@{gatherOffset}}
+\index{gatherOffset@{gatherOffset}!AliasChecker@{AliasChecker}}
+\doxysubsubsection{\texorpdfstring{gatherOffset()}{gatherOffset()}}
+{\footnotesize\ttfamily uintb Alias\+Checker\+::gather\+Offset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If the given \mbox{\hyperlink{classVarnode}{Varnode}} is a sum result, return the constant portion of this sum. 
+
+Treat {\bfseries{vn}} as the result of a series of A\+DD operations. Examine all the constant terms of this sum and add them together by traversing the syntax tree rooted at {\bfseries{vn}}, backwards, only through additive operations. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} to gather off of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting sub-\/sum 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAliasChecker_a2bcaccaa3b0553741c68abf06115e113}\label{classAliasChecker_a2bcaccaa3b0553741c68abf06115e113}} 
+\index{AliasChecker@{AliasChecker}!hasLocalAlias@{hasLocalAlias}}
+\index{hasLocalAlias@{hasLocalAlias}!AliasChecker@{AliasChecker}}
+\doxysubsubsection{\texorpdfstring{hasLocalAlias()}{hasLocalAlias()}}
+{\footnotesize\ttfamily bool Alias\+Checker\+::has\+Local\+Alias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if it looks like the given \mbox{\hyperlink{classVarnode}{Varnode}} is aliased by a pointer. 
+
+This is gives a rough analysis of whether the given \mbox{\hyperlink{classVarnode}{Varnode}} might be aliased by another pointer in the function. If {\bfseries{false}} is returned, the \mbox{\hyperlink{classVarnode}{Varnode}} is not likely to have an alias. If {\bfseries{true}} is returned, the \mbox{\hyperlink{classVarnode}{Varnode}} might have an alias. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the \mbox{\hyperlink{classVarnode}{Varnode}} might have a pointer alias 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varmap_8hh}{varmap.\+hh}}\item 
+varmap.\+cc\end{DoxyCompactItemize}

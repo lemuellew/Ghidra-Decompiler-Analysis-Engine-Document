@@ -1,0 +1,50 @@
+\hypertarget{ghidra__process_8hh}{}\doxysection{ghidra\+\_\+process.\+hh File Reference}
+\label{ghidra__process_8hh}\index{ghidra\_process.hh@{ghidra\_process.hh}}
+
+
+The formal commands that can be issued to the decompiler by the Ghidra client.  
+
+
+{\ttfamily \#include \char`\"{}capability.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ghidra\+\_\+arch.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}typegrp\+\_\+ghidra.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grammar.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}paramid.\+hh\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$csignal$>$}\newline
+Include dependency graph for ghidra\+\_\+process.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ghidra__process_8hh__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classGhidraCapability}{Ghidra\+Capability}}
+\begin{DoxyCompactList}\small\item\em Registration point and dispatcher for commands sent to the decompiler. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGhidraDecompCapability}{Ghidra\+Decomp\+Capability}}
+\begin{DoxyCompactList}\small\item\em The core decompiler commands capability. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGhidraCommand}{Ghidra\+Command}}
+\begin{DoxyCompactList}\small\item\em Base class for a {\itshape command} to the decompiler as issued by a Ghidra client. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRegisterProgram}{Register\+Program}}
+\begin{DoxyCompactList}\small\item\em Command to {\bfseries{register}} a new Program (executable) with the decompiler. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDeregisterProgram}{Deregister\+Program}}
+\begin{DoxyCompactList}\small\item\em Command to {\bfseries{release}} all resources associated with a Program (executable) in the decompiler. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classFlushNative}{Flush\+Native}}
+\begin{DoxyCompactList}\small\item\em Command to {\bfseries{flush}} all symbols associated with a Program (executable) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDecompileAt}{Decompile\+At}}
+\begin{DoxyCompactList}\small\item\em Command to {\bfseries{decompile}} a specific function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classStructureGraph}{Structure\+Graph}}
+\begin{DoxyCompactList}\small\item\em Command to {\bfseries{structure}} a control-\/flow graph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSetAction}{Set\+Action}}
+\begin{DoxyCompactList}\small\item\em Command to {\bfseries{set}} the {\itshape root} \mbox{\hyperlink{classAction}{Action}} used by the decompiler or {\bfseries{toggle}} output components. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSetOptions}{Set\+Options}}
+\begin{DoxyCompactList}\small\item\em Command to {\bfseries{toggle}} {\bfseries{options}} within the decompiler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The formal commands that can be issued to the decompiler by the Ghidra client. 
+

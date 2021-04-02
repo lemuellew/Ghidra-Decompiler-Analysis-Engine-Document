@@ -1,0 +1,118 @@
+\hypertarget{classActionInferTypes}{}\doxysection{Action\+Infer\+Types Class Reference}
+\label{classActionInferTypes}\index{ActionInferTypes@{ActionInferTypes}}
+
+
+Infer and propagate data-\/types.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Infer\+Types\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classActionInferTypes__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Infer\+Types\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classActionInferTypes__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classActionInferTypes_ae597b86eb6180b289bd0f32a607c6198}{reset}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionInferTypes_ac986d89b2fed20d29ded26939f5a90b8}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionInferTypes_a0f50c538353ecf22ba3651d8e1a661ed}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Infer and propagate data-\/types. 
+
+Atomic data-\/types are ordered from {\itshape most} specified to {\itshape least} specified. This is extended rescursively to an ordering on composite data-\/types via Datatype\+::type\+Order(). A local data-\/type is calculated for each \mbox{\hyperlink{classVarnode}{Varnode}} by looking at the data-\/types expected by the Pcode\+Ops it is directly involved in (as input or output). Every \mbox{\hyperlink{classVarnode}{Varnode}} has 1 chance to propagate its information throughout the graph along C\+O\+PY,L\+O\+AD,S\+T\+O\+RE,A\+DD,M\+U\+L\+T\+I\+E\+Q\+U\+AL,and I\+N\+D\+I\+R\+E\+CT edges. The propagation is done with a depth first search along propagating edges. If the propagated data-\/type is the same, less than, or if the varnode had been propagated through already, that branch is trimmed. Every edge can theoretically get traversed once, i.\+e. the search allows the type to propagate through a looping edge, but immediately truncates. This is probably quadratic in the worst case, if each \mbox{\hyperlink{classVarnode}{Varnode}} has a higher type and propagates it to the entire graph. But it is linear in practice, because there are generally only two or three levels of type, so only one or two Varnodes are likely to propagate widely within a component, and the others get truncated immediately. An initial sort on the data-\/type level of the Varnodes, so that the highest-\/level types are propagated first, would probably fix the worst-\/case, but this seems unnecessary. Complications\+: T\+Y\+P\+E\+\_\+\+S\+P\+A\+C\+E\+B\+A\+SE is a problem because we have to make sure that it doesn\textquotesingle{}t propagate. Also, offsets off of pointers to T\+Y\+P\+E\+\_\+\+S\+P\+A\+C\+E\+B\+A\+SE look up the data-\/type in the local map. Then Action\+Restructure uses data-\/type information recovered by this algorithm to reconstruct the local map. This causes a feedback loop which allows type information recovered about mapped Varnodes to be propagated to pointer Varnodes which point to the mapped object. Unfortunately under rare circumstances, this feedback-\/loop does not converge for some reason. Rather than hunt this down, I\textquotesingle{}ve put an arbitrary iteration limit on the data-\/type propagation algorithm, which reports a warning if the limit is reached and then aborts additional propagation so that decompiling can terminate. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionInferTypes_a0f50c538353ecf22ba3651d8e1a661ed}\label{classActionInferTypes_a0f50c538353ecf22ba3651d8e1a661ed}} 
+\index{ActionInferTypes@{ActionInferTypes}!apply@{apply}}
+\index{apply@{apply}!ActionInferTypes@{ActionInferTypes}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Infer\+Types\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionInferTypes_ac986d89b2fed20d29ded26939f5a90b8}\label{classActionInferTypes_ac986d89b2fed20d29ded26939f5a90b8}} 
+\index{ActionInferTypes@{ActionInferTypes}!clone@{clone}}
+\index{clone@{clone}!ActionInferTypes@{ActionInferTypes}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Infer\+Types\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+\mbox{\Hypertarget{classActionInferTypes_ae597b86eb6180b289bd0f32a607c6198}\label{classActionInferTypes_ae597b86eb6180b289bd0f32a607c6198}} 
+\index{ActionInferTypes@{ActionInferTypes}!reset@{reset}}
+\index{reset@{reset}!ActionInferTypes@{ActionInferTypes}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily virtual void Action\+Infer\+Types\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the new function {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} may affect \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAction_ac7c1cf16bb63e0741ba16be5179cf943}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

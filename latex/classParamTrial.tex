@@ -1,0 +1,177 @@
+\hypertarget{classParamTrial}{}\doxysection{Param\+Trial Class Reference}
+\label{classParamTrial}\index{ParamTrial@{ParamTrial}}
+
+
+A register or memory register that may be used to pass a parameter or return value.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2a2c072d9a2e3bc49347559e8f24c31829}{checked}} = 1, 
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2a279ad7257dfc9d26818a1ad80a54fbe9}{used}} = 2, 
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2a3798c0aef21d0245d1e9fb23be020d20}{defnouse}} = 4, 
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2aa197ba7c3d3418cb220e911b24022a07}{active}} = 8, 
+\newline
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2adb2ef4c29bcffea45f89d69b30a31253}{unref}} = 16, 
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2a7da8fea4839c73b4671fc73fd02e103b}{killedbycall}} = 32, 
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2aff924d3ea43eb53717814ce587b45a76}{rem\+\_\+formed}} = 64, 
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2ad3954f5b872e0e9bb1fb5a8b3fb78ac0}{indcreate\+\_\+formed}} = 128, 
+\newline
+\mbox{\hyperlink{classParamTrial_a716f03faac64ddccab096ba19364ffa2a78f62aca0c665a96ccb34c92e196ca60}{condexe\+\_\+effect}} = 256
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParamTrial_ac5046f61b5daca7e64e282d2552ba5c8}\label{classParamTrial_ac5046f61b5daca7e64e282d2552ba5c8}} 
+\mbox{\hyperlink{classParamTrial_ac5046f61b5daca7e64e282d2552ba5c8}{Param\+Trial}} (const \mbox{\hyperlink{classAddress}{Address}} \&ad, int4 sz, int4 sl)
+\begin{DoxyCompactList}\small\item\em Construct from components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classParamTrial}{Param\+Trial}} \mbox{\hyperlink{classParamTrial_a59648aa757130b4607ec1c18926ff234}{split\+Hi}} (int4 sz) const
+\begin{DoxyCompactList}\small\item\em Create a trial representing the first part of {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classParamTrial}{Param\+Trial}} \mbox{\hyperlink{classParamTrial_a28244bdb2c9f412028e2ac390921cfa0}{split\+Lo}} (int4 sz) const
+\begin{DoxyCompactList}\small\item\em Create a trial representing the last part of {\bfseries{this}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParamTrial_a4bbb238263015249f040a7309e9335a6}{test\+Shrink}} (const \mbox{\hyperlink{classAddress}{Address}} \&newaddr, int4 sz) const
+\begin{DoxyCompactList}\small\item\em Test if {\bfseries{this}} trial can be made smaller. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classParamTrial_ac234b0e0b800d4319bc212dd2eb088d8}{operator$<$}} (const \mbox{\hyperlink{classParamTrial}{Param\+Trial}} \&b) const
+\begin{DoxyCompactList}\small\item\em Sort trials in formal parameter order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A register or memory register that may be used to pass a parameter or return value. 
+
+The parameter recovery utilities (see \mbox{\hyperlink{classParamActive}{Param\+Active}}) use this to denote a putative parameter passing storage location. It is made up of the address and size of the memory range, a set of properties about the use of the range (as a parameter) in context, and a link to the matching part of the Prototype\+Model.
+
+Data-\/flow for the putative parameter is held directly by a \mbox{\hyperlink{classVarnode}{Varnode}}. To quickly map to the \mbox{\hyperlink{classVarnode}{Varnode}} (which may or may not exist at points during the \mbox{\hyperlink{classParamTrial}{Param\+Trial}} lifetime), the concept of {\bfseries{slot}} is used. Param\+Trials are assigned a {\itshape slot}, starting at 1. For sub-\/function parameters, this represents the actual input index of the \mbox{\hyperlink{classVarnode}{Varnode}} in the corresponding C\+A\+LL or C\+A\+L\+L\+I\+ND op. For parameters, this gives the position within the list of possible input Varnodes in address order. The {\itshape slot} ordering varies over the course of analysis and is unlikely to match the final parameter ordering. The \mbox{\hyperlink{classParamTrial}{Param\+Trial}} comparator sorts the trials in final parameter ordering. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{checked@{checked}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!checked@{checked}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2a2c072d9a2e3bc49347559e8f24c31829}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2a2c072d9a2e3bc49347559e8f24c31829}} 
+checked&Trial has been checked. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{used@{used}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!used@{used}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2a279ad7257dfc9d26818a1ad80a54fbe9}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2a279ad7257dfc9d26818a1ad80a54fbe9}} 
+used&Trial is definitely used (final verdict) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{defnouse@{defnouse}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!defnouse@{defnouse}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2a3798c0aef21d0245d1e9fb23be020d20}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2a3798c0aef21d0245d1e9fb23be020d20}} 
+defnouse&Trial is definitely not used. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{active@{active}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!active@{active}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2aa197ba7c3d3418cb220e911b24022a07}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2aa197ba7c3d3418cb220e911b24022a07}} 
+active&Trial looks active (hint that it is used) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unref@{unref}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!unref@{unref}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2adb2ef4c29bcffea45f89d69b30a31253}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2adb2ef4c29bcffea45f89d69b30a31253}} 
+unref&There is no direct reference to this parameter trial. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{killedbycall@{killedbycall}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!killedbycall@{killedbycall}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2a7da8fea4839c73b4671fc73fd02e103b}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2a7da8fea4839c73b4671fc73fd02e103b}} 
+killedbycall&Data in this location is unlikely to flow thru a func and still be a param. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rem\_formed@{rem\_formed}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!rem\_formed@{rem\_formed}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2aff924d3ea43eb53717814ce587b45a76}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2aff924d3ea43eb53717814ce587b45a76}} 
+rem\+\_\+formed&The trial is built out of a remainder operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indcreate\_formed@{indcreate\_formed}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!indcreate\_formed@{indcreate\_formed}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2ad3954f5b872e0e9bb1fb5a8b3fb78ac0}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2ad3954f5b872e0e9bb1fb5a8b3fb78ac0}} 
+indcreate\+\_\+formed&The trial is built out of an indirect creation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{condexe\_effect@{condexe\_effect}!ParamTrial@{ParamTrial}}\index{ParamTrial@{ParamTrial}!condexe\_effect@{condexe\_effect}}}\mbox{\Hypertarget{classParamTrial_a716f03faac64ddccab096ba19364ffa2a78f62aca0c665a96ccb34c92e196ca60}\label{classParamTrial_a716f03faac64ddccab096ba19364ffa2a78f62aca0c665a96ccb34c92e196ca60}} 
+condexe\+\_\+effect&This trial may be affected by conditional execution. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParamTrial_ac234b0e0b800d4319bc212dd2eb088d8}\label{classParamTrial_ac234b0e0b800d4319bc212dd2eb088d8}} 
+\index{ParamTrial@{ParamTrial}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!ParamTrial@{ParamTrial}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Param\+Trial\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParamTrial}{Param\+Trial}} \&}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Sort trials in formal parameter order. 
+
+Trials are sorted primarily by the {\itshape group} index assigned by the Prototype\+Model. Trials within the same group are sorted in address order (or its reverse) 
+\begin{DoxyParams}{Parameters}
+{\em b} & is the other trial to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} should be ordered before the other trial 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamTrial_a59648aa757130b4607ec1c18926ff234}\label{classParamTrial_a59648aa757130b4607ec1c18926ff234}} 
+\index{ParamTrial@{ParamTrial}!splitHi@{splitHi}}
+\index{splitHi@{splitHi}!ParamTrial@{ParamTrial}}
+\doxysubsubsection{\texorpdfstring{splitHi()}{splitHi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classParamTrial}{Param\+Trial}} Param\+Trial\+::split\+Hi (\begin{DoxyParamCaption}\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Create a trial representing the first part of {\bfseries{this}}. 
+
+Create a new \mbox{\hyperlink{classParamTrial}{Param\+Trial}} based on the first bytes of the memory range. 
+\begin{DoxyParams}{Parameters}
+{\em sz} & is the number of bytes to include in the new trial \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new trial 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamTrial_a28244bdb2c9f412028e2ac390921cfa0}\label{classParamTrial_a28244bdb2c9f412028e2ac390921cfa0}} 
+\index{ParamTrial@{ParamTrial}!splitLo@{splitLo}}
+\index{splitLo@{splitLo}!ParamTrial@{ParamTrial}}
+\doxysubsubsection{\texorpdfstring{splitLo()}{splitLo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classParamTrial}{Param\+Trial}} Param\+Trial\+::split\+Lo (\begin{DoxyParamCaption}\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Create a trial representing the last part of {\bfseries{this}}. 
+
+Create a new \mbox{\hyperlink{classParamTrial}{Param\+Trial}} based on the last bytes of the memory range. 
+\begin{DoxyParams}{Parameters}
+{\em sz} & is the number of bytes to include in the new trial \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new trial 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classParamTrial_a4bbb238263015249f040a7309e9335a6}\label{classParamTrial_a4bbb238263015249f040a7309e9335a6}} 
+\index{ParamTrial@{ParamTrial}!testShrink@{testShrink}}
+\index{testShrink@{testShrink}!ParamTrial@{ParamTrial}}
+\doxysubsubsection{\texorpdfstring{testShrink()}{testShrink()}}
+{\footnotesize\ttfamily bool Param\+Trial\+::test\+Shrink (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{newaddr,  }\item[{int4}]{sz }\end{DoxyParamCaption}) const}
+
+
+
+Test if {\bfseries{this}} trial can be made smaller. 
+
+A new address and size for the memory range is given, which must respect the endianness of the putative parameter and any existing match with the Prototype\+Model 
+\begin{DoxyParams}{Parameters}
+{\em newaddr} & is the new address \\
+\hline
+{\em sz} & is the new size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the trial can be shrunk to the new range 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

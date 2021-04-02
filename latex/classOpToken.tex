@@ -1,0 +1,110 @@
+\hypertarget{classOpToken}{}\doxysection{Op\+Token Class Reference}
+\label{classOpToken}\index{OpToken@{OpToken}}
+
+
+A token representing an operator in the high-\/level language.  
+
+
+
+
+{\ttfamily \#include $<$printlanguage.\+hh$>$}
+
+
+
+Collaboration diagram for Op\+Token\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classOpToken__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaff}{tokentype}} \{ \newline
+\mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}{binary}}, 
+\mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}{unary\+\_\+prefix}}, 
+\mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa82a30068870b08542e958e828d6464fa}{postsurround}}, 
+\mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa883dcb2236a61ce30b67ac1da8b817b8}{presurround}}, 
+\newline
+\mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa07bc235399849635f28ca7caaaebb1a4}{space}}, 
+\mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa86a1590d561a983af8ef6271a75a82e8}{hiddenfunction}}
+ \}
+\begin{DoxyCompactList}\small\item\em The possible types of operator token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOpToken_a73d7c611fcdedb3eac4e74450def8561}\label{classOpToken_a73d7c611fcdedb3eac4e74450def8561}} 
+const char $\ast$ \mbox{\hyperlink{classOpToken_a73d7c611fcdedb3eac4e74450def8561}{print}}
+\begin{DoxyCompactList}\small\item\em Printing characters for the token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpToken_a542686a26ddc09726ca70ec466d4f7f8}\label{classOpToken_a542686a26ddc09726ca70ec466d4f7f8}} 
+int4 \mbox{\hyperlink{classOpToken_a542686a26ddc09726ca70ec466d4f7f8}{stage}}
+\begin{DoxyCompactList}\small\item\em Additional elements consumed from the R\+PN stack when emitting this token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpToken_a6ce4a7a613c9ad8823cf7b25e917589d}\label{classOpToken_a6ce4a7a613c9ad8823cf7b25e917589d}} 
+int4 \mbox{\hyperlink{classOpToken_a6ce4a7a613c9ad8823cf7b25e917589d}{precedence}}
+\begin{DoxyCompactList}\small\item\em Precedence level of this token (higher binds more tightly) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpToken_a78b296119750390963ac1859bf447f52}\label{classOpToken_a78b296119750390963ac1859bf447f52}} 
+bool \mbox{\hyperlink{classOpToken_a78b296119750390963ac1859bf447f52}{associative}}
+\begin{DoxyCompactList}\small\item\em True if the operator is associative. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpToken_a5669fe4bcabbd8afd66cc8b5d85c0f55}\label{classOpToken_a5669fe4bcabbd8afd66cc8b5d85c0f55}} 
+\mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaff}{tokentype}} \mbox{\hyperlink{classOpToken_a5669fe4bcabbd8afd66cc8b5d85c0f55}{type}}
+\begin{DoxyCompactList}\small\item\em The basic token type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpToken_a0e083c20738e711bc344f5ad8c824da5}\label{classOpToken_a0e083c20738e711bc344f5ad8c824da5}} 
+int4 \mbox{\hyperlink{classOpToken_a0e083c20738e711bc344f5ad8c824da5}{spacing}}
+\begin{DoxyCompactList}\small\item\em Spaces to print around operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpToken_a0bb120db7eb448f0c1ead784548261b1}\label{classOpToken_a0bb120db7eb448f0c1ead784548261b1}} 
+int4 \mbox{\hyperlink{classOpToken_a0bb120db7eb448f0c1ead784548261b1}{bump}}
+\begin{DoxyCompactList}\small\item\em Spaces to indent if we break here. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOpToken_a7bb898ee28b397177f1a47bc2892c9fd}\label{classOpToken_a7bb898ee28b397177f1a47bc2892c9fd}} 
+\mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$ \mbox{\hyperlink{classOpToken_a7bb898ee28b397177f1a47bc2892c9fd}{negate}}
+\begin{DoxyCompactList}\small\item\em The token representing the negation of this token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A token representing an operator in the high-\/level language. 
+
+The token knows how to print itself and other syntax information like precedence level and associativity within the language, desired spacing, and how operator groups its input expressions. Note that an operator has a broader meaning than just p-\/code operators in this context. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classOpToken_af41c7f108d5662ede7765c5a6c44eaff}\label{classOpToken_af41c7f108d5662ede7765c5a6c44eaff}} 
+\index{OpToken@{OpToken}!tokentype@{tokentype}}
+\index{tokentype@{tokentype}!OpToken@{OpToken}}
+\doxysubsubsection{\texorpdfstring{tokentype}{tokentype}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classOpToken_af41c7f108d5662ede7765c5a6c44eaff}{Op\+Token\+::tokentype}}}
+
+
+
+The possible types of operator token. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{binary@{binary}!OpToken@{OpToken}}\index{OpToken@{OpToken}!binary@{binary}}}\mbox{\Hypertarget{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}\label{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa3a2ec63522a9329a71ddbe8adc3e752d}} 
+binary&Binary operator form (printed between its inputs) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unary\_prefix@{unary\_prefix}!OpToken@{OpToken}}\index{OpToken@{OpToken}!unary\_prefix@{unary\_prefix}}}\mbox{\Hypertarget{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}\label{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa0d809c13f66611247b81856fc9e68289}} 
+unary\+\_\+prefix&Unary operator form (printed before its input) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{postsurround@{postsurround}!OpToken@{OpToken}}\index{OpToken@{OpToken}!postsurround@{postsurround}}}\mbox{\Hypertarget{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa82a30068870b08542e958e828d6464fa}\label{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa82a30068870b08542e958e828d6464fa}} 
+postsurround&Function or array operator form. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{presurround@{presurround}!OpToken@{OpToken}}\index{OpToken@{OpToken}!presurround@{presurround}}}\mbox{\Hypertarget{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa883dcb2236a61ce30b67ac1da8b817b8}\label{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa883dcb2236a61ce30b67ac1da8b817b8}} 
+presurround&Modifier form (like a cast operation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{space@{space}!OpToken@{OpToken}}\index{OpToken@{OpToken}!space@{space}}}\mbox{\Hypertarget{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa07bc235399849635f28ca7caaaebb1a4}\label{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa07bc235399849635f28ca7caaaebb1a4}} 
+space&No explicitly printed token. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hiddenfunction@{hiddenfunction}!OpToken@{OpToken}}\index{OpToken@{OpToken}!hiddenfunction@{hiddenfunction}}}\mbox{\Hypertarget{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa86a1590d561a983af8ef6271a75a82e8}\label{classOpToken_af41c7f108d5662ede7765c5a6c44eaffa86a1590d561a983af8ef6271a75a82e8}} 
+hiddenfunction&Operation that isn\textquotesingle{}t explicitly printed. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{printlanguage_8hh}{printlanguage.\+hh}}\end{DoxyCompactItemize}

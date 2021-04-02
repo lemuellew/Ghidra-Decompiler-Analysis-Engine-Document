@@ -1,0 +1,75 @@
+\hypertarget{classOptionSetAction}{}\doxysection{Option\+Set\+Action Class Reference}
+\label{classOptionSetAction}\index{OptionSetAction@{OptionSetAction}}
+
+
+Establish a new root \mbox{\hyperlink{classAction}{Action}} for the decompiler.  
+
+
+
+
+Inheritance diagram for Option\+Set\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classOptionSetAction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Option\+Set\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classOptionSetAction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classOptionSetAction_ab24a366561133f89e6584157d53f7b81}{apply}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb, const string \&p1, const string \&p2, const string \&p3) const
+\begin{DoxyCompactList}\small\item\em Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Establish a new root \mbox{\hyperlink{classAction}{Action}} for the decompiler. 
+
+The first parameter specifies the name of the root \mbox{\hyperlink{classAction}{Action}}. If a second parameter is given, it specifies the name of a new root \mbox{\hyperlink{classAction}{Action}}, which is created by copying the \mbox{\hyperlink{classAction}{Action}} specified with the first parameter. In this case, the current root \mbox{\hyperlink{classAction}{Action}} is set to the new copy, which can then by modified 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptionSetAction_ab24a366561133f89e6584157d53f7b81}\label{classOptionSetAction_ab24a366561133f89e6584157d53f7b81}} 
+\index{OptionSetAction@{OptionSetAction}!apply@{apply}}
+\index{apply@{apply}!OptionSetAction@{OptionSetAction}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily string Option\+Set\+Action\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb,  }\item[{const string \&}]{p1,  }\item[{const string \&}]{p2,  }\item[{const string \&}]{p3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+This method is overloaded by the different Option classes to provide possible configuration of different parts of the \mbox{\hyperlink{classArchitecture}{Architecture}}. The user can provide up to three optional parameters to tailor a specific type of configuration. The method returns a confirmation/failure message as feedback. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} being configured \\
+\hline
+{\em p1} & is the first optional configuration string \\
+\hline
+{\em p2} & is the second optional configuration string \\
+\hline
+{\em p3} & is the third optional configuration string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a confirmation/failure message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{Arch\+Option}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

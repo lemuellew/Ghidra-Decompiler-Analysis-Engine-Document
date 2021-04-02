@@ -1,0 +1,85 @@
+\hypertarget{classTypeVoid}{}\doxysection{Type\+Void Class Reference}
+\label{classTypeVoid}\index{TypeVoid@{TypeVoid}}
+
+
+Formal \char`\"{}void\char`\"{} data-\/type object.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Void\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classTypeVoid__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Void\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=142pt]{classTypeVoid__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeVoid_a0f216f73b958ec183bed20890377159c}\label{classTypeVoid_a0f216f73b958ec183bed20890377159c}} 
+\mbox{\hyperlink{classTypeVoid_a0f216f73b958ec183bed20890377159c}{Type\+Void}} (const \mbox{\hyperlink{classTypeVoid}{Type\+Void}} \&op)
+\begin{DoxyCompactList}\small\item\em Construct from another \mbox{\hyperlink{classTypeVoid}{Type\+Void}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeVoid_af09fbc39a21e0a7b9fcedfed715c9592}\label{classTypeVoid_af09fbc39a21e0a7b9fcedfed715c9592}} 
+\mbox{\hyperlink{classTypeVoid_af09fbc39a21e0a7b9fcedfed715c9592}{Type\+Void}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeVoid_a4fe8a82cb4657566119e63b73164d22a}\label{classTypeVoid_a4fe8a82cb4657566119e63b73164d22a}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeVoid_a4fe8a82cb4657566119e63b73164d22a}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeVoid_a4c29213947ce96b7899e5c8102ec54dc}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize the data-\/type to X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeVoid_ac8c1945d0a63785e78b3e09a13226ed6}\label{classTypeVoid_ac8c1945d0a63785e78b3e09a13226ed6}} 
+class {\bfseries Type\+Factory}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Formal \char`\"{}void\char`\"{} data-\/type object. 
+
+A placeholder for \char`\"{}no data-\/type\char`\"{}. This should be the only object with meta-\/type set to T\+Y\+P\+E\+\_\+\+V\+O\+ID 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeVoid_a4c29213947ce96b7899e5c8102ec54dc}\label{classTypeVoid_a4c29213947ce96b7899e5c8102ec54dc}} 
+\index{TypeVoid@{TypeVoid}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!TypeVoid@{TypeVoid}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Type\+Void\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize the data-\/type to X\+ML. 
+
+Write out a formal description of the data-\/type as an X\+ML $<$type$>$ tag. For composite data-\/types, the description goes down one level, describing the component types only by reference. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a33339824f1c50d4354952296070c3902}{Datatype}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hh}{type.\+hh}}\item 
+type.\+cc\end{DoxyCompactItemize}

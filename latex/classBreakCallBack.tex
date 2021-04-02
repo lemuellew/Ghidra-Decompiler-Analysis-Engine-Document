@@ -1,0 +1,135 @@
+\hypertarget{classBreakCallBack}{}\doxysection{Break\+Call\+Back Class Reference}
+\label{classBreakCallBack}\index{BreakCallBack@{BreakCallBack}}
+
+
+A breakpoint object.  
+
+
+
+
+{\ttfamily \#include $<$emulate.\+hh$>$}
+
+
+
+Inheritance diagram for Break\+Call\+Back\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classBreakCallBack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Break\+Call\+Back\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classBreakCallBack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBreakCallBack_a40f84ad3345a12ea46550bdc41f6ba6a}{Break\+Call\+Back}} (void)
+\begin{DoxyCompactList}\small\item\em Generic breakpoint constructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBreakCallBack_a93cd065c519c0e08e2c7729cb649f236}{pcode\+Callback}} (\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Call back method for pcode based breakpoints. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBreakCallBack_adb97ba6b111cb9a84856c9e0f9d506f9}{address\+Callback}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Call back method for address based breakpoints. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBreakCallBack_a22f41c29017f4977efde2a489b07592b}{set\+Emulate}} (\mbox{\hyperlink{classEmulate}{Emulate}} $\ast$emu)
+\begin{DoxyCompactList}\small\item\em Associate a particular emulator with this breakpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBreakCallBack_a8047349836361935e9885bd36819255c}\label{classBreakCallBack_a8047349836361935e9885bd36819255c}} 
+\mbox{\hyperlink{classEmulate}{Emulate}} $\ast$ \mbox{\hyperlink{classBreakCallBack_a8047349836361935e9885bd36819255c}{emulate}}
+\begin{DoxyCompactList}\small\item\em The emulator currently associated with this breakpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A breakpoint object. 
+
+This is a base class for breakpoint objects in an emulator. The breakpoints are implemented as callback method, which is overridden for the particular behavior needed by the emulator. Each derived class must override either
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classBreakCallBack_a93cd065c519c0e08e2c7729cb649f236}{pcode\+Callback()}}
+\item \mbox{\hyperlink{classBreakCallBack_adb97ba6b111cb9a84856c9e0f9d506f9}{address\+Callback()}}
+\end{DoxyItemize}
+
+depending on whether the breakpoint is tailored for a particular pcode op or for a machine address. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBreakCallBack_a40f84ad3345a12ea46550bdc41f6ba6a}\label{classBreakCallBack_a40f84ad3345a12ea46550bdc41f6ba6a}} 
+\index{BreakCallBack@{BreakCallBack}!BreakCallBack@{BreakCallBack}}
+\index{BreakCallBack@{BreakCallBack}!BreakCallBack@{BreakCallBack}}
+\doxysubsubsection{\texorpdfstring{BreakCallBack()}{BreakCallBack()}}
+{\footnotesize\ttfamily Break\+Call\+Back\+::\+Break\+Call\+Back (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generic breakpoint constructor. 
+
+The base breakpoint needs no initialization parameters, the \mbox{\hyperlink{classBreakCallBack_a22f41c29017f4977efde2a489b07592b}{set\+Emulate()}} method must be called before the breakpoint can be invoked 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBreakCallBack_adb97ba6b111cb9a84856c9e0f9d506f9}\label{classBreakCallBack_adb97ba6b111cb9a84856c9e0f9d506f9}} 
+\index{BreakCallBack@{BreakCallBack}!addressCallback@{addressCallback}}
+\index{addressCallback@{addressCallback}!BreakCallBack@{BreakCallBack}}
+\doxysubsubsection{\texorpdfstring{addressCallback()}{addressCallback()}}
+{\footnotesize\ttfamily bool Break\+Call\+Back\+::address\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Call back method for address based breakpoints. 
+
+This routine is invoked during emulation, if this breakpoint has somehow been associated with this address. The callback can perform any operation on the emulator context it wants. It then returns {\bfseries{true}} if these actions are intended to replace the action of the {\bfseries{entire}} machine instruction at this address. Or it returns {\bfseries{false}} if the machine instruction should still be executed normally. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address where the break has occurred \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the machine instruction should not be executed 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTerminateCallBack_a5e6e9e130ebb01d929d70022069da60e}{Terminate\+Call\+Back}}, \mbox{\hyperlink{classPrintfCallBack_a9ff8d8997e91d769c03a4e09ad8373b5}{Printf\+Call\+Back}}, and \mbox{\hyperlink{classPutsCallBack_aed006bcf40674841a1799fa1374017b9}{Puts\+Call\+Back}}.
+
+\mbox{\Hypertarget{classBreakCallBack_a93cd065c519c0e08e2c7729cb649f236}\label{classBreakCallBack_a93cd065c519c0e08e2c7729cb649f236}} 
+\index{BreakCallBack@{BreakCallBack}!pcodeCallback@{pcodeCallback}}
+\index{pcodeCallback@{pcodeCallback}!BreakCallBack@{BreakCallBack}}
+\doxysubsubsection{\texorpdfstring{pcodeCallback()}{pcodeCallback()}}
+{\footnotesize\ttfamily bool Break\+Call\+Back\+::pcode\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Call back method for pcode based breakpoints. 
+
+This routine is invoked during emulation, if this breakpoint has somehow been associated with this kind of pcode op. The callback can perform any operation on the emulator context it wants. It then returns {\bfseries{true}} if these actions are intended to replace the action of the pcode op itself. Or it returns {\bfseries{false}} if the pcode op should still have its normal effect on the emulator context. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the particular pcode operation where the break occurs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the normal pcode op action should not occur 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBreakCallBack_a22f41c29017f4977efde2a489b07592b}\label{classBreakCallBack_a22f41c29017f4977efde2a489b07592b}} 
+\index{BreakCallBack@{BreakCallBack}!setEmulate@{setEmulate}}
+\index{setEmulate@{setEmulate}!BreakCallBack@{BreakCallBack}}
+\doxysubsubsection{\texorpdfstring{setEmulate()}{setEmulate()}}
+{\footnotesize\ttfamily void Break\+Call\+Back\+::set\+Emulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmulate}{Emulate}} $\ast$}]{emu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Associate a particular emulator with this breakpoint. 
+
+Breakpoints can be associated with one emulator at a time. 
+\begin{DoxyParams}{Parameters}
+{\em emu} & is the emulator to associate this breakpoint with \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{emulate_8hh}{emulate.\+hh}}\end{DoxyCompactItemize}

@@ -1,0 +1,242 @@
+\hypertarget{xml_8hh}{}\doxysection{xml.\+hh File Reference}
+\label{xml_8hh}\index{xml.hh@{xml.hh}}
+
+
+Lightweight (and incomplete) X\+ML parser for marshaling data to and from the decompiler.  
+
+
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+Include dependency graph for xml.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{xml_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{xml_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classAttributes}{Attributes}}
+\begin{DoxyCompactList}\small\item\em The {\itshape attributes} for a single X\+ML element. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classContentHandler}{Content\+Handler}}
+\begin{DoxyCompactList}\small\item\em The S\+AX interface for parsing X\+ML documents. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classElement}{Element}}
+\begin{DoxyCompactList}\small\item\em An X\+ML element. A node in the D\+OM tree. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDocument}{Document}}
+\begin{DoxyCompactList}\small\item\em A complete in-\/memory X\+ML document. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTreeHandler}{Tree\+Handler}}
+\begin{DoxyCompactList}\small\item\em A S\+AX interface implementation for constructing an in-\/memory D\+OM model. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classDocumentStorage}{Document\+Storage}}
+\begin{DoxyCompactList}\small\item\em A container for parsed X\+ML documents. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structXmlError}{Xml\+Error}}
+\begin{DoxyCompactList}\small\item\em An exception thrown by the X\+ML parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{xml_8hh_ad34bc338f5e298a1993320898263b741}\label{xml_8hh_ad34bc338f5e298a1993320898263b741}} 
+typedef void $\ast$ \mbox{\hyperlink{xml_8hh_ad34bc338f5e298a1993320898263b741}{Locator}}
+\begin{DoxyCompactList}\small\item\em Placeholder for a document locator object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{xml_8hh_ab5ab62f46b3735557c125f91b40ac155}\label{xml_8hh_ab5ab62f46b3735557c125f91b40ac155}} 
+typedef vector$<$ \mbox{\hyperlink{classElement}{Element}} $\ast$ $>$ \mbox{\hyperlink{xml_8hh_ab5ab62f46b3735557c125f91b40ac155}{List}}
+\begin{DoxyCompactList}\small\item\em A list of X\+ML elements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int4 \mbox{\hyperlink{xml_8hh_acb2e6147fb537978820f563506f8e0ff}{xml\+\_\+parse}} (istream \&i, \mbox{\hyperlink{classContentHandler}{Content\+Handler}} $\ast$hand, int4 dbg=0)
+\begin{DoxyCompactList}\small\item\em Start-\/up the X\+ML parser given a stream and a handler. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{xml_8hh_a4e0d1051f142e3711986dbb797049769}{xml\+\_\+tree}} (istream \&i)
+\begin{DoxyCompactList}\small\item\em Parse the given X\+ML stream into an in-\/memory document. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{xml_8hh_a18ba74ef06228bed0b1eff1f1abbb7ef}{xml\+\_\+escape}} (ostream \&s, const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Send the given character array to a stream, escaping characters with special X\+ML meaning. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{xml_8hh_a0fa1b18d881c70abd1489da2ba2f6792}{a\+\_\+v}} (ostream \&s, const string \&attr, const string \&val)
+\begin{DoxyCompactList}\small\item\em Output an X\+ML attribute name/value pair to stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{xml_8hh_aa12f4a381037faf4e90d1876bb44aa02}{a\+\_\+v\+\_\+i}} (ostream \&s, const string \&attr, intb val)
+\begin{DoxyCompactList}\small\item\em Output the given signed integer as an X\+ML attribute value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{xml_8hh_af098b9ed0ffa95b5f853eb3f88ec7064}{a\+\_\+v\+\_\+u}} (ostream \&s, const string \&attr, uintb val)
+\begin{DoxyCompactList}\small\item\em Output the given unsigned integer as an X\+ML attribute value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{xml_8hh_a87634423f394bc832a51957ee6fc85c9}{a\+\_\+v\+\_\+b}} (ostream \&s, const string \&attr, bool val)
+\begin{DoxyCompactList}\small\item\em Output the given boolean value as an X\+ML attribute. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{xml_8hh_ac2d01d7c2986f1143b2f6145311d093e}{xml\+\_\+readbool}} (const string \&attr)
+\begin{DoxyCompactList}\small\item\em Read an X\+ML attribute value as a boolean. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lightweight (and incomplete) X\+ML parser for marshaling data to and from the decompiler. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{xml_8hh_a0fa1b18d881c70abd1489da2ba2f6792}\label{xml_8hh_a0fa1b18d881c70abd1489da2ba2f6792}} 
+\index{xml.hh@{xml.hh}!a\_v@{a\_v}}
+\index{a\_v@{a\_v}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{a\_v()}{a\_v()}}
+{\footnotesize\ttfamily void a\+\_\+v (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const string \&}]{attr,  }\item[{const string \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Output an X\+ML attribute name/value pair to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em attr} & is the name of the attribute \\
+\hline
+{\em val} & is the attribute value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{xml_8hh_a87634423f394bc832a51957ee6fc85c9}\label{xml_8hh_a87634423f394bc832a51957ee6fc85c9}} 
+\index{xml.hh@{xml.hh}!a\_v\_b@{a\_v\_b}}
+\index{a\_v\_b@{a\_v\_b}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{a\_v\_b()}{a\_v\_b()}}
+{\footnotesize\ttfamily void a\+\_\+v\+\_\+b (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const string \&}]{attr,  }\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Output the given boolean value as an X\+ML attribute. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em attr} & is the name of the attribute \\
+\hline
+{\em val} & is the given boolean value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{xml_8hh_aa12f4a381037faf4e90d1876bb44aa02}\label{xml_8hh_aa12f4a381037faf4e90d1876bb44aa02}} 
+\index{xml.hh@{xml.hh}!a\_v\_i@{a\_v\_i}}
+\index{a\_v\_i@{a\_v\_i}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{a\_v\_i()}{a\_v\_i()}}
+{\footnotesize\ttfamily void a\+\_\+v\+\_\+i (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const string \&}]{attr,  }\item[{intb}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Output the given signed integer as an X\+ML attribute value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em attr} & is the name of the attribute \\
+\hline
+{\em val} & is the given integer value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{xml_8hh_af098b9ed0ffa95b5f853eb3f88ec7064}\label{xml_8hh_af098b9ed0ffa95b5f853eb3f88ec7064}} 
+\index{xml.hh@{xml.hh}!a\_v\_u@{a\_v\_u}}
+\index{a\_v\_u@{a\_v\_u}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{a\_v\_u()}{a\_v\_u()}}
+{\footnotesize\ttfamily void a\+\_\+v\+\_\+u (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const string \&}]{attr,  }\item[{uintb}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Output the given unsigned integer as an X\+ML attribute value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em attr} & is the name of the attribute \\
+\hline
+{\em val} & is the given unsigned integer value \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{xml_8hh_a18ba74ef06228bed0b1eff1f1abbb7ef}\label{xml_8hh_a18ba74ef06228bed0b1eff1f1abbb7ef}} 
+\index{xml.hh@{xml.hh}!xml\_escape@{xml\_escape}}
+\index{xml\_escape@{xml\_escape}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{xml\_escape()}{xml\_escape()}}
+{\footnotesize\ttfamily void xml\+\_\+escape (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Send the given character array to a stream, escaping characters with special X\+ML meaning. 
+
+This makes the following character substitutions\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}$<$\textquotesingle{} =$>$ \char`\"{}<\char`\"{}
+\item \textquotesingle{}$>$\textquotesingle{} =$>$ \char`\"{}>\char`\"{}
+\item \textquotesingle{}\&\textquotesingle{} =$>$ \char`\"{}\&\char`\"{}
+\item \textquotesingle{}\char`\"{}\textquotesingle{} =$>$ \char`\"{}"\char`\"{}
+\item \textquotesingle{}\textbackslash{}\textquotesingle{}\textquotesingle{} =$>$ \char`\"{}\textquotesingle{}\char`\"{}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em str} & is the given character array to escape \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{xml_8hh_acb2e6147fb537978820f563506f8e0ff}\label{xml_8hh_acb2e6147fb537978820f563506f8e0ff}} 
+\index{xml.hh@{xml.hh}!xml\_parse@{xml\_parse}}
+\index{xml\_parse@{xml\_parse}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{xml\_parse()}{xml\_parse()}}
+{\footnotesize\ttfamily int4 xml\+\_\+parse (\begin{DoxyParamCaption}\item[{istream \&}]{i,  }\item[{\mbox{\hyperlink{classContentHandler}{Content\+Handler}} $\ast$}]{hand,  }\item[{int4}]{dbg = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Start-\/up the X\+ML parser given a stream and a handler. 
+
+This runs the low-\/level X\+ML parser. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the given stream to get character data from \\
+\hline
+{\em hand} & is the \mbox{\hyperlink{classContentHandler}{Content\+Handler}} that stores or processes the X\+ML content events \\
+\hline
+{\em dbg} & is non-\/zero if the parser should output debug information during its parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if there is no error during parsing or a (non-\/zero) error condition 
+\end{DoxyReturn}
+\mbox{\Hypertarget{xml_8hh_ac2d01d7c2986f1143b2f6145311d093e}\label{xml_8hh_ac2d01d7c2986f1143b2f6145311d093e}} 
+\index{xml.hh@{xml.hh}!xml\_readbool@{xml\_readbool}}
+\index{xml\_readbool@{xml\_readbool}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{xml\_readbool()}{xml\_readbool()}}
+{\footnotesize\ttfamily bool xml\+\_\+readbool (\begin{DoxyParamCaption}\item[{const string \&}]{attr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Read an X\+ML attribute value as a boolean. 
+
+This method is intended to recognize the strings, \char`\"{}true\char`\"{}, \char`\"{}yes\char`\"{}, and \char`\"{}1\char`\"{} as a {\bfseries{true}} value. Anything else is returned as {\bfseries{false}}. 
+\begin{DoxyParams}{Parameters}
+{\em attr} & is the given X\+ML attribute value (as a string) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+either {\bfseries{true}} or {\bfseries{false}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{xml_8hh_a4e0d1051f142e3711986dbb797049769}\label{xml_8hh_a4e0d1051f142e3711986dbb797049769}} 
+\index{xml.hh@{xml.hh}!xml\_tree@{xml\_tree}}
+\index{xml\_tree@{xml\_tree}!xml.hh@{xml.hh}}
+\doxysubsubsection{\texorpdfstring{xml\_tree()}{xml\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}}$\ast$ xml\+\_\+tree (\begin{DoxyParamCaption}\item[{istream \&}]{i }\end{DoxyParamCaption})}
+
+
+
+Parse the given X\+ML stream into an in-\/memory document. 
+
+The stream is parsed using the standard \mbox{\hyperlink{classContentHandler}{Content\+Handler}} for producing an in-\/memory D\+OM representation of the X\+ML document. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the given stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the in-\/memory X\+ML document 
+\end{DoxyReturn}

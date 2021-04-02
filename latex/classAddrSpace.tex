@@ -1,0 +1,1027 @@
+\hypertarget{classAddrSpace}{}\doxysection{Addr\+Space Class Reference}
+\label{classAddrSpace}\index{AddrSpace@{AddrSpace}}
+
+
+A region where processor data is stored.  
+
+
+
+
+{\ttfamily \#include $<$space.\+hh$>$}
+
+
+
+Inheritance diagram for Addr\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classAddrSpace__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a8d907075fd50528d0ac10d43af899be2}{big\+\_\+endian}} = 1, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32aaa1675e833af050897d4ad66c138f1b4}{heritaged}} = 2, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32aeb1ab5b0f82801bfb177916a2b902fe6}{does\+\_\+deadcode}} = 4, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ae26a47a5510e05c1ca0ab8ec2ee0b72b}{programspecific}} = 8, 
+\newline
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32abb22ff2778e1876ccf90657fc6df801f}{reverse\+\_\+justification}} = 16, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a7820728fd72194c3c22534c0d814ab76}{overlay}} = 32, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ae8c7fcb8745b27504eb57262b2936d4b}{overlaybase}} = 64, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ad16f38794d350a82a0af64e95b933f50}{truncated}} = 128, 
+\newline
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a91dce97e6f6b850d04eb182edde6e2c6}{hasphysical}} = 256, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a8a071c679352d4d470de464cc455f071}{is\+\_\+otherspace}} = 512, 
+\mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a4a7e5f29d8510b239e70ba18fa9c7864}{has\+\_\+nearpointers}} = 0x400
+ \}
+\item 
+enum \{ \mbox{\hyperlink{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5faeff4e84886ac05d60deed4afb423d323}{constant\+\_\+space\+\_\+index}} = 0, 
+\mbox{\hyperlink{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5faa9d62850bba12a3b1f440e30e538469a}{other\+\_\+space\+\_\+index}} = 1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddrSpace_a8ff2c48f386eb8be5d60206c28cc1be2}{Addr\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, \mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}} tp, const string \&nm, uint4 size, uint4 ws, int4 ind, uint4 fl, int4 dl)
+\item 
+\mbox{\hyperlink{classAddrSpace_a89ba3e0553cd1713a2becedf4541e6b9}{Addr\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, \mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}} tp)
+\begin{DoxyCompactList}\small\item\em For use with restore\+Xml. \end{DoxyCompactList}\item 
+const string \& \mbox{\hyperlink{classAddrSpace_a0ff86055617ff65ee8961b7c4e6caf98}{get\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$ \mbox{\hyperlink{classAddrSpace_a1274986fce0448a40a055fb2bcd7aeb1}{get\+Manager}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the space manager. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$ \mbox{\hyperlink{classAddrSpace_a3a0cdcba6345332bd0f557a449de6948}{get\+Trans}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the processor translator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}} \mbox{\hyperlink{classAddrSpace_ab548f4158529a29122d4d0a30d94ed98}{get\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the type of space. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddrSpace_a63b510a07fd8450dc432d7e671f79f66}{get\+Delay}} (void) const
+\begin{DoxyCompactList}\small\item\em Get number of heritage passes being delayed. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddrSpace_a51295f26c99891cb310af0eb0c20d4db}{get\+Deadcode\+Delay}} (void) const
+\begin{DoxyCompactList}\small\item\em Get number of passes before deadcode removal is allowed. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddrSpace_abac46fe0121579ac29f2e8e93753183d}{get\+Index}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the integer identifier. \end{DoxyCompactList}\item 
+uint4 \mbox{\hyperlink{classAddrSpace_ab84baa41a0b25735578129031fef550c}{get\+Word\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the addressable unit size. \end{DoxyCompactList}\item 
+uint4 \mbox{\hyperlink{classAddrSpace_aa4217d683f1de141406d009dc4364874}{get\+Addr\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the size of the space. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classAddrSpace_ab4c316eafd39b4e6c7a8017e01d5a841}{get\+Highest}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the highest byte-\/scaled address. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classAddrSpace_af8422ea603792369a5794d2a95721f63}{get\+Pointer\+Lower\+Bound}} (void) const
+\begin{DoxyCompactList}\small\item\em Get lower bound for assuming an offset is a pointer. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classAddrSpace_a52169672037d99ed9ad432d1c35c3034}{get\+Pointer\+Upper\+Bound}} (void) const
+\begin{DoxyCompactList}\small\item\em Get upper bound for assuming an offset is a pointer. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAddrSpace_a11fdd46d2b8447f0dad39c3e13759a5d}{get\+Minimum\+Ptr\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the minimum pointer size for {\bfseries{this}} space. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classAddrSpace_aaf923ed847e9804b55ffa12a51202712}{wrap\+Offset}} (uintb off) const
+\begin{DoxyCompactList}\small\item\em Wrap -\/off-\/ to the offset that fits into this space. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classAddrSpace_aca9d79017012183ca27a1c921444c11c}{get\+Shortcut}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the shortcut character. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddrSpace_a807313f845cda34701898ec89bad58cb}{is\+Heritaged}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if dataflow has been traced. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddrSpace_ad21df4bc27001b5bb1f98fdff8e3decc}{does\+Deadcode}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if dead code analysis should be done on this space. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddrSpace_a1e506360f315658ac46593d12c20a4e0}{has\+Physical}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if data is physically stored in this. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddrSpace_af5683c0d7e42edec80b97bcb9fb3dc11}{is\+Big\+Endian}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if values in this space are big endian. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddrSpace_aea27d2d0e9b150a4f884fb029eaefbf6}{is\+Reverse\+Justified}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if alignment justification does not match endianness. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_ad81b44bbbe7c6b561a7985aa23f3bd0d}\label{classAddrSpace_ad81b44bbbe7c6b561a7985aa23f3bd0d}} 
+bool \mbox{\hyperlink{classAddrSpace_ad81b44bbbe7c6b561a7985aa23f3bd0d}{is\+Overlay}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this is an overlay space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_a66dc51ca0c5b8f2061cbbec7446e71fc}\label{classAddrSpace_a66dc51ca0c5b8f2061cbbec7446e71fc}} 
+bool \mbox{\hyperlink{classAddrSpace_a66dc51ca0c5b8f2061cbbec7446e71fc}{is\+Overlay\+Base}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if other spaces overlay this space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_a8b6b90c06dda0ff2b05d77e9779935e7}\label{classAddrSpace_a8b6b90c06dda0ff2b05d77e9779935e7}} 
+bool \mbox{\hyperlink{classAddrSpace_a8b6b90c06dda0ff2b05d77e9779935e7}{is\+Other\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\bfseries{this}} is the {\itshape other} address space. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAddrSpace_a06ef47bec774e59d14ab721eef35e315}{is\+Truncated}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this space is truncated from its original size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_affc4334a8339b56bcf7fe9f3cd5f0703}\label{classAddrSpace_affc4334a8339b56bcf7fe9f3cd5f0703}} 
+bool \mbox{\hyperlink{classAddrSpace_affc4334a8339b56bcf7fe9f3cd5f0703}{has\+Near\+Pointers}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\itshape near} (truncated) pointers into {\bfseries{this}} space are possible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpace_aac551de6286f9260153c1d7d1bacdab8}{print\+Offset}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Write an address offset to a stream. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classAddrSpace_a1bc0bc963f33dedb721489497a92c2e3}{num\+Spacebase}} (void) const
+\begin{DoxyCompactList}\small\item\em Number of base registers associated with this space. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& \mbox{\hyperlink{classAddrSpace_ad6b5eb815514577118d9b998447cc4d0}{get\+Spacebase}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get a base register that creates this virtual space. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& \mbox{\hyperlink{classAddrSpace_a8fb25cf630f64ad73a137393b48067a0}{get\+Spacebase\+Full}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Return original spacebase register before truncation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classAddrSpace_a9468b2d0bc4cdaa762e213fb395ac434}{stack\+Grows\+Negative}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if a stack in this space grows negative. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classAddrSpace_a616f457a28ab5779167183f47a5707b8}{get\+Contain}} (void) const
+\begin{DoxyCompactList}\small\item\em Return this space\textquotesingle{}s containing space (if any) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAddrSpace_a4475d64c56141adf80cb0aca5b23e3c6}{save\+Xml\+Attributes}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Save an address as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAddrSpace_a67510a8345fcc17157cc0389e757d504}{save\+Xml\+Attributes}} (ostream \&s, uintb offset, int4 size) const
+\begin{DoxyCompactList}\small\item\em Save an address and size as X\+ML. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classAddrSpace_aa20e53222697512db0a64db75179ead2}{restore\+Xml\+Attributes}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, uint4 \&size) const
+\begin{DoxyCompactList}\small\item\em Recover an offset and size. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAddrSpace_a76819b70cd6b6ae8601ac1821f86b929}{print\+Raw}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Write an address in this space to a stream. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classAddrSpace_ad0a4a2744ee7de8f592dfaf817a6c93b}{read}} (const string \&s, int4 \&size) const
+\begin{DoxyCompactList}\small\item\em Read in an address (and possible size) from a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAddrSpace_ac073a4d446677c54d769abba01318864}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the details of this space as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover the details of this space from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uintb \mbox{\hyperlink{classAddrSpace_af5925a4ae67a290f59bf17533fac62b4}{address\+To\+Byte}} (uintb val, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Scale from addressable units to byte units. \end{DoxyCompactList}\item 
+static uintb \mbox{\hyperlink{classAddrSpace_a3c9149df492bdcaccc208eac261e8365}{byte\+To\+Address}} (uintb val, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Scale from byte units to addressable units. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classAddrSpace_a18aa860242e1e753b3ad786a0aa1b36e}{address\+To\+Byte\+Int}} (int4 val, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Scale int4 from addressable units to byte units. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classAddrSpace_a082aa8e67257bcdcfc40d1280a3d0315}{byte\+To\+Address\+Int}} (int4 val, uint4 ws)
+\begin{DoxyCompactList}\small\item\em Scale int4 from byte units to addressable units. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classAddrSpace_aee2e93b0348411a63144f566c684764d}{compare\+By\+Index}} (const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$a, const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Compare two spaces by their index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAddrSpace_af61640170c0baa861bbacee0e5c22a31}{calc\+Scale\+Mask}} (void)
+\begin{DoxyCompactList}\small\item\em Calculate scale and mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpace_a3dd14c033be519525d486fcbc94a2bf7}{set\+Flags}} (uint4 fl)
+\begin{DoxyCompactList}\small\item\em Set a cached attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpace_a523bc5940337efda7c00745c06c4346f}{clear\+Flags}} (uint4 fl)
+\begin{DoxyCompactList}\small\item\em Clear a cached attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpace_a7acbe22e2d26a7e70ef09fdfa646e9af}{save\+Basic\+Attributes}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the X\+ML attributes of this space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddrSpace_a84ecacea771a34c4349d1f31272316c7}{truncate\+Space}} (uint4 newsize)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAddrSpace_aa0df0a80bf601ab9e4384a36e72f0c72}\label{classAddrSpace_aa0df0a80bf601ab9e4384a36e72f0c72}} 
+string \mbox{\hyperlink{classAddrSpace_aa0df0a80bf601ab9e4384a36e72f0c72}{name}}
+\begin{DoxyCompactList}\small\item\em Name of this space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_a05c9b715d49d562e566ca392818fb798}\label{classAddrSpace_a05c9b715d49d562e566ca392818fb798}} 
+uint4 \mbox{\hyperlink{classAddrSpace_a05c9b715d49d562e566ca392818fb798}{address\+Size}}
+\begin{DoxyCompactList}\small\item\em Size of an address into this space in bytes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_a01a3c9c83f617703abed64d7c6de849a}\label{classAddrSpace_a01a3c9c83f617703abed64d7c6de849a}} 
+uint4 \mbox{\hyperlink{classAddrSpace_a01a3c9c83f617703abed64d7c6de849a}{wordsize}}
+\begin{DoxyCompactList}\small\item\em Size of unit being addressed (1=byte) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_acd897fe79e11489f2c9204f4a07067fc}\label{classAddrSpace_acd897fe79e11489f2c9204f4a07067fc}} 
+int4 \mbox{\hyperlink{classAddrSpace_acd897fe79e11489f2c9204f4a07067fc}{minimum\+Pointer\+Size}}
+\begin{DoxyCompactList}\small\item\em Smallest size of a pointer into {\bfseries{this}} space (in bytes) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_ace333a37cd6fe6ae2c52cd9d64d7269e}\label{classAddrSpace_ace333a37cd6fe6ae2c52cd9d64d7269e}} 
+int4 \mbox{\hyperlink{classAddrSpace_ace333a37cd6fe6ae2c52cd9d64d7269e}{index}}
+\begin{DoxyCompactList}\small\item\em An integer identifier for the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_adb1ad3a09f9860eac23dd34f910808cd}\label{classAddrSpace_adb1ad3a09f9860eac23dd34f910808cd}} 
+int4 \mbox{\hyperlink{classAddrSpace_adb1ad3a09f9860eac23dd34f910808cd}{delay}}
+\begin{DoxyCompactList}\small\item\em Delay in heritaging this space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAddrSpace_aa2fd37355d0ed2ebee552ac944f67d95}\label{classAddrSpace_aa2fd37355d0ed2ebee552ac944f67d95}} 
+int4 \mbox{\hyperlink{classAddrSpace_aa2fd37355d0ed2ebee552ac944f67d95}{deadcodedelay}}
+\begin{DoxyCompactList}\small\item\em Delay before deadcode removal is allowed on this space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAddrSpace_a0e578f3e90e10ec045899c0e9cb65d46}\label{classAddrSpace_a0e578f3e90e10ec045899c0e9cb65d46}} 
+class {\bfseries Addr\+Space\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A region where processor data is stored. 
+
+An \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} (\mbox{\hyperlink{classAddress}{Address}} Space) is an arbitrary sequence of bytes where a processor can store data. As is usual with most processors\textquotesingle{} concept of R\+AM, an integer offset paired with an \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} forms the address (See \mbox{\hyperlink{classAddress}{Address}}) of a byte. The {\itshape size} of an \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} indicates the number of bytes that can be separately addressed and is usually described by the number of bytes needed to encode the biggest offset. I.\+e. a {\itshape 4-\/byte} address space means that there are offsets ranging from 0x00000000 to 0xffffffff within the space for a total of 2$^\wedge$32 addressable bytes within the space. There can be multiple address spaces, and it is typical to have spaces
+\begin{DoxyItemize}
+\item {\bfseries{ram}} Modelling the main processor address bus
+\item {\bfseries{register}} Modelling a processors registers
+\end{DoxyItemize}
+
+The processor specification can set up any address spaces it needs in an arbitrary manner, but {\itshape all} data manipulated by the processor, which the specification hopes to model, must be contained in some address space, including R\+AM, R\+OM, general registers, special registers, i/o ports, etc.
+
+The analysis engine also uses additional address spaces to model special concepts. These include
+\begin{DoxyItemize}
+\item {\bfseries{const}} There is a {\itshape constant} address space for modelling constant values in pcode expressions (See \mbox{\hyperlink{classConstantSpace}{Constant\+Space}})
+\item {\bfseries{unique}} There is always a {\itshape unique} address space used as a pool for temporary registers. (See \mbox{\hyperlink{classUniqueSpace}{Unique\+Space}}) 
+\end{DoxyItemize}
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{big\_endian@{big\_endian}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!big\_endian@{big\_endian}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a8d907075fd50528d0ac10d43af899be2}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a8d907075fd50528d0ac10d43af899be2}} 
+big\+\_\+endian&Space is big endian if set, little endian otherwise. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{heritaged@{heritaged}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!heritaged@{heritaged}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32aaa1675e833af050897d4ad66c138f1b4}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32aaa1675e833af050897d4ad66c138f1b4}} 
+heritaged&This space is heritaged. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{does\_deadcode@{does\_deadcode}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!does\_deadcode@{does\_deadcode}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32aeb1ab5b0f82801bfb177916a2b902fe6}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32aeb1ab5b0f82801bfb177916a2b902fe6}} 
+does\+\_\+deadcode&Dead-\/code analysis is done on this space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{programspecific@{programspecific}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!programspecific@{programspecific}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ae26a47a5510e05c1ca0ab8ec2ee0b72b}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ae26a47a5510e05c1ca0ab8ec2ee0b72b}} 
+programspecific&Space is specific to a particular loadimage. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reverse\_justification@{reverse\_justification}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!reverse\_justification@{reverse\_justification}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32abb22ff2778e1876ccf90657fc6df801f}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32abb22ff2778e1876ccf90657fc6df801f}} 
+reverse\+\_\+justification&Justification within aligned word is opposite of endianness. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{overlay@{overlay}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!overlay@{overlay}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a7820728fd72194c3c22534c0d814ab76}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a7820728fd72194c3c22534c0d814ab76}} 
+overlay&This space is an overlay of another space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{overlaybase@{overlaybase}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!overlaybase@{overlaybase}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ae8c7fcb8745b27504eb57262b2936d4b}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ae8c7fcb8745b27504eb57262b2936d4b}} 
+overlaybase&This is the base space for overlay space(s) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{truncated@{truncated}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!truncated@{truncated}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ad16f38794d350a82a0af64e95b933f50}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32ad16f38794d350a82a0af64e95b933f50}} 
+truncated&Space is truncated from its original size, expect pointers larger than this size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hasphysical@{hasphysical}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!hasphysical@{hasphysical}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a91dce97e6f6b850d04eb182edde6e2c6}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a91dce97e6f6b850d04eb182edde6e2c6}} 
+hasphysical&Has physical memory associated with it. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{is\_otherspace@{is\_otherspace}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!is\_otherspace@{is\_otherspace}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a8a071c679352d4d470de464cc455f071}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a8a071c679352d4d470de464cc455f071}} 
+is\+\_\+otherspace&Quick check for the \mbox{\hyperlink{classOtherSpace}{Other\+Space}} derived class. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{has\_nearpointers@{has\_nearpointers}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!has\_nearpointers@{has\_nearpointers}}}\mbox{\Hypertarget{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a4a7e5f29d8510b239e70ba18fa9c7864}\label{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a4a7e5f29d8510b239e70ba18fa9c7864}} 
+has\+\_\+nearpointers&Does there exist near pointers into this space. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5f}\label{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5f}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{constant\_space\_index@{constant\_space\_index}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!constant\_space\_index@{constant\_space\_index}}}\mbox{\Hypertarget{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5faeff4e84886ac05d60deed4afb423d323}\label{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5faeff4e84886ac05d60deed4afb423d323}} 
+constant\+\_\+space\+\_\+index&Reserved index for the constant space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{other\_space\_index@{other\_space\_index}!AddrSpace@{AddrSpace}}\index{AddrSpace@{AddrSpace}!other\_space\_index@{other\_space\_index}}}\mbox{\Hypertarget{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5faa9d62850bba12a3b1f440e30e538469a}\label{classAddrSpace_ad73b24f25ef1aae8b698e7b16baf7a5faa9d62850bba12a3b1f440e30e538469a}} 
+other\+\_\+space\+\_\+index&Reserved index for the other space. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAddrSpace_a8ff2c48f386eb8be5d60206c28cc1be2}\label{classAddrSpace_a8ff2c48f386eb8be5d60206c28cc1be2}} 
+\index{AddrSpace@{AddrSpace}!AddrSpace@{AddrSpace}}
+\index{AddrSpace@{AddrSpace}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{AddrSpace()}{AddrSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Addr\+Space\+::\+Addr\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}}}]{tp,  }\item[{const string \&}]{nm,  }\item[{uint4}]{size,  }\item[{uint4}]{ws,  }\item[{int4}]{ind,  }\item[{uint4}]{fl,  }\item[{int4}]{dl }\end{DoxyParamCaption})}
+
+Initialize an address space with its basic attributes 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the space manager associated with the new space \\
+\hline
+{\em t} & is the processor translator associated with the new space \\
+\hline
+{\em tp} & is the type of the new space (P\+R\+O\+C\+E\+S\+S\+OR, C\+O\+N\+S\+T\+A\+NT, I\+N\+T\+E\+R\+N\+AL,...) \\
+\hline
+{\em nm} & is the name of the new space \\
+\hline
+{\em size} & is the (offset encoding) size of the new space \\
+\hline
+{\em ws} & is the number of bytes in an addressable unit \\
+\hline
+{\em ind} & is the integer identifier for the new space \\
+\hline
+{\em fl} & can be 0 or \mbox{\hyperlink{classAddrSpace_ad6f8b5b000945a20763f1e0d68a51b32a91dce97e6f6b850d04eb182edde6e2c6}{Addr\+Space\+::hasphysical}} \\
+\hline
+{\em dl} & is the number of rounds to delay heritage for the new space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpace_a89ba3e0553cd1713a2becedf4541e6b9}\label{classAddrSpace_a89ba3e0553cd1713a2becedf4541e6b9}} 
+\index{AddrSpace@{AddrSpace}!AddrSpace@{AddrSpace}}
+\index{AddrSpace@{AddrSpace}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{AddrSpace()}{AddrSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Addr\+Space\+::\+Addr\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{\mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}}}]{tp }\end{DoxyParamCaption})}
+
+
+
+For use with restore\+Xml. 
+
+This is a partial constructor, for initializing a space via X\+ML 
+\begin{DoxyParams}{Parameters}
+{\em m} & the associated address space manager \\
+\hline
+{\em t} & is the processor translator \\
+\hline
+{\em tp} & the basic type of the space \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAddrSpace_af5925a4ae67a290f59bf17533fac62b4}\label{classAddrSpace_af5925a4ae67a290f59bf17533fac62b4}} 
+\index{AddrSpace@{AddrSpace}!addressToByte@{addressToByte}}
+\index{addressToByte@{addressToByte}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{addressToByte()}{addressToByte()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::address\+To\+Byte (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{uint4}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Scale from addressable units to byte units. 
+
+Given an offset into an address space based on the addressable unit size (wordsize), convert it into a byte relative offset 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the offset to convert \\
+\hline
+{\em ws} & is the number of bytes in the addressable word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scaled offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a18aa860242e1e753b3ad786a0aa1b36e}\label{classAddrSpace_a18aa860242e1e753b3ad786a0aa1b36e}} 
+\index{AddrSpace@{AddrSpace}!addressToByteInt@{addressToByteInt}}
+\index{addressToByteInt@{addressToByteInt}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{addressToByteInt()}{addressToByteInt()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+::address\+To\+Byte\+Int (\begin{DoxyParamCaption}\item[{int4}]{val,  }\item[{uint4}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Scale int4 from addressable units to byte units. 
+
+Given an int4 offset into an address space based on the addressable unit size (wordsize), convert it into a byte relative offset 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the offset to convert \\
+\hline
+{\em ws} & is the number of bytes in the addressable word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scaled offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a3c9149df492bdcaccc208eac261e8365}\label{classAddrSpace_a3c9149df492bdcaccc208eac261e8365}} 
+\index{AddrSpace@{AddrSpace}!byteToAddress@{byteToAddress}}
+\index{byteToAddress@{byteToAddress}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{byteToAddress()}{byteToAddress()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::byte\+To\+Address (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{uint4}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Scale from byte units to addressable units. 
+
+Given an offset in an address space based on bytes, convert it into an offset relative to the addressable unit of the space (wordsize) 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the offset to convert \\
+\hline
+{\em ws} & is the number of bytes in the addressable word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scaled offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a082aa8e67257bcdcfc40d1280a3d0315}\label{classAddrSpace_a082aa8e67257bcdcfc40d1280a3d0315}} 
+\index{AddrSpace@{AddrSpace}!byteToAddressInt@{byteToAddressInt}}
+\index{byteToAddressInt@{byteToAddressInt}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{byteToAddressInt()}{byteToAddressInt()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+::byte\+To\+Address\+Int (\begin{DoxyParamCaption}\item[{int4}]{val,  }\item[{uint4}]{ws }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Scale int4 from byte units to addressable units. 
+
+Given an int4 offset in an address space based on bytes, convert it into an offset relative to the addressable unit of the space (wordsize) 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the offset to convert \\
+\hline
+{\em ws} & is the number of bytes in the addressable word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scaled offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_af61640170c0baa861bbacee0e5c22a31}\label{classAddrSpace_af61640170c0baa861bbacee0e5c22a31}} 
+\index{AddrSpace@{AddrSpace}!calcScaleMask@{calcScaleMask}}
+\index{calcScaleMask@{calcScaleMask}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{calcScaleMask()}{calcScaleMask()}}
+{\footnotesize\ttfamily void Addr\+Space\+::calc\+Scale\+Mask (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculate scale and mask. 
+
+Calculate {\itshape highest} based on {\itshape address\+Size}, and {\itshape wordsize}. This also calculates the default pointer\+Lower\+Bound \mbox{\Hypertarget{classAddrSpace_a523bc5940337efda7c00745c06c4346f}\label{classAddrSpace_a523bc5940337efda7c00745c06c4346f}} 
+\index{AddrSpace@{AddrSpace}!clearFlags@{clearFlags}}
+\index{clearFlags@{clearFlags}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{clearFlags()}{clearFlags()}}
+{\footnotesize\ttfamily void Addr\+Space\+::clear\+Flags (\begin{DoxyParamCaption}\item[{uint4}]{fl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Clear a cached attribute. 
+
+An internal method for derived classes to clear space attibutes 
+\begin{DoxyParams}{Parameters}
+{\em fl} & is the set of attributes to clear \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpace_aee2e93b0348411a63144f566c684764d}\label{classAddrSpace_aee2e93b0348411a63144f566c684764d}} 
+\index{AddrSpace@{AddrSpace}!compareByIndex@{compareByIndex}}
+\index{compareByIndex@{compareByIndex}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{compareByIndex()}{compareByIndex()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::compare\+By\+Index (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Compare two spaces by their index. 
+
+For sorting a sequence of address spaces. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first space \\
+\hline
+{\em b} & is the second space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the first space should come before the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_ad21df4bc27001b5bb1f98fdff8e3decc}\label{classAddrSpace_ad21df4bc27001b5bb1f98fdff8e3decc}} 
+\index{AddrSpace@{AddrSpace}!doesDeadcode@{doesDeadcode}}
+\index{doesDeadcode@{doesDeadcode}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{doesDeadcode()}{doesDeadcode()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::does\+Deadcode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return {\bfseries{true}} if dead code analysis should be done on this space. 
+
+Most memory locations should have dead-\/code analysis performed, and this routine will return {\bfseries{true}}. For certain special spaces like the {\itshape constant} space, dead-\/code analysis doesn\textquotesingle{}t make sense, and this routine returns {\bfseries{false}}. \mbox{\Hypertarget{classAddrSpace_aa4217d683f1de141406d009dc4364874}\label{classAddrSpace_aa4217d683f1de141406d009dc4364874}} 
+\index{AddrSpace@{AddrSpace}!getAddrSize@{getAddrSize}}
+\index{getAddrSize@{getAddrSize}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getAddrSize()}{getAddrSize()}}
+{\footnotesize\ttfamily uint4 Addr\+Space\+::get\+Addr\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the size of the space. 
+
+Return the number of bytes needed to represent an offset into this space. A space with 2$^\wedge$32 bytes has an address size of 4, for instance. \begin{DoxyReturn}{Returns}
+the size of an address 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a616f457a28ab5779167183f47a5707b8}\label{classAddrSpace_a616f457a28ab5779167183f47a5707b8}} 
+\index{AddrSpace@{AddrSpace}!getContain@{getContain}}
+\index{getContain@{getContain}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getContain()}{getContain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Addr\+Space\+::get\+Contain (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return this space\textquotesingle{}s containing space (if any) 
+
+If this space is virtual, then this routine returns the containing address space, otherwise it returns N\+U\+LL. \begin{DoxyReturn}{Returns}
+a pointer to the containing space or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a51295f26c99891cb310af0eb0c20d4db}\label{classAddrSpace_a51295f26c99891cb310af0eb0c20d4db}} 
+\index{AddrSpace@{AddrSpace}!getDeadcodeDelay@{getDeadcodeDelay}}
+\index{getDeadcodeDelay@{getDeadcodeDelay}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getDeadcodeDelay()}{getDeadcodeDelay()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+::get\+Deadcode\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of passes before deadcode removal is allowed. 
+
+The point at which deadcode removal is performed on varnodes within a space can be set to skip some number of heritage passes, in case not all the varnodes are created within a single pass. This method gives the number of rounds that should be skipped before deadcode elimination begins \begin{DoxyReturn}{Returns}
+the number of rounds to skip deadcode removal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a63b510a07fd8450dc432d7e671f79f66}\label{classAddrSpace_a63b510a07fd8450dc432d7e671f79f66}} 
+\index{AddrSpace@{AddrSpace}!getDelay@{getDelay}}
+\index{getDelay@{getDelay}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getDelay()}{getDelay()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+::get\+Delay (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get number of heritage passes being delayed. 
+
+If the heritage algorithms need to trace dataflow within this space, the algorithms can delay tracing this space in order to let indirect references into the space resolve themselves. This method indicates the number of rounds of dataflow analysis that should be skipped for this space to let this resolution happen \begin{DoxyReturn}{Returns}
+the number of rounds to skip heritage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_ab4c316eafd39b4e6c7a8017e01d5a841}\label{classAddrSpace_ab4c316eafd39b4e6c7a8017e01d5a841}} 
+\index{AddrSpace@{AddrSpace}!getHighest@{getHighest}}
+\index{getHighest@{getHighest}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getHighest()}{getHighest()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::get\+Highest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the highest byte-\/scaled address. 
+
+Get the highest (byte) offset possible for this space \begin{DoxyReturn}{Returns}
+the offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_abac46fe0121579ac29f2e8e93753183d}\label{classAddrSpace_abac46fe0121579ac29f2e8e93753183d}} 
+\index{AddrSpace@{AddrSpace}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+::get\+Index (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the integer identifier. 
+
+Each address space has an associated index that can be used as an integer encoding of the space. \begin{DoxyReturn}{Returns}
+the unique index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a1274986fce0448a40a055fb2bcd7aeb1}\label{classAddrSpace_a1274986fce0448a40a055fb2bcd7aeb1}} 
+\index{AddrSpace@{AddrSpace}!getManager@{getManager}}
+\index{getManager@{getManager}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getManager()}{getManager()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$ Addr\+Space\+::get\+Manager (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the space manager. 
+
+Every address space is associated with a manager of (all possible) spaces. This method recovers the address space manager object. \begin{DoxyReturn}{Returns}
+a pointer to the address space manager 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a11fdd46d2b8447f0dad39c3e13759a5d}\label{classAddrSpace_a11fdd46d2b8447f0dad39c3e13759a5d}} 
+\index{AddrSpace@{AddrSpace}!getMinimumPtrSize@{getMinimumPtrSize}}
+\index{getMinimumPtrSize@{getMinimumPtrSize}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getMinimumPtrSize()}{getMinimumPtrSize()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+::get\+Minimum\+Ptr\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the minimum pointer size for {\bfseries{this}} space. 
+
+A value of 0 means the size must match exactly. If the space is truncated, or if there exists near pointers, this value may be non-\/zero. \mbox{\Hypertarget{classAddrSpace_a0ff86055617ff65ee8961b7c4e6caf98}\label{classAddrSpace_a0ff86055617ff65ee8961b7c4e6caf98}} 
+\index{AddrSpace@{AddrSpace}!getName@{getName}}
+\index{getName@{getName}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily const string \& Addr\+Space\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the name. 
+
+Every address space has a (unique) name, which is referred to especially in configuration files via X\+ML. \begin{DoxyReturn}{Returns}
+the name of this space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_af8422ea603792369a5794d2a95721f63}\label{classAddrSpace_af8422ea603792369a5794d2a95721f63}} 
+\index{AddrSpace@{AddrSpace}!getPointerLowerBound@{getPointerLowerBound}}
+\index{getPointerLowerBound@{getPointerLowerBound}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getPointerLowerBound()}{getPointerLowerBound()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::get\+Pointer\+Lower\+Bound (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get lower bound for assuming an offset is a pointer. 
+
+Constant offsets are tested against {\bfseries{this}} lower bound as a quick filter before attempting to lookup symbols. \begin{DoxyReturn}{Returns}
+the minimum offset that will be inferred as a pointer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a52169672037d99ed9ad432d1c35c3034}\label{classAddrSpace_a52169672037d99ed9ad432d1c35c3034}} 
+\index{AddrSpace@{AddrSpace}!getPointerUpperBound@{getPointerUpperBound}}
+\index{getPointerUpperBound@{getPointerUpperBound}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getPointerUpperBound()}{getPointerUpperBound()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::get\+Pointer\+Upper\+Bound (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get upper bound for assuming an offset is a pointer. 
+
+Constant offsets are tested against {\bfseries{this}} upper bound as a quick filter before attempting to lookup symbols. \begin{DoxyReturn}{Returns}
+the maximum offset that will be inferred as a pointer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_aca9d79017012183ca27a1c921444c11c}\label{classAddrSpace_aca9d79017012183ca27a1c921444c11c}} 
+\index{AddrSpace@{AddrSpace}!getShortcut@{getShortcut}}
+\index{getShortcut@{getShortcut}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getShortcut()}{getShortcut()}}
+{\footnotesize\ttfamily char Addr\+Space\+::get\+Shortcut (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the shortcut character. 
+
+Return a unique short cut character that is associated with this space. The shortcut character can be used by the read method to quickly specify the space of an address. \begin{DoxyReturn}{Returns}
+the shortcut character 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_ad6b5eb815514577118d9b998447cc4d0}\label{classAddrSpace_ad6b5eb815514577118d9b998447cc4d0}} 
+\index{AddrSpace@{AddrSpace}!getSpacebase@{getSpacebase}}
+\index{getSpacebase@{getSpacebase}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getSpacebase()}{getSpacebase()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& Addr\+Space\+::get\+Spacebase (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get a base register that creates this virtual space. 
+
+For virtual spaces, like the stack space, this routine returns the location information for a base register of the space. This routine will throw an exception if the register does not exist 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the base register starting at \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} that describes the register 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSpacebaseSpace_af8f5c5b9da9bd74ef022bd0c5c18c2ea}{Spacebase\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_a8fb25cf630f64ad73a137393b48067a0}\label{classAddrSpace_a8fb25cf630f64ad73a137393b48067a0}} 
+\index{AddrSpace@{AddrSpace}!getSpacebaseFull@{getSpacebaseFull}}
+\index{getSpacebaseFull@{getSpacebaseFull}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getSpacebaseFull()}{getSpacebaseFull()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& Addr\+Space\+::get\+Spacebase\+Full (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return original spacebase register before truncation. 
+
+If a stack pointer is truncated to fit the stack space, we may need to know the extent of the original register 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the base register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the original register before truncation 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSpacebaseSpace_aa6c1b1af9de6666ff998996d647ff44d}{Spacebase\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_a3a0cdcba6345332bd0f557a449de6948}\label{classAddrSpace_a3a0cdcba6345332bd0f557a449de6948}} 
+\index{AddrSpace@{AddrSpace}!getTrans@{getTrans}}
+\index{getTrans@{getTrans}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getTrans()}{getTrans()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$ Addr\+Space\+::get\+Trans (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the processor translator. 
+
+Every address space is associated with a processor which may have additional objects like registers etc. associated with it. This method returns a pointer to that processor translator \begin{DoxyReturn}{Returns}
+a pointer to the \mbox{\hyperlink{classTranslate}{Translate}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_ab548f4158529a29122d4d0a30d94ed98}\label{classAddrSpace_ab548f4158529a29122d4d0a30d94ed98}} 
+\index{AddrSpace@{AddrSpace}!getType@{getType}}
+\index{getType@{getType}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{space_8hh_a1a83535cca68b7ca3f25bfad70262231}{spacetype}} Addr\+Space\+::get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the type of space. 
+
+Return the defining type for this address space.
+\begin{DoxyItemize}
+\item I\+P\+T\+R\+\_\+\+C\+O\+N\+S\+T\+A\+NT for the constant space
+\item I\+P\+T\+R\+\_\+\+P\+R\+O\+C\+E\+S\+S\+OR for a normal space
+\item I\+P\+T\+R\+\_\+\+I\+N\+T\+E\+R\+N\+AL for the temporary register space
+\item I\+P\+T\+R\+\_\+\+F\+S\+P\+EC for special \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} references
+\item I\+P\+T\+R\+\_\+\+I\+OP for special \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} references \begin{DoxyReturn}{Returns}
+the basic type of this space 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classAddrSpace_ab84baa41a0b25735578129031fef550c}\label{classAddrSpace_ab84baa41a0b25735578129031fef550c}} 
+\index{AddrSpace@{AddrSpace}!getWordSize@{getWordSize}}
+\index{getWordSize@{getWordSize}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{getWordSize()}{getWordSize()}}
+{\footnotesize\ttfamily uint4 Addr\+Space\+::get\+Word\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the addressable unit size. 
+
+This method indicates the number of bytes contained in an {\itshape addressable} {\itshape unit} of this space. This is almost always 1, but can be any other small integer. \begin{DoxyReturn}{Returns}
+the number of bytes in a unit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a1e506360f315658ac46593d12c20a4e0}\label{classAddrSpace_a1e506360f315658ac46593d12c20a4e0}} 
+\index{AddrSpace@{AddrSpace}!hasPhysical@{hasPhysical}}
+\index{hasPhysical@{hasPhysical}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{hasPhysical()}{hasPhysical()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::has\+Physical (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return {\bfseries{true}} if data is physically stored in this. 
+
+This routine returns {\bfseries{true}}, if, like most spaces, the space has actual read/writeable bytes associated with it. Some spaces, like the {\itshape constant} space, do not. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the space has physical data in it. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_af5683c0d7e42edec80b97bcb9fb3dc11}\label{classAddrSpace_af5683c0d7e42edec80b97bcb9fb3dc11}} 
+\index{AddrSpace@{AddrSpace}!isBigEndian@{isBigEndian}}
+\index{isBigEndian@{isBigEndian}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{isBigEndian()}{isBigEndian()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::is\+Big\+Endian (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return {\bfseries{true}} if values in this space are big endian. 
+
+If integer values stored in this space are encoded in this space using the big endian format, then return {\bfseries{true}}. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the space is big endian 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_a807313f845cda34701898ec89bad58cb}\label{classAddrSpace_a807313f845cda34701898ec89bad58cb}} 
+\index{AddrSpace@{AddrSpace}!isHeritaged@{isHeritaged}}
+\index{isHeritaged@{isHeritaged}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{isHeritaged()}{isHeritaged()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::is\+Heritaged (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return {\bfseries{true}} if dataflow has been traced. 
+
+During analysis, memory locations in most spaces need to have their data-\/flow traced. This method returns {\bfseries{true}} for these spaces. For some of the special spaces, like the {\itshape constant} space, tracing data flow makes no sense, and this routine will return {\bfseries{false}}. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if this space\textquotesingle{}s data-\/flow is analyzed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAddrSpace_aea27d2d0e9b150a4f884fb029eaefbf6}\label{classAddrSpace_aea27d2d0e9b150a4f884fb029eaefbf6}} 
+\index{AddrSpace@{AddrSpace}!isReverseJustified@{isReverseJustified}}
+\index{isReverseJustified@{isReverseJustified}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{isReverseJustified()}{isReverseJustified()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::is\+Reverse\+Justified (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return {\bfseries{true}} if alignment justification does not match endianness. 
+
+Certain architectures or compilers specify an alignment for accessing words within the space The space required for a variable must be rounded up to the alignment. For variables smaller than the alignment, there is the issue of how the variable is \char`\"{}justified\char`\"{} within the aligned word. Usually the justification depends on the endianness of the space, for certain weird cases the justification may be the opposite of the endianness. \mbox{\Hypertarget{classAddrSpace_a06ef47bec774e59d14ab721eef35e315}\label{classAddrSpace_a06ef47bec774e59d14ab721eef35e315}} 
+\index{AddrSpace@{AddrSpace}!isTruncated@{isTruncated}}
+\index{isTruncated@{isTruncated}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{isTruncated()}{isTruncated()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::is\+Truncated (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return {\bfseries{true}} if this space is truncated from its original size. 
+
+If this method returns {\bfseries{true}}, the logical form of this space is truncated from its actual size Pointers may refer to this original size put the most significant bytes are ignored \mbox{\Hypertarget{classAddrSpace_a1bc0bc963f33dedb721489497a92c2e3}\label{classAddrSpace_a1bc0bc963f33dedb721489497a92c2e3}} 
+\index{AddrSpace@{AddrSpace}!numSpacebase@{numSpacebase}}
+\index{numSpacebase@{numSpacebase}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{numSpacebase()}{numSpacebase()}}
+{\footnotesize\ttfamily int4 Addr\+Space\+::num\+Spacebase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Number of base registers associated with this space. 
+
+Some spaces are \char`\"{}virtual\char`\"{}, like the stack spaces, where addresses are really relative to a base pointer stored in a register, like the stackpointer. This routine will return non-\/zero if {\bfseries{this}} space is virtual and there is 1 (or more) associated pointer registers \begin{DoxyReturn}{Returns}
+the number of base registers associated with this space 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSpacebaseSpace_a4d1969883a570388a7e071af0b943f0e}{Spacebase\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_aac551de6286f9260153c1d7d1bacdab8}\label{classAddrSpace_aac551de6286f9260153c1d7d1bacdab8}} 
+\index{AddrSpace@{AddrSpace}!printOffset@{printOffset}}
+\index{printOffset@{printOffset}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{printOffset()}{printOffset()}}
+{\footnotesize\ttfamily void Addr\+Space\+::print\+Offset (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const}
+
+
+
+Write an address offset to a stream. 
+
+Print the {\itshape offset} as hexidecimal digits. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em offset} & is the offset to be printed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpace_a76819b70cd6b6ae8601ac1821f86b929}\label{classAddrSpace_a76819b70cd6b6ae8601ac1821f86b929}} 
+\index{AddrSpace@{AddrSpace}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Addr\+Space\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write an address in this space to a stream. 
+
+This is a printing method for the debugging routines. It prints taking into account the {\itshape wordsize}, adding a \char`\"{}+n\char`\"{} if the offset is not on-\/cut with wordsize. It also returns the expected/typical size of values from this space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+{\em offset} & is the offset to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classFspecSpace_a48b1e30f1554fd950f5c240407ca20db}{Fspec\+Space}}, \mbox{\hyperlink{classJoinSpace_a23032ea3a76390d697779a99d15c75c8}{Join\+Space}}, \mbox{\hyperlink{classOtherSpace_a77624dbfb5e63e3bb54c48eba5bf66a6}{Other\+Space}}, \mbox{\hyperlink{classConstantSpace_aed7e05a3024887280f12e0d7082c769e}{Constant\+Space}}, and \mbox{\hyperlink{classIopSpace_aa5e2fc99ee39d375ef563cd3fea2101d}{Iop\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_ad0a4a2744ee7de8f592dfaf817a6c93b}\label{classAddrSpace_ad0a4a2744ee7de8f592dfaf817a6c93b}} 
+\index{AddrSpace@{AddrSpace}!read@{read}}
+\index{read@{read}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::read (\begin{DoxyParamCaption}\item[{const string \&}]{s,  }\item[{int4 \&}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read in an address (and possible size) from a string. 
+
+For the console mode, an address space can tailor how it converts user strings into offsets within the space. The base routine can read and convert register names as well as absolute hex addresses. A size can be indicated by appending a \textquotesingle{}\+:\textquotesingle{} and integer, .i.\+e. 0x1000\+:2. Offsets within a register can be indicated by appending a \textquotesingle{}+\textquotesingle{} and integer, i.\+e. eax+2 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the string to be parsed \\
+\hline
+{\em size} & is a reference to the size being returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the parsed offset 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classJoinSpace_a8f644b1eaf92bece425a3712a205fa3b}{Join\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}\label{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}} 
+\index{AddrSpace@{AddrSpace}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Addr\+Space\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the details of this space from X\+ML. 
+
+Walk a parsed X\+ML tag and recover all the properties defining this space. The processor translator, {\itshape trans}, and the {\itshape type} must already be filled in. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classFspecSpace_ad0061e3e6e13bdd7349f643e44d8947d}{Fspec\+Space}}, \mbox{\hyperlink{classOverlaySpace_ac954d7e1ddb57d0f811b4200bd0deee2}{Overlay\+Space}}, \mbox{\hyperlink{classJoinSpace_a55fb2e082c5547f3b4ff4022de86c895}{Join\+Space}}, \mbox{\hyperlink{classSpacebaseSpace_adb45445a3286d78920f1c96074dd6229}{Spacebase\+Space}}, \mbox{\hyperlink{classConstantSpace_ae29b82af12a38637ded7c4b1c57d7367}{Constant\+Space}}, and \mbox{\hyperlink{classIopSpace_a7c530a1e977334d59d2ebbc33147bcd9}{Iop\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_aa20e53222697512db0a64db75179ead2}\label{classAddrSpace_aa20e53222697512db0a64db75179ead2}} 
+\index{AddrSpace@{AddrSpace}!restoreXmlAttributes@{restoreXmlAttributes}}
+\index{restoreXmlAttributes@{restoreXmlAttributes}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{restoreXmlAttributes()}{restoreXmlAttributes()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::restore\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{uint4 \&}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover an offset and size. 
+
+For an X\+ML tag describing an address in this space, this routine recovers the offset and possibly the size described by the tag 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML address tag \\
+\hline
+{\em size} & is a reference where the recovered size should be stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the recovered offset 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classJoinSpace_aca1360dbe0abf4a9ace679887cb47c17}{Join\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_a7acbe22e2d26a7e70ef09fdfa646e9af}\label{classAddrSpace_a7acbe22e2d26a7e70ef09fdfa646e9af}} 
+\index{AddrSpace@{AddrSpace}!saveBasicAttributes@{saveBasicAttributes}}
+\index{saveBasicAttributes@{saveBasicAttributes}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{saveBasicAttributes()}{saveBasicAttributes()}}
+{\footnotesize\ttfamily void Addr\+Space\+::save\+Basic\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write the X\+ML attributes of this space. 
+
+Save the {\itshape name}, {\itshape index}, {\itshape bigendian}, {\itshape delay}, {\itshape size}, {\itshape wordsize}, and {\itshape physical} attributes which are common with all address spaces derived from \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} 
+\begin{DoxyParams}{Parameters}
+{\em s} & the stream where the attributes are written \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpace_ac073a4d446677c54d769abba01318864}\label{classAddrSpace_ac073a4d446677c54d769abba01318864}} 
+\index{AddrSpace@{AddrSpace}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Addr\+Space\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the details of this space as X\+ML. 
+
+Write a tag fully describing the details of this space suitable for later recovery via restore\+Xml. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classFspecSpace_a3e1fd8f03e6fc9685988a070097b6b5a}{Fspec\+Space}}, \mbox{\hyperlink{classOverlaySpace_a60c25f7c85366b0d7dd0fdf2755180b2}{Overlay\+Space}}, \mbox{\hyperlink{classJoinSpace_a7e7bdd3347396ca62a465041f13e06a1}{Join\+Space}}, \mbox{\hyperlink{classUniqueSpace_a119a41fbbdc811d44d532451ae2785f4}{Unique\+Space}}, \mbox{\hyperlink{classOtherSpace_a6a91f8d45074c60d731790e755eca7d0}{Other\+Space}}, \mbox{\hyperlink{classSpacebaseSpace_ae98cc5d0f6f46274b1942aca597ce2ce}{Spacebase\+Space}}, \mbox{\hyperlink{classConstantSpace_a8af99121cbd9e7cea687d2a54cb98157}{Constant\+Space}}, and \mbox{\hyperlink{classIopSpace_a916e2a73cc1dd79b4f5d86ec6c39a9a4}{Iop\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_a4475d64c56141adf80cb0aca5b23e3c6}\label{classAddrSpace_a4475d64c56141adf80cb0aca5b23e3c6}} 
+\index{AddrSpace@{AddrSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Addr\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save an address as X\+ML. 
+
+Write the main X\+ML attributes for an address within this space The caller provides only the {\itshape offset}, and this routine fills in other details pertaining to this particular space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em offset} & is the offset of the address \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classFspecSpace_ad68a1bf048371fd9e5b4acb2b4bbf36c}{Fspec\+Space}}, \mbox{\hyperlink{classJoinSpace_a1468359068efe2f1d3fe0c30a4d5ff00}{Join\+Space}}, and \mbox{\hyperlink{classIopSpace_a74fe87f16204159a66ea95cc0d9b3355}{Iop\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_a67510a8345fcc17157cc0389e757d504}\label{classAddrSpace_a67510a8345fcc17157cc0389e757d504}} 
+\index{AddrSpace@{AddrSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Addr\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save an address and size as X\+ML. 
+
+Write the main X\+ML attributes of an address with this space and a size. The caller provides the {\itshape offset} and {\itshape size}, and other details about this particular space are filled in. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em offset} & is the offset of the address \\
+\hline
+{\em size} & is the size of the memory location \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classFspecSpace_a668ef71841767a6d0b935831c14358fe}{Fspec\+Space}}, \mbox{\hyperlink{classJoinSpace_aa3674a311764fe483ed0a3b93a3735ca}{Join\+Space}}, and \mbox{\hyperlink{classIopSpace_a789703a65652db483ba72c9503c06cc5}{Iop\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_a3dd14c033be519525d486fcbc94a2bf7}\label{classAddrSpace_a3dd14c033be519525d486fcbc94a2bf7}} 
+\index{AddrSpace@{AddrSpace}!setFlags@{setFlags}}
+\index{setFlags@{setFlags}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{setFlags()}{setFlags()}}
+{\footnotesize\ttfamily void Addr\+Space\+::set\+Flags (\begin{DoxyParamCaption}\item[{uint4}]{fl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Set a cached attribute. 
+
+An internal method for derived classes to set space attributes 
+\begin{DoxyParams}{Parameters}
+{\em fl} & is the set of attributes to be set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpace_a9468b2d0bc4cdaa762e213fb395ac434}\label{classAddrSpace_a9468b2d0bc4cdaa762e213fb395ac434}} 
+\index{AddrSpace@{AddrSpace}!stackGrowsNegative@{stackGrowsNegative}}
+\index{stackGrowsNegative@{stackGrowsNegative}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{stackGrowsNegative()}{stackGrowsNegative()}}
+{\footnotesize\ttfamily bool Addr\+Space\+::stack\+Grows\+Negative (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return {\bfseries{true}} if a stack in this space grows negative. 
+
+For stack (or other spacebase) spaces, this routine returns {\bfseries{true}} if the space can viewed as a stack and a {\bfseries{push}} operation causes the spacebase pointer to be decreased (grow negative) \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if stacks grow in negative direction. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classSpacebaseSpace_abade76813d5936d68f715cfde95a764c}{Spacebase\+Space}}.
+
+\mbox{\Hypertarget{classAddrSpace_a84ecacea771a34c4349d1f31272316c7}\label{classAddrSpace_a84ecacea771a34c4349d1f31272316c7}} 
+\index{AddrSpace@{AddrSpace}!truncateSpace@{truncateSpace}}
+\index{truncateSpace@{truncateSpace}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{truncateSpace()}{truncateSpace()}}
+{\footnotesize\ttfamily void Addr\+Space\+::truncate\+Space (\begin{DoxyParamCaption}\item[{uint4}]{newsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+The logical form of the space is truncated from its actual size Pointers may refer to this original size put the most significant bytes are ignored 
+\begin{DoxyParams}{Parameters}
+{\em newsize} & is the size (in bytes) of the truncated (logical) space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAddrSpace_aaf923ed847e9804b55ffa12a51202712}\label{classAddrSpace_aaf923ed847e9804b55ffa12a51202712}} 
+\index{AddrSpace@{AddrSpace}!wrapOffset@{wrapOffset}}
+\index{wrapOffset@{wrapOffset}!AddrSpace@{AddrSpace}}
+\doxysubsubsection{\texorpdfstring{wrapOffset()}{wrapOffset()}}
+{\footnotesize\ttfamily uintb Addr\+Space\+::wrap\+Offset (\begin{DoxyParamCaption}\item[{uintb}]{off }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrap -\/off-\/ to the offset that fits into this space. 
+
+Calculate {\itshape off} modulo the size of this address space in order to construct the offset \char`\"{}equivalent\char`\"{} to {\itshape off} that fits properly into this space 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the offset requested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the wrapped offset 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{space_8hh}{space.\+hh}}\item 
+space.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,118 @@
+\hypertarget{classActionRestartGroup}{}\doxysection{Action\+Restart\+Group Class Reference}
+\label{classActionRestartGroup}\index{ActionRestartGroup@{ActionRestartGroup}}
+
+
+\mbox{\hyperlink{classAction}{Action}} which checks if restart (sub)actions have been generated and restarts itself.  
+
+
+
+
+{\ttfamily \#include $<$action.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Restart\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classActionRestartGroup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Restart\+Group\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classActionRestartGroup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionRestartGroup_a2dd3daab632e0a41e64d9515f47c7200}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classActionRestartGroup_a8a48151026811fbe97f4aa3eecf67cf0}{reset}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionRestartGroup_ab597697ab15a9b8f1a25832f43bdeb0d}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classAction}{Action}} which checks if restart (sub)actions have been generated and restarts itself. 
+
+Actions or Rules can request a restart on a \mbox{\hyperlink{classFuncdata}{Funcdata}} object by calling set\+Restart\+Pending(true) on it. This action checks for the request then resets and reruns the group of Actions as appropriate. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionRestartGroup_ab597697ab15a9b8f1a25832f43bdeb0d}\label{classActionRestartGroup_ab597697ab15a9b8f1a25832f43bdeb0d}} 
+\index{ActionRestartGroup@{ActionRestartGroup}!apply@{apply}}
+\index{apply@{apply}!ActionRestartGroup@{ActionRestartGroup}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Restart\+Group\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classActionGroup_aaaab0b0f5c7a14752cd57478de2e9290}{Action\+Group}}.
+
+\mbox{\Hypertarget{classActionRestartGroup_a2dd3daab632e0a41e64d9515f47c7200}\label{classActionRestartGroup_a2dd3daab632e0a41e64d9515f47c7200}} 
+\index{ActionRestartGroup@{ActionRestartGroup}!clone@{clone}}
+\index{clone@{clone}!ActionRestartGroup@{ActionRestartGroup}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAction}{Action}} $\ast$ Action\+Restart\+Group\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classActionGroup_ace0724b13474c6c098eb25aee96dd1d6}{Action\+Group}}.
+
+\mbox{\Hypertarget{classActionRestartGroup_a8a48151026811fbe97f4aa3eecf67cf0}\label{classActionRestartGroup_a8a48151026811fbe97f4aa3eecf67cf0}} 
+\index{ActionRestartGroup@{ActionRestartGroup}!reset@{reset}}
+\index{reset@{reset}!ActionRestartGroup@{ActionRestartGroup}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Action\+Restart\+Group\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the new function {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} may affect \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classActionGroup_ae5f0c78e136f9bb5b9bcd6256b8ad097}{Action\+Group}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{action_8hh}{action.\+hh}}\item 
+action.\+cc\end{DoxyCompactItemize}

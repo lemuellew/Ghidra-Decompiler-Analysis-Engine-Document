@@ -1,0 +1,128 @@
+\hypertarget{classOverlaySpace}{}\doxysection{Overlay\+Space Class Reference}
+\label{classOverlaySpace}\index{OverlaySpace@{OverlaySpace}}
+
+
+An overlay space.  
+
+
+
+
+{\ttfamily \#include $<$space.\+hh$>$}
+
+
+
+Inheritance diagram for Overlay\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classOverlaySpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Overlay\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classOverlaySpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOverlaySpace_a4ff9ec9fa7ed004c685f6f34c9978c09}{Overlay\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{classOverlaySpace_a3a9afed136f872a975743f173f896689}{get\+Base\+Space}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the address space being overlayed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classOverlaySpace_a60c25f7c85366b0d7dd0fdf2755180b2}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the details of this space as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classOverlaySpace_ac954d7e1ddb57d0f811b4200bd0deee2}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover the details of this space from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An overlay space. 
+
+A different code and data layout that occupies the same memory as another address space. Some compilers use this concept to increase the logical size of a program without increasing its physical memory requirements. An overlay space allows the same physical location to contain different code and be labeled with different symbols, depending on context. From the point of view of reverse engineering, the different code and symbols are viewed as a logically distinct space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOverlaySpace_a4ff9ec9fa7ed004c685f6f34c9978c09}\label{classOverlaySpace_a4ff9ec9fa7ed004c685f6f34c9978c09}} 
+\index{OverlaySpace@{OverlaySpace}!OverlaySpace@{OverlaySpace}}
+\index{OverlaySpace@{OverlaySpace}!OverlaySpace@{OverlaySpace}}
+\doxysubsubsection{\texorpdfstring{OverlaySpace()}{OverlaySpace()}}
+{\footnotesize\ttfamily Overlay\+Space\+::\+Overlay\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the address space manager \\
+\hline
+{\em t} & is the processor translator \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOverlaySpace_a3a9afed136f872a975743f173f896689}\label{classOverlaySpace_a3a9afed136f872a975743f173f896689}} 
+\index{OverlaySpace@{OverlaySpace}!getBaseSpace@{getBaseSpace}}
+\index{getBaseSpace@{getBaseSpace}!OverlaySpace@{OverlaySpace}}
+\doxysubsubsection{\texorpdfstring{getBaseSpace()}{getBaseSpace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ Overlay\+Space\+::get\+Base\+Space (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the address space being overlayed. 
+
+\begin{DoxyReturn}{Returns}
+the base address space 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOverlaySpace_ac954d7e1ddb57d0f811b4200bd0deee2}\label{classOverlaySpace_ac954d7e1ddb57d0f811b4200bd0deee2}} 
+\index{OverlaySpace@{OverlaySpace}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!OverlaySpace@{OverlaySpace}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Overlay\+Space\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the details of this space from X\+ML. 
+
+Walk a parsed X\+ML tag and recover all the properties defining this space. The processor translator, {\itshape trans}, and the {\itshape type} must already be filled in. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classOverlaySpace_a60c25f7c85366b0d7dd0fdf2755180b2}\label{classOverlaySpace_a60c25f7c85366b0d7dd0fdf2755180b2}} 
+\index{OverlaySpace@{OverlaySpace}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!OverlaySpace@{OverlaySpace}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Overlay\+Space\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the details of this space as X\+ML. 
+
+Write a tag fully describing the details of this space suitable for later recovery via restore\+Xml. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ac073a4d446677c54d769abba01318864}{Addr\+Space}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{space_8hh}{space.\+hh}}\item 
+space.\+cc\end{DoxyCompactItemize}

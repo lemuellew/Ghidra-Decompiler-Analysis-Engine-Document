@@ -1,0 +1,62 @@
+\hypertarget{classIfcMapexternalref}{}\doxysection{Ifc\+Mapexternalref Class Reference}
+\label{classIfcMapexternalref}\index{IfcMapexternalref@{IfcMapexternalref}}
+
+
+Create an external ref symbol {\ttfamily map externalref $<$address$>$ $<$refaddress$>$ \mbox{[}$<$name$>$\mbox{]}}  
+
+
+
+
+Inheritance diagram for Ifc\+Mapexternalref\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcMapexternalref__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Mapexternalref\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcMapexternalref__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcMapexternalref_a81048b8beac5fa5bfd987a4ac3a5b6b1}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Create an external ref symbol {\ttfamily map externalref $<$address$>$ $<$refaddress$>$ \mbox{[}$<$name$>$\mbox{]}} 
+
+Creates a symbol for a function pointer and associates a specific address as a value for that symbol. The first address specified is the address of the symbol, The second address is the address referred to by the pointer. Indirect calls through the function pointer will be converted to direct calls to the referred address. A symbol name can be provided, otherwise a default one is generated. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcMapexternalref_a81048b8beac5fa5bfd987a4ac3a5b6b1}\label{classIfcMapexternalref_a81048b8beac5fa5bfd987a4ac3a5b6b1}} 
+\index{IfcMapexternalref@{IfcMapexternalref}!execute@{execute}}
+\index{execute@{execute}!IfcMapexternalref@{IfcMapexternalref}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Mapexternalref\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

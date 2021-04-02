@@ -1,0 +1,45 @@
+\hypertarget{classStackSolver}{}\doxysection{Stack\+Solver Class Reference}
+\label{classStackSolver}\index{StackSolver@{StackSolver}}
+
+
+A class that solves for stack-\/pointer changes across unknown sub-\/functions.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStackSolver_a441d8ed5d337ba9087093745d7e889c9}\label{classStackSolver_a441d8ed5d337ba9087093745d7e889c9}} 
+void \mbox{\hyperlink{classStackSolver_a441d8ed5d337ba9087093745d7e889c9}{solve}} (void)
+\begin{DoxyCompactList}\small\item\em Solve the system of equations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStackSolver_a136feaaa59c88d2a2b003621a78b0511}{build}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$id, int4 spcbase)
+\begin{DoxyCompactList}\small\item\em Build the system of equations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that solves for stack-\/pointer changes across unknown sub-\/functions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStackSolver_a136feaaa59c88d2a2b003621a78b0511}\label{classStackSolver_a136feaaa59c88d2a2b003621a78b0511}} 
+\index{StackSolver@{StackSolver}!build@{build}}
+\index{build@{build}!StackSolver@{StackSolver}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily void Stack\+Solver\+::build (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{id,  }\item[{int4}]{spcbase }\end{DoxyParamCaption})}
+
+
+
+Build the system of equations. 
+
+Collect references to the stack-\/pointer as variables, and examine their defining Pcode\+Ops to determine equations and coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function being analyzed \\
+\hline
+{\em id} & is the {\itshape stack} address space \\
+\hline
+{\em spcbase} & is the index, relative to the stack space, of the stack pointer \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+coreaction.\+cc\end{DoxyCompactItemize}

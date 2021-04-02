@@ -1,0 +1,50 @@
+\hypertarget{classFloatingEdge}{}\doxysection{Floating\+Edge Class Reference}
+\label{classFloatingEdge}\index{FloatingEdge@{FloatingEdge}}
+
+
+Class for holding an edge while the underlying graph is being manipulated.  
+
+
+
+
+{\ttfamily \#include $<$blockaction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classFloatingEdge_afe06b54ef60e438326f48f0d466df0ff}{get\+Current\+Edge}} (int4 \&outedge, \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Get the current form of the edge. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for holding an edge while the underlying graph is being manipulated. 
+
+The original \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} nodes that define the end-\/points of the edge may get collapsed, but the edge may still exist between higher level components. The edge can still be retrieved via the \mbox{\hyperlink{classFloatingEdge_afe06b54ef60e438326f48f0d466df0ff}{get\+Current\+Edge()}} method. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFloatingEdge_afe06b54ef60e438326f48f0d466df0ff}\label{classFloatingEdge_afe06b54ef60e438326f48f0d466df0ff}} 
+\index{FloatingEdge@{FloatingEdge}!getCurrentEdge@{getCurrentEdge}}
+\index{getCurrentEdge@{getCurrentEdge}!FloatingEdge@{FloatingEdge}}
+\doxysubsubsection{\texorpdfstring{getCurrentEdge()}{getCurrentEdge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Floating\+Edge\+::get\+Current\+Edge (\begin{DoxyParamCaption}\item[{int4 \&}]{outedge,  }\item[{\mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Get the current form of the edge. 
+
+Retrieve the current edge (as a {\itshape top} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} and the index of the outgoing edge). If the end-\/points have been collapsed together, this returns N\+U\+LL. The top and bottom nodes of the edge are updated to Flow\+Blocks in the current collapsed graph. 
+\begin{DoxyParams}{Parameters}
+{\em outedge} & will hold the index of the edge (outgoing relative to returned \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}) \\
+\hline
+{\em graph} & is the containing \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the current {\itshape top} of the edge or N\+U\+LL 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{blockaction_8hh}{blockaction.\+hh}}\item 
+blockaction.\+cc\end{DoxyCompactItemize}

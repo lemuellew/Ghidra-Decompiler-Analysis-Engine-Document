@@ -1,0 +1,635 @@
+\hypertarget{classFloatFormat}{}\doxysection{Float\+Format Class Reference}
+\label{classFloatFormat}\index{FloatFormat@{FloatFormat}}
+
+
+Encoding information for a single floating-\/point format.  
+
+
+
+
+{\ttfamily \#include $<$float.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481}{floatclass}} \{ \newline
+\mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481af3348da859f2ff00a47e32cc28a2edff}{normalized}} = 0, 
+\mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481afeac6c1ae11af57235ccfa9c04d24a95}{infinity}} = 1, 
+\mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481aa26c0572abbf40f500f62893f06d478f}{zero}} = 2, 
+\mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481ae3b854531adab08356b32f687c2227de}{nan}} = 3, 
+\newline
+\mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481a15a0236a6b55e962846bdb2ae698cbeb}{denormalized}} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em The various classes of floating-\/point encodings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFloatFormat_a0c5efdce272fb2a9b63f05affedbb74a}{Float\+Format}} (int4 sz)
+\begin{DoxyCompactList}\small\item\em Construct default I\+E\+EE 754 standard settings. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classFloatFormat_a5205f99f7973cde7ffe0054d07cf82bc}{get\+Host\+Float}} (uintb encoding, \mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481}{floatclass}} $\ast$type) const
+\begin{DoxyCompactList}\small\item\em Convert an encoding into host\textquotesingle{}s double. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a6f8450c4637e1e2c098b6b1c38f6061f}{get\+Encoding}} (double host) const
+\begin{DoxyCompactList}\small\item\em Convert host\textquotesingle{}s double into {\bfseries{this}} encoding. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a8b9460ada306b44861228990529d5410}{convert\+Encoding}} (uintb encoding, const \mbox{\hyperlink{classFloatFormat}{Float\+Format}} $\ast$formin) const
+\begin{DoxyCompactList}\small\item\em Convert between two different formats. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_af06109651ce301156e5a384c946e7780}{extract\+Fractional\+Code}} (uintb x) const
+\begin{DoxyCompactList}\small\item\em Extract the fractional part of the encoding. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFloatFormat_afa7d38ddb73a8cd9f4d29b839af04d1d}{extract\+Sign}} (uintb x) const
+\begin{DoxyCompactList}\small\item\em Extract the sign bit from the encoding. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classFloatFormat_a266d06329a88845bbc202b87141f64df}{extract\+Exponent\+Code}} (uintb x) const
+\begin{DoxyCompactList}\small\item\em Extract the exponent from the encoding. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a1c59c49b0bdbc8d31d2df59eb0624d06}{op\+Equal}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Equality comparison (==) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a1f28cec1861ddf0f416033f971a43b16}{op\+Not\+Equal}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Inequality comparison (!=) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a257b216d9b9e5aad3b693df46624cc6d}{op\+Less}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Less-\/than comparison ($<$) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_adaf425a89e09270969f6fd848bf06025}{op\+Less\+Equal}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Less-\/than-\/or-\/equal comparison ($<$=) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a64576b3f398b049f002a6c95e45f2296}{op\+Nan}} (uintb a) const
+\begin{DoxyCompactList}\small\item\em Test if Not-\/a-\/\+Number (NaN) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_ad342814d842cb20b16dbe4fc9af59e1e}{op\+Add}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Addition (+) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_abcd8caf82f65bac1e32be3cecd9f80e3}{op\+Div}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Division (/) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a289c2216fe9add39e225991fc7baad3c}{op\+Mult}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Multiplication ($\ast$) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_affc23eaa38dae2db40e8e16c9cf9c821}{op\+Sub}} (uintb a, uintb b) const
+\begin{DoxyCompactList}\small\item\em Subtraction (-\/) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_af639368d2760482533e8ebf5ee18995b}{op\+Neg}} (uintb a) const
+\begin{DoxyCompactList}\small\item\em Unary negate. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a5edfc9c055efded2f22bb42a91058164}{op\+Abs}} (uintb a) const
+\begin{DoxyCompactList}\small\item\em Absolute value (abs) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a13cc7817eee998adc9699333cb8f144d}{op\+Sqrt}} (uintb a) const
+\begin{DoxyCompactList}\small\item\em Square root (sqrt) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a97577950c7ef0b53099d17deee29f198}{op\+Trunc}} (uintb a, int4 sizeout) const
+\begin{DoxyCompactList}\small\item\em Convert floating-\/point to integer. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a997db68ddb2ee0835f3ffde93f4c4958}{op\+Ceil}} (uintb a) const
+\begin{DoxyCompactList}\small\item\em Ceiling (ceil) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_ad2e38aad3a27346e0eb55aedcbf531cd}{op\+Floor}} (uintb a) const
+\begin{DoxyCompactList}\small\item\em Floor (floor) \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_adde6362a78f0ad6cd66fdd04c71032cf}{op\+Round}} (uintb a) const
+\begin{DoxyCompactList}\small\item\em Round. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a610b9f8efe3b41368250940184691156}{op\+Int2\+Float}} (uintb a, int4 sizein) const
+\begin{DoxyCompactList}\small\item\em Convert integer to floating-\/point. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classFloatFormat_a4adac47dcb6d1ddbcf9c5f6980528fd2}{op\+Float2\+Float}} (uintb a, const \mbox{\hyperlink{classFloatFormat}{Float\+Format}} \&outformat) const
+\begin{DoxyCompactList}\small\item\em Convert between floating-\/point precisions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFloatFormat_adc679e89dcd8c63b0b9cc08f3464ba1a}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save the format to an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFloatFormat_aa6e0b189a1a66251b200fcf829d98356}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore the format from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Encoding information for a single floating-\/point format. 
+
+This class supports manipulation of a single floating-\/point encoding. An encoding can be converted to and from the host format and convenience methods allow p-\/code floating-\/point operations to be performed on natively encoded operands. This follows the I\+E\+E\+E754 standards. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481}\label{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481}} 
+\index{FloatFormat@{FloatFormat}!floatclass@{floatclass}}
+\index{floatclass@{floatclass}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{floatclass}{floatclass}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481}{Float\+Format\+::floatclass}}}
+
+
+
+The various classes of floating-\/point encodings. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{normalized@{normalized}!FloatFormat@{FloatFormat}}\index{FloatFormat@{FloatFormat}!normalized@{normalized}}}\mbox{\Hypertarget{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481af3348da859f2ff00a47e32cc28a2edff}\label{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481af3348da859f2ff00a47e32cc28a2edff}} 
+normalized&A normal floating-\/point number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{infinity@{infinity}!FloatFormat@{FloatFormat}}\index{FloatFormat@{FloatFormat}!infinity@{infinity}}}\mbox{\Hypertarget{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481afeac6c1ae11af57235ccfa9c04d24a95}\label{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481afeac6c1ae11af57235ccfa9c04d24a95}} 
+infinity&An encoding representing an infinite value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{zero@{zero}!FloatFormat@{FloatFormat}}\index{FloatFormat@{FloatFormat}!zero@{zero}}}\mbox{\Hypertarget{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481aa26c0572abbf40f500f62893f06d478f}\label{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481aa26c0572abbf40f500f62893f06d478f}} 
+zero&An encoding of the value zero. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nan@{nan}!FloatFormat@{FloatFormat}}\index{FloatFormat@{FloatFormat}!nan@{nan}}}\mbox{\Hypertarget{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481ae3b854531adab08356b32f687c2227de}\label{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481ae3b854531adab08356b32f687c2227de}} 
+nan&An invalid encoding, Not-\/a-\/\+Number. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{denormalized@{denormalized}!FloatFormat@{FloatFormat}}\index{FloatFormat@{FloatFormat}!denormalized@{denormalized}}}\mbox{\Hypertarget{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481a15a0236a6b55e962846bdb2ae698cbeb}\label{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481a15a0236a6b55e962846bdb2ae698cbeb}} 
+denormalized&A denormalized encoding (for very small values) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFloatFormat_a0c5efdce272fb2a9b63f05affedbb74a}\label{classFloatFormat_a0c5efdce272fb2a9b63f05affedbb74a}} 
+\index{FloatFormat@{FloatFormat}!FloatFormat@{FloatFormat}}
+\index{FloatFormat@{FloatFormat}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{FloatFormat()}{FloatFormat()}}
+{\footnotesize\ttfamily Float\+Format\+::\+Float\+Format (\begin{DoxyParamCaption}\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Construct default I\+E\+EE 754 standard settings. 
+
+Set format for a given encoding size according to I\+E\+EE 754 standards 
+\begin{DoxyParams}{Parameters}
+{\em sz} & is the size of the encoding in bytes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFloatFormat_a8b9460ada306b44861228990529d5410}\label{classFloatFormat_a8b9460ada306b44861228990529d5410}} 
+\index{FloatFormat@{FloatFormat}!convertEncoding@{convertEncoding}}
+\index{convertEncoding@{convertEncoding}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{convertEncoding()}{convertEncoding()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::convert\+Encoding (\begin{DoxyParamCaption}\item[{uintb}]{encoding,  }\item[{const \mbox{\hyperlink{classFloatFormat}{Float\+Format}} $\ast$}]{formin }\end{DoxyParamCaption}) const}
+
+
+
+Convert between two different formats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoding} & is the value in the {\itshape other} \mbox{\hyperlink{classFloatFormat}{Float\+Format}} \\
+\hline
+{\em formin} & is the {\itshape other} \mbox{\hyperlink{classFloatFormat}{Float\+Format}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the equivalent value in {\bfseries{this}} \mbox{\hyperlink{classFloatFormat}{Float\+Format}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a266d06329a88845bbc202b87141f64df}\label{classFloatFormat_a266d06329a88845bbc202b87141f64df}} 
+\index{FloatFormat@{FloatFormat}!extractExponentCode@{extractExponentCode}}
+\index{extractExponentCode@{extractExponentCode}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{extractExponentCode()}{extractExponentCode()}}
+{\footnotesize\ttfamily int4 Float\+Format\+::extract\+Exponent\+Code (\begin{DoxyParamCaption}\item[{uintb}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Extract the exponent from the encoding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the (signed) exponent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_af06109651ce301156e5a384c946e7780}\label{classFloatFormat_af06109651ce301156e5a384c946e7780}} 
+\index{FloatFormat@{FloatFormat}!extractFractionalCode@{extractFractionalCode}}
+\index{extractFractionalCode@{extractFractionalCode}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{extractFractionalCode()}{extractFractionalCode()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::extract\+Fractional\+Code (\begin{DoxyParamCaption}\item[{uintb}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Extract the fractional part of the encoding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the fraction part of the value aligned to the top of the word 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_afa7d38ddb73a8cd9f4d29b839af04d1d}\label{classFloatFormat_afa7d38ddb73a8cd9f4d29b839af04d1d}} 
+\index{FloatFormat@{FloatFormat}!extractSign@{extractSign}}
+\index{extractSign@{extractSign}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{extractSign()}{extractSign()}}
+{\footnotesize\ttfamily bool Float\+Format\+::extract\+Sign (\begin{DoxyParamCaption}\item[{uintb}]{x }\end{DoxyParamCaption}) const}
+
+
+
+Extract the sign bit from the encoding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sign bit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a6f8450c4637e1e2c098b6b1c38f6061f}\label{classFloatFormat_a6f8450c4637e1e2c098b6b1c38f6061f}} 
+\index{FloatFormat@{FloatFormat}!getEncoding@{getEncoding}}
+\index{getEncoding@{getEncoding}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{getEncoding()}{getEncoding()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::get\+Encoding (\begin{DoxyParamCaption}\item[{double}]{host }\end{DoxyParamCaption}) const}
+
+
+
+Convert host\textquotesingle{}s double into {\bfseries{this}} encoding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host} & is the double value to convert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the equivalent encoded value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a5205f99f7973cde7ffe0054d07cf82bc}\label{classFloatFormat_a5205f99f7973cde7ffe0054d07cf82bc}} 
+\index{FloatFormat@{FloatFormat}!getHostFloat@{getHostFloat}}
+\index{getHostFloat@{getHostFloat}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{getHostFloat()}{getHostFloat()}}
+{\footnotesize\ttfamily double Float\+Format\+::get\+Host\+Float (\begin{DoxyParamCaption}\item[{uintb}]{encoding,  }\item[{\mbox{\hyperlink{classFloatFormat_a18acf57dc2fa19c8afe87fa1f61a0481}{floatclass}} $\ast$}]{type }\end{DoxyParamCaption}) const}
+
+
+
+Convert an encoding into host\textquotesingle{}s double. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em encoding} & is the encoding value \\
+\hline
+{\em type} & points to the floating-\/point class, which is passed back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the equivalent double value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a5edfc9c055efded2f22bb42a91058164}\label{classFloatFormat_a5edfc9c055efded2f22bb42a91058164}} 
+\index{FloatFormat@{FloatFormat}!opAbs@{opAbs}}
+\index{opAbs@{opAbs}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opAbs()}{opAbs()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Abs (\begin{DoxyParamCaption}\item[{uintb}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Absolute value (abs) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+abs(a) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_ad342814d842cb20b16dbe4fc9af59e1e}\label{classFloatFormat_ad342814d842cb20b16dbe4fc9af59e1e}} 
+\index{FloatFormat@{FloatFormat}!opAdd@{opAdd}}
+\index{opAdd@{opAdd}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opAdd()}{opAdd()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Add (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Addition (+) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a + b 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a997db68ddb2ee0835f3ffde93f4c4958}\label{classFloatFormat_a997db68ddb2ee0835f3ffde93f4c4958}} 
+\index{FloatFormat@{FloatFormat}!opCeil@{opCeil}}
+\index{opCeil@{opCeil}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opCeil()}{opCeil()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Ceil (\begin{DoxyParamCaption}\item[{uintb}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Ceiling (ceil) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ceil(a) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_abcd8caf82f65bac1e32be3cecd9f80e3}\label{classFloatFormat_abcd8caf82f65bac1e32be3cecd9f80e3}} 
+\index{FloatFormat@{FloatFormat}!opDiv@{opDiv}}
+\index{opDiv@{opDiv}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opDiv()}{opDiv()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Div (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Division (/) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a / b 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a1c59c49b0bdbc8d31d2df59eb0624d06}\label{classFloatFormat_a1c59c49b0bdbc8d31d2df59eb0624d06}} 
+\index{FloatFormat@{FloatFormat}!opEqual@{opEqual}}
+\index{opEqual@{opEqual}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opEqual()}{opEqual()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Equal (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Equality comparison (==) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if (a == b) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a4adac47dcb6d1ddbcf9c5f6980528fd2}\label{classFloatFormat_a4adac47dcb6d1ddbcf9c5f6980528fd2}} 
+\index{FloatFormat@{FloatFormat}!opFloat2Float@{opFloat2Float}}
+\index{opFloat2Float@{opFloat2Float}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opFloat2Float()}{opFloat2Float()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Float2\+Float (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{const \mbox{\hyperlink{classFloatFormat}{Float\+Format}} \&}]{outformat }\end{DoxyParamCaption}) const}
+
+
+
+Convert between floating-\/point precisions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+{\em outformat} & is the desired output \mbox{\hyperlink{classFloatFormat}{Float\+Format}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a converted to the output \mbox{\hyperlink{classFloatFormat}{Float\+Format}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_ad2e38aad3a27346e0eb55aedcbf531cd}\label{classFloatFormat_ad2e38aad3a27346e0eb55aedcbf531cd}} 
+\index{FloatFormat@{FloatFormat}!opFloor@{opFloor}}
+\index{opFloor@{opFloor}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opFloor()}{opFloor()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Floor (\begin{DoxyParamCaption}\item[{uintb}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Floor (floor) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+floor(a) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a610b9f8efe3b41368250940184691156}\label{classFloatFormat_a610b9f8efe3b41368250940184691156}} 
+\index{FloatFormat@{FloatFormat}!opInt2Float@{opInt2Float}}
+\index{opInt2Float@{opInt2Float}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opInt2Float()}{opInt2Float()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Int2\+Float (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{int4}]{sizein }\end{DoxyParamCaption}) const}
+
+
+
+Convert integer to floating-\/point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a signed integer value \\
+\hline
+{\em sizein} & is the number of bytes in the integer encoding \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a converted to an encoded floating-\/point value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a257b216d9b9e5aad3b693df46624cc6d}\label{classFloatFormat_a257b216d9b9e5aad3b693df46624cc6d}} 
+\index{FloatFormat@{FloatFormat}!opLess@{opLess}}
+\index{opLess@{opLess}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opLess()}{opLess()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Less (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Less-\/than comparison ($<$) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if (a $<$ b) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_adaf425a89e09270969f6fd848bf06025}\label{classFloatFormat_adaf425a89e09270969f6fd848bf06025}} 
+\index{FloatFormat@{FloatFormat}!opLessEqual@{opLessEqual}}
+\index{opLessEqual@{opLessEqual}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opLessEqual()}{opLessEqual()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Less\+Equal (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Less-\/than-\/or-\/equal comparison ($<$=) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if (a $<$= b) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a289c2216fe9add39e225991fc7baad3c}\label{classFloatFormat_a289c2216fe9add39e225991fc7baad3c}} 
+\index{FloatFormat@{FloatFormat}!opMult@{opMult}}
+\index{opMult@{opMult}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opMult()}{opMult()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Mult (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Multiplication ($\ast$) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a $\ast$ b 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a64576b3f398b049f002a6c95e45f2296}\label{classFloatFormat_a64576b3f398b049f002a6c95e45f2296}} 
+\index{FloatFormat@{FloatFormat}!opNan@{opNan}}
+\index{opNan@{opNan}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opNan()}{opNan()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Nan (\begin{DoxyParamCaption}\item[{uintb}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Test if Not-\/a-\/\+Number (NaN) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a is Not-\/a-\/\+Number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_af639368d2760482533e8ebf5ee18995b}\label{classFloatFormat_af639368d2760482533e8ebf5ee18995b}} 
+\index{FloatFormat@{FloatFormat}!opNeg@{opNeg}}
+\index{opNeg@{opNeg}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opNeg()}{opNeg()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Neg (\begin{DoxyParamCaption}\item[{uintb}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Unary negate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/a 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a1f28cec1861ddf0f416033f971a43b16}\label{classFloatFormat_a1f28cec1861ddf0f416033f971a43b16}} 
+\index{FloatFormat@{FloatFormat}!opNotEqual@{opNotEqual}}
+\index{opNotEqual@{opNotEqual}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opNotEqual()}{opNotEqual()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Not\+Equal (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Inequality comparison (!=) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if (a != b) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_adde6362a78f0ad6cd66fdd04c71032cf}\label{classFloatFormat_adde6362a78f0ad6cd66fdd04c71032cf}} 
+\index{FloatFormat@{FloatFormat}!opRound@{opRound}}
+\index{opRound@{opRound}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opRound()}{opRound()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Round (\begin{DoxyParamCaption}\item[{uintb}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Round. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+round(a) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a13cc7817eee998adc9699333cb8f144d}\label{classFloatFormat_a13cc7817eee998adc9699333cb8f144d}} 
+\index{FloatFormat@{FloatFormat}!opSqrt@{opSqrt}}
+\index{opSqrt@{opSqrt}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opSqrt()}{opSqrt()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Sqrt (\begin{DoxyParamCaption}\item[{uintb}]{a }\end{DoxyParamCaption}) const}
+
+
+
+Square root (sqrt) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sqrt(a) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_affc23eaa38dae2db40e8e16c9cf9c821}\label{classFloatFormat_affc23eaa38dae2db40e8e16c9cf9c821}} 
+\index{FloatFormat@{FloatFormat}!opSub@{opSub}}
+\index{opSub@{opSub}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opSub()}{opSub()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Sub (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{uintb}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Subtraction (-\/) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first floating-\/point value \\
+\hline
+{\em b} & is the second floating-\/point value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a -\/ b 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_a97577950c7ef0b53099d17deee29f198}\label{classFloatFormat_a97577950c7ef0b53099d17deee29f198}} 
+\index{FloatFormat@{FloatFormat}!opTrunc@{opTrunc}}
+\index{opTrunc@{opTrunc}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{opTrunc()}{opTrunc()}}
+{\footnotesize\ttfamily uintb Float\+Format\+::op\+Trunc (\begin{DoxyParamCaption}\item[{uintb}]{a,  }\item[{int4}]{sizeout }\end{DoxyParamCaption}) const}
+
+
+
+Convert floating-\/point to integer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is an encoded floating-\/point value \\
+\hline
+{\em sizeout} & is the desired encoding size of the output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an integer encoding of a 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFloatFormat_aa6e0b189a1a66251b200fcf829d98356}\label{classFloatFormat_aa6e0b189a1a66251b200fcf829d98356}} 
+\index{FloatFormat@{FloatFormat}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Float\+Format\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Restore the format from X\+ML. 
+
+Restore {\bfseries{object}} from a $<$floatformat$>$ X\+ML tag 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFloatFormat_adc679e89dcd8c63b0b9cc08f3464ba1a}\label{classFloatFormat_adc679e89dcd8c63b0b9cc08f3464ba1a}} 
+\index{FloatFormat@{FloatFormat}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!FloatFormat@{FloatFormat}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Float\+Format\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save the format to an X\+ML stream. 
+
+Write the format out to a $<$floatformat$>$ X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{float_8hh}{float.\+hh}}\item 
+float.\+cc\end{DoxyCompactItemize}

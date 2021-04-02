@@ -1,0 +1,97 @@
+\hypertarget{classActionSetCasts}{}\doxysection{Action\+Set\+Casts Class Reference}
+\label{classActionSetCasts}\index{ActionSetCasts@{ActionSetCasts}}
+
+
+Fill-\/in C\+P\+U\+I\+\_\+\+C\+A\+ST p-\/code ops as required by the casting strategy.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Set\+Casts\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classActionSetCasts__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Set\+Casts\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classActionSetCasts__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionSetCasts_abd5deebdb942e64993d2f321b4c1901e}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionSetCasts_a9999706f3347f707e39c28b5a208fbd3}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Fill-\/in C\+P\+U\+I\+\_\+\+C\+A\+ST p-\/code ops as required by the casting strategy. 
+
+Setting the casts is complicated by type inference and implied variables. By the time this \mbox{\hyperlink{classAction}{Action}} is run, the type inference algorithm has labeled every \mbox{\hyperlink{classVarnode}{Varnode}} with what it thinks the type should be. This casting algorithm tries to get the code to legally match this inference result by adding casts. Following the data flow, it tries the best it can to get each token to match the inferred type. For implied variables, the type is completely determined by the syntax of the output language, so implied casts won\textquotesingle{}t work in this case. For most of these cases, the algorithm just changes the type to that dictated by syntax and gets back on track at the next explicit variable in the flow. It tries to avoid losing pointer types however because any C\+P\+U\+I\+\_\+\+P\+T\+R\+A\+DD {\bfseries{mst}} have a pointer input. In this case, it casts to the necessary pointer type immediately. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionSetCasts_a9999706f3347f707e39c28b5a208fbd3}\label{classActionSetCasts_a9999706f3347f707e39c28b5a208fbd3}} 
+\index{ActionSetCasts@{ActionSetCasts}!apply@{apply}}
+\index{apply@{apply}!ActionSetCasts@{ActionSetCasts}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Set\+Casts\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionSetCasts_abd5deebdb942e64993d2f321b4c1901e}\label{classActionSetCasts_abd5deebdb942e64993d2f321b4c1901e}} 
+\index{ActionSetCasts@{ActionSetCasts}!clone@{clone}}
+\index{clone@{clone}!ActionSetCasts@{ActionSetCasts}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Set\+Casts\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,115 @@
+\hypertarget{classContextCache}{}\doxysection{Context\+Cache Class Reference}
+\label{classContextCache}\index{ContextCache@{ContextCache}}
+
+
+A helper class for caching the active context blob to minimize database lookups.  
+
+
+
+
+{\ttfamily \#include $<$globalcontext.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classContextCache_a352395a124a191f2f9d085e17dcb0059}{Context\+Cache}} (\mbox{\hyperlink{classContextDatabase}{Context\+Database}} $\ast$db)
+\begin{DoxyCompactList}\small\item\em Construct given a context database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextCache_a541e54ada351d856bf06717bd8746714}{get\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, uintm $\ast$buf) const
+\begin{DoxyCompactList}\small\item\em Retrieve the context blob for the given address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextCache_ac9f411a6a52bed3b3e59607371766c8b}{set\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 num, uintm mask, uintm value)
+\begin{DoxyCompactList}\small\item\em Change the value of a context variable at the given address with no bound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classContextCache_a97a4cc642bf4dad692ffafe3149cd324}{set\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr1, const \mbox{\hyperlink{classAddress}{Address}} \&addr2, int4 num, uintm mask, uintm value)
+\begin{DoxyCompactList}\small\item\em Change the value of a context variable across an explicit address range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A helper class for caching the active context blob to minimize database lookups. 
+
+This merely caches the last retrieved context blob (\char`\"{}array of words\char`\"{}) and the range of addresses over which the blob is valid. It encapsulates the \mbox{\hyperlink{classContextDatabase}{Context\+Database}} itself and exposes a minimal interface (\mbox{\hyperlink{classContextCache_a541e54ada351d856bf06717bd8746714}{get\+Context()}} and \mbox{\hyperlink{classContextCache_ac9f411a6a52bed3b3e59607371766c8b}{set\+Context()}}). 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classContextCache_a352395a124a191f2f9d085e17dcb0059}\label{classContextCache_a352395a124a191f2f9d085e17dcb0059}} 
+\index{ContextCache@{ContextCache}!ContextCache@{ContextCache}}
+\index{ContextCache@{ContextCache}!ContextCache@{ContextCache}}
+\doxysubsubsection{\texorpdfstring{ContextCache()}{ContextCache()}}
+{\footnotesize\ttfamily Context\+Cache\+::\+Context\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classContextDatabase}{Context\+Database}} $\ast$}]{db }\end{DoxyParamCaption})}
+
+
+
+Construct given a context database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em db} & is the context database that will be encapsulated \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classContextCache_a541e54ada351d856bf06717bd8746714}\label{classContextCache_a541e54ada351d856bf06717bd8746714}} 
+\index{ContextCache@{ContextCache}!getContext@{getContext}}
+\index{getContext@{getContext}!ContextCache@{ContextCache}}
+\doxysubsubsection{\texorpdfstring{getContext()}{getContext()}}
+{\footnotesize\ttfamily void Context\+Cache\+::get\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uintm $\ast$}]{buf }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve the context blob for the given address. 
+
+Check if the address is in the current valid range. If it is, return the cached blob. Otherwise, make a call to the database and cache a new block and valid range. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em buf} & is where the blob should be stored \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextCache_ac9f411a6a52bed3b3e59607371766c8b}\label{classContextCache_ac9f411a6a52bed3b3e59607371766c8b}} 
+\index{ContextCache@{ContextCache}!setContext@{setContext}}
+\index{setContext@{setContext}!ContextCache@{ContextCache}}
+\doxysubsubsection{\texorpdfstring{setContext()}{setContext()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Context\+Cache\+::set\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{num,  }\item[{uintm}]{mask,  }\item[{uintm}]{value }\end{DoxyParamCaption})}
+
+
+
+Change the value of a context variable at the given address with no bound. 
+
+The context value is set starting at the given address and {\itshape paints} memory up to the next explicit change point. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given starting address \\
+\hline
+{\em num} & is the word index of the context variable \\
+\hline
+{\em mask} & is the mask delimiting the context variable \\
+\hline
+{\em value} & is the (already shifted) value to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classContextCache_a97a4cc642bf4dad692ffafe3149cd324}\label{classContextCache_a97a4cc642bf4dad692ffafe3149cd324}} 
+\index{ContextCache@{ContextCache}!setContext@{setContext}}
+\index{setContext@{setContext}!ContextCache@{ContextCache}}
+\doxysubsubsection{\texorpdfstring{setContext()}{setContext()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Context\+Cache\+::set\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr1,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr2,  }\item[{int4}]{num,  }\item[{uintm}]{mask,  }\item[{uintm}]{value }\end{DoxyParamCaption})}
+
+
+
+Change the value of a context variable across an explicit address range. 
+
+The context value is {\itshape painted} across the range. The context variable is marked as explicitly changing at the starting address of the range. 
+\begin{DoxyParams}{Parameters}
+{\em addr1} & is the starting address of the given range \\
+\hline
+{\em addr2} & is the ending address of the given range \\
+\hline
+{\em num} & is the word index of the context variable \\
+\hline
+{\em mask} & is the mask delimiting the context variable \\
+\hline
+{\em value} & is the (already shifted) value to set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globalcontext_8hh}{globalcontext.\+hh}}\item 
+globalcontext.\+cc\end{DoxyCompactItemize}

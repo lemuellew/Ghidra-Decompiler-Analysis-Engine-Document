@@ -1,0 +1,37 @@
+\hypertarget{classFunctionTestProperty}{}\doxysection{Function\+Test\+Property Class Reference}
+\label{classFunctionTestProperty}\index{FunctionTestProperty@{FunctionTestProperty}}
+
+
+A single property to be searched for in the output of a function decompilation.  
+
+
+
+
+{\ttfamily \#include $<$testfunction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFunctionTestProperty_aed7bc29e5a2a11ec3ec0f16c08108428}\label{classFunctionTestProperty_aed7bc29e5a2a11ec3ec0f16c08108428}} 
+void \mbox{\hyperlink{classFunctionTestProperty_aed7bc29e5a2a11ec3ec0f16c08108428}{start\+Test}} (void) const
+\begin{DoxyCompactList}\small\item\em Reset \char`\"{}state\char`\"{}, counting number of matching lines. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFunctionTestProperty_af057f5267f2e3f9901768eb8c2d8dd19}\label{classFunctionTestProperty_af057f5267f2e3f9901768eb8c2d8dd19}} 
+void \mbox{\hyperlink{classFunctionTestProperty_af057f5267f2e3f9901768eb8c2d8dd19}{process\+Line}} (const string \&line) const
+\begin{DoxyCompactList}\small\item\em Search thru {\itshape line}, update state if match found. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFunctionTestProperty_aaaf4013a052b250c2b689e07f14ec1c4}\label{classFunctionTestProperty_aaaf4013a052b250c2b689e07f14ec1c4}} 
+bool \mbox{\hyperlink{classFunctionTestProperty_aaaf4013a052b250c2b689e07f14ec1c4}{end\+Test}} (void) const
+\begin{DoxyCompactList}\small\item\em Return results of property search. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFunctionTestProperty_adc055110a0ac05f894ecc1f714bd5847}\label{classFunctionTestProperty_adc055110a0ac05f894ecc1f714bd5847}} 
+void \mbox{\hyperlink{classFunctionTestProperty_adc055110a0ac05f894ecc1f714bd5847}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Reconstruct the property from an X\+ML tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A single property to be searched for in the output of a function decompilation. 
+
+This is generally a regular expression run over the characters in the decompiled \char`\"{}source\char`\"{} form of the function. The property may \char`\"{}match\char`\"{} more than once or not at all. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{testfunction_8hh}{testfunction.\+hh}}\item 
+testfunction.\+cc\end{DoxyCompactItemize}

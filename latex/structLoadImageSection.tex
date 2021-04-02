@@ -1,0 +1,88 @@
+\hypertarget{structLoadImageSection}{}\doxysection{Load\+Image\+Section Struct Reference}
+\label{structLoadImageSection}\index{LoadImageSection@{LoadImageSection}}
+
+
+A record describing a section bytes in the executable.  
+
+
+
+
+{\ttfamily \#include $<$loadimage.\+hh$>$}
+
+
+
+Collaboration diagram for Load\+Image\+Section\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{structLoadImageSection__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660ad88952fb8fb1b3ce5bc9d2dc137bfc87}{unalloc}} = 1, 
+\mbox{\hyperlink{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660a481eddf373fcb9d8025d2c42f7291cdc}{noload}} = 2, 
+\mbox{\hyperlink{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660aabcfc59bec5bf4e47ac1371b650c2e83}{code}} = 4, 
+\mbox{\hyperlink{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660ac1a3811c9d1146cdc1c8af8ce7e1ee82}{data}} = 8, 
+\newline
+\mbox{\hyperlink{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660a7ae6028ce4e56ab6be685f9a1e61b4d1}{readonly}} = 16
+ \}
+\begin{DoxyCompactList}\small\item\em Boolean properties a section might have. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structLoadImageSection_aacf49d79a9230343f798357f9731f613}\label{structLoadImageSection_aacf49d79a9230343f798357f9731f613}} 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{structLoadImageSection_aacf49d79a9230343f798357f9731f613}{address}}
+\begin{DoxyCompactList}\small\item\em Starting address of section. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structLoadImageSection_ad11c97bab282432299846b93f28c135b}\label{structLoadImageSection_ad11c97bab282432299846b93f28c135b}} 
+uintb \mbox{\hyperlink{structLoadImageSection_ad11c97bab282432299846b93f28c135b}{size}}
+\begin{DoxyCompactList}\small\item\em Number of bytes in section. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structLoadImageSection_a3cbd878bd8ba2890c81ef5b236633374}\label{structLoadImageSection_a3cbd878bd8ba2890c81ef5b236633374}} 
+uint4 \mbox{\hyperlink{structLoadImageSection_a3cbd878bd8ba2890c81ef5b236633374}{flags}}
+\begin{DoxyCompactList}\small\item\em Properties of the section. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A record describing a section bytes in the executable. 
+
+A lightweight object specifying the location and size of the section and basic properties 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660}\label{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Boolean properties a section might have. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unalloc@{unalloc}!LoadImageSection@{LoadImageSection}}\index{LoadImageSection@{LoadImageSection}!unalloc@{unalloc}}}\mbox{\Hypertarget{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660ad88952fb8fb1b3ce5bc9d2dc137bfc87}\label{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660ad88952fb8fb1b3ce5bc9d2dc137bfc87}} 
+unalloc&Not allocated in memory (debug info) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{noload@{noload}!LoadImageSection@{LoadImageSection}}\index{LoadImageSection@{LoadImageSection}!noload@{noload}}}\mbox{\Hypertarget{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660a481eddf373fcb9d8025d2c42f7291cdc}\label{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660a481eddf373fcb9d8025d2c42f7291cdc}} 
+noload&uninitialized section \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{code@{code}!LoadImageSection@{LoadImageSection}}\index{LoadImageSection@{LoadImageSection}!code@{code}}}\mbox{\Hypertarget{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660aabcfc59bec5bf4e47ac1371b650c2e83}\label{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660aabcfc59bec5bf4e47ac1371b650c2e83}} 
+code&code only \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{data@{data}!LoadImageSection@{LoadImageSection}}\index{LoadImageSection@{LoadImageSection}!data@{data}}}\mbox{\Hypertarget{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660ac1a3811c9d1146cdc1c8af8ce7e1ee82}\label{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660ac1a3811c9d1146cdc1c8af8ce7e1ee82}} 
+data&data only \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{readonly@{readonly}!LoadImageSection@{LoadImageSection}}\index{LoadImageSection@{LoadImageSection}!readonly@{readonly}}}\mbox{\Hypertarget{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660a7ae6028ce4e56ab6be685f9a1e61b4d1}\label{structLoadImageSection_a5515181f8b08f520e6cd9d4baf669660a7ae6028ce4e56ab6be685f9a1e61b4d1}} 
+readonly&read only section \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{loadimage_8hh}{loadimage.\+hh}}\end{DoxyCompactItemize}

@@ -1,0 +1,90 @@
+\hypertarget{classRulePropagateCopy}{}\doxysection{Rule\+Propagate\+Copy Class Reference}
+\label{classRulePropagateCopy}\index{RulePropagateCopy@{RulePropagateCopy}}
+
+
+Propagate the input of a C\+O\+PY to all the places that read the output.  
+
+
+
+
+Inheritance diagram for Rule\+Propagate\+Copy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classRulePropagateCopy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Propagate\+Copy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classRulePropagateCopy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRulePropagateCopy_adcaeff563b266b1410a3a69038a8ba71}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRulePropagateCopy_a4204e280e01206f9de2f082afffdce81}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Propagate the input of a C\+O\+PY to all the places that read the output. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRulePropagateCopy_a4204e280e01206f9de2f082afffdce81}\label{classRulePropagateCopy_a4204e280e01206f9de2f082afffdce81}} 
+\index{RulePropagateCopy@{RulePropagateCopy}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RulePropagateCopy@{RulePropagateCopy}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Propagate\+Copy\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRulePropagateCopy_adcaeff563b266b1410a3a69038a8ba71}\label{classRulePropagateCopy_adcaeff563b266b1410a3a69038a8ba71}} 
+\index{RulePropagateCopy@{RulePropagateCopy}!clone@{clone}}
+\index{clone@{clone}!RulePropagateCopy@{RulePropagateCopy}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Propagate\+Copy\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

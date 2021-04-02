@@ -1,0 +1,251 @@
+\hypertarget{classStringManager}{}\doxysection{String\+Manager Class Reference}
+\label{classStringManager}\index{StringManager@{StringManager}}
+
+
+Storage for decoding and storing strings associated with an address.  
+
+
+
+
+{\ttfamily \#include $<$stringmanage.\+hh$>$}
+
+
+
+Inheritance diagram for String\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classStringManager__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classStringManager_1_1StringData}{String\+Data}}
+\begin{DoxyCompactList}\small\item\em String data (a sequence of bytes) stored by \mbox{\hyperlink{classStringManager}{String\+Manager}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStringManager_a1407380c55bb796661bed84db3476b8b}{String\+Manager}} (int4 max)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStringManager_ac92dafe6d6f804954bd801ceef66b373}\label{classStringManager_ac92dafe6d6f804954bd801ceef66b373}} 
+virtual \mbox{\hyperlink{classStringManager_ac92dafe6d6f804954bd801ceef66b373}{$\sim$\+String\+Manager}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStringManager_aa3ba1fbe896b0e685cd3b44a8d03171e}{is\+String}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$char\+Type)
+\item 
+virtual const vector$<$ uint1 $>$ \& \mbox{\hyperlink{classStringManager_ae4b3978a8dd1e6c7f425b9fe2e651083}{get\+String\+Data}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$char\+Type, bool \&is\+Trunc)=0
+\begin{DoxyCompactList}\small\item\em Retrieve string data at the given address as a U\+T\+F8 byte array. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStringManager_a46761ad46eb4e6aa836be7f3b3725cff}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save cached strings to a stream as X\+ML. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStringManager_ae117904616788288b04230472700b543}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Restore string cache from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classStringManager_ae1cf9ff7c81e4fb399c2602c30a27ff7}{has\+Char\+Terminator}} (const uint1 $\ast$buffer, int4 size, int4 charsize)
+\begin{DoxyCompactList}\small\item\em Check for a unicode string terminator. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classStringManager_aadb35ab2ce049fa582f4602ea02abd68}{read\+Utf16}} (const uint1 $\ast$buf, bool bigend)
+\begin{DoxyCompactList}\small\item\em Read a U\+T\+F16 code point from a byte array. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classStringManager_a8c7a7607a9f9cac43fa403cc44cb7dad}{write\+Utf8}} (ostream \&s, int4 codepoint)
+\begin{DoxyCompactList}\small\item\em Write unicode character to stream in U\+T\+F8 encoding. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classStringManager_a8c8a7cb13b418fd58123720605b0d9cd}{get\+Codepoint}} (const uint1 $\ast$buf, int4 charsize, bool bigend, int4 \&skip)
+\begin{DoxyCompactList}\small\item\em Extract next {\itshape unicode} {\itshape codepoint}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classStringManager_a745381638ff9f2236f54814792a42a68}\label{classStringManager_a745381638ff9f2236f54814792a42a68}} 
+map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{classStringManager_1_1StringData}{String\+Data}} $>$ \mbox{\hyperlink{classStringManager_a745381638ff9f2236f54814792a42a68}{string\+Map}}
+\begin{DoxyCompactList}\small\item\em Map from address to string data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStringManager_a577e2076a5e0899e7150696a2ae8a253}\label{classStringManager_a577e2076a5e0899e7150696a2ae8a253}} 
+int4 \mbox{\hyperlink{classStringManager_a577e2076a5e0899e7150696a2ae8a253}{maximum\+Chars}}
+\begin{DoxyCompactList}\small\item\em Maximum characters in a string before truncating. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Storage for decoding and storing strings associated with an address. 
+
+Looks at data in the loadimage to determine if it represents a \char`\"{}string\char`\"{}. Decodes the string for presentation in the output. Stores the decoded string until its needed for presentation. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStringManager_a1407380c55bb796661bed84db3476b8b}\label{classStringManager_a1407380c55bb796661bed84db3476b8b}} 
+\index{StringManager@{StringManager}!StringManager@{StringManager}}
+\index{StringManager@{StringManager}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{StringManager()}{StringManager()}}
+{\footnotesize\ttfamily String\+Manager\+::\+String\+Manager (\begin{DoxyParamCaption}\item[{int4}]{max }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max} & is the maximum number of characters to allow before truncating string \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStringManager_a8c8a7cb13b418fd58123720605b0d9cd}\label{classStringManager_a8c8a7cb13b418fd58123720605b0d9cd}} 
+\index{StringManager@{StringManager}!getCodepoint@{getCodepoint}}
+\index{getCodepoint@{getCodepoint}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{getCodepoint()}{getCodepoint()}}
+{\footnotesize\ttfamily int4 String\+Manager\+::get\+Codepoint (\begin{DoxyParamCaption}\item[{const uint1 $\ast$}]{buf,  }\item[{int4}]{charsize,  }\item[{bool}]{bigend,  }\item[{int4 \&}]{skip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Extract next {\itshape unicode} {\itshape codepoint}. 
+
+One or more bytes is consumed from the array, and the number of bytes used is passed back. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & is a pointer to the bytes in the character array \\
+\hline
+{\em charsize} & is 1 for U\+T\+F8, 2 for U\+T\+F16, or 4 for U\+T\+F32 \\
+\hline
+{\em bigend} & is {\bfseries{true}} for big endian encoding of the U\+TF element \\
+\hline
+{\em skip} & is a reference for passing back the number of bytes consumed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the codepoint or -\/1 if the encoding is invalid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStringManager_ae4b3978a8dd1e6c7f425b9fe2e651083}\label{classStringManager_ae4b3978a8dd1e6c7f425b9fe2e651083}} 
+\index{StringManager@{StringManager}!getStringData@{getStringData}}
+\index{getStringData@{getStringData}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{getStringData()}{getStringData()}}
+{\footnotesize\ttfamily virtual const vector$<$uint1$>$\& String\+Manager\+::get\+String\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{char\+Type,  }\item[{bool \&}]{is\+Trunc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve string data at the given address as a U\+T\+F8 byte array. 
+
+If the address does not represent string data, a zero length vector is returned. Otherwise, the string data is fetched, converted to a U\+T\+F8 encoding, cached and returned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em char\+Type} & is a character data-\/type indicating the encoding \\
+\hline
+{\em is\+Trunc} & passes back whether the string is truncated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the byte array of U\+T\+F8 data 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStringManagerUnicode_a42eeeb4a0fc1849c9ce995a4268106cf}{String\+Manager\+Unicode}}, and \mbox{\hyperlink{classGhidraStringManager_a2504b13f591ab6ebbd2eb313c4b9edc7}{Ghidra\+String\+Manager}}.
+
+\mbox{\Hypertarget{classStringManager_ae1cf9ff7c81e4fb399c2602c30a27ff7}\label{classStringManager_ae1cf9ff7c81e4fb399c2602c30a27ff7}} 
+\index{StringManager@{StringManager}!hasCharTerminator@{hasCharTerminator}}
+\index{hasCharTerminator@{hasCharTerminator}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{hasCharTerminator()}{hasCharTerminator()}}
+{\footnotesize\ttfamily bool String\+Manager\+::has\+Char\+Terminator (\begin{DoxyParamCaption}\item[{const uint1 $\ast$}]{buffer,  }\item[{int4}]{size,  }\item[{int4}]{charsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check for a unicode string terminator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & is the byte buffer \\
+\hline
+{\em size} & is the number of bytes in the buffer \\
+\hline
+{\em charsize} & is the presumed size (in bytes) of character elements \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a string terminator is found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStringManager_aa3ba1fbe896b0e685cd3b44a8d03171e}\label{classStringManager_aa3ba1fbe896b0e685cd3b44a8d03171e}} 
+\index{StringManager@{StringManager}!isString@{isString}}
+\index{isString@{isString}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{isString()}{isString()}}
+{\footnotesize\ttfamily bool String\+Manager\+::is\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{char\+Type }\end{DoxyParamCaption})}
+
+Returns {\bfseries{true}} if the data is some kind of complete string. A given character data-\/type can be used as a hint for the encoding. The string decoding can be cached internally. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em char\+Type} & is the given character data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the address represents string data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStringManager_aadb35ab2ce049fa582f4602ea02abd68}\label{classStringManager_aadb35ab2ce049fa582f4602ea02abd68}} 
+\index{StringManager@{StringManager}!readUtf16@{readUtf16}}
+\index{readUtf16@{readUtf16}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{readUtf16()}{readUtf16()}}
+{\footnotesize\ttfamily int4 String\+Manager\+::read\+Utf16 (\begin{DoxyParamCaption}\item[{const uint1 $\ast$}]{buf,  }\item[{bool}]{bigend }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Read a U\+T\+F16 code point from a byte array. 
+
+Pull the first two bytes from the byte array and combine them in the indicated endian order 
+\begin{DoxyParams}{Parameters}
+{\em buf} & is the byte array \\
+\hline
+{\em bigend} & is {\bfseries{true}} to request big endian encoding \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the decoded U\+T\+F16 element 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStringManager_ae117904616788288b04230472700b543}\label{classStringManager_ae117904616788288b04230472700b543}} 
+\index{StringManager@{StringManager}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void String\+Manager\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Restore string cache from X\+ML. 
+
+Read $<$stringmanage$>$ tag, with $<$string$>$ sub-\/tags. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root tag element \\
+\hline
+{\em m} & is the manager for looking up Address\+Spaces \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStringManager_a46761ad46eb4e6aa836be7f3b3725cff}\label{classStringManager_a46761ad46eb4e6aa836be7f3b3725cff}} 
+\index{StringManager@{StringManager}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void String\+Manager\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save cached strings to a stream as X\+ML. 
+
+Write $<$stringmanage$>$ tag, with $<$string$>$ sub-\/tags. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStringManager_a8c7a7607a9f9cac43fa403cc44cb7dad}\label{classStringManager_a8c7a7607a9f9cac43fa403cc44cb7dad}} 
+\index{StringManager@{StringManager}!writeUtf8@{writeUtf8}}
+\index{writeUtf8@{writeUtf8}!StringManager@{StringManager}}
+\doxysubsubsection{\texorpdfstring{writeUtf8()}{writeUtf8()}}
+{\footnotesize\ttfamily void String\+Manager\+::write\+Utf8 (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{codepoint }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write unicode character to stream in U\+T\+F8 encoding. 
+
+Encode the given unicode codepoint as U\+T\+F8 (1, 2, 3, or 4 bytes) and write the bytes to the stream. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em codepoint} & is the unicode codepoint \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stringmanage_8hh}{stringmanage.\+hh}}\item 
+stringmanage.\+cc\end{DoxyCompactItemize}

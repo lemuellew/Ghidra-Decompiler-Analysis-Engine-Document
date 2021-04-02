@@ -1,0 +1,96 @@
+\hypertarget{classConstructTpl}{}\doxysection{Construct\+Tpl Class Reference}
+\label{classConstructTpl}\index{ConstructTpl@{ConstructTpl}}
+
+
+Collaboration diagram for Construct\+Tpl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=158pt]{classConstructTpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstructTpl_abf2e39342736d2c1d79c8f4bee68dc3a}\label{classConstructTpl_abf2e39342736d2c1d79c8f4bee68dc3a}} 
+uint4 {\bfseries delay\+Slot} (void) const
+\item 
+\mbox{\Hypertarget{classConstructTpl_aae30d682cb8171ae594cd9e031b39061}\label{classConstructTpl_aae30d682cb8171ae594cd9e031b39061}} 
+uint4 {\bfseries num\+Labels} (void) const
+\item 
+\mbox{\Hypertarget{classConstructTpl_acc7cf7bb955ba28c5e93c11e56fbd0ae}\label{classConstructTpl_acc7cf7bb955ba28c5e93c11e56fbd0ae}} 
+const vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ \& {\bfseries get\+Opvec} (void) const
+\item 
+\mbox{\Hypertarget{classConstructTpl_a1d7e73bdea2a98c688276a87fc18f614}\label{classConstructTpl_a1d7e73bdea2a98c688276a87fc18f614}} 
+\mbox{\hyperlink{classHandleTpl}{Handle\+Tpl}} $\ast$ {\bfseries get\+Result} (void) const
+\item 
+\mbox{\Hypertarget{classConstructTpl_a7a29a748cbd83165ae89751a7f2b7814}\label{classConstructTpl_a7a29a748cbd83165ae89751a7f2b7814}} 
+bool {\bfseries add\+Op} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ot)
+\item 
+\mbox{\Hypertarget{classConstructTpl_a1744c9bd849faf17b5a68519fcaa58eb}\label{classConstructTpl_a1744c9bd849faf17b5a68519fcaa58eb}} 
+bool {\bfseries add\+Op\+List} (const vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ \&oplist)
+\item 
+\mbox{\Hypertarget{classConstructTpl_af07c1652b17290409b235a235001424f}\label{classConstructTpl_af07c1652b17290409b235a235001424f}} 
+void {\bfseries set\+Result} (\mbox{\hyperlink{classHandleTpl}{Handle\+Tpl}} $\ast$t)
+\item 
+\mbox{\Hypertarget{classConstructTpl_a917003d51923a5e694cc489ed5b96c06}\label{classConstructTpl_a917003d51923a5e694cc489ed5b96c06}} 
+int4 {\bfseries fillin\+Build} (vector$<$ int4 $>$ \&check, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$const\+\_\+space)
+\item 
+\mbox{\Hypertarget{classConstructTpl_a948b22517801014300b1897f9c01c8ee}\label{classConstructTpl_a948b22517801014300b1897f9c01c8ee}} 
+bool {\bfseries build\+Only} (void) const
+\item 
+\mbox{\Hypertarget{classConstructTpl_a6748ce8632e758aabf9b0d5a252fad5f}\label{classConstructTpl_a6748ce8632e758aabf9b0d5a252fad5f}} 
+void {\bfseries change\+Handle\+Index} (const vector$<$ int4 $>$ \&handmap)
+\item 
+\mbox{\Hypertarget{classConstructTpl_a081103bb58d0e252b4b5b482c49113c6}\label{classConstructTpl_a081103bb58d0e252b4b5b482c49113c6}} 
+void {\bfseries set\+Input} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vn, int4 index, int4 slot)
+\item 
+\mbox{\Hypertarget{classConstructTpl_a7c917fe6ab8eea662f8d2c8818f11104}\label{classConstructTpl_a7c917fe6ab8eea662f8d2c8818f11104}} 
+void {\bfseries set\+Output} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vn, int4 index)
+\item 
+\mbox{\Hypertarget{classConstructTpl_aa14ea1a30814a8f8a2ae074b46562734}\label{classConstructTpl_aa14ea1a30814a8f8a2ae074b46562734}} 
+void {\bfseries delete\+Ops} (const vector$<$ int4 $>$ \&indices)
+\item 
+\mbox{\Hypertarget{classConstructTpl_af26ca1f89d087ed17c153b0fefdb8a14}\label{classConstructTpl_af26ca1f89d087ed17c153b0fefdb8a14}} 
+void {\bfseries save\+Xml} (ostream \&s, int4 sectionid) const
+\item 
+\mbox{\Hypertarget{classConstructTpl_a0e22f6df1e5fb8ab5fe763b3f68dd1fa}\label{classConstructTpl_a0e22f6df1e5fb8ab5fe763b3f68dd1fa}} 
+int4 {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstructTpl_afc7e7717c6b970b32c0306c94ecdfeec}\label{classConstructTpl_afc7e7717c6b970b32c0306c94ecdfeec}} 
+void {\bfseries set\+Opvec} (vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ \&opvec)
+\item 
+\mbox{\Hypertarget{classConstructTpl_a23f7a20bd1a914bcc439a79767c2bd6f}\label{classConstructTpl_a23f7a20bd1a914bcc439a79767c2bd6f}} 
+void {\bfseries set\+Num\+Labels} (uint4 val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstructTpl_a5db8bfa128cfbf7955169d18cf9510cd}\label{classConstructTpl_a5db8bfa128cfbf7955169d18cf9510cd}} 
+uint4 {\bfseries delayslot}
+\item 
+\mbox{\Hypertarget{classConstructTpl_a493c686762fdacfa88a7508a9cd87896}\label{classConstructTpl_a493c686762fdacfa88a7508a9cd87896}} 
+uint4 {\bfseries numlabels}
+\item 
+\mbox{\Hypertarget{classConstructTpl_a253e9fe8590d5675395612f7afb3f5f1}\label{classConstructTpl_a253e9fe8590d5675395612f7afb3f5f1}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ {\bfseries vec}
+\item 
+\mbox{\Hypertarget{classConstructTpl_a81f6345fc9882da42d0960f11634c2d9}\label{classConstructTpl_a81f6345fc9882da42d0960f11634c2d9}} 
+\mbox{\hyperlink{classHandleTpl}{Handle\+Tpl}} $\ast$ {\bfseries result}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstructTpl_a327c0b989084ddb923468b1440a055de}\label{classConstructTpl_a327c0b989084ddb923468b1440a055de}} 
+class {\bfseries Sleigh\+Compile}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+semantics.\+hh\item 
+semantics.\+cc\end{DoxyCompactItemize}

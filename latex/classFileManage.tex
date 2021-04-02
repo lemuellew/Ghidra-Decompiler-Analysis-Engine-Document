@@ -1,0 +1,47 @@
+\hypertarget{classFileManage}{}\doxysection{File\+Manage Class Reference}
+\label{classFileManage}\index{FileManage@{FileManage}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileManage_a326d24da789cd3adde140bd1c5e5b7e6}\label{classFileManage_a326d24da789cd3adde140bd1c5e5b7e6}} 
+void {\bfseries add\+Dir2\+Path} (const string \&path)
+\item 
+\mbox{\Hypertarget{classFileManage_a58692ff821c7b1570559291ea14be363}\label{classFileManage_a58692ff821c7b1570559291ea14be363}} 
+void {\bfseries add\+Current\+Dir} (void)
+\item 
+\mbox{\Hypertarget{classFileManage_abc430305a56bcf90db9eca772676b3a6}\label{classFileManage_abc430305a56bcf90db9eca772676b3a6}} 
+void {\bfseries find\+File} (string \&res, const string \&name) const
+\item 
+\mbox{\Hypertarget{classFileManage_aeba79cb34d9727c1660d1710fd356e30}\label{classFileManage_aeba79cb34d9727c1660d1710fd356e30}} 
+void {\bfseries match\+List} (vector$<$ string $>$ \&res, const string \&match, bool is\+Suffix) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classFileManage_af88425307be1ac649af869abbf4ac9a7}\label{classFileManage_af88425307be1ac649af869abbf4ac9a7}} 
+static bool {\bfseries is\+Directory} (const string \&path)
+\item 
+\mbox{\Hypertarget{classFileManage_ab0a82bdd34c86126156263e732bcbca4}\label{classFileManage_ab0a82bdd34c86126156263e732bcbca4}} 
+static void {\bfseries match\+List\+Dir} (vector$<$ string $>$ \&res, const string \&match, bool is\+Suffix, const string \&dir, bool allowdot)
+\item 
+\mbox{\Hypertarget{classFileManage_a3394b908aa55d5f59d05cfafac789259}\label{classFileManage_a3394b908aa55d5f59d05cfafac789259}} 
+static void {\bfseries directory\+List} (vector$<$ string $>$ \&res, const string \&dirname, bool allowdot=false)
+\item 
+\mbox{\Hypertarget{classFileManage_ab6197b51380f92ab7cd595edc96efb47}\label{classFileManage_ab6197b51380f92ab7cd595edc96efb47}} 
+static void {\bfseries scan\+Directory\+Recursive} (vector$<$ string $>$ \&res, const string \&matchname, const string \&rootpath, int maxdepth)
+\item 
+\mbox{\Hypertarget{classFileManage_a7c7130f99f99539159c25e94d6b3ea15}\label{classFileManage_a7c7130f99f99539159c25e94d6b3ea15}} 
+static void {\bfseries split\+Path} (const string \&full, string \&path, string \&base)
+\item 
+\mbox{\Hypertarget{classFileManage_a04c3c512ed3ab22194c34729dd2dd20e}\label{classFileManage_a04c3c512ed3ab22194c34729dd2dd20e}} 
+static bool {\bfseries is\+Absolute\+Path} (const string \&full)
+\item 
+\mbox{\Hypertarget{classFileManage_a534d2dfa5b06da668dd06ea0d9596038}\label{classFileManage_a534d2dfa5b06da668dd06ea0d9596038}} 
+static string {\bfseries discover\+Ghidra\+Root} (const char $\ast$argv0)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+filemanage.\+hh\item 
+filemanage.\+cc\end{DoxyCompactItemize}

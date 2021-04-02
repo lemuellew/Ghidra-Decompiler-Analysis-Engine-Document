@@ -1,0 +1,248 @@
+\hypertarget{classLoadImageBfd}{}\doxysection{Load\+Image\+Bfd Class Reference}
+\label{classLoadImageBfd}\index{LoadImageBfd@{LoadImageBfd}}
+
+
+Inheritance diagram for Load\+Image\+Bfd\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classLoadImageBfd__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Load\+Image\+Bfd\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{classLoadImageBfd__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLoadImageBfd_a3dbf8efbc462647404d8263f2e42b18c}\label{classLoadImageBfd_a3dbf8efbc462647404d8263f2e42b18c}} 
+{\bfseries Load\+Image\+Bfd} (const string \&f, const string \&t)
+\item 
+\mbox{\Hypertarget{classLoadImageBfd_ae7779df9e518dba07746692c5391cd82}\label{classLoadImageBfd_ae7779df9e518dba07746692c5391cd82}} 
+void {\bfseries attach\+To\+Space} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$id)
+\item 
+\mbox{\Hypertarget{classLoadImageBfd_a87816fd410acb9003a010e8cb4b2b5f4}\label{classLoadImageBfd_a87816fd410acb9003a010e8cb4b2b5f4}} 
+void {\bfseries open} (void)
+\item 
+\mbox{\Hypertarget{classLoadImageBfd_af0297020340300588572090ae50ff145}\label{classLoadImageBfd_af0297020340300588572090ae50ff145}} 
+void {\bfseries close} (void)
+\item 
+\mbox{\Hypertarget{classLoadImageBfd_aed37920fc29c5251f29061bf4479e6fc}\label{classLoadImageBfd_aed37920fc29c5251f29061bf4479e6fc}} 
+void {\bfseries get\+Import\+Table} (vector$<$ \mbox{\hyperlink{structImportRecord}{Import\+Record}} $>$ \&irec)
+\item 
+virtual void \mbox{\hyperlink{classLoadImageBfd_a78225283223f58c852c4b63af4fc8791}{load\+Fill}} (uint1 $\ast$ptr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageBfd_a55a11f9c90d067643acb55b197179878}{open\+Symbols}} (void) const
+\begin{DoxyCompactList}\small\item\em Prepare to read symbols. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageBfd_aaf25ff18d5cec7300dcd28ca4150b8ce}{close\+Symbols}} (void) const
+\begin{DoxyCompactList}\small\item\em Stop reading symbols. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classLoadImageBfd_a8db5bae4688dfea449ed8c5e9d584904}{get\+Next\+Symbol}} (\mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}} \&record) const
+\begin{DoxyCompactList}\small\item\em Get the next symbol record. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageBfd_a48e82236ac85863f02e49e3ecae877e1}{open\+Section\+Info}} (void) const
+\begin{DoxyCompactList}\small\item\em Prepare to read section info. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageBfd_ab09105d243f255c2bece8d27803cb4c5}{close\+Section\+Info}} (void) const
+\begin{DoxyCompactList}\small\item\em Stop reading section info. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classLoadImageBfd_aaae78fac403213f2dc9ebf97ac28a5b2}{get\+Next\+Section}} (\mbox{\hyperlink{structLoadImageSection}{Load\+Image\+Section}} \&sec) const
+\begin{DoxyCompactList}\small\item\em Get info on the next section. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageBfd_a8a45d7f2aaa3ae3028f997978f1d9d0c}{get\+Readonly}} (\mbox{\hyperlink{classRangeList}{Range\+List}} \&list) const
+\begin{DoxyCompactList}\small\item\em Return list of {\itshape readonly} address ranges. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classLoadImageBfd_a20f8ec53008fada4bd5c8e4d2d712ca9}{get\+Arch\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get a string indicating the architecture type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageBfd_a92442c79bbcb55ef602bd9cb092da87e}{adjust\+Vma}} (long adjust)
+\begin{DoxyCompactList}\small\item\em Adjust load addresses with a global offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadImageBfd_a92442c79bbcb55ef602bd9cb092da87e}\label{classLoadImageBfd_a92442c79bbcb55ef602bd9cb092da87e}} 
+\index{LoadImageBfd@{LoadImageBfd}!adjustVma@{adjustVma}}
+\index{adjustVma@{adjustVma}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{adjustVma()}{adjustVma()}}
+{\footnotesize\ttfamily void Load\+Image\+Bfd\+::adjust\+Vma (\begin{DoxyParamCaption}\item[{long}]{adjust }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adjust load addresses with a global offset. 
+
+Most load image formats automatically encode information about the true loading address(es) for the data in the image. But if this is missing or incorrect, this routine can be used to make a global adjustment to the load address. Only one adjustment is made across {\itshape all} addresses in the image. The offset passed to this method is added to the stored or default value for any address queried in the image. This is most often used in a {\itshape raw} binary file format. In this case, the entire executable file is intended to be read straight into R\+AM, as one contiguous chunk, in order to be executed. In the absence of any other info, the first byte of the image file is loaded at offset 0. This method then would adjust the load address of the first byte. 
+\begin{DoxyParams}{Parameters}
+{\em adjust} & is the offset amount to be added to default values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLoadImage_a51a254f705fba6f0e6524995acd5aaa7}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_ab09105d243f255c2bece8d27803cb4c5}\label{classLoadImageBfd_ab09105d243f255c2bece8d27803cb4c5}} 
+\index{LoadImageBfd@{LoadImageBfd}!closeSectionInfo@{closeSectionInfo}}
+\index{closeSectionInfo@{closeSectionInfo}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{closeSectionInfo()}{closeSectionInfo()}}
+{\footnotesize\ttfamily void Load\+Image\+Bfd\+::close\+Section\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stop reading section info. 
+
+Once all the section information is read from the load image using the \mbox{\hyperlink{classLoadImageBfd_aaae78fac403213f2dc9ebf97ac28a5b2}{get\+Next\+Section()}} method, this method should be called to free up any resources used in parsing the section info. 
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_a6358439b2aaef7497dad384b7c43213f}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_aaf25ff18d5cec7300dcd28ca4150b8ce}\label{classLoadImageBfd_aaf25ff18d5cec7300dcd28ca4150b8ce}} 
+\index{LoadImageBfd@{LoadImageBfd}!closeSymbols@{closeSymbols}}
+\index{closeSymbols@{closeSymbols}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{closeSymbols()}{closeSymbols()}}
+{\footnotesize\ttfamily void Load\+Image\+Bfd\+::close\+Symbols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Stop reading symbols. 
+
+Once all the symbol information has been read out from the load image via the \mbox{\hyperlink{classLoadImageBfd_a55a11f9c90d067643acb55b197179878}{open\+Symbols()}} and \mbox{\hyperlink{classLoadImageBfd_a8db5bae4688dfea449ed8c5e9d584904}{get\+Next\+Symbol()}} calls, the application should call this method to free up resources used in parsing the symbol information. 
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_a58c86c5342b7500e317ba98bcbf66753}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_a20f8ec53008fada4bd5c8e4d2d712ca9}\label{classLoadImageBfd_a20f8ec53008fada4bd5c8e4d2d712ca9}} 
+\index{LoadImageBfd@{LoadImageBfd}!getArchType@{getArchType}}
+\index{getArchType@{getArchType}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{getArchType()}{getArchType()}}
+{\footnotesize\ttfamily string Load\+Image\+Bfd\+::get\+Arch\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a string indicating the architecture type. 
+
+The load image class is intended to be a generic front-\/end to the large variety of load formats in use. This method should return a string that identifies the particular architecture this particular image is intended to run on. It is currently the responsibility of any derived \mbox{\hyperlink{classLoadImage}{Load\+Image}} class to establish a format for this string, but it should generally contain some indication of the operating system and the processor. \begin{DoxyReturn}{Returns}
+the identifier string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLoadImage_a5103418147e95994f66e77746c0a0cfc}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_aaae78fac403213f2dc9ebf97ac28a5b2}\label{classLoadImageBfd_aaae78fac403213f2dc9ebf97ac28a5b2}} 
+\index{LoadImageBfd@{LoadImageBfd}!getNextSection@{getNextSection}}
+\index{getNextSection@{getNextSection}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{getNextSection()}{getNextSection()}}
+{\footnotesize\ttfamily bool Load\+Image\+Bfd\+::get\+Next\+Section (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLoadImageSection}{Load\+Image\+Section}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get info on the next section. 
+
+This method is used to read out a record that describes a single section of bytes mapped by the load image. This method can be called repeatedly until it returns {\bfseries{false}}, to get info on additional sections. 
+\begin{DoxyParams}{Parameters}
+{\em record} & is a reference to the info record to be filled in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are more records to read 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_ab4a927238becd33d8eb75ddc96cc9616}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_a8db5bae4688dfea449ed8c5e9d584904}\label{classLoadImageBfd_a8db5bae4688dfea449ed8c5e9d584904}} 
+\index{LoadImageBfd@{LoadImageBfd}!getNextSymbol@{getNextSymbol}}
+\index{getNextSymbol@{getNextSymbol}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{getNextSymbol()}{getNextSymbol()}}
+{\footnotesize\ttfamily bool Load\+Image\+Bfd\+::get\+Next\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the next symbol record. 
+
+This method is used to read out an individual symbol record, \mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}}, from the load image. Right now, the only information that can be read out are function starts and the associated function name. This method can be called repeatedly to iterate through all the symbols, until it returns {\bfseries{false}}. This indicates the end of the symbols. 
+\begin{DoxyParams}{Parameters}
+{\em record} & is a reference to the symbol record to be filled in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are more records to read 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_af4a887cf44c719c576bb05605a4c5c7e}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_a8a45d7f2aaa3ae3028f997978f1d9d0c}\label{classLoadImageBfd_a8a45d7f2aaa3ae3028f997978f1d9d0c}} 
+\index{LoadImageBfd@{LoadImageBfd}!getReadonly@{getReadonly}}
+\index{getReadonly@{getReadonly}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{getReadonly()}{getReadonly()}}
+{\footnotesize\ttfamily void Load\+Image\+Bfd\+::get\+Readonly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return list of {\itshape readonly} address ranges. 
+
+This method should read out information about {\itshape all} address ranges within the load image that are known to be {\bfseries{readonly}}. This method is intended to be called only once, so all information should be written to the passed \mbox{\hyperlink{classRangeList}{Range\+List}} object. 
+\begin{DoxyParams}{Parameters}
+{\em list} & is where readonly info will get put \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_a31dba7f0f819c97e68f868cc623e4054}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_a78225283223f58c852c4b63af4fc8791}\label{classLoadImageBfd_a78225283223f58c852c4b63af4fc8791}} 
+\index{LoadImageBfd@{LoadImageBfd}!loadFill@{loadFill}}
+\index{loadFill@{loadFill}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{loadFill()}{loadFill()}}
+{\footnotesize\ttfamily void Load\+Image\+Bfd\+::load\+Fill (\begin{DoxyParamCaption}\item[{uint1 $\ast$}]{ptr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. 
+
+This is the {\itshape core} routine of a \mbox{\hyperlink{classLoadImage}{Load\+Image}}. Given a particular address range, this routine retrieves the exact byte values that are stored at that address when the executable is loaded into R\+AM. The caller must supply a pre-\/allocated array of bytes where the returned bytes should be stored. If the requested address range does not exist in the image, or otherwise can\textquotesingle{}t be retrieved, this method throws an \mbox{\hyperlink{structDataUnavailError}{Data\+Unavail\+Error}} exception. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & points to where the resulting bytes will be stored \\
+\hline
+{\em size} & is the number of bytes to retrieve from the image \\
+\hline
+{\em addr} & is the starting address of the bytes to retrieve \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_a48e82236ac85863f02e49e3ecae877e1}\label{classLoadImageBfd_a48e82236ac85863f02e49e3ecae877e1}} 
+\index{LoadImageBfd@{LoadImageBfd}!openSectionInfo@{openSectionInfo}}
+\index{openSectionInfo@{openSectionInfo}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{openSectionInfo()}{openSectionInfo()}}
+{\footnotesize\ttfamily void Load\+Image\+Bfd\+::open\+Section\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Prepare to read section info. 
+
+This method initializes iteration over all the sections of bytes that are mapped by the load image. Once this is called, information on individual sections should be read out with the \mbox{\hyperlink{classLoadImageBfd_aaae78fac403213f2dc9ebf97ac28a5b2}{get\+Next\+Section()}} method. 
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_a915fb52632f5d770511833ed1cb76088}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageBfd_a55a11f9c90d067643acb55b197179878}\label{classLoadImageBfd_a55a11f9c90d067643acb55b197179878}} 
+\index{LoadImageBfd@{LoadImageBfd}!openSymbols@{openSymbols}}
+\index{openSymbols@{openSymbols}!LoadImageBfd@{LoadImageBfd}}
+\doxysubsubsection{\texorpdfstring{openSymbols()}{openSymbols()}}
+{\footnotesize\ttfamily void Load\+Image\+Bfd\+::open\+Symbols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Prepare to read symbols. 
+
+This routine should read in and parse any symbol information that the load image contains about executable. Once this method is called, individual symbol records are read out using the \mbox{\hyperlink{classLoadImageBfd_a8db5bae4688dfea449ed8c5e9d584904}{get\+Next\+Symbol()}} method. 
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_a5b17f1d68413ab802966bdc7aa07cc73}{Load\+Image}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+loadimage\+\_\+bfd.\+hh\item 
+loadimage\+\_\+bfd.\+cc\end{DoxyCompactItemize}

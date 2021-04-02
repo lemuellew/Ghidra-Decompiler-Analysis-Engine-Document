@@ -1,0 +1,83 @@
+\hypertarget{structTrackedContext}{}\doxysection{Tracked\+Context Struct Reference}
+\label{structTrackedContext}\index{TrackedContext@{TrackedContext}}
+
+
+A tracked register (\mbox{\hyperlink{classVarnode}{Varnode}}) and the value it contains.  
+
+
+
+
+{\ttfamily \#include $<$globalcontext.\+hh$>$}
+
+
+
+Collaboration diagram for Tracked\+Context\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{structTrackedContext__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structTrackedContext_acd6122fcdd019c3a1d0be1983400424e}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} from an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structTrackedContext_a8a8218db31e360cdb0f60ccada0dc709}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} to an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structTrackedContext_aa0b1520b744217f2f9887a71c7422c41}\label{structTrackedContext_aa0b1520b744217f2f9887a71c7422c41}} 
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \mbox{\hyperlink{structTrackedContext_aa0b1520b744217f2f9887a71c7422c41}{loc}}
+\begin{DoxyCompactList}\small\item\em Storage details of the register being tracked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structTrackedContext_a7ced282753847ba1cc462d4233fbb3e7}\label{structTrackedContext_a7ced282753847ba1cc462d4233fbb3e7}} 
+uintb \mbox{\hyperlink{structTrackedContext_a7ced282753847ba1cc462d4233fbb3e7}{val}}
+\begin{DoxyCompactList}\small\item\em The value of the register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A tracked register (\mbox{\hyperlink{classVarnode}{Varnode}}) and the value it contains. 
+
+This is the object returned when querying for tracked registers, via \mbox{\hyperlink{classContextDatabase_a6ea1e4b793286c0b1ecbafcc58422339}{Context\+Database\+::get\+Tracked\+Set()}}. It holds the storage details of the register and the actual value it holds at the point of the query. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structTrackedContext_acd6122fcdd019c3a1d0be1983400424e}\label{structTrackedContext_acd6122fcdd019c3a1d0be1983400424e}} 
+\index{TrackedContext@{TrackedContext}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!TrackedContext@{TrackedContext}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Tracked\+Context\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} from an X\+ML stream. 
+
+Read a $<$set$>$ tag to fill in the storage and value details 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$set$>$ tag \\
+\hline
+{\em manage} & is the manager used to decode address references \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structTrackedContext_a8a8218db31e360cdb0f60ccada0dc709}\label{structTrackedContext_a8a8218db31e360cdb0f60ccada0dc709}} 
+\index{TrackedContext@{TrackedContext}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!TrackedContext@{TrackedContext}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Tracked\+Context\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save {\bfseries{this}} to an X\+ML stream. 
+
+The register storage and value are serialized as a $<$set$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{globalcontext_8hh}{globalcontext.\+hh}}\item 
+globalcontext.\+cc\end{DoxyCompactItemize}

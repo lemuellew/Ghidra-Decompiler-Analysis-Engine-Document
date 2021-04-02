@@ -1,0 +1,62 @@
+\hypertarget{classAssemblyEmit}{}\doxysection{Assembly\+Emit Class Reference}
+\label{classAssemblyEmit}\index{AssemblyEmit@{AssemblyEmit}}
+
+
+Abstract class for emitting disassembly to an application.  
+
+
+
+
+{\ttfamily \#include $<$translate.\+hh$>$}
+
+
+
+Inheritance diagram for Assembly\+Emit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classAssemblyEmit__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classAssemblyEmit_afdb4c90bde30480659ad4eaa49bd1487}{dump}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const string \&mnem, const string \&body)=0
+\begin{DoxyCompactList}\small\item\em The main disassembly emitting method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for emitting disassembly to an application. 
+
+Translation engines pass back the disassembly character data for decoded machine instructions to an application using this class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAssemblyEmit_afdb4c90bde30480659ad4eaa49bd1487}\label{classAssemblyEmit_afdb4c90bde30480659ad4eaa49bd1487}} 
+\index{AssemblyEmit@{AssemblyEmit}!dump@{dump}}
+\index{dump@{dump}!AssemblyEmit@{AssemblyEmit}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily virtual void Assembly\+Emit\+::dump (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const string \&}]{mnem,  }\item[{const string \&}]{body }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The main disassembly emitting method. 
+
+The disassembly strings for a single machine instruction are passed back to an application through this method. Particular applications can tailor the use of the disassembly by overriding this method. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+{\em mnem} & is the decoded instruction mnemonic \\
+\hline
+{\em body} & is the decode body (or operands) of the instruction \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classAssemblyRaw_aafc6f15595f048c5e5ce4f055eab200d}{Assembly\+Raw}}, and \mbox{\hyperlink{classIfaceAssemblyEmit_abacb06a4f3972d21d3c93c5d5a170f73}{Iface\+Assembly\+Emit}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{translate_8hh}{translate.\+hh}}\end{DoxyCompactItemize}

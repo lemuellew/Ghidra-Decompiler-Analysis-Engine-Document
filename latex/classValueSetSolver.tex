@@ -1,0 +1,70 @@
+\hypertarget{classValueSetSolver}{}\doxysection{Value\+Set\+Solver Class Reference}
+\label{classValueSetSolver}\index{ValueSetSolver@{ValueSetSolver}}
+
+
+Class that determines a \mbox{\hyperlink{classValueSet}{Value\+Set}} for each \mbox{\hyperlink{classVarnode}{Varnode}} in a data-\/flow system.  
+
+
+
+
+{\ttfamily \#include $<$rangeutil.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classValueSetSolver_a43a4cb32e3aef1c1cb92cd5b8d6dd300}{establish\+Value\+Sets}} (const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&sinks, const vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&reads, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$stack\+Reg, bool indirect\+As\+Copy)
+\begin{DoxyCompactList}\small\item\em Build value sets for a data-\/flow system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classValueSetSolver_a8dec4550f9502575b92ca93bf997185c}{solve}} (int4 max, \mbox{\hyperlink{classWidener}{Widener}} \&widener)
+\begin{DoxyCompactList}\small\item\em Iterate the \mbox{\hyperlink{classValueSet}{Value\+Set}} system until it stabilizes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that determines a \mbox{\hyperlink{classValueSet}{Value\+Set}} for each \mbox{\hyperlink{classVarnode}{Varnode}} in a data-\/flow system. 
+
+This class uses {\itshape value} {\itshape set} {\itshape analysis} to calculate (an overestimation of) the range of values that can reach each \mbox{\hyperlink{classVarnode}{Varnode}}. The system is formed by providing a set of Varnodes for which the range is desired (the sinks) via \mbox{\hyperlink{classValueSetSolver_a43a4cb32e3aef1c1cb92cd5b8d6dd300}{establish\+Value\+Sets()}}. This creates a system of Varnodes (within the single function) that can flow to the sinks. Running the method \mbox{\hyperlink{classValueSetSolver_a8dec4550f9502575b92ca93bf997185c}{solve()}} does the analysis, and the caller can examine the results by examining the \mbox{\hyperlink{classValueSet}{Value\+Set}} attached to any of the Varnodes in the system (via Varnode\+::get\+Value\+Set()). The \mbox{\hyperlink{classValueSetSolver_a8dec4550f9502575b92ca93bf997185c}{Value\+Set\+Solver\+::solve()}} starts with minimal value sets and does iteration steps by pushing them through the Pcode\+Ops until stability is reached. A \mbox{\hyperlink{classWidener}{Widener}} object is passed to \mbox{\hyperlink{classValueSetSolver_a8dec4550f9502575b92ca93bf997185c}{solve()}} which selects the specific strategy for accelerating convergence. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classValueSetSolver_a43a4cb32e3aef1c1cb92cd5b8d6dd300}\label{classValueSetSolver_a43a4cb32e3aef1c1cb92cd5b8d6dd300}} 
+\index{ValueSetSolver@{ValueSetSolver}!establishValueSets@{establishValueSets}}
+\index{establishValueSets@{establishValueSets}!ValueSetSolver@{ValueSetSolver}}
+\doxysubsubsection{\texorpdfstring{establishValueSets()}{establishValueSets()}}
+{\footnotesize\ttfamily void Value\+Set\+Solver\+::establish\+Value\+Sets (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{sinks,  }\item[{const vector$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \&}]{reads,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{stack\+Reg,  }\item[{bool}]{indirect\+As\+Copy }\end{DoxyParamCaption})}
+
+
+
+Build value sets for a data-\/flow system. 
+
+Given a set of sinks, find all the Varnodes that flow directly into them and set up their initial \mbox{\hyperlink{classValueSet}{Value\+Set}} objects. 
+\begin{DoxyParams}{Parameters}
+{\em sinks} & is the list terminating Varnodes \\
+\hline
+{\em reads} & are add-\/on Pcode\+Ops where we would like to know input Value\+Sets at the point of read \\
+\hline
+{\em stack\+Reg} & (if non-\/\+N\+U\+LL) gives the stack pointer (for keeping track of relative offsets) \\
+\hline
+{\em indirect\+As\+Copy} & is {\bfseries{true}} if solver should treat C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT as C\+P\+U\+I\+\_\+\+C\+O\+PY operations \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classValueSetSolver_a8dec4550f9502575b92ca93bf997185c}\label{classValueSetSolver_a8dec4550f9502575b92ca93bf997185c}} 
+\index{ValueSetSolver@{ValueSetSolver}!solve@{solve}}
+\index{solve@{solve}!ValueSetSolver@{ValueSetSolver}}
+\doxysubsubsection{\texorpdfstring{solve()}{solve()}}
+{\footnotesize\ttfamily void Value\+Set\+Solver\+::solve (\begin{DoxyParamCaption}\item[{int4}]{max,  }\item[{\mbox{\hyperlink{classWidener}{Widener}} \&}]{widener }\end{DoxyParamCaption})}
+
+
+
+Iterate the \mbox{\hyperlink{classValueSet}{Value\+Set}} system until it stabilizes. 
+
+The Value\+Sets are recalculated in the established topological ordering, with looping at various levels until a fixed point is reached. 
+\begin{DoxyParams}{Parameters}
+{\em max} & is the maximum number of iterations to allow before forcing termination \\
+\hline
+{\em widener} & is the Widening strategy to use to accelerate stabilization \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rangeutil_8hh}{rangeutil.\+hh}}\item 
+rangeutil.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,174 @@
+\hypertarget{classPcodeEmit}{}\doxysection{Pcode\+Emit Class Reference}
+\label{classPcodeEmit}\index{PcodeEmit@{PcodeEmit}}
+
+
+Abstract class for emitting pcode to an application.  
+
+
+
+
+{\ttfamily \#include $<$translate.\+hh$>$}
+
+
+
+Inheritance diagram for Pcode\+Emit\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPcodeEmit__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeEmit_ae1121c5d9ca74ced91306819b4ceacb9}\label{classPcodeEmit_ae1121c5d9ca74ced91306819b4ceacb9}} 
+enum \{ \newline
+{\bfseries unimpl\+\_\+tag} = 0x20, 
+{\bfseries inst\+\_\+tag} = 0x21, 
+{\bfseries op\+\_\+tag} = 0x22, 
+{\bfseries void\+\_\+tag} = 0x23, 
+\newline
+{\bfseries spaceid\+\_\+tag} = 0x24, 
+{\bfseries addrsz\+\_\+tag} = 0x25, 
+{\bfseries end\+\_\+tag} = 0x60
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}{dump}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$outvar, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$vars, int4 isize)=0
+\begin{DoxyCompactList}\small\item\em The main pcode emit method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeEmit_a7e440d43aba89c358ffcab1f2d88b3db}{restore\+Xml\+Op}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em Emit pcode directly from an X\+ML tag. \end{DoxyCompactList}\item 
+const uint1 $\ast$ \mbox{\hyperlink{classPcodeEmit_a8136f8c678e250f77907ed57dc6956ac}{restore\+Packed\+Op}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const uint1 $\ast$ptr, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em Emit pcode directly from a packed byte stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const uint1 $\ast$ \mbox{\hyperlink{classPcodeEmit_a58dbf8967eef54f79f9e622b69df46a5}{unpack\+Offset}} (const uint1 $\ast$ptr, uintb \&off)
+\begin{DoxyCompactList}\small\item\em Helper function for unpacking an offset from a pcode byte stream. \end{DoxyCompactList}\item 
+static const uint1 $\ast$ \mbox{\hyperlink{classPcodeEmit_aa5c98b5fd60bc78f36de44f6fa20dde7}{unpack\+Varnode\+Data}} (const uint1 $\ast$ptr, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&v, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em Helper function for unpacking a varnode from a pcode byte stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class for emitting pcode to an application. 
+
+Translation engines pass back the generated pcode for an instruction to the application using this class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}\label{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}} 
+\index{PcodeEmit@{PcodeEmit}!dump@{dump}}
+\index{dump@{dump}!PcodeEmit@{PcodeEmit}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily virtual void Pcode\+Emit\+::dump (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{outvar,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{vars,  }\item[{int4}]{isize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The main pcode emit method. 
+
+A single pcode instruction is returned to the application via this method. Particular applications override it to tailor how the operations are used. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+{\em opc} & is the opcode of the particular pcode instruction \\
+\hline
+{\em outvar} & if not {\itshape null} is a pointer to data about the output varnode \\
+\hline
+{\em vars} & is a pointer to an array of \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} for each input varnode \\
+\hline
+{\em isize} & is the number of input varnodes \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPcodeEmitCache_a493e849e384f3a63cbf1676c43d6bbe1}{Pcode\+Emit\+Cache}}, \mbox{\hyperlink{classPcodeRawOut_a69df78fbc3cdae072cdd8938c88bb4b3}{Pcode\+Raw\+Out}}, and \mbox{\hyperlink{classDisassemblyEngine_a33295e9d637ed2e437d3cbd6481eb20d}{Disassembly\+Engine}}.
+
+\mbox{\Hypertarget{classPcodeEmit_a8136f8c678e250f77907ed57dc6956ac}\label{classPcodeEmit_a8136f8c678e250f77907ed57dc6956ac}} 
+\index{PcodeEmit@{PcodeEmit}!restorePackedOp@{restorePackedOp}}
+\index{restorePackedOp@{restorePackedOp}!PcodeEmit@{PcodeEmit}}
+\doxysubsubsection{\texorpdfstring{restorePackedOp()}{restorePackedOp()}}
+{\footnotesize\ttfamily const uint1 $\ast$ Pcode\+Emit\+::restore\+Packed\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const uint1 $\ast$}]{ptr,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})}
+
+
+
+Emit pcode directly from a packed byte stream. 
+
+A convenience method for passing around pcode operations via a special packed format. A single pcode operation is parsed from a byte stream and returned to the application via the \mbox{\hyperlink{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}{Pcode\+Emit\+::dump}} method. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address of the instruction that generated this pcode \\
+\hline
+{\em ptr} & is a pointer into a packed byte stream \\
+\hline
+{\em manage} & is the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} manager object of the associated processor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the next unconsumed byte of the stream 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeEmit_a7e440d43aba89c358ffcab1f2d88b3db}\label{classPcodeEmit_a7e440d43aba89c358ffcab1f2d88b3db}} 
+\index{PcodeEmit@{PcodeEmit}!restoreXmlOp@{restoreXmlOp}}
+\index{restoreXmlOp@{restoreXmlOp}!PcodeEmit@{PcodeEmit}}
+\doxysubsubsection{\texorpdfstring{restoreXmlOp()}{restoreXmlOp()}}
+{\footnotesize\ttfamily void Pcode\+Emit\+::restore\+Xml\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})}
+
+
+
+Emit pcode directly from an X\+ML tag. 
+
+A convenience method for passing around pcode operations via X\+ML. A single pcode operation is parsed from an X\+ML tag and returned to the application via the \mbox{\hyperlink{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}{Pcode\+Emit\+::dump}} method. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the pcode operation X\+ML tag \\
+\hline
+{\em manage} & is the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} manager object of the associated processor \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeEmit_a58dbf8967eef54f79f9e622b69df46a5}\label{classPcodeEmit_a58dbf8967eef54f79f9e622b69df46a5}} 
+\index{PcodeEmit@{PcodeEmit}!unpackOffset@{unpackOffset}}
+\index{unpackOffset@{unpackOffset}!PcodeEmit@{PcodeEmit}}
+\doxysubsubsection{\texorpdfstring{unpackOffset()}{unpackOffset()}}
+{\footnotesize\ttfamily const uint1 $\ast$ Pcode\+Emit\+::unpack\+Offset (\begin{DoxyParamCaption}\item[{const uint1 $\ast$}]{ptr,  }\item[{uintb \&}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Helper function for unpacking an offset from a pcode byte stream. 
+
+A Helper function for \mbox{\hyperlink{classPcodeEmit_a8136f8c678e250f77907ed57dc6956ac}{Pcode\+Emit\+::restore\+Packed\+Op}} that reads an unsigned offset from a packed stream 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is a pointer into a packed byte stream \\
+\hline
+{\em off} & is where the offset read from the stream is stored \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the next unconsumed byte of the stream 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeEmit_aa5c98b5fd60bc78f36de44f6fa20dde7}\label{classPcodeEmit_aa5c98b5fd60bc78f36de44f6fa20dde7}} 
+\index{PcodeEmit@{PcodeEmit}!unpackVarnodeData@{unpackVarnodeData}}
+\index{unpackVarnodeData@{unpackVarnodeData}!PcodeEmit@{PcodeEmit}}
+\doxysubsubsection{\texorpdfstring{unpackVarnodeData()}{unpackVarnodeData()}}
+{\footnotesize\ttfamily const uint1 $\ast$ Pcode\+Emit\+::unpack\+Varnode\+Data (\begin{DoxyParamCaption}\item[{const uint1 $\ast$}]{ptr,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{v,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Helper function for unpacking a varnode from a pcode byte stream. 
+
+A Helper function for \mbox{\hyperlink{classPcodeEmit_a8136f8c678e250f77907ed57dc6956ac}{Pcode\+Emit\+::restore\+Packed\+Op}} that reads a varnode from a packed stream 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is a pointer into a packed byte stream \\
+\hline
+{\em v} & is the \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} object being filled in by the stream \\
+\hline
+{\em manage} & is the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} manager object of the associated processor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the next unconsumed byte of the stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{translate_8hh}{translate.\+hh}}\item 
+translate.\+cc\end{DoxyCompactItemize}

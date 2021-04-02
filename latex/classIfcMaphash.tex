@@ -1,0 +1,62 @@
+\hypertarget{classIfcMaphash}{}\doxysection{Ifc\+Maphash Class Reference}
+\label{classIfcMaphash}\index{IfcMaphash@{IfcMaphash}}
+
+
+Add a dynamic symbol to the current function\+: {\ttfamily map hash $<$address$>$ $<$hash$>$ $<$typedeclaration$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Maphash\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcMaphash__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Maphash\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcMaphash__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcMaphash_ae57da41dbb958189c2b6101ecfdc3293}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Add a dynamic symbol to the current function\+: {\ttfamily map hash $<$address$>$ $<$hash$>$ $<$typedeclaration$>$} 
+
+The command only creates local variables for the current function. The name and data-\/type are taken from a C syntax type declaration. The symbol is not associated with a particular storage address but with a specific \mbox{\hyperlink{classVarnode}{Varnode}} in the data-\/flow, specified by a code address and hash of the local data-\/flow structure. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcMaphash_ae57da41dbb958189c2b6101ecfdc3293}\label{classIfcMaphash_ae57da41dbb958189c2b6101ecfdc3293}} 
+\index{IfcMaphash@{IfcMaphash}!execute@{execute}}
+\index{execute@{execute}!IfcMaphash@{IfcMaphash}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Maphash\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

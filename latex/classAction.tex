@@ -1,0 +1,574 @@
+\hypertarget{classAction}{}\doxysection{Action Class Reference}
+\label{classAction}\index{Action@{Action}}
+
+
+Large scale transformations applied to the varnode/op graph.  
+
+
+
+
+{\ttfamily \#include $<$action.\+hh$>$}
+
+
+
+Inherited by \mbox{\hyperlink{classActionActiveParam}{Action\+Active\+Param}}, \mbox{\hyperlink{classActionActiveReturn}{Action\+Active\+Return}}, \mbox{\hyperlink{classActionAssignHigh}{Action\+Assign\+High}}, \mbox{\hyperlink{classActionBlockStructure}{Action\+Block\+Structure}}, \mbox{\hyperlink{classActionConditionalConst}{Action\+Conditional\+Const}}, \mbox{\hyperlink{classActionConditionalExe}{Action\+Conditional\+Exe}}, \mbox{\hyperlink{classActionConstantPtr}{Action\+Constant\+Ptr}}, \mbox{\hyperlink{classActionConstbase}{Action\+Constbase}}, \mbox{\hyperlink{classActionCopyMarker}{Action\+Copy\+Marker}}, \mbox{\hyperlink{classActionDeadCode}{Action\+Dead\+Code}}, \mbox{\hyperlink{classActionDefaultParams}{Action\+Default\+Params}}, \mbox{\hyperlink{classActionDeindirect}{Action\+Deindirect}}, \mbox{\hyperlink{classActionDeterminedBranch}{Action\+Determined\+Branch}}, \mbox{\hyperlink{classActionDirectWrite}{Action\+Direct\+Write}}, \mbox{\hyperlink{classActionDominantCopy}{Action\+Dominant\+Copy}}, \mbox{\hyperlink{classActionDoNothing}{Action\+Do\+Nothing}}, \mbox{\hyperlink{classActionDynamicMapping}{Action\+Dynamic\+Mapping}}, \mbox{\hyperlink{classActionDynamicSymbols}{Action\+Dynamic\+Symbols}}, \mbox{\hyperlink{classActionExtraPopSetup}{Action\+Extra\+Pop\+Setup}}, \mbox{\hyperlink{classActionFinalStructure}{Action\+Final\+Structure}}, \mbox{\hyperlink{classActionForceGoto}{Action\+Force\+Goto}}, \mbox{\hyperlink{classActionFuncLink}{Action\+Func\+Link}}, \mbox{\hyperlink{classActionFuncLinkOutOnly}{Action\+Func\+Link\+Out\+Only}}, \mbox{\hyperlink{classActionGroup}{Action\+Group}}, \mbox{\hyperlink{classActionHeritage}{Action\+Heritage}}, \mbox{\hyperlink{classActionHideShadow}{Action\+Hide\+Shadow}}, \mbox{\hyperlink{classActionInferTypes}{Action\+Infer\+Types}}, \mbox{\hyperlink{classActionInputPrototype}{Action\+Input\+Prototype}}, \mbox{\hyperlink{classActionLaneDivide}{Action\+Lane\+Divide}}, \mbox{\hyperlink{classActionLikelyTrash}{Action\+Likely\+Trash}}, \mbox{\hyperlink{classActionMapGlobals}{Action\+Map\+Globals}}, \mbox{\hyperlink{classActionMarkExplicit}{Action\+Mark\+Explicit}}, \mbox{\hyperlink{classActionMarkImplied}{Action\+Mark\+Implied}}, \mbox{\hyperlink{classActionMarkIndirectOnly}{Action\+Mark\+Indirect\+Only}}, \mbox{\hyperlink{classActionMergeAdjacent}{Action\+Merge\+Adjacent}}, \mbox{\hyperlink{classActionMergeCopy}{Action\+Merge\+Copy}}, \mbox{\hyperlink{classActionMergeMultiEntry}{Action\+Merge\+Multi\+Entry}}, \mbox{\hyperlink{classActionMergeRequired}{Action\+Merge\+Required}}, \mbox{\hyperlink{classActionMergeType}{Action\+Merge\+Type}}, \mbox{\hyperlink{classActionMultiCse}{Action\+Multi\+Cse}}, \mbox{\hyperlink{classActionNameVars}{Action\+Name\+Vars}}, \mbox{\hyperlink{classActionNodeJoin}{Action\+Node\+Join}}, \mbox{\hyperlink{classActionNonzeroMask}{Action\+Nonzero\+Mask}}, \mbox{\hyperlink{classActionNormalizeBranches}{Action\+Normalize\+Branches}}, \mbox{\hyperlink{classActionNormalizeSetup}{Action\+Normalize\+Setup}}, \mbox{\hyperlink{classActionOutputPrototype}{Action\+Output\+Prototype}}, \mbox{\hyperlink{classActionParamDouble}{Action\+Param\+Double}}, \mbox{\hyperlink{classActionPool}{Action\+Pool}}, \mbox{\hyperlink{classActionPreferComplement}{Action\+Prefer\+Complement}}, \mbox{\hyperlink{classActionPrototypeTypes}{Action\+Prototype\+Types}}, \mbox{\hyperlink{classActionPrototypeWarnings}{Action\+Prototype\+Warnings}}, \mbox{\hyperlink{classActionRedundBranch}{Action\+Redund\+Branch}}, \mbox{\hyperlink{classActionRestrictLocal}{Action\+Restrict\+Local}}, \mbox{\hyperlink{classActionRestructureHigh}{Action\+Restructure\+High}}, \mbox{\hyperlink{classActionRestructureVarnode}{Action\+Restructure\+Varnode}}, \mbox{\hyperlink{classActionReturnRecovery}{Action\+Return\+Recovery}}, \mbox{\hyperlink{classActionReturnSplit}{Action\+Return\+Split}}, \mbox{\hyperlink{classActionSegmentize}{Action\+Segmentize}}, \mbox{\hyperlink{classActionSetCasts}{Action\+Set\+Casts}}, \mbox{\hyperlink{classActionShadowVar}{Action\+Shadow\+Var}}, \mbox{\hyperlink{classActionSpacebase}{Action\+Spacebase}}, \mbox{\hyperlink{classActionStackPtrFlow}{Action\+Stack\+Ptr\+Flow}}, \mbox{\hyperlink{classActionStart}{Action\+Start}}, \mbox{\hyperlink{classActionStartCleanUp}{Action\+Start\+Clean\+Up}}, \mbox{\hyperlink{classActionStartTypes}{Action\+Start\+Types}}, \mbox{\hyperlink{classActionStop}{Action\+Stop}}, \mbox{\hyperlink{classActionStructureTransform}{Action\+Structure\+Transform}}, \mbox{\hyperlink{classActionSwitchNorm}{Action\+Switch\+Norm}}, \mbox{\hyperlink{classActionUnjustifiedParams}{Action\+Unjustified\+Params}}, \mbox{\hyperlink{classActionUnreachable}{Action\+Unreachable}}, and \mbox{\hyperlink{classActionVarnodeProps}{Action\+Varnode\+Props}}.
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847}{ruleflags}} \{ \newline
+\mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a60bffd0acc879a222a0608055eeae7e5}{rule\+\_\+repeatapply}} = 4, 
+\mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847aaf92b4acb1af944f4b7f012fd50f53fe}{rule\+\_\+onceperfunc}} = 8, 
+\mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847afbf69591d3b69628be7722eef381482d}{rule\+\_\+oneactperfunc}} = 16, 
+\mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a7fd6612efab8d024eb2b197e765b8cde}{rule\+\_\+debug}} = 32, 
+\newline
+\mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a8b78f4f4008a9678c9cc7c42854569dc}{rule\+\_\+warnings\+\_\+on}} = 64, 
+\mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a2da998c99ab4ef0292bddcd89143e0be}{rule\+\_\+warnings\+\_\+given}} = 128
+ \}
+\begin{DoxyCompactList}\small\item\em Boolean behavior properties governing this particular \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5}{statusflags}} \{ \newline
+\mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5adf4a8f6119522a19ed862af8d9eef5a5}{status\+\_\+start}} =1, 
+\mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5ab42f02d6eb6e55819b26fb221f47c06b}{status\+\_\+breakstarthit}} =2, 
+\mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a1f2aab8cb6882e3263797df564764f18}{status\+\_\+repeat}} =4, 
+\mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a40d19ee03bb610d01f460363b35730b3}{status\+\_\+mid}} =8, 
+\newline
+\mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a5e1b4326228d49f46d5458bd2e2c624a}{status\+\_\+end}} =16, 
+\mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a986c37250ce8cd49f927076e6e0c3253}{status\+\_\+actionbreak}} =32
+ \}
+\begin{DoxyCompactList}\small\item\em Boolean properties describing the {\itshape status} of an action. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecb}{breakflags}} \{ \mbox{\hyperlink{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecba63998357295314ce39d797e78e0b1579}{break\+\_\+start}} = 1, 
+\mbox{\hyperlink{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecbaffd45b3deedb473cdf0d3437e8a569e6}{tmpbreak\+\_\+start}} = 2, 
+\mbox{\hyperlink{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecba2c917c9e8e753add3f8b500652bbc368}{break\+\_\+action}} = 4, 
+{\bfseries tmpbreak\+\_\+action} = 8
+ \}
+\begin{DoxyCompactList}\small\item\em Break points associated with an \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAction_ae1999c2a392e2d6f3db563ea39f2b847}{Action}} (uint4 f, const string \&nm, const string \&g)
+\begin{DoxyCompactList}\small\item\em Base constructor for an \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAction_a57e38931fcb3bf9dffac2946d5e790be}{print\+Statistics}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump statistics to stream. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classAction_a44042367ad3fd93c6dba73a41a047c5c}{perform}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Perform this action (if necessary) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAction_a52b3b4ed8ffd52be1b2d6b64c81f26a4}{set\+Break\+Point}} (uint4 tp, const string \&specify)
+\begin{DoxyCompactList}\small\item\em Set a breakpoint on this action. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_ac078d871fbc9bf6d333c8e8dca0246cf}\label{classAction_ac078d871fbc9bf6d333c8e8dca0246cf}} 
+virtual void \mbox{\hyperlink{classAction_ac078d871fbc9bf6d333c8e8dca0246cf}{clear\+Break\+Points}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all breakpoints set on {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAction_ad9b48eafb7c921a0365e78561aca3f13}{set\+Warning}} (bool val, const string \&specify)
+\begin{DoxyCompactList}\small\item\em Set a warning on this action. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAction_a3409170bddedb8af0b3ac88fabb78642}{disable\+Rule}} (const string \&specify)
+\begin{DoxyCompactList}\small\item\em Disable a specific \mbox{\hyperlink{classRule}{Rule}} within {\bfseries{this}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAction_a1ed085983061bb5fac5560554af33d74}{enable\+Rule}} (const string \&specify)
+\begin{DoxyCompactList}\small\item\em Enable a specific \mbox{\hyperlink{classRule}{Rule}} within {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const =0
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAction_ac7c1cf16bb63e0741ba16be5179cf943}{reset}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAction_a8ac616ae7f497202746a92c95e32821d}{reset\+Stats}} (void)
+\begin{DoxyCompactList}\small\item\em Reset all the counts to zero. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)=0
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classAction_a0f7c833f74d267d7fbc50fa9e0f2a964}{print}} (ostream \&s, int4 num, int4 depth) const
+\begin{DoxyCompactList}\small\item\em Print a description of this \mbox{\hyperlink{classAction}{Action}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAction_a8c64348dc5e9ad6ba914cf74aaac8bfb}{print\+State}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print status to stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classAction_ad7c260f28ff9705265558c3c077b9792}{get\+Sub\+Action}} (const string \&specify)
+\begin{DoxyCompactList}\small\item\em Retrieve a specific sub-\/action by name. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classAction_aacd1f960b27f1b02d27a49aaa61c895a}{get\+Sub\+Rule}} (const string \&specify)
+\begin{DoxyCompactList}\small\item\em Retrieve a specific sub-\/rule by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classAction_a04e458190e48fb7aeeb49088b92488bd}{issue\+Warning}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Warn that this \mbox{\hyperlink{classAction}{Action}} has applied. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAction_a2b657446cbd46f656b1d9f2dcbb1f4dc}{check\+Start\+Break}} (void)
+\begin{DoxyCompactList}\small\item\em Check start breakpoint. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAction_a81d7c72d8a23e60786cc47fc52d2112f}{check\+Action\+Break}} (void)
+\begin{DoxyCompactList}\small\item\em Check action breakpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAction_a83233dbe848a09bc1aab5e2c0942764e}\label{classAction_a83233dbe848a09bc1aab5e2c0942764e}} 
+int4 \mbox{\hyperlink{classAction_a83233dbe848a09bc1aab5e2c0942764e}{lcount}}
+\begin{DoxyCompactList}\small\item\em Changes not including last call to \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{apply()}} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_aa544c614285cb70093a3cb623708679c}\label{classAction_aa544c614285cb70093a3cb623708679c}} 
+int4 \mbox{\hyperlink{classAction_aa544c614285cb70093a3cb623708679c}{count}}
+\begin{DoxyCompactList}\small\item\em Number of changes made by this action so far. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_a4d1765a2b054acfc480c534d955a2887}\label{classAction_a4d1765a2b054acfc480c534d955a2887}} 
+uint4 \mbox{\hyperlink{classAction_a4d1765a2b054acfc480c534d955a2887}{status}}
+\begin{DoxyCompactList}\small\item\em Current status. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_a9389b626998d8725f9523188d3f2ef78}\label{classAction_a9389b626998d8725f9523188d3f2ef78}} 
+uint4 \mbox{\hyperlink{classAction_a9389b626998d8725f9523188d3f2ef78}{breakpoint}}
+\begin{DoxyCompactList}\small\item\em Breakpoint properties. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_a94208349db3026a47e0bcf3af6f51d55}\label{classAction_a94208349db3026a47e0bcf3af6f51d55}} 
+uint4 \mbox{\hyperlink{classAction_a94208349db3026a47e0bcf3af6f51d55}{flags}}
+\begin{DoxyCompactList}\small\item\em Behavior properties. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_adac1cdac8ebad4c833c74cfb33b5eecc}\label{classAction_adac1cdac8ebad4c833c74cfb33b5eecc}} 
+uint4 \mbox{\hyperlink{classAction_adac1cdac8ebad4c833c74cfb33b5eecc}{count\+\_\+tests}}
+\begin{DoxyCompactList}\small\item\em Number of times \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{apply()}} has been called. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_ad732a3042b7d99ecba8bec5459ed0f32}\label{classAction_ad732a3042b7d99ecba8bec5459ed0f32}} 
+uint4 \mbox{\hyperlink{classAction_ad732a3042b7d99ecba8bec5459ed0f32}{count\+\_\+apply}}
+\begin{DoxyCompactList}\small\item\em Number of times \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{apply()}} made changes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_ab73b13cffdb1b32679cf46b783c7e404}\label{classAction_ab73b13cffdb1b32679cf46b783c7e404}} 
+string \mbox{\hyperlink{classAction_ab73b13cffdb1b32679cf46b783c7e404}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the action. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classAction_a5b149636900891c8b1f1ff1ab187e1d0}\label{classAction_a5b149636900891c8b1f1ff1ab187e1d0}} 
+string \mbox{\hyperlink{classAction_a5b149636900891c8b1f1ff1ab187e1d0}{basegroup}}
+\begin{DoxyCompactList}\small\item\em Base group this action belongs to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Large scale transformations applied to the varnode/op graph. 
+
+The base for objects that make changes to the syntax tree of a \mbox{\hyperlink{classFuncdata}{Funcdata}} The action is invoked through the \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{apply(\+Funcdata \&data)}} method. This base class keeps track of basic statistics about how the action is being applied. Derived classes indicate that a change has been applied by incrementing the {\bfseries{count}} field. With O\+P\+A\+C\+T\+I\+O\+N\+\_\+\+D\+E\+B\+UG macro defined, actions support a break point debugging in console mode. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecb}\label{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecb}} 
+\index{Action@{Action}!breakflags@{breakflags}}
+\index{breakflags@{breakflags}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{breakflags}{breakflags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecb}{Action\+::breakflags}}}
+
+
+
+Break points associated with an \mbox{\hyperlink{classAction}{Action}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{break\_start@{break\_start}!Action@{Action}}\index{Action@{Action}!break\_start@{break\_start}}}\mbox{\Hypertarget{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecba63998357295314ce39d797e78e0b1579}\label{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecba63998357295314ce39d797e78e0b1579}} 
+break\+\_\+start&Break at beginning of action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tmpbreak\_start@{tmpbreak\_start}!Action@{Action}}\index{Action@{Action}!tmpbreak\_start@{tmpbreak\_start}}}\mbox{\Hypertarget{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecbaffd45b3deedb473cdf0d3437e8a569e6}\label{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecbaffd45b3deedb473cdf0d3437e8a569e6}} 
+tmpbreak\+\_\+start&Temporary break at start of action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{break\_action@{break\_action}!Action@{Action}}\index{Action@{Action}!break\_action@{break\_action}}}\mbox{\Hypertarget{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecba2c917c9e8e753add3f8b500652bbc368}\label{classAction_a4c96e5f79efa1824d4d72a3cab8f4ecba2c917c9e8e753add3f8b500652bbc368}} 
+break\+\_\+action&Break if a change has been made. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classAction_a5e5eb18ea0fb52e18d0184a3e6726847}\label{classAction_a5e5eb18ea0fb52e18d0184a3e6726847}} 
+\index{Action@{Action}!ruleflags@{ruleflags}}
+\index{ruleflags@{ruleflags}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{ruleflags}{ruleflags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classAction_a5e5eb18ea0fb52e18d0184a3e6726847}{Action\+::ruleflags}}}
+
+
+
+Boolean behavior properties governing this particular \mbox{\hyperlink{classAction}{Action}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rule\_repeatapply@{rule\_repeatapply}!Action@{Action}}\index{Action@{Action}!rule\_repeatapply@{rule\_repeatapply}}}\mbox{\Hypertarget{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a60bffd0acc879a222a0608055eeae7e5}\label{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a60bffd0acc879a222a0608055eeae7e5}} 
+rule\+\_\+repeatapply&Apply rule repeatedly until no change. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rule\_onceperfunc@{rule\_onceperfunc}!Action@{Action}}\index{Action@{Action}!rule\_onceperfunc@{rule\_onceperfunc}}}\mbox{\Hypertarget{classAction_a5e5eb18ea0fb52e18d0184a3e6726847aaf92b4acb1af944f4b7f012fd50f53fe}\label{classAction_a5e5eb18ea0fb52e18d0184a3e6726847aaf92b4acb1af944f4b7f012fd50f53fe}} 
+rule\+\_\+onceperfunc&Apply rule once per function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rule\_oneactperfunc@{rule\_oneactperfunc}!Action@{Action}}\index{Action@{Action}!rule\_oneactperfunc@{rule\_oneactperfunc}}}\mbox{\Hypertarget{classAction_a5e5eb18ea0fb52e18d0184a3e6726847afbf69591d3b69628be7722eef381482d}\label{classAction_a5e5eb18ea0fb52e18d0184a3e6726847afbf69591d3b69628be7722eef381482d}} 
+rule\+\_\+oneactperfunc&Makes a change only once per function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rule\_debug@{rule\_debug}!Action@{Action}}\index{Action@{Action}!rule\_debug@{rule\_debug}}}\mbox{\Hypertarget{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a7fd6612efab8d024eb2b197e765b8cde}\label{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a7fd6612efab8d024eb2b197e765b8cde}} 
+rule\+\_\+debug&Print debug messages specifically for this action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rule\_warnings\_on@{rule\_warnings\_on}!Action@{Action}}\index{Action@{Action}!rule\_warnings\_on@{rule\_warnings\_on}}}\mbox{\Hypertarget{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a8b78f4f4008a9678c9cc7c42854569dc}\label{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a8b78f4f4008a9678c9cc7c42854569dc}} 
+rule\+\_\+warnings\+\_\+on&If this action makes a change, issue a warning. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rule\_warnings\_given@{rule\_warnings\_given}!Action@{Action}}\index{Action@{Action}!rule\_warnings\_given@{rule\_warnings\_given}}}\mbox{\Hypertarget{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a2da998c99ab4ef0292bddcd89143e0be}\label{classAction_a5e5eb18ea0fb52e18d0184a3e6726847a2da998c99ab4ef0292bddcd89143e0be}} 
+rule\+\_\+warnings\+\_\+given&A warning has been issued for this action. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5}\label{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5}} 
+\index{Action@{Action}!statusflags@{statusflags}}
+\index{statusflags@{statusflags}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{statusflags}{statusflags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5}{Action\+::statusflags}}}
+
+
+
+Boolean properties describing the {\itshape status} of an action. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{status\_start@{status\_start}!Action@{Action}}\index{Action@{Action}!status\_start@{status\_start}}}\mbox{\Hypertarget{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5adf4a8f6119522a19ed862af8d9eef5a5}\label{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5adf4a8f6119522a19ed862af8d9eef5a5}} 
+status\+\_\+start&At start of action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{status\_breakstarthit@{status\_breakstarthit}!Action@{Action}}\index{Action@{Action}!status\_breakstarthit@{status\_breakstarthit}}}\mbox{\Hypertarget{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5ab42f02d6eb6e55819b26fb221f47c06b}\label{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5ab42f02d6eb6e55819b26fb221f47c06b}} 
+status\+\_\+breakstarthit&At start after breakpoint. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{status\_repeat@{status\_repeat}!Action@{Action}}\index{Action@{Action}!status\_repeat@{status\_repeat}}}\mbox{\Hypertarget{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a1f2aab8cb6882e3263797df564764f18}\label{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a1f2aab8cb6882e3263797df564764f18}} 
+status\+\_\+repeat&Repeating the same action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{status\_mid@{status\_mid}!Action@{Action}}\index{Action@{Action}!status\_mid@{status\_mid}}}\mbox{\Hypertarget{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a40d19ee03bb610d01f460363b35730b3}\label{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a40d19ee03bb610d01f460363b35730b3}} 
+status\+\_\+mid&In middle of action (use subclass status) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{status\_end@{status\_end}!Action@{Action}}\index{Action@{Action}!status\_end@{status\_end}}}\mbox{\Hypertarget{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a5e1b4326228d49f46d5458bd2e2c624a}\label{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a5e1b4326228d49f46d5458bd2e2c624a}} 
+status\+\_\+end&get\+Funcdata has completed once (for onceperfunc) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{status\_actionbreak@{status\_actionbreak}!Action@{Action}}\index{Action@{Action}!status\_actionbreak@{status\_actionbreak}}}\mbox{\Hypertarget{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a986c37250ce8cd49f927076e6e0c3253}\label{classAction_adfa1c8c9c12ae9fccf0f0c743d420ff5a986c37250ce8cd49f927076e6e0c3253}} 
+status\+\_\+actionbreak&Completed full action last time but indicated action break. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAction_ae1999c2a392e2d6f3db563ea39f2b847}\label{classAction_ae1999c2a392e2d6f3db563ea39f2b847}} 
+\index{Action@{Action}!Action@{Action}}
+\index{Action@{Action}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{Action()}{Action()}}
+{\footnotesize\ttfamily Action\+::\+Action (\begin{DoxyParamCaption}\item[{uint4}]{f,  }\item[{const string \&}]{nm,  }\item[{const string \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Base constructor for an \mbox{\hyperlink{classAction}{Action}}. 
+
+Specify the name, group, and properties of the \mbox{\hyperlink{classAction}{Action}} 
+\begin{DoxyParams}{Parameters}
+{\em f} & is the collection of property flags \\
+\hline
+{\em nm} & is the \mbox{\hyperlink{classAction}{Action}} name \\
+\hline
+{\em g} & is the \mbox{\hyperlink{classAction}{Action}} group \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAction_aac1c3999d6c685b15f5d9765a4d04173}\label{classAction_aac1c3999d6c685b15f5d9765a4d04173}} 
+\index{Action@{Action}!apply@{apply}}
+\index{apply@{apply}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily virtual int4 Action\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classActionPrototypeWarnings_a6f52b3f6147c5baac2d7a27c90234001}{Action\+Prototype\+Warnings}}, \mbox{\hyperlink{classActionDynamicSymbols_aa3c25f3a649481cc9c783609295b60b8}{Action\+Dynamic\+Symbols}}, \mbox{\hyperlink{classActionDynamicMapping_a4d91f3a0cca0be4f2600f5deff083cd8}{Action\+Dynamic\+Mapping}}, \mbox{\hyperlink{classActionCopyMarker_a98effc8531139d4f7a958a67d4811f40}{Action\+Copy\+Marker}}, \mbox{\hyperlink{classActionDominantCopy_a6a310d1678ee8ca269cdb5a196336d05}{Action\+Dominant\+Copy}}, \mbox{\hyperlink{classActionHideShadow_a2f3d4cba003d9e55f07c2754280caf22}{Action\+Hide\+Shadow}}, \mbox{\hyperlink{classActionInferTypes_a0f50c538353ecf22ba3651d8e1a661ed}{Action\+Infer\+Types}}, \mbox{\hyperlink{classActionUnjustifiedParams_a76dd93b62ac18bb4d18cba2a79c0ac55}{Action\+Unjustified\+Params}}, \mbox{\hyperlink{classActionOutputPrototype_a1ed1275253a29c1d09d2383c00e34a9c}{Action\+Output\+Prototype}}, \mbox{\hyperlink{classActionInputPrototype_ace1078c436c86aba604abb99b82180ae}{Action\+Input\+Prototype}}, \mbox{\hyperlink{classActionMapGlobals_a8d9376bd7f1d026c922f20f4b069e739}{Action\+Map\+Globals}}, \mbox{\hyperlink{classActionRestructureHigh_aeeacf5bf4d99c638c486a23b69f19207}{Action\+Restructure\+High}}, \mbox{\hyperlink{classActionRestructureVarnode_ae2fc4e8dada82bfc532f072aebeb1a73}{Action\+Restructure\+Varnode}}, \mbox{\hyperlink{classActionLikelyTrash_afbd2ec1783db1f08cedf5b259304f158}{Action\+Likely\+Trash}}, \mbox{\hyperlink{classActionRestrictLocal_acd58fcc24c2a2c8f7dc0d07e3d2c9cfc}{Action\+Restrict\+Local}}, \mbox{\hyperlink{classActionReturnRecovery_aaad5058cd2347ea61be24b63f8b17d60}{Action\+Return\+Recovery}}, \mbox{\hyperlink{classActionActiveReturn_a69af2f49b35ac17b7e2cab3e6c0be11b}{Action\+Active\+Return}}, \mbox{\hyperlink{classActionActiveParam_ab4bc14613f94c7114c1890d436c4d729}{Action\+Active\+Param}}, \mbox{\hyperlink{classActionParamDouble_a8aad0e7534680ca4a79a20c196da103c}{Action\+Param\+Double}}, \mbox{\hyperlink{classActionFuncLinkOutOnly_a68364ccae05a65b54188cd92c876d01f}{Action\+Func\+Link\+Out\+Only}}, \mbox{\hyperlink{classActionFuncLink_aea1b5a423e2affec2131468fc23a6a3e}{Action\+Func\+Link}}, \mbox{\hyperlink{classActionExtraPopSetup_a1518c4ca7772ccb59b6cde0857cf657c}{Action\+Extra\+Pop\+Setup}}, \mbox{\hyperlink{classActionDefaultParams_a32f4c196d02d9f86c66749b9bf5d2247}{Action\+Default\+Params}}, \mbox{\hyperlink{classActionPrototypeTypes_a4c4654505369c0d674f2260c313c76b3}{Action\+Prototype\+Types}}, \mbox{\hyperlink{classActionNormalizeSetup_a399c4047a0cb042e54daba9d02e86b15}{Action\+Normalize\+Setup}}, \mbox{\hyperlink{classActionSwitchNorm_afbafe42ea6a6c25321775656d0a1f6cb}{Action\+Switch\+Norm}}, \mbox{\hyperlink{classActionConditionalConst_a36547a8bf4913bf94efa661b7f39e461}{Action\+Conditional\+Const}}, \mbox{\hyperlink{classActionDeadCode_a8fc0f3220ac7b0fef4613ba3666d9af9}{Action\+Dead\+Code}}, \mbox{\hyperlink{classActionDeterminedBranch_ade1a39edabc809aa136ef4f109d46560}{Action\+Determined\+Branch}}, \mbox{\hyperlink{classActionRedundBranch_ac7caec1379a7cb37fba45fe2bd75199f}{Action\+Redund\+Branch}}, \mbox{\hyperlink{classActionDoNothing_a731f2fd0ba173c40a794de849bfabe4b}{Action\+Do\+Nothing}}, \mbox{\hyperlink{classActionUnreachable_a9dd250eba93553aad31aa38168d7c301}{Action\+Unreachable}}, \mbox{\hyperlink{classActionNameVars_aac0b5f8eea942d73f9fcdb4fca44f1bd}{Action\+Name\+Vars}}, \mbox{\hyperlink{classActionMarkImplied_a775f99086570c42e2bc89de67bbc9867}{Action\+Mark\+Implied}}, \mbox{\hyperlink{classActionMarkExplicit_aea3570d9fb0a90407480fd25cb077f70}{Action\+Mark\+Explicit}}, \mbox{\hyperlink{classActionMergeType_a512152b02f4dedd4d83fb0ddb4f9a990}{Action\+Merge\+Type}}, \mbox{\hyperlink{classActionMergeMultiEntry_ac2a894d794a2416d8a0e4935c8874635}{Action\+Merge\+Multi\+Entry}}, \mbox{\hyperlink{classActionMergeCopy_a363eedc3ead59931897e73fb55a31a0e}{Action\+Merge\+Copy}}, \mbox{\hyperlink{classActionMergeAdjacent_aa6319f917bac228ae065205c84efb5e1}{Action\+Merge\+Adjacent}}, \mbox{\hyperlink{classActionNodeJoin_a1be9f170c96721c2f8770fc04b1f41df}{Action\+Node\+Join}}, \mbox{\hyperlink{classActionMergeRequired_a2cee2e5fc759fbf5ba680f08bfb4d0e3}{Action\+Merge\+Required}}, \mbox{\hyperlink{classActionReturnSplit_a19c3922a6dc7e8e0af6eed9becd7c01b}{Action\+Return\+Split}}, \mbox{\hyperlink{classActionMarkIndirectOnly_aebf60dbaf803f470c8954cab93acc241}{Action\+Mark\+Indirect\+Only}}, \mbox{\hyperlink{classActionAssignHigh_aa0e3cd08123d3a5b60f0f0c35468b5ae}{Action\+Assign\+High}}, \mbox{\hyperlink{classActionFinalStructure_a872ef94df66c1fb7acd17022b739bac2}{Action\+Final\+Structure}}, \mbox{\hyperlink{classActionSetCasts_a9999706f3347f707e39c28b5a208fbd3}{Action\+Set\+Casts}}, \mbox{\hyperlink{classActionBlockStructure_a59e5e7c8f0d703b778d06e2e6373cd27}{Action\+Block\+Structure}}, \mbox{\hyperlink{classActionPreferComplement_a88227ed0c02b56ff86ffae3a02f8eff4}{Action\+Prefer\+Complement}}, \mbox{\hyperlink{classActionNonzeroMask_a585181ff1ba9a3ce19de0c9e939ac381}{Action\+Nonzero\+Mask}}, \mbox{\hyperlink{classActionNormalizeBranches_a311d3d577d32dbe0f4c3dc23b731a035}{Action\+Normalize\+Branches}}, \mbox{\hyperlink{classActionHeritage_a10a113512ed64008b5c8fb54d4040843}{Action\+Heritage}}, \mbox{\hyperlink{classActionPool_ad7b2ba46cad39369c0831cbfcc654802}{Action\+Pool}}, \mbox{\hyperlink{classActionStructureTransform_a77bd21e74fed6e14caa4a8004897c200}{Action\+Structure\+Transform}}, \mbox{\hyperlink{classActionSpacebase_ace4b23e248568955820212813c911719}{Action\+Spacebase}}, \mbox{\hyperlink{classActionConstbase_acdc2434caa56bded4425c19e0b68bdfc}{Action\+Constbase}}, \mbox{\hyperlink{classActionDirectWrite_a02ef8c3c9a53549db52478cd566e320f}{Action\+Direct\+Write}}, \mbox{\hyperlink{classActionVarnodeProps_a531c9985eb2e6a5796009bea79a465fe}{Action\+Varnode\+Props}}, \mbox{\hyperlink{classActionDeindirect_a4f54f89989ab5700bdac440960ed6fcf}{Action\+Deindirect}}, \mbox{\hyperlink{classActionConstantPtr_a3667d599128a545967351ba54f4cce42}{Action\+Constant\+Ptr}}, \mbox{\hyperlink{classActionRestartGroup_ab597697ab15a9b8f1a25832f43bdeb0d}{Action\+Restart\+Group}}, \mbox{\hyperlink{classActionConditionalExe_a8625b7608a9c03ab7a70b1a7ae4d34ea}{Action\+Conditional\+Exe}}, \mbox{\hyperlink{classActionShadowVar_aac5164f51e21d4e76da14d7c2063c149}{Action\+Shadow\+Var}}, \mbox{\hyperlink{classActionMultiCse_a7a79627973a87279ddcadc497c516c2e}{Action\+Multi\+Cse}}, \mbox{\hyperlink{classActionGroup_aaaab0b0f5c7a14752cd57478de2e9290}{Action\+Group}}, \mbox{\hyperlink{classActionForceGoto_af7842a93290323e3bb92dcd62c9a66cc}{Action\+Force\+Goto}}, \mbox{\hyperlink{classActionSegmentize_a3219ac91c09b6c6061d7e91ad1ed9111}{Action\+Segmentize}}, \mbox{\hyperlink{classActionLaneDivide_ac1ee7b273e21b7b598387a5bc642e31d}{Action\+Lane\+Divide}}, \mbox{\hyperlink{classActionStackPtrFlow_a50ab249d10eef25f05e5e8de38786f7b}{Action\+Stack\+Ptr\+Flow}}, \mbox{\hyperlink{classActionStartTypes_a14215a512844751f3199f318f60add40}{Action\+Start\+Types}}, \mbox{\hyperlink{classActionStartCleanUp_a169a82db1316093f0e368a34d2df8538}{Action\+Start\+Clean\+Up}}, \mbox{\hyperlink{classActionStop_a2d539e33984e982dad5cc306141c9787}{Action\+Stop}}, and \mbox{\hyperlink{classActionStart_a9e21953bb17c18610189c3d28b1ab0a9}{Action\+Start}}.
+
+\mbox{\Hypertarget{classAction_a81d7c72d8a23e60786cc47fc52d2112f}\label{classAction_a81d7c72d8a23e60786cc47fc52d2112f}} 
+\index{Action@{Action}!checkActionBreak@{checkActionBreak}}
+\index{checkActionBreak@{checkActionBreak}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{checkActionBreak()}{checkActionBreak()}}
+{\footnotesize\ttfamily bool Action\+::check\+Action\+Break (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check action breakpoint. 
+
+Check if there was an active {\itshape action} breakpoint on this \mbox{\hyperlink{classAction}{Action}} \begin{DoxyReturn}{Returns}
+true if there was an action breakpoint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAction_a2b657446cbd46f656b1d9f2dcbb1f4dc}\label{classAction_a2b657446cbd46f656b1d9f2dcbb1f4dc}} 
+\index{Action@{Action}!checkStartBreak@{checkStartBreak}}
+\index{checkStartBreak@{checkStartBreak}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{checkStartBreak()}{checkStartBreak()}}
+{\footnotesize\ttfamily bool Action\+::check\+Start\+Break (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check start breakpoint. 
+
+Check if there was an active {\itshape start} break point on this action \begin{DoxyReturn}{Returns}
+true if there was a start breakpoint 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAction_af8242e41d09e5df52f97df9e65cc626f}\label{classAction_af8242e41d09e5df52f97df9e65cc626f}} 
+\index{Action@{Action}!clone@{clone}}
+\index{clone@{clone}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classActionPrototypeWarnings_afe5d4ac774bbeb80c6be7bcdc2578de5}{Action\+Prototype\+Warnings}}, \mbox{\hyperlink{classActionDynamicSymbols_aff1299c36f20a83a2efd54768e58abeb}{Action\+Dynamic\+Symbols}}, \mbox{\hyperlink{classActionDynamicMapping_a9c1315b992794205be6fc1ae3b419b16}{Action\+Dynamic\+Mapping}}, \mbox{\hyperlink{classActionCopyMarker_adb38f76f4afa65f97dbc971c2096437f}{Action\+Copy\+Marker}}, \mbox{\hyperlink{classActionDominantCopy_a5d520f4753c6fa34fc19b68eb50bb322}{Action\+Dominant\+Copy}}, \mbox{\hyperlink{classActionHideShadow_a5b763cb14e0381b879231c4922d00f5b}{Action\+Hide\+Shadow}}, \mbox{\hyperlink{classActionInferTypes_ac986d89b2fed20d29ded26939f5a90b8}{Action\+Infer\+Types}}, \mbox{\hyperlink{classActionUnjustifiedParams_a07403536c15bc35659c34d1dec3b2c11}{Action\+Unjustified\+Params}}, \mbox{\hyperlink{classActionOutputPrototype_abaa0684e2d727f785d3e45e091da5dd1}{Action\+Output\+Prototype}}, \mbox{\hyperlink{classActionInputPrototype_a2443b3263f3b443bb7c99261a7f6289e}{Action\+Input\+Prototype}}, \mbox{\hyperlink{classActionMapGlobals_ae5d0f824a0c3e33c588a7d90ed1ab3f5}{Action\+Map\+Globals}}, \mbox{\hyperlink{classActionRestructureHigh_a1180b8277ebd3c5ce38c86fe7a72c0db}{Action\+Restructure\+High}}, \mbox{\hyperlink{classActionRestructureVarnode_ad29015bf18989dac6349662f96aa469f}{Action\+Restructure\+Varnode}}, \mbox{\hyperlink{classActionLikelyTrash_ad0d1990ca8b2b48d5d88d757b3664560}{Action\+Likely\+Trash}}, \mbox{\hyperlink{classActionRestrictLocal_a8e1551beb973dfdb3e8bede8903f9607}{Action\+Restrict\+Local}}, \mbox{\hyperlink{classActionReturnRecovery_a5871a6ac754811bf330d21aa2b375714}{Action\+Return\+Recovery}}, \mbox{\hyperlink{classActionActiveReturn_af22b0befcda10abe00618917a557f6c2}{Action\+Active\+Return}}, \mbox{\hyperlink{classActionActiveParam_ae7135b6adc5448d7d03d4280bc12d610}{Action\+Active\+Param}}, \mbox{\hyperlink{classActionParamDouble_a0db428f4c947a73829164f43f4321d78}{Action\+Param\+Double}}, \mbox{\hyperlink{classActionFuncLinkOutOnly_aea7020b6da99752e4bf1b3edc3a5de53}{Action\+Func\+Link\+Out\+Only}}, \mbox{\hyperlink{classActionFuncLink_a58d93701c5e89f1128b0b4e0f770f56a}{Action\+Func\+Link}}, \mbox{\hyperlink{classActionExtraPopSetup_aa4e0ef3d72672cf8fad9dea555a99cb8}{Action\+Extra\+Pop\+Setup}}, \mbox{\hyperlink{classActionDefaultParams_ab1eaa217e71047b924bf0decd2f067a1}{Action\+Default\+Params}}, \mbox{\hyperlink{classActionPrototypeTypes_aab34b0de3c657db76bef16ab5e2ac0dc}{Action\+Prototype\+Types}}, \mbox{\hyperlink{classActionNormalizeSetup_a2c000f58b714f940cfab12142a0b294f}{Action\+Normalize\+Setup}}, \mbox{\hyperlink{classActionSwitchNorm_a006f767268c4794b34b61face5a620cd}{Action\+Switch\+Norm}}, \mbox{\hyperlink{classActionConditionalConst_a5ff6a3cc3aa54f9a8a276c9e8090010f}{Action\+Conditional\+Const}}, \mbox{\hyperlink{classActionDeadCode_a2c1a4dac2eab0a2a6979c073def75fc3}{Action\+Dead\+Code}}, \mbox{\hyperlink{classActionDeterminedBranch_a41b8b77cfb5f57c0639009ead3c25ee9}{Action\+Determined\+Branch}}, \mbox{\hyperlink{classActionRedundBranch_a116163afe83810fd44a1137ee040718a}{Action\+Redund\+Branch}}, \mbox{\hyperlink{classActionDoNothing_abe01dd8198e672a33f3a9fec28376284}{Action\+Do\+Nothing}}, \mbox{\hyperlink{classActionUnreachable_a75b11d02821280b8ae5b02fcc082a13a}{Action\+Unreachable}}, \mbox{\hyperlink{classActionNameVars_a93b62205bd339268977f7ae15f665eef}{Action\+Name\+Vars}}, \mbox{\hyperlink{classActionMarkImplied_a62ce03beb8aa31dd00531c48d6ce5510}{Action\+Mark\+Implied}}, \mbox{\hyperlink{classActionMarkExplicit_a35862d8fd674fcf340ccf3bdd99a18e6}{Action\+Mark\+Explicit}}, \mbox{\hyperlink{classActionMergeType_a40066f8b61af9229a6527967c4de0ead}{Action\+Merge\+Type}}, \mbox{\hyperlink{classActionMergeMultiEntry_a0e378f3f7ca94f9eba2d68d0bbe05591}{Action\+Merge\+Multi\+Entry}}, \mbox{\hyperlink{classActionMergeCopy_afb28234f727a499cda6e1531f348cdef}{Action\+Merge\+Copy}}, \mbox{\hyperlink{classActionMergeAdjacent_af7ddb17ea086b27efa6461076a258c54}{Action\+Merge\+Adjacent}}, \mbox{\hyperlink{classActionNodeJoin_a51276a131d48cca6feead5edad6cc3d4}{Action\+Node\+Join}}, \mbox{\hyperlink{classActionMergeRequired_ab7fa4212557a6a7d32f4f2eab26e08e9}{Action\+Merge\+Required}}, \mbox{\hyperlink{classActionReturnSplit_afa7ea727f756deda567aa1f87bdfe28b}{Action\+Return\+Split}}, \mbox{\hyperlink{classActionMarkIndirectOnly_ac53f9107d3a9c5be4576867c9eb8ad01}{Action\+Mark\+Indirect\+Only}}, \mbox{\hyperlink{classActionAssignHigh_aeb37b16d8fa8f7393f39c7d2c38b8da9}{Action\+Assign\+High}}, \mbox{\hyperlink{classActionFinalStructure_a2e9f507eb58ffe2c4c7de862eebcb92f}{Action\+Final\+Structure}}, \mbox{\hyperlink{classActionSetCasts_abd5deebdb942e64993d2f321b4c1901e}{Action\+Set\+Casts}}, \mbox{\hyperlink{classActionBlockStructure_ab86eb695c4acc6d3e69cbbc844445fdc}{Action\+Block\+Structure}}, \mbox{\hyperlink{classActionPreferComplement_a39b68f861f1e99b1412cf78f5dff888a}{Action\+Prefer\+Complement}}, \mbox{\hyperlink{classActionNonzeroMask_aee9f54ce67eaa18b65d667304dfd2124}{Action\+Nonzero\+Mask}}, \mbox{\hyperlink{classActionNormalizeBranches_a74bdc9457fe995592298c253dbf9fd88}{Action\+Normalize\+Branches}}, \mbox{\hyperlink{classActionHeritage_ac3da4f8c7eac163ec7c456dc6ed947fd}{Action\+Heritage}}, \mbox{\hyperlink{classActionPool_a96a6ada9201cdf36d2ed452d0c831725}{Action\+Pool}}, \mbox{\hyperlink{classActionStructureTransform_a6894b7f297641587c2ba62e202ca850b}{Action\+Structure\+Transform}}, \mbox{\hyperlink{classActionSpacebase_a6e87ef6699ee74ba82a0d72caad1fd53}{Action\+Spacebase}}, \mbox{\hyperlink{classActionConstbase_ab9c45ce9b49d6543abced9909598f2e0}{Action\+Constbase}}, \mbox{\hyperlink{classActionDirectWrite_adbb35f944b5ae30faf45797be1c6965d}{Action\+Direct\+Write}}, \mbox{\hyperlink{classActionVarnodeProps_a5703787530b66de1bea8f6b33091d68f}{Action\+Varnode\+Props}}, \mbox{\hyperlink{classActionDeindirect_ae0d7981c40e1af3c554a2229dc8c44ab}{Action\+Deindirect}}, \mbox{\hyperlink{classActionConstantPtr_a03964225abf6a06d0b8eb832a94ce16a}{Action\+Constant\+Ptr}}, \mbox{\hyperlink{classActionRestartGroup_a2dd3daab632e0a41e64d9515f47c7200}{Action\+Restart\+Group}}, \mbox{\hyperlink{classActionConditionalExe_af0f575a8caa8a1dce2557f5abddec8e4}{Action\+Conditional\+Exe}}, \mbox{\hyperlink{classActionShadowVar_ad60ce611f28bd7c51a34b8905cfe0155}{Action\+Shadow\+Var}}, \mbox{\hyperlink{classActionMultiCse_a553b599fdf59ccb9c193740e7aabfc80}{Action\+Multi\+Cse}}, \mbox{\hyperlink{classActionGroup_ace0724b13474c6c098eb25aee96dd1d6}{Action\+Group}}, \mbox{\hyperlink{classActionForceGoto_ab44cdae35f8c6fd4051b0ddb435fee9a}{Action\+Force\+Goto}}, \mbox{\hyperlink{classActionSegmentize_a0fd9bb73aa71eefad72a93cde61a288b}{Action\+Segmentize}}, \mbox{\hyperlink{classActionLaneDivide_abd09b015dc26ab51234027cbef1d6182}{Action\+Lane\+Divide}}, \mbox{\hyperlink{classActionStackPtrFlow_a82a95a85172576abdfa446a3faed3ff4}{Action\+Stack\+Ptr\+Flow}}, \mbox{\hyperlink{classActionStartTypes_a6779f5bf6578c6318c2a9cc5d7648d0f}{Action\+Start\+Types}}, \mbox{\hyperlink{classActionStartCleanUp_ad9e7b95a0ee1607e600fad95f78fff93}{Action\+Start\+Clean\+Up}}, \mbox{\hyperlink{classActionStop_a3b262cbd121ab1595178c1248ca409a3}{Action\+Stop}}, and \mbox{\hyperlink{classActionStart_af8fffe0d933032d6c1e18ef97266d871}{Action\+Start}}.
+
+\mbox{\Hypertarget{classAction_a3409170bddedb8af0b3ac88fabb78642}\label{classAction_a3409170bddedb8af0b3ac88fabb78642}} 
+\index{Action@{Action}!disableRule@{disableRule}}
+\index{disableRule@{disableRule}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{disableRule()}{disableRule()}}
+{\footnotesize\ttfamily bool Action\+::disable\+Rule (\begin{DoxyParamCaption}\item[{const string \&}]{specify }\end{DoxyParamCaption})}
+
+
+
+Disable a specific \mbox{\hyperlink{classRule}{Rule}} within {\bfseries{this}}. 
+
+An individual \mbox{\hyperlink{classRule}{Rule}} can be disabled by name, within {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. It must be specified by a \textquotesingle{}\+:\textquotesingle{} separated name {\itshape path}, from the root \mbox{\hyperlink{classAction}{Action}} down to the specific \mbox{\hyperlink{classRule}{Rule}}. 
+\begin{DoxyParams}{Parameters}
+{\em specify} & is the name path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the \mbox{\hyperlink{classRule}{Rule}} is successfully disabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAction_a1ed085983061bb5fac5560554af33d74}\label{classAction_a1ed085983061bb5fac5560554af33d74}} 
+\index{Action@{Action}!enableRule@{enableRule}}
+\index{enableRule@{enableRule}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{enableRule()}{enableRule()}}
+{\footnotesize\ttfamily bool Action\+::enable\+Rule (\begin{DoxyParamCaption}\item[{const string \&}]{specify }\end{DoxyParamCaption})}
+
+
+
+Enable a specific \mbox{\hyperlink{classRule}{Rule}} within {\bfseries{this}}. 
+
+An individual \mbox{\hyperlink{classRule}{Rule}} can be enabled by name, within {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. It must be specified by a \textquotesingle{}\+:\textquotesingle{} separated name {\itshape path}, from the root \mbox{\hyperlink{classAction}{Action}} down to the specific \mbox{\hyperlink{classRule}{Rule}}. 
+\begin{DoxyParams}{Parameters}
+{\em specify} & is the name path \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the \mbox{\hyperlink{classRule}{Rule}} is successfully enabled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAction_ad7c260f28ff9705265558c3c077b9792}\label{classAction_ad7c260f28ff9705265558c3c077b9792}} 
+\index{Action@{Action}!getSubAction@{getSubAction}}
+\index{getSubAction@{getSubAction}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{getSubAction()}{getSubAction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAction}{Action}} $\ast$ Action\+::get\+Sub\+Action (\begin{DoxyParamCaption}\item[{const string \&}]{specify }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a specific sub-\/action by name. 
+
+If this \mbox{\hyperlink{classAction}{Action}} matches the given name, it is returned. If the name matches a sub-\/action, this is returned. 
+\begin{DoxyParams}{Parameters}
+{\em specify} & is the action name to match \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classAction}{Action}} or sub-\/action 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classActionGroup_a5bf70e0947c75bb1e0c106f436027531}{Action\+Group}}.
+
+\mbox{\Hypertarget{classAction_aacd1f960b27f1b02d27a49aaa61c895a}\label{classAction_aacd1f960b27f1b02d27a49aaa61c895a}} 
+\index{Action@{Action}!getSubRule@{getSubRule}}
+\index{getSubRule@{getSubRule}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{getSubRule()}{getSubRule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRule}{Rule}} $\ast$ Action\+::get\+Sub\+Rule (\begin{DoxyParamCaption}\item[{const string \&}]{specify }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a specific sub-\/rule by name. 
+
+Find a \mbox{\hyperlink{classRule}{Rule}}, as a component of {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}, with the given name. 
+\begin{DoxyParams}{Parameters}
+{\em specify} & is the name of the rule \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching sub-\/rule 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classActionPool_ab3fa9090810784f45c832c641947fb2e}{Action\+Pool}}, and \mbox{\hyperlink{classActionGroup_acf178e5772a5fba9fb8f11e8dadba126}{Action\+Group}}.
+
+\mbox{\Hypertarget{classAction_a04e458190e48fb7aeeb49088b92488bd}\label{classAction_a04e458190e48fb7aeeb49088b92488bd}} 
+\index{Action@{Action}!issueWarning@{issueWarning}}
+\index{issueWarning@{issueWarning}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{issueWarning()}{issueWarning()}}
+{\footnotesize\ttfamily void Action\+::issue\+Warning (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Warn that this \mbox{\hyperlink{classAction}{Action}} has applied. 
+
+If enabled, issue a warning that this \mbox{\hyperlink{classAction}{Action}} has been applied 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the controlling \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAction_a44042367ad3fd93c6dba73a41a047c5c}\label{classAction_a44042367ad3fd93c6dba73a41a047c5c}} 
+\index{Action@{Action}!perform@{perform}}
+\index{perform@{perform}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{perform()}{perform()}}
+{\footnotesize\ttfamily int4 Action\+::perform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+Perform this action (if necessary) 
+
+Run {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} until completion or a breakpoint occurs. Depending on the behavior properties of this instance, the \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{apply()}} method may get called many times or none. Generally the number of changes made by the action is returned, but if a breakpoint occurs -\/1 is returned. A successive call to \mbox{\hyperlink{classAction_a44042367ad3fd93c6dba73a41a047c5c}{perform()}} will \char`\"{}continue\char`\"{} from the break point. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function being acted on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of changes or -\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAction_a0f7c833f74d267d7fbc50fa9e0f2a964}\label{classAction_a0f7c833f74d267d7fbc50fa9e0f2a964}} 
+\index{Action@{Action}!print@{print}}
+\index{print@{print}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily int4 Action\+::print (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{num,  }\item[{int4}]{depth }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a description of this \mbox{\hyperlink{classAction}{Action}} to stream. 
+
+The description is suitable for a console mode listing of actions 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em num} & is a starting index to associate with the action (and its sub-\/actions) \\
+\hline
+{\em depth} & is amount of indent necessary before printing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next available index 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classActionPool_a543411d736e1a5766a74fe30b65efdd8}{Action\+Pool}}, and \mbox{\hyperlink{classActionGroup_a41f7962b522cfbcc68c20991f5fcc4f3}{Action\+Group}}.
+
+\mbox{\Hypertarget{classAction_a8c64348dc5e9ad6ba914cf74aaac8bfb}\label{classAction_a8c64348dc5e9ad6ba914cf74aaac8bfb}} 
+\index{Action@{Action}!printState@{printState}}
+\index{printState@{printState}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{printState()}{printState()}}
+{\footnotesize\ttfamily void Action\+::print\+State (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print status to stream. 
+
+This will the \mbox{\hyperlink{classAction}{Action}} name and the next step to execute 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classActionPool_ac3301606be4afd36584109196c71e2ed}{Action\+Pool}}, and \mbox{\hyperlink{classActionGroup_af5e07efb4a443cd74b57083a0fd57c02}{Action\+Group}}.
+
+\mbox{\Hypertarget{classAction_a57e38931fcb3bf9dffac2946d5e790be}\label{classAction_a57e38931fcb3bf9dffac2946d5e790be}} 
+\index{Action@{Action}!printStatistics@{printStatistics}}
+\index{printStatistics@{printStatistics}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{printStatistics()}{printStatistics()}}
+{\footnotesize\ttfamily void Action\+::print\+Statistics (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Dump statistics to stream. 
+
+Print out the collected statistics for the \mbox{\hyperlink{classAction}{Action}} to stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classActionPool_aed2073462c2dc9a3c33a6720f9cfc93b}{Action\+Pool}}, and \mbox{\hyperlink{classActionGroup_ac61fd44348c6eabee0ebba16dfc4ff3b}{Action\+Group}}.
+
+\mbox{\Hypertarget{classAction_ac7c1cf16bb63e0741ba16be5179cf943}\label{classAction_ac7c1cf16bb63e0741ba16be5179cf943}} 
+\index{Action@{Action}!reset@{reset}}
+\index{reset@{reset}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Action\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset the \mbox{\hyperlink{classAction}{Action}} for a new function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the new function {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} may affect \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classActionInferTypes_ae597b86eb6180b289bd0f32a607c6198}{Action\+Infer\+Types}}, \mbox{\hyperlink{classActionRestructureVarnode_a3dbf44512743482b15794628d8dc40af}{Action\+Restructure\+Varnode}}, \mbox{\hyperlink{classActionPool_a63d93ad40b2066b0ad88fc83ee50c8e6}{Action\+Pool}}, \mbox{\hyperlink{classActionConstantPtr_a35b17f96c22959446ca3f94420a9f5a2}{Action\+Constant\+Ptr}}, \mbox{\hyperlink{classActionRestartGroup_a8a48151026811fbe97f4aa3eecf67cf0}{Action\+Restart\+Group}}, \mbox{\hyperlink{classActionGroup_ae5f0c78e136f9bb5b9bcd6256b8ad097}{Action\+Group}}, \mbox{\hyperlink{classActionSegmentize_a97b99ceaa938b5d08789e2d4e59ae67a}{Action\+Segmentize}}, and \mbox{\hyperlink{classActionStackPtrFlow_a2baae3d78de2308e628b17ed3db8a625}{Action\+Stack\+Ptr\+Flow}}.
+
+\mbox{\Hypertarget{classAction_a8ac616ae7f497202746a92c95e32821d}\label{classAction_a8ac616ae7f497202746a92c95e32821d}} 
+\index{Action@{Action}!resetStats@{resetStats}}
+\index{resetStats@{resetStats}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{resetStats()}{resetStats()}}
+{\footnotesize\ttfamily void Action\+::reset\+Stats (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reset all the counts to zero. 
+
+Reset the statistics 
+
+Reimplemented in \mbox{\hyperlink{classActionPool_aef3e6dfc90703230f5f4e3fcdc626984}{Action\+Pool}}, and \mbox{\hyperlink{classActionGroup_a536ed9307295585894a5f083415f2f77}{Action\+Group}}.
+
+\mbox{\Hypertarget{classAction_a52b3b4ed8ffd52be1b2d6b64c81f26a4}\label{classAction_a52b3b4ed8ffd52be1b2d6b64c81f26a4}} 
+\index{Action@{Action}!setBreakPoint@{setBreakPoint}}
+\index{setBreakPoint@{setBreakPoint}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{setBreakPoint()}{setBreakPoint()}}
+{\footnotesize\ttfamily bool Action\+::set\+Break\+Point (\begin{DoxyParamCaption}\item[{uint4}]{tp,  }\item[{const string \&}]{specify }\end{DoxyParamCaption})}
+
+
+
+Set a breakpoint on this action. 
+
+A breakpoint can be placed on {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} or some sub-\/action by properly specifying the (sub)action name. 
+\begin{DoxyParams}{Parameters}
+{\em tp} & is the type of breakpoint ({\itshape break\+\_\+start}, break\+\_\+action, etc.) \\
+\hline
+{\em specify} & is the (possibly sub)action to apply the break point to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a breakpoint was successfully set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAction_ad9b48eafb7c921a0365e78561aca3f13}\label{classAction_ad9b48eafb7c921a0365e78561aca3f13}} 
+\index{Action@{Action}!setWarning@{setWarning}}
+\index{setWarning@{setWarning}!Action@{Action}}
+\doxysubsubsection{\texorpdfstring{setWarning()}{setWarning()}}
+{\footnotesize\ttfamily bool Action\+::set\+Warning (\begin{DoxyParamCaption}\item[{bool}]{val,  }\item[{const string \&}]{specify }\end{DoxyParamCaption})}
+
+
+
+Set a warning on this action. 
+
+If enabled, a warning will be printed whenever this action applies. The warning can be toggled for {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} or some sub-\/action by specifying its name. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the toggle value for the warning \\
+\hline
+{\em specify} & is the name of the action or sub-\/action to toggle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the warning was successfully toggled 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{action_8hh}{action.\+hh}}\item 
+action.\+cc\end{DoxyCompactItemize}

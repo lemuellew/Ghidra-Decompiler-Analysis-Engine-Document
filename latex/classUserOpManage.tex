@@ -1,0 +1,221 @@
+\hypertarget{classUserOpManage}{}\doxysection{User\+Op\+Manage Class Reference}
+\label{classUserOpManage}\index{UserOpManage@{UserOpManage}}
+
+
+Manager/container for description objects (\mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}}) of user defined p-\/code ops.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUserOpManage_a098ed23d045ef596ee62529d1966a888}\label{classUserOpManage_a098ed23d045ef596ee62529d1966a888}} 
+\mbox{\hyperlink{classUserOpManage_a098ed23d045ef596ee62529d1966a888}{User\+Op\+Manage}} (void)
+\begin{DoxyCompactList}\small\item\em Construct an empty manager. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classUserOpManage_ac1cf153da5ddb19471541660c8889b8f}\label{classUserOpManage_ac1cf153da5ddb19471541660c8889b8f}} 
+\mbox{\hyperlink{classUserOpManage_ac1cf153da5ddb19471541660c8889b8f}{$\sim$\+User\+Op\+Manage}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUserOpManage_a3a4220cee8c82eb2a30b527bb952a4d6}{initialize}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Initialize description objects for all user defined ops. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUserOpManage_ac1fd9f8f2ee822b082ef0a3b1bcae120}{set\+Defaults}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Create any required operations if they weren\textquotesingle{}t explicitly defined. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}} $\ast$ \mbox{\hyperlink{classUserOpManage_a20d645319fc3912640bec7113c11818d}{get\+Op}} (int4 i) const
+\item 
+\mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}} $\ast$ \mbox{\hyperlink{classUserOpManage_a305893145a3e799d4d97936296698bfb}{get\+Op}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Retrieve description by name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSegmentOp}{Segment\+Op}} $\ast$ \mbox{\hyperlink{classUserOpManage_a59f67a150f53117fc159be3e66721640}{get\+Segment\+Op}} (int4 i) const
+\item 
+void \mbox{\hyperlink{classUserOpManage_ab6ce4b3d4fb3046930b47b1e94c2131d}{parse\+Segment\+Op}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Parse a $<$segmentop$>$ X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUserOpManage_a643a087e70166f5e914673476c9189ba}{parse\+Volatile}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Parse a $<$volatile$>$ X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUserOpManage_ad692cedd6253a601e45116ed8dc402bd}{parse\+Call\+Other\+Fixup}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Parse a $<$callotherfixup$>$ X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUserOpManage_ad51fcfacc1f75bb23dcad875eda155f9}{parse\+Jump\+Assist}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Parse a $<$jumpassist$>$ X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classUserOpManage_aa18eec5842807b13c5ad174377fc14f0}{manual\+Call\+Other\+Fixup}} (const string \&useropname, const string \&outname, const vector$<$ string $>$ \&inname, const string \&snippet, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Manually install an \mbox{\hyperlink{classInjectedUserOp}{Injected\+User\+Op}} given just names of the user defined op and the p-\/code snippet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manager/container for description objects (\mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}}) of user defined p-\/code ops. 
+
+The description objects are referenced by the C\+A\+L\+L\+O\+T\+H\+ER constant id, (or by name during initialization). During \mbox{\hyperlink{classUserOpManage_a3a4220cee8c82eb2a30b527bb952a4d6}{initialize()}}, every user defined p-\/code op presented by the \mbox{\hyperlink{classArchitecture}{Architecture}} is assigned a default \mbox{\hyperlink{classUnspecializedPcodeOp}{Unspecialized\+Pcode\+Op}} description. Further processing of the .cspec or .pspec may reassign a more specialized description object by parsing specific tags using on of {\bfseries{this}} class\textquotesingle{}s parse$\ast$ methods. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classUserOpManage_a305893145a3e799d4d97936296698bfb}\label{classUserOpManage_a305893145a3e799d4d97936296698bfb}} 
+\index{UserOpManage@{UserOpManage}!getOp@{getOp}}
+\index{getOp@{getOp}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{getOp()}{getOp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}} $\ast$ User\+Op\+Manage\+::get\+Op (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve description by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the low-\/level operation name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching description object or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUserOpManage_a20d645319fc3912640bec7113c11818d}\label{classUserOpManage_a20d645319fc3912640bec7113c11818d}} 
+\index{UserOpManage@{UserOpManage}!getOp@{getOp}}
+\index{getOp@{getOp}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{getOp()}{getOp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classUserPcodeOp}{User\+Pcode\+Op}}$\ast$ User\+Op\+Manage\+::get\+Op (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieve a user-\/op description object by index 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the indicated user-\/op description 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUserOpManage_a59f67a150f53117fc159be3e66721640}\label{classUserOpManage_a59f67a150f53117fc159be3e66721640}} 
+\index{UserOpManage@{UserOpManage}!getSegmentOp@{getSegmentOp}}
+\index{getSegmentOp@{getSegmentOp}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{getSegmentOp()}{getSegmentOp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSegmentOp}{Segment\+Op}}$\ast$ User\+Op\+Manage\+::get\+Segment\+Op (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieve a segment-\/op description object by index 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the indicated segment-\/op description 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classUserOpManage_a3a4220cee8c82eb2a30b527bb952a4d6}\label{classUserOpManage_a3a4220cee8c82eb2a30b527bb952a4d6}} 
+\index{UserOpManage@{UserOpManage}!initialize@{initialize}}
+\index{initialize@{initialize}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void User\+Op\+Manage\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Initialize description objects for all user defined ops. 
+
+Every user defined p-\/code op is initially assigned an \mbox{\hyperlink{classUnspecializedPcodeOp}{Unspecialized\+Pcode\+Op}} description, which may get overridden later. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} from which to draw user defined operations \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUserOpManage_aa18eec5842807b13c5ad174377fc14f0}\label{classUserOpManage_aa18eec5842807b13c5ad174377fc14f0}} 
+\index{UserOpManage@{UserOpManage}!manualCallOtherFixup@{manualCallOtherFixup}}
+\index{manualCallOtherFixup@{manualCallOtherFixup}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{manualCallOtherFixup()}{manualCallOtherFixup()}}
+{\footnotesize\ttfamily void User\+Op\+Manage\+::manual\+Call\+Other\+Fixup (\begin{DoxyParamCaption}\item[{const string \&}]{useropname,  }\item[{const string \&}]{outname,  }\item[{const vector$<$ string $>$ \&}]{inname,  }\item[{const string \&}]{snippet,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Manually install an \mbox{\hyperlink{classInjectedUserOp}{Injected\+User\+Op}} given just names of the user defined op and the p-\/code snippet. 
+
+An alternate way to attach a call-\/fixup to user defined p-\/code ops, without using X\+ML. The p-\/code to inject is presented as a raw string to be handed to the p-\/code parser. 
+\begin{DoxyParams}{Parameters}
+{\em useropname} & is the name of the user defined op \\
+\hline
+{\em outname} & is the name of the output variable in the snippet \\
+\hline
+{\em inname} & is the list of input variable names in the snippet \\
+\hline
+{\em snippet} & is the raw p-\/code source snippet \\
+\hline
+{\em glb} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUserOpManage_ad692cedd6253a601e45116ed8dc402bd}\label{classUserOpManage_ad692cedd6253a601e45116ed8dc402bd}} 
+\index{UserOpManage@{UserOpManage}!parseCallOtherFixup@{parseCallOtherFixup}}
+\index{parseCallOtherFixup@{parseCallOtherFixup}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{parseCallOtherFixup()}{parseCallOtherFixup()}}
+{\footnotesize\ttfamily void User\+Op\+Manage\+::parse\+Call\+Other\+Fixup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Parse a $<$callotherfixup$>$ X\+ML tag. 
+
+Create an \mbox{\hyperlink{classInjectedUserOp}{Injected\+User\+Op}} description object based on the X\+ML description and register it with {\bfseries{this}} manager. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$callotherfixup$>$ element \\
+\hline
+{\em glb} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUserOpManage_ad51fcfacc1f75bb23dcad875eda155f9}\label{classUserOpManage_ad51fcfacc1f75bb23dcad875eda155f9}} 
+\index{UserOpManage@{UserOpManage}!parseJumpAssist@{parseJumpAssist}}
+\index{parseJumpAssist@{parseJumpAssist}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{parseJumpAssist()}{parseJumpAssist()}}
+{\footnotesize\ttfamily void User\+Op\+Manage\+::parse\+Jump\+Assist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Parse a $<$jumpassist$>$ X\+ML tag. 
+
+Create a \mbox{\hyperlink{classJumpAssistOp}{Jump\+Assist\+Op}} description object based on the X\+ML description and register it with {\bfseries{this}} manager. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$jumpassist$>$ element \\
+\hline
+{\em glb} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUserOpManage_ab6ce4b3d4fb3046930b47b1e94c2131d}\label{classUserOpManage_ab6ce4b3d4fb3046930b47b1e94c2131d}} 
+\index{UserOpManage@{UserOpManage}!parseSegmentOp@{parseSegmentOp}}
+\index{parseSegmentOp@{parseSegmentOp}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{parseSegmentOp()}{parseSegmentOp()}}
+{\footnotesize\ttfamily void User\+Op\+Manage\+::parse\+Segment\+Op (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Parse a $<$segmentop$>$ X\+ML tag. 
+
+Create a \mbox{\hyperlink{classSegmentOp}{Segment\+Op}} description object based on the tag details and register it with {\bfseries{this}} manager. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$segmentop$>$ element \\
+\hline
+{\em glb} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUserOpManage_a643a087e70166f5e914673476c9189ba}\label{classUserOpManage_a643a087e70166f5e914673476c9189ba}} 
+\index{UserOpManage@{UserOpManage}!parseVolatile@{parseVolatile}}
+\index{parseVolatile@{parseVolatile}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{parseVolatile()}{parseVolatile()}}
+{\footnotesize\ttfamily void User\+Op\+Manage\+::parse\+Volatile (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Parse a $<$volatile$>$ X\+ML tag. 
+
+Create either a \mbox{\hyperlink{classVolatileReadOp}{Volatile\+Read\+Op}} or \mbox{\hyperlink{classVolatileWriteOp}{Volatile\+Write\+Op}} description object based on the X\+ML details and register it with {\bfseries{this}} manager. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$volatile$>$ element \\
+\hline
+{\em glb} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classUserOpManage_ac1fd9f8f2ee822b082ef0a3b1bcae120}\label{classUserOpManage_ac1fd9f8f2ee822b082ef0a3b1bcae120}} 
+\index{UserOpManage@{UserOpManage}!setDefaults@{setDefaults}}
+\index{setDefaults@{setDefaults}!UserOpManage@{UserOpManage}}
+\doxysubsubsection{\texorpdfstring{setDefaults()}{setDefaults()}}
+{\footnotesize\ttfamily void User\+Op\+Manage\+::set\+Defaults (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Create any required operations if they weren\textquotesingle{}t explicitly defined. 
+
+Establish defaults for necessary operators not already defined. Currently this forces volatile read/write operations to exist. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

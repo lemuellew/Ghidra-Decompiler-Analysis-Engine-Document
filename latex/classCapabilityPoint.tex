@@ -1,0 +1,87 @@
+\hypertarget{classCapabilityPoint}{}\doxysection{Capability\+Point Class Reference}
+\label{classCapabilityPoint}\index{CapabilityPoint@{CapabilityPoint}}
+
+
+Class for automatically registering extension points to the decompiler.  
+
+
+
+
+{\ttfamily \#include $<$capability.\+hh$>$}
+
+
+
+Inheritance diagram for Capability\+Point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCapabilityPoint__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classCapabilityPoint_a493d24125e7e024a9b2d6c2ad4bfbfab}{initialize}} (void)=0
+\begin{DoxyCompactList}\small\item\em Complete initialization of an extension point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classCapabilityPoint_a4ea216194d3e4cb1f0994dfcbd653a45}{initialize\+All}} (void)
+\begin{DoxyCompactList}\small\item\em Finish initialization for all extension points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCapabilityPoint_aeab7831942fb111df63c8ddacafa0c11}{Capability\+Point}} (void)
+\begin{DoxyCompactList}\small\item\em Construct extension capability exactly once. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for automatically registering extension points to the decompiler. 
+
+This uses the C++ static initializer feature to automatically {\itshape discover} and register extension point. Code for an extension should provide a class that derives from \mbox{\hyperlink{classCapabilityPoint}{Capability\+Point}} and overrides the \mbox{\hyperlink{classCapabilityPoint_a493d24125e7e024a9b2d6c2ad4bfbfab}{initialize()}} method. Additionally there should be a singleton static instantiation of this extension class. The extensions are accumulated in a list automatically, then the decompiler engine will ensure that the \mbox{\hyperlink{classCapabilityPoint_a493d24125e7e024a9b2d6c2ad4bfbfab}{initialize()}} method is called on each extension, allowing it to complete its integration. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCapabilityPoint_aeab7831942fb111df63c8ddacafa0c11}\label{classCapabilityPoint_aeab7831942fb111df63c8ddacafa0c11}} 
+\index{CapabilityPoint@{CapabilityPoint}!CapabilityPoint@{CapabilityPoint}}
+\index{CapabilityPoint@{CapabilityPoint}!CapabilityPoint@{CapabilityPoint}}
+\doxysubsubsection{\texorpdfstring{CapabilityPoint()}{CapabilityPoint()}}
+{\footnotesize\ttfamily Capability\+Point\+::\+Capability\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Construct extension capability exactly once. 
+
+Constructing the object automatically registers it. For global instances, this happens during static initialization 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCapabilityPoint_a493d24125e7e024a9b2d6c2ad4bfbfab}\label{classCapabilityPoint_a493d24125e7e024a9b2d6c2ad4bfbfab}} 
+\index{CapabilityPoint@{CapabilityPoint}!initialize@{initialize}}
+\index{initialize@{initialize}!CapabilityPoint@{CapabilityPoint}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void Capability\+Point\+::initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Complete initialization of an extension point. 
+
+This method is implemented by each extension so it can do specialized integration 
+
+Implemented in \mbox{\hyperlink{classIfaceCapability_a65449e5d8ca98ab3febfa3dd23f451a4}{Iface\+Capability}}, \mbox{\hyperlink{classArchitectureCapability_af414aa921939711c0199d02e2ff35e26}{Architecture\+Capability}}, \mbox{\hyperlink{classGhidraDecompCapability_a37a40ab02f284b0030fc6c07e0a8da58}{Ghidra\+Decomp\+Capability}}, and \mbox{\hyperlink{classPrintLanguageCapability_ac0c50c753c0e5b11a97ce789f18d33c7}{Print\+Language\+Capability}}.
+
+\mbox{\Hypertarget{classCapabilityPoint_a4ea216194d3e4cb1f0994dfcbd653a45}\label{classCapabilityPoint_a4ea216194d3e4cb1f0994dfcbd653a45}} 
+\index{CapabilityPoint@{CapabilityPoint}!initializeAll@{initializeAll}}
+\index{initializeAll@{initializeAll}!CapabilityPoint@{CapabilityPoint}}
+\doxysubsubsection{\texorpdfstring{initializeAll()}{initializeAll()}}
+{\footnotesize\ttfamily void Capability\+Point\+::initialize\+All (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Finish initialization for all extension points. 
+
+Give all registered capabilities a chance to initialize ({\itshape after} all static initialization has happened) 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{capability_8hh}{capability.\+hh}}\item 
+capability.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,157 @@
+\hypertarget{classPathMeld}{}\doxysection{Path\+Meld Class Reference}
+\label{classPathMeld}\index{PathMeld@{PathMeld}}
+
+
+All paths from a (putative) switch variable to the C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPathMeld_a665ffb4a63f3c682f3b7a945069be46b}{set}} (const \mbox{\hyperlink{classPathMeld}{Path\+Meld}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy paths from another container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPathMeld_a3d25ede4fdc1d774f214b046ef918ee9}{set}} (const vector$<$ \mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}} $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Initialize {\bfseries{this}} to be a single path. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPathMeld_ac1c67e77757d48ed47dcc35758fb97af}{set}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Initialize {\bfseries{this}} container to a single node \char`\"{}path\char`\"{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPathMeld_a9e3817333b4f263c515375c88bb23199}{append}} (const \mbox{\hyperlink{classPathMeld}{Path\+Meld}} \&op2)
+\begin{DoxyCompactList}\small\item\em Append a new set of paths to {\bfseries{this}} set of paths. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPathMeld_a902af8ce7d496c1bcf34ed5e40b1be26}\label{classPathMeld_a902af8ce7d496c1bcf34ed5e40b1be26}} 
+void \mbox{\hyperlink{classPathMeld_a902af8ce7d496c1bcf34ed5e40b1be26}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear {\bfseries{this}} to be an empty container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPathMeld_acaa79f2b746db8d724b83b78248edc36}{meld}} (vector$<$ \mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}} $>$ \&path)
+\begin{DoxyCompactList}\small\item\em Meld a new path into {\bfseries{this}} container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPathMeld_a5ce72bd4d0ced5040edf4950658e3451}{mark\+Paths}} (bool val, int4 start\+Varnode)
+\begin{DoxyCompactList}\small\item\em Mark Pcode\+Ops paths from the given start. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPathMeld_a991b7429bf694ad8c71fe74252ad0cdc}{get\+Earliest\+Op}} (int4 pos) const
+\begin{DoxyCompactList}\small\item\em Find {\itshape earliest} \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that has a specific common \mbox{\hyperlink{classVarnode}{Varnode}} as input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All paths from a (putative) switch variable to the C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND. 
+
+This is a container for intersecting paths during the construction of a \mbox{\hyperlink{classJumpModel}{Jump\+Model}}. It contains every \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} from some starting \mbox{\hyperlink{classVarnode}{Varnode}} through all paths to a specific B\+R\+A\+N\+C\+H\+I\+ND. The paths can split and rejoin. This also keeps track of Varnodes that are present on {\itshape all} paths, as these are the potential switch variables for the model. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPathMeld_a9e3817333b4f263c515375c88bb23199}\label{classPathMeld_a9e3817333b4f263c515375c88bb23199}} 
+\index{PathMeld@{PathMeld}!append@{append}}
+\index{append@{append}!PathMeld@{PathMeld}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily void Path\+Meld\+::append (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPathMeld}{Path\+Meld}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Append a new set of paths to {\bfseries{this}} set of paths. 
+
+The new paths must all start at the common end-\/point of the paths in {\bfseries{this}} container. The new set of melded paths start at the original common start point for {\bfseries{this}} container, flow through this old common end-\/point, and end at the new common end-\/point. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the set of paths to be appended \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPathMeld_a991b7429bf694ad8c71fe74252ad0cdc}\label{classPathMeld_a991b7429bf694ad8c71fe74252ad0cdc}} 
+\index{PathMeld@{PathMeld}!getEarliestOp@{getEarliestOp}}
+\index{getEarliestOp@{getEarliestOp}!PathMeld@{PathMeld}}
+\doxysubsubsection{\texorpdfstring{getEarliestOp()}{getEarliestOp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Path\+Meld\+::get\+Earliest\+Op (\begin{DoxyParamCaption}\item[{int4}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Find {\itshape earliest} \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that has a specific common \mbox{\hyperlink{classVarnode}{Varnode}} as input. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} is specified by an index into sequence of Varnodes common to all paths in {\bfseries{this}} \mbox{\hyperlink{classPathMeld}{Path\+Meld}}. We find the earliest (as in executed first) \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, within {\bfseries{this}} \mbox{\hyperlink{classPathMeld}{Path\+Meld}} that uses the \mbox{\hyperlink{classVarnode}{Varnode}} as input. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & is the index of the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the earliest \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} using the \mbox{\hyperlink{classVarnode}{Varnode}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPathMeld_a5ce72bd4d0ced5040edf4950658e3451}\label{classPathMeld_a5ce72bd4d0ced5040edf4950658e3451}} 
+\index{PathMeld@{PathMeld}!markPaths@{markPaths}}
+\index{markPaths@{markPaths}!PathMeld@{PathMeld}}
+\doxysubsubsection{\texorpdfstring{markPaths()}{markPaths()}}
+{\footnotesize\ttfamily void Path\+Meld\+::mark\+Paths (\begin{DoxyParamCaption}\item[{bool}]{val,  }\item[{int4}]{start\+Varnode }\end{DoxyParamCaption})}
+
+
+
+Mark Pcode\+Ops paths from the given start. 
+
+The starting \mbox{\hyperlink{classVarnode}{Varnode}}, common to all paths, is provided as an index. All Pcode\+Ops up to the final B\+R\+A\+N\+C\+H\+I\+ND are (un)marked. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} for marking, {\bfseries{false}} for unmarking \\
+\hline
+{\em start\+Varnode} & is the index of the starting \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPathMeld_acaa79f2b746db8d724b83b78248edc36}\label{classPathMeld_acaa79f2b746db8d724b83b78248edc36}} 
+\index{PathMeld@{PathMeld}!meld@{meld}}
+\index{meld@{meld}!PathMeld@{PathMeld}}
+\doxysubsubsection{\texorpdfstring{meld()}{meld()}}
+{\footnotesize\ttfamily void Path\+Meld\+::meld (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}} $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Meld a new path into {\bfseries{this}} container. 
+
+Add the new path, recalculating the set of Varnodes common to all paths. Paths are trimmed to ensure that any path that splits from the common intersection must eventually rejoin. 
+\begin{DoxyParams}{Parameters}
+{\em path} & is the new path of \mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}} edges to meld, in reverse execution order \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPathMeld_a665ffb4a63f3c682f3b7a945069be46b}\label{classPathMeld_a665ffb4a63f3c682f3b7a945069be46b}} 
+\index{PathMeld@{PathMeld}!set@{set}}
+\index{set@{set}!PathMeld@{PathMeld}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void Path\+Meld\+::set (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPathMeld}{Path\+Meld}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Copy paths from another container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the path container to copy from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPathMeld_a3d25ede4fdc1d774f214b046ef918ee9}\label{classPathMeld_a3d25ede4fdc1d774f214b046ef918ee9}} 
+\index{PathMeld@{PathMeld}!set@{set}}
+\index{set@{set}!PathMeld@{PathMeld}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void Path\+Meld\+::set (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}} $>$ \&}]{path }\end{DoxyParamCaption})}
+
+
+
+Initialize {\bfseries{this}} to be a single path. 
+
+This container is initialized to hold a single data-\/flow path. 
+\begin{DoxyParams}{Parameters}
+{\em path} & is the list of \mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}} edges in the path (in reverse execution order) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPathMeld_ac1c67e77757d48ed47dcc35758fb97af}\label{classPathMeld_ac1c67e77757d48ed47dcc35758fb97af}} 
+\index{PathMeld@{PathMeld}!set@{set}}
+\index{set@{set}!PathMeld@{PathMeld}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void Path\+Meld\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Initialize {\bfseries{this}} container to a single node \char`\"{}path\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the one \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} in the path \\
+\hline
+{\em vn} & is the one \mbox{\hyperlink{classVarnode}{Varnode}} (input to the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}) in the path \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

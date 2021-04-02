@@ -1,0 +1,59 @@
+\hypertarget{classSymbolTable}{}\doxysection{Symbol\+Table Class Reference}
+\label{classSymbolTable}\index{SymbolTable@{SymbolTable}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSymbolTable_ab0831c894cb828ab8e7b307ec82a0772}\label{classSymbolTable_ab0831c894cb828ab8e7b307ec82a0772}} 
+\mbox{\hyperlink{classSymbolScope}{Symbol\+Scope}} $\ast$ {\bfseries get\+Current\+Scope} (void)
+\item 
+\mbox{\Hypertarget{classSymbolTable_a66d6512a45da8f2fc3d12b2d0993b9c9}\label{classSymbolTable_a66d6512a45da8f2fc3d12b2d0993b9c9}} 
+\mbox{\hyperlink{classSymbolScope}{Symbol\+Scope}} $\ast$ {\bfseries get\+Global\+Scope} (void)
+\item 
+\mbox{\Hypertarget{classSymbolTable_addcd839d5b960ec9e76d661c6896b742}\label{classSymbolTable_addcd839d5b960ec9e76d661c6896b742}} 
+void {\bfseries set\+Current\+Scope} (\mbox{\hyperlink{classSymbolScope}{Symbol\+Scope}} $\ast$scope)
+\item 
+\mbox{\Hypertarget{classSymbolTable_a6fedbdf936a8d9d5026fdcfa781aed36}\label{classSymbolTable_a6fedbdf936a8d9d5026fdcfa781aed36}} 
+void {\bfseries add\+Scope} (void)
+\item 
+\mbox{\Hypertarget{classSymbolTable_a66df4cebfc5231736341e3d2845dc298}\label{classSymbolTable_a66df4cebfc5231736341e3d2845dc298}} 
+void {\bfseries pop\+Scope} (void)
+\item 
+\mbox{\Hypertarget{classSymbolTable_a89ba2f534939813435049b947d9dae30}\label{classSymbolTable_a89ba2f534939813435049b947d9dae30}} 
+void {\bfseries add\+Global\+Symbol} (\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$a)
+\item 
+\mbox{\Hypertarget{classSymbolTable_a2555ddfe5e531fa48bb0aaca7e59501d}\label{classSymbolTable_a2555ddfe5e531fa48bb0aaca7e59501d}} 
+void {\bfseries add\+Symbol} (\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$a)
+\item 
+\mbox{\Hypertarget{classSymbolTable_ad9979f9aa4a6588bbf016182c472b40b}\label{classSymbolTable_ad9979f9aa4a6588bbf016182c472b40b}} 
+\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ {\bfseries find\+Symbol} (const string \&nm) const
+\item 
+\mbox{\Hypertarget{classSymbolTable_af9e38cf4a6423e179b08d1fc74a85d39}\label{classSymbolTable_af9e38cf4a6423e179b08d1fc74a85d39}} 
+\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ {\bfseries find\+Symbol} (const string \&nm, int4 skip) const
+\item 
+\mbox{\Hypertarget{classSymbolTable_aed0e996f3d74f5a369fdc66ac410add2}\label{classSymbolTable_aed0e996f3d74f5a369fdc66ac410add2}} 
+\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ {\bfseries find\+Global\+Symbol} (const string \&nm) const
+\item 
+\mbox{\Hypertarget{classSymbolTable_aa4fcf3260ef36229e7a1ba1a89a2cf15}\label{classSymbolTable_aa4fcf3260ef36229e7a1ba1a89a2cf15}} 
+\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ {\bfseries find\+Symbol} (uintm id) const
+\item 
+\mbox{\Hypertarget{classSymbolTable_abb39dd66d5ca2d581be14628c7e596da}\label{classSymbolTable_abb39dd66d5ca2d581be14628c7e596da}} 
+void {\bfseries replace\+Symbol} (\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$a, \mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classSymbolTable_a9b483237599214e761b8724ef50dd691}\label{classSymbolTable_a9b483237599214e761b8724ef50dd691}} 
+void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classSymbolTable_a015f2273420eca3b76e82bab4b006ddc}\label{classSymbolTable_a015f2273420eca3b76e82bab4b006ddc}} 
+void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classSleighBase}{Sleigh\+Base}} $\ast$trans)
+\item 
+\mbox{\Hypertarget{classSymbolTable_aeb92078f011975c7da3a906187baed21}\label{classSymbolTable_aeb92078f011975c7da3a906187baed21}} 
+void {\bfseries restore\+Symbol\+Header} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\item 
+\mbox{\Hypertarget{classSymbolTable_ac10fcbcf54614b127d5817f8c43a2cc3}\label{classSymbolTable_ac10fcbcf54614b127d5817f8c43a2cc3}} 
+void {\bfseries purge} (void)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghsymbol.\+hh\item 
+slghsymbol.\+cc\end{DoxyCompactItemize}

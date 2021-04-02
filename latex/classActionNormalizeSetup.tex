@@ -1,0 +1,99 @@
+\hypertarget{classActionNormalizeSetup}{}\doxysection{Action\+Normalize\+Setup Class Reference}
+\label{classActionNormalizeSetup}\index{ActionNormalizeSetup@{ActionNormalizeSetup}}
+
+
+Prepare function prototypes for \char`\"{}normalize\char`\"{} simplification.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Normalize\+Setup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classActionNormalizeSetup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Normalize\+Setup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{classActionNormalizeSetup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionNormalizeSetup_a2c000f58b714f940cfab12142a0b294f}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionNormalizeSetup_a399c4047a0cb042e54daba9d02e86b15}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Prepare function prototypes for \char`\"{}normalize\char`\"{} simplification. 
+
+The \char`\"{}normalize\char`\"{} simplification style has the fundamental requirement that the input parameter types must not be locked, as locking can cause changes in the data-\/flow that \char`\"{}normalize\char`\"{} is trying to normalize, because\+: 1) The decompiler views locking as useful aliasing information 2) Locking forces varnodes to exist up-\/front, which can affect subflow analysis 3) ... probably other differences
+
+This action removes any input symbols on the function, locked or otherwise, Similarly there should be no lock on the output and no lock on the prototype model 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionNormalizeSetup_a399c4047a0cb042e54daba9d02e86b15}\label{classActionNormalizeSetup_a399c4047a0cb042e54daba9d02e86b15}} 
+\index{ActionNormalizeSetup@{ActionNormalizeSetup}!apply@{apply}}
+\index{apply@{apply}!ActionNormalizeSetup@{ActionNormalizeSetup}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Normalize\+Setup\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionNormalizeSetup_a2c000f58b714f940cfab12142a0b294f}\label{classActionNormalizeSetup_a2c000f58b714f940cfab12142a0b294f}} 
+\index{ActionNormalizeSetup@{ActionNormalizeSetup}!clone@{clone}}
+\index{clone@{clone}!ActionNormalizeSetup@{ActionNormalizeSetup}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Normalize\+Setup\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

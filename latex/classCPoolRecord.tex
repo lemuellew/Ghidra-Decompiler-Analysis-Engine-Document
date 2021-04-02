@@ -1,0 +1,158 @@
+\hypertarget{classCPoolRecord}{}\doxysection{C\+Pool\+Record Class Reference}
+\label{classCPoolRecord}\index{CPoolRecord@{CPoolRecord}}
+
+
+A description of a byte-\/code object referenced by a constant.  
+
+
+
+
+{\ttfamily \#include $<$cpool.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28cadf1cb2c66b5e01f2170e02336c159f54}{primitive}} =0, 
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca40b253c70f46d208ef0751f7d2187883}{string\+\_\+literal}} =1, 
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28caeab4f3648bb871a77817df086580e35e}{class\+\_\+reference}} =2, 
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca2207a5a2a89024d807c584bab89ba70e}{pointer\+\_\+method}} =3, 
+\newline
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28caeffcebdc00d951a0458eb912f8eb3021}{pointer\+\_\+field}} =4, 
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca7392c3a68961b55aeb64563ac6f4e98b}{array\+\_\+length}} =5, 
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca7c2a3073f546c1fa94baffffebec3808}{instance\+\_\+of}} =6, 
+\mbox{\hyperlink{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca30c7b50576ba8e866ea7021222a7efd9}{check\+\_\+cast}} =7
+ \}
+\begin{DoxyCompactList}\small\item\em Generic constant pool tag types. \end{DoxyCompactList}\item 
+enum \{ \mbox{\hyperlink{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531da6bfee9ac4bc91767a14ca2364000f7a2}{is\+\_\+constructor}} = 0x1, 
+\mbox{\hyperlink{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531da7dde1f68585723c485e437cc5fe2dc7b}{is\+\_\+destructor}} = 0x2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classCPoolRecord_a3c44a419dc5e21167354c715fadcfa18}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save object to an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCPoolRecord_a93e21b4afa8d1db68152b7d6e56c3413}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typegrp)
+\begin{DoxyCompactList}\small\item\em Restore object from X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCPoolRecord_a9082967f4fe2577fe0a80c797675065d}\label{classCPoolRecord_a9082967f4fe2577fe0a80c797675065d}} 
+class {\bfseries Constant\+Pool}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A description of a byte-\/code object referenced by a constant. 
+
+Byte-\/code languages can make use of objects that the {\itshape system} knows about but which aren\textquotesingle{}t fully embedded in the encoding of instructions that use them. Instead the instruction refers to the object via a special encoded reference. This class describes one object described by such a reference. In order to provide a concrete interpretation of the instruction (i.\+e. a p-\/code translation), these objects generally resolve to some sort of constant value (hence the term {\bfseries{constant}} {\bfseries{pool}}). The type of constant goes to the formal \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} {\bfseries{tag}} field which can be a\+:
+\begin{DoxyItemize}
+\item Primitive value (integer, floating-\/point)
+\item String literal (pointer to)
+\item Class method (pointer to)
+\item Class field (offset of)
+\item Array length
+\item Data-\/type (pointer to a descriptor)
+\end{DoxyItemize}
+
+For decompilation, knowing the actual {\itshape constant} a byte-\/code interpreter would need is secondary to knowing what object is being referenced. So the \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} can hold a constant value, but generally it provides a data-\/type associated with the object and a symbol name or other string token naming the object. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28c}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28c}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Generic constant pool tag types. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{primitive@{primitive}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!primitive@{primitive}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28cadf1cb2c66b5e01f2170e02336c159f54}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28cadf1cb2c66b5e01f2170e02336c159f54}} 
+primitive&Constant {\bfseries{value}} of data-\/type {\bfseries{type}}, cpool operator can be eliminated. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{string\_literal@{string\_literal}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!string\_literal@{string\_literal}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca40b253c70f46d208ef0751f7d2187883}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca40b253c70f46d208ef0751f7d2187883}} 
+string\+\_\+literal&Constant reference to string (passed back as {\bfseries{byte\+Data}}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{class\_reference@{class\_reference}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!class\_reference@{class\_reference}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28caeab4f3648bb871a77817df086580e35e}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28caeab4f3648bb871a77817df086580e35e}} 
+class\+\_\+reference&Reference to (system level) class object, {\bfseries{token}} holds class name. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pointer\_method@{pointer\_method}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!pointer\_method@{pointer\_method}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca2207a5a2a89024d807c584bab89ba70e}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca2207a5a2a89024d807c584bab89ba70e}} 
+pointer\+\_\+method&Pointer to a method, name in {\bfseries{token}}, signature in {\bfseries{type}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pointer\_field@{pointer\_field}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!pointer\_field@{pointer\_field}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28caeffcebdc00d951a0458eb912f8eb3021}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28caeffcebdc00d951a0458eb912f8eb3021}} 
+pointer\+\_\+field&Pointer to a field, name in {\bfseries{token}}, data-\/type in {\bfseries{type}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{array\_length@{array\_length}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!array\_length@{array\_length}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca7392c3a68961b55aeb64563ac6f4e98b}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca7392c3a68961b55aeb64563ac6f4e98b}} 
+array\+\_\+length&Integer length, {\bfseries{token}} is language specific indicator, {\bfseries{type}} is integral data-\/type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{instance\_of@{instance\_of}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!instance\_of@{instance\_of}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca7c2a3073f546c1fa94baffffebec3808}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca7c2a3073f546c1fa94baffffebec3808}} 
+instance\+\_\+of&Boolean value, {\bfseries{token}} is language specific indicator, {\bfseries{type}} is boolean data-\/type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{check\_cast@{check\_cast}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!check\_cast@{check\_cast}}}\mbox{\Hypertarget{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca30c7b50576ba8e866ea7021222a7efd9}\label{classCPoolRecord_aa2fb908facf346a63c6955dfce38d28ca30c7b50576ba8e866ea7021222a7efd9}} 
+check\+\_\+cast&Pointer to object, new name in {\bfseries{token}}, new data-\/type in {\bfseries{type}}. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531d}\label{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531d}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{is\_constructor@{is\_constructor}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!is\_constructor@{is\_constructor}}}\mbox{\Hypertarget{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531da6bfee9ac4bc91767a14ca2364000f7a2}\label{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531da6bfee9ac4bc91767a14ca2364000f7a2}} 
+is\+\_\+constructor&Referenced method is a constructor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{is\_destructor@{is\_destructor}!CPoolRecord@{CPoolRecord}}\index{CPoolRecord@{CPoolRecord}!is\_destructor@{is\_destructor}}}\mbox{\Hypertarget{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531da7dde1f68585723c485e437cc5fe2dc7b}\label{classCPoolRecord_a92aa4d86973592fab6a5cbfca928531da7dde1f68585723c485e437cc5fe2dc7b}} 
+is\+\_\+destructor&Referenced method is a destructor. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCPoolRecord_a93e21b4afa8d1db68152b7d6e56c3413}\label{classCPoolRecord_a93e21b4afa8d1db68152b7d6e56c3413}} 
+\index{CPoolRecord@{CPoolRecord}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!CPoolRecord@{CPoolRecord}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void C\+Pool\+Record\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typegrp }\end{DoxyParamCaption})}
+
+
+
+Restore object from X\+ML stream. 
+
+Initialize {\bfseries{this}} \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} instance from a $<$cpoolrec$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the $<$cpoolrec$>$ element \\
+\hline
+{\em typegrp} & is the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} used to resolve data-\/types \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCPoolRecord_a3c44a419dc5e21167354c715fadcfa18}\label{classCPoolRecord_a3c44a419dc5e21167354c715fadcfa18}} 
+\index{CPoolRecord@{CPoolRecord}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!CPoolRecord@{CPoolRecord}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void C\+Pool\+Record\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save object to an X\+ML stream. 
+
+Save the constant pool object description as a $<$cpoolrec$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cpool_8hh}{cpool.\+hh}}\item 
+cpool.\+cc\end{DoxyCompactItemize}

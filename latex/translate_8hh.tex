@@ -1,0 +1,56 @@
+\hypertarget{translate_8hh}{}\doxysection{translate.\+hh File Reference}
+\label{translate_8hh}\index{translate.hh@{translate.hh}}
+
+
+Classes for disassembly and pcode generation.  
+
+
+{\ttfamily \#include \char`\"{}pcoderaw.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}float.\+hh\char`\"{}}\newline
+Include dependency graph for translate.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{translate_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{translate_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structUnimplError}{Unimpl\+Error}}
+\begin{DoxyCompactList}\small\item\em Exception for encountering unimplemented pcode. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structBadDataError}{Bad\+Data\+Error}}
+\begin{DoxyCompactList}\small\item\em Exception for bad instruction data. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTruncationTag}{Truncation\+Tag}}
+\begin{DoxyCompactList}\small\item\em Object for describing how a space should be truncated. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}}
+\begin{DoxyCompactList}\small\item\em Abstract class for emitting pcode to an application. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}}
+\begin{DoxyCompactList}\small\item\em Abstract class for emitting disassembly to an application. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classAddressResolver}{Address\+Resolver}}
+\begin{DoxyCompactList}\small\item\em Abstract class for converting native constants to addresses. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSpacebaseSpace}{Spacebase\+Space}}
+\begin{DoxyCompactList}\small\item\em A virtual space {\itshape stack} space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJoinRecord}{Join\+Record}}
+\begin{DoxyCompactList}\small\item\em A record describing how logical values are split. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structJoinRecordCompare}{Join\+Record\+Compare}}
+\begin{DoxyCompactList}\small\item\em Comparator for \mbox{\hyperlink{classJoinRecord}{Join\+Record}} objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}}
+\begin{DoxyCompactList}\small\item\em A manager for different address spaces. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTranslate}{Translate}}
+\begin{DoxyCompactList}\small\item\em The interface to a translation engine for a processor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes for disassembly and pcode generation. 
+
+Classes for keeping track of spaces and registers (for a single architecture). 

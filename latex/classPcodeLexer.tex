@@ -1,0 +1,43 @@
+\hypertarget{classPcodeLexer}{}\doxysection{Pcode\+Lexer Class Reference}
+\label{classPcodeLexer}\index{PcodeLexer@{PcodeLexer}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeLexer_ab05514ec65b79120c11c1c0d1252d9fa}\label{classPcodeLexer_ab05514ec65b79120c11c1c0d1252d9fa}} 
+enum \{ \newline
+{\bfseries start}, 
+{\bfseries special2}, 
+{\bfseries special3}, 
+{\bfseries special32}, 
+\newline
+{\bfseries comment}, 
+{\bfseries punctuation}, 
+{\bfseries identifier}, 
+{\bfseries hexstring}, 
+\newline
+{\bfseries decstring}, 
+{\bfseries endstream}, 
+{\bfseries illegal}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeLexer_a2c12526239c45121850c81103a322170}\label{classPcodeLexer_a2c12526239c45121850c81103a322170}} 
+void {\bfseries initialize} (istream $\ast$t)
+\item 
+\mbox{\Hypertarget{classPcodeLexer_a0a7d18fad0500a7c54502cac6c84b9f8}\label{classPcodeLexer_a0a7d18fad0500a7c54502cac6c84b9f8}} 
+int4 {\bfseries get\+Next\+Token} (void)
+\item 
+\mbox{\Hypertarget{classPcodeLexer_a07f31b29b86205a4536fdc4e1ac22194}\label{classPcodeLexer_a07f31b29b86205a4536fdc4e1ac22194}} 
+const string \& {\bfseries get\+Identifier} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeLexer_a09318b61d5248314ed73e78357aa4fd3}\label{classPcodeLexer_a09318b61d5248314ed73e78357aa4fd3}} 
+uintb {\bfseries get\+Number} (void) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+pcodeparse.\+hh\item 
+pcodeparse.\+cc\end{DoxyCompactItemize}

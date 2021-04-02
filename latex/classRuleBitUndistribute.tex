@@ -1,0 +1,119 @@
+\hypertarget{classRuleBitUndistribute}{}\doxysection{Rule\+Bit\+Undistribute Class Reference}
+\label{classRuleBitUndistribute}\index{RuleBitUndistribute@{RuleBitUndistribute}}
+
+
+Undo distributed operations through I\+N\+T\+\_\+\+A\+ND, I\+N\+T\+\_\+\+OR, and I\+N\+T\+\_\+\+X\+OR.  
+
+
+
+
+Inheritance diagram for Rule\+Bit\+Undistribute\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classRuleBitUndistribute__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Bit\+Undistribute\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classRuleBitUndistribute__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRuleBitUndistribute_a496c93a2aad0d79a776a71160529d830}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRuleBitUndistribute_ab8b99b7595b2533bde19beab4391a300}{get\+Op\+List}} (vector$<$ uint4 $>$ \&oplist) const
+\begin{DoxyCompactList}\small\item\em List of op codes this rule operates on. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRuleBitUndistribute_a01122a111d9e7ff6d741128cb8d9999d}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Undo distributed operations through I\+N\+T\+\_\+\+A\+ND, I\+N\+T\+\_\+\+OR, and I\+N\+T\+\_\+\+X\+OR. 
+
+
+\begin{DoxyItemize}
+\item {\ttfamily zext(\+V) \& zext(\+W) =$>$ zext( V \& W )}
+\item {\ttfamily (V $>$$>$ X) $\vert$ (W $>$$>$ X) =$>$ (V $\vert$ W) $>$$>$ X}
+\end{DoxyItemize}
+
+Works with I\+N\+T\+\_\+\+Z\+E\+XT, I\+N\+T\+\_\+\+S\+E\+XT, I\+N\+T\+\_\+\+L\+E\+FT, I\+N\+T\+\_\+\+R\+I\+G\+HT, and I\+N\+T\+\_\+\+S\+R\+I\+G\+HT. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRuleBitUndistribute_a01122a111d9e7ff6d741128cb8d9999d}\label{classRuleBitUndistribute_a01122a111d9e7ff6d741128cb8d9999d}} 
+\index{RuleBitUndistribute@{RuleBitUndistribute}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RuleBitUndistribute@{RuleBitUndistribute}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Bit\+Undistribute\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRuleBitUndistribute_a496c93a2aad0d79a776a71160529d830}\label{classRuleBitUndistribute_a496c93a2aad0d79a776a71160529d830}} 
+\index{RuleBitUndistribute@{RuleBitUndistribute}!clone@{clone}}
+\index{clone@{clone}!RuleBitUndistribute@{RuleBitUndistribute}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Bit\+Undistribute\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+\mbox{\Hypertarget{classRuleBitUndistribute_ab8b99b7595b2533bde19beab4391a300}\label{classRuleBitUndistribute_ab8b99b7595b2533bde19beab4391a300}} 
+\index{RuleBitUndistribute@{RuleBitUndistribute}!getOpList@{getOpList}}
+\index{getOpList@{getOpList}!RuleBitUndistribute@{RuleBitUndistribute}}
+\doxysubsubsection{\texorpdfstring{getOpList()}{getOpList()}}
+{\footnotesize\ttfamily void Rule\+Bit\+Undistribute\+::get\+Op\+List (\begin{DoxyParamCaption}\item[{vector$<$ uint4 $>$ \&}]{oplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List of op codes this rule operates on. 
+
+Populate the given array with all possible Op\+Codes this \mbox{\hyperlink{classRule}{Rule}} might apply to. By default, this method returns all possible Op\+Codes 
+\begin{DoxyParams}{Parameters}
+{\em oplist} & is the array to populate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4023bfc7825de0ab866790551856d10e}{Rule}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

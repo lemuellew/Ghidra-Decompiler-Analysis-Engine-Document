@@ -1,0 +1,611 @@
+\hypertarget{classCircleRange}{}\doxysection{Circle\+Range Class Reference}
+\label{classCircleRange}\index{CircleRange@{CircleRange}}
+
+
+A class for manipulating integer value ranges.  
+
+
+
+
+{\ttfamily \#include $<$rangeutil.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCircleRange_aace5e9eb04cf0d0bb6ba6e09e268ed2b}{Circle\+Range}} (uintb lft, uintb rgt, int4 size, int4 stp)
+\begin{DoxyCompactList}\small\item\em Construct given specific boundaries. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCircleRange_a5e27e7c2f13b6bcc509d80723d62ab7a}{Circle\+Range}} (bool val)
+\begin{DoxyCompactList}\small\item\em Construct a boolean range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCircleRange_a7117ce750ace3935fbe5656cd7d918bb}{Circle\+Range}} (uintb val, int4 size)
+\begin{DoxyCompactList}\small\item\em Construct range with single value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircleRange_af8a9a7800ef3a7771cff6e1bb3f737a3}{set\+Range}} (uintb lft, uintb rgt, int4 size, int4 step)
+\begin{DoxyCompactList}\small\item\em Set directly to a specific range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircleRange_af6b8068da0b69fb54bb9adc02c60a348}{set\+Range}} (uintb val, int4 size)
+\begin{DoxyCompactList}\small\item\em Set range with a single value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircleRange_a30a596fe283c1d88be29453bab713a60}{set\+Full}} (int4 size)
+\begin{DoxyCompactList}\small\item\em Set a completely full range. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classCircleRange_a606c680231a59b4439f17409d8c479e5}{get\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the size of this range. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCircleRange_acbfc2761ba2a26c8fa0296cbd29648e4}{get\+Max\+Info}} (void) const
+\begin{DoxyCompactList}\small\item\em Get maximum information content of range. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_ac48e2b62f4005f901c527a76fb39e750}{operator==}} (const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Equals operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_a9973f2c914dcfe8760079aaa0459d758}{contains}} (const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Check containment of another range in {\bfseries{this}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_a4681b55d158417a6598dd09c08850848}{contains}} (uintb val) const
+\begin{DoxyCompactList}\small\item\em Check containment of a specific integer. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCircleRange_a9d8c4b0c9c8e9d51baa6eb2cbb551c6d}{intersect}} (const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&op2)
+\begin{DoxyCompactList}\small\item\em Intersect {\bfseries{this}} with another range. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_a82f38601c64d4bdcc4aa977c2896b0f4}{set\+N\+Z\+Mask}} (uintb nzmask, int4 size)
+\begin{DoxyCompactList}\small\item\em Set the range based on a putative mask. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCircleRange_a286db51910f20ec7624132f8298cfe9b}{circle\+Union}} (const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&op2)
+\begin{DoxyCompactList}\small\item\em Union two ranges. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_ad7ef681ea6537fbf0c5f119fde76c843}{minimal\+Container}} (const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&op2, int4 max\+Step)
+\begin{DoxyCompactList}\small\item\em Construct minimal range that contains both {\bfseries{this}} and another range. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCircleRange_a7e05a9a4816b825f76d823742b2775b4}{invert}} (void)
+\begin{DoxyCompactList}\small\item\em Convert to complementary range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircleRange_abe2e9c5d04d8e16a7b715ecf801caea1}{set\+Stride}} (int4 new\+Step, uintb rem)
+\begin{DoxyCompactList}\small\item\em Set a new step on {\bfseries{this}} range. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_ae692dcb7d8d9f94dd88da68781357a7f}{pull\+Back\+Unary}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, int4 in\+Size, int4 out\+Size)
+\begin{DoxyCompactList}\small\item\em Pull-\/back {\bfseries{this}} through the given unary operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_a740302ad37ddc285b0527fb6b3c69703}{pull\+Back\+Binary}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, uintb val, int4 slot, int4 in\+Size, int4 out\+Size)
+\begin{DoxyCompactList}\small\item\em Pull-\/back {\bfseries{this}} thru binary operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classCircleRange_a8b2b3063264a1169940c7131628b9a4b}{pull\+Back}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$$\ast$const\+Markup, bool usenzmask)
+\begin{DoxyCompactList}\small\item\em Pull-\/back {\bfseries{this}} range through given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_a4d8947157e8e889cac86e42314bbe06b}{push\+Forward\+Unary}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&in1, int4 in\+Size, int4 out\+Size)
+\begin{DoxyCompactList}\small\item\em Push-\/forward thru given unary operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_a98650d2b8786cb95c08f67d0ef4e0344}{push\+Forward\+Binary}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&in1, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&in2, int4 in\+Size, int4 out\+Size, int4 max\+Step)
+\begin{DoxyCompactList}\small\item\em Push {\bfseries{this}} range forward through a binary operation. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCircleRange_a798c7dce79853472cd14ef5ac58c54b2}{push\+Forward\+Trinary}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&in1, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&in2, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&in3, int4 in\+Size, int4 out\+Size, int4 max\+Step)
+\begin{DoxyCompactList}\small\item\em Push {\bfseries{this}} range forward through a trinary operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircleRange_adfa6764d740526ac5295968ec622e8ea}{widen}} (const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&op2, bool left\+Is\+Stable)
+\begin{DoxyCompactList}\small\item\em Widen the unstable bound to match containing range. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCircleRange_abcf8280b8e4527ec260c396b6590fdae}{translate2\+Op}} (\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \&opc, uintb \&c, int4 \&cslot) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classTranslate}{Translate}} range to a comparison op. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCircleRange_ad66c20cf2ad9c654fd40e5ff27da0f84}{print\+Raw}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write a text representation of {\bfseries{this}} to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for manipulating integer value ranges. 
+
+The idea is to have a representation of common sets of values that a varnode might take on in analysis so that the representation can be manipulated symbolically to some extent. The representation is a circular range (determined by a half-\/open interval \mbox{[}left,right)), over the integers mod 2$^\wedge$n, where mask = 2$^\wedge$n-\/1. The range can support a step, if some of the least significant bits of the mask are set to zero.
+
+The class then can
+\begin{DoxyItemize}
+\item Generate ranges based on a pcode condition\+:
+\begin{DoxyItemize}
+\item x $<$ 2 =$>$ left=0 right=2 mask=sizeof(x)
+\item 5 $>$= x =$>$ left=5 right=0 mask=sizeof(x)
+\end{DoxyItemize}
+\item Intersect and union ranges, if the result is another range
+\item Pull-\/back a range through a transformation operation
+\item Iterate
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{val = range.getMin();}
+\DoxyCodeLine{\textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{\} \textcolor{keywordflow}{while}(range.getNext(val));}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCircleRange_aace5e9eb04cf0d0bb6ba6e09e268ed2b}\label{classCircleRange_aace5e9eb04cf0d0bb6ba6e09e268ed2b}} 
+\index{CircleRange@{CircleRange}!CircleRange@{CircleRange}}
+\index{CircleRange@{CircleRange}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{CircleRange()}{CircleRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Circle\+Range\+::\+Circle\+Range (\begin{DoxyParamCaption}\item[{uintb}]{lft,  }\item[{uintb}]{rgt,  }\item[{int4}]{size,  }\item[{int4}]{stp }\end{DoxyParamCaption})}
+
+
+
+Construct given specific boundaries. 
+
+Give specific left/right boundaries and step information. The first element in the set is given left boundary. The sequence then proceeds by the given {\itshape step} up to (but not including) the given right boundary. Care should be taken to make sure the remainders of the left and right boundaries modulo the step are equal. 
+\begin{DoxyParams}{Parameters}
+{\em lft} & is the left boundary of the range \\
+\hline
+{\em rgt} & is the right boundary of the range \\
+\hline
+{\em size} & is the domain size in bytes (1,2,4,8,..) \\
+\hline
+{\em stp} & is the desired step (1,2,4,8,..) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircleRange_a5e27e7c2f13b6bcc509d80723d62ab7a}\label{classCircleRange_a5e27e7c2f13b6bcc509d80723d62ab7a}} 
+\index{CircleRange@{CircleRange}!CircleRange@{CircleRange}}
+\index{CircleRange@{CircleRange}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{CircleRange()}{CircleRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Circle\+Range\+::\+Circle\+Range (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Construct a boolean range. 
+
+The range contains only a single integer, 0 or 1, depending on the boolean parameter. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the boolean parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircleRange_a7117ce750ace3935fbe5656cd7d918bb}\label{classCircleRange_a7117ce750ace3935fbe5656cd7d918bb}} 
+\index{CircleRange@{CircleRange}!CircleRange@{CircleRange}}
+\index{CircleRange@{CircleRange}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{CircleRange()}{CircleRange()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Circle\+Range\+::\+Circle\+Range (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct range with single value. 
+
+A size specifies the number of bytes ($\ast$8 to get number of bits) in the mask. The stride is assumed to be 1. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is is the single value \\
+\hline
+{\em size} & is the size of the mask in bytes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCircleRange_a286db51910f20ec7624132f8298cfe9b}\label{classCircleRange_a286db51910f20ec7624132f8298cfe9b}} 
+\index{CircleRange@{CircleRange}!circleUnion@{circleUnion}}
+\index{circleUnion@{circleUnion}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{circleUnion()}{circleUnion()}}
+{\footnotesize\ttfamily int4 Circle\+Range\+::circle\+Union (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Union two ranges. 
+
+Set {\bfseries{this}} to the union of {\bfseries{this}} and {\bfseries{op2}} as a single interval. Return 0 if the result is valid. Return 2 if the union is two pieces. If result is not zero, {\bfseries{this}} is not modified. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the range to union with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a9973f2c914dcfe8760079aaa0459d758}\label{classCircleRange_a9973f2c914dcfe8760079aaa0459d758}} 
+\index{CircleRange@{CircleRange}!contains@{contains}}
+\index{contains@{contains}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Circle\+Range\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Check containment of another range in {\bfseries{this}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the specific range to test for containment. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} contains the interval {\bfseries{op2}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a4681b55d158417a6598dd09c08850848}\label{classCircleRange_a4681b55d158417a6598dd09c08850848}} 
+\index{CircleRange@{CircleRange}!contains@{contains}}
+\index{contains@{contains}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Circle\+Range\+::contains (\begin{DoxyParamCaption}\item[{uintb}]{val }\end{DoxyParamCaption}) const}
+
+
+
+Check containment of a specific integer. 
+
+Check if a specific integer is a member of {\bfseries{this}} range. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is the specific integer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if it is contained in {\bfseries{this}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_acbfc2761ba2a26c8fa0296cbd29648e4}\label{classCircleRange_acbfc2761ba2a26c8fa0296cbd29648e4}} 
+\index{CircleRange@{CircleRange}!getMaxInfo@{getMaxInfo}}
+\index{getMaxInfo@{getMaxInfo}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{getMaxInfo()}{getMaxInfo()}}
+{\footnotesize\ttfamily int4 Circle\+Range\+::get\+Max\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get maximum information content of range. 
+
+In this context, the information content of a value is the index (+1) of the most significant non-\/zero bit (of the absolute value). This routine returns the maximum information across all values in the range. \begin{DoxyReturn}{Returns}
+the maximum information 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a606c680231a59b4439f17409d8c479e5}\label{classCircleRange_a606c680231a59b4439f17409d8c479e5}} 
+\index{CircleRange@{CircleRange}!getSize@{getSize}}
+\index{getSize@{getSize}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily uintb Circle\+Range\+::get\+Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the size of this range. 
+
+\begin{DoxyReturn}{Returns}
+the number of integers contained in this range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a9d8c4b0c9c8e9d51baa6eb2cbb551c6d}\label{classCircleRange_a9d8c4b0c9c8e9d51baa6eb2cbb551c6d}} 
+\index{CircleRange@{CircleRange}!intersect@{intersect}}
+\index{intersect@{intersect}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily int4 Circle\+Range\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Intersect {\bfseries{this}} with another range. 
+
+Set {\bfseries{this}} to the intersection of {\bfseries{this}} and {\bfseries{op2}} as a single interval if possible. Return 0 if the result is valid Return 2 if the intersection is two pieces If result is not zero, {\bfseries{this}} is not modified 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the second range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the intersection code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a7e05a9a4816b825f76d823742b2775b4}\label{classCircleRange_a7e05a9a4816b825f76d823742b2775b4}} 
+\index{CircleRange@{CircleRange}!invert@{invert}}
+\index{invert@{invert}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily int4 Circle\+Range\+::invert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Convert to complementary range. 
+
+Convert range to its complement. The step is automatically converted to 1 first. \begin{DoxyReturn}{Returns}
+the original step size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_ad7ef681ea6537fbf0c5f119fde76c843}\label{classCircleRange_ad7ef681ea6537fbf0c5f119fde76c843}} 
+\index{CircleRange@{CircleRange}!minimalContainer@{minimalContainer}}
+\index{minimalContainer@{minimalContainer}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{minimalContainer()}{minimalContainer()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::minimal\+Container (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{op2,  }\item[{int4}]{max\+Step }\end{DoxyParamCaption})}
+
+
+
+Construct minimal range that contains both {\bfseries{this}} and another range. 
+
+Turn {\bfseries{this}} into a range that contains both the original range and the other given range. The resulting range may contain values that were in neither of the original ranges (not a strict union). But the number of added values will be minimal. This method will create a range with step if the input ranges hold single values and the distance between them is a power of 2 and less or equal than a given bound. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other given range to combine with {\bfseries{this}} \\
+\hline
+{\em max\+Step} & is the step bound that can be induced for a container with two singles \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the container is everything (full) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_ac48e2b62f4005f901c527a76fb39e750}\label{classCircleRange_ac48e2b62f4005f901c527a76fb39e750}} 
+\index{CircleRange@{CircleRange}!operator==@{operator==}}
+\index{operator==@{operator==}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Equals operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the range to compare {\bfseries{this}} to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the two ranges are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_ad66c20cf2ad9c654fd40e5ff27da0f84}\label{classCircleRange_ad66c20cf2ad9c654fd40e5ff27da0f84}} 
+\index{CircleRange@{CircleRange}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Circle\+Range\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Write a text representation of {\bfseries{this}} to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircleRange_a8b2b3063264a1169940c7131628b9a4b}\label{classCircleRange_a8b2b3063264a1169940c7131628b9a4b}} 
+\index{CircleRange@{CircleRange}!pullBack@{pullBack}}
+\index{pullBack@{pullBack}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{pullBack()}{pullBack()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Circle\+Range\+::pull\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$$\ast$}]{const\+Markup,  }\item[{bool}]{usenzmask }\end{DoxyParamCaption})}
+
+
+
+Pull-\/back {\bfseries{this}} range through given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+The pull-\/back is performed through a given p-\/code {\bfseries{op}} and set {\bfseries{this}} to the resulting range (if possible). If there is a single unknown input, and the set of values for this input that cause the output of {\bfseries{op}} to fall into {\bfseries{this}} form a range, then set {\bfseries{this}} to the range (the \char`\"{}pull\+Back\char`\"{}) and return the unknown varnode. Return null otherwise.
+
+We may know something about the input varnode in the form of its N\+Z\+M\+A\+SK, which can further restrict the range we return. If {\bfseries{usenzmask}} is true, and N\+Z\+M\+A\+SK forms a range, intersect {\bfseries{this}} with the result.
+
+If there is \mbox{\hyperlink{classSymbol}{Symbol}} markup on any constant passed into the op, pass that information back. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em const\+Markup} & is the reference for passing back the constant relevant to the pull-\/back \\
+\hline
+{\em usenzmask} & specifies whether to use the N\+Z\+M\+A\+SK \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input \mbox{\hyperlink{classVarnode}{Varnode}} or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a740302ad37ddc285b0527fb6b3c69703}\label{classCircleRange_a740302ad37ddc285b0527fb6b3c69703}} 
+\index{CircleRange@{CircleRange}!pullBackBinary@{pullBackBinary}}
+\index{pullBackBinary@{pullBackBinary}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{pullBackBinary()}{pullBackBinary()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::pull\+Back\+Binary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{uintb}]{val,  }\item[{int4}]{slot,  }\item[{int4}]{in\+Size,  }\item[{int4}]{out\+Size }\end{DoxyParamCaption})}
+
+
+
+Pull-\/back {\bfseries{this}} thru binary operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opc} & is the Op\+Code to pull the range back through \\
+\hline
+{\em val} & is the constant value of the other input parameter (if present) \\
+\hline
+{\em slot} & is the slot of the input variable whose range gets produced \\
+\hline
+{\em in\+Size} & is the storage size in bytes of the resulting input \\
+\hline
+{\em out\+Size} & is the storage size in bytes of the range to pull-\/back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a valid range is formed in the pull-\/back 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_ae692dcb7d8d9f94dd88da68781357a7f}\label{classCircleRange_ae692dcb7d8d9f94dd88da68781357a7f}} 
+\index{CircleRange@{CircleRange}!pullBackUnary@{pullBackUnary}}
+\index{pullBackUnary@{pullBackUnary}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{pullBackUnary()}{pullBackUnary()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::pull\+Back\+Unary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{int4}]{in\+Size,  }\item[{int4}]{out\+Size }\end{DoxyParamCaption})}
+
+
+
+Pull-\/back {\bfseries{this}} through the given unary operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em opc} & is the Op\+Code to pull the range back through \\
+\hline
+{\em in\+Size} & is the storage size in bytes of the resulting input \\
+\hline
+{\em out\+Size} & is the storage size in bytes of the range to pull-\/back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a valid range is formed in the pull-\/back 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a98650d2b8786cb95c08f67d0ef4e0344}\label{classCircleRange_a98650d2b8786cb95c08f67d0ef4e0344}} 
+\index{CircleRange@{CircleRange}!pushForwardBinary@{pushForwardBinary}}
+\index{pushForwardBinary@{pushForwardBinary}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{pushForwardBinary()}{pushForwardBinary()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::push\+Forward\+Binary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{in1,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{in2,  }\item[{int4}]{in\+Size,  }\item[{int4}]{out\+Size,  }\item[{int4}]{max\+Step }\end{DoxyParamCaption})}
+
+
+
+Push {\bfseries{this}} range forward through a binary operation. 
+
+Push all values in the given ranges through a binary p-\/code operator. If the output set of values forms a range, then set {\bfseries{this}} to the range and return {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em opc} & is the given p-\/code operator \\
+\hline
+{\em in1} & is the first given input range \\
+\hline
+{\em in2} & is the second given input range \\
+\hline
+{\em in\+Size} & is the storage space in bytes for the input \\
+\hline
+{\em out\+Size} & is the storage space in bytes for the output \\
+\hline
+{\em max\+Step} & is the maximum to allow step to grow via multiplication \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the result is known and forms a range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a798c7dce79853472cd14ef5ac58c54b2}\label{classCircleRange_a798c7dce79853472cd14ef5ac58c54b2}} 
+\index{CircleRange@{CircleRange}!pushForwardTrinary@{pushForwardTrinary}}
+\index{pushForwardTrinary@{pushForwardTrinary}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{pushForwardTrinary()}{pushForwardTrinary()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::push\+Forward\+Trinary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{in1,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{in2,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{in3,  }\item[{int4}]{in\+Size,  }\item[{int4}]{out\+Size,  }\item[{int4}]{max\+Step }\end{DoxyParamCaption})}
+
+
+
+Push {\bfseries{this}} range forward through a trinary operation. 
+
+Push all values in the given ranges through a trinary p-\/code operator (currenly only C\+P\+U\+I\+\_\+\+P\+T\+R\+A\+DD). If the output set of values forms a range, then set {\bfseries{this}} to the range and return {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em opc} & is the given p-\/code operator \\
+\hline
+{\em in1} & is the first given input range \\
+\hline
+{\em in2} & is the second given input range \\
+\hline
+{\em in3} & is the third given input range \\
+\hline
+{\em in\+Size} & is the storage space in bytes for the input \\
+\hline
+{\em out\+Size} & is the storage space in bytes for the output \\
+\hline
+{\em max\+Step} & is the maximum to allow step to grow via multiplication \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the result is known and forms a range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a4d8947157e8e889cac86e42314bbe06b}\label{classCircleRange_a4d8947157e8e889cac86e42314bbe06b}} 
+\index{CircleRange@{CircleRange}!pushForwardUnary@{pushForwardUnary}}
+\index{pushForwardUnary@{pushForwardUnary}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{pushForwardUnary()}{pushForwardUnary()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::push\+Forward\+Unary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{in1,  }\item[{int4}]{in\+Size,  }\item[{int4}]{out\+Size }\end{DoxyParamCaption})}
+
+
+
+Push-\/forward thru given unary operator. 
+
+Push all values in the given range through a p-\/code operator. If the output set of values forms a range, then set {\bfseries{this}} to the range and return {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em opc} & is the given p-\/code operator \\
+\hline
+{\em in1} & is the given input range \\
+\hline
+{\em in\+Size} & is the storage space in bytes for the input \\
+\hline
+{\em out\+Size} & is the storage space in bytes for the output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the result is known and forms a range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_a30a596fe283c1d88be29453bab713a60}\label{classCircleRange_a30a596fe283c1d88be29453bab713a60}} 
+\index{CircleRange@{CircleRange}!setFull@{setFull}}
+\index{setFull@{setFull}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{setFull()}{setFull()}}
+{\footnotesize\ttfamily void Circle\+Range\+::set\+Full (\begin{DoxyParamCaption}\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Set a completely full range. 
+
+Make a range of values that holds everything. 
+\begin{DoxyParams}{Parameters}
+{\em size} & is the size (in bytes) of the range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircleRange_a82f38601c64d4bdcc4aa977c2896b0f4}\label{classCircleRange_a82f38601c64d4bdcc4aa977c2896b0f4}} 
+\index{CircleRange@{CircleRange}!setNZMask@{setNZMask}}
+\index{setNZMask@{setNZMask}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{setNZMask()}{setNZMask()}}
+{\footnotesize\ttfamily bool Circle\+Range\+::set\+N\+Z\+Mask (\begin{DoxyParamCaption}\item[{uintb}]{nzmask,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Set the range based on a putative mask. 
+
+Try to create a range given a value that is not necessarily a valid mask. If the mask is valid, range is set to all possible values that whose non-\/zero bits are contained in the mask. If the mask is invalid, {\bfseries{this}} range is not modified. 
+\begin{DoxyParams}{Parameters}
+{\em nzmask} & is the putative mask \\
+\hline
+{\em size} & is a maximum size (in bytes) for the mask \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the mask is valid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCircleRange_af8a9a7800ef3a7771cff6e1bb3f737a3}\label{classCircleRange_af8a9a7800ef3a7771cff6e1bb3f737a3}} 
+\index{CircleRange@{CircleRange}!setRange@{setRange}}
+\index{setRange@{setRange}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{setRange()}{setRange()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Circle\+Range\+::set\+Range (\begin{DoxyParamCaption}\item[{uintb}]{lft,  }\item[{uintb}]{rgt,  }\item[{int4}]{size,  }\item[{int4}]{stp }\end{DoxyParamCaption})}
+
+
+
+Set directly to a specific range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lft} & is the left boundary of the range \\
+\hline
+{\em rgt} & is the right boundary of the range \\
+\hline
+{\em size} & is the size of the range domain in bytes \\
+\hline
+{\em stp} & is the step/stride of the range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircleRange_af6b8068da0b69fb54bb9adc02c60a348}\label{classCircleRange_af6b8068da0b69fb54bb9adc02c60a348}} 
+\index{CircleRange@{CircleRange}!setRange@{setRange}}
+\index{setRange@{setRange}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{setRange()}{setRange()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Circle\+Range\+::set\+Range (\begin{DoxyParamCaption}\item[{uintb}]{val,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Set range with a single value. 
+
+A size specifies the number of bytes ($\ast$8 to get number of bits) in the mask. The stride is assumed to be 1. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is is the single value \\
+\hline
+{\em size} & is the size of the mask in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircleRange_abe2e9c5d04d8e16a7b715ecf801caea1}\label{classCircleRange_abe2e9c5d04d8e16a7b715ecf801caea1}} 
+\index{CircleRange@{CircleRange}!setStride@{setStride}}
+\index{setStride@{setStride}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{setStride()}{setStride()}}
+{\footnotesize\ttfamily void Circle\+Range\+::set\+Stride (\begin{DoxyParamCaption}\item[{int4}]{new\+Step,  }\item[{uintb}]{rem }\end{DoxyParamCaption})}
+
+
+
+Set a new step on {\bfseries{this}} range. 
+
+This method changes the step for {\bfseries{this}} range, i.\+e. elements are removed. The boundaries of the range do not change except for the remainder modulo the new step. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Step} & is the new step amount \\
+\hline
+{\em rem} & is the desired phase (remainder of the values modulo the step) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCircleRange_abcf8280b8e4527ec260c396b6590fdae}\label{classCircleRange_abcf8280b8e4527ec260c396b6590fdae}} 
+\index{CircleRange@{CircleRange}!translate2Op@{translate2Op}}
+\index{translate2Op@{translate2Op}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{translate2Op()}{translate2Op()}}
+{\footnotesize\ttfamily int4 Circle\+Range\+::translate2\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \&}]{opc,  }\item[{uintb \&}]{c,  }\item[{int4 \&}]{cslot }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{classTranslate}{Translate}} range to a comparison op. 
+
+Recover parameters for a comparison \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, that returns true for input values exactly in {\bfseries{this}} range. Return\+:
+\begin{DoxyItemize}
+\item 0 on success
+\item 1 if all inputs must return true
+\item 2 if this is not possible
+\item 3 if no inputs must return true 
+\begin{DoxyParams}{Parameters}
+{\em opc} & will contain the Op\+Code for the comparison \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em c} & will contain the constant input to the op \\
+\hline
+{\em cslot} & will indicate the slot holding the constant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the success code 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classCircleRange_adfa6764d740526ac5295968ec622e8ea}\label{classCircleRange_adfa6764d740526ac5295968ec622e8ea}} 
+\index{CircleRange@{CircleRange}!widen@{widen}}
+\index{widen@{widen}!CircleRange@{CircleRange}}
+\doxysubsubsection{\texorpdfstring{widen()}{widen()}}
+{\footnotesize\ttfamily void Circle\+Range\+::widen (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{op2,  }\item[{bool}]{left\+Is\+Stable }\end{DoxyParamCaption})}
+
+
+
+Widen the unstable bound to match containing range. 
+
+Widen {\bfseries{this}} range so at least one of the boundaries matches with the given range, which must contain {\bfseries{this}}. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the given containing range \\
+\hline
+{\em left\+Is\+Stable} & is {\bfseries{true}} if we want to match right boundaries \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rangeutil_8hh}{rangeutil.\+hh}}\item 
+rangeutil.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,43 @@
+\hypertarget{memstate_8hh}{}\doxysection{memstate.\+hh File Reference}
+\label{memstate_8hh}\index{memstate.hh@{memstate.hh}}
+
+
+Classes for keeping track of memory state during emulation.  
+
+
+{\ttfamily \#include \char`\"{}pcoderaw.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loadimage.\+hh\char`\"{}}\newline
+Include dependency graph for memstate.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{memstate_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{memstate_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}}
+\begin{DoxyCompactList}\small\item\em Memory storage/state for a single Address\+Space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMemoryImage}{Memory\+Image}}
+\begin{DoxyCompactList}\small\item\em A kind of \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} which retrieves its data from an underlying \mbox{\hyperlink{classLoadImage}{Load\+Image}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMemoryPageOverlay}{Memory\+Page\+Overlay}}
+\begin{DoxyCompactList}\small\item\em Memory bank that overlays some other memory bank, using a \char`\"{}copy on write\char`\"{} behavior. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMemoryHashOverlay}{Memory\+Hash\+Overlay}}
+\begin{DoxyCompactList}\small\item\em A memory bank that implements reads and writes using a hash table. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classMemoryState}{Memory\+State}}
+\begin{DoxyCompactList}\small\item\em All storage/state for a pcode machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes for keeping track of memory state during emulation. 
+

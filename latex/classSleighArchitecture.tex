@@ -1,0 +1,364 @@
+\hypertarget{classSleighArchitecture}{}\doxysection{Sleigh\+Architecture Class Reference}
+\label{classSleighArchitecture}\index{SleighArchitecture@{SleighArchitecture}}
+
+
+An \mbox{\hyperlink{classArchitecture}{Architecture}} that uses the decompiler\textquotesingle{}s native S\+L\+E\+I\+GH translation engine.  
+
+
+
+
+{\ttfamily \#include $<$sleigh\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Sleigh\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSleighArchitecture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sleigh\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSleighArchitecture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSleighArchitecture_a12a9640c1af6674cd346a2b2a4bd1b5f}{Sleigh\+Architecture}} (const string \&fname, const string \&targ, ostream $\ast$estream)
+\begin{DoxyCompactList}\small\item\em Construct given executable file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSleighArchitecture_a0ac133adbc1162fe2baeba1c897dfc34}{save\+Xml\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write out (as X\+ML) basic attributes of the active executable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSleighArchitecture_a9edbac231d5ec6639f02e5888db24943}{restore\+Xml\+Header}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore from X\+ML basic attributes of an executable. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSleighArchitecture_a70cc8c22ebab95cf41ab21b7d886c08f}{print\+Message}} (const string \&message) const
+\begin{DoxyCompactList}\small\item\em Print an error message to console. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSleighArchitecture_a15f29186397f46956c6ca292b17510b0}\label{classSleighArchitecture_a15f29186397f46956c6ca292b17510b0}} 
+virtual string {\bfseries get\+Description} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classSleighArchitecture_a01c91ee1ad3c886ddc13df95502489c1}{normalize\+Processor}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Try to recover a {\itshape language} {\itshape id} processor field. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{classSleighArchitecture_adfe35a4bb676b3676188d936eacccdb3}{normalize\+Endian}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Try to recover a {\itshape language} {\itshape id} endianess field. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{classSleighArchitecture_a4645a63583ea3f8088e24d6fa71dce50}{normalize\+Size}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Try to recover a {\itshape language} {\itshape id} size field. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{classSleighArchitecture_a8053081371771a941248809754fc836f}{normalize\+Architecture}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Try to recover a {\itshape language} {\itshape id} string. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classSleighArchitecture_a192dd872ccfe2a7f7a3ad18709fa37aa}{scan\+For\+Sleigh\+Directories}} (const string \&rootpath)
+\begin{DoxyCompactList}\small\item\em Scan directories for S\+L\+E\+I\+GH specification files. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSleighArchitecture_a1765d06764b5b9d284340a2c457011f8}\label{classSleighArchitecture_a1765d06764b5b9d284340a2c457011f8}} 
+static void \mbox{\hyperlink{classSleighArchitecture_a1765d06764b5b9d284340a2c457011f8}{shutdown}} (void)
+\begin{DoxyCompactList}\small\item\em Shutdown this \mbox{\hyperlink{classSleighArchitecture}{Sleigh\+Architecture}} and free all resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighArchitecture_a198973e576c4ea3039c7deac29402aed}\label{classSleighArchitecture_a198973e576c4ea3039c7deac29402aed}} 
+static \mbox{\hyperlink{classFileManage}{File\+Manage}} \mbox{\hyperlink{classSleighArchitecture_a198973e576c4ea3039c7deac29402aed}{specpaths}}
+\begin{DoxyCompactList}\small\item\em Known directories that contain .ldefs files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classTranslate}{Translate}} $\ast$ \mbox{\hyperlink{classSleighArchitecture_aae195ea2828d13b6e15d16c722d14b18}{build\+Translator}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\begin{DoxyCompactList}\small\item\em Build the Translator object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classPcodeInjectLibrary}{Pcode\+Inject\+Library}} $\ast$ \mbox{\hyperlink{classSleighArchitecture_ae0b7773ee748ea290358c389e71f2003}{build\+Pcode\+Inject\+Library}} (void)
+\begin{DoxyCompactList}\small\item\em Build the injection library. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSleighArchitecture_a80e8e72ca0059be816575262b7db395f}{build\+Spec\+File}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\begin{DoxyCompactList}\small\item\em Load any relevant specification files. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSleighArchitecture_aaf0c0ad5b1160d42fecce0a27ce05674}{modify\+Spaces}} (\mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em Modify address spaces as required by {\bfseries{this}} \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSleighArchitecture_a937a743a8538c2cbfdb40926cd7bc7f8}\label{classSleighArchitecture_a937a743a8538c2cbfdb40926cd7bc7f8}} 
+virtual void \mbox{\hyperlink{classSleighArchitecture_a937a743a8538c2cbfdb40926cd7bc7f8}{resolve\+Architecture}} (void)
+\begin{DoxyCompactList}\small\item\em Figure out the processor and compiler of the target executable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classSleighArchitecture_ac037ef568059275e73b9be91f0612ef3}{collect\+Spec\+Files}} (ostream \&errs)
+\begin{DoxyCompactList}\small\item\em Gather specification files in normal locations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighArchitecture_a338fd8b6671bc55ba6d6d4e8307957e9}\label{classSleighArchitecture_a338fd8b6671bc55ba6d6d4e8307957e9}} 
+ostream $\ast$ \mbox{\hyperlink{classSleighArchitecture_a338fd8b6671bc55ba6d6d4e8307957e9}{errorstream}}
+\begin{DoxyCompactList}\small\item\em Error stream associated with {\bfseries{this}} \mbox{\hyperlink{classSleighArchitecture}{Sleigh\+Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An \mbox{\hyperlink{classArchitecture}{Architecture}} that uses the decompiler\textquotesingle{}s native S\+L\+E\+I\+GH translation engine. 
+
+Any \mbox{\hyperlink{classArchitecture}{Architecture}} derived from {\bfseries{this}} knows how to natively read in\+:
+\begin{DoxyItemize}
+\item a compiled S\+L\+E\+I\+GH specification (.sla)
+\item a processor specification file (.pspec), and
+\item a compiler specification file (.cspec)
+\end{DoxyItemize}
+
+Generally a {\itshape language} {\itshape id} (i.\+e. x86\+:\+LE\+:64\+:default) is provided, then this object is able to automatically load in configuration and construct the \mbox{\hyperlink{classTranslate}{Translate}} object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSleighArchitecture_a12a9640c1af6674cd346a2b2a4bd1b5f}\label{classSleighArchitecture_a12a9640c1af6674cd346a2b2a4bd1b5f}} 
+\index{SleighArchitecture@{SleighArchitecture}!SleighArchitecture@{SleighArchitecture}}
+\index{SleighArchitecture@{SleighArchitecture}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{SleighArchitecture()}{SleighArchitecture()}}
+{\footnotesize\ttfamily Sleigh\+Architecture\+::\+Sleigh\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{fname,  }\item[{const string \&}]{targ,  }\item[{ostream $\ast$}]{estream }\end{DoxyParamCaption})}
+
+
+
+Construct given executable file. 
+
+Prepare {\bfseries{this}} \mbox{\hyperlink{classSleighArchitecture}{Sleigh\+Architecture}} for analyzing the given executable image. Full initialization, including creation of the \mbox{\hyperlink{classTranslate}{Translate}} object, still must be performed by calling the \mbox{\hyperlink{classArchitecture_abcf0d020ebe4248b9b35f3a51b78363b}{init()}} method. 
+\begin{DoxyParams}{Parameters}
+{\em fname} & is the filename of the given executable image \\
+\hline
+{\em targ} & is the optional {\itshape language} {\itshape id} or other target information \\
+\hline
+{\em estream} & is a pointer to an output stream for writing error messages \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSleighArchitecture_ae0b7773ee748ea290358c389e71f2003}\label{classSleighArchitecture_ae0b7773ee748ea290358c389e71f2003}} 
+\index{SleighArchitecture@{SleighArchitecture}!buildPcodeInjectLibrary@{buildPcodeInjectLibrary}}
+\index{buildPcodeInjectLibrary@{buildPcodeInjectLibrary}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{buildPcodeInjectLibrary()}{buildPcodeInjectLibrary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeInjectLibrary}{Pcode\+Inject\+Library}} $\ast$ Sleigh\+Architecture\+::build\+Pcode\+Inject\+Library (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Build the injection library. 
+
+This creates the container for p-\/code injections. It is initially empty. \begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classPcodeInjectLibrary}{Pcode\+Inject\+Library}} object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitecture_a7dae4f59e2c196a623b45e68cacc1a7a}{Architecture}}.
+
+\mbox{\Hypertarget{classSleighArchitecture_a80e8e72ca0059be816575262b7db395f}\label{classSleighArchitecture_a80e8e72ca0059be816575262b7db395f}} 
+\index{SleighArchitecture@{SleighArchitecture}!buildSpecFile@{buildSpecFile}}
+\index{buildSpecFile@{buildSpecFile}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{buildSpecFile()}{buildSpecFile()}}
+{\footnotesize\ttfamily void Sleigh\+Architecture\+::build\+Spec\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Load any relevant specification files. 
+
+Processor/architecture specific configuration files are loaded into the X\+ML store 
+\begin{DoxyParams}{Parameters}
+{\em store} & is the document store that will hold the configuration \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classArchitecture_ad9e8edfa21e63d4b37b8003397804933}{Architecture}}.
+
+\mbox{\Hypertarget{classSleighArchitecture_aae195ea2828d13b6e15d16c722d14b18}\label{classSleighArchitecture_aae195ea2828d13b6e15d16c722d14b18}} 
+\index{SleighArchitecture@{SleighArchitecture}!buildTranslator@{buildTranslator}}
+\index{buildTranslator@{buildTranslator}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{buildTranslator()}{buildTranslator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTranslate}{Translate}} $\ast$ Sleigh\+Architecture\+::build\+Translator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Build the Translator object. 
+
+This builds the main disassembly component for the \mbox{\hyperlink{classArchitecture}{Architecture}} This does {\itshape not} initially the engine for a specific processor. 
+\begin{DoxyParams}{Parameters}
+{\em store} & may hold configuration information \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classTranslate}{Translate}} object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitecture_ab951056481cac3e73770db9d567d5212}{Architecture}}.
+
+\mbox{\Hypertarget{classSleighArchitecture_ac037ef568059275e73b9be91f0612ef3}\label{classSleighArchitecture_ac037ef568059275e73b9be91f0612ef3}} 
+\index{SleighArchitecture@{SleighArchitecture}!collectSpecFiles@{collectSpecFiles}}
+\index{collectSpecFiles@{collectSpecFiles}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{collectSpecFiles()}{collectSpecFiles()}}
+{\footnotesize\ttfamily void Sleigh\+Architecture\+::collect\+Spec\+Files (\begin{DoxyParamCaption}\item[{ostream \&}]{errs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Gather specification files in normal locations. 
+
+This is run once when spinning up the decompiler. Look for the root .ldefs files within the normal directories and parse them. Use these to populate the list of {\itshape language} {\itshape ids} that are supported. 
+\begin{DoxyParams}{Parameters}
+{\em errs} & is an output stream for writing error messages \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSleighArchitecture_aaf0c0ad5b1160d42fecce0a27ce05674}\label{classSleighArchitecture_aaf0c0ad5b1160d42fecce0a27ce05674}} 
+\index{SleighArchitecture@{SleighArchitecture}!modifySpaces@{modifySpaces}}
+\index{modifySpaces@{modifySpaces}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{modifySpaces()}{modifySpaces()}}
+{\footnotesize\ttfamily void Sleigh\+Architecture\+::modify\+Spaces (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{trans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Modify address spaces as required by {\bfseries{this}} \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+If spaces need to be truncated or otherwise changed from processor defaults, this routine performs the modification. 
+\begin{DoxyParams}{Parameters}
+{\em trans} & is the processor disassembly object \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classArchitecture_aec1784d8729ba0f13cd7ea63ee546995}{Architecture}}.
+
+\mbox{\Hypertarget{classSleighArchitecture_a8053081371771a941248809754fc836f}\label{classSleighArchitecture_a8053081371771a941248809754fc836f}} 
+\index{SleighArchitecture@{SleighArchitecture}!normalizeArchitecture@{normalizeArchitecture}}
+\index{normalizeArchitecture@{normalizeArchitecture}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{normalizeArchitecture()}{normalizeArchitecture()}}
+{\footnotesize\ttfamily string Sleigh\+Architecture\+::normalize\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to recover a {\itshape language} {\itshape id} string. 
+
+Try to normalize the target string into a valid {\itshape language} {\itshape id}. In general the target string must already look like a {\itshape language} {\itshape id}, but it can drop the compiler field and be a little sloppier in its format. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given target string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the normalized {\itshape language} {\itshape id} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSleighArchitecture_adfe35a4bb676b3676188d936eacccdb3}\label{classSleighArchitecture_adfe35a4bb676b3676188d936eacccdb3}} 
+\index{SleighArchitecture@{SleighArchitecture}!normalizeEndian@{normalizeEndian}}
+\index{normalizeEndian@{normalizeEndian}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{normalizeEndian()}{normalizeEndian()}}
+{\footnotesize\ttfamily string Sleigh\+Architecture\+::normalize\+Endian (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to recover a {\itshape language} {\itshape id} endianess field. 
+
+Given an architecture target string try to recover an appropriate endianness string for use in a normalized {\itshape language} {\itshape id}. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given target string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the endianness field 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSleighArchitecture_a01c91ee1ad3c886ddc13df95502489c1}\label{classSleighArchitecture_a01c91ee1ad3c886ddc13df95502489c1}} 
+\index{SleighArchitecture@{SleighArchitecture}!normalizeProcessor@{normalizeProcessor}}
+\index{normalizeProcessor@{normalizeProcessor}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{normalizeProcessor()}{normalizeProcessor()}}
+{\footnotesize\ttfamily string Sleigh\+Architecture\+::normalize\+Processor (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to recover a {\itshape language} {\itshape id} processor field. 
+
+Given an architecture target string try to recover an appropriate processor name for use in a normalized {\itshape language} {\itshape id}. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given target string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the processor field 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSleighArchitecture_a4645a63583ea3f8088e24d6fa71dce50}\label{classSleighArchitecture_a4645a63583ea3f8088e24d6fa71dce50}} 
+\index{SleighArchitecture@{SleighArchitecture}!normalizeSize@{normalizeSize}}
+\index{normalizeSize@{normalizeSize}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{normalizeSize()}{normalizeSize()}}
+{\footnotesize\ttfamily string Sleigh\+Architecture\+::normalize\+Size (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to recover a {\itshape language} {\itshape id} size field. 
+
+Given an architecture target string try to recover an appropriate size string for use in a normalized {\itshape language} {\itshape id}. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given target string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size field 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSleighArchitecture_a70cc8c22ebab95cf41ab21b7d886c08f}\label{classSleighArchitecture_a70cc8c22ebab95cf41ab21b7d886c08f}} 
+\index{SleighArchitecture@{SleighArchitecture}!printMessage@{printMessage}}
+\index{printMessage@{printMessage}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{printMessage()}{printMessage()}}
+{\footnotesize\ttfamily virtual void Sleigh\+Architecture\+::print\+Message (\begin{DoxyParamCaption}\item[{const string \&}]{message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Print an error message to console. 
+
+Write the given message to whatever the registered error stream is 
+\begin{DoxyParams}{Parameters}
+{\em message} & is the error message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classArchitecture_a69348906c7601efa002f1f1365decda9}{Architecture}}.
+
+\mbox{\Hypertarget{classSleighArchitecture_a9edbac231d5ec6639f02e5888db24943}\label{classSleighArchitecture_a9edbac231d5ec6639f02e5888db24943}} 
+\index{SleighArchitecture@{SleighArchitecture}!restoreXmlHeader@{restoreXmlHeader}}
+\index{restoreXmlHeader@{restoreXmlHeader}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{restoreXmlHeader()}{restoreXmlHeader()}}
+{\footnotesize\ttfamily void Sleigh\+Architecture\+::restore\+Xml\+Header (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Restore from X\+ML basic attributes of an executable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSleighArchitecture_a0ac133adbc1162fe2baeba1c897dfc34}\label{classSleighArchitecture_a0ac133adbc1162fe2baeba1c897dfc34}} 
+\index{SleighArchitecture@{SleighArchitecture}!saveXmlHeader@{saveXmlHeader}}
+\index{saveXmlHeader@{saveXmlHeader}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{saveXmlHeader()}{saveXmlHeader()}}
+{\footnotesize\ttfamily void Sleigh\+Architecture\+::save\+Xml\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Write out (as X\+ML) basic attributes of the active executable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the X\+ML output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSleighArchitecture_a192dd872ccfe2a7f7a3ad18709fa37aa}\label{classSleighArchitecture_a192dd872ccfe2a7f7a3ad18709fa37aa}} 
+\index{SleighArchitecture@{SleighArchitecture}!scanForSleighDirectories@{scanForSleighDirectories}}
+\index{scanForSleighDirectories@{scanForSleighDirectories}!SleighArchitecture@{SleighArchitecture}}
+\doxysubsubsection{\texorpdfstring{scanForSleighDirectories()}{scanForSleighDirectories()}}
+{\footnotesize\ttfamily void Sleigh\+Architecture\+::scan\+For\+Sleigh\+Directories (\begin{DoxyParamCaption}\item[{const string \&}]{rootpath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Scan directories for S\+L\+E\+I\+GH specification files. 
+
+This assumes a standard \char`\"{}\+Ghidra/\+Processors/$\ast$/data/languages\char`\"{} layout. It scans for all matching directories and prepares for reading .ldefs files. 
+\begin{DoxyParams}{Parameters}
+{\em rootpath} & is the root path of the Ghidra installation \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh__arch_8hh}{sleigh\+\_\+arch.\+hh}}\item 
+sleigh\+\_\+arch.\+cc\end{DoxyCompactItemize}

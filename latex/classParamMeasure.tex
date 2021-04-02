@@ -1,0 +1,56 @@
+\hypertarget{classParamMeasure}{}\doxysection{Param\+Measure Class Reference}
+\label{classParamMeasure}\index{ParamMeasure@{ParamMeasure}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structParamMeasure_1_1WalkState}{Walk\+State}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParamMeasure_a5d9dfe68f44efa9c011528a173f76fec}\label{classParamMeasure_a5d9dfe68f44efa9c011528a173f76fec}} 
+enum {\bfseries Param\+I\+D\+IO} \{ {\bfseries I\+N\+P\+UT} = 0, 
+{\bfseries O\+U\+T\+P\+UT} = 1
+ \}
+\item 
+\mbox{\Hypertarget{classParamMeasure_a8393fe6e19e1e4e80943a9b3e3f717c6}\label{classParamMeasure_a8393fe6e19e1e4e80943a9b3e3f717c6}} 
+enum {\bfseries Param\+Rank} \{ \newline
+{\bfseries B\+E\+S\+T\+R\+A\+NK} = 1, 
+{\bfseries D\+I\+R\+E\+C\+T\+W\+R\+I\+T\+E\+W\+I\+T\+H\+O\+U\+T\+R\+E\+AD} = 1, 
+{\bfseries D\+I\+R\+E\+C\+T\+R\+E\+AD} = 2, 
+{\bfseries D\+I\+R\+E\+C\+T\+W\+R\+I\+T\+E\+W\+I\+T\+H\+R\+E\+AD} = 2, 
+\newline
+{\bfseries D\+I\+R\+E\+C\+T\+W\+R\+I\+T\+E\+U\+N\+K\+N\+O\+W\+N\+R\+E\+AD} = 3, 
+{\bfseries S\+U\+B\+F\+N\+P\+A\+R\+AM} = 4, 
+{\bfseries T\+H\+I\+S\+F\+N\+P\+A\+R\+AM} = 4, 
+{\bfseries S\+U\+B\+F\+N\+R\+E\+T\+U\+RN} = 5, 
+\newline
+{\bfseries T\+H\+I\+S\+F\+N\+R\+E\+T\+U\+RN} = 5, 
+{\bfseries I\+N\+D\+I\+R\+E\+CT} = 6, 
+{\bfseries W\+O\+R\+S\+T\+R\+A\+NK} = 7
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParamMeasure_a75cc959002e4d340d6f2196c48da1acf}\label{classParamMeasure_a75cc959002e4d340d6f2196c48da1acf}} 
+{\bfseries Param\+Measure} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 sz, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$dt, Param\+I\+D\+IO io\+\_\+in)
+\item 
+\mbox{\Hypertarget{classParamMeasure_a57b2f96e633cb22786292e004b9e37ae}\label{classParamMeasure_a57b2f96e633cb22786292e004b9e37ae}} 
+void {\bfseries calculate\+Rank} (bool best, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$basevn, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ignoreop)
+\item 
+\mbox{\Hypertarget{classParamMeasure_a53d9f454f92708e2e61a60c83222fe7a}\label{classParamMeasure_a53d9f454f92708e2e61a60c83222fe7a}} 
+void {\bfseries save\+Xml} (ostream \&s, string tag, bool moredetail) const
+\item 
+\mbox{\Hypertarget{classParamMeasure_a3f7a68d5a3978a999dd0690308710655}\label{classParamMeasure_a3f7a68d5a3978a999dd0690308710655}} 
+void {\bfseries save\+Pretty} (ostream \&s, bool moredetail) const
+\item 
+\mbox{\Hypertarget{classParamMeasure_a225033f51cfb4efe11c15e500de4217f}\label{classParamMeasure_a225033f51cfb4efe11c15e500de4217f}} 
+int4 {\bfseries get\+Measure} (void) const
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+paramid.\+hh\item 
+paramid.\+cc\end{DoxyCompactItemize}

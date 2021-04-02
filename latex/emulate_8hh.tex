@@ -1,0 +1,47 @@
+\hypertarget{emulate_8hh}{}\doxysection{emulate.\+hh File Reference}
+\label{emulate_8hh}\index{emulate.hh@{emulate.hh}}
+
+
+Classes for emulating p-\/code.  
+
+
+{\ttfamily \#include \char`\"{}memstate.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}translate.\+hh\char`\"{}}\newline
+Include dependency graph for emulate.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{emulate_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{emulate_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBreakTable}{Break\+Table}}
+\begin{DoxyCompactList}\small\item\em A collection of breakpoints for the emulator. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}}
+\begin{DoxyCompactList}\small\item\em A breakpoint object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classBreakTableCallBack}{Break\+Table\+Call\+Back}}
+\begin{DoxyCompactList}\small\item\em A basic instantiation of a breakpoint table. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEmulate}{Emulate}}
+\begin{DoxyCompactList}\small\item\em A pcode-\/based emulator interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEmulateMemory}{Emulate\+Memory}}
+\begin{DoxyCompactList}\small\item\em An abstract \mbox{\hyperlink{classEmulate}{Emulate}} class using a \mbox{\hyperlink{classMemoryState}{Memory\+State}} object as the backing machine state. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPcodeEmitCache}{Pcode\+Emit\+Cache}}
+\begin{DoxyCompactList}\small\item\em P-\/code emitter that dumps its raw Varnodes and Pcode\+Ops to an in memory cache. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEmulatePcodeCache}{Emulate\+Pcode\+Cache}}
+\begin{DoxyCompactList}\small\item\em A S\+L\+E\+I\+GH based implementation of the \mbox{\hyperlink{classEmulate}{Emulate}} interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes for emulating p-\/code. 
+

@@ -1,0 +1,112 @@
+\hypertarget{classSubfloatFlow}{}\doxysection{Subfloat\+Flow Class Reference}
+\label{classSubfloatFlow}\index{SubfloatFlow@{SubfloatFlow}}
+
+
+Class for tracing changes of precision in floating point variables.  
+
+
+
+
+{\ttfamily \#include $<$subflow.\+hh$>$}
+
+
+
+Inheritance diagram for Subfloat\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classSubfloatFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Subfloat\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classSubfloatFlow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSubfloatFlow_a513a571ec4845bd6753dff960f6fafbf}{Subfloat\+Flow}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$root, int4 prec)
+\item 
+virtual bool \mbox{\hyperlink{classSubfloatFlow_a4303e6fb3f259339fc66affdbc4bf613}{preserve\+Address}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, int4 bit\+Size, int4 lsb\+Offset) const
+\begin{DoxyCompactList}\small\item\em Should the address of the given \mbox{\hyperlink{classVarnode}{Varnode}} be preserved when constructing a piece. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSubfloatFlow_a3dcd19f6211a8050c6a24759b1c90bd5}{do\+Trace}} (void)
+\begin{DoxyCompactList}\small\item\em Trace logical value as far as possible. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Class for tracing changes of precision in floating point variables. 
+
+It follows the flow of a logical lower precision value stored in higher precision locations and then rewrites the data-\/flow in terms of the lower precision, eliminating the precision conversions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSubfloatFlow_a513a571ec4845bd6753dff960f6fafbf}\label{classSubfloatFlow_a513a571ec4845bd6753dff960f6fafbf}} 
+\index{SubfloatFlow@{SubfloatFlow}!SubfloatFlow@{SubfloatFlow}}
+\index{SubfloatFlow@{SubfloatFlow}!SubfloatFlow@{SubfloatFlow}}
+\doxysubsubsection{\texorpdfstring{SubfloatFlow()}{SubfloatFlow()}}
+{\footnotesize\ttfamily Subfloat\+Flow\+::\+Subfloat\+Flow (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{f,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{root,  }\item[{int4}]{prec }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & is the function being transformed \\
+\hline
+{\em root} & is the start \mbox{\hyperlink{classVarnode}{Varnode}} containing the logical value \\
+\hline
+{\em prec} & is the precision to assume for the logical value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSubfloatFlow_a3dcd19f6211a8050c6a24759b1c90bd5}\label{classSubfloatFlow_a3dcd19f6211a8050c6a24759b1c90bd5}} 
+\index{SubfloatFlow@{SubfloatFlow}!doTrace@{doTrace}}
+\index{doTrace@{doTrace}!SubfloatFlow@{SubfloatFlow}}
+\doxysubsubsection{\texorpdfstring{doTrace()}{doTrace()}}
+{\footnotesize\ttfamily bool Subfloat\+Flow\+::do\+Trace (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Trace logical value as far as possible. 
+
+The interpretation that the root \mbox{\hyperlink{classVarnode}{Varnode}} contains a logical value with smaller precision is pushed through the data-\/flow. If the interpretation is inconsistent, {\bfseries{false}} is returned. Otherwise a transform is constructed that makes the smaller precision the explicit size of Varnodes within the data-\/flow. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a transform consistent with the given precision can be built 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSubfloatFlow_a4303e6fb3f259339fc66affdbc4bf613}\label{classSubfloatFlow_a4303e6fb3f259339fc66affdbc4bf613}} 
+\index{SubfloatFlow@{SubfloatFlow}!preserveAddress@{preserveAddress}}
+\index{preserveAddress@{preserveAddress}!SubfloatFlow@{SubfloatFlow}}
+\doxysubsubsection{\texorpdfstring{preserveAddress()}{preserveAddress()}}
+{\footnotesize\ttfamily bool Subfloat\+Flow\+::preserve\+Address (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{int4}]{bit\+Size,  }\item[{int4}]{lsb\+Offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Should the address of the given \mbox{\hyperlink{classVarnode}{Varnode}} be preserved when constructing a piece. 
+
+A new \mbox{\hyperlink{classVarnode}{Varnode}} will be created that represents a logical piece of the given \mbox{\hyperlink{classVarnode}{Varnode}}. This routine determines whether the new \mbox{\hyperlink{classVarnode}{Varnode}} should be constructed using storage which overlaps the given \mbox{\hyperlink{classVarnode}{Varnode}}. It returns {\bfseries{true}} if overlapping storage should be used, {\bfseries{false}} if the new \mbox{\hyperlink{classVarnode}{Varnode}} should be constructed as a unique temporary. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em bit\+Size} & is the logical size of the \mbox{\hyperlink{classVarnode}{Varnode}} piece being constructed \\
+\hline
+{\em lsb\+Offset} & is the least significant bit position of the logical value within the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if overlapping storage should be used in construction 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTransformManager_ae2b948f919c95e2f4a3b000a75d8ffbe}{Transform\+Manager}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{subflow_8hh}{subflow.\+hh}}\item 
+subflow.\+cc\end{DoxyCompactItemize}

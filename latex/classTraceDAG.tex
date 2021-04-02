@@ -1,0 +1,81 @@
+\hypertarget{classTraceDAG}{}\doxysection{Trace\+D\+AG Class Reference}
+\label{classTraceDAG}\index{TraceDAG@{TraceDAG}}
+
+
+Algorithm for selecting unstructured edges based an Directed Acyclic Graphs (D\+AG)  
+
+
+
+
+{\ttfamily \#include $<$blockaction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTraceDAG_adc523c94f57b57f19832a0080d478c7b}{Trace\+D\+AG}} (list$<$ \mbox{\hyperlink{classFloatingEdge}{Floating\+Edge}} $>$ \&lg)
+\begin{DoxyCompactList}\small\item\em Clear the {\bfseries{visitcount}} field of any \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} we have modified. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTraceDAG_a353ced99fd604015d988682b915296d9}\label{classTraceDAG_a353ced99fd604015d988682b915296d9}} 
+\mbox{\hyperlink{classTraceDAG_a353ced99fd604015d988682b915296d9}{$\sim$\+Trace\+D\+AG}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTraceDAG_a6d28fcd17f9782ecb53d790bf2b4264c}{initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Create the initial Branch\+Point and Block\+Trace objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTraceDAG_a31c7a68e8e3380ff8b0d4a7af00cf2e4}{push\+Branches}} (void)
+\begin{DoxyCompactList}\small\item\em Push the trace through, removing edges as necessary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Algorithm for selecting unstructured edges based an Directed Acyclic Graphs (D\+AG) 
+
+With the exception of the back edges in loops, structured code tends to form a D\+AG. Within the D\+AG, all building blocks of structured code have a single node entry point and (at most) one exit block. Given root points, this class traces edges with this kind of structure. Paths can recursively split at any point, starting a new {\itshape active} Branch\+Point, but the Branch\+Point can\textquotesingle{}t be {\itshape retired} until all paths emanating from its start either terminate or come back together at the same \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} node. Once a Branch\+Point is retired, all the edges traversed from the start \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to the end \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} are likely structurable. After pushing the traces as far as possible and retiring as much as possible, any {\itshape active} edge left is a candidate for an unstructured branch.
+
+Ultimately this produces a list of {\itshape likely} {\itshape gotos}, which is used whenever the structuring algorithm (\mbox{\hyperlink{classActionBlockStructure}{Action\+Block\+Structure}}) gets stuck.
+
+The tracing can be restricted to a {\itshape loopbody} by setting the top \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} of the loop as the root, and the loop exit block as the finish block. Additionally, any edges that exit the loop should be marked using \mbox{\hyperlink{classLoopBody_a24f6fd993c0e4fe0684f9fa4446e9e9c}{Loop\+Body\+::set\+Exit\+Marks()}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTraceDAG_adc523c94f57b57f19832a0080d478c7b}\label{classTraceDAG_adc523c94f57b57f19832a0080d478c7b}} 
+\index{TraceDAG@{TraceDAG}!TraceDAG@{TraceDAG}}
+\index{TraceDAG@{TraceDAG}!TraceDAG@{TraceDAG}}
+\doxysubsubsection{\texorpdfstring{TraceDAG()}{TraceDAG()}}
+{\footnotesize\ttfamily Trace\+D\+A\+G\+::\+Trace\+D\+AG (\begin{DoxyParamCaption}\item[{list$<$ \mbox{\hyperlink{classFloatingEdge}{Floating\+Edge}} $>$ \&}]{lg }\end{DoxyParamCaption})}
+
+
+
+Clear the {\bfseries{visitcount}} field of any \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} we have modified. 
+
+Construct given the container for likely unstructured edges
+
+Prepare for a new trace using the provided storage for the likely unstructured edges that will be discovered. 
+\begin{DoxyParams}{Parameters}
+{\em lg} & is the container for likely unstructured edges \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTraceDAG_a6d28fcd17f9782ecb53d790bf2b4264c}\label{classTraceDAG_a6d28fcd17f9782ecb53d790bf2b4264c}} 
+\index{TraceDAG@{TraceDAG}!initialize@{initialize}}
+\index{initialize@{initialize}!TraceDAG@{TraceDAG}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Trace\+D\+A\+G\+::initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Create the initial Branch\+Point and Block\+Trace objects. 
+
+Given the registered root Flow\+Blocks, create the initial (virtual) Branch\+Point and an associated Block\+Trace for each root \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \mbox{\Hypertarget{classTraceDAG_a31c7a68e8e3380ff8b0d4a7af00cf2e4}\label{classTraceDAG_a31c7a68e8e3380ff8b0d4a7af00cf2e4}} 
+\index{TraceDAG@{TraceDAG}!pushBranches@{pushBranches}}
+\index{pushBranches@{pushBranches}!TraceDAG@{TraceDAG}}
+\doxysubsubsection{\texorpdfstring{pushBranches()}{pushBranches()}}
+{\footnotesize\ttfamily void Trace\+D\+A\+G\+::push\+Branches (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Push the trace through, removing edges as necessary. 
+
+From the root Branch\+Point, recursively push the trace. At any point where pushing is no longer possible, select an appropriate edge to remove and add it to the list of likely unstructured edges. Then continue pushing the trace. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{blockaction_8hh}{blockaction.\+hh}}\item 
+blockaction.\+cc\end{DoxyCompactItemize}

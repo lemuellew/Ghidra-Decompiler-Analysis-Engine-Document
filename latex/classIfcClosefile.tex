@@ -1,0 +1,62 @@
+\hypertarget{classIfcClosefile}{}\doxysection{Ifc\+Closefile Class Reference}
+\label{classIfcClosefile}\index{IfcClosefile@{IfcClosefile}}
+
+
+Close command, closing the current bulk output file.  
+
+
+
+
+Inheritance diagram for Ifc\+Closefile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classIfcClosefile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Closefile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classIfcClosefile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcClosefile_afb061815b1fae3cf300afb8a179a6deb}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Close command, closing the current bulk output file. 
+
+Subsequent bulk output is redirected to the basic interface output stream 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcClosefile_afb061815b1fae3cf300afb8a179a6deb}\label{classIfcClosefile_afb061815b1fae3cf300afb8a179a6deb}} 
+\index{IfcClosefile@{IfcClosefile}!execute@{execute}}
+\index{execute@{execute}!IfcClosefile@{IfcClosefile}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Closefile\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_8hh}{interface.\+hh}}\item 
+interface.\+cc\end{DoxyCompactItemize}

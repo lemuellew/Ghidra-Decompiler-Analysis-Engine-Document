@@ -1,0 +1,105 @@
+\hypertarget{classCastStrategyJava}{}\doxysection{Cast\+Strategy\+Java Class Reference}
+\label{classCastStrategyJava}\index{CastStrategyJava@{CastStrategyJava}}
+
+
+Casting strategies that are specific to the Java language.  
+
+
+
+
+{\ttfamily \#include $<$cast.\+hh$>$}
+
+
+
+Inheritance diagram for Cast\+Strategy\+Java\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classCastStrategyJava__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cast\+Strategy\+Java\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCastStrategyJava__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classCastStrategyJava_a6a9d4ec935035f52d214326cb6e0a33f}{cast\+Standard}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$reqtype, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$curtype, bool care\+\_\+uint\+\_\+int, bool care\+\_\+ptr\+\_\+uint) const
+\begin{DoxyCompactList}\small\item\em Does there need to be a visible cast between the given data-\/types. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyJava_a6c8536d19ca90746652c78d0781e98b6}{is\+Zext\+Cast}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$intype) const
+\begin{DoxyCompactList}\small\item\em Is zero-\/extending an input data-\/type, producing an output data-\/type, considered a cast. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Casting strategies that are specific to the Java language. 
+
+This is nearly identical to the strategy for C, but there is some change to account for the way object references are encoded as pointer data-\/types within the decompiler\textquotesingle{}s data-\/type system. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCastStrategyJava_a6a9d4ec935035f52d214326cb6e0a33f}\label{classCastStrategyJava_a6a9d4ec935035f52d214326cb6e0a33f}} 
+\index{CastStrategyJava@{CastStrategyJava}!castStandard@{castStandard}}
+\index{castStandard@{castStandard}!CastStrategyJava@{CastStrategyJava}}
+\doxysubsubsection{\texorpdfstring{castStandard()}{castStandard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Cast\+Strategy\+Java\+::cast\+Standard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{reqtype,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{curtype,  }\item[{bool}]{care\+\_\+uint\+\_\+int,  }\item[{bool}]{care\+\_\+ptr\+\_\+uint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Does there need to be a visible cast between the given data-\/types. 
+
+The cast is from a {\itshape current} data-\/type to an {\itshape expected} data-\/type. N\+U\+LL is returned if no cast is required, otherwise the data-\/type to cast to (usually the expected data-\/type) is returned. 
+\begin{DoxyParams}{Parameters}
+{\em reqtype} & is the {\itshape expected} data-\/type \\
+\hline
+{\em curtype} & is the {\itshape current} data-\/type \\
+\hline
+{\em care\+\_\+uint\+\_\+int} & is {\bfseries{true}} if we care about a change in signedness \\
+\hline
+{\em care\+\_\+ptr\+\_\+uint} & is {\bfseries{true}} if we care about conversions between pointers and unsigned values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL to indicate no cast, or the data-\/type to cast to 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCastStrategyC_a057c06b312662b80be294439465be4ff}{Cast\+StrategyC}}.
+
+\mbox{\Hypertarget{classCastStrategyJava_a6c8536d19ca90746652c78d0781e98b6}\label{classCastStrategyJava_a6c8536d19ca90746652c78d0781e98b6}} 
+\index{CastStrategyJava@{CastStrategyJava}!isZextCast@{isZextCast}}
+\index{isZextCast@{isZextCast}!CastStrategyJava@{CastStrategyJava}}
+\doxysubsubsection{\texorpdfstring{isZextCast()}{isZextCast()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+Java\+::is\+Zext\+Cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{intype }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Is zero-\/extending an input data-\/type, producing an output data-\/type, considered a cast. 
+
+Data-\/types must be provided from the input and output of an I\+N\+T\+\_\+\+Z\+E\+XT operation. 
+\begin{DoxyParams}{Parameters}
+{\em outtype} & is the output data-\/type \\
+\hline
+{\em intype} & is the input data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the I\+N\+T\+\_\+\+Z\+E\+XT should be represented as a cast 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classCastStrategyC_a5c4b61d624a78a2e6f16bf2902e5b8e6}{Cast\+StrategyC}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cast_8hh}{cast.\+hh}}\item 
+cast.\+cc\end{DoxyCompactItemize}

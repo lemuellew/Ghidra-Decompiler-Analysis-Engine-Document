@@ -1,0 +1,166 @@
+\hypertarget{classRange}{}\doxysection{Range Class Reference}
+\label{classRange}\index{Range@{Range}}
+
+
+A contiguous range of bytes in some address space.  
+
+
+
+
+{\ttfamily \#include $<$address.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classRange_a208021cd8c43af2067942ae261fd833b}{Range}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$s, uintb f, uintb l)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classRange}{Range}} from offsets. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classRange_af5cc1b4a92034ab87269b25950f0fe8f}{get\+Last\+Addr\+Open}} (const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage) const
+\begin{DoxyCompactList}\small\item\em Get address of first byte after {\bfseries{this}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRange_a88b49f65bc500d33d15941f053db4e11}{contains}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Determine if the address is in {\bfseries{this}} \mbox{\hyperlink{classRange}{Range}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRange_af79209e97d5e8df1e26846b478722909}{operator$<$}} (const \mbox{\hyperlink{classRange}{Range}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Sorting operator for Ranges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRange_a6b1d50b9238ca3d02a08c07f81e1b7c5}{print\+Bounds}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print {\bfseries{this}} \mbox{\hyperlink{classRange}{Range}} to a stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRange_a81bddd68f2b25699cba18e279d67e75c}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} \mbox{\hyperlink{classRange}{Range}} to an X\+ML stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRange_ad88a42471281f5bc6abf1dc1fb79f12b}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} from X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRange_aefb7602862bfe0af2bf90410672c7c0d}\label{classRange_aefb7602862bfe0af2bf90410672c7c0d}} 
+class {\bfseries Range\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A contiguous range of bytes in some address space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classRange_a208021cd8c43af2067942ae261fd833b}\label{classRange_a208021cd8c43af2067942ae261fd833b}} 
+\index{Range@{Range}!Range@{Range}}
+\index{Range@{Range}!Range@{Range}}
+\doxysubsubsection{\texorpdfstring{Range()}{Range()}}
+{\footnotesize\ttfamily Range\+::\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{s,  }\item[{uintb}]{f,  }\item[{uintb}]{l }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{classRange}{Range}} from offsets. 
+
+Offsets must expressed in {\itshape bytes} as opposed to addressable {\itshape words} 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the address space containing the range \\
+\hline
+{\em f} & is the offset of the first byte in the range \\
+\hline
+{\em l} & is the offset of the last byte in the range \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRange_a88b49f65bc500d33d15941f053db4e11}\label{classRange_a88b49f65bc500d33d15941f053db4e11}} 
+\index{Range@{Range}!contains@{contains}}
+\index{contains@{contains}!Range@{Range}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Range\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determine if the address is in {\bfseries{this}} \mbox{\hyperlink{classRange}{Range}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} to test for containment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if addr is in {\bfseries{this}} \mbox{\hyperlink{classRange}{Range}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRange_af5cc1b4a92034ab87269b25950f0fe8f}\label{classRange_af5cc1b4a92034ab87269b25950f0fe8f}} 
+\index{Range@{Range}!getLastAddrOpen@{getLastAddrOpen}}
+\index{getLastAddrOpen@{getLastAddrOpen}!Range@{Range}}
+\doxysubsubsection{\texorpdfstring{getLastAddrOpen()}{getLastAddrOpen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Range\+::get\+Last\+Addr\+Open (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption}) const}
+
+
+
+Get address of first byte after {\bfseries{this}}. 
+
+Get the last address +1, updating the space, or returning the extremal address if necessary 
+\begin{DoxyParams}{Parameters}
+{\em manage} & is used to fetch the next address space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRange_af79209e97d5e8df1e26846b478722909}\label{classRange_af79209e97d5e8df1e26846b478722909}} 
+\index{Range@{Range}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Range@{Range}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Range\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRange}{Range}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sorting operator for Ranges. 
+
+Compare based on address space, then the starting offset 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the \mbox{\hyperlink{classRange}{Range}} to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} comes before op2 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRange_a6b1d50b9238ca3d02a08c07f81e1b7c5}\label{classRange_a6b1d50b9238ca3d02a08c07f81e1b7c5}} 
+\index{Range@{Range}!printBounds@{printBounds}}
+\index{printBounds@{printBounds}!Range@{Range}}
+\doxysubsubsection{\texorpdfstring{printBounds()}{printBounds()}}
+{\footnotesize\ttfamily void Range\+::print\+Bounds (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print {\bfseries{this}} \mbox{\hyperlink{classRange}{Range}} to a stream. 
+
+Output a description of this \mbox{\hyperlink{classRange}{Range}} like\+: ram\+: 7f-\/9c 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRange_ad88a42471281f5bc6abf1dc1fb79f12b}\label{classRange_ad88a42471281f5bc6abf1dc1fb79f12b}} 
+\index{Range@{Range}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!Range@{Range}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Range\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} from X\+ML stream. 
+
+Reconstruct this object from an X\+ML $<$range$>$ element 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+{\em manage} & is the space manage for recovering \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} objects \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRange_a81bddd68f2b25699cba18e279d67e75c}\label{classRange_a81bddd68f2b25699cba18e279d67e75c}} 
+\index{Range@{Range}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!Range@{Range}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Range\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save {\bfseries{this}} \mbox{\hyperlink{classRange}{Range}} to an X\+ML stream. 
+
+Write this object to a stream as a $<$range$>$ tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{address_8hh}{address.\+hh}}\item 
+address.\+cc\end{DoxyCompactItemize}

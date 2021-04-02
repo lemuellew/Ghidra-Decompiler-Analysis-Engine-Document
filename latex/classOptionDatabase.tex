@@ -1,0 +1,111 @@
+\hypertarget{classOptionDatabase}{}\doxysection{Option\+Database Class Reference}
+\label{classOptionDatabase}\index{OptionDatabase@{OptionDatabase}}
+
+
+A Dispatcher for possible \mbox{\hyperlink{classArchOption}{Arch\+Option}} commands.  
+
+
+
+
+{\ttfamily \#include $<$options.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classOptionDatabase_ae5f5fef1aa229bae7fa2188cab44275a}{Option\+Database}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Construct given the owning \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classOptionDatabase_a5b4621e877dfce85e719f9bdf11e275f}\label{classOptionDatabase_a5b4621e877dfce85e719f9bdf11e275f}} 
+\mbox{\hyperlink{classOptionDatabase_a5b4621e877dfce85e719f9bdf11e275f}{$\sim$\+Option\+Database}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classOptionDatabase_aaec7650371cbbb2a17a88393347c9ffc}{set}} (const string \&nm, const string \&p1=\char`\"{}\char`\"{}, const string \&p2=\char`\"{}\char`\"{}, const string \&p3=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Issue an option command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOptionDatabase_ae8bf1e8bf96b3bbb863ddd6f99214d5b}{parse\+One}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Unwrap and execute a single option X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOptionDatabase_afe0ea0f1c7a7cd2591ac159027082149}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Execute a series of {\itshape option} {\itshape commands} passed by X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A Dispatcher for possible \mbox{\hyperlink{classArchOption}{Arch\+Option}} commands. 
+
+An {\bfseries{option}} {\bfseries{command}} is a specific request by a user to change the configuration options for an \mbox{\hyperlink{classArchitecture}{Architecture}}. This class takes care of dispatching the command to the proper \mbox{\hyperlink{classArchOption}{Arch\+Option}} derived class, which does the work of actually modifying the configuration. The command is issued either through the \mbox{\hyperlink{classOptionDatabase_aaec7650371cbbb2a17a88393347c9ffc}{set()}} method directly, or via an X\+ML tag handed to the \mbox{\hyperlink{classOptionDatabase_afe0ea0f1c7a7cd2591ac159027082149}{restore\+Xml()}} method. The \mbox{\hyperlink{classOptionDatabase_afe0ea0f1c7a7cd2591ac159027082149}{restore\+Xml()}} method expects an $<$optionslist$>$ tag with one or more sub-\/tags. The sub-\/tag names match the registered name of the option and have up to three child tags, $<$param1$>$, $<$param2$>$ and $<$param3$>$, whose content is provided as the optional parameters to command. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classOptionDatabase_ae5f5fef1aa229bae7fa2188cab44275a}\label{classOptionDatabase_ae5f5fef1aa229bae7fa2188cab44275a}} 
+\index{OptionDatabase@{OptionDatabase}!OptionDatabase@{OptionDatabase}}
+\index{OptionDatabase@{OptionDatabase}!OptionDatabase@{OptionDatabase}}
+\doxysubsubsection{\texorpdfstring{OptionDatabase()}{OptionDatabase()}}
+{\footnotesize\ttfamily Option\+Database\+::\+Option\+Database (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Construct given the owning \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+Register all possible \mbox{\hyperlink{classArchOption}{Arch\+Option}} objects with this database and set-\/up the parsing map. 
+\begin{DoxyParams}{Parameters}
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} owning {\bfseries{this}} database \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptionDatabase_ae8bf1e8bf96b3bbb863ddd6f99214d5b}\label{classOptionDatabase_ae8bf1e8bf96b3bbb863ddd6f99214d5b}} 
+\index{OptionDatabase@{OptionDatabase}!parseOne@{parseOne}}
+\index{parseOne@{parseOne}!OptionDatabase@{OptionDatabase}}
+\doxysubsubsection{\texorpdfstring{parseOne()}{parseOne()}}
+{\footnotesize\ttfamily void Option\+Database\+::parse\+One (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Unwrap and execute a single option X\+ML tag. 
+
+Unwrap the name and optional parameters and call method \mbox{\hyperlink{classOptionDatabase_aaec7650371cbbb2a17a88393347c9ffc}{set()}} 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the command X\+ML tag \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOptionDatabase_afe0ea0f1c7a7cd2591ac159027082149}\label{classOptionDatabase_afe0ea0f1c7a7cd2591ac159027082149}} 
+\index{OptionDatabase@{OptionDatabase}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!OptionDatabase@{OptionDatabase}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Option\+Database\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Execute a series of {\itshape option} {\itshape commands} passed by X\+ML. 
+
+Parse the $<$optionslist$>$ tag, treating each sub-\/tag as an {\itshape option} {\itshape command}. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the $<$optionslist$>$ tag \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classOptionDatabase_aaec7650371cbbb2a17a88393347c9ffc}\label{classOptionDatabase_aaec7650371cbbb2a17a88393347c9ffc}} 
+\index{OptionDatabase@{OptionDatabase}!set@{set}}
+\index{set@{set}!OptionDatabase@{OptionDatabase}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily string Option\+Database\+::set (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const string \&}]{p1 = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const string \&}]{p2 = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const string \&}]{p3 = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Issue an option command. 
+
+Perform an {\itshape option} {\itshape command} directly, given its name and optional parameters 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the registered name of the option \\
+\hline
+{\em p1} & is the first optional parameter \\
+\hline
+{\em p2} & is the second optional parameter \\
+\hline
+{\em p3} & is the third optional parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the confirmation/failure method after trying to apply the option 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

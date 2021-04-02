@@ -1,0 +1,286 @@
+\hypertarget{classCover}{}\doxysection{Cover Class Reference}
+\label{classCover}\index{Cover@{Cover}}
+
+
+A description of the topological scope of a single variable object.  
+
+
+
+
+{\ttfamily \#include $<$cover.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int4 \mbox{\hyperlink{classCover_a68814b7596c3f4be6452792ca2961cb7}{compare\+To}} (const \mbox{\hyperlink{classCover}{Cover}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Give ordering of {\bfseries{this}} and another \mbox{\hyperlink{classCover}{Cover}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \& \mbox{\hyperlink{classCover_aa795f795e17e4860b810b068a61142ef}{get\+Cover\+Block}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} corresponding to the i-\/th block. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCover_ad296bbe5ac0596e41c9d65d11aeb3d05}{intersect}} (const \mbox{\hyperlink{classCover}{Cover}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Characterize the intersection between {\bfseries{this}} and another \mbox{\hyperlink{classCover}{Cover}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCover_acdd4be001eb6eda1bf9c6fe35c834736}{intersect\+By\+Block}} (int4 blk, const \mbox{\hyperlink{classCover}{Cover}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Characterize the intersection on a specific block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCover_ab5c8fdd8ca6d89f0d8fd8fde1170f92c}{intersect\+List}} (vector$<$ int4 $>$ \&listout, const \mbox{\hyperlink{classCover}{Cover}} \&op2, int4 level) const
+\begin{DoxyCompactList}\small\item\em Generate a list of blocks that intersect. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCover_a5db9b2042d36daf2bead4a47bddd8349}{contain}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 max) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} contain the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classCover_a56984085c138cc78b1544590d82fd872}{contain\+Varnode\+Def}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Check the definition of a \mbox{\hyperlink{classVarnode}{Varnode}} for containment. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCover_a222e454f0fbb979032978828e97fc8ef}{merge}} (const \mbox{\hyperlink{classCover}{Cover}} \&op2)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classMerge}{Merge}} {\bfseries{this}} with another \mbox{\hyperlink{classCover}{Cover}} block by block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCover_a1d437f9e8a60e407587935411ed6d546}{rebuild}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Reset {\bfseries{this}} based on def-\/use of a single \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCover_a462cc65e034e09963b612d1d3b1faa31}{add\+Def\+Point}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Reset to the single point where the given \mbox{\hyperlink{classVarnode}{Varnode}} is defined. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCover_ab456608e95995c8005aeac877fdac731}{add\+Ref\+Point}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ref, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Add a variable read to {\bfseries{this}} \mbox{\hyperlink{classCover}{Cover}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCover_acafb2a8598050f4c282c8df5bd937752}{print}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump a description of {\bfseries{this}} cover to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A description of the topological scope of a single variable object. 
+
+The {\bfseries{topological}} {\bfseries{scope}} of a variable within a function is the set of locations within the code of the function where that variable holds a variable. For the decompiler, a high-\/level variable in this sense, \mbox{\hyperlink{classHighVariable}{High\+Variable}}, is a collection of \mbox{\hyperlink{classVarnode}{Varnode}} objects. In order to merge Varnodes into a \mbox{\hyperlink{classHighVariable}{High\+Variable}}, the topological scope of each \mbox{\hyperlink{classVarnode}{Varnode}} must not intersect because that would mean the high-\/level variable holds different values at the same point in the function.
+
+Internally this is implemented as a map from basic block to their non-\/empty \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCover_a462cc65e034e09963b612d1d3b1faa31}\label{classCover_a462cc65e034e09963b612d1d3b1faa31}} 
+\index{Cover@{Cover}!addDefPoint@{addDefPoint}}
+\index{addDefPoint@{addDefPoint}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{addDefPoint()}{addDefPoint()}}
+{\footnotesize\ttfamily void Cover\+::add\+Def\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Reset to the single point where the given \mbox{\hyperlink{classVarnode}{Varnode}} is defined. 
+
+Any previous cover is removed. Calling this with an input \mbox{\hyperlink{classVarnode}{Varnode}} still produces a valid \mbox{\hyperlink{classCover}{Cover}}. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCover_ab456608e95995c8005aeac877fdac731}\label{classCover_ab456608e95995c8005aeac877fdac731}} 
+\index{Cover@{Cover}!addRefPoint@{addRefPoint}}
+\index{addRefPoint@{addRefPoint}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{addRefPoint()}{addRefPoint()}}
+{\footnotesize\ttfamily void Cover\+::add\+Ref\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{ref,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Add a variable read to {\bfseries{this}} \mbox{\hyperlink{classCover}{Cover}}. 
+
+Given a \mbox{\hyperlink{classVarnode}{Varnode}} being read and the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} which reads it, add the point of the read to {\bfseries{this}} and recursively fill in backwards until we run into existing cover. 
+\begin{DoxyParams}{Parameters}
+{\em ref} & is the reading \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} being read \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCover_a68814b7596c3f4be6452792ca2961cb7}\label{classCover_a68814b7596c3f4be6452792ca2961cb7}} 
+\index{Cover@{Cover}!compareTo@{compareTo}}
+\index{compareTo@{compareTo}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{compareTo()}{compareTo()}}
+{\footnotesize\ttfamily int4 Cover\+::compare\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCover}{Cover}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Give ordering of {\bfseries{this}} and another \mbox{\hyperlink{classCover}{Cover}}. 
+
+Compare {\bfseries{this}} with another \mbox{\hyperlink{classCover}{Cover}} by comparing just the indices of the first blocks respectively that are partly covered. Return -\/1, 0, or 1 if {\bfseries{this}} \mbox{\hyperlink{classCover}{Cover}}\textquotesingle{}s first block has a smaller, equal, or bigger index than the other \mbox{\hyperlink{classCover}{Cover}}\textquotesingle{}s first block. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other \mbox{\hyperlink{classCover}{Cover}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the comparison value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCover_a5db9b2042d36daf2bead4a47bddd8349}\label{classCover_a5db9b2042d36daf2bead4a47bddd8349}} 
+\index{Cover@{Cover}!contain@{contain}}
+\index{contain@{contain}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{contain()}{contain()}}
+{\footnotesize\ttfamily bool Cover\+::contain (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{max }\end{DoxyParamCaption}) const}
+
+
+
+Does {\bfseries{this}} contain the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em max} & is 1 to test for any containment, 2 to force interior containment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there is containment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCover_a56984085c138cc78b1544590d82fd872}\label{classCover_a56984085c138cc78b1544590d82fd872}} 
+\index{Cover@{Cover}!containVarnodeDef@{containVarnodeDef}}
+\index{containVarnodeDef@{containVarnodeDef}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{containVarnodeDef()}{containVarnodeDef()}}
+{\footnotesize\ttfamily int4 Cover\+::contain\+Varnode\+Def (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const}
+
+
+
+Check the definition of a \mbox{\hyperlink{classVarnode}{Varnode}} for containment. 
+
+If the given \mbox{\hyperlink{classVarnode}{Varnode}} has a defining \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} this is checked for containment. If the \mbox{\hyperlink{classVarnode}{Varnode}} is an input, check if {\bfseries{this}} covers the start of the function.
+
+Return\+:
+\begin{DoxyItemize}
+\item 0 if cover does not contain varnode definition
+\item 1 if there if it is contained in interior
+\item 2 if the defining points intersect
+\item 3 if \mbox{\hyperlink{classCover}{Cover}}\textquotesingle{}s tail is the varnode definition
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the containment characterization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCover_aa795f795e17e4860b810b068a61142ef}\label{classCover_aa795f795e17e4860b810b068a61142ef}} 
+\index{Cover@{Cover}!getCoverBlock@{getCoverBlock}}
+\index{getCoverBlock@{getCoverBlock}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{getCoverBlock()}{getCoverBlock()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} \& Cover\+::get\+Cover\+Block (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Get the \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} corresponding to the i-\/th block. 
+
+Return a representative \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} describing how much of the given block is covered by {\bfseries{this}} 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the given block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the corresponding \mbox{\hyperlink{classCoverBlock}{Cover\+Block}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCover_ad296bbe5ac0596e41c9d65d11aeb3d05}\label{classCover_ad296bbe5ac0596e41c9d65d11aeb3d05}} 
+\index{Cover@{Cover}!intersect@{intersect}}
+\index{intersect@{intersect}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{intersect()}{intersect()}}
+{\footnotesize\ttfamily int4 Cover\+::intersect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCover}{Cover}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Characterize the intersection between {\bfseries{this}} and another \mbox{\hyperlink{classCover}{Cover}}. 
+
+Return
+\begin{DoxyItemize}
+\item 0 if there is no intersection
+\item 1 if the only intersection is on a boundary point
+\item 2 if the intersection contains a range of p-\/code ops
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other \mbox{\hyperlink{classCover}{Cover}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the intersection characterization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCover_acdd4be001eb6eda1bf9c6fe35c834736}\label{classCover_acdd4be001eb6eda1bf9c6fe35c834736}} 
+\index{Cover@{Cover}!intersectByBlock@{intersectByBlock}}
+\index{intersectByBlock@{intersectByBlock}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{intersectByBlock()}{intersectByBlock()}}
+{\footnotesize\ttfamily int4 Cover\+::intersect\+By\+Block (\begin{DoxyParamCaption}\item[{int4}]{blk,  }\item[{const \mbox{\hyperlink{classCover}{Cover}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Characterize the intersection on a specific block. 
+
+Looking only at the given block, Return
+\begin{DoxyItemize}
+\item 0 if there is no intersection
+\item 1 if the only intersection is on a boundary point
+\item 2 if the intersection contains a range of p-\/code ops
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em blk} & is the index of the given block \\
+\hline
+{\em op2} & is the other \mbox{\hyperlink{classCover}{Cover}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the characterization 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCover_ab5c8fdd8ca6d89f0d8fd8fde1170f92c}\label{classCover_ab5c8fdd8ca6d89f0d8fd8fde1170f92c}} 
+\index{Cover@{Cover}!intersectList@{intersectList}}
+\index{intersectList@{intersectList}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{intersectList()}{intersectList()}}
+{\footnotesize\ttfamily void Cover\+::intersect\+List (\begin{DoxyParamCaption}\item[{vector$<$ int4 $>$ \&}]{listout,  }\item[{const \mbox{\hyperlink{classCover}{Cover}} \&}]{op2,  }\item[{int4}]{level }\end{DoxyParamCaption}) const}
+
+
+
+Generate a list of blocks that intersect. 
+
+For each block for which {\bfseries{this}} and another \mbox{\hyperlink{classCover}{Cover}} intersect, and the block\textquotesingle{}s index to a result list if the type of intersection exceeds a characterization level. 
+\begin{DoxyParams}{Parameters}
+{\em listout} & will hold the list of intersecting block indices \\
+\hline
+{\em op2} & is the other \mbox{\hyperlink{classCover}{Cover}} \\
+\hline
+{\em level} & is the characterization threshold which must be exceeded \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCover_a222e454f0fbb979032978828e97fc8ef}\label{classCover_a222e454f0fbb979032978828e97fc8ef}} 
+\index{Cover@{Cover}!merge@{merge}}
+\index{merge@{merge}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily void Cover\+::merge (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classCover}{Cover}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classMerge}{Merge}} {\bfseries{this}} with another \mbox{\hyperlink{classCover}{Cover}} block by block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other \mbox{\hyperlink{classCover}{Cover}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCover_acafb2a8598050f4c282c8df5bd937752}\label{classCover_acafb2a8598050f4c282c8df5bd937752}} 
+\index{Cover@{Cover}!print@{print}}
+\index{print@{print}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Cover\+::print (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Dump a description of {\bfseries{this}} cover to stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCover_a1d437f9e8a60e407587935411ed6d546}\label{classCover_a1d437f9e8a60e407587935411ed6d546}} 
+\index{Cover@{Cover}!rebuild@{rebuild}}
+\index{rebuild@{rebuild}!Cover@{Cover}}
+\doxysubsubsection{\texorpdfstring{rebuild()}{rebuild()}}
+{\footnotesize\ttfamily void Cover\+::rebuild (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Reset {\bfseries{this}} based on def-\/use of a single \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+The cover is set to all p-\/code ops between the point where the \mbox{\hyperlink{classVarnode}{Varnode}} is defined and all the points where it is read 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the single \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cover_8hh}{cover.\+hh}}\item 
+cover.\+cc\end{DoxyCompactItemize}

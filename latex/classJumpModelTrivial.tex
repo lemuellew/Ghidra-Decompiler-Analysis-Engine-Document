@@ -1,0 +1,244 @@
+\hypertarget{classJumpModelTrivial}{}\doxysection{Jump\+Model\+Trivial Class Reference}
+\label{classJumpModelTrivial}\index{JumpModelTrivial@{JumpModelTrivial}}
+
+
+A trivial jump-\/table model, where the B\+R\+A\+N\+C\+H\+I\+ND input \mbox{\hyperlink{classVarnode}{Varnode}} is the switch variable.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+
+
+Inheritance diagram for Jump\+Model\+Trivial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classJumpModelTrivial__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jump\+Model\+Trivial\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classJumpModelTrivial__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJumpModelTrivial_a30aedefb694d84c374a6dff13002cae7}\label{classJumpModelTrivial_a30aedefb694d84c374a6dff13002cae7}} 
+virtual bool \mbox{\hyperlink{classJumpModelTrivial_a30aedefb694d84c374a6dff13002cae7}{is\+Override}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\bfseries{this}} model was manually overridden. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpModelTrivial_a850ec9c73e9acc78465d896008b265fe}\label{classJumpModelTrivial_a850ec9c73e9acc78465d896008b265fe}} 
+virtual int4 \mbox{\hyperlink{classJumpModelTrivial_a850ec9c73e9acc78465d896008b265fe}{get\+Table\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the number of entries in the address table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpModelTrivial_ae05a183588550bc9102e12c80d7124b5}{recover\+Model}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, uint4 matchsize, uint4 maxtablesize)
+\begin{DoxyCompactList}\small\item\em Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpModelTrivial_a598ff420975134b8921c4a5ade192e0f}{build\+Addresses}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable, vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ $\ast$loadpoints) const
+\begin{DoxyCompactList}\small\item\em Construct the explicit list of target addresses (the \mbox{\hyperlink{classAddress}{Address}} Table) from {\bfseries{this}} model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpModelTrivial_a76017216abd7b4389f42e331d025d9dc}{find\+Unnormalized}} (uint4 maxaddsub, uint4 maxleftright, uint4 maxext)
+\begin{DoxyCompactList}\small\item\em Recover the unnormalized switch variable. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpModelTrivial_a2f156e909104f7a992e61a288e207c08}{build\+Labels}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable, vector$<$ uintb $>$ \&label, const \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$orig) const
+\begin{DoxyCompactList}\small\item\em Recover {\itshape case} labels associated with the \mbox{\hyperlink{classAddress}{Address}} table. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classJumpModelTrivial_a7170dd246a1befa4db84e9d9c1a6ee2f}{fold\+In\+Normalization}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop)
+\begin{DoxyCompactList}\small\item\em Do normalization of the given switch specific to {\bfseries{this}} model. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpModelTrivial_a063b80b921795c341598e643f5ee7cce}{fold\+In\+Guards}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jump)
+\begin{DoxyCompactList}\small\item\em Eliminate any {\itshape guard} code involved in computing the switch destination. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpModelTrivial_a68d3e47c3ec7554f8a7d6800017d2ead}{sanity\+Check}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable)
+\begin{DoxyCompactList}\small\item\em Perform a sanity check on recovered addresses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpModelTrivial_a2bfb18481b0de41daaa7a47c00c0a8f0}\label{classJumpModelTrivial_a2bfb18481b0de41daaa7a47c00c0a8f0}} 
+virtual \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$ \mbox{\hyperlink{classJumpModelTrivial_a2bfb18481b0de41daaa7a47c00c0a8f0}{clone}} (\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jt) const
+\begin{DoxyCompactList}\small\item\em Clone {\bfseries{this}} model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A trivial jump-\/table model, where the B\+R\+A\+N\+C\+H\+I\+ND input \mbox{\hyperlink{classVarnode}{Varnode}} is the switch variable. 
+
+This class treats the input \mbox{\hyperlink{classVarnode}{Varnode}} to the B\+R\+A\+N\+C\+H\+I\+ND as the switch variable, and recovers its possible values from the existing block structure. This is used when the flow following fork recovers destination addresses, but the switch normalization action is unable to recover the model. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpModelTrivial_a598ff420975134b8921c4a5ade192e0f}\label{classJumpModelTrivial_a598ff420975134b8921c4a5ade192e0f}} 
+\index{JumpModelTrivial@{JumpModelTrivial}!buildAddresses@{buildAddresses}}
+\index{buildAddresses@{buildAddresses}!JumpModelTrivial@{JumpModelTrivial}}
+\doxysubsubsection{\texorpdfstring{buildAddresses()}{buildAddresses()}}
+{\footnotesize\ttfamily void Jump\+Model\+Trivial\+::build\+Addresses (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable,  }\item[{vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ $\ast$}]{loadpoints }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct the explicit list of target addresses (the \mbox{\hyperlink{classAddress}{Address}} Table) from {\bfseries{this}} model. 
+
+The addresses produced all come from the B\+R\+A\+N\+C\+H\+I\+ND and may not be deduped. Alternate guard destinations are not yet included. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the root B\+R\+A\+N\+C\+H\+I\+ND of the switch \\
+\hline
+{\em addresstable} & will hold the list of Addresses \\
+\hline
+{\em loadpoints} & if non-\/null will hold L\+O\+AD table information used by the model \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a12659a93442cc2940a8fed8dc55be2e0}{Jump\+Model}}.
+
+\mbox{\Hypertarget{classJumpModelTrivial_a2f156e909104f7a992e61a288e207c08}\label{classJumpModelTrivial_a2f156e909104f7a992e61a288e207c08}} 
+\index{JumpModelTrivial@{JumpModelTrivial}!buildLabels@{buildLabels}}
+\index{buildLabels@{buildLabels}!JumpModelTrivial@{JumpModelTrivial}}
+\doxysubsubsection{\texorpdfstring{buildLabels()}{buildLabels()}}
+{\footnotesize\ttfamily void Jump\+Model\+Trivial\+::build\+Labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable,  }\item[{vector$<$ uintb $>$ \&}]{label,  }\item[{const \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$}]{orig }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover {\itshape case} labels associated with the \mbox{\hyperlink{classAddress}{Address}} table. 
+
+The unnormalized switch variable must already be recovered. Values that the normalized switch value can hold or walked back to obtain the value that the unnormalized switch variable would hold. Labels are returned in the order provided by normalized switch variable iterator \mbox{\hyperlink{classJumpValues}{Jump\+Values}}. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em addresstable} & is the address table (used to label code blocks with bad or missing labels) \\
+\hline
+{\em label} & will hold recovered labels in \mbox{\hyperlink{classJumpValues}{Jump\+Values}} order \\
+\hline
+{\em orig} & is the \mbox{\hyperlink{classJumpModel}{Jump\+Model}} to use for the \mbox{\hyperlink{classJumpValues}{Jump\+Values}} iterator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_af8e7b936b4b51d87b7690693f756ffd6}{Jump\+Model}}.
+
+\mbox{\Hypertarget{classJumpModelTrivial_a76017216abd7b4389f42e331d025d9dc}\label{classJumpModelTrivial_a76017216abd7b4389f42e331d025d9dc}} 
+\index{JumpModelTrivial@{JumpModelTrivial}!findUnnormalized@{findUnnormalized}}
+\index{findUnnormalized@{findUnnormalized}!JumpModelTrivial@{JumpModelTrivial}}
+\doxysubsubsection{\texorpdfstring{findUnnormalized()}{findUnnormalized()}}
+{\footnotesize\ttfamily virtual void Jump\+Model\+Trivial\+::find\+Unnormalized (\begin{DoxyParamCaption}\item[{uint4}]{maxaddsub,  }\item[{uint4}]{maxleftright,  }\item[{uint4}]{maxext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Recover the unnormalized switch variable. 
+
+The normalized switch variable must already be recovered. The amount of normalization between the two switch variables can be restricted. 
+\begin{DoxyParams}{Parameters}
+{\em maxaddsub} & is a restriction on arithmetic operations \\
+\hline
+{\em maxleftright} & is a restriction on shift operations \\
+\hline
+{\em maxext} & is a restriction on extension operations \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_aac83f52fbf3ee566e760dfabe6e67ee6}{Jump\+Model}}.
+
+\mbox{\Hypertarget{classJumpModelTrivial_a063b80b921795c341598e643f5ee7cce}\label{classJumpModelTrivial_a063b80b921795c341598e643f5ee7cce}} 
+\index{JumpModelTrivial@{JumpModelTrivial}!foldInGuards@{foldInGuards}}
+\index{foldInGuards@{foldInGuards}!JumpModelTrivial@{JumpModelTrivial}}
+\doxysubsubsection{\texorpdfstring{foldInGuards()}{foldInGuards()}}
+{\footnotesize\ttfamily virtual bool Jump\+Model\+Trivial\+::fold\+In\+Guards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$}]{jump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Eliminate any {\itshape guard} code involved in computing the switch destination. 
+
+We now think of the B\+R\+A\+N\+C\+H\+I\+ND as encompassing any guard function. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em jump} & is the \mbox{\hyperlink{classJumpTable}{Jump\+Table}} owning {\bfseries{this}} model. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a6f40ba77ddc8f4cf40f6071248103d9c}{Jump\+Model}}.
+
+\mbox{\Hypertarget{classJumpModelTrivial_a7170dd246a1befa4db84e9d9c1a6ee2f}\label{classJumpModelTrivial_a7170dd246a1befa4db84e9d9c1a6ee2f}} 
+\index{JumpModelTrivial@{JumpModelTrivial}!foldInNormalization@{foldInNormalization}}
+\index{foldInNormalization@{foldInNormalization}!JumpModelTrivial@{JumpModelTrivial}}
+\doxysubsubsection{\texorpdfstring{foldInNormalization()}{foldInNormalization()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classVarnode}{Varnode}}$\ast$ Jump\+Model\+Trivial\+::fold\+In\+Normalization (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Do normalization of the given switch specific to {\bfseries{this}} model. 
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} machinery is removed so it looks like the C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND simply takes the switch variable as an input \mbox{\hyperlink{classVarnode}{Varnode}} and automatically interprets its values to reach the correct destination. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the given switch as a C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classVarnode}{Varnode}} holding the final unnormalized switch variable 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a7e8f2d4d8a1ae1954e00aae96c74a8c4}{Jump\+Model}}.
+
+\mbox{\Hypertarget{classJumpModelTrivial_ae05a183588550bc9102e12c80d7124b5}\label{classJumpModelTrivial_ae05a183588550bc9102e12c80d7124b5}} 
+\index{JumpModelTrivial@{JumpModelTrivial}!recoverModel@{recoverModel}}
+\index{recoverModel@{recoverModel}!JumpModelTrivial@{JumpModelTrivial}}
+\doxysubsubsection{\texorpdfstring{recoverModel()}{recoverModel()}}
+{\footnotesize\ttfamily bool Jump\+Model\+Trivial\+::recover\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{uint4}]{matchsize,  }\item[{uint4}]{maxtablesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. 
+
+This generally recovers the normalized switch variable and any guards. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the given B\+R\+A\+N\+C\+H\+I\+ND \\
+\hline
+{\em matchsize} & is the expected number of address table entries to recover, or 0 for no expectation \\
+\hline
+{\em maxtablesize} & is maximum number of address table entries to allow in the model \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if details of the model were successfully recovered 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a9c2326278dd18c9d78dd5cd5795e802b}{Jump\+Model}}.
+
+\mbox{\Hypertarget{classJumpModelTrivial_a68d3e47c3ec7554f8a7d6800017d2ead}\label{classJumpModelTrivial_a68d3e47c3ec7554f8a7d6800017d2ead}} 
+\index{JumpModelTrivial@{JumpModelTrivial}!sanityCheck@{sanityCheck}}
+\index{sanityCheck@{sanityCheck}!JumpModelTrivial@{JumpModelTrivial}}
+\doxysubsubsection{\texorpdfstring{sanityCheck()}{sanityCheck()}}
+{\footnotesize\ttfamily virtual bool Jump\+Model\+Trivial\+::sanity\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Perform a sanity check on recovered addresses. 
+
+Individual addresses are checked against the function or its program to determine if they are reasonable. This method can optionally remove addresses from the table. If it does so, the underlying model is changed to reflect the removal. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the root B\+R\+A\+N\+C\+H\+I\+ND of the switch \\
+\hline
+{\em addresstable} & is the list of recovered Addresses, which may be modified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are (at least some) reasonable addresses in the table 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a76a52bf3311e9d97a61d1117f6de1b0a}{Jump\+Model}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

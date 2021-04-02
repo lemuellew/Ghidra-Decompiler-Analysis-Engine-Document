@@ -1,0 +1,50 @@
+\hypertarget{structPrintLanguage_1_1ReversePolish}{}\doxysection{Print\+Language\+::Reverse\+Polish Struct Reference}
+\label{structPrintLanguage_1_1ReversePolish}\index{PrintLanguage::ReversePolish@{PrintLanguage::ReversePolish}}
+
+
+An entry on the reverse polish notation (R\+PN) stack.  
+
+
+
+
+{\ttfamily \#include $<$printlanguage.\+hh$>$}
+
+
+
+Collaboration diagram for Print\+Language\+::Reverse\+Polish\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{structPrintLanguage_1_1ReversePolish__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1ReversePolish_ac5309173a151a146eddc996c017b625a}\label{structPrintLanguage_1_1ReversePolish_ac5309173a151a146eddc996c017b625a}} 
+const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$ \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish_ac5309173a151a146eddc996c017b625a}{tok}}
+\begin{DoxyCompactList}\small\item\em The operator token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1ReversePolish_a9ba342eb7c3234b2e9449cd7349505ce}\label{structPrintLanguage_1_1ReversePolish_a9ba342eb7c3234b2e9449cd7349505ce}} 
+int4 \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish_a9ba342eb7c3234b2e9449cd7349505ce}{visited}}
+\begin{DoxyCompactList}\small\item\em The current stage of printing for the operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1ReversePolish_abd7925ec148007f6794ae53bd862c448}\label{structPrintLanguage_1_1ReversePolish_abd7925ec148007f6794ae53bd862c448}} 
+bool \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish_abd7925ec148007f6794ae53bd862c448}{paren}}
+\begin{DoxyCompactList}\small\item\em True if parentheses are required. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1ReversePolish_a0b591df65fea01d8bbf975ca190e07d5}\label{structPrintLanguage_1_1ReversePolish_a0b591df65fea01d8bbf975ca190e07d5}} 
+const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish_a0b591df65fea01d8bbf975ca190e07d5}{op}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} associated with the operator token. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1ReversePolish_aeba0caecbdfe9a1a3ea20217c74b5820}\label{structPrintLanguage_1_1ReversePolish_aeba0caecbdfe9a1a3ea20217c74b5820}} 
+int4 \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish_aeba0caecbdfe9a1a3ea20217c74b5820}{id}}
+\begin{DoxyCompactList}\small\item\em The id of the token group which {\bfseries{this}} belongs to. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPrintLanguage_1_1ReversePolish_afcd819d295e7895a687dbeb3d7c6473c}\label{structPrintLanguage_1_1ReversePolish_afcd819d295e7895a687dbeb3d7c6473c}} 
+int4 \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish_afcd819d295e7895a687dbeb3d7c6473c}{id2}}
+\begin{DoxyCompactList}\small\item\em The id of the token group {\bfseries{this}} surrounds (for surround operator tokens) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An entry on the reverse polish notation (R\+PN) stack. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{printlanguage_8hh}{printlanguage.\+hh}}\end{DoxyCompactItemize}

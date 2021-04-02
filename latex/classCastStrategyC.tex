@@ -1,0 +1,343 @@
+\hypertarget{classCastStrategyC}{}\doxysection{Cast\+StrategyC Class Reference}
+\label{classCastStrategyC}\index{CastStrategyC@{CastStrategyC}}
+
+
+Casting strategies that are specific to the C language.  
+
+
+
+
+{\ttfamily \#include $<$cast.\+hh$>$}
+
+
+
+Inheritance diagram for Cast\+StrategyC\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classCastStrategyC__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Cast\+StrategyC\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classCastStrategyC__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int4 \mbox{\hyperlink{classCastStrategyC_ac630d23883fc4d95a12eba08b64e6734}{local\+Extension\+Type}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Decide on integer promotion by examining just local properties of the given \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classCastStrategyC_a628af1b296211f1cc9add47af576ea2b}{int\+Promotion\+Type}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Calculate the integer promotion code of a given \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyC_a6d9b4790d67649bc3dcd760052de381a}{check\+Int\+Promotion\+For\+Compare}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot) const
+\begin{DoxyCompactList}\small\item\em Check if integer promotion forces a cast for the given comparison op and slot. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyC_a567cf30b699d20f9652e0edb437a5994}{check\+Int\+Promotion\+For\+Extension}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Check if integer promotion forces a cast for the input to the given extension. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyC_ad2f65c74a706cc9599c2408fee9bc09a}{is\+Extension\+Cast\+Implied}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const
+\begin{DoxyCompactList}\small\item\em Is the given Z\+E\+X\+T/\+S\+E\+XT cast implied by the expression its in? \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classCastStrategyC_a057c06b312662b80be294439465be4ff}{cast\+Standard}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$reqtype, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$curtype, bool care\+\_\+uint\+\_\+int, bool care\+\_\+ptr\+\_\+uint) const
+\begin{DoxyCompactList}\small\item\em Does there need to be a visible cast between the given data-\/types. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classCastStrategyC_a478423d83d44c4c2d28a461dad75654c}{arithmetic\+Output\+Standard}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em What is the output data-\/type produced by the given integer arithmetic operation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyC_a24b9433948f1406bfa8503b7d5297415}{is\+Subpiece\+Cast}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$intype, uint4 offset) const
+\begin{DoxyCompactList}\small\item\em Is truncating an input data-\/type, producing an output data-\/type, considered a cast. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyC_a9fbcb64309ac27837a8da7aa76a6f1f6}{is\+Subpiece\+Cast\+Endian}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$intype, uint4 offset, bool isbigend) const
+\begin{DoxyCompactList}\small\item\em Is the given data-\/type truncation considered a cast, given endianess concerns. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyC_a626fa032a6c9ff7ab710f8d28586c72e}{is\+Sext\+Cast}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$intype) const
+\begin{DoxyCompactList}\small\item\em Is sign-\/extending an input data-\/type, producing an output data-\/type, considered a cast. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classCastStrategyC_a5c4b61d624a78a2e6f16bf2902e5b8e6}{is\+Zext\+Cast}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$intype) const
+\begin{DoxyCompactList}\small\item\em Is zero-\/extending an input data-\/type, producing an output data-\/type, considered a cast. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Casting strategies that are specific to the C language. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCastStrategyC_a478423d83d44c4c2d28a461dad75654c}\label{classCastStrategyC_a478423d83d44c4c2d28a461dad75654c}} 
+\index{CastStrategyC@{CastStrategyC}!arithmeticOutputStandard@{arithmeticOutputStandard}}
+\index{arithmeticOutputStandard@{arithmeticOutputStandard}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{arithmeticOutputStandard()}{arithmeticOutputStandard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Cast\+Strategy\+C\+::arithmetic\+Output\+Standard (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+What is the output data-\/type produced by the given integer arithmetic operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given operation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output data-\/type 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_ae1b79520df9f5b6dc22afb6969606054}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a057c06b312662b80be294439465be4ff}\label{classCastStrategyC_a057c06b312662b80be294439465be4ff}} 
+\index{CastStrategyC@{CastStrategyC}!castStandard@{castStandard}}
+\index{castStandard@{castStandard}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{castStandard()}{castStandard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Cast\+Strategy\+C\+::cast\+Standard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{reqtype,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{curtype,  }\item[{bool}]{care\+\_\+uint\+\_\+int,  }\item[{bool}]{care\+\_\+ptr\+\_\+uint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Does there need to be a visible cast between the given data-\/types. 
+
+The cast is from a {\itshape current} data-\/type to an {\itshape expected} data-\/type. N\+U\+LL is returned if no cast is required, otherwise the data-\/type to cast to (usually the expected data-\/type) is returned. 
+\begin{DoxyParams}{Parameters}
+{\em reqtype} & is the {\itshape expected} data-\/type \\
+\hline
+{\em curtype} & is the {\itshape current} data-\/type \\
+\hline
+{\em care\+\_\+uint\+\_\+int} & is {\bfseries{true}} if we care about a change in signedness \\
+\hline
+{\em care\+\_\+ptr\+\_\+uint} & is {\bfseries{true}} if we care about conversions between pointers and unsigned values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+N\+U\+LL to indicate no cast, or the data-\/type to cast to 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a9ca9d31afeefca9a43cd8114333bcb21}{Cast\+Strategy}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classCastStrategyJava_a6a9d4ec935035f52d214326cb6e0a33f}{Cast\+Strategy\+Java}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a6d9b4790d67649bc3dcd760052de381a}\label{classCastStrategyC_a6d9b4790d67649bc3dcd760052de381a}} 
+\index{CastStrategyC@{CastStrategyC}!checkIntPromotionForCompare@{checkIntPromotionForCompare}}
+\index{checkIntPromotionForCompare@{checkIntPromotionForCompare}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{checkIntPromotionForCompare()}{checkIntPromotionForCompare()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+C\+::check\+Int\+Promotion\+For\+Compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if integer promotion forces a cast for the given comparison op and slot. 
+
+Compute to what level the given slot has seen integer promotion and if a cast is required before the comparison operator makes sense. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given comparison operator \\
+\hline
+{\em slot} & is the input slot being tested \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a cast is required before comparing 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_ae91ae0dbea2811795e386298633f05f3}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a567cf30b699d20f9652e0edb437a5994}\label{classCastStrategyC_a567cf30b699d20f9652e0edb437a5994}} 
+\index{CastStrategyC@{CastStrategyC}!checkIntPromotionForExtension@{checkIntPromotionForExtension}}
+\index{checkIntPromotionForExtension@{checkIntPromotionForExtension}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{checkIntPromotionForExtension()}{checkIntPromotionForExtension()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+C\+::check\+Int\+Promotion\+For\+Extension (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if integer promotion forces a cast for the input to the given extension. 
+
+Compute to what level the given slot has seen integer promotion and if a cast is required before the extension operator makes sense. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given extension operator I\+N\+T\+\_\+\+Z\+E\+XT or I\+N\+T\+\_\+\+S\+E\+XT \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a cast is required before extending 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a1d44ad4691a30115228ae37533d2c38d}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a628af1b296211f1cc9add47af576ea2b}\label{classCastStrategyC_a628af1b296211f1cc9add47af576ea2b}} 
+\index{CastStrategyC@{CastStrategyC}!intPromotionType@{intPromotionType}}
+\index{intPromotionType@{intPromotionType}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{intPromotionType()}{intPromotionType()}}
+{\footnotesize\ttfamily int4 Cast\+Strategy\+C\+::int\+Promotion\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculate the integer promotion code of a given \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Recursively examine the expression defining the \mbox{\hyperlink{classVarnode}{Varnode}} as necessary 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the Int\+Promotion\+Code 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a69b81cbe074f60bf95bd8823e7bf191c}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_ad2f65c74a706cc9599c2408fee9bc09a}\label{classCastStrategyC_ad2f65c74a706cc9599c2408fee9bc09a}} 
+\index{CastStrategyC@{CastStrategyC}!isExtensionCastImplied@{isExtensionCastImplied}}
+\index{isExtensionCastImplied@{isExtensionCastImplied}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{isExtensionCastImplied()}{isExtensionCastImplied()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+C\+::is\+Extension\+Cast\+Implied (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Is the given Z\+E\+X\+T/\+S\+E\+XT cast implied by the expression its in? 
+
+We\textquotesingle{}ve already determined that the given Z\+E\+XT or S\+E\+XT op can be viewed as a natural {\itshape cast} operation. Determine if the cast is implied by the expression its and doesn\textquotesingle{}t need to be printed. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given Z\+E\+XT or S\+E\+XT \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output of the extensions (or null) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the op as a cast does not need to be printed 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a65775081941a6c359b729e86befe021e}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a626fa032a6c9ff7ab710f8d28586c72e}\label{classCastStrategyC_a626fa032a6c9ff7ab710f8d28586c72e}} 
+\index{CastStrategyC@{CastStrategyC}!isSextCast@{isSextCast}}
+\index{isSextCast@{isSextCast}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{isSextCast()}{isSextCast()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+C\+::is\+Sext\+Cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{intype }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Is sign-\/extending an input data-\/type, producing an output data-\/type, considered a cast. 
+
+Data-\/types must be provided from the input and output of an I\+N\+T\+\_\+\+S\+E\+XT operation. 
+\begin{DoxyParams}{Parameters}
+{\em outtype} & is the output data-\/type \\
+\hline
+{\em intype} & is the input data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the I\+N\+T\+\_\+\+S\+E\+XT should be represented as a cast 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a4c42bb2f8be16856a3c6ebbb1771aeaf}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a24b9433948f1406bfa8503b7d5297415}\label{classCastStrategyC_a24b9433948f1406bfa8503b7d5297415}} 
+\index{CastStrategyC@{CastStrategyC}!isSubpieceCast@{isSubpieceCast}}
+\index{isSubpieceCast@{isSubpieceCast}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{isSubpieceCast()}{isSubpieceCast()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+C\+::is\+Subpiece\+Cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{intype,  }\item[{uint4}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Is truncating an input data-\/type, producing an output data-\/type, considered a cast. 
+
+Data-\/types must be provided from the input and output of a S\+U\+B\+P\+I\+E\+CE operation. 
+\begin{DoxyParams}{Parameters}
+{\em outtype} & is the output data-\/type \\
+\hline
+{\em intype} & is the input data-\/type \\
+\hline
+{\em offset} & is number of bytes truncated by the S\+U\+B\+P\+I\+E\+CE \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the S\+U\+B\+P\+I\+E\+CE should be represented as a cast 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a1297e8653f09779c450e99ba43909e3a}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a9fbcb64309ac27837a8da7aa76a6f1f6}\label{classCastStrategyC_a9fbcb64309ac27837a8da7aa76a6f1f6}} 
+\index{CastStrategyC@{CastStrategyC}!isSubpieceCastEndian@{isSubpieceCastEndian}}
+\index{isSubpieceCastEndian@{isSubpieceCastEndian}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{isSubpieceCastEndian()}{isSubpieceCastEndian()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+C\+::is\+Subpiece\+Cast\+Endian (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{intype,  }\item[{uint4}]{offset,  }\item[{bool}]{isbigend }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Is the given data-\/type truncation considered a cast, given endianess concerns. 
+
+This is equivalent to \mbox{\hyperlink{classCastStrategyC_a24b9433948f1406bfa8503b7d5297415}{is\+Subpiece\+Cast()}} but where the truncation is accomplished by pulling bytes directly out of memory. We assume the input data-\/type is layed down in memory, and we pull the output value starting at a given byte offset. 
+\begin{DoxyParams}{Parameters}
+{\em outtype} & is the output data-\/type \\
+\hline
+{\em intype} & is the input data-\/type \\
+\hline
+{\em offset} & is the given byte offset (into the input memory) \\
+\hline
+{\em isbigend} & is {\bfseries{true}} if the address space holding the memory is big endian. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the truncation should be represented as a cast 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a349f166237fd4cd8f3d01b276a21138a}{Cast\+Strategy}}.
+
+\mbox{\Hypertarget{classCastStrategyC_a5c4b61d624a78a2e6f16bf2902e5b8e6}\label{classCastStrategyC_a5c4b61d624a78a2e6f16bf2902e5b8e6}} 
+\index{CastStrategyC@{CastStrategyC}!isZextCast@{isZextCast}}
+\index{isZextCast@{isZextCast}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{isZextCast()}{isZextCast()}}
+{\footnotesize\ttfamily bool Cast\+Strategy\+C\+::is\+Zext\+Cast (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{intype }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Is zero-\/extending an input data-\/type, producing an output data-\/type, considered a cast. 
+
+Data-\/types must be provided from the input and output of an I\+N\+T\+\_\+\+Z\+E\+XT operation. 
+\begin{DoxyParams}{Parameters}
+{\em outtype} & is the output data-\/type \\
+\hline
+{\em intype} & is the input data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the I\+N\+T\+\_\+\+Z\+E\+XT should be represented as a cast 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_a472229904419d83774345e569cef92d2}{Cast\+Strategy}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classCastStrategyJava_a6c8536d19ca90746652c78d0781e98b6}{Cast\+Strategy\+Java}}.
+
+\mbox{\Hypertarget{classCastStrategyC_ac630d23883fc4d95a12eba08b64e6734}\label{classCastStrategyC_ac630d23883fc4d95a12eba08b64e6734}} 
+\index{CastStrategyC@{CastStrategyC}!localExtensionType@{localExtensionType}}
+\index{localExtensionType@{localExtensionType}!CastStrategyC@{CastStrategyC}}
+\doxysubsubsection{\texorpdfstring{localExtensionType()}{localExtensionType()}}
+{\footnotesize\ttfamily int4 Cast\+Strategy\+C\+::local\+Extension\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Decide on integer promotion by examining just local properties of the given \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an Int\+Promotion\+Code (excluding N\+O\+\_\+\+P\+R\+O\+M\+O\+T\+I\+ON) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classCastStrategy_af9c6535f6d9337185887dba89ccb9de3}{Cast\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cast_8hh}{cast.\+hh}}\item 
+cast.\+cc\end{DoxyCompactItemize}

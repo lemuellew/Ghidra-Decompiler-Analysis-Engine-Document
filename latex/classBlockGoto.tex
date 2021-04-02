@@ -1,0 +1,151 @@
+\hypertarget{classBlockGoto}{}\doxysection{Block\+Goto Class Reference}
+\label{classBlockGoto}\index{BlockGoto@{BlockGoto}}
+
+
+A block that terminates with an unstructured (goto) branch to another block.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+Goto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classBlockGoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+Goto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classBlockGoto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classBlockGoto_a2c4cc4dddc9aac456e0b439dc7a2ad1f}{goto\+Prints}} (void) const
+\begin{DoxyCompactList}\small\item\em Should a formal goto statement be emitted. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGoto_a11f324c0fdd3849a53250a0d67b6c94e}\label{classBlockGoto_a11f324c0fdd3849a53250a0d67b6c94e}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classBlockGoto_acc562547e24a946794c7583e61208553}\label{classBlockGoto_acc562547e24a946794c7583e61208553}} 
+virtual void {\bfseries mark\+Unstructured} (void)
+\item 
+\mbox{\Hypertarget{classBlockGoto_ad409112a4ad46f076a923bd152428a83}\label{classBlockGoto_ad409112a4ad46f076a923bd152428a83}} 
+virtual void {\bfseries scope\+Break} (int4 curexit, int4 curloopexit)
+\item 
+virtual void \mbox{\hyperlink{classBlockGoto_a01f0af5a9043ec72c96e3f2591d0c469}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGoto_aa665d1bc9ba041f0c90c52322abf5727}\label{classBlockGoto_aa665d1bc9ba041f0c90c52322abf5727}} 
+virtual void {\bfseries print\+Raw} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classBlockGoto_a0efc3af4b5fda8bf5f04b0fbca784935}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGoto_a18080132d5cd3398eb972335368359e2}\label{classBlockGoto_a18080132d5cd3398eb972335368359e2}} 
+virtual const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries get\+Exit\+Leaf} (void) const
+\item 
+\mbox{\Hypertarget{classBlockGoto_a1989016995f57acf0da08f1318a75d43}\label{classBlockGoto_a1989016995f57acf0da08f1318a75d43}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ {\bfseries last\+Op} (void) const
+\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockGoto_acc1628a26572e23d61f4b4dad717816e}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockGoto_a4210ef977a85a74b9923e405057b093b}\label{classBlockGoto_a4210ef977a85a74b9923e405057b093b}} 
+virtual void {\bfseries save\+Xml\+Body} (ostream \&s) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A block that terminates with an unstructured (goto) branch to another block. 
+
+The {\itshape goto} must be an unconditional branch. The instance keeps track of the target block and will emit the branch as some form of formal branch statement (goto, break, continue). From the point of view of control-\/flow structuring, this block has {\itshape no} output edges. The algorithm handles edges it can\textquotesingle{}t structure by encapsulating it in the \mbox{\hyperlink{classBlockGoto}{Block\+Goto}} class and otherwise removing the edge from the structured view of the graph. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockGoto_a0efc3af4b5fda8bf5f04b0fbca784935}\label{classBlockGoto_a0efc3af4b5fda8bf5f04b0fbca784935}} 
+\index{BlockGoto@{BlockGoto}!emit@{emit}}
+\index{emit@{emit}!BlockGoto@{BlockGoto}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+Goto\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockGoto_a2c4cc4dddc9aac456e0b439dc7a2ad1f}\label{classBlockGoto_a2c4cc4dddc9aac456e0b439dc7a2ad1f}} 
+\index{BlockGoto@{BlockGoto}!gotoPrints@{gotoPrints}}
+\index{gotoPrints@{gotoPrints}!BlockGoto@{BlockGoto}}
+\doxysubsubsection{\texorpdfstring{gotoPrints()}{gotoPrints()}}
+{\footnotesize\ttfamily bool Block\+Goto\+::goto\+Prints (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Should a formal goto statement be emitted. 
+
+Under rare circumstances, the emitter can place the target block of the goto immediately after this goto block. In this case, because the control-\/flow is essentially a fall-\/thru, there should not be a formal goto statement emitted. Check if the goto is to the next block in flow in which case the goto should not be printed. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the goto should be printed formally 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockGoto_acc1628a26572e23d61f4b4dad717816e}\label{classBlockGoto_acc1628a26572e23d61f4b4dad717816e}} 
+\index{BlockGoto@{BlockGoto}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!BlockGoto@{BlockGoto}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Goto\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockGoto_a01f0af5a9043ec72c96e3f2591d0c469}\label{classBlockGoto_a01f0af5a9043ec72c96e3f2591d0c469}} 
+\index{BlockGoto@{BlockGoto}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockGoto@{BlockGoto}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+Goto\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

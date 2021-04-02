@@ -1,0 +1,188 @@
+\hypertarget{classFspecSpace}{}\doxysection{Fspec\+Space Class Reference}
+\label{classFspecSpace}\index{FspecSpace@{FspecSpace}}
+
+
+A special space for encoding \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}}.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Fspec\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classFspecSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Fspec\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classFspecSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFspecSpace_a186ef2f65e61428b3cc12689b588cf1c}{Fspec\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, const string \&nm, int4 ind)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFspecSpace_ad68a1bf048371fd9e5b4acb2b4bbf36c}{save\+Xml\+Attributes}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Save an address as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFspecSpace_a668ef71841767a6d0b935831c14358fe}{save\+Xml\+Attributes}} (ostream \&s, uintb offset, int4 size) const
+\begin{DoxyCompactList}\small\item\em Save an address and size as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFspecSpace_a48b1e30f1554fd950f5c240407ca20db}{print\+Raw}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Write an address in this space to a stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFspecSpace_a3e1fd8f03e6fc9685988a070097b6b5a}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the details of this space as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFspecSpace_ad0061e3e6e13bdd7349f643e44d8947d}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover the details of this space from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A special space for encoding \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}}. 
+
+It is efficient and convenient to store the main subfunction object (\mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}}) in the pcode operation which is actually making the call. This address space allows a \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} to be encoded as an address which replaces the formally encoded address of the function being called, when manipulating the operation internally. The space stored in the encoded address is this special {\bfseries{fspec}} space, and the offset is the actual value of the pointer 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFspecSpace_a186ef2f65e61428b3cc12689b588cf1c}\label{classFspecSpace_a186ef2f65e61428b3cc12689b588cf1c}} 
+\index{FspecSpace@{FspecSpace}!FspecSpace@{FspecSpace}}
+\index{FspecSpace@{FspecSpace}!FspecSpace@{FspecSpace}}
+\doxysubsubsection{\texorpdfstring{FspecSpace()}{FspecSpace()}}
+{\footnotesize\ttfamily Fspec\+Space\+::\+Fspec\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{const string \&}]{nm,  }\item[{int4}]{ind }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+\mbox{\hyperlink{classConstructor}{Constructor}} for the {\bfseries{fspec}} space. There is only one such space, and it is considered internal to the model, i.\+e. the \mbox{\hyperlink{classTranslate}{Translate}} engine should never generate addresses in this space. 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the associated address space manager \\
+\hline
+{\em t} & is the associated processor translator \\
+\hline
+{\em nm} & is the name of the space (always {\bfseries{fspec}}) \\
+\hline
+{\em ind} & is the index associated with the space \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFspecSpace_a48b1e30f1554fd950f5c240407ca20db}\label{classFspecSpace_a48b1e30f1554fd950f5c240407ca20db}} 
+\index{FspecSpace@{FspecSpace}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!FspecSpace@{FspecSpace}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Fspec\+Space\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write an address in this space to a stream. 
+
+This is a printing method for the debugging routines. It prints taking into account the {\itshape wordsize}, adding a \char`\"{}+n\char`\"{} if the offset is not on-\/cut with wordsize. It also returns the expected/typical size of values from this space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+{\em offset} & is the offset to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a76819b70cd6b6ae8601ac1821f86b929}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classFspecSpace_ad0061e3e6e13bdd7349f643e44d8947d}\label{classFspecSpace_ad0061e3e6e13bdd7349f643e44d8947d}} 
+\index{FspecSpace@{FspecSpace}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!FspecSpace@{FspecSpace}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Fspec\+Space\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the details of this space from X\+ML. 
+
+Walk a parsed X\+ML tag and recover all the properties defining this space. The processor translator, {\itshape trans}, and the {\itshape type} must already be filled in. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classFspecSpace_a3e1fd8f03e6fc9685988a070097b6b5a}\label{classFspecSpace_a3e1fd8f03e6fc9685988a070097b6b5a}} 
+\index{FspecSpace@{FspecSpace}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!FspecSpace@{FspecSpace}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Fspec\+Space\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the details of this space as X\+ML. 
+
+Write a tag fully describing the details of this space suitable for later recovery via restore\+Xml. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ac073a4d446677c54d769abba01318864}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classFspecSpace_ad68a1bf048371fd9e5b4acb2b4bbf36c}\label{classFspecSpace_ad68a1bf048371fd9e5b4acb2b4bbf36c}} 
+\index{FspecSpace@{FspecSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!FspecSpace@{FspecSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Fspec\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save an address as X\+ML. 
+
+Write the main X\+ML attributes for an address within this space The caller provides only the {\itshape offset}, and this routine fills in other details pertaining to this particular space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em offset} & is the offset of the address \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a4475d64c56141adf80cb0aca5b23e3c6}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classFspecSpace_a668ef71841767a6d0b935831c14358fe}\label{classFspecSpace_a668ef71841767a6d0b935831c14358fe}} 
+\index{FspecSpace@{FspecSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!FspecSpace@{FspecSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Fspec\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save an address and size as X\+ML. 
+
+Write the main X\+ML attributes of an address with this space and a size. The caller provides the {\itshape offset} and {\itshape size}, and other details about this particular space are filled in. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em offset} & is the offset of the address \\
+\hline
+{\em size} & is the size of the memory location \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a67510a8345fcc17157cc0389e757d504}{Addr\+Space}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

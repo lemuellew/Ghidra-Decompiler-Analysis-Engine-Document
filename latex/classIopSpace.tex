@@ -1,0 +1,184 @@
+\hypertarget{classIopSpace}{}\doxysection{Iop\+Space Class Reference}
+\label{classIopSpace}\index{IopSpace@{IopSpace}}
+
+
+Space for storing internal \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} pointers as addresses.  
+
+
+
+
+{\ttfamily \#include $<$op.\+hh$>$}
+
+
+
+Inheritance diagram for Iop\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classIopSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Iop\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classIopSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIopSpace_aeacf0e01de647ce00ae448ce89eba45a}{Iop\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, const string \&nm, int4 ind)
+\item 
+virtual void \mbox{\hyperlink{classIopSpace_a74fe87f16204159a66ea95cc0d9b3355}{save\+Xml\+Attributes}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Save an address as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIopSpace_a789703a65652db483ba72c9503c06cc5}{save\+Xml\+Attributes}} (ostream \&s, uintb offset, int4 size) const
+\begin{DoxyCompactList}\small\item\em Save an address and size as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIopSpace_aa5e2fc99ee39d375ef563cd3fea2101d}{print\+Raw}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Write an address in this space to a stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIopSpace_a916e2a73cc1dd79b4f5d86ec6c39a9a4}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the details of this space as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIopSpace_a7c530a1e977334d59d2ebbc33147bcd9}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover the details of this space from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Space for storing internal \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} pointers as addresses. 
+
+It is convenient and efficient to replace the formally encoded branch target addresses with a pointer to the actual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being branched to. This special {\bfseries{iop}} space allows a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} pointer to be encoded as an address so it can be stored as part of an input varnode, in place of the target address, in a {\itshape branching} operation. The pointer is encoded as an offset within the {\bfseries{fspec}} space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIopSpace_aeacf0e01de647ce00ae448ce89eba45a}\label{classIopSpace_aeacf0e01de647ce00ae448ce89eba45a}} 
+\index{IopSpace@{IopSpace}!IopSpace@{IopSpace}}
+\index{IopSpace@{IopSpace}!IopSpace@{IopSpace}}
+\doxysubsubsection{\texorpdfstring{IopSpace()}{IopSpace()}}
+{\footnotesize\ttfamily Iop\+Space\+::\+Iop\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{const string \&}]{nm,  }\item[{int4}]{ind }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{classConstructor}{Constructor}} for the {\bfseries{iop}} space. There is only one such space, and it is considered internal to the model, i.\+e. the \mbox{\hyperlink{classTranslate}{Translate}} engine should never generate addresses in this space. 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the associated address space manager \\
+\hline
+{\em t} & is the associated processor translator \\
+\hline
+{\em nm} & is the name of the space (always {\bfseries{iop}}) \\
+\hline
+{\em ind} & is the associated index \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIopSpace_aa5e2fc99ee39d375ef563cd3fea2101d}\label{classIopSpace_aa5e2fc99ee39d375ef563cd3fea2101d}} 
+\index{IopSpace@{IopSpace}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!IopSpace@{IopSpace}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Iop\+Space\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write an address in this space to a stream. 
+
+This is a printing method for the debugging routines. It prints taking into account the {\itshape wordsize}, adding a \char`\"{}+n\char`\"{} if the offset is not on-\/cut with wordsize. It also returns the expected/typical size of values from this space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+{\em offset} & is the offset to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a76819b70cd6b6ae8601ac1821f86b929}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classIopSpace_a7c530a1e977334d59d2ebbc33147bcd9}\label{classIopSpace_a7c530a1e977334d59d2ebbc33147bcd9}} 
+\index{IopSpace@{IopSpace}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!IopSpace@{IopSpace}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Iop\+Space\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the details of this space from X\+ML. 
+
+Walk a parsed X\+ML tag and recover all the properties defining this space. The processor translator, {\itshape trans}, and the {\itshape type} must already be filled in. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classIopSpace_a916e2a73cc1dd79b4f5d86ec6c39a9a4}\label{classIopSpace_a916e2a73cc1dd79b4f5d86ec6c39a9a4}} 
+\index{IopSpace@{IopSpace}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!IopSpace@{IopSpace}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Iop\+Space\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the details of this space as X\+ML. 
+
+Write a tag fully describing the details of this space suitable for later recovery via restore\+Xml. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ac073a4d446677c54d769abba01318864}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classIopSpace_a74fe87f16204159a66ea95cc0d9b3355}\label{classIopSpace_a74fe87f16204159a66ea95cc0d9b3355}} 
+\index{IopSpace@{IopSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!IopSpace@{IopSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Iop\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Save an address as X\+ML. 
+
+Write the main X\+ML attributes for an address within this space The caller provides only the {\itshape offset}, and this routine fills in other details pertaining to this particular space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em offset} & is the offset of the address \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a4475d64c56141adf80cb0aca5b23e3c6}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classIopSpace_a789703a65652db483ba72c9503c06cc5}\label{classIopSpace_a789703a65652db483ba72c9503c06cc5}} 
+\index{IopSpace@{IopSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!IopSpace@{IopSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Iop\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Save an address and size as X\+ML. 
+
+Write the main X\+ML attributes of an address with this space and a size. The caller provides the {\itshape offset} and {\itshape size}, and other details about this particular space are filled in. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em offset} & is the offset of the address \\
+\hline
+{\em size} & is the size of the memory location \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a67510a8345fcc17157cc0389e757d504}{Addr\+Space}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{op_8hh}{op.\+hh}}\item 
+op.\+cc\end{DoxyCompactItemize}

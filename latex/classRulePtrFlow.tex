@@ -1,0 +1,116 @@
+\hypertarget{classRulePtrFlow}{}\doxysection{Rule\+Ptr\+Flow Class Reference}
+\label{classRulePtrFlow}\index{RulePtrFlow@{RulePtrFlow}}
+
+
+Mark \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects that are carrying or operating on pointers.  
+
+
+
+
+Inheritance diagram for Rule\+Ptr\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classRulePtrFlow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Ptr\+Flow\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classRulePtrFlow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRulePtrFlow_a30a05dd13b867b4d8e99358a13969626}\label{classRulePtrFlow_a30a05dd13b867b4d8e99358a13969626}} 
+\mbox{\hyperlink{classRulePtrFlow_a30a05dd13b867b4d8e99358a13969626}{Rule\+Ptr\+Flow}} (const string \&g, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$conf)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRulePtrFlow_a8a960fd15c7bf9c4eefbc185523fd3fc}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRulePtrFlow_a2e6086b3c89a5e65b711daea5442f90c}{get\+Op\+List}} (vector$<$ uint4 $>$ \&oplist) const
+\begin{DoxyCompactList}\small\item\em List of op codes this rule operates on. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRulePtrFlow_a4f230dae0158096df0c68cd373abaaf6}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Mark \mbox{\hyperlink{classVarnode}{Varnode}} and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects that are carrying or operating on pointers. 
+
+This is used on architectures where the data-\/flow for pointer values needs to be truncated. This marks the places where the truncation needs to happen. Then the \mbox{\hyperlink{classSubvariableFlow}{Subvariable\+Flow}} actions do the actual truncation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRulePtrFlow_a4f230dae0158096df0c68cd373abaaf6}\label{classRulePtrFlow_a4f230dae0158096df0c68cd373abaaf6}} 
+\index{RulePtrFlow@{RulePtrFlow}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RulePtrFlow@{RulePtrFlow}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Ptr\+Flow\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRulePtrFlow_a8a960fd15c7bf9c4eefbc185523fd3fc}\label{classRulePtrFlow_a8a960fd15c7bf9c4eefbc185523fd3fc}} 
+\index{RulePtrFlow@{RulePtrFlow}!clone@{clone}}
+\index{clone@{clone}!RulePtrFlow@{RulePtrFlow}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Ptr\+Flow\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+\mbox{\Hypertarget{classRulePtrFlow_a2e6086b3c89a5e65b711daea5442f90c}\label{classRulePtrFlow_a2e6086b3c89a5e65b711daea5442f90c}} 
+\index{RulePtrFlow@{RulePtrFlow}!getOpList@{getOpList}}
+\index{getOpList@{getOpList}!RulePtrFlow@{RulePtrFlow}}
+\doxysubsubsection{\texorpdfstring{getOpList()}{getOpList()}}
+{\footnotesize\ttfamily void Rule\+Ptr\+Flow\+::get\+Op\+List (\begin{DoxyParamCaption}\item[{vector$<$ uint4 $>$ \&}]{oplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List of op codes this rule operates on. 
+
+Populate the given array with all possible Op\+Codes this \mbox{\hyperlink{classRule}{Rule}} might apply to. By default, this method returns all possible Op\+Codes 
+\begin{DoxyParams}{Parameters}
+{\em oplist} & is the array to populate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4023bfc7825de0ab866790551856d10e}{Rule}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

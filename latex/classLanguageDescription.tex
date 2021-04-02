@@ -1,0 +1,65 @@
+\hypertarget{classLanguageDescription}{}\doxysection{Language\+Description Class Reference}
+\label{classLanguageDescription}\index{LanguageDescription@{LanguageDescription}}
+
+
+Contents of the $<$language$>$ tag in a .ldefs file.  
+
+
+
+
+{\ttfamily \#include $<$sleigh\+\_\+arch.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLanguageDescription_a4bbedcd8baa147052ac4e9a01952e96e}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Read the X\+ML tag from stream. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classCompilerTag}{Compiler\+Tag}} \& \mbox{\hyperlink{classLanguageDescription_affb841959c4e35e73211e78048a5e156}{get\+Compiler}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Get compiler specification of the given name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contents of the $<$language$>$ tag in a .ldefs file. 
+
+This class contains meta-\/data describing a single processor and the set of files used to analyze it. Ghidra requires a compiled S\+L\+E\+I\+GH specification file (.sla), a processor specification file (.pspec), and a compiler specification file (.cspec) in order to support disassembly/decompilation of a processor. This class supports a single processor, as described by a single S\+L\+E\+I\+GH file and processor spec. Multiple compiler specifications can be given for the single processor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLanguageDescription_affb841959c4e35e73211e78048a5e156}\label{classLanguageDescription_affb841959c4e35e73211e78048a5e156}} 
+\index{LanguageDescription@{LanguageDescription}!getCompiler@{getCompiler}}
+\index{getCompiler@{getCompiler}!LanguageDescription@{LanguageDescription}}
+\doxysubsubsection{\texorpdfstring{getCompiler()}{getCompiler()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classCompilerTag}{Compiler\+Tag}} \& Language\+Description\+::get\+Compiler (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Get compiler specification of the given name. 
+
+Pick out the \mbox{\hyperlink{classCompilerTag}{Compiler\+Tag}} associated with the desired {\itshape compiler} {\itshape id} string 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the desired id string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the matching \mbox{\hyperlink{classCompilerTag}{Compiler\+Tag}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLanguageDescription_a4bbedcd8baa147052ac4e9a01952e96e}\label{classLanguageDescription_a4bbedcd8baa147052ac4e9a01952e96e}} 
+\index{LanguageDescription@{LanguageDescription}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!LanguageDescription@{LanguageDescription}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Language\+Description\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Read the X\+ML tag from stream. 
+
+Parse an ldefs $<$language$>$ tag 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh__arch_8hh}{sleigh\+\_\+arch.\+hh}}\item 
+sleigh\+\_\+arch.\+cc\end{DoxyCompactItemize}

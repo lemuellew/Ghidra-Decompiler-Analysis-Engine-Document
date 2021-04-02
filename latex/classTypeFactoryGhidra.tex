@@ -1,0 +1,75 @@
+\hypertarget{classTypeFactoryGhidra}{}\doxysection{Type\+Factory\+Ghidra Class Reference}
+\label{classTypeFactoryGhidra}\index{TypeFactoryGhidra@{TypeFactoryGhidra}}
+
+
+An implementation of the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} interface, query a Ghidra client for data-\/type information.  
+
+
+
+
+{\ttfamily \#include $<$typegrp\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Factory\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classTypeFactoryGhidra__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Factory\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeFactoryGhidra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeFactoryGhidra_a494fd9c2fb18db1b1f9ee4d7078d590c}{find\+By\+Id}} (const string \&n, uint8 id)
+\begin{DoxyCompactList}\small\item\em Search by name and id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An implementation of the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} interface, query a Ghidra client for data-\/type information. 
+
+Requests for a specific data-\/type name and id are marshaled to the Ghidra client, which sends back a description of the data-\/type. The description is parsed and converted into a \mbox{\hyperlink{classDatatype}{Datatype}} object and cached in this object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeFactoryGhidra_a494fd9c2fb18db1b1f9ee4d7078d590c}\label{classTypeFactoryGhidra_a494fd9c2fb18db1b1f9ee4d7078d590c}} 
+\index{TypeFactoryGhidra@{TypeFactoryGhidra}!findById@{findById}}
+\index{findById@{findById}!TypeFactoryGhidra@{TypeFactoryGhidra}}
+\doxysubsubsection{\texorpdfstring{findById()}{findById()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Factory\+Ghidra\+::find\+By\+Id (\begin{DoxyParamCaption}\item[{const string \&}]{n,  }\item[{uint8}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Search by name and id. 
+
+Search for a \mbox{\hyperlink{classDatatype}{Datatype}} by {\bfseries{name}} and/or {\bfseries{id}}. Derived classes may search outside this container. 
+\begin{DoxyParams}{Parameters}
+{\em n} & is the name of the data-\/type \\
+\hline
+{\em id} & is the type id of the data-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classDatatype}{Datatype}} object 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeFactory_a79cd8d76884043080a3430f3aff8b010}{Type\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typegrp__ghidra_8hh}{typegrp\+\_\+ghidra.\+hh}}\item 
+typegrp\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

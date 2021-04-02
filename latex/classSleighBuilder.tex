@@ -1,0 +1,88 @@
+\hypertarget{classSleighBuilder}{}\doxysection{Sleigh\+Builder Class Reference}
+\label{classSleighBuilder}\index{SleighBuilder@{SleighBuilder}}
+
+
+Build p-\/code from a pre-\/parsed instruction.  
+
+
+
+
+{\ttfamily \#include $<$sleigh.\+hh$>$}
+
+
+
+Inheritance diagram for Sleigh\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=161pt]{classSleighBuilder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sleigh\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{classSleighBuilder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSleighBuilder_a6e8bed145454790630677c55bd3250bb}{Sleigh\+Builder}} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} $\ast$w, \mbox{\hyperlink{classDisassemblyCache}{Disassembly\+Cache}} $\ast$dcache, \mbox{\hyperlink{classPcodeCacher}{Pcode\+Cacher}} $\ast$pc, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$cspc, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$uspc, uint4 umask)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSleighBuilder_a9e9d6b0de400f9aa14caf2732b7bfeef}\label{classSleighBuilder_a9e9d6b0de400f9aa14caf2732b7bfeef}} 
+virtual void {\bfseries append\+Build} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$bld, int4 secnum)
+\item 
+\mbox{\Hypertarget{classSleighBuilder_aa6cee1d2f18ab2d9e3ff24a41fe80770}\label{classSleighBuilder_aa6cee1d2f18ab2d9e3ff24a41fe80770}} 
+virtual void {\bfseries delay\+Slot} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$op)
+\item 
+\mbox{\Hypertarget{classSleighBuilder_ad5b3ee580fec7e944389fb51ba798e3c}\label{classSleighBuilder_ad5b3ee580fec7e944389fb51ba798e3c}} 
+virtual void {\bfseries set\+Label} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$op)
+\item 
+\mbox{\Hypertarget{classSleighBuilder_a343885f1c2044a04ae3587d121a968dd}\label{classSleighBuilder_a343885f1c2044a04ae3587d121a968dd}} 
+virtual void {\bfseries append\+Cross\+Build} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$bld, int4 secnum)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Build p-\/code from a pre-\/parsed instruction. 
+
+Through the build() method, {\bfseries{this}} walks the parse tree and prepares data for final emission as p-\/code. (The final emitting is done separately through the \mbox{\hyperlink{classPcodeCacher_a75c21a233c9eef255c53a498790882fc}{Pcode\+Cacher.\+emit()}} method). Generally, only p-\/code for one instruction is prepared. But, through the {\bfseries{delay-\/slot}} mechanism, build() may recursively visit additional instructions. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSleighBuilder_a6e8bed145454790630677c55bd3250bb}\label{classSleighBuilder_a6e8bed145454790630677c55bd3250bb}} 
+\index{SleighBuilder@{SleighBuilder}!SleighBuilder@{SleighBuilder}}
+\index{SleighBuilder@{SleighBuilder}!SleighBuilder@{SleighBuilder}}
+\doxysubsubsection{\texorpdfstring{SleighBuilder()}{SleighBuilder()}}
+{\footnotesize\ttfamily Sleigh\+Builder\+::\+Sleigh\+Builder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} $\ast$}]{w,  }\item[{\mbox{\hyperlink{classDisassemblyCache}{Disassembly\+Cache}} $\ast$}]{dcache,  }\item[{\mbox{\hyperlink{classPcodeCacher}{Pcode\+Cacher}} $\ast$}]{pc,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{cspc,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{uspc,  }\item[{uint4}]{umask }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & is the parsed instruction \\
+\hline
+{\em dcache} & is a cache of nearby instruction parses \\
+\hline
+{\em pc} & will hold the \mbox{\hyperlink{structPcodeData}{Pcode\+Data}} and \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} objects produced by {\bfseries{this}} builder \\
+\hline
+{\em cspc} & is the constant address space \\
+\hline
+{\em uspc} & is the unique address space \\
+\hline
+{\em umask} & is the mask to use to find unique bits within an \mbox{\hyperlink{classAddress}{Address}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh_8hh}{sleigh.\+hh}}\item 
+sleigh.\+cc\end{DoxyCompactItemize}

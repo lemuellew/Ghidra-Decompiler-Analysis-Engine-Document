@@ -1,0 +1,94 @@
+\hypertarget{classIfcCallFixup}{}\doxysection{Ifc\+Call\+Fixup Class Reference}
+\label{classIfcCallFixup}\index{IfcCallFixup@{IfcCallFixup}}
+
+
+Add a new call fix-\/up to the program\+: {\ttfamily fixup call ...}  
+
+
+
+
+Inheritance diagram for Ifc\+Call\+Fixup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcCallFixup__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Call\+Fixup\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcCallFixup__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcCallFixup_a303769cfca9f66c9409774fb823efd96}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIfcCallFixup_a3332cb72c5d1f8dbc5abda28f7ff0dae}{read\+Pcode\+Snippet}} (istream \&s, string \&name, string \&outname, vector$<$ string $>$ \&inname, string \&pcodestring)
+\begin{DoxyCompactList}\small\item\em Scan a single-\/line p-\/code snippet declaration from the given stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Add a new call fix-\/up to the program\+: {\ttfamily fixup call ...} 
+
+Create a new call fixup-\/up for the architecture/program, suitable for replacing called functions. The fix-\/up is specified as a function-\/style declarator, which also provides the formal name of the fix-\/up. A \char`\"{}void\char`\"{} return-\/type and empty parameter list must be given. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{fixup call \textcolor{keywordtype}{void} myfixup1() \{ EAX = 0; RBX = RCX + RDX + 1; \}}
+\end{DoxyCode}
+ 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcCallFixup_a303769cfca9f66c9409774fb823efd96}\label{classIfcCallFixup_a303769cfca9f66c9409774fb823efd96}} 
+\index{IfcCallFixup@{IfcCallFixup}!execute@{execute}}
+\index{execute@{execute}!IfcCallFixup@{IfcCallFixup}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Fixup\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfcCallFixup_a3332cb72c5d1f8dbc5abda28f7ff0dae}\label{classIfcCallFixup_a3332cb72c5d1f8dbc5abda28f7ff0dae}} 
+\index{IfcCallFixup@{IfcCallFixup}!readPcodeSnippet@{readPcodeSnippet}}
+\index{readPcodeSnippet@{readPcodeSnippet}!IfcCallFixup@{IfcCallFixup}}
+\doxysubsubsection{\texorpdfstring{readPcodeSnippet()}{readPcodeSnippet()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Fixup\+::read\+Pcode\+Snippet (\begin{DoxyParamCaption}\item[{istream \&}]{s,  }\item[{string \&}]{name,  }\item[{string \&}]{outname,  }\item[{vector$<$ string $>$ \&}]{inname,  }\item[{string \&}]{pcodestring }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Scan a single-\/line p-\/code snippet declaration from the given stream. 
+
+A declarator is scanned first, providing a name to associate with the snippet, as well as potential names of the formal {\itshape output} \mbox{\hyperlink{classVarnode}{Varnode}} and {\itshape input} Varnodes. The body of the snippet is then surrounded by \textquotesingle{}\{\textquotesingle{} and \textquotesingle{}\}\textquotesingle{} The snippet name, input/output names, and the body are passed back to the caller. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given stream to scan \\
+\hline
+{\em name} & passes back the name of the snippet \\
+\hline
+{\em outname} & passes back the formal output parameter name, or is empty \\
+\hline
+{\em inname} & passes back an array of the formal input parameter names \\
+\hline
+{\em pcodestring} & passes back the snippet body \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

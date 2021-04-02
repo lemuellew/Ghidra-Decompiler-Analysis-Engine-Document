@@ -1,0 +1,87 @@
+\hypertarget{structParameterPieces}{}\doxysection{Parameter\+Pieces Struct Reference}
+\label{structParameterPieces}\index{ParameterPieces@{ParameterPieces}}
+
+
+Basic elements of a parameter\+: address, data-\/type, properties.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Collaboration diagram for Parameter\+Pieces\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{structParameterPieces__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a1834af3d8f90ea2e1c1ea1cf92983f21}{isthis}} = 1, 
+\mbox{\hyperlink{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3aab9b7725bf05d092537566b207e8c225}{hiddenretparm}} = 2, 
+\mbox{\hyperlink{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a7c564fda22f21e6d5483dc205d2dd52d}{indirectstorage}} = 4, 
+\mbox{\hyperlink{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3ab09194da2704f2ffabe703606089fc39}{namelock}} = 8, 
+\newline
+\mbox{\hyperlink{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a085762847003bb7b40906f31f06d546d}{typelock}} = 16, 
+\mbox{\hyperlink{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3aa93fb31545ce9e36365bd7ff5426b4b8}{sizelock}} = 32
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structParameterPieces_a64a8ea85886ffa493a625e75cb5b01e0}\label{structParameterPieces_a64a8ea85886ffa493a625e75cb5b01e0}} 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{structParameterPieces_a64a8ea85886ffa493a625e75cb5b01e0}{addr}}
+\begin{DoxyCompactList}\small\item\em Storage address of the parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParameterPieces_a628fd8428a2331db63516291840e8409}\label{structParameterPieces_a628fd8428a2331db63516291840e8409}} 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{structParameterPieces_a628fd8428a2331db63516291840e8409}{type}}
+\begin{DoxyCompactList}\small\item\em The datatype of the parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structParameterPieces_aedb19159c26f9137c4ec68238f25933a}\label{structParameterPieces_aedb19159c26f9137c4ec68238f25933a}} 
+uint4 \mbox{\hyperlink{structParameterPieces_aedb19159c26f9137c4ec68238f25933a}{flags}}
+\begin{DoxyCompactList}\small\item\em additional attributes of the parameter \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic elements of a parameter\+: address, data-\/type, properties. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3}\label{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{isthis@{isthis}!ParameterPieces@{ParameterPieces}}\index{ParameterPieces@{ParameterPieces}!isthis@{isthis}}}\mbox{\Hypertarget{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a1834af3d8f90ea2e1c1ea1cf92983f21}\label{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a1834af3d8f90ea2e1c1ea1cf92983f21}} 
+isthis&Parameter is \char`\"{}this\char`\"{} pointer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hiddenretparm@{hiddenretparm}!ParameterPieces@{ParameterPieces}}\index{ParameterPieces@{ParameterPieces}!hiddenretparm@{hiddenretparm}}}\mbox{\Hypertarget{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3aab9b7725bf05d092537566b207e8c225}\label{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3aab9b7725bf05d092537566b207e8c225}} 
+hiddenretparm&Parameter is hidden pointer to return value, mirrors \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca98c9b8ae27e32db19e64422a37b8be74}{Varnode\+::hiddenretparm}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirectstorage@{indirectstorage}!ParameterPieces@{ParameterPieces}}\index{ParameterPieces@{ParameterPieces}!indirectstorage@{indirectstorage}}}\mbox{\Hypertarget{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a7c564fda22f21e6d5483dc205d2dd52d}\label{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a7c564fda22f21e6d5483dc205d2dd52d}} 
+indirectstorage&Parameter is indirect pointer to true parameter, mirrors \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca8bc73667e547486cbabc443d0c90f2c5}{Varnode\+::indirectstorage}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{namelock@{namelock}!ParameterPieces@{ParameterPieces}}\index{ParameterPieces@{ParameterPieces}!namelock@{namelock}}}\mbox{\Hypertarget{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3ab09194da2704f2ffabe703606089fc39}\label{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3ab09194da2704f2ffabe703606089fc39}} 
+namelock&Parameter\textquotesingle{}s name is locked, mirrors \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0b1de824f917f0c708db4fa4b8caaeb8}{Varnode\+::namelock}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{typelock@{typelock}!ParameterPieces@{ParameterPieces}}\index{ParameterPieces@{ParameterPieces}!typelock@{typelock}}}\mbox{\Hypertarget{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a085762847003bb7b40906f31f06d546d}\label{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3a085762847003bb7b40906f31f06d546d}} 
+typelock&Parameter\textquotesingle{}s data-\/type is locked, mirrors \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cae49e063a1b1e7de4592afd3f19abbdc7}{Varnode\+::typelock}}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{sizelock@{sizelock}!ParameterPieces@{ParameterPieces}}\index{ParameterPieces@{ParameterPieces}!sizelock@{sizelock}}}\mbox{\Hypertarget{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3aa93fb31545ce9e36365bd7ff5426b4b8}\label{structParameterPieces_a295b07a0f9a666b57278306e86b1e6a3aa93fb31545ce9e36365bd7ff5426b4b8}} 
+sizelock&Size of the parameter is locked (but not the data-\/type) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\end{DoxyCompactItemize}

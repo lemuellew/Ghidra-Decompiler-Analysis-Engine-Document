@@ -1,0 +1,68 @@
+\hypertarget{classJoinRecord}{}\doxysection{Join\+Record Class Reference}
+\label{classJoinRecord}\index{JoinRecord@{JoinRecord}}
+
+
+A record describing how logical values are split.  
+
+
+
+
+{\ttfamily \#include $<$translate.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classJoinRecord_a066fe7daf2ef5fa69f1fd00fef7eeb13}{get\+Equivalent\+Address}} (uintb offset, int4 \&pos) const
+\begin{DoxyCompactList}\small\item\em Given offset in {\itshape join} space, get equivalent address of piece. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJoinRecord_a2e6ea7f4592e991ee9c7e72b9c99307d}{operator$<$}} (const \mbox{\hyperlink{classJoinRecord}{Join\+Record}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare records lexigraphically by pieces. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJoinRecord_a0e578f3e90e10ec045899c0e9cb65d46}\label{classJoinRecord_a0e578f3e90e10ec045899c0e9cb65d46}} 
+class {\bfseries Addr\+Space\+Manager}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A record describing how logical values are split. 
+
+The decompiler can describe a logical value that is stored split across multiple physical memory locations. This record describes such a split. The pieces must be listed from {\itshape most} {\itshape significant} to {\itshape least} {\itshape significant}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJoinRecord_a066fe7daf2ef5fa69f1fd00fef7eeb13}\label{classJoinRecord_a066fe7daf2ef5fa69f1fd00fef7eeb13}} 
+\index{JoinRecord@{JoinRecord}!getEquivalentAddress@{getEquivalentAddress}}
+\index{getEquivalentAddress@{getEquivalentAddress}!JoinRecord@{JoinRecord}}
+\doxysubsubsection{\texorpdfstring{getEquivalentAddress()}{getEquivalentAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Join\+Record\+::get\+Equivalent\+Address (\begin{DoxyParamCaption}\item[{uintb}]{offset,  }\item[{int4 \&}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Given offset in {\itshape join} space, get equivalent address of piece. 
+
+The {\itshape join} space range maps to the underlying pieces in a natural endian aware way. Given an offset in the range, figure out what address it is mapping to. The particular piece is passed back as an index, and the \mbox{\hyperlink{classAddress}{Address}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em offset} & is the offset within {\bfseries{this}} range to map \\
+\hline
+{\em pos} & will hold the passed back piece index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classAddress}{Address}} mapped to 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJoinRecord_a2e6ea7f4592e991ee9c7e72b9c99307d}\label{classJoinRecord_a2e6ea7f4592e991ee9c7e72b9c99307d}} 
+\index{JoinRecord@{JoinRecord}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!JoinRecord@{JoinRecord}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Join\+Record\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJoinRecord}{Join\+Record}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Compare records lexigraphically by pieces. 
+
+Allow sorting on Join\+Records so that a collection of pieces can be quickly mapped to its logical whole, specified with a join address 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{translate_8hh}{translate.\+hh}}\item 
+translate.\+cc\end{DoxyCompactItemize}

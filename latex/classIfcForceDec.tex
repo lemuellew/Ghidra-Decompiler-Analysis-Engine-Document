@@ -1,0 +1,62 @@
+\hypertarget{classIfcForceDec}{}\doxysection{Ifc\+Force\+Dec Class Reference}
+\label{classIfcForceDec}\index{IfcForceDec@{IfcForceDec}}
+
+
+Mark a constant to be printed in decimal format\+: {\ttfamily force dec $<$varnode$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Force\+Dec\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcForceDec__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Force\+Dec\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcForceDec__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcForceDec_a3dd7a4c7396bae9c375317b916057d9d}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Mark a constant to be printed in decimal format\+: {\ttfamily force dec $<$varnode$>$} 
+
+A selected constant \mbox{\hyperlink{classVarnode}{Varnode}} in the {\itshape current} function is marked so that it will be printed in decimal format in decompiler output. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcForceDec_a3dd7a4c7396bae9c375317b916057d9d}\label{classIfcForceDec_a3dd7a4c7396bae9c375317b916057d9d}} 
+\index{IfcForceDec@{IfcForceDec}!execute@{execute}}
+\index{execute@{execute}!IfcForceDec@{IfcForceDec}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Force\+Dec\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,234 @@
+\hypertarget{classLoadImageXml}{}\doxysection{Load\+Image\+Xml Class Reference}
+\label{classLoadImageXml}\index{LoadImageXml@{LoadImageXml}}
+
+
+Implementation of the \mbox{\hyperlink{classLoadImage}{Load\+Image}} interface using underlying data stored in an X\+ML format.  
+
+
+
+
+{\ttfamily \#include $<$loadimage\+\_\+xml.\+hh$>$}
+
+
+
+Inheritance diagram for Load\+Image\+Xml\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classLoadImageXml__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Load\+Image\+Xml\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classLoadImageXml__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLoadImageXml_a8400e67a31d8217d0ac08fe7b9c61d86}{Load\+Image\+Xml}} (const string \&f, const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadImageXml_a927feb1545848f92d69e4729c92c7400}{open}} (const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Read X\+ML tags into the containers. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classLoadImageXml_a609c3c7c8ae8d9a4152ceb83aad0e862}\label{classLoadImageXml_a609c3c7c8ae8d9a4152ceb83aad0e862}} 
+void \mbox{\hyperlink{classLoadImageXml_a609c3c7c8ae8d9a4152ceb83aad0e862}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear out all the caches. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadImageXml_a299156268ffc721a01871095d1d93a73}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save the image back out to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageXml_a39ab20b5642df7cf4b84d312a48b1d17}{load\+Fill}} (uint1 $\ast$ptr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageXml_abf281fd9e155951f168ddab099dadf47}{open\+Symbols}} (void) const
+\begin{DoxyCompactList}\small\item\em Prepare to read symbols. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classLoadImageXml_ab0a1e2aee8d5d8925e29662f32fa2060}{get\+Next\+Symbol}} (\mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}} \&record) const
+\begin{DoxyCompactList}\small\item\em Get the next symbol record. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageXml_adab4a4d8e035047641c5a1613e9386d6}{get\+Readonly}} (\mbox{\hyperlink{classRangeList}{Range\+List}} \&list) const
+\begin{DoxyCompactList}\small\item\em Return list of {\itshape readonly} address ranges. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classLoadImageXml_ad6b8dd51035746be7a59e1070e65c668}{get\+Arch\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get a string indicating the architecture type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLoadImageXml_ab6a98e9bcf8141caee525fefc6a6d115}{adjust\+Vma}} (long adjust)
+\begin{DoxyCompactList}\small\item\em Adjust load addresses with a global offset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implementation of the \mbox{\hyperlink{classLoadImage}{Load\+Image}} interface using underlying data stored in an X\+ML format. 
+
+The image data is stored in an X\+ML file in a $<$binaryimage$>$ file. The data is encoded in $<$bytechunk$>$ and potentially $<$symbol$>$ files. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLoadImageXml_a8400e67a31d8217d0ac08fe7b9c61d86}\label{classLoadImageXml_a8400e67a31d8217d0ac08fe7b9c61d86}} 
+\index{LoadImageXml@{LoadImageXml}!LoadImageXml@{LoadImageXml}}
+\index{LoadImageXml@{LoadImageXml}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{LoadImageXml()}{LoadImageXml()}}
+{\footnotesize\ttfamily Load\+Image\+Xml\+::\+Load\+Image\+Xml (\begin{DoxyParamCaption}\item[{const string \&}]{f,  }\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & is the (path to the) underlying X\+ML file \\
+\hline
+{\em el} & is the parsed form of the file \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadImageXml_ab6a98e9bcf8141caee525fefc6a6d115}\label{classLoadImageXml_ab6a98e9bcf8141caee525fefc6a6d115}} 
+\index{LoadImageXml@{LoadImageXml}!adjustVma@{adjustVma}}
+\index{adjustVma@{adjustVma}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{adjustVma()}{adjustVma()}}
+{\footnotesize\ttfamily void Load\+Image\+Xml\+::adjust\+Vma (\begin{DoxyParamCaption}\item[{long}]{adjust }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adjust load addresses with a global offset. 
+
+Most load image formats automatically encode information about the true loading address(es) for the data in the image. But if this is missing or incorrect, this routine can be used to make a global adjustment to the load address. Only one adjustment is made across {\itshape all} addresses in the image. The offset passed to this method is added to the stored or default value for any address queried in the image. This is most often used in a {\itshape raw} binary file format. In this case, the entire executable file is intended to be read straight into R\+AM, as one contiguous chunk, in order to be executed. In the absence of any other info, the first byte of the image file is loaded at offset 0. This method then would adjust the load address of the first byte. 
+\begin{DoxyParams}{Parameters}
+{\em adjust} & is the offset amount to be added to default values \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLoadImage_a51a254f705fba6f0e6524995acd5aaa7}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageXml_ad6b8dd51035746be7a59e1070e65c668}\label{classLoadImageXml_ad6b8dd51035746be7a59e1070e65c668}} 
+\index{LoadImageXml@{LoadImageXml}!getArchType@{getArchType}}
+\index{getArchType@{getArchType}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{getArchType()}{getArchType()}}
+{\footnotesize\ttfamily virtual string Load\+Image\+Xml\+::get\+Arch\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get a string indicating the architecture type. 
+
+The load image class is intended to be a generic front-\/end to the large variety of load formats in use. This method should return a string that identifies the particular architecture this particular image is intended to run on. It is currently the responsibility of any derived \mbox{\hyperlink{classLoadImage}{Load\+Image}} class to establish a format for this string, but it should generally contain some indication of the operating system and the processor. \begin{DoxyReturn}{Returns}
+the identifier string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classLoadImage_a5103418147e95994f66e77746c0a0cfc}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageXml_ab0a1e2aee8d5d8925e29662f32fa2060}\label{classLoadImageXml_ab0a1e2aee8d5d8925e29662f32fa2060}} 
+\index{LoadImageXml@{LoadImageXml}!getNextSymbol@{getNextSymbol}}
+\index{getNextSymbol@{getNextSymbol}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{getNextSymbol()}{getNextSymbol()}}
+{\footnotesize\ttfamily bool Load\+Image\+Xml\+::get\+Next\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the next symbol record. 
+
+This method is used to read out an individual symbol record, \mbox{\hyperlink{structLoadImageFunc}{Load\+Image\+Func}}, from the load image. Right now, the only information that can be read out are function starts and the associated function name. This method can be called repeatedly to iterate through all the symbols, until it returns {\bfseries{false}}. This indicates the end of the symbols. 
+\begin{DoxyParams}{Parameters}
+{\em record} & is a reference to the symbol record to be filled in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are more records to read 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_af4a887cf44c719c576bb05605a4c5c7e}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageXml_adab4a4d8e035047641c5a1613e9386d6}\label{classLoadImageXml_adab4a4d8e035047641c5a1613e9386d6}} 
+\index{LoadImageXml@{LoadImageXml}!getReadonly@{getReadonly}}
+\index{getReadonly@{getReadonly}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{getReadonly()}{getReadonly()}}
+{\footnotesize\ttfamily void Load\+Image\+Xml\+::get\+Readonly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return list of {\itshape readonly} address ranges. 
+
+This method should read out information about {\itshape all} address ranges within the load image that are known to be {\bfseries{readonly}}. This method is intended to be called only once, so all information should be written to the passed \mbox{\hyperlink{classRangeList}{Range\+List}} object. 
+\begin{DoxyParams}{Parameters}
+{\em list} & is where readonly info will get put \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_a31dba7f0f819c97e68f868cc623e4054}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageXml_a39ab20b5642df7cf4b84d312a48b1d17}\label{classLoadImageXml_a39ab20b5642df7cf4b84d312a48b1d17}} 
+\index{LoadImageXml@{LoadImageXml}!loadFill@{loadFill}}
+\index{loadFill@{loadFill}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{loadFill()}{loadFill()}}
+{\footnotesize\ttfamily void Load\+Image\+Xml\+::load\+Fill (\begin{DoxyParamCaption}\item[{uint1 $\ast$}]{ptr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get data from the \mbox{\hyperlink{classLoadImage}{Load\+Image}}. 
+
+This is the {\itshape core} routine of a \mbox{\hyperlink{classLoadImage}{Load\+Image}}. Given a particular address range, this routine retrieves the exact byte values that are stored at that address when the executable is loaded into R\+AM. The caller must supply a pre-\/allocated array of bytes where the returned bytes should be stored. If the requested address range does not exist in the image, or otherwise can\textquotesingle{}t be retrieved, this method throws an \mbox{\hyperlink{structDataUnavailError}{Data\+Unavail\+Error}} exception. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & points to where the resulting bytes will be stored \\
+\hline
+{\em size} & is the number of bytes to retrieve from the image \\
+\hline
+{\em addr} & is the starting address of the bytes to retrieve \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageXml_a927feb1545848f92d69e4729c92c7400}\label{classLoadImageXml_a927feb1545848f92d69e4729c92c7400}} 
+\index{LoadImageXml@{LoadImageXml}!open@{open}}
+\index{open@{open}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily void Load\+Image\+Xml\+::open (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m }\end{DoxyParamCaption})}
+
+
+
+Read X\+ML tags into the containers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is for looking up address space \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadImageXml_abf281fd9e155951f168ddab099dadf47}\label{classLoadImageXml_abf281fd9e155951f168ddab099dadf47}} 
+\index{LoadImageXml@{LoadImageXml}!openSymbols@{openSymbols}}
+\index{openSymbols@{openSymbols}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{openSymbols()}{openSymbols()}}
+{\footnotesize\ttfamily void Load\+Image\+Xml\+::open\+Symbols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Prepare to read symbols. 
+
+This routine should read in and parse any symbol information that the load image contains about executable. Once this method is called, individual symbol records are read out using the \mbox{\hyperlink{classLoadImageXml_ab0a1e2aee8d5d8925e29662f32fa2060}{get\+Next\+Symbol()}} method. 
+
+Reimplemented from \mbox{\hyperlink{classLoadImage_a5b17f1d68413ab802966bdc7aa07cc73}{Load\+Image}}.
+
+\mbox{\Hypertarget{classLoadImageXml_a299156268ffc721a01871095d1d93a73}\label{classLoadImageXml_a299156268ffc721a01871095d1d93a73}} 
+\index{LoadImageXml@{LoadImageXml}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!LoadImageXml@{LoadImageXml}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Load\+Image\+Xml\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save the image back out to an X\+ML stream. 
+
+Write out the byte chunks and symbols as X\+ML tags 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{loadimage__xml_8hh}{loadimage\+\_\+xml.\+hh}}\item 
+loadimage\+\_\+xml.\+cc\end{DoxyCompactItemize}

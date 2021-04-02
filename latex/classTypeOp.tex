@@ -1,0 +1,481 @@
+\hypertarget{classTypeOp}{}\doxysection{Type\+Op Class Reference}
+\label{classTypeOp}\index{TypeOp@{TypeOp}}
+
+
+Associate data-\/type and behavior information with a specific p-\/code op-\/code.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classTypeOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classTypeOp_a38acde4e65c6553bd7869d617a485011a56c5af99e9a3391410a24e704e65914a}{inherits\+\_\+sign}} = 1, 
+\mbox{\hyperlink{classTypeOp_a38acde4e65c6553bd7869d617a485011ae19eeb20815c894d613cd03aa54047c1}{inherits\+\_\+sign\+\_\+zero}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTypeOp_a9f6e01a5e1cc9563939cb7721799f92b}{Type\+Op}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$t, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, const string \&n)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeOp_a980865aa52454f91d61f24062545de9a}\label{classTypeOp_a980865aa52454f91d61f24062545de9a}} 
+virtual \mbox{\hyperlink{classTypeOp_a980865aa52454f91d61f24062545de9a}{$\sim$\+Type\+Op}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTypeOp_a490abb4596b7ddc78c5afc40a6326701}{mark\+Explicit\+Unsigned}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot) const
+\begin{DoxyCompactList}\small\item\em Check if a constant input should be explicitly labeled as {\itshape unsigned}. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classTypeOp_a44947ba9af3fb0f2a7b2023d2a3038ca}{evaluate\+Unary}} (int4 sizeout, int4 sizein, uintb in1) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEmulate}{Emulate}} the unary op-\/code on an input value. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classTypeOp_ac5776ded31f8f936853fbb016a93abf8}{evaluate\+Binary}} (int4 sizeout, int4 sizein, uintb in1, uintb in2) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEmulate}{Emulate}} the binary op-\/code on an input value. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classTypeOp_a2904d3cce4a93be9e976305779f57474}{recover\+Input\+Binary}} (int4 slot, int4 sizeout, uintb out, int4 sizein, uintb in) const
+\begin{DoxyCompactList}\small\item\em Reverse the binary op-\/code operation, recovering a constant input value. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classTypeOp_a33410aedda8e08db1eb3d0384e7d5130}{recover\+Input\+Unary}} (int4 sizeout, uintb out, int4 sizein) const
+\begin{DoxyCompactList}\small\item\em Reverse the unary op-\/code operation, recovering a constant input value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classTypeOp_a2d51c10873a61d54a5c4c30221f5706e}{is\+Commutative}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this op-\/code is commutative. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeOp_a8440bbfcbdd6209b625048ee20db29c9}\label{classTypeOp_a8440bbfcbdd6209b625048ee20db29c9}} 
+bool \mbox{\hyperlink{classTypeOp_a8440bbfcbdd6209b625048ee20db29c9}{inherits\+Sign}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the op-\/code inherits it signedness from its inputs. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOp_a3454cadfb15f6794829123a7ecfe38f5}{get\+Output\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOp_abe2e4b619932cf94bafb084963a0fc66}{get\+Input\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOp_a7150ac93bb03a993735c829deb5237e7}{get\+Output\+Token}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$cast\+Strategy) const
+\begin{DoxyCompactList}\small\item\em Find the data-\/type of the output that would be assigned by a compiler. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOp_a950c417e4af100d176a701af5816b5ab}{get\+Input\+Cast}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot, const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$cast\+Strategy) const
+\begin{DoxyCompactList}\small\item\em Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}{push}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$read\+Op) const =0
+\begin{DoxyCompactList}\small\item\em Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)=0
+\begin{DoxyCompactList}\small\item\em Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classTypeOp_a42a1ffa77f998df24efdb44405b33ac5}{get\+Operator\+Name}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Get the name of the op-\/code as it should be displayed in context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classTypeOp_a1a6335312cb599605f7cddb617ab113d}{register\+Instructions}} (vector$<$ \mbox{\hyperlink{classTypeOp}{Type\+Op}} $\ast$ $>$ \&inst, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$\mbox{\hyperlink{classTypeOp_a06a48c0a8067e447395c9ccf8e1a8b5c}{tlst}}, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)
+\begin{DoxyCompactList}\small\item\em Build a map from op-\/code value to the \mbox{\hyperlink{classTypeOp}{Type\+Op}} information objects. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classTypeOp_a518700fe96d7e215d8c42d6049626c88}{select\+Java\+Operators}} (vector$<$ \mbox{\hyperlink{classTypeOp}{Type\+Op}} $\ast$ $>$ \&inst, bool val)
+\begin{DoxyCompactList}\small\item\em Toggle Java specific aspects of the op-\/code information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeOp_a06a48c0a8067e447395c9ccf8e1a8b5c}\label{classTypeOp_a06a48c0a8067e447395c9ccf8e1a8b5c}} 
+\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$ \mbox{\hyperlink{classTypeOp_a06a48c0a8067e447395c9ccf8e1a8b5c}{tlst}}
+\begin{DoxyCompactList}\small\item\em Pointer to data-\/type factory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeOp_a4cf1a87808c695547bea14f3dc84404c}\label{classTypeOp_a4cf1a87808c695547bea14f3dc84404c}} 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{classTypeOp_a4cf1a87808c695547bea14f3dc84404c}{opcode}}
+\begin{DoxyCompactList}\small\item\em The op-\/code value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeOp_aeb09cfb426122a00d1476e3b8642f1a9}\label{classTypeOp_aeb09cfb426122a00d1476e3b8642f1a9}} 
+uint4 \mbox{\hyperlink{classTypeOp_aeb09cfb426122a00d1476e3b8642f1a9}{opflags}}
+\begin{DoxyCompactList}\small\item\em Cached pcode-\/op properties for this op-\/code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeOp_a30b56e550e24236241d2a44dce290331}\label{classTypeOp_a30b56e550e24236241d2a44dce290331}} 
+uint4 \mbox{\hyperlink{classTypeOp_a30b56e550e24236241d2a44dce290331}{addlflags}}
+\begin{DoxyCompactList}\small\item\em Additional properties. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeOp_a1b6f0e6b45be588062370b446d9abc4a}\label{classTypeOp_a1b6f0e6b45be588062370b446d9abc4a}} 
+string \mbox{\hyperlink{classTypeOp_a1b6f0e6b45be588062370b446d9abc4a}{name}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSymbol}{Symbol}} denoting this operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeOp_acc806d7bbd5997fb998e83df32bcbbc1}\label{classTypeOp_acc806d7bbd5997fb998e83df32bcbbc1}} 
+\mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ \mbox{\hyperlink{classTypeOp_acc806d7bbd5997fb998e83df32bcbbc1}{behave}}
+\begin{DoxyCompactList}\small\item\em Object for emulating the behavior of the op-\/code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Associate data-\/type and behavior information with a specific p-\/code op-\/code. 
+
+This holds all information about a p-\/code op-\/code. The main \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} object holds this as a representative of the op-\/code. The evaluate$\ast$ methods can be used to let the op-\/code act on constant input values. The get\+Output$\ast$ and get\+Input$\ast$ methods are used to obtain data-\/type information that is specific to the op-\/code. This also holds other \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} boolean properties that are set in common for the op-\/code. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTypeOp_a38acde4e65c6553bd7869d617a485011}\label{classTypeOp_a38acde4e65c6553bd7869d617a485011}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{inherits\_sign@{inherits\_sign}!TypeOp@{TypeOp}}\index{TypeOp@{TypeOp}!inherits\_sign@{inherits\_sign}}}\mbox{\Hypertarget{classTypeOp_a38acde4e65c6553bd7869d617a485011a56c5af99e9a3391410a24e704e65914a}\label{classTypeOp_a38acde4e65c6553bd7869d617a485011a56c5af99e9a3391410a24e704e65914a}} 
+inherits\+\_\+sign&Operator token inherits signedness from its inputs. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{inherits\_sign\_zero@{inherits\_sign\_zero}!TypeOp@{TypeOp}}\index{TypeOp@{TypeOp}!inherits\_sign\_zero@{inherits\_sign\_zero}}}\mbox{\Hypertarget{classTypeOp_a38acde4e65c6553bd7869d617a485011ae19eeb20815c894d613cd03aa54047c1}\label{classTypeOp_a38acde4e65c6553bd7869d617a485011ae19eeb20815c894d613cd03aa54047c1}} 
+inherits\+\_\+sign\+\_\+zero&Only inherits sign from first operand, not the second. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTypeOp_a9f6e01a5e1cc9563939cb7721799f92b}\label{classTypeOp_a9f6e01a5e1cc9563939cb7721799f92b}} 
+\index{TypeOp@{TypeOp}!TypeOp@{TypeOp}}
+\index{TypeOp@{TypeOp}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{TypeOp()}{TypeOp()}}
+{\footnotesize\ttfamily Type\+Op\+::\+Type\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{t,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{const string \&}]{n }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & is the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} used to construct data-\/types \\
+\hline
+{\em opc} & is the op-\/code value the new object will represent \\
+\hline
+{\em n} & is the display name that will represent the op-\/code \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOp_ac5776ded31f8f936853fbb016a93abf8}\label{classTypeOp_ac5776ded31f8f936853fbb016a93abf8}} 
+\index{TypeOp@{TypeOp}!evaluateBinary@{evaluateBinary}}
+\index{evaluateBinary@{evaluateBinary}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{evaluateBinary()}{evaluateBinary()}}
+{\footnotesize\ttfamily uintb Type\+Op\+::evaluate\+Binary (\begin{DoxyParamCaption}\item[{int4}]{sizeout,  }\item[{int4}]{sizein,  }\item[{uintb}]{in1,  }\item[{uintb}]{in2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classEmulate}{Emulate}} the binary op-\/code on an input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em sizein} & is the size of the inputs in bytes \\
+\hline
+{\em in1} & is the first input value \\
+\hline
+{\em in2} & is the second input value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeOp_a44947ba9af3fb0f2a7b2023d2a3038ca}\label{classTypeOp_a44947ba9af3fb0f2a7b2023d2a3038ca}} 
+\index{TypeOp@{TypeOp}!evaluateUnary@{evaluateUnary}}
+\index{evaluateUnary@{evaluateUnary}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{evaluateUnary()}{evaluateUnary()}}
+{\footnotesize\ttfamily uintb Type\+Op\+::evaluate\+Unary (\begin{DoxyParamCaption}\item[{int4}]{sizeout,  }\item[{int4}]{sizein,  }\item[{uintb}]{in1 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classEmulate}{Emulate}} the unary op-\/code on an input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em sizein} & is the size of the input in bytes \\
+\hline
+{\em in1} & is the input value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeOp_a950c417e4af100d176a701af5816b5ab}\label{classTypeOp_a950c417e4af100d176a701af5816b5ab}} 
+\index{TypeOp@{TypeOp}!getInputCast@{getInputCast}}
+\index{getInputCast@{getInputCast}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{getInputCast()}{getInputCast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+::get\+Input\+Cast (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot,  }\item[{const \mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$}]{cast\+Strategy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the data-\/type of the input to a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+Calculate the actual data-\/type of the input to the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. A {\bfseries{null}} result indicates the input data-\/type is the same as or otherwise doesn\textquotesingle{}t need a cast from the data-\/type of the actual input \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em slot} & is the input to consider \\
+\hline
+{\em cast\+Strategy} & is the current casting strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpNew_a216fef1014a8a0a4f85208728fa7b1e0}{Type\+Op\+New}}, \mbox{\hyperlink{classTypeOpCpoolref_a5cc9b6921ce5b3672dc96af17134474f}{Type\+Op\+Cpoolref}}, \mbox{\hyperlink{classTypeOpSegment_abc93e6a0769d61082a6d44577ac9abf6}{Type\+Op\+Segment}}, \mbox{\hyperlink{classTypeOpPtrsub_a3c651a295323c8fbb431f26aa07b92f9}{Type\+Op\+Ptrsub}}, \mbox{\hyperlink{classTypeOpPtradd_ae946ae561b73a60e3df2be75280cf501}{Type\+Op\+Ptradd}}, \mbox{\hyperlink{classTypeOpIntSrem_a92bf8a1a1ff73b5f0ff6f9d05fdfe7fa}{Type\+Op\+Int\+Srem}}, \mbox{\hyperlink{classTypeOpIntRem_a93c20ae0ea5bd1e4b45b675d044c9b6e}{Type\+Op\+Int\+Rem}}, \mbox{\hyperlink{classTypeOpIntSdiv_a32de2e7601277d5c15f49cc455a467ed}{Type\+Op\+Int\+Sdiv}}, \mbox{\hyperlink{classTypeOpIntDiv_ad99f05d40d200997ae62febf063b8ce2}{Type\+Op\+Int\+Div}}, \mbox{\hyperlink{classTypeOpIntSright_aa7d3a668c673ad21f266ac14b3a5f417}{Type\+Op\+Int\+Sright}}, \mbox{\hyperlink{classTypeOpIntRight_a068545a29778b9e9a72b95c2a0f9422f}{Type\+Op\+Int\+Right}}, \mbox{\hyperlink{classTypeOpIntSext_a31eb9e0cd6e259e779d2b045604323dd}{Type\+Op\+Int\+Sext}}, \mbox{\hyperlink{classTypeOpIntZext_a2839a324572064596d01ea878f515f73}{Type\+Op\+Int\+Zext}}, \mbox{\hyperlink{classTypeOpIntLessEqual_abd2012e03caf7a3874a27f25f510e95c}{Type\+Op\+Int\+Less\+Equal}}, \mbox{\hyperlink{classTypeOpIntLess_a9dedae62c7777cdcf4bbabbe440c510b}{Type\+Op\+Int\+Less}}, \mbox{\hyperlink{classTypeOpIntSlessEqual_a3451ebb5f373aac736a788d7c6878cb6}{Type\+Op\+Int\+Sless\+Equal}}, \mbox{\hyperlink{classTypeOpIntSless_a7a75f536f0be6ff417f9eb6d83b27a3b}{Type\+Op\+Int\+Sless}}, \mbox{\hyperlink{classTypeOpNotEqual_a597b92a026250eb91ad74c5b6b279654}{Type\+Op\+Not\+Equal}}, \mbox{\hyperlink{classTypeOpEqual_a26875505fcaa2316cc32a9cb7b0f18cf}{Type\+Op\+Equal}}, \mbox{\hyperlink{classTypeOpStore_a37da7d884a84478b4fa72451c47411c0}{Type\+Op\+Store}}, \mbox{\hyperlink{classTypeOpLoad_a42e0b10ae74a6839bffc18f3e36bb02a}{Type\+Op\+Load}}, and \mbox{\hyperlink{classTypeOpCopy_a95594caad35bce30d7167b3cecb76e7f}{Type\+Op\+Copy}}.
+
+\mbox{\Hypertarget{classTypeOp_abe2e4b619932cf94bafb084963a0fc66}\label{classTypeOp_abe2e4b619932cf94bafb084963a0fc66}} 
+\index{TypeOp@{TypeOp}!getInputLocal@{getInputLocal}}
+\index{getInputLocal@{getInputLocal}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{getInputLocal()}{getInputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+::get\+Input\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the input) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+{\em slot} & is the input being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpExtract_a92ff401c8559c6c30806f15377810536}{Type\+Op\+Extract}}, \mbox{\hyperlink{classTypeOpInsert_af5fda9d3fc8949de3671a165d285c36c}{Type\+Op\+Insert}}, \mbox{\hyperlink{classTypeOpCpoolref_a08047a47da143613ebf78d36dd22c564}{Type\+Op\+Cpoolref}}, \mbox{\hyperlink{classTypeOpPtrsub_aeb893948a1260af75942c71c4a2e19cd}{Type\+Op\+Ptrsub}}, \mbox{\hyperlink{classTypeOpPtradd_a80258521d1b2a930d1472fcf1b6c53eb}{Type\+Op\+Ptradd}}, \mbox{\hyperlink{classTypeOpIndirect_a556bb0789c0ef43a825befed5f4068c4}{Type\+Op\+Indirect}}, \mbox{\hyperlink{classTypeOpIntSright_a684bdbbed1aa1ac2fc0d08caf5e0ca24}{Type\+Op\+Int\+Sright}}, \mbox{\hyperlink{classTypeOpIntRight_afd6976a40304a509b940a874da58b31b}{Type\+Op\+Int\+Right}}, \mbox{\hyperlink{classTypeOpIntLeft_ace4697dce938154ffc5098b0c582cf3b}{Type\+Op\+Int\+Left}}, \mbox{\hyperlink{classTypeOpReturn_a524940b2f4716701e5d0c62b16c6b001}{Type\+Op\+Return}}, \mbox{\hyperlink{classTypeOpCallother_a35cf8a5ffa9af239c20c60d0e1799719}{Type\+Op\+Callother}}, \mbox{\hyperlink{classTypeOpCallind_a12ae23733dbb5b171ab30f32a90b973c}{Type\+Op\+Callind}}, \mbox{\hyperlink{classTypeOpCall_ac92e69ea35780e349d3ca0cecef0a01e}{Type\+Op\+Call}}, \mbox{\hyperlink{classTypeOpCbranch_af7d6764f79c316780136fab4e67b8a3f}{Type\+Op\+Cbranch}}, \mbox{\hyperlink{classTypeOpFunc_a7f2860d7c345a794c665f72dbc41c44d}{Type\+Op\+Func}}, \mbox{\hyperlink{classTypeOpUnary_a80df02d6ff2783f44b3c9dca6f580044}{Type\+Op\+Unary}}, and \mbox{\hyperlink{classTypeOpBinary_a6b8460b8ee0e97579321c6d02fe4fd29}{Type\+Op\+Binary}}.
+
+\mbox{\Hypertarget{classTypeOp_a42a1ffa77f998df24efdb44405b33ac5}\label{classTypeOp_a42a1ffa77f998df24efdb44405b33ac5}} 
+\index{TypeOp@{TypeOp}!getOperatorName@{getOperatorName}}
+\index{getOperatorName@{getOperatorName}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{getOperatorName()}{getOperatorName()}}
+{\footnotesize\ttfamily virtual string Type\+Op\+::get\+Operator\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the name of the op-\/code as it should be displayed in context. 
+
+Depending on the context, the same op-\/code may get displayed in different ways. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} context \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the display token 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpSubpiece_a8c36b59c2012927cc27fb9fde2ad31ba}{Type\+Op\+Subpiece}}, \mbox{\hyperlink{classTypeOpPiece_aa4d66f5b3abf4ea297a0aa083aab2476}{Type\+Op\+Piece}}, \mbox{\hyperlink{classTypeOpIntSborrow_a37fb242170777c7eae6afb2a993979e0}{Type\+Op\+Int\+Sborrow}}, \mbox{\hyperlink{classTypeOpIntScarry_a7808f16bddeba6d5b61bd2b24fe96143}{Type\+Op\+Int\+Scarry}}, \mbox{\hyperlink{classTypeOpIntCarry_a36e1a02f54952da1c1be18fa5b71d6e7}{Type\+Op\+Int\+Carry}}, \mbox{\hyperlink{classTypeOpIntSext_abffb4d378c42466a11615363162d9fdb}{Type\+Op\+Int\+Sext}}, \mbox{\hyperlink{classTypeOpIntZext_a4519823a40a0486592c35b2e4a4a3414}{Type\+Op\+Int\+Zext}}, and \mbox{\hyperlink{classTypeOpCallother_aec47e120502b06ef0ba27dafe286b3f8}{Type\+Op\+Callother}}.
+
+\mbox{\Hypertarget{classTypeOp_a3454cadfb15f6794829123a7ecfe38f5}\label{classTypeOp_a3454cadfb15f6794829123a7ecfe38f5}} 
+\index{TypeOp@{TypeOp}!getOutputLocal@{getOutputLocal}}
+\index{getOutputLocal@{getOutputLocal}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{getOutputLocal()}{getOutputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+::get\+Output\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the output) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpCpoolref_af6f8c8b7ce807d7773e55820c11a08f1}{Type\+Op\+Cpoolref}}, \mbox{\hyperlink{classTypeOpPtrsub_ada6371e868ebf8d0f5aae1ba70a60e36}{Type\+Op\+Ptrsub}}, \mbox{\hyperlink{classTypeOpPtradd_af8fe09a62086231038f5c181dc0d0a03}{Type\+Op\+Ptradd}}, \mbox{\hyperlink{classTypeOpCallother_a7040d3f5ac8b93796627304da778250f}{Type\+Op\+Callother}}, \mbox{\hyperlink{classTypeOpCallind_a41272ab087f4aacf6c3434911bbc055e}{Type\+Op\+Callind}}, \mbox{\hyperlink{classTypeOpCall_a0900277daf94a76b57d96ba468514815}{Type\+Op\+Call}}, \mbox{\hyperlink{classTypeOpFunc_a279fd2e0aaf14e6a15bb12548cd3cc69}{Type\+Op\+Func}}, \mbox{\hyperlink{classTypeOpUnary_a33872e1381109a5fdb1030a2771e0c6e}{Type\+Op\+Unary}}, and \mbox{\hyperlink{classTypeOpBinary_a183a65ebb3716a380229e38c3383fd98}{Type\+Op\+Binary}}.
+
+\mbox{\Hypertarget{classTypeOp_a7150ac93bb03a993735c829deb5237e7}\label{classTypeOp_a7150ac93bb03a993735c829deb5237e7}} 
+\index{TypeOp@{TypeOp}!getOutputToken@{getOutputToken}}
+\index{getOutputToken@{getOutputToken}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{getOutputToken()}{getOutputToken()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+::get\+Output\+Token (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classCastStrategy}{Cast\+Strategy}} $\ast$}]{cast\+Strategy }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the data-\/type of the output that would be assigned by a compiler. 
+
+Calculate the actual data-\/type of the output for a specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as would be assigned by a C compiler parsing a grammar containing this op. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em cast\+Strategy} & is the current casting strategy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpSegment_a266bcb14bb682b5ebc298e06f7a9c12e}{Type\+Op\+Segment}}, \mbox{\hyperlink{classTypeOpPtrsub_a1830a4ee48307559c378c4147aa19979}{Type\+Op\+Ptrsub}}, \mbox{\hyperlink{classTypeOpPtradd_a129573eb45f5e95826e557032aa785a1}{Type\+Op\+Ptradd}}, \mbox{\hyperlink{classTypeOpSubpiece_ac93ca300b551f16888008869eca39150}{Type\+Op\+Subpiece}}, \mbox{\hyperlink{classTypeOpPiece_a951c2e42be991699b04945bb1c71de04}{Type\+Op\+Piece}}, \mbox{\hyperlink{classTypeOpIntMult_abb986ab298da31068ac30163e6755e18}{Type\+Op\+Int\+Mult}}, \mbox{\hyperlink{classTypeOpIntSright_a2e2989e20e9ccdcd2e56d719202ac0fc}{Type\+Op\+Int\+Sright}}, \mbox{\hyperlink{classTypeOpIntRight_a3c470ddca0dbdab3b01d8734308edd26}{Type\+Op\+Int\+Right}}, \mbox{\hyperlink{classTypeOpIntLeft_a0c99823cd347ae28c3608a3f02fdda09}{Type\+Op\+Int\+Left}}, \mbox{\hyperlink{classTypeOpIntOr_a73a740a728241ee2e922b29134c49cd4}{Type\+Op\+Int\+Or}}, \mbox{\hyperlink{classTypeOpIntAnd_a4f06c12390fbbad57e41537047666e2d}{Type\+Op\+Int\+And}}, \mbox{\hyperlink{classTypeOpIntXor_aecfecb807f0b493995187353fc89b14b}{Type\+Op\+Int\+Xor}}, \mbox{\hyperlink{classTypeOpIntNegate_ab07156bd47d9e57427cb3b32aa52f12e}{Type\+Op\+Int\+Negate}}, \mbox{\hyperlink{classTypeOpInt2Comp_aa418bd590316df07485e1673c08b900f}{Type\+Op\+Int2\+Comp}}, \mbox{\hyperlink{classTypeOpIntSub_a7cba3a83ac6362edcb6d3c8120ac6cd5}{Type\+Op\+Int\+Sub}}, \mbox{\hyperlink{classTypeOpIntAdd_aae4df67ef6e65039c3a05cea8bdef6c4}{Type\+Op\+Int\+Add}}, \mbox{\hyperlink{classTypeOpLoad_a212b3d08a86b73ca49c2adf1aac7b60a}{Type\+Op\+Load}}, and \mbox{\hyperlink{classTypeOpCopy_a2a8b45de9ac53dd673c289e1c13feb08}{Type\+Op\+Copy}}.
+
+\mbox{\Hypertarget{classTypeOp_a2d51c10873a61d54a5c4c30221f5706e}\label{classTypeOp_a2d51c10873a61d54a5c4c30221f5706e}} 
+\index{TypeOp@{TypeOp}!isCommutative@{isCommutative}}
+\index{isCommutative@{isCommutative}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{isCommutative()}{isCommutative()}}
+{\footnotesize\ttfamily bool Type\+Op\+::is\+Commutative (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if this op-\/code is commutative. 
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the ordering of the inputs does not affect the output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeOp_a490abb4596b7ddc78c5afc40a6326701}\label{classTypeOp_a490abb4596b7ddc78c5afc40a6326701}} 
+\index{TypeOp@{TypeOp}!markExplicitUnsigned@{markExplicitUnsigned}}
+\index{markExplicitUnsigned@{markExplicitUnsigned}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{markExplicitUnsigned()}{markExplicitUnsigned()}}
+{\footnotesize\ttfamily bool Type\+Op\+::mark\+Explicit\+Unsigned (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption}) const}
+
+
+
+Check if a constant input should be explicitly labeled as {\itshape unsigned}. 
+
+Many languages can mark an integer constant as explicitly {\itshape unsigned}. When the decompiler is deciding on {\itshape cast} operations, this is one of the checks it performs. This method checks if the indicated input is an integer constant that needs to be coerced (as a source token) into being unsigned. If this is {\bfseries{true}}, the input \mbox{\hyperlink{classVarnode}{Varnode}} is marked for printing as explicitly {\itshape unsigned}. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} taking the value as input \\
+\hline
+{\em slot} & is the input slot of the value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the \mbox{\hyperlink{classVarnode}{Varnode}} gets marked for printing 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}\label{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}} 
+\index{TypeOp@{TypeOp}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to print \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTypeOpNew_aa227f62ca7c9a75fd62ecc2932e3d746}{Type\+Op\+New}}, \mbox{\hyperlink{classTypeOpCpoolref_a3368bf134c942c37c4c3080b82b069f6}{Type\+Op\+Cpoolref}}, \mbox{\hyperlink{classTypeOpSegment_aa0faf7a0a8f5094b7b851bcefca5051f}{Type\+Op\+Segment}}, \mbox{\hyperlink{classTypeOpPtrsub_a0431beebe1aed0f6b33abeee6c0a2a24}{Type\+Op\+Ptrsub}}, \mbox{\hyperlink{classTypeOpPtradd_ae1e4fe840185e871ee6b46e7235ca7b8}{Type\+Op\+Ptradd}}, \mbox{\hyperlink{classTypeOpCast_a4cab77a0e4ca4568cea8b4789487b531}{Type\+Op\+Cast}}, \mbox{\hyperlink{classTypeOpIndirect_a26e28dde9299bf0eb6ba5277ea7000c0}{Type\+Op\+Indirect}}, \mbox{\hyperlink{classTypeOpMulti_a776288910290e0d34a5dbf17893a6789}{Type\+Op\+Multi}}, \mbox{\hyperlink{classTypeOpIntSright_a1559e48c6d810e3c092f3b9957528ec8}{Type\+Op\+Int\+Sright}}, \mbox{\hyperlink{classTypeOpReturn_af0becd757dd0479c6f8fe15b6b2ce1fc}{Type\+Op\+Return}}, \mbox{\hyperlink{classTypeOpCallother_ad663593c2bd0654a4ce68d8aa8a3b179}{Type\+Op\+Callother}}, \mbox{\hyperlink{classTypeOpCallind_afab872c8d49a043fb21a0a10ace10507}{Type\+Op\+Callind}}, \mbox{\hyperlink{classTypeOpCall_ace006a5428b39501951783846770f227}{Type\+Op\+Call}}, \mbox{\hyperlink{classTypeOpBranchind_a7defc7498466ee8a3998f08f41388984}{Type\+Op\+Branchind}}, \mbox{\hyperlink{classTypeOpCbranch_acaea1b1ce2d5cce9753e658fb69cb1f4}{Type\+Op\+Cbranch}}, \mbox{\hyperlink{classTypeOpBranch_ab0eabba1204d4b84bc6293f9ffb56dbc}{Type\+Op\+Branch}}, \mbox{\hyperlink{classTypeOpStore_a6cb2cfd46308c3b10ac0df9324f13115}{Type\+Op\+Store}}, \mbox{\hyperlink{classTypeOpLoad_a816c1525151795d00561fdea1d37806c}{Type\+Op\+Load}}, \mbox{\hyperlink{classTypeOpCopy_a637e83726874a26ba653e6db34d0bb1b}{Type\+Op\+Copy}}, \mbox{\hyperlink{classTypeOpFunc_a8cf3e73be10b60b04b275168d574e58b}{Type\+Op\+Func}}, \mbox{\hyperlink{classTypeOpUnary_a05cfe8c1ca862ce3d1e5b994ab98746b}{Type\+Op\+Unary}}, and \mbox{\hyperlink{classTypeOpBinary_a3f26fc1e6bc1d143fb4f8391ef7ff3d6}{Type\+Op\+Binary}}.
+
+\mbox{\Hypertarget{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}\label{classTypeOp_aa71d0114c1115c22f740fc4f860e3b2d}} 
+\index{TypeOp@{TypeOp}!push@{push}}
+\index{push@{push}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily virtual void Type\+Op\+::push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{read\+Op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Push the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the emitter\textquotesingle{}s R\+PN stack. 
+
+Given a specific language and \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, emit the expression rooted at the operation. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} to emit \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em read\+Op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} consuming the output (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classTypeOpPopcount_a4dc9eb437f4ff602682089a3344f20a6}{Type\+Op\+Popcount}}, \mbox{\hyperlink{classTypeOpExtract_a91c1bb86d993c458eb44ea2e5a2be11a}{Type\+Op\+Extract}}, \mbox{\hyperlink{classTypeOpInsert_a289612bda6dc60336bd89b7f7a4b12c5}{Type\+Op\+Insert}}, \mbox{\hyperlink{classTypeOpNew_a89271aa79e6d247fe0db792c4b39cd18}{Type\+Op\+New}}, \mbox{\hyperlink{classTypeOpCpoolref_a68ad570055c344286fb2db93c427cc7e}{Type\+Op\+Cpoolref}}, \mbox{\hyperlink{classTypeOpSegment_a0de6c0b94eeeff5191542905fa6543c3}{Type\+Op\+Segment}}, \mbox{\hyperlink{classTypeOpPtrsub_ae5b43ed086d0b7f248c3bf1c5e5be837}{Type\+Op\+Ptrsub}}, \mbox{\hyperlink{classTypeOpPtradd_ac5daffead90dd331148a29b2ba797aa0}{Type\+Op\+Ptradd}}, \mbox{\hyperlink{classTypeOpCast_abda8e6d7b8008aa0211490bbf06bdcaf}{Type\+Op\+Cast}}, \mbox{\hyperlink{classTypeOpSubpiece_abba8931e1192f73ac5910b34b76af615}{Type\+Op\+Subpiece}}, \mbox{\hyperlink{classTypeOpPiece_aea49134d2deeb8d0f085920e4d61c39c}{Type\+Op\+Piece}}, \mbox{\hyperlink{classTypeOpIndirect_a66118bb30f8d17e1baeb5fca73429feb}{Type\+Op\+Indirect}}, \mbox{\hyperlink{classTypeOpMulti_a3b2db5c621b874742fbc96ad220e6ae1}{Type\+Op\+Multi}}, \mbox{\hyperlink{classTypeOpFloatRound_a709a19f809e41c710ed760c6908e03c8}{Type\+Op\+Float\+Round}}, \mbox{\hyperlink{classTypeOpFloatFloor_a472098955e99b9207ece0f284b0db5ee}{Type\+Op\+Float\+Floor}}, \mbox{\hyperlink{classTypeOpFloatCeil_a0de9244beee28f2ab4c1d5da6a851ca0}{Type\+Op\+Float\+Ceil}}, \mbox{\hyperlink{classTypeOpFloatTrunc_afa4968154648fd2d9a449fd826a3b30b}{Type\+Op\+Float\+Trunc}}, \mbox{\hyperlink{classTypeOpFloatFloat2Float_affff2a43281bea21ab96a43a7a81adb5}{Type\+Op\+Float\+Float2\+Float}}, \mbox{\hyperlink{classTypeOpFloatInt2Float_af1f9f6b7523cdeccdada9cb323949898}{Type\+Op\+Float\+Int2\+Float}}, \mbox{\hyperlink{classTypeOpFloatSqrt_a7d0d8a302fd1887c68b191ba749396f6}{Type\+Op\+Float\+Sqrt}}, \mbox{\hyperlink{classTypeOpFloatAbs_a1380c6e4bf3055aeab6eb5edb79ef181}{Type\+Op\+Float\+Abs}}, \mbox{\hyperlink{classTypeOpFloatNeg_af1645875768c9ff32a79618d82857f24}{Type\+Op\+Float\+Neg}}, \mbox{\hyperlink{classTypeOpFloatSub_ade275edf300251c02d692adfb3244af9}{Type\+Op\+Float\+Sub}}, \mbox{\hyperlink{classTypeOpFloatMult_afe45569f0eafb07eabc13e3ef3ff448f}{Type\+Op\+Float\+Mult}}, \mbox{\hyperlink{classTypeOpFloatDiv_a78d032cc035760b1141dbd602228a67d}{Type\+Op\+Float\+Div}}, \mbox{\hyperlink{classTypeOpFloatAdd_a5909d6c9282c74c70101bf5d1e9dbd36}{Type\+Op\+Float\+Add}}, \mbox{\hyperlink{classTypeOpFloatNan_ab893d5dcfd44cedff30619348d7a2006}{Type\+Op\+Float\+Nan}}, \mbox{\hyperlink{classTypeOpFloatLessEqual_ab6d90d739c59288a0840d9076f9a1524}{Type\+Op\+Float\+Less\+Equal}}, \mbox{\hyperlink{classTypeOpFloatLess_adf79d817847e07a17ac859f7187382fc}{Type\+Op\+Float\+Less}}, \mbox{\hyperlink{classTypeOpFloatNotEqual_a2ce85ebe1e22c378e8e5380cf18d219b}{Type\+Op\+Float\+Not\+Equal}}, \mbox{\hyperlink{classTypeOpFloatEqual_a6b3f6f24646cc0808920cbb359dcf90e}{Type\+Op\+Float\+Equal}}, \mbox{\hyperlink{classTypeOpBoolOr_a5655181bffabdef456e5923acd4c1582}{Type\+Op\+Bool\+Or}}, \mbox{\hyperlink{classTypeOpBoolAnd_a656fcb82755c48942499324e47ce6638}{Type\+Op\+Bool\+And}}, \mbox{\hyperlink{classTypeOpBoolXor_ac560bbc2b4dff1ab236ca0cddb4252d4}{Type\+Op\+Bool\+Xor}}, \mbox{\hyperlink{classTypeOpBoolNegate_ac716bc66c481273956883af415e2171d}{Type\+Op\+Bool\+Negate}}, \mbox{\hyperlink{classTypeOpIntSrem_a59d3eaa459b80954cce4da54281a3eec}{Type\+Op\+Int\+Srem}}, \mbox{\hyperlink{classTypeOpIntRem_a49fa9e1ad21766610ff0130b9bffc6e2}{Type\+Op\+Int\+Rem}}, \mbox{\hyperlink{classTypeOpIntSdiv_a26cd795359eb93b5775f6dd3cae652a4}{Type\+Op\+Int\+Sdiv}}, \mbox{\hyperlink{classTypeOpIntDiv_a270a9bb4080970a22ffe6e7120d74b93}{Type\+Op\+Int\+Div}}, \mbox{\hyperlink{classTypeOpIntMult_a17c0c9d7d7f6adae6bed734b888876ec}{Type\+Op\+Int\+Mult}}, \mbox{\hyperlink{classTypeOpIntSright_a94a0fd6200a67cac48bde9da96c17976}{Type\+Op\+Int\+Sright}}, \mbox{\hyperlink{classTypeOpIntRight_aa88b9491ee43335885ce5b513832414c}{Type\+Op\+Int\+Right}}, \mbox{\hyperlink{classTypeOpIntLeft_ae8c5fa625e9915bc680e6888e0b5588e}{Type\+Op\+Int\+Left}}, \mbox{\hyperlink{classTypeOpIntOr_a5ce365e41dbbc3f598d01eb5bc005c09}{Type\+Op\+Int\+Or}}, \mbox{\hyperlink{classTypeOpIntAnd_aeea7e50c647a4d9876e0cddc9aa162b7}{Type\+Op\+Int\+And}}, \mbox{\hyperlink{classTypeOpIntXor_a4f92f276b1639e6aba41c88537f87b85}{Type\+Op\+Int\+Xor}}, \mbox{\hyperlink{classTypeOpIntNegate_a7a7f607322022a01b60f6b6b1607aba3}{Type\+Op\+Int\+Negate}}, \mbox{\hyperlink{classTypeOpInt2Comp_a668b27aa85aaec6cbe03a3b74ed5d2ae}{Type\+Op\+Int2\+Comp}}, \mbox{\hyperlink{classTypeOpIntSborrow_a8c81b8f7e5a922781a6d7e6dc51dbaf5}{Type\+Op\+Int\+Sborrow}}, \mbox{\hyperlink{classTypeOpIntScarry_a606f0a1249cd4b1570e94a38f26dfb54}{Type\+Op\+Int\+Scarry}}, \mbox{\hyperlink{classTypeOpIntCarry_a75c55ae1b2bbf2339527c6e2fe6a4edc}{Type\+Op\+Int\+Carry}}, \mbox{\hyperlink{classTypeOpIntSub_a52f501cc8ce6b20cfddc2796b5cd82bd}{Type\+Op\+Int\+Sub}}, \mbox{\hyperlink{classTypeOpIntAdd_a2faa9c9aa7526a20ab3a580b57a6263b}{Type\+Op\+Int\+Add}}, \mbox{\hyperlink{classTypeOpIntSext_a3e8b2d3ff71c4eea7fbba1b270c7ce96}{Type\+Op\+Int\+Sext}}, \mbox{\hyperlink{classTypeOpIntZext_af641101e431d2fa81b5858db341bea19}{Type\+Op\+Int\+Zext}}, \mbox{\hyperlink{classTypeOpIntLessEqual_ae608d1701827595541233266bf87da30}{Type\+Op\+Int\+Less\+Equal}}, \mbox{\hyperlink{classTypeOpIntLess_ad73b05ca63803146c0390dafa0ca389b}{Type\+Op\+Int\+Less}}, \mbox{\hyperlink{classTypeOpIntSlessEqual_a969b351139a824d3dc29f09d29dc25e0}{Type\+Op\+Int\+Sless\+Equal}}, \mbox{\hyperlink{classTypeOpIntSless_a52014b850f2d2fc5198d09c018119135}{Type\+Op\+Int\+Sless}}, \mbox{\hyperlink{classTypeOpNotEqual_a097216f346d69058665d6bfdaed39bac}{Type\+Op\+Not\+Equal}}, \mbox{\hyperlink{classTypeOpEqual_acb623ac1441f71cd1c738845ce1064be}{Type\+Op\+Equal}}, \mbox{\hyperlink{classTypeOpReturn_a066961a3043f0a5d6b3c827f211c5893}{Type\+Op\+Return}}, \mbox{\hyperlink{classTypeOpCallother_a3ec229d441cd6b97c92e4f55df2ce2bd}{Type\+Op\+Callother}}, \mbox{\hyperlink{classTypeOpCallind_a1810d7e5b151c4fceadb7a207474265c}{Type\+Op\+Callind}}, \mbox{\hyperlink{classTypeOpCall_a62f3cb5dc559532221926dc335c6985b}{Type\+Op\+Call}}, \mbox{\hyperlink{classTypeOpBranchind_a77f97f6df363ba245f63caf3c81176b9}{Type\+Op\+Branchind}}, \mbox{\hyperlink{classTypeOpCbranch_aa09cf4fcf6903eba275d088333642876}{Type\+Op\+Cbranch}}, \mbox{\hyperlink{classTypeOpBranch_a3a748a376626a4026a93f31bee4865e0}{Type\+Op\+Branch}}, \mbox{\hyperlink{classTypeOpStore_a46868a70f2931f867ceb5ccde83d23b2}{Type\+Op\+Store}}, \mbox{\hyperlink{classTypeOpLoad_ab510a81883ca2883a055265c3551b258}{Type\+Op\+Load}}, and \mbox{\hyperlink{classTypeOpCopy_a2daa0ab472dcb9f5ffc24919f9060a99}{Type\+Op\+Copy}}.
+
+\mbox{\Hypertarget{classTypeOp_a2904d3cce4a93be9e976305779f57474}\label{classTypeOp_a2904d3cce4a93be9e976305779f57474}} 
+\index{TypeOp@{TypeOp}!recoverInputBinary@{recoverInputBinary}}
+\index{recoverInputBinary@{recoverInputBinary}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{recoverInputBinary()}{recoverInputBinary()}}
+{\footnotesize\ttfamily uintb Type\+Op\+::recover\+Input\+Binary (\begin{DoxyParamCaption}\item[{int4}]{slot,  }\item[{int4}]{sizeout,  }\item[{uintb}]{out,  }\item[{int4}]{sizein,  }\item[{uintb}]{in }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reverse the binary op-\/code operation, recovering a constant input value. 
+
+If the output value and one of the input values is known, recover the value of the other input. 
+\begin{DoxyParams}{Parameters}
+{\em slot} & is the input slot to recover \\
+\hline
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em out} & is the output value \\
+\hline
+{\em sizein} & is the size of the inputs in bytes \\
+\hline
+{\em in} & is the known input value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input value corresponding to the {\bfseries{slot}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeOp_a33410aedda8e08db1eb3d0384e7d5130}\label{classTypeOp_a33410aedda8e08db1eb3d0384e7d5130}} 
+\index{TypeOp@{TypeOp}!recoverInputUnary@{recoverInputUnary}}
+\index{recoverInputUnary@{recoverInputUnary}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{recoverInputUnary()}{recoverInputUnary()}}
+{\footnotesize\ttfamily uintb Type\+Op\+::recover\+Input\+Unary (\begin{DoxyParamCaption}\item[{int4}]{sizeout,  }\item[{uintb}]{out,  }\item[{int4}]{sizein }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Reverse the unary op-\/code operation, recovering a constant input value. 
+
+If the output value is known, recover the input value. 
+\begin{DoxyParams}{Parameters}
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em out} & is the output value \\
+\hline
+{\em sizein} & is the size of the input in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeOp_a1a6335312cb599605f7cddb617ab113d}\label{classTypeOp_a1a6335312cb599605f7cddb617ab113d}} 
+\index{TypeOp@{TypeOp}!registerInstructions@{registerInstructions}}
+\index{registerInstructions@{registerInstructions}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{registerInstructions()}{registerInstructions()}}
+{\footnotesize\ttfamily void Type\+Op\+::register\+Instructions (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classTypeOp}{Type\+Op}} $\ast$ $>$ \&}]{inst,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{tlst,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{trans }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Build a map from op-\/code value to the \mbox{\hyperlink{classTypeOp}{Type\+Op}} information objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inst} & will hold the array of \mbox{\hyperlink{classTypeOp}{Type\+Op}} objects, indexed on op-\/code \\
+\hline
+{\em tlst} & is the corresponding \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} for the \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+{\em trans} & is the \mbox{\hyperlink{classTranslate}{Translate}} object for floating-\/point formats \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeOp_a518700fe96d7e215d8c42d6049626c88}\label{classTypeOp_a518700fe96d7e215d8c42d6049626c88}} 
+\index{TypeOp@{TypeOp}!selectJavaOperators@{selectJavaOperators}}
+\index{selectJavaOperators@{selectJavaOperators}!TypeOp@{TypeOp}}
+\doxysubsubsection{\texorpdfstring{selectJavaOperators()}{selectJavaOperators()}}
+{\footnotesize\ttfamily void Type\+Op\+::select\+Java\+Operators (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classTypeOp}{Type\+Op}} $\ast$ $>$ \&}]{inst,  }\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Toggle Java specific aspects of the op-\/code information. 
+
+Change basic data-\/type info (signed vs unsigned) and operator names ( \textquotesingle{}$>$$>$\textquotesingle{} vs \textquotesingle{}$>$$>$$>$\textquotesingle{} ) depending on the specific language. 
+\begin{DoxyParams}{Parameters}
+{\em inst} & is the array of \mbox{\hyperlink{classTypeOp}{Type\+Op}} information objects \\
+\hline
+{\em val} & is set to {\bfseries{true}} for Java operators, {\bfseries{false}} for C operators \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

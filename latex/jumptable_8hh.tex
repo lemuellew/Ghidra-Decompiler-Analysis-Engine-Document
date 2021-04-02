@@ -1,0 +1,65 @@
+\hypertarget{jumptable_8hh}{}\doxysection{jumptable.\+hh File Reference}
+\label{jumptable_8hh}\index{jumptable.hh@{jumptable.hh}}
+
+
+Classes to support jump-\/tables and their recovery.  
+
+
+{\ttfamily \#include \char`\"{}emulateutil.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rangeutil.\+hh\char`\"{}}\newline
+Include dependency graph for jumptable.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{jumptable_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{jumptable_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structJumptableThunkError}{Jumptable\+Thunk\+Error}}
+\begin{DoxyCompactList}\small\item\em Exception thrown for a thunk mechanism that looks like a jump-\/table. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structJumptableNotReachableError}{Jumptable\+Not\+Reachable\+Error}}
+\begin{DoxyCompactList}\small\item\em Exception thrown is there are no legal flows to a switch. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classLoadTable}{Load\+Table}}
+\begin{DoxyCompactList}\small\item\em A description where and how data was loaded from memory. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPathMeld}{Path\+Meld}}
+\begin{DoxyCompactList}\small\item\em All paths from a (putative) switch variable to the C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classEmulateFunction}{Emulate\+Function}}
+\begin{DoxyCompactList}\small\item\em A light-\/weight emulator to calculate switch targets from switch variables. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classGuardRecord}{Guard\+Record}}
+\begin{DoxyCompactList}\small\item\em A (putative) switch variable \mbox{\hyperlink{classVarnode}{Varnode}} and a constraint imposed by a C\+B\+R\+A\+N\+CH. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpValues}{Jump\+Values}}
+\begin{DoxyCompactList}\small\item\em An iterator over values a switch variable can take. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpValuesRange}{Jump\+Values\+Range}}
+\begin{DoxyCompactList}\small\item\em single entry switch variable that can take a range of values \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpValuesRangeDefault}{Jump\+Values\+Range\+Default}}
+\begin{DoxyCompactList}\small\item\em A jump-\/table starting range with two possible execution paths. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpModel}{Jump\+Model}}
+\begin{DoxyCompactList}\small\item\em A jump-\/table execution model. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpModelTrivial}{Jump\+Model\+Trivial}}
+\begin{DoxyCompactList}\small\item\em A trivial jump-\/table model, where the B\+R\+A\+N\+C\+H\+I\+ND input \mbox{\hyperlink{classVarnode}{Varnode}} is the switch variable. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpBasic}{Jump\+Basic}}
+\begin{DoxyCompactList}\small\item\em The basic switch model. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpBasic2}{Jump\+Basic2}}
+\begin{DoxyCompactList}\small\item\em A basic jump-\/table model with an added default address path. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpBasicOverride}{Jump\+Basic\+Override}}
+\begin{DoxyCompactList}\small\item\em A basic jump-\/table model incorporating manual override information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpAssisted}{Jump\+Assisted}}
+\begin{DoxyCompactList}\small\item\em A jump-\/table model assisted by pseudo-\/op directives in the code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classJumpTable}{Jump\+Table}}
+\begin{DoxyCompactList}\small\item\em A map from values to control-\/flow targets within a function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes to support jump-\/tables and their recovery. 
+

@@ -1,0 +1,125 @@
+\hypertarget{classConstantPoolGhidra}{}\doxysection{Constant\+Pool\+Ghidra Class Reference}
+\label{classConstantPoolGhidra}\index{ConstantPoolGhidra@{ConstantPoolGhidra}}
+
+
+An implementation of \mbox{\hyperlink{classConstantPool}{Constant\+Pool}} using a Ghidra client as the backing storage.  
+
+
+
+
+{\ttfamily \#include $<$cpool\+\_\+ghidra.\+hh$>$}
+
+
+
+Inheritance diagram for Constant\+Pool\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classConstantPoolGhidra__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constant\+Pool\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classConstantPoolGhidra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConstantPoolGhidra_a866684d5efdad76400fee446d0f5ae11}\label{classConstantPoolGhidra_a866684d5efdad76400fee446d0f5ae11}} 
+\mbox{\hyperlink{classConstantPoolGhidra_a866684d5efdad76400fee446d0f5ae11}{Constant\+Pool\+Ghidra}} (\mbox{\hyperlink{classArchitectureGhidra}{Architecture\+Ghidra}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} $\ast$ \mbox{\hyperlink{classConstantPoolGhidra_ac4520027014d9d9c6cd6e12b17488f02}{get\+Record}} (const vector$<$ uintb $>$ \&refs) const
+\begin{DoxyCompactList}\small\item\em Retrieve a constant pool record (\mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}}) given a {\itshape reference} to it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConstantPoolGhidra_a224351241fabcf4ebb2a0d2701b63e40}\label{classConstantPoolGhidra_a224351241fabcf4ebb2a0d2701b63e40}} 
+virtual bool \mbox{\hyperlink{classConstantPoolGhidra_a224351241fabcf4ebb2a0d2701b63e40}{empty}} (void) const
+\begin{DoxyCompactList}\small\item\em Is the container empty of records. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConstantPoolGhidra_ac0b80eac8d8d3a5abf9db557ae9336fc}\label{classConstantPoolGhidra_ac0b80eac8d8d3a5abf9db557ae9336fc}} 
+virtual void \mbox{\hyperlink{classConstantPoolGhidra_ac0b80eac8d8d3a5abf9db557ae9336fc}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Release any (local) resources. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classConstantPoolGhidra_a9be92093e47d8158d6df6ca7c6524f80}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save all records in this container to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classConstantPoolGhidra_a4054279a4d397dda4a1fb33005c8e445}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typegrp)
+\begin{DoxyCompactList}\small\item\em Restore constant pool records from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An implementation of \mbox{\hyperlink{classConstantPool}{Constant\+Pool}} using a Ghidra client as the backing storage. 
+
+The actual \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} objects are cached locally, but new queries are placed with the Ghidra client hosting the program currently being decompiled. The queries and response records are sent via X\+ML. The \mbox{\hyperlink{classConstantPoolGhidra_a9be92093e47d8158d6df6ca7c6524f80}{save\+Xml()}} and \mbox{\hyperlink{classConstantPoolGhidra_a4054279a4d397dda4a1fb33005c8e445}{restore\+Xml()}} methods are disabled. The \mbox{\hyperlink{classConstantPoolGhidra_ac0b80eac8d8d3a5abf9db557ae9336fc}{clear()}} method only releases the local cache, no records on the Ghidra client are affected. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConstantPoolGhidra_ac4520027014d9d9c6cd6e12b17488f02}\label{classConstantPoolGhidra_ac4520027014d9d9c6cd6e12b17488f02}} 
+\index{ConstantPoolGhidra@{ConstantPoolGhidra}!getRecord@{getRecord}}
+\index{getRecord@{getRecord}!ConstantPoolGhidra@{ConstantPoolGhidra}}
+\doxysubsubsection{\texorpdfstring{getRecord()}{getRecord()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} $\ast$ Constant\+Pool\+Ghidra\+::get\+Record (\begin{DoxyParamCaption}\item[{const vector$<$ uintb $>$ \&}]{refs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a constant pool record (\mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}}) given a {\itshape reference} to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em refs} & is the {\itshape reference} (made up of 1 or more identifying integers) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} or N\+U\+LL if none matches the reference 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classConstantPool_ac17df35ff1376311f62912d29bf26cad}{Constant\+Pool}}.
+
+\mbox{\Hypertarget{classConstantPoolGhidra_a4054279a4d397dda4a1fb33005c8e445}\label{classConstantPoolGhidra_a4054279a4d397dda4a1fb33005c8e445}} 
+\index{ConstantPoolGhidra@{ConstantPoolGhidra}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ConstantPoolGhidra@{ConstantPoolGhidra}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Constant\+Pool\+Ghidra\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore constant pool records from an X\+ML stream. 
+
+(If supported) The container is populated with C\+Poo\+L\+Records initialized from a $<$constantpool$>$ X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+{\em typegrp} & is the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} used to resolve data-\/type references in the X\+ML \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classConstantPool_a1ba24a59e40a1110cdd5d2a63f1a978c}{Constant\+Pool}}.
+
+\mbox{\Hypertarget{classConstantPoolGhidra_a9be92093e47d8158d6df6ca7c6524f80}\label{classConstantPoolGhidra_a9be92093e47d8158d6df6ca7c6524f80}} 
+\index{ConstantPoolGhidra@{ConstantPoolGhidra}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!ConstantPoolGhidra@{ConstantPoolGhidra}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Constant\+Pool\+Ghidra\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save all records in this container to an X\+ML stream. 
+
+(If supported) An $<$constantpool$>$ element is written containing $<$cpoolrec$>$ child elements for each \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} in the container. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classConstantPool_a859daeda0a7969af5462f6484905ab08}{Constant\+Pool}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cpool__ghidra_8hh}{cpool\+\_\+ghidra.\+hh}}\item 
+cpool\+\_\+ghidra.\+cc\end{DoxyCompactItemize}

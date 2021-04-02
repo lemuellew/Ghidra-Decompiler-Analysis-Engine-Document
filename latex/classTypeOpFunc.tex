@@ -1,0 +1,126 @@
+\hypertarget{classTypeOpFunc}{}\doxysection{Type\+Op\+Func Class Reference}
+\label{classTypeOpFunc}\index{TypeOpFunc@{TypeOpFunc}}
+
+
+A generic functional operator.  
+
+
+
+
+{\ttfamily \#include $<$typeop.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Op\+Func\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classTypeOpFunc__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Op\+Func\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeOpFunc__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpFunc_a279fd2e0aaf14e6a15bb12548cd3cc69}{get\+Output\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeOpFunc_a7f2860d7c345a794c665f72dbc41c44d}{get\+Input\+Local}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot) const
+\begin{DoxyCompactList}\small\item\em Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeOpFunc_a8cf3e73be10b60b04b275168d574e58b}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A generic functional operator. 
+
+The operator takes one or more inputs (with the same data-\/type by default) and produces one output with specific data-\/type 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeOpFunc_a7f2860d7c345a794c665f72dbc41c44d}\label{classTypeOpFunc_a7f2860d7c345a794c665f72dbc41c44d}} 
+\index{TypeOpFunc@{TypeOpFunc}!getInputLocal@{getInputLocal}}
+\index{getInputLocal@{getInputLocal}!TypeOpFunc@{TypeOpFunc}}
+\doxysubsubsection{\texorpdfstring{getInputLocal()}{getInputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Func\+::get\+Input\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an input to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the input) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+{\em slot} & is the input being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_abe2e4b619932cf94bafb084963a0fc66}{Type\+Op}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classTypeOpExtract_a92ff401c8559c6c30806f15377810536}{Type\+Op\+Extract}}, and \mbox{\hyperlink{classTypeOpInsert_af5fda9d3fc8949de3671a165d285c36c}{Type\+Op\+Insert}}.
+
+\mbox{\Hypertarget{classTypeOpFunc_a279fd2e0aaf14e6a15bb12548cd3cc69}\label{classTypeOpFunc_a279fd2e0aaf14e6a15bb12548cd3cc69}} 
+\index{TypeOpFunc@{TypeOpFunc}!getOutputLocal@{getOutputLocal}}
+\index{getOutputLocal@{getOutputLocal}!TypeOpFunc@{TypeOpFunc}}
+\doxysubsubsection{\texorpdfstring{getOutputLocal()}{getOutputLocal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Op\+Func\+::get\+Output\+Local (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the minimal (or suggested) data-\/type of an output to {\bfseries{this}} op-\/code. 
+
+The result should depend only on the op-\/code itself (and the size of the output) 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} being considered \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classTypeOp_a3454cadfb15f6794829123a7ecfe38f5}{Type\+Op}}.
+
+\mbox{\Hypertarget{classTypeOpFunc_a8cf3e73be10b60b04b275168d574e58b}\label{classTypeOpFunc_a8cf3e73be10b60b04b275168d574e58b}} 
+\index{TypeOpFunc@{TypeOpFunc}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeOpFunc@{TypeOpFunc}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Op\+Func\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print (for debugging purposes) {\bfseries{this}} specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to the stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em op} & is the specific \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to print \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTypeOp_a60717e486917a30cc7cb6e3ce02585e1}{Type\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{typeop_8hh}{typeop.\+hh}}\item 
+typeop.\+cc\end{DoxyCompactItemize}

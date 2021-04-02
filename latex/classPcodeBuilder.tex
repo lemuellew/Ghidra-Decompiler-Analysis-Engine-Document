@@ -1,0 +1,67 @@
+\hypertarget{classPcodeBuilder}{}\doxysection{Pcode\+Builder Class Reference}
+\label{classPcodeBuilder}\index{PcodeBuilder@{PcodeBuilder}}
+
+
+Inheritance diagram for Pcode\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classPcodeBuilder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pcode\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{classPcodeBuilder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_af1c62eec00ca64be050b63f6da68a815}\label{classPcodeBuilder_af1c62eec00ca64be050b63f6da68a815}} 
+{\bfseries Pcode\+Builder} (uint4 lbcnt)
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_a3323d18944e86830774bfc49a0821dd0}\label{classPcodeBuilder_a3323d18944e86830774bfc49a0821dd0}} 
+uint4 {\bfseries get\+Label\+Base} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_a65861c5e4b12ae6704376d38e4b15fc0}\label{classPcodeBuilder_a65861c5e4b12ae6704376d38e4b15fc0}} 
+\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} $\ast$ {\bfseries get\+Current\+Walker} () const
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_a0d27ac650805e617aa50c28da6d49c07}\label{classPcodeBuilder_a0d27ac650805e617aa50c28da6d49c07}} 
+void {\bfseries build} (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$construct, int4 secnum)
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_aa5c50ed5c414075e71fee8d31a976608}\label{classPcodeBuilder_aa5c50ed5c414075e71fee8d31a976608}} 
+virtual void {\bfseries append\+Build} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$bld, int4 secnum)=0
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_a229a55795ad8c72be40f1d2125751035}\label{classPcodeBuilder_a229a55795ad8c72be40f1d2125751035}} 
+virtual void {\bfseries delay\+Slot} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$op)=0
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_aadc0f772375e7c05ecd11ea145d61df2}\label{classPcodeBuilder_aadc0f772375e7c05ecd11ea145d61df2}} 
+virtual void {\bfseries set\+Label} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$op)=0
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_ab8214b4b69aea45b459b1a37c1c2aa77}\label{classPcodeBuilder_ab8214b4b69aea45b459b1a37c1c2aa77}} 
+virtual void {\bfseries append\+Cross\+Build} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$bld, int4 secnum)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_afda63f1d79357bca4e63e92bded60559}\label{classPcodeBuilder_afda63f1d79357bca4e63e92bded60559}} 
+virtual void {\bfseries dump} (\mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$op)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeBuilder_af47adb151a448ebd175f638f03d17a28}\label{classPcodeBuilder_af47adb151a448ebd175f638f03d17a28}} 
+\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} $\ast$ {\bfseries walker}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+semantics.\+hh\item 
+semantics.\+cc\end{DoxyCompactItemize}

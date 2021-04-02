@@ -1,0 +1,130 @@
+\hypertarget{test_8hh}{}\doxysection{test.\+hh File Reference}
+\label{test_8hh}\index{test.hh@{test.hh}}
+
+
+Simple test framework.  
+
+
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for test.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{test_8hh__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structUnitTest}{Unit\+Test}}
+\begin{DoxyCompactList}\small\item\em Simple unit test class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test_8hh_a49f98474ede925b4358a1661e7104257}{T\+E\+ST}}(testname)
+\begin{DoxyCompactList}\small\item\em Main unit test macro. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{test_8hh_adfa099cd1929d48210fc4a1584b84519}{A\+S\+S\+E\+RT}}(test)
+\begin{DoxyCompactList}\small\item\em Assert that a boolean is {\bfseries{true}} for a unit test. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{test_8hh_a15c113cc3c89554ef2323303855c528e}{A\+S\+S\+E\+R\+T\+\_\+\+E\+Q\+U\+A\+LS}}(a,  b)
+\begin{DoxyCompactList}\small\item\em Assert that two values are equal for a unit test. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{test_8hh_a35225b2579e2eb5f4f2e4095cb807dbd}{A\+S\+S\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+E\+Q\+U\+A\+LS}}(a,  b)
+\begin{DoxyCompactList}\small\item\em Assert that two values are not equal for a unit test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{test_8hh_ade4579b4751b72d896e109600c33b70c}\label{test_8hh_ade4579b4751b72d896e109600c33b70c}} 
+typedef void($\ast$ \mbox{\hyperlink{test_8hh_ade4579b4751b72d896e109600c33b70c}{testfunc\+\_\+t}}) ()
+\begin{DoxyCompactList}\small\item\em A unit-\/test function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple test framework. 
+
+Include this file and any additional headers. Use \mbox{\hyperlink{test_8hh_a49f98474ede925b4358a1661e7104257}{T\+E\+S\+T(testname)}} as prototype in test function definitions. E.\+g. test.\+cc\+: \#include \char`\"{}float.\+hh\char`\"{} \#include \char`\"{}test.\+hh\char`\"{}
+
+\mbox{\hyperlink{test_8hh_a49f98474ede925b4358a1661e7104257}{T\+E\+S\+T(zero\+\_\+is\+\_\+less\+\_\+than\+\_\+one)}} \{ A\+S\+S\+E\+RT(0.\+0 $<$ 1.\+0); \} 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test_8hh_adfa099cd1929d48210fc4a1584b84519}\label{test_8hh_adfa099cd1929d48210fc4a1584b84519}} 
+\index{test.hh@{test.hh}!ASSERT@{ASSERT}}
+\index{ASSERT@{ASSERT}!test.hh@{test.hh}}
+\doxysubsubsection{\texorpdfstring{ASSERT}{ASSERT}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+RT(\begin{DoxyParamCaption}\item[{}]{test }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (!(test)) \{                                                                                                     \(\backslash\)}
+\DoxyCodeLine{        std::cerr << \textcolor{stringliteral}{"  failed at "} << \_\_FILE\_\_ << \textcolor{stringliteral}{":"} << \_\_LINE\_\_ << \textcolor{stringliteral}{" asserting \(\backslash\)""} << \#test << \textcolor{stringliteral}{"\(\backslash\)"."} << std::endl;  \(\backslash\)}
+\DoxyCodeLine{        throw 0;                                                                                                       \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Assert that a boolean is {\bfseries{true}} for a unit test. 
+
+\mbox{\Hypertarget{test_8hh_a15c113cc3c89554ef2323303855c528e}\label{test_8hh_a15c113cc3c89554ef2323303855c528e}} 
+\index{test.hh@{test.hh}!ASSERT\_EQUALS@{ASSERT\_EQUALS}}
+\index{ASSERT\_EQUALS@{ASSERT\_EQUALS}!test.hh@{test.hh}}
+\doxysubsubsection{\texorpdfstring{ASSERT\_EQUALS}{ASSERT\_EQUALS}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+R\+T\+\_\+\+E\+Q\+U\+A\+LS(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} ((a) != (b)) \{                                                                                                  \(\backslash\)}
+\DoxyCodeLine{        std::stringstream ssa, ssb;                                                                                    \(\backslash\)}
+\DoxyCodeLine{        ssa << (a);                                                                                                    \(\backslash\)}
+\DoxyCodeLine{        ssb << (b);                                                                                                    \(\backslash\)}
+\DoxyCodeLine{        std::cerr << \textcolor{stringliteral}{"  failed at "} << \_\_FILE\_\_ << \textcolor{stringliteral}{":"} << \_\_LINE\_\_ << \textcolor{stringliteral}{" asserting \(\backslash\)""} << ssa.str()                     \(\backslash\)}
+\DoxyCodeLine{                  << \textcolor{stringliteral}{" == "} << ssb.str() << \textcolor{stringliteral}{"\(\backslash\)"."} << std::endl;                                                          \(\backslash\)}
+\DoxyCodeLine{        throw 0;                                                                                                       \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Assert that two values are equal for a unit test. 
+
+\mbox{\Hypertarget{test_8hh_a35225b2579e2eb5f4f2e4095cb807dbd}\label{test_8hh_a35225b2579e2eb5f4f2e4095cb807dbd}} 
+\index{test.hh@{test.hh}!ASSERT\_NOT\_EQUALS@{ASSERT\_NOT\_EQUALS}}
+\index{ASSERT\_NOT\_EQUALS@{ASSERT\_NOT\_EQUALS}!test.hh@{test.hh}}
+\doxysubsubsection{\texorpdfstring{ASSERT\_NOT\_EQUALS}{ASSERT\_NOT\_EQUALS}}
+{\footnotesize\ttfamily \#define A\+S\+S\+E\+R\+T\+\_\+\+N\+O\+T\+\_\+\+E\+Q\+U\+A\+LS(\begin{DoxyParamCaption}\item[{}]{a,  }\item[{}]{b }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} ((a) == (b)) \{                                                                                                  \(\backslash\)}
+\DoxyCodeLine{        std::stringstream ssa, ssb;                                                                                    \(\backslash\)}
+\DoxyCodeLine{        ssa << (a);                                                                                                    \(\backslash\)}
+\DoxyCodeLine{        ssb << (b);                                                                                                    \(\backslash\)}
+\DoxyCodeLine{        std::cerr << \textcolor{stringliteral}{"  failed at "} << \_\_FILE\_\_ << \textcolor{stringliteral}{":"} << \_\_LINE\_\_ << \textcolor{stringliteral}{" asserting \(\backslash\)""} << ssa.str()                     \(\backslash\)}
+\DoxyCodeLine{                  << \textcolor{stringliteral}{" != "} << ssb.str() << \textcolor{stringliteral}{"\(\backslash\)"."} << std::endl;                                                          \(\backslash\)}
+\DoxyCodeLine{        throw 0;                                                                                                       \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+Assert that two values are not equal for a unit test. 
+
+\mbox{\Hypertarget{test_8hh_a49f98474ede925b4358a1661e7104257}\label{test_8hh_a49f98474ede925b4358a1661e7104257}} 
+\index{test.hh@{test.hh}!TEST@{TEST}}
+\index{TEST@{TEST}!test.hh@{test.hh}}
+\doxysubsubsection{\texorpdfstring{TEST}{TEST}}
+{\footnotesize\ttfamily \#define T\+E\+ST(\begin{DoxyParamCaption}\item[{}]{testname }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordtype}{void} testname();                                                                                                   \(\backslash\)}
+\DoxyCodeLine{    UnitTest testname\#\#\_obj\{ \#testname, testname \};                                                                        \(\backslash\)}
+\DoxyCodeLine{    void testname()}
+
+\end{DoxyCode}
+
+
+Main unit test macro. 
+

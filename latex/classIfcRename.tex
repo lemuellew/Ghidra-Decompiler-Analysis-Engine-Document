@@ -1,0 +1,62 @@
+\hypertarget{classIfcRename}{}\doxysection{Ifc\+Rename Class Reference}
+\label{classIfcRename}\index{IfcRename@{IfcRename}}
+
+
+Rename a variable\+: {\ttfamily rename $<$oldname$>$ $<$newname$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Rename\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcRename__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Rename\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcRename__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcRename_a7c7b89bc0716bd3c4e7efc6c28cff73a}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Rename a variable\+: {\ttfamily rename $<$oldname$>$ $<$newname$>$} 
+
+Change the name of a symbol. The provided name is searched for starting in the scope of the current function. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcRename_a7c7b89bc0716bd3c4e7efc6c28cff73a}\label{classIfcRename_a7c7b89bc0716bd3c4e7efc6c28cff73a}} 
+\index{IfcRename@{IfcRename}!execute@{execute}}
+\index{execute@{execute}!IfcRename@{IfcRename}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Rename\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

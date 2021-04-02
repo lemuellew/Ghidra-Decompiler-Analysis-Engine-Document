@@ -1,0 +1,374 @@
+\hypertarget{classHighVariable}{}\doxysection{High\+Variable Class Reference}
+\label{classHighVariable}\index{HighVariable@{HighVariable}}
+
+
+A high-\/level variable modeled as a list of low-\/level variables, each written once.  
+
+
+
+
+{\ttfamily \#include $<$variable.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a4fae0776c677992bb2eccdd774ffde37}{flagsdirty}} = 1, 
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a9c9ab6953f256c8ed7dd15866569fd32}{namerepdirty}} = 2, 
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4abb98b82a95ae5d582a52f5470e2a0a86}{typedirty}} = 4, 
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a0fcd0f7d35521e76a5ae0b950e965891}{coverdirty}} = 8, 
+\newline
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a8015a062ba34c3f7ca525d096533fb0f}{symboldirty}} = 0x10, 
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a197b34148fca160494dc7c3580e57c81}{copy\+\_\+in1}} = 0x20, 
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a8309102905b5a9fb41f0cf3d100420c0}{copy\+\_\+in2}} = 0x40, 
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a748a057c004d0aa55927dc8e5037cc65}{type\+\_\+finalized}} = 0x80, 
+\newline
+\mbox{\hyperlink{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4acc56684c8991a3af6f45566a4d153b21}{unmerged}} = 0x100
+ \}
+\begin{DoxyCompactList}\small\item\em Dirtiness flags for a \mbox{\hyperlink{classHighVariable}{High\+Variable}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHighVariable_a227ed3f34ba507b5440e9bfc439c257c}{High\+Variable}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{classHighVariable}{High\+Variable}} with a single member \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classHighVariable_a1d07d4d2b09921a9a4d0b74f78950dd6}{get\+Symbol\+Entry}} (void) const
+\item 
+void \mbox{\hyperlink{classHighVariable_a1fa583acd137dfe2c9a2aae1c6a3c739}{finalize\+Datatype}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$tp)
+\begin{DoxyCompactList}\small\item\em Set a final datatype for {\bfseries{this}} variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighVariable_ad550ad1465e95cb3b114ee9d6f4d5630}{print\+Cover}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print details of the cover for {\bfseries{this}} (for debug purposes) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighVariable_a3d0f81187b11b2d9a26e6afdfc48ae6a}{print\+Info}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print information about {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} to stream. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHighVariable_a7c47097883b6350cfbb630f79f529768}{has\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Check if {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} can be named. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classHighVariable_a74c09ad2e70d4cc339af2526d529247a}{get\+Tied\+Varnode}} (void) const
+\begin{DoxyCompactList}\small\item\em Find the first address tied member \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classHighVariable_a7400ca6092273e5c22e8a2bf3184e698}{get\+Input\+Varnode}} (void) const
+\begin{DoxyCompactList}\small\item\em Find (the) input member \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classHighVariable_a843fe881b588aa75432c3b2cc03146ec}{get\+Type\+Representative}} (void) const
+\begin{DoxyCompactList}\small\item\em Get a member \mbox{\hyperlink{classVarnode}{Varnode}} with the strongest data-\/type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classHighVariable_ae462825b47ce6f0b17b1b40ec63dd904}{get\+Name\+Representative}} (void) const
+\begin{DoxyCompactList}\small\item\em Get a member \mbox{\hyperlink{classVarnode}{Varnode}} that dictates the naming of {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHighVariable_a7144f5f47bc8b53e9ea9f947e35f764a}{has\+Cover}} (void) const
+\begin{DoxyCompactList}\small\item\em Determine if {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} has an associated cover. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighVariable_afa118d53f784a4904444784df7a0e40a}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save the variable to stream as an X\+ML $<$high$>$ tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classHighVariable_ac6a775cce16963a8c0470f9a61ec3fcd}{compare\+Name}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2)
+\begin{DoxyCompactList}\small\item\em Determine which given \mbox{\hyperlink{classVarnode}{Varnode}} is most nameable. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classHighVariable_ae010dd1253fe67707a4f1357e6400cc0}{compare\+Just\+Loc}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$a, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Compare based on storage location. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classHighVariable_ac869841c7bcc33dcbccba90987ed6e42}{mark\+Expression}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, vector$<$ \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$ $>$ \&high\+List)
+\begin{DoxyCompactList}\small\item\em Mark and collect variables in expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHighVariable_a7430fc69591f3a1e26c6d26596f028b0}\label{classHighVariable_a7430fc69591f3a1e26c6d26596f028b0}} 
+class {\bfseries Varnode}
+\item 
+\mbox{\Hypertarget{classHighVariable_ada039d79291c7baead36ca12c2f1737b}\label{classHighVariable_ada039d79291c7baead36ca12c2f1737b}} 
+class {\bfseries Merge}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A high-\/level variable modeled as a list of low-\/level variables, each written once. 
+
+In the Static Single Assignment (S\+SA) representation of a function\textquotesingle{}s data-\/flow, the \mbox{\hyperlink{classVarnode}{Varnode}} object represents a variable node. This is a {\bfseries{low-\/level}} {\bfseries{variable\+:}} it is written to at most once, and there is 1 or more reads. A {\bfseries{high-\/level}} {\bfseries{variable}}, in the source language may be written to multiple times. We model this idea as a list of \mbox{\hyperlink{classVarnode}{Varnode}} objects, where a different \mbox{\hyperlink{classVarnode}{Varnode}} holds the value of the variable for different parts of the code. The range(s) of code for which a single \mbox{\hyperlink{classVarnode}{Varnode}} holds the high-\/level variable\textquotesingle{}s value is the {\bfseries{cover}} or {\bfseries{range}} of that \mbox{\hyperlink{classVarnode}{Varnode}} and is modeled by the class \mbox{\hyperlink{classCover}{Cover}}. Within a high-\/level variable, \mbox{\hyperlink{classHighVariable}{High\+Variable}}, the covers of member \mbox{\hyperlink{classVarnode}{Varnode}} objects should not intersect, as that represents the variable holding two or more different values at the same place in the code. The \mbox{\hyperlink{classHighVariable}{High\+Variable}} inherits a cover which is the union of the covers of its Varnodes. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Dirtiness flags for a \mbox{\hyperlink{classHighVariable}{High\+Variable}}. 
+
+The \mbox{\hyperlink{classHighVariable}{High\+Variable}} inherits its \mbox{\hyperlink{classCover}{Cover}}, its data-\/type, and other boolean properties from its Varnodes. The object holds these explicitly, but the values may become stale as the data-\/flow transforms. So we keep track of when these inherited values are {\itshape dirty} \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{flagsdirty@{flagsdirty}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!flagsdirty@{flagsdirty}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a4fae0776c677992bb2eccdd774ffde37}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a4fae0776c677992bb2eccdd774ffde37}} 
+flagsdirty&Boolean properties for the \mbox{\hyperlink{classHighVariable}{High\+Variable}} are dirty. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{namerepdirty@{namerepdirty}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!namerepdirty@{namerepdirty}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a9c9ab6953f256c8ed7dd15866569fd32}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a9c9ab6953f256c8ed7dd15866569fd32}} 
+namerepdirty&The name representative for the \mbox{\hyperlink{classHighVariable}{High\+Variable}} is dirty. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{typedirty@{typedirty}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!typedirty@{typedirty}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4abb98b82a95ae5d582a52f5470e2a0a86}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4abb98b82a95ae5d582a52f5470e2a0a86}} 
+typedirty&The data-\/type for the \mbox{\hyperlink{classHighVariable}{High\+Variable}} is dirty. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{coverdirty@{coverdirty}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!coverdirty@{coverdirty}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a0fcd0f7d35521e76a5ae0b950e965891}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a0fcd0f7d35521e76a5ae0b950e965891}} 
+coverdirty&The cover for the \mbox{\hyperlink{classHighVariable}{High\+Variable}} is dirty. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{symboldirty@{symboldirty}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!symboldirty@{symboldirty}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a8015a062ba34c3f7ca525d096533fb0f}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a8015a062ba34c3f7ca525d096533fb0f}} 
+symboldirty&The symbol attachment is dirty. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{copy\_in1@{copy\_in1}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!copy\_in1@{copy\_in1}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a197b34148fca160494dc7c3580e57c81}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a197b34148fca160494dc7c3580e57c81}} 
+copy\+\_\+in1&There exists at least 1 C\+O\+PY into {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} from other High\+Variables. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{copy\_in2@{copy\_in2}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!copy\_in2@{copy\_in2}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a8309102905b5a9fb41f0cf3d100420c0}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a8309102905b5a9fb41f0cf3d100420c0}} 
+copy\+\_\+in2&There exists at least 2 C\+O\+P\+Ys into {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} from other High\+Variables. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{type\_finalized@{type\_finalized}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!type\_finalized@{type\_finalized}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a748a057c004d0aa55927dc8e5037cc65}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4a748a057c004d0aa55927dc8e5037cc65}} 
+type\+\_\+finalized&Set if a final data-\/type is locked in and dirtying is disabled. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unmerged@{unmerged}!HighVariable@{HighVariable}}\index{HighVariable@{HighVariable}!unmerged@{unmerged}}}\mbox{\Hypertarget{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4acc56684c8991a3af6f45566a4d153b21}\label{classHighVariable_a40e0f88f131bfd571a40c0629b4af5e4acc56684c8991a3af6f45566a4d153b21}} 
+unmerged&Set if part of a multi-\/entry \mbox{\hyperlink{classSymbol}{Symbol}} but did not get merged with other Symbol\+Entrys. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHighVariable_a227ed3f34ba507b5440e9bfc439c257c}\label{classHighVariable_a227ed3f34ba507b5440e9bfc439c257c}} 
+\index{HighVariable@{HighVariable}!HighVariable@{HighVariable}}
+\index{HighVariable@{HighVariable}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{HighVariable()}{HighVariable()}}
+{\footnotesize\ttfamily High\+Variable\+::\+High\+Variable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Construct a \mbox{\hyperlink{classHighVariable}{High\+Variable}} with a single member \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+The new instance starts off with no associate \mbox{\hyperlink{classSymbol}{Symbol}} and all properties marked as {\itshape dirty}. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the single \mbox{\hyperlink{classVarnode}{Varnode}} member \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHighVariable_ae010dd1253fe67707a4f1357e6400cc0}\label{classHighVariable_ae010dd1253fe67707a4f1357e6400cc0}} 
+\index{HighVariable@{HighVariable}!compareJustLoc@{compareJustLoc}}
+\index{compareJustLoc@{compareJustLoc}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{compareJustLoc()}{compareJustLoc()}}
+{\footnotesize\ttfamily bool High\+Variable\+::compare\+Just\+Loc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compare based on storage location. 
+
+Compare two \mbox{\hyperlink{classVarnode}{Varnode}} objects based just on their storage address 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+{\em b} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the first \mbox{\hyperlink{classVarnode}{Varnode}} should be ordered before the second 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_ac6a775cce16963a8c0470f9a61ec3fcd}\label{classHighVariable_ac6a775cce16963a8c0470f9a61ec3fcd}} 
+\index{HighVariable@{HighVariable}!compareName@{compareName}}
+\index{compareName@{compareName}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{compareName()}{compareName()}}
+{\footnotesize\ttfamily bool High\+Variable\+::compare\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determine which given \mbox{\hyperlink{classVarnode}{Varnode}} is most nameable. 
+
+Given two \mbox{\hyperlink{classVarnode}{Varnode}} (members), sort them based on naming properties\+:
+\begin{DoxyItemize}
+\item A \mbox{\hyperlink{classVarnode}{Varnode}} with an assigned name is preferred
+\item An {\itshape unaffected} \mbox{\hyperlink{classVarnode}{Varnode}} is preferred
+\item A global \mbox{\hyperlink{classVarnode}{Varnode}} is preferred
+\item An {\itshape input} \mbox{\hyperlink{classVarnode}{Varnode}} is preferred
+\item An {\itshape address} {\itshape tied} \mbox{\hyperlink{classVarnode}{Varnode}} is preferred
+\item A non-\/temporary \mbox{\hyperlink{classVarnode}{Varnode}} is preferred
+\item A written \mbox{\hyperlink{classVarnode}{Varnode}} is preferred
+\item An earlier \mbox{\hyperlink{classVarnode}{Varnode}} is preferred
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the second \mbox{\hyperlink{classVarnode}{Varnode}}\textquotesingle{}s name would override the first\textquotesingle{}s 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_a1fa583acd137dfe2c9a2aae1c6a3c739}\label{classHighVariable_a1fa583acd137dfe2c9a2aae1c6a3c739}} 
+\index{HighVariable@{HighVariable}!finalizeDatatype@{finalizeDatatype}}
+\index{finalizeDatatype@{finalizeDatatype}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{finalizeDatatype()}{finalizeDatatype()}}
+{\footnotesize\ttfamily void High\+Variable\+::finalize\+Datatype (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{tp }\end{DoxyParamCaption})}
+
+
+
+Set a final datatype for {\bfseries{this}} variable. 
+
+The data-\/type its dirtying mechanism is disabled. The data-\/type will not change, unless this method is called again. 
+\begin{DoxyParams}{Parameters}
+{\em tp} & is the data-\/type to set \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHighVariable_a7400ca6092273e5c22e8a2bf3184e698}\label{classHighVariable_a7400ca6092273e5c22e8a2bf3184e698}} 
+\index{HighVariable@{HighVariable}!getInputVarnode@{getInputVarnode}}
+\index{getInputVarnode@{getInputVarnode}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{getInputVarnode()}{getInputVarnode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ High\+Variable\+::get\+Input\+Varnode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Find (the) input member \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+This should only be called if is\+Input() returns {\bfseries{true}}. If there is no input member, this will throw an exception. \begin{DoxyReturn}{Returns}
+the input \mbox{\hyperlink{classVarnode}{Varnode}} member 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_ae462825b47ce6f0b17b1b40ec63dd904}\label{classHighVariable_ae462825b47ce6f0b17b1b40ec63dd904}} 
+\index{HighVariable@{HighVariable}!getNameRepresentative@{getNameRepresentative}}
+\index{getNameRepresentative@{getNameRepresentative}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{getNameRepresentative()}{getNameRepresentative()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ High\+Variable\+::get\+Name\+Representative (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a member \mbox{\hyperlink{classVarnode}{Varnode}} that dictates the naming of {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}}. 
+
+Members are scored based the properties that are most dominating in choosing a name. \begin{DoxyReturn}{Returns}
+the highest scoring \mbox{\hyperlink{classVarnode}{Varnode}} member 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_a1d07d4d2b09921a9a4d0b74f78950dd6}\label{classHighVariable_a1d07d4d2b09921a9a4d0b74f78950dd6}} 
+\index{HighVariable@{HighVariable}!getSymbolEntry@{getSymbolEntry}}
+\index{getSymbolEntry@{getSymbolEntry}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{getSymbolEntry()}{getSymbolEntry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ High\+Variable\+::get\+Symbol\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Assuming there is a \mbox{\hyperlink{classSymbol}{Symbol}} attached to {\bfseries{this}}, run through the \mbox{\hyperlink{classVarnode}{Varnode}} members until we find one with a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} corresponding to the \mbox{\hyperlink{classSymbol}{Symbol}} and return it. \begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} that mapped the \mbox{\hyperlink{classSymbol}{Symbol}} to {\bfseries{this}} or null if no \mbox{\hyperlink{classSymbol}{Symbol}} is attached 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_a74c09ad2e70d4cc339af2526d529247a}\label{classHighVariable_a74c09ad2e70d4cc339af2526d529247a}} 
+\index{HighVariable@{HighVariable}!getTiedVarnode@{getTiedVarnode}}
+\index{getTiedVarnode@{getTiedVarnode}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{getTiedVarnode()}{getTiedVarnode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ High\+Variable\+::get\+Tied\+Varnode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Find the first address tied member \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+This should only be called if is\+Addr\+Tied() returns {\bfseries{true}}. If there is no address tied member, this will throw an exception. \begin{DoxyReturn}{Returns}
+the first address tied member 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_a843fe881b588aa75432c3b2cc03146ec}\label{classHighVariable_a843fe881b588aa75432c3b2cc03146ec}} 
+\index{HighVariable@{HighVariable}!getTypeRepresentative@{getTypeRepresentative}}
+\index{getTypeRepresentative@{getTypeRepresentative}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{getTypeRepresentative()}{getTypeRepresentative()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ High\+Variable\+::get\+Type\+Representative (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a member \mbox{\hyperlink{classVarnode}{Varnode}} with the strongest data-\/type. 
+
+Find the member \mbox{\hyperlink{classVarnode}{Varnode}} with the most {\itshape specialized} data-\/type, handling {\itshape bool} specially. Boolean data-\/types are {\itshape specialized} in the data-\/type lattice, but not all byte values are boolean values. Within the Varnode/\+Pcode\+Op tree, the {\itshape bool} data-\/type can only propagate to a \mbox{\hyperlink{classVarnode}{Varnode}} if it is verified to only take the boolean values 0 and 1. Since the data-\/type representative represents the type of all instances, if any instance is not boolean, then the \mbox{\hyperlink{classHighVariable}{High\+Variable}} cannot be boolean, even though {\itshape bool} is more specialized. This method uses \mbox{\hyperlink{classDatatype_afe6320b7283935c90721e26b8e0f7202}{Datatype\+::type\+Order\+Bool()}} to implement the special handling. \begin{DoxyReturn}{Returns}
+the representative member 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_a7144f5f47bc8b53e9ea9f947e35f764a}\label{classHighVariable_a7144f5f47bc8b53e9ea9f947e35f764a}} 
+\index{HighVariable@{HighVariable}!hasCover@{hasCover}}
+\index{hasCover@{hasCover}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{hasCover()}{hasCover()}}
+{\footnotesize\ttfamily bool High\+Variable\+::has\+Cover (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Determine if {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} has an associated cover. 
+
+Constant and annotation variables do not have a cover \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} has a cover 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_a7c47097883b6350cfbb630f79f529768}\label{classHighVariable_a7c47097883b6350cfbb630f79f529768}} 
+\index{HighVariable@{HighVariable}!hasName@{hasName}}
+\index{hasName@{hasName}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{hasName()}{hasName()}}
+{\footnotesize\ttfamily bool High\+Variable\+::has\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} can be named. 
+
+All \mbox{\hyperlink{classVarnode}{Varnode}} objects are assigned a \mbox{\hyperlink{classHighVariable}{High\+Variable}}, including those that don\textquotesingle{}t get names like indirect variables, constants, and annotations. Determine if {\bfseries{this}}, as inherited from its member Varnodes, can have a name. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} can have a name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_ac869841c7bcc33dcbccba90987ed6e42}\label{classHighVariable_ac869841c7bcc33dcbccba90987ed6e42}} 
+\index{HighVariable@{HighVariable}!markExpression@{markExpression}}
+\index{markExpression@{markExpression}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{markExpression()}{markExpression()}}
+{\footnotesize\ttfamily int4 High\+Variable\+::mark\+Expression (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{vector$<$ \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$ $>$ \&}]{high\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Mark and collect variables in expression. 
+
+Given a \mbox{\hyperlink{classVarnode}{Varnode}} at the root of an expression, we collect all the {\itshape explicit} High\+Variables involved in the expression. This should only be run after {\itshape explicit} and {\itshape implicit} properties have been computed on Varnodes. The expression is traced back from the root until explicit Varnodes are encountered; then their \mbox{\hyperlink{classHighVariable}{High\+Variable}} is marked and added to the list. The routine returns a value based on Pcode\+Ops encountered in the expression\+:
+\begin{DoxyItemize}
+\item 1 for call instructions
+\item 2 for L\+O\+AD instructions
+\item 3 for both call and L\+O\+AD
+\item 0 for no calls or L\+O\+A\+DS
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given root \mbox{\hyperlink{classVarnode}{Varnode}} of the expression \\
+\hline
+{\em high\+List} & will hold the collected High\+Variables \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a value based on call and L\+O\+AD instructions in the expression 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classHighVariable_ad550ad1465e95cb3b114ee9d6f4d5630}\label{classHighVariable_ad550ad1465e95cb3b114ee9d6f4d5630}} 
+\index{HighVariable@{HighVariable}!printCover@{printCover}}
+\index{printCover@{printCover}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{printCover()}{printCover()}}
+{\footnotesize\ttfamily void High\+Variable\+::print\+Cover (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Print details of the cover for {\bfseries{this}} (for debug purposes) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHighVariable_a3d0f81187b11b2d9a26e6afdfc48ae6a}\label{classHighVariable_a3d0f81187b11b2d9a26e6afdfc48ae6a}} 
+\index{HighVariable@{HighVariable}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily void High\+Variable\+::print\+Info (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print information about {\bfseries{this}} \mbox{\hyperlink{classHighVariable}{High\+Variable}} to stream. 
+
+This is generally used for debug purposes. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHighVariable_afa118d53f784a4904444784df7a0e40a}\label{classHighVariable_afa118d53f784a4904444784df7a0e40a}} 
+\index{HighVariable@{HighVariable}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!HighVariable@{HighVariable}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void High\+Variable\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save the variable to stream as an X\+ML $<$high$>$ tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream to write X\+ML to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{variable_8hh}{variable.\+hh}}\item 
+variable.\+cc\end{DoxyCompactItemize}

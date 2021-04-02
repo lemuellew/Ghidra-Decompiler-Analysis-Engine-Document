@@ -1,0 +1,62 @@
+\hypertarget{classIfcDeadcodedelay}{}\doxysection{Ifc\+Deadcodedelay Class Reference}
+\label{classIfcDeadcodedelay}\index{IfcDeadcodedelay@{IfcDeadcodedelay}}
+
+
+Change when dead code elimination starts\+: {\ttfamily deadcode delay $<$name$>$ $<$delay$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Deadcodedelay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcDeadcodedelay__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Deadcodedelay\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcDeadcodedelay__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcDeadcodedelay_ab3c538082471ef04a5cf0c48efd8a767}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Change when dead code elimination starts\+: {\ttfamily deadcode delay $<$name$>$ $<$delay$>$} 
+
+An address space is selected by name, along with a pass number. Dead code elimination for Varnodes in that address space is changed to start during that pass. If there is a {\itshape current} function, the delay is altered only for that function, otherwise the delay is set globally for all functions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcDeadcodedelay_ab3c538082471ef04a5cf0c48efd8a767}\label{classIfcDeadcodedelay_ab3c538082471ef04a5cf0c48efd8a767}} 
+\index{IfcDeadcodedelay@{IfcDeadcodedelay}!execute@{execute}}
+\index{execute@{execute}!IfcDeadcodedelay@{IfcDeadcodedelay}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Deadcodedelay\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

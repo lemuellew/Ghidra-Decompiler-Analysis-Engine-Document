@@ -1,0 +1,120 @@
+\hypertarget{classActionPrototypeTypes}{}\doxysection{Action\+Prototype\+Types Class Reference}
+\label{classActionPrototypeTypes}\index{ActionPrototypeTypes@{ActionPrototypeTypes}}
+
+
+Lay down locked input and output data-\/type information.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Prototype\+Types\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classActionPrototypeTypes__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Prototype\+Types\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classActionPrototypeTypes__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classActionPrototypeTypes_ad501f68fdd5e2adec6bbb3d2f30fa462}{extend\+Input}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$invn, \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$param, \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$topbl)
+\begin{DoxyCompactList}\small\item\em Extend \mbox{\hyperlink{classVarnode}{Varnode}} inputs to match prototype model. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionPrototypeTypes_aab34b0de3c657db76bef16ab5e2ac0dc}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionPrototypeTypes_a4c4654505369c0d674f2260c313c76b3}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Lay down locked input and output data-\/type information. 
+
+Build forced input/output Varnodes and extend them as appropriate. Set types on output forced Varnodes (input types are set automatically by the database). Initialize output recovery process. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionPrototypeTypes_a4c4654505369c0d674f2260c313c76b3}\label{classActionPrototypeTypes_a4c4654505369c0d674f2260c313c76b3}} 
+\index{ActionPrototypeTypes@{ActionPrototypeTypes}!apply@{apply}}
+\index{apply@{apply}!ActionPrototypeTypes@{ActionPrototypeTypes}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Prototype\+Types\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionPrototypeTypes_aab34b0de3c657db76bef16ab5e2ac0dc}\label{classActionPrototypeTypes_aab34b0de3c657db76bef16ab5e2ac0dc}} 
+\index{ActionPrototypeTypes@{ActionPrototypeTypes}!clone@{clone}}
+\index{clone@{clone}!ActionPrototypeTypes@{ActionPrototypeTypes}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Prototype\+Types\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+\mbox{\Hypertarget{classActionPrototypeTypes_ad501f68fdd5e2adec6bbb3d2f30fa462}\label{classActionPrototypeTypes_ad501f68fdd5e2adec6bbb3d2f30fa462}} 
+\index{ActionPrototypeTypes@{ActionPrototypeTypes}!extendInput@{extendInput}}
+\index{extendInput@{extendInput}!ActionPrototypeTypes@{ActionPrototypeTypes}}
+\doxysubsubsection{\texorpdfstring{extendInput()}{extendInput()}}
+{\footnotesize\ttfamily void Action\+Prototype\+Types\+::extend\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{invn,  }\item[{\mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$}]{param,  }\item[{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$}]{topbl }\end{DoxyParamCaption})}
+
+
+
+Extend \mbox{\hyperlink{classVarnode}{Varnode}} inputs to match prototype model. 
+
+For prototype models that assume input variables are already extended in some way, insert the appropriate extension operation to allow correct small-\/size input \mbox{\hyperlink{classVarnode}{Varnode}} to exist. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function being analyzed \\
+\hline
+{\em invn} & is the given (small) input \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em param} & is the matching symbol info for the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em topbl} & is the entry block for the function \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

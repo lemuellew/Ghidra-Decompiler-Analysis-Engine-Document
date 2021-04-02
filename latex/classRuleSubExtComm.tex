@@ -1,0 +1,113 @@
+\hypertarget{classRuleSubExtComm}{}\doxysection{Rule\+Sub\+Ext\+Comm Class Reference}
+\label{classRuleSubExtComm}\index{RuleSubExtComm@{RuleSubExtComm}}
+
+
+Commute S\+U\+B\+P\+I\+E\+CE and I\+N\+T\+\_\+\+Z\+E\+XT\+: {\ttfamily sub(zext(\+V),c) =$>$ zext(sub(\+V,c))}  
+
+
+
+
+Inheritance diagram for Rule\+Sub\+Ext\+Comm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classRuleSubExtComm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Sub\+Ext\+Comm\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classRuleSubExtComm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRuleSubExtComm_ae11025cea865b30c65eb436fdb491f88}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRuleSubExtComm_ab1ae8c84d4b9d857a2c43715e8822e95}{get\+Op\+List}} (vector$<$ uint4 $>$ \&oplist) const
+\begin{DoxyCompactList}\small\item\em List of op codes this rule operates on. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRuleSubExtComm_a3a2efa5df8447bd6c5423d5829a36de0}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Commute S\+U\+B\+P\+I\+E\+CE and I\+N\+T\+\_\+\+Z\+E\+XT\+: {\ttfamily sub(zext(\+V),c) =$>$ zext(sub(\+V,c))} 
+
+This is in keeping with the philosophy to push S\+U\+B\+P\+I\+E\+CE back earlier in the expression. The original S\+U\+B\+P\+I\+E\+CE is changed into the I\+N\+T\+\_\+\+Z\+E\+XT, but the original I\+N\+T\+\_\+\+Z\+E\+XT is not changed, a new S\+U\+B\+P\+I\+E\+CE is created. This rule also works with I\+N\+T\+\_\+\+S\+E\+XT. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRuleSubExtComm_a3a2efa5df8447bd6c5423d5829a36de0}\label{classRuleSubExtComm_a3a2efa5df8447bd6c5423d5829a36de0}} 
+\index{RuleSubExtComm@{RuleSubExtComm}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RuleSubExtComm@{RuleSubExtComm}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Sub\+Ext\+Comm\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRuleSubExtComm_ae11025cea865b30c65eb436fdb491f88}\label{classRuleSubExtComm_ae11025cea865b30c65eb436fdb491f88}} 
+\index{RuleSubExtComm@{RuleSubExtComm}!clone@{clone}}
+\index{clone@{clone}!RuleSubExtComm@{RuleSubExtComm}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Sub\+Ext\+Comm\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+\mbox{\Hypertarget{classRuleSubExtComm_ab1ae8c84d4b9d857a2c43715e8822e95}\label{classRuleSubExtComm_ab1ae8c84d4b9d857a2c43715e8822e95}} 
+\index{RuleSubExtComm@{RuleSubExtComm}!getOpList@{getOpList}}
+\index{getOpList@{getOpList}!RuleSubExtComm@{RuleSubExtComm}}
+\doxysubsubsection{\texorpdfstring{getOpList()}{getOpList()}}
+{\footnotesize\ttfamily void Rule\+Sub\+Ext\+Comm\+::get\+Op\+List (\begin{DoxyParamCaption}\item[{vector$<$ uint4 $>$ \&}]{oplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List of op codes this rule operates on. 
+
+Populate the given array with all possible Op\+Codes this \mbox{\hyperlink{classRule}{Rule}} might apply to. By default, this method returns all possible Op\+Codes 
+\begin{DoxyParams}{Parameters}
+{\em oplist} & is the array to populate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4023bfc7825de0ab866790551856d10e}{Rule}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

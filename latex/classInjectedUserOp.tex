@@ -1,0 +1,70 @@
+\hypertarget{classInjectedUserOp}{}\doxysection{Injected\+User\+Op Class Reference}
+\label{classInjectedUserOp}\index{InjectedUserOp@{InjectedUserOp}}
+
+
+A user defined operation that is injected with other p-\/code.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Injected\+User\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classInjectedUserOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Injected\+User\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classInjectedUserOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classInjectedUserOp_ae0eb3ef1744912d47b0fd5f01c079515}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore the detailed description from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A user defined operation that is injected with other p-\/code. 
+
+The system can configure user defined p-\/code ops as a hook point within the control-\/flow where other p-\/code is injected during analysis. This class maps the raw C\+A\+L\+L\+O\+T\+H\+ER p-\/code op, via its constant id, to its injection object. The injection object is also referenced by an id and is managed by \mbox{\hyperlink{classPcodeInjectLibrary}{Pcode\+Inject\+Library}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInjectedUserOp_ae0eb3ef1744912d47b0fd5f01c079515}\label{classInjectedUserOp_ae0eb3ef1744912d47b0fd5f01c079515}} 
+\index{InjectedUserOp@{InjectedUserOp}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!InjectedUserOp@{InjectedUserOp}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Injected\+User\+Op\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the detailed description from an X\+ML stream. 
+
+The details of how a user defined operation behaves can be dynamically configured from an X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element describing the op \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUserPcodeOp_a2a7b7c637369bc4fba4604cd83a937af}{User\+Pcode\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

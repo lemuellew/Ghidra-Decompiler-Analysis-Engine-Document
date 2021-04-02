@@ -1,0 +1,68 @@
+\hypertarget{classCombinePattern}{}\doxysection{Combine\+Pattern Class Reference}
+\label{classCombinePattern}\index{CombinePattern@{CombinePattern}}
+
+
+Inheritance diagram for Combine\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classCombinePattern__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Combine\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classCombinePattern__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCombinePattern_ab61418aafbbfff57b1886964d61b1a17}\label{classCombinePattern_ab61418aafbbfff57b1886964d61b1a17}} 
+{\bfseries Combine\+Pattern} (\mbox{\hyperlink{classContextPattern}{Context\+Pattern}} $\ast$con, \mbox{\hyperlink{classInstructionPattern}{Instruction\+Pattern}} $\ast$in)
+\item 
+\mbox{\Hypertarget{classCombinePattern_ad6eafd26d824e0e449991267f30d818b}\label{classCombinePattern_ad6eafd26d824e0e449991267f30d818b}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries simplify\+Clone} (void) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_a2c69b2e5558a592ff2677c576da440bd}\label{classCombinePattern_a2c69b2e5558a592ff2677c576da440bd}} 
+virtual void {\bfseries shift\+Instruction} (int4 sa)
+\item 
+\mbox{\Hypertarget{classCombinePattern_a89e54d4844001bc9a4916bb643e00fba}\label{classCombinePattern_a89e54d4844001bc9a4916bb643e00fba}} 
+virtual bool {\bfseries is\+Match} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_a2652d809e93e0410daebf2921ad9e04e}\label{classCombinePattern_a2652d809e93e0410daebf2921ad9e04e}} 
+virtual bool {\bfseries always\+True} (void) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_a48ba4c275b4c5fad7f06ca4fdd8ef0b5}\label{classCombinePattern_a48ba4c275b4c5fad7f06ca4fdd8ef0b5}} 
+virtual bool {\bfseries always\+False} (void) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_a681d11a5cb768957162f4d8d647f0aa5}\label{classCombinePattern_a681d11a5cb768957162f4d8d647f0aa5}} 
+virtual bool {\bfseries always\+Instruction\+True} (void) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_acc261bd115b31b7f004d5766702e5412}\label{classCombinePattern_acc261bd115b31b7f004d5766702e5412}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+Or} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_aaa5045424b76fd037a192fb4654c7ed8}\label{classCombinePattern_aaa5045424b76fd037a192fb4654c7ed8}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+And} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_a161632a4352aed9b12d9a7497d8af681}\label{classCombinePattern_a161632a4352aed9b12d9a7497d8af681}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries common\+Sub\+Pattern} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_a77f1097e85459ca4ee70dad774df6535}\label{classCombinePattern_a77f1097e85459ca4ee70dad774df6535}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classCombinePattern_a4d72e9c16ce072982379a9da0bf2ad78}\label{classCombinePattern_a4d72e9c16ce072982379a9da0bf2ad78}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghpattern.\+hh\item 
+slghpattern.\+cc\end{DoxyCompactItemize}

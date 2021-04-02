@@ -1,0 +1,99 @@
+\hypertarget{classMapIterator}{}\doxysection{Map\+Iterator Class Reference}
+\label{classMapIterator}\index{MapIterator@{MapIterator}}
+
+
+An iterator over \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects in multiple address spaces.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMapIterator_a20752a5cc471c1f0d927235a64e9de04}{Map\+Iterator}} (const vector$<$ \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}} $\ast$ $>$ $\ast$m, vector$<$ \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}} $\ast$ $>$\+::const\+\_\+iterator cm, list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::const\+\_\+iterator ci)
+\begin{DoxyCompactList}\small\item\em Construct iterator at a specific position. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMapIterator_a7cd921245d4d9307a2bdca62c39abda5}\label{classMapIterator_a7cd921245d4d9307a2bdca62c39abda5}} 
+\mbox{\hyperlink{classMapIterator_a7cd921245d4d9307a2bdca62c39abda5}{Map\+Iterator}} (const \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \& \mbox{\hyperlink{classMapIterator_a4ecea040ac1d04ae13e91a183c7a0f98}{operator++}} (void)
+\begin{DoxyCompactList}\small\item\em Pre-\/increment the iterator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \mbox{\hyperlink{classMapIterator_aaf03aa823497e381f15d1d13143af4fb}{operator++}} (int4 i)
+\begin{DoxyCompactList}\small\item\em Post-\/increment the iterator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMapIterator_aaf72515b87e4a7a920c75e8abcb02dd2}\label{classMapIterator_aaf72515b87e4a7a920c75e8abcb02dd2}} 
+\mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \& \mbox{\hyperlink{classMapIterator_aaf72515b87e4a7a920c75e8abcb02dd2}{operator=}} (const \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \&op2)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMapIterator_a151d7bd51ce682e79ced5a8552132bdc}\label{classMapIterator_a151d7bd51ce682e79ced5a8552132bdc}} 
+bool \mbox{\hyperlink{classMapIterator_a151d7bd51ce682e79ced5a8552132bdc}{operator==}} (const \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMapIterator_a0c43c823c275b4c1f821360ba3eaf745}\label{classMapIterator_a0c43c823c275b4c1f821360ba3eaf745}} 
+bool \mbox{\hyperlink{classMapIterator_a0c43c823c275b4c1f821360ba3eaf745}{operator!=}} (const \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Inequality operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An iterator over \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects in multiple address spaces. 
+
+Given an Entry\+Map (a rangemap of \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects in a single address space) for each address space, iterator over all the \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMapIterator_a20752a5cc471c1f0d927235a64e9de04}\label{classMapIterator_a20752a5cc471c1f0d927235a64e9de04}} 
+\index{MapIterator@{MapIterator}!MapIterator@{MapIterator}}
+\index{MapIterator@{MapIterator}!MapIterator@{MapIterator}}
+\doxysubsubsection{\texorpdfstring{MapIterator()}{MapIterator()}}
+{\footnotesize\ttfamily Map\+Iterator\+::\+Map\+Iterator (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}} $\ast$ $>$ $\ast$}]{m,  }\item[{vector$<$ \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}} $\ast$ $>$\+::const\+\_\+iterator}]{cm,  }\item[{list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::const\+\_\+iterator}]{ci }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct iterator at a specific position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the list of Entry\+Maps \\
+\hline
+{\em cm} & is the position of the iterator within the Entry\+Map list \\
+\hline
+{\em ci} & is the position of the iterator within the specific Entry\+Map \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMapIterator_aaf03aa823497e381f15d1d13143af4fb}\label{classMapIterator_aaf03aa823497e381f15d1d13143af4fb}} 
+\index{MapIterator@{MapIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!MapIterator@{MapIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} Map\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption})}
+
+
+
+Post-\/increment the iterator. 
+
+The iterator is advanced by one 
+\begin{DoxyParams}{Parameters}
+{\em i} & is a dummy variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a copy of the iterator before it was advanced 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMapIterator_a4ecea040ac1d04ae13e91a183c7a0f98}\label{classMapIterator_a4ecea040ac1d04ae13e91a183c7a0f98}} 
+\index{MapIterator@{MapIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!MapIterator@{MapIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \& Map\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Pre-\/increment the iterator. 
+
+The iterator is advanced by one \begin{DoxyReturn}{Returns}
+a reference to the (advanced) iterator 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

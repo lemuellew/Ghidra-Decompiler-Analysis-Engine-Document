@@ -1,0 +1,570 @@
+\hypertarget{classPcodeOp}{}\doxysection{Pcode\+Op Class Reference}
+\label{classPcodeOp}\index{PcodeOp@{PcodeOp}}
+
+
+Lowest level operation of the {\bfseries{p-\/code}} language.  
+
+
+
+
+{\ttfamily \#include $<$op.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a87fc6777cadc38baf72c41c402042974}{startbasic}} = 1, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a56e733c39533b883d302886d86303b91}{branch}} = 2, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aa27231d912a89ac1285a36659ed45a90}{call}} = 4, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29acf056ad5a0fb78ce8017ac9d8f17dbef}{returns}} = 0x8, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a5057de67535051aec91b674a773da7af}{nocollapse}} = 0x10, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a770025b4d1bd9ec43ed8368c9288c2e0}{dead}} = 0x20, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a780a9849774b1edf8a82e8ee0bf1c221}{marker}} = 0x40, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29ab251f6a460ea44aa0eaa3a0a4531e83a}{booloutput}} = 0x80, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a099ba4fbb06f9d5e2c09f320880b0c6d}{boolean\+\_\+flip}} = 0x100, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a0fd2668a2070aa584d427656c4af08d1}{fallthru\+\_\+true}} = 0x200, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a71ea7f0824b56b07da7f77e8f09b9224}{indirect\+\_\+source}} = 0x400, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29adf4066945c812c3e20e150b6fbfce5ee}{coderef}} = 0x800, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a64f1f43673312ffd240147a69006cebf}{startmark}} = 0x1000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29acfcc49f413c69f5fb17e7b2573ee5ed5}{mark}} = 0x2000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aecf698b666912f4d2e7994f8153f5e05}{commutative}} = 0x4000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a1a84c95893d2afa8f93cac68ee55e36b}{unary}} = 0x8000, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29affb94dbe63fbe27e9b7013dbfcdd6035}{binary}} = 0x10000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aedbc986e10e3bacf1235f1735e58b5b8}{special}} = 0x20000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a945fa1dd4c090e4112a22d94a66fda37}{ternary}} = 0x40000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aa003526ea0fc30a1d34656bf609be7ad}{splittingbranch}} = 0x80000, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a1d6741e042f21662eabe58184d5db926}{nonprinting}} = 0x100000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a813f16d5a57741bd21c75d111f2a958d}{halt}} = 0x200000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29afe7021be79a58c1f8ccf3e648b9efa0b}{badinstruction}} = 0x400000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a8a2372c854b0e815e12973db2d4ef8b5}{unimplemented}} = 0x800000, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29ab9c226cb4d7da1741fde87002092ae4f}{noreturn}} = 0x1000000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a6df0f07720903764525707d48ace7907}{missing}} = 0x2000000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a28590c490e43e75993a65d1d472ac2a6}{spacebase\+\_\+ptr}} = 0x4000000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aebf947b1f15fc32e702ed9f9ae07406d}{indirect\+\_\+creation}} = 0x8000000, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a25548db40ff868ad2a5a35940c652a41}{calculated\+\_\+bool}} = 0x10000000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aca133e59675f1451e15d5adae83f122e}{has\+\_\+callspec}} = 0x20000000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a884e553cb8c57fad8356bd041c30a0c4}{ptrflow}} = 0x40000000, 
+\mbox{\hyperlink{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a804c49efe7baaf2c7f00cfefd6db0112}{indirect\+\_\+store}} = 0x80000000
+ \}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58abca77d05804c71b79b4192687f34105f}{special\+\_\+prop}} = 1, 
+\mbox{\hyperlink{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58aace88e8f6d9076dbcb9f8f137469fb1d}{special\+\_\+print}} = 2, 
+\mbox{\hyperlink{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ae6091fc405524c4cc5baa63e860b9a98}{modified}} = 4, 
+\mbox{\hyperlink{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ad0c2a7bf3fde8d18421ea4e55c61602d}{warning}} = 8, 
+\newline
+\mbox{\hyperlink{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58a1c7fd778360040b9d504a7175f18f5b9}{incidental\+\_\+copy}} = 0x10, 
+\mbox{\hyperlink{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ae3f7e41a699f2da0128390c4d3ccbaca}{is\+\_\+cpool\+\_\+transformed}} = 0x20
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPcodeOp_af0d30dfcb1e58033fd3b25cebfcfffa5}{Pcode\+Op}} (int4 s, const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&sq)
+\begin{DoxyCompactList}\small\item\em Construct an unattached \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_a3bf80a4ef518e6a41cc0f0e8ae08e7b4}\label{classPcodeOp_a3bf80a4ef518e6a41cc0f0e8ae08e7b4}} 
+int4 \mbox{\hyperlink{classPcodeOp_a3bf80a4ef518e6a41cc0f0e8ae08e7b4}{get\+Slot}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Get the slot number of the indicated input varnode. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classPcodeOp_af268eecc8bf4e8297f617005cb9a5413}{get\+Repeat\+Slot}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, int4 first\+Slot, list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator iter) const
+\begin{DoxyCompactList}\small\item\em Find the slot for a given \mbox{\hyperlink{classVarnode}{Varnode}}, which may be take up multiple input slots. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_aad460cabfdd49e554f3c28e44cbce3e1}\label{classPcodeOp_aad460cabfdd49e554f3c28e44cbce3e1}} 
+uint4 \mbox{\hyperlink{classPcodeOp_aad460cabfdd49e554f3c28e44cbce3e1}{get\+Eval\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the evaluation type of this op. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_af4f85b05be28b424b0dccf3646029eb9}\label{classPcodeOp_af4f85b05be28b424b0dccf3646029eb9}} 
+uint4 \mbox{\hyperlink{classPcodeOp_af4f85b05be28b424b0dccf3646029eb9}{get\+Halt\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get type which indicates unusual halt in control-\/flow. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_ad3748f2dc5b9857b9ffbdc06849b9cb6}\label{classPcodeOp_ad3748f2dc5b9857b9ffbdc06849b9cb6}} 
+bool \mbox{\hyperlink{classPcodeOp_ad3748f2dc5b9857b9ffbdc06849b9cb6}{is\+Call\+Without\+Spec}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this op acts as call but does not have a full specification. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_aaef20aa623203d9c4a4dcae10ff48be0}\label{classPcodeOp_aaef20aa623203d9c4a4dcae10ff48be0}} 
+bool \mbox{\hyperlink{classPcodeOp_aaef20aa623203d9c4a4dcae10ff48be0}{not\+Printed}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this op is not directly represented in C output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_a1e5a11d0bb8774586de3b702418535ed}\label{classPcodeOp_a1e5a11d0bb8774586de3b702418535ed}} 
+bool \mbox{\hyperlink{classPcodeOp_a1e5a11d0bb8774586de3b702418535ed}{is\+Bool\+Output}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this op produces a boolean output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_a1c630b06db046c161adda94895ac78d8}\label{classPcodeOp_a1c630b06db046c161adda94895ac78d8}} 
+bool \mbox{\hyperlink{classPcodeOp_a1c630b06db046c161adda94895ac78d8}{is\+Call\+Or\+Branch}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this op is a call or branch. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_aebefffa77d04696d70f483013faf0333}\label{classPcodeOp_aebefffa77d04696d70f483013faf0333}} 
+bool \mbox{\hyperlink{classPcodeOp_aebefffa77d04696d70f483013faf0333}{is\+Flow\+Break}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this op breaks fall-\/thru flow. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_a372abd9553271da8620c4b9597f4e2aa}\label{classPcodeOp_a372abd9553271da8620c4b9597f4e2aa}} 
+bool \mbox{\hyperlink{classPcodeOp_a372abd9553271da8620c4b9597f4e2aa}{is\+Boolean\+Flip}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this op flips the true/false meaning of its control-\/flow branching. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_af43ab623809f537adde0f3233e6a1df5}\label{classPcodeOp_af43ab623809f537adde0f3233e6a1df5}} 
+bool \mbox{\hyperlink{classPcodeOp_af43ab623809f537adde0f3233e6a1df5}{is\+Fallthru\+True}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the fall-\/thru branch is taken when the boolean input is true. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_a8ed2d631209bc616d0cccf20e2f2577a}\label{classPcodeOp_a8ed2d631209bc616d0cccf20e2f2577a}} 
+bool \mbox{\hyperlink{classPcodeOp_a8ed2d631209bc616d0cccf20e2f2577a}{is\+Calculated\+Bool}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if output is 1-\/bit boolean. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_a66b920931eba37661c8b21ef18af4d2e}\label{classPcodeOp_a66b920931eba37661c8b21ef18af4d2e}} 
+bool \mbox{\hyperlink{classPcodeOp_a66b920931eba37661c8b21ef18af4d2e}{is\+Cpool\+Transformed}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if we have already examined this cpool. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPcodeOp_abd972b908036802cebc2c3fa5256a9f9}{is\+Collapsible}} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeOp_ad218ad66e701920d46bbffe355b5e2df}\label{classPcodeOp_ad218ad66e701920d46bbffe355b5e2df}} 
+bool \mbox{\hyperlink{classPcodeOp_ad218ad66e701920d46bbffe355b5e2df}{uses\+Spacebase\+Ptr}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this L\+O\+A\+Ds or S\+T\+O\+R\+Es from a dynamic {\itshape spacebase} pointer. \end{DoxyCompactList}\item 
+uintm \mbox{\hyperlink{classPcodeOp_a9993dd93bcad16183589a46404c5961f}{get\+Cse\+Hash}} (void) const
+\begin{DoxyCompactList}\small\item\em Return hash indicating possibility of common subexpression elimination. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPcodeOp_a241ccdd57a457b6114aaaaad5ac0d5fa}{is\+Cse\+Match}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this and {\itshape op} represent common subexpressions. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPcodeOp_aae5d4629a3b9b4ad638a99c3485d1bb0}{is\+Moveable}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$point) const
+\begin{DoxyCompactList}\small\item\em Can {\bfseries{this}} be moved to after {\itshape point}, without disturbing data-\/flow. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classPcodeOp_a6fd640f1b530d2a3a6aa330f7bde7dfe}{collapse}} (bool \&marked\+Input) const
+\begin{DoxyCompactList}\small\item\em Calculate the constant output produced by this op. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOp_a84d465c2dc9db2670ebfbf1cb148944c}{collapse\+Constant\+Symbol}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$new\+Const) const
+\begin{DoxyCompactList}\small\item\em Propagate constant symbol from inputs to given output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeOp_a6d5fd39f58bea087491f7d86250b0165}\label{classPcodeOp_a6d5fd39f58bea087491f7d86250b0165}} 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOp_a6d5fd39f58bea087491f7d86250b0165}{next\+Op}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the next op in the control-\/flow from this or {\itshape null}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOp_a2d0518b850450346c635f9d04725be5e}{previous\+Op}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the previous op within this op\textquotesingle{}s basic block or {\itshape null}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOp_a18784de8c95d9011522302a8ba3647b3}{target}} (void) const
+\begin{DoxyCompactList}\small\item\em Return starting op for instruction associated with this op. \end{DoxyCompactList}\item 
+uintb \mbox{\hyperlink{classPcodeOp_a7c598d70b51160ff643b92a1619e1929}{get\+N\+Z\+Mask\+Local}} (bool cliploop) const
+\begin{DoxyCompactList}\small\item\em Calculate known zero bits for output to this op. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classPcodeOp_a9a58052af8c0272d059c44fa4172c18a}{compare\+Order}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$bop) const
+\begin{DoxyCompactList}\small\item\em Compare the control-\/flow order of this and {\itshape bop}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOp_ad69a4ae6a740167e608f39ebc2b716df}{print\+Debug}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print debug description of this op to stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeOp_a4fc0474bc30c981150acade20eaa1262}{save\+Xml}} (ostream \&s) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeOp_a41be82b850ff5185e51268aead2c2802}\label{classPcodeOp_a41be82b850ff5185e51268aead2c2802}} 
+static \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classPcodeOp_a41be82b850ff5185e51268aead2c2802}{get\+Op\+From\+Const}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Retrieve the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} encoded as the address {\itshape addr}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeOp_a5d6670c2799e57561e4b5a6f31202633}\label{classPcodeOp_a5d6670c2799e57561e4b5a6f31202633}} 
+class {\bfseries Block\+Basic}
+\item 
+\mbox{\Hypertarget{classPcodeOp_a16ade990887167c11c41cb88121bb449}\label{classPcodeOp_a16ade990887167c11c41cb88121bb449}} 
+class {\bfseries Funcdata}
+\item 
+\mbox{\Hypertarget{classPcodeOp_a9b0cf6f80beddec0b9f7745c87c22ba7}\label{classPcodeOp_a9b0cf6f80beddec0b9f7745c87c22ba7}} 
+class {\bfseries Pcode\+Op\+Bank}
+\item 
+\mbox{\Hypertarget{classPcodeOp_a794a269a99c505d3cd54abc16c456e0d}\label{classPcodeOp_a794a269a99c505d3cd54abc16c456e0d}} 
+class {\bfseries Varnode\+Bank}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lowest level operation of the {\bfseries{p-\/code}} language. 
+
+The philosophy here is to have only one version of any type of operation, and to be completely explicit about all effects. All operations except the control flow operations have exactly one explicit output. Any given operation can have multiple inputs, but all are listed explicitly.
+
+Input and output size for an operation are specified explicitly. All inputs must be of the same size. Except for the above restrictions, input and output can be any size in bytes.
+
+P-\/code can be either big or little endian, this is determined by the language being translated from 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+Boolean attributes (flags) that can be placed on a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. Even though this enum is public, these are all set and read internally, although many are read publicly via {\itshape get} or {\itshape is} methods. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{startbasic@{startbasic}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!startbasic@{startbasic}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a87fc6777cadc38baf72c41c402042974}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a87fc6777cadc38baf72c41c402042974}} 
+startbasic&This instruction starts a basic block. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{branch@{branch}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!branch@{branch}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a56e733c39533b883d302886d86303b91}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a56e733c39533b883d302886d86303b91}} 
+branch&This instruction is a branch. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{call@{call}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!call@{call}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aa27231d912a89ac1285a36659ed45a90}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aa27231d912a89ac1285a36659ed45a90}} 
+call&This instruction calls a subroutine. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{returns@{returns}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!returns@{returns}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29acf056ad5a0fb78ce8017ac9d8f17dbef}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29acf056ad5a0fb78ce8017ac9d8f17dbef}} 
+returns&This instruction returns to caller. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nocollapse@{nocollapse}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!nocollapse@{nocollapse}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a5057de67535051aec91b674a773da7af}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a5057de67535051aec91b674a773da7af}} 
+nocollapse&This op cannot be collapsed further. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{dead@{dead}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!dead@{dead}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a770025b4d1bd9ec43ed8368c9288c2e0}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a770025b4d1bd9ec43ed8368c9288c2e0}} 
+dead&This operation is dead. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{marker@{marker}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!marker@{marker}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a780a9849774b1edf8a82e8ee0bf1c221}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a780a9849774b1edf8a82e8ee0bf1c221}} 
+marker&special placeholder op (multiequal or indirect) or C\+P\+U\+I\+\_\+\+C\+O\+PY between different copies of same variable \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{booloutput@{booloutput}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!booloutput@{booloutput}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29ab251f6a460ea44aa0eaa3a0a4531e83a}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29ab251f6a460ea44aa0eaa3a0a4531e83a}} 
+booloutput&Boolean operation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{boolean\_flip@{boolean\_flip}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!boolean\_flip@{boolean\_flip}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a099ba4fbb06f9d5e2c09f320880b0c6d}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a099ba4fbb06f9d5e2c09f320880b0c6d}} 
+boolean\+\_\+flip&Set if condition must be false to take branch. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fallthru\_true@{fallthru\_true}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!fallthru\_true@{fallthru\_true}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a0fd2668a2070aa584d427656c4af08d1}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a0fd2668a2070aa584d427656c4af08d1}} 
+fallthru\+\_\+true&Set if fallthru happens on true condition. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirect\_source@{indirect\_source}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!indirect\_source@{indirect\_source}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a71ea7f0824b56b07da7f77e8f09b9224}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a71ea7f0824b56b07da7f77e8f09b9224}} 
+indirect\+\_\+source&Op is source of (one or more) C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+C\+Ts. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{coderef@{coderef}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!coderef@{coderef}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29adf4066945c812c3e20e150b6fbfce5ee}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29adf4066945c812c3e20e150b6fbfce5ee}} 
+coderef&The first parameter to this op is a coderef. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{startmark@{startmark}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!startmark@{startmark}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a64f1f43673312ffd240147a69006cebf}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a64f1f43673312ffd240147a69006cebf}} 
+startmark&This op is the first in its instruction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mark@{mark}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!mark@{mark}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29acfcc49f413c69f5fb17e7b2573ee5ed5}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29acfcc49f413c69f5fb17e7b2573ee5ed5}} 
+mark&Used by many algorithms that need to detect loops or avoid repeats. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{commutative@{commutative}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!commutative@{commutative}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aecf698b666912f4d2e7994f8153f5e05}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aecf698b666912f4d2e7994f8153f5e05}} 
+commutative&Order of input parameters does not matter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unary@{unary}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!unary@{unary}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a1a84c95893d2afa8f93cac68ee55e36b}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a1a84c95893d2afa8f93cac68ee55e36b}} 
+unary&Evaluate as unary expression. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{binary@{binary}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!binary@{binary}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29affb94dbe63fbe27e9b7013dbfcdd6035}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29affb94dbe63fbe27e9b7013dbfcdd6035}} 
+binary&Evaluate as binary expression. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{special@{special}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!special@{special}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aedbc986e10e3bacf1235f1735e58b5b8}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aedbc986e10e3bacf1235f1735e58b5b8}} 
+special&Cannot be evaluated (without special processing) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ternary@{ternary}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!ternary@{ternary}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a945fa1dd4c090e4112a22d94a66fda37}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a945fa1dd4c090e4112a22d94a66fda37}} 
+ternary&Evaluate as ternary operator (or higher) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{splittingbranch@{splittingbranch}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!splittingbranch@{splittingbranch}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aa003526ea0fc30a1d34656bf609be7ad}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aa003526ea0fc30a1d34656bf609be7ad}} 
+splittingbranch&Dead edge cannot be removed as it splits. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nonprinting@{nonprinting}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!nonprinting@{nonprinting}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a1d6741e042f21662eabe58184d5db926}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a1d6741e042f21662eabe58184d5db926}} 
+nonprinting&Op should not be directly printed as source. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{halt@{halt}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!halt@{halt}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a813f16d5a57741bd21c75d111f2a958d}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a813f16d5a57741bd21c75d111f2a958d}} 
+halt&instruction causes processor or process to halt \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{badinstruction@{badinstruction}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!badinstruction@{badinstruction}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29afe7021be79a58c1f8ccf3e648b9efa0b}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29afe7021be79a58c1f8ccf3e648b9efa0b}} 
+badinstruction&placeholder for bad instruction data \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unimplemented@{unimplemented}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!unimplemented@{unimplemented}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a8a2372c854b0e815e12973db2d4ef8b5}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a8a2372c854b0e815e12973db2d4ef8b5}} 
+unimplemented&placeholder for unimplemented instruction \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{noreturn@{noreturn}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!noreturn@{noreturn}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29ab9c226cb4d7da1741fde87002092ae4f}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29ab9c226cb4d7da1741fde87002092ae4f}} 
+noreturn&placeholder for previous call that doesn\textquotesingle{}t exit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{missing@{missing}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!missing@{missing}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a6df0f07720903764525707d48ace7907}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a6df0f07720903764525707d48ace7907}} 
+missing&ops at this address were not generated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spacebase\_ptr@{spacebase\_ptr}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!spacebase\_ptr@{spacebase\_ptr}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a28590c490e43e75993a65d1d472ac2a6}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a28590c490e43e75993a65d1d472ac2a6}} 
+spacebase\+\_\+ptr&Loads or stores from a dynamic pointer into a spacebase. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirect\_creation@{indirect\_creation}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!indirect\_creation@{indirect\_creation}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aebf947b1f15fc32e702ed9f9ae07406d}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aebf947b1f15fc32e702ed9f9ae07406d}} 
+indirect\+\_\+creation&Output varnode is created by indirect effect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{calculated\_bool@{calculated\_bool}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!calculated\_bool@{calculated\_bool}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a25548db40ff868ad2a5a35940c652a41}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a25548db40ff868ad2a5a35940c652a41}} 
+calculated\+\_\+bool&Output has been determined to be a 1-\/bit boolean value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{has\_callspec@{has\_callspec}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!has\_callspec@{has\_callspec}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aca133e59675f1451e15d5adae83f122e}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29aca133e59675f1451e15d5adae83f122e}} 
+has\+\_\+callspec&Op has a call specification associated with it. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ptrflow@{ptrflow}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!ptrflow@{ptrflow}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a884e553cb8c57fad8356bd041c30a0c4}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a884e553cb8c57fad8356bd041c30a0c4}} 
+ptrflow&Op consumes or produces a ptr. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirect\_store@{indirect\_store}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!indirect\_store@{indirect\_store}}}\mbox{\Hypertarget{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a804c49efe7baaf2c7f00cfefd6db0112}\label{classPcodeOp_ae3b27e30a1ec54ac60b51af46d2d9e29a804c49efe7baaf2c7f00cfefd6db0112}} 
+indirect\+\_\+store&C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT is caused by C\+P\+U\+I\+\_\+\+S\+T\+O\+RE. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58}\label{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{special\_prop@{special\_prop}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!special\_prop@{special\_prop}}}\mbox{\Hypertarget{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58abca77d05804c71b79b4192687f34105f}\label{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58abca77d05804c71b79b4192687f34105f}} 
+special\+\_\+prop&Does some special form of datatype propagation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{special\_print@{special\_print}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!special\_print@{special\_print}}}\mbox{\Hypertarget{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58aace88e8f6d9076dbcb9f8f137469fb1d}\label{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58aace88e8f6d9076dbcb9f8f137469fb1d}} 
+special\+\_\+print&Op is marked for special printing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{modified@{modified}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!modified@{modified}}}\mbox{\Hypertarget{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ae6091fc405524c4cc5baa63e860b9a98}\label{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ae6091fc405524c4cc5baa63e860b9a98}} 
+modified&This op has been modified by the current action. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{warning@{warning}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!warning@{warning}}}\mbox{\Hypertarget{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ad0c2a7bf3fde8d18421ea4e55c61602d}\label{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ad0c2a7bf3fde8d18421ea4e55c61602d}} 
+warning&Warning has been generated for this op. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{incidental\_copy@{incidental\_copy}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!incidental\_copy@{incidental\_copy}}}\mbox{\Hypertarget{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58a1c7fd778360040b9d504a7175f18f5b9}\label{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58a1c7fd778360040b9d504a7175f18f5b9}} 
+incidental\+\_\+copy&Treat this as {\itshape incidental} for parameter recovery algorithms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{is\_cpool\_transformed@{is\_cpool\_transformed}!PcodeOp@{PcodeOp}}\index{PcodeOp@{PcodeOp}!is\_cpool\_transformed@{is\_cpool\_transformed}}}\mbox{\Hypertarget{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ae3f7e41a699f2da0128390c4d3ccbaca}\label{classPcodeOp_ad95e3fd626a9330bee55ad7fc293fb58ae3f7e41a699f2da0128390c4d3ccbaca}} 
+is\+\_\+cpool\+\_\+transformed&Have we checked for cpool transforms. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classPcodeOp_af0d30dfcb1e58033fd3b25cebfcfffa5}\label{classPcodeOp_af0d30dfcb1e58033fd3b25cebfcfffa5}} 
+\index{PcodeOp@{PcodeOp}!PcodeOp@{PcodeOp}}
+\index{PcodeOp@{PcodeOp}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{PcodeOp()}{PcodeOp()}}
+{\footnotesize\ttfamily Pcode\+Op\+::\+Pcode\+Op (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&}]{sq }\end{DoxyParamCaption})}
+
+
+
+Construct an unattached \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+Construct a completely unattached \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. Space is reserved for input and output Varnodes but all are set initially to null. 
+\begin{DoxyParams}{Parameters}
+{\em s} & indicates the number of input slots reserved \\
+\hline
+{\em sq} & is the sequence number to associate with the new \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeOp_a6fd640f1b530d2a3a6aa330f7bde7dfe}\label{classPcodeOp_a6fd640f1b530d2a3a6aa330f7bde7dfe}} 
+\index{PcodeOp@{PcodeOp}!collapse@{collapse}}
+\index{collapse@{collapse}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{collapse()}{collapse()}}
+{\footnotesize\ttfamily uintb Pcode\+Op\+::collapse (\begin{DoxyParamCaption}\item[{bool \&}]{marked\+Input }\end{DoxyParamCaption}) const}
+
+
+
+Calculate the constant output produced by this op. 
+
+Assuming all the inputs to this op are constants, compute the constant result of evaluating this op on this inputs. If one if the inputs has attached symbol information, pass-\/back \char`\"{}the fact of\char`\"{} as we may want to propagate the info to the new constant. Throw an exception if a constant result cannot be produced. 
+\begin{DoxyParams}{Parameters}
+{\em marked\+Input} & will pass-\/back whether or not one of the inputs is a marked constant \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the constant result 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_a84d465c2dc9db2670ebfbf1cb148944c}\label{classPcodeOp_a84d465c2dc9db2670ebfbf1cb148944c}} 
+\index{PcodeOp@{PcodeOp}!collapseConstantSymbol@{collapseConstantSymbol}}
+\index{collapseConstantSymbol@{collapseConstantSymbol}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{collapseConstantSymbol()}{collapseConstantSymbol()}}
+{\footnotesize\ttfamily void Pcode\+Op\+::collapse\+Constant\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{new\+Const }\end{DoxyParamCaption}) const}
+
+
+
+Propagate constant symbol from inputs to given output. 
+
+Knowing that {\bfseries{this}} \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} has collapsed its constant inputs, one of which has symbol content, figure out if the symbol should propagate to the new given output constant. 
+\begin{DoxyParams}{Parameters}
+{\em new\+Const} & is the given output constant \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOp_a9a58052af8c0272d059c44fa4172c18a}\label{classPcodeOp_a9a58052af8c0272d059c44fa4172c18a}} 
+\index{PcodeOp@{PcodeOp}!compareOrder@{compareOrder}}
+\index{compareOrder@{compareOrder}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{compareOrder()}{compareOrder()}}
+{\footnotesize\ttfamily int4 Pcode\+Op\+::compare\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{bop }\end{DoxyParamCaption}) const}
+
+
+
+Compare the control-\/flow order of this and {\itshape bop}. 
+
+Compare the execution order of -\/this-\/ and -\/bop-\/, if -\/this-\/ executes earlier (dominates) return -\/1; if -\/bop-\/ executes earlier return 1, otherwise return 0. Note that 0 is returned if there is no absolute execution order. 
+\begin{DoxyParams}{Parameters}
+{\em bop} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to compare this to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1, 0, or 1, depending on the comparison 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_a9993dd93bcad16183589a46404c5961f}\label{classPcodeOp_a9993dd93bcad16183589a46404c5961f}} 
+\index{PcodeOp@{PcodeOp}!getCseHash@{getCseHash}}
+\index{getCseHash@{getCseHash}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{getCseHash()}{getCseHash()}}
+{\footnotesize\ttfamily uintm Pcode\+Op\+::get\+Cse\+Hash (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return hash indicating possibility of common subexpression elimination. 
+
+Produce a hash of the following attributes\+: output size, the opcode, and the identity of each input varnode. This is suitable for determining if two Pcode\+Ops calculate identical values \begin{DoxyReturn}{Returns}
+the calculated hash or 0 if the op is not cse hashable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_a7c598d70b51160ff643b92a1619e1929}\label{classPcodeOp_a7c598d70b51160ff643b92a1619e1929}} 
+\index{PcodeOp@{PcodeOp}!getNZMaskLocal@{getNZMaskLocal}}
+\index{getNZMaskLocal@{getNZMaskLocal}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{getNZMaskLocal()}{getNZMaskLocal()}}
+{\footnotesize\ttfamily uintb Pcode\+Op\+::get\+N\+Z\+Mask\+Local (\begin{DoxyParamCaption}\item[{bool}]{cliploop }\end{DoxyParamCaption}) const}
+
+
+
+Calculate known zero bits for output to this op. 
+
+Compute nonzeromask assuming inputs to op have their masks properly defined. Assume the op has an output. For any inputs to this op, that have zero bits where their nzmasks have zero bits, then the output produced by this op is guaranteed to have zero bits at every location in the nzmask calculated by this function. 
+\begin{DoxyParams}{Parameters}
+{\em cliploop} & indicates the calculation shouldn\textquotesingle{}t include inputs from known looping edges \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calculated non-\/zero mask 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_af268eecc8bf4e8297f617005cb9a5413}\label{classPcodeOp_af268eecc8bf4e8297f617005cb9a5413}} 
+\index{PcodeOp@{PcodeOp}!getRepeatSlot@{getRepeatSlot}}
+\index{getRepeatSlot@{getRepeatSlot}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{getRepeatSlot()}{getRepeatSlot()}}
+{\footnotesize\ttfamily int4 Pcode\+Op\+::get\+Repeat\+Slot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{int4}]{first\+Slot,  }\item[{list$<$ \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$\+::const\+\_\+iterator}]{iter }\end{DoxyParamCaption}) const}
+
+
+
+Find the slot for a given \mbox{\hyperlink{classVarnode}{Varnode}}, which may be take up multiple input slots. 
+
+In the rare case that {\bfseries{this}} \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} takes the same \mbox{\hyperlink{classVarnode}{Varnode}} as input multiple times, use the specific descendant iterator producing {\bfseries{this}} \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to work out the corresponding slot. Every slot containing the given \mbox{\hyperlink{classVarnode}{Varnode}} will be produced exactly once over the course of iteration. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em first\+Slot} & is the first instance of the \mbox{\hyperlink{classVarnode}{Varnode}} in {\bfseries{this}} input list \\
+\hline
+{\em iter} & is the specific descendant iterator producing {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the slot corresponding to the iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_abd972b908036802cebc2c3fa5256a9f9}\label{classPcodeOp_abd972b908036802cebc2c3fa5256a9f9}} 
+\index{PcodeOp@{PcodeOp}!isCollapsible@{isCollapsible}}
+\index{isCollapsible@{isCollapsible}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{isCollapsible()}{isCollapsible()}}
+{\footnotesize\ttfamily bool Pcode\+Op\+::is\+Collapsible (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Return {\bfseries{true}} if this can be collapsed to a C\+O\+PY of a constant
+
+Can this be collapsed to a copy op, i.\+e. are all inputs constants \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if this op can be callapsed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_a241ccdd57a457b6114aaaaad5ac0d5fa}\label{classPcodeOp_a241ccdd57a457b6114aaaaad5ac0d5fa}} 
+\index{PcodeOp@{PcodeOp}!isCseMatch@{isCseMatch}}
+\index{isCseMatch@{isCseMatch}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{isCseMatch()}{isCseMatch()}}
+{\footnotesize\ttfamily bool Pcode\+Op\+::is\+Cse\+Match (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if this and {\itshape op} represent common subexpressions. 
+
+Do these two ops represent a common subexpression? This is the full test of matching indicated by get\+Cse\+Hash 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to compare with this \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the two ops are a common subexpression match 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_aae5d4629a3b9b4ad638a99c3485d1bb0}\label{classPcodeOp_aae5d4629a3b9b4ad638a99c3485d1bb0}} 
+\index{PcodeOp@{PcodeOp}!isMoveable@{isMoveable}}
+\index{isMoveable@{isMoveable}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{isMoveable()}{isMoveable()}}
+{\footnotesize\ttfamily bool Pcode\+Op\+::is\+Moveable (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{point }\end{DoxyParamCaption}) const}
+
+
+
+Can {\bfseries{this}} be moved to after {\itshape point}, without disturbing data-\/flow. 
+
+Its possible for the order of operations to be rearranged in some instances but still keep equivalent data-\/flow. Test if {\bfseries{this}} operation can be moved to occur immediately after a specified {\itshape point} operation. This currently only tests for movement within a basic block. 
+\begin{DoxyParams}{Parameters}
+{\em point} & is the specified point to move {\bfseries{this}} after \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the move is possible 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_a2d0518b850450346c635f9d04725be5e}\label{classPcodeOp_a2d0518b850450346c635f9d04725be5e}} 
+\index{PcodeOp@{PcodeOp}!previousOp@{previousOp}}
+\index{previousOp@{previousOp}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{previousOp()}{previousOp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Pcode\+Op\+::previous\+Op (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the previous op within this op\textquotesingle{}s basic block or {\itshape null}. 
+
+Find the previous op that flowed uniquely into this op, if it exists. This routine will not search farther than the basic block containing this. \begin{DoxyReturn}{Returns}
+the previous \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} or {\itshape null} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeOp_ad69a4ae6a740167e608f39ebc2b716df}\label{classPcodeOp_ad69a4ae6a740167e608f39ebc2b716df}} 
+\index{PcodeOp@{PcodeOp}!printDebug@{printDebug}}
+\index{printDebug@{printDebug}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{printDebug()}{printDebug()}}
+{\footnotesize\ttfamily void Pcode\+Op\+::print\+Debug (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print debug description of this op to stream. 
+
+Print an address and a raw representation of this op to the stream, suitable for console debugging apps 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to print to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOp_a4fc0474bc30c981150acade20eaa1262}\label{classPcodeOp_a4fc0474bc30c981150acade20eaa1262}} 
+\index{PcodeOp@{PcodeOp}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Pcode\+Op\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+Write an X\+ML description of this op to stream
+
+Write a description including\+: the opcode name, the sequence number, and separate xml tags providing a reference number for each input and output \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeOp_a18784de8c95d9011522302a8ba3647b3}\label{classPcodeOp_a18784de8c95d9011522302a8ba3647b3}} 
+\index{PcodeOp@{PcodeOp}!target@{target}}
+\index{target@{target}!PcodeOp@{PcodeOp}}
+\doxysubsubsection{\texorpdfstring{target()}{target()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Pcode\+Op\+::target (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return starting op for instruction associated with this op. 
+
+Scan backward within the basic block containing this op and find the first op marked as the start of an instruction. This also works if basic blocks haven\textquotesingle{}t been calculated yet, and all the ops are still in the dead list. The starting op may be from a different instruction if this op was from an instruction in a delay slot \begin{DoxyReturn}{Returns}
+the starting \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{op_8hh}{op.\+hh}}\item 
+op.\+cc\end{DoxyCompactItemize}

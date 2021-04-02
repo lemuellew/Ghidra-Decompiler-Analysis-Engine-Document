@@ -1,0 +1,62 @@
+\hypertarget{classIfcCallGraphLoad}{}\doxysection{Ifc\+Call\+Graph\+Load Class Reference}
+\label{classIfcCallGraphLoad}\index{IfcCallGraphLoad@{IfcCallGraphLoad}}
+
+
+Load the call-\/graph from a file\+: {\ttfamily callgraph load $<$filename$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Call\+Graph\+Load\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcCallGraphLoad__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Call\+Graph\+Load\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcCallGraphLoad__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcCallGraphLoad_acbec76d28fb6e2027a3101c33fde7435}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Load the call-\/graph from a file\+: {\ttfamily callgraph load $<$filename$>$} 
+
+A call-\/graph is loaded from the provided X\+ML document. Nodes in the call-\/graph are linked to existing functions by symbol name. This command reports call-\/graph nodes that could not be linked. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcCallGraphLoad_acbec76d28fb6e2027a3101c33fde7435}\label{classIfcCallGraphLoad_acbec76d28fb6e2027a3101c33fde7435}} 
+\index{IfcCallGraphLoad@{IfcCallGraphLoad}!execute@{execute}}
+\index{execute@{execute}!IfcCallGraphLoad@{IfcCallGraphLoad}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Call\+Graph\+Load\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

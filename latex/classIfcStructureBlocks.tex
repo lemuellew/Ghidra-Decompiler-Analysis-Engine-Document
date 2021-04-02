@@ -1,0 +1,62 @@
+\hypertarget{classIfcStructureBlocks}{}\doxysection{Ifc\+Structure\+Blocks Class Reference}
+\label{classIfcStructureBlocks}\index{IfcStructureBlocks@{IfcStructureBlocks}}
+
+
+Structure an external control-\/flow graph\+: {\ttfamily structure blocks $<$infile$>$ $<$outfile$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Structure\+Blocks\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcStructureBlocks__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Structure\+Blocks\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcStructureBlocks__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcStructureBlocks_a39d9e8cd79a374d4392e254137d587c0}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Structure an external control-\/flow graph\+: {\ttfamily structure blocks $<$infile$>$ $<$outfile$>$} 
+
+The control-\/flow graph is read in from X\+ML file, structuring is performed, and the result is written out to a separate X\+ML file. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcStructureBlocks_a39d9e8cd79a374d4392e254137d587c0}\label{classIfcStructureBlocks_a39d9e8cd79a374d4392e254137d587c0}} 
+\index{IfcStructureBlocks@{IfcStructureBlocks}!execute@{execute}}
+\index{execute@{execute}!IfcStructureBlocks@{IfcStructureBlocks}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Structure\+Blocks\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+\hypertarget{classMapState}{}\doxysection{Map\+State Class Reference}
+\label{classMapState}\index{MapState@{MapState}}
+
+
+A container for hints about the data-\/type layout of an address space.  
+
+
+
+
+{\ttfamily \#include $<$varmap.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMapState_a0f570a682e1cadffc4b60a8fd50837cf}{Map\+State}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, const \mbox{\hyperlink{classRangeList}{Range\+List}} \&rn, const \mbox{\hyperlink{classRangeList}{Range\+List}} \&pm, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$dt)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMapState_a39729b68f74a378c3a0fda232bbc1500}\label{classMapState_a39729b68f74a378c3a0fda232bbc1500}} 
+\mbox{\hyperlink{classMapState_a39729b68f74a378c3a0fda232bbc1500}{$\sim$\+Map\+State}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMapState_a517ee785ba7b8b397e76b75d8e085bae}{initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the hint collection for iteration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapState_aa071787b613cd5e5ff1e8b49375e9411}{gather\+Symbols}} (const \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}} $\ast$\mbox{\hyperlink{classrangemap}{rangemap}})
+\begin{DoxyCompactList}\small\item\em Add \mbox{\hyperlink{classSymbol}{Symbol}} information as hints to the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapState_a83662d09d19a51e0ecbf8b09e63e9628}{gather\+Varnodes}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&fd)
+\begin{DoxyCompactList}\small\item\em Add stack Varnodes as hints to the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapState_ac3a0c8da3331067931f75269daa81aed}{gather\+Highs}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&fd)
+\begin{DoxyCompactList}\small\item\em Add High\+Variables as hints to the collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMapState_a43f627e6a51815b273f5dfbcc71ac605}{gather\+Open}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&fd)
+\begin{DoxyCompactList}\small\item\em Add pointer references as hints to the collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container for hints about the data-\/type layout of an address space. 
+
+A collection of data-\/type hints for the address space (as \mbox{\hyperlink{classRangeHint}{Range\+Hint}} objects) can be collected from Varnodes, High\+Variables or other sources, using the \mbox{\hyperlink{classMapState_a83662d09d19a51e0ecbf8b09e63e9628}{gather\+Varnodes()}}, \mbox{\hyperlink{classMapState_ac3a0c8da3331067931f75269daa81aed}{gather\+Highs()}}, and \mbox{\hyperlink{classMapState_a43f627e6a51815b273f5dfbcc71ac605}{gather\+Open()}} methods. This class can then sort and iterate through the \mbox{\hyperlink{classRangeHint}{Range\+Hint}} objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMapState_a0f570a682e1cadffc4b60a8fd50837cf}\label{classMapState_a0f570a682e1cadffc4b60a8fd50837cf}} 
+\index{MapState@{MapState}!MapState@{MapState}}
+\index{MapState@{MapState}!MapState@{MapState}}
+\doxysubsubsection{\texorpdfstring{MapState()}{MapState()}}
+{\footnotesize\ttfamily Map\+State\+::\+Map\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{const \mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{rn,  }\item[{const \mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{pm,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{dt }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space being analyzed \\
+\hline
+{\em rn} & is the subset of addresses within the address space to analyze \\
+\hline
+{\em pm} & is subset of ranges within the address space considered to be parameters \\
+\hline
+{\em dt} & is the default data-\/type \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMapState_ac3a0c8da3331067931f75269daa81aed}\label{classMapState_ac3a0c8da3331067931f75269daa81aed}} 
+\index{MapState@{MapState}!gatherHighs@{gatherHighs}}
+\index{gatherHighs@{gatherHighs}!MapState@{MapState}}
+\doxysubsubsection{\texorpdfstring{gatherHighs()}{gatherHighs()}}
+{\footnotesize\ttfamily void Map\+State\+::gather\+Highs (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{fd }\end{DoxyParamCaption})}
+
+
+
+Add High\+Variables as hints to the collection. 
+
+Add a \mbox{\hyperlink{classRangeHint}{Range\+Hint}} corresponding to each \mbox{\hyperlink{classHighVariable}{High\+Variable}} that is mapped to our address space for the given function. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the given function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMapState_a43f627e6a51815b273f5dfbcc71ac605}\label{classMapState_a43f627e6a51815b273f5dfbcc71ac605}} 
+\index{MapState@{MapState}!gatherOpen@{gatherOpen}}
+\index{gatherOpen@{gatherOpen}!MapState@{MapState}}
+\doxysubsubsection{\texorpdfstring{gatherOpen()}{gatherOpen()}}
+{\footnotesize\ttfamily void Map\+State\+::gather\+Open (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{fd }\end{DoxyParamCaption})}
+
+
+
+Add pointer references as hints to the collection. 
+
+For any \mbox{\hyperlink{classVarnode}{Varnode}} that looks like a pointer into our address space, create an {\itshape open} \mbox{\hyperlink{classRangeHint}{Range\+Hint}}. The size of the object may not be known. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the given function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMapState_aa071787b613cd5e5ff1e8b49375e9411}\label{classMapState_aa071787b613cd5e5ff1e8b49375e9411}} 
+\index{MapState@{MapState}!gatherSymbols@{gatherSymbols}}
+\index{gatherSymbols@{gatherSymbols}!MapState@{MapState}}
+\doxysubsubsection{\texorpdfstring{gatherSymbols()}{gatherSymbols()}}
+{\footnotesize\ttfamily void Map\+State\+::gather\+Symbols (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}} $\ast$}]{rangemap }\end{DoxyParamCaption})}
+
+
+
+Add \mbox{\hyperlink{classSymbol}{Symbol}} information as hints to the collection. 
+
+Run through all Symbols in the given map and create a corresponding \mbox{\hyperlink{classRangeHint}{Range\+Hint}} to {\bfseries{this}} collection for each \mbox{\hyperlink{classSymbol}{Symbol}}. 
+\begin{DoxyParams}{Parameters}
+{\em rangemap} & is the given map of Symbols \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMapState_a83662d09d19a51e0ecbf8b09e63e9628}\label{classMapState_a83662d09d19a51e0ecbf8b09e63e9628}} 
+\index{MapState@{MapState}!gatherVarnodes@{gatherVarnodes}}
+\index{gatherVarnodes@{gatherVarnodes}!MapState@{MapState}}
+\doxysubsubsection{\texorpdfstring{gatherVarnodes()}{gatherVarnodes()}}
+{\footnotesize\ttfamily void Map\+State\+::gather\+Varnodes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{fd }\end{DoxyParamCaption})}
+
+
+
+Add stack Varnodes as hints to the collection. 
+
+Add a \mbox{\hyperlink{classRangeHint}{Range\+Hint}} corresponding to each \mbox{\hyperlink{classVarnode}{Varnode}} stored in the address space for the given function. The current knowledge of the \mbox{\hyperlink{classVarnode}{Varnode}}\textquotesingle{}s data-\/type is included as part of the hint. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the given function \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMapState_a517ee785ba7b8b397e76b75d8e085bae}\label{classMapState_a517ee785ba7b8b397e76b75d8e085bae}} 
+\index{MapState@{MapState}!initialize@{initialize}}
+\index{initialize@{initialize}!MapState@{MapState}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily bool Map\+State\+::initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the hint collection for iteration. 
+
+Sort the collection and add a special terminating \mbox{\hyperlink{classRangeHint}{Range\+Hint}} \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the collection isn\textquotesingle{}t empty (and iteration can begin) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varmap_8hh}{varmap.\+hh}}\item 
+varmap.\+cc\end{DoxyCompactItemize}

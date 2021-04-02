@@ -1,0 +1,564 @@
+\hypertarget{classJumpBasic}{}\doxysection{Jump\+Basic Class Reference}
+\label{classJumpBasic}\index{JumpBasic@{JumpBasic}}
+
+
+The basic switch model.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+
+
+Inheritance diagram for Jump\+Basic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classJumpBasic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jump\+Basic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJumpBasic__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJumpBasic_a9f923a2aaeb571981a8ae758670d20f5}\label{classJumpBasic_a9f923a2aaeb571981a8ae758670d20f5}} 
+virtual bool \mbox{\hyperlink{classJumpBasic_a9f923a2aaeb571981a8ae758670d20f5}{is\+Override}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\bfseries{this}} model was manually overridden. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_abef7f04911739ec301f393f072a1c9c5}\label{classJumpBasic_abef7f04911739ec301f393f072a1c9c5}} 
+virtual int4 \mbox{\hyperlink{classJumpBasic_abef7f04911739ec301f393f072a1c9c5}{get\+Table\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the number of entries in the address table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasic_aebf055ad4baf1a138107d8dd3a40c809}{recover\+Model}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, uint4 matchsize, uint4 maxtablesize)
+\begin{DoxyCompactList}\small\item\em Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpBasic_a42533b11d12a5f819bb88abb21037d94}{build\+Addresses}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable, vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ $\ast$loadpoints) const
+\begin{DoxyCompactList}\small\item\em Construct the explicit list of target addresses (the \mbox{\hyperlink{classAddress}{Address}} Table) from {\bfseries{this}} model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpBasic_a2d542e5a6b74bd116d89ba4e5bb4da9b}{find\+Unnormalized}} (uint4 maxaddsub, uint4 maxleftright, uint4 maxext)
+\begin{DoxyCompactList}\small\item\em Recover the unnormalized switch variable. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpBasic_ad3c8a1257f973c18e25935ee932076c4}{build\+Labels}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable, vector$<$ uintb $>$ \&label, const \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$orig) const
+\begin{DoxyCompactList}\small\item\em Recover {\itshape case} labels associated with the \mbox{\hyperlink{classAddress}{Address}} table. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classJumpBasic_a8e275e4e4165100780429e12fac9b39b}{fold\+In\+Normalization}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop)
+\begin{DoxyCompactList}\small\item\em Do normalization of the given switch specific to {\bfseries{this}} model. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasic_ae70d6baeeecb4b16e79de8516868ffe4}{fold\+In\+Guards}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jump)
+\begin{DoxyCompactList}\small\item\em Eliminate any {\itshape guard} code involved in computing the switch destination. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasic_a1cba6b6c963e4a70efc439c27e53bd44}{sanity\+Check}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable)
+\begin{DoxyCompactList}\small\item\em Perform a sanity check on recovered addresses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_a3f79f34542045666ebfc491e83f2bc27}\label{classJumpBasic_a3f79f34542045666ebfc491e83f2bc27}} 
+virtual \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$ \mbox{\hyperlink{classJumpBasic_a3f79f34542045666ebfc491e83f2bc27}{clone}} (\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jt) const
+\begin{DoxyCompactList}\small\item\em Clone {\bfseries{this}} model. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_a51a677ac029723dbdee9879d865f7e3f}\label{classJumpBasic_a51a677ac029723dbdee9879d865f7e3f}} 
+virtual void {\bfseries clear} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classJumpBasic_a4a9fc453c42caeb6857b80d4e216d544}{find\+Determining\+Varnodes}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot)
+\begin{DoxyCompactList}\small\item\em Calculate the initial set of Varnodes that might be switch variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpBasic_ae00e064a5ca6c4dcd06e245fbc997e5b}{analyze\+Guards}} (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$bl, int4 pathout)
+\begin{DoxyCompactList}\small\item\em Analyze C\+B\+R\+A\+N\+C\+Hs leading up to the given basic-\/block as a potential switch {\itshape guard}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpBasic_ad7d08e00d715fb0b2edce7d4d09a71f2}{calc\+Range}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&rng) const
+\begin{DoxyCompactList}\small\item\em Calculate the range of values in the given \mbox{\hyperlink{classVarnode}{Varnode}} that direct control-\/flow to the switch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpBasic_a32cfae8f5cf7b8573e09d415e2b1da52}{find\+Smallest\+Normal}} (uint4 matchsize)
+\begin{DoxyCompactList}\small\item\em Find the putative switch variable with the smallest range of values reaching the switch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpBasic_aefc7762595790f46334f6e09a88e4432}{find\+Normalized}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$rootbl, int4 pathout, uint4 matchsize, uint4 maxtablesize)
+\begin{DoxyCompactList}\small\item\em Do all the work necessary to recover the normalized switch variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpBasic_a8a8537f11c7ee4431d0b7ccce30d3241}{mark\+Foldable\+Guards}} ()
+\begin{DoxyCompactList}\small\item\em Mark the guard C\+B\+R\+A\+N\+C\+Hs that are truly part of the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpBasic_a3e72822194cb4432f8d3ecc2f4208ad5}{mark\+Model}} (bool val)
+\begin{DoxyCompactList}\small\item\em Mark (or unmark) all Pcode\+Ops involved in the model. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJumpBasic_ad4e573e05c2fd7fe0f1ffef1985a0dea}{flows\+Only\+To\+Model}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$trail\+Op)
+\begin{DoxyCompactList}\small\item\em Check if the given \mbox{\hyperlink{classVarnode}{Varnode}} flows to anything other than {\bfseries{this}} model. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasic_a27ac3c21abdfc602f857802a7479c6d4}{fold\+In\+One\+Guard}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classGuardRecord}{Guard\+Record}} \&guard, \mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jump)
+\begin{DoxyCompactList}\small\item\em Eliminate the given guard to {\bfseries{this}} switch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classJumpBasic_adfafb975d3e72f1ebe55f8dd6544fd44}{isprune}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Do we prune in here in our depth-\/first search for the normalized switch variable. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classJumpBasic_a1a00a767da59463a1b552a9fc6760156}{ispoint}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Is it possible for the given \mbox{\hyperlink{classVarnode}{Varnode}} to be a switch variable? \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classJumpBasic_aa3f22d1fb6cac19435f1276f0d7d912a}{get\+Stride}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Get the step/stride associated with the \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+static uintb \mbox{\hyperlink{classJumpBasic_a0b60980f79f56d8425f2cd5c231ddc25}{backup2\+Switch}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, uintb output, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$outvn, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$invn)
+\begin{DoxyCompactList}\small\item\em Back up the constant value in the output \mbox{\hyperlink{classVarnode}{Varnode}} to the value in the input \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJumpBasic_a5a132a1f60bd90b67c7b1e7d8627656d}\label{classJumpBasic_a5a132a1f60bd90b67c7b1e7d8627656d}} 
+\mbox{\hyperlink{classJumpValuesRange}{Jump\+Values\+Range}} $\ast$ \mbox{\hyperlink{classJumpBasic_a5a132a1f60bd90b67c7b1e7d8627656d}{jrange}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classRange}{Range}} of values for the (normalized) switch variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_aade10e6498d3f6146674b7b9ae1938e5}\label{classJumpBasic_aade10e6498d3f6146674b7b9ae1938e5}} 
+\mbox{\hyperlink{classPathMeld}{Path\+Meld}} \mbox{\hyperlink{classJumpBasic_aade10e6498d3f6146674b7b9ae1938e5}{path\+Meld}}
+\begin{DoxyCompactList}\small\item\em Set of Pcode\+Ops and Varnodes producing the final target addresses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_a226ae48889e18ba9998b42105d991d35}\label{classJumpBasic_a226ae48889e18ba9998b42105d991d35}} 
+vector$<$ \mbox{\hyperlink{classGuardRecord}{Guard\+Record}} $>$ \mbox{\hyperlink{classJumpBasic_a226ae48889e18ba9998b42105d991d35}{selectguards}}
+\begin{DoxyCompactList}\small\item\em Any guards associated with {\bfseries{model}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_ae8f3090bdd209f55abad455b758438ac}\label{classJumpBasic_ae8f3090bdd209f55abad455b758438ac}} 
+int4 \mbox{\hyperlink{classJumpBasic_ae8f3090bdd209f55abad455b758438ac}{varnode\+Index}}
+\begin{DoxyCompactList}\small\item\em Position of the normalized switch \mbox{\hyperlink{classVarnode}{Varnode}} within \mbox{\hyperlink{classPathMeld}{Path\+Meld}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_ab2aa4072b79d87215a6aeb27aa8d4464}\label{classJumpBasic_ab2aa4072b79d87215a6aeb27aa8d4464}} 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classJumpBasic_ab2aa4072b79d87215a6aeb27aa8d4464}{normalvn}}
+\begin{DoxyCompactList}\small\item\em Normalized switch \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic_a3eba94be92b13b5a0a0fbc85bdb26146}\label{classJumpBasic_a3eba94be92b13b5a0a0fbc85bdb26146}} 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classJumpBasic_a3eba94be92b13b5a0a0fbc85bdb26146}{switchvn}}
+\begin{DoxyCompactList}\small\item\em Unnormalized switch \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The basic switch model. 
+
+This is the most common model\+:
+\begin{DoxyItemize}
+\item A straight-\/line calculation from switch variable to B\+R\+A\+N\+C\+H\+I\+ND
+\item The switch variable is bounded by one or more {\itshape guards} that branch around the B\+R\+A\+N\+C\+H\+I\+ND
+\item The unnormalized switch variable is recovered from the normalized variable through some basic transforms 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpBasic_ae00e064a5ca6c4dcd06e245fbc997e5b}\label{classJumpBasic_ae00e064a5ca6c4dcd06e245fbc997e5b}} 
+\index{JumpBasic@{JumpBasic}!analyzeGuards@{analyzeGuards}}
+\index{analyzeGuards@{analyzeGuards}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{analyzeGuards()}{analyzeGuards()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::analyze\+Guards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$}]{bl,  }\item[{int4}]{pathout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Analyze C\+B\+R\+A\+N\+C\+Hs leading up to the given basic-\/block as a potential switch {\itshape guard}. 
+
+In general there is only one path to the switch, and the given basic-\/block will hold the B\+R\+A\+N\+C\+H\+I\+ND. In some models, there is more than one path to the switch block, and a path must be specified. In this case, the given basic-\/block will be a block that flows into the switch block, and the {\itshape pathout} parameter describes which path leads to the switch block.
+
+For each C\+B\+R\+A\+N\+CH, range restrictions on the various variables which allow control flow to pass through the C\+B\+R\+A\+N\+CH to the switch are analyzed. A \mbox{\hyperlink{classGuardRecord}{Guard\+Record}} is created for each of these restrictions. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given basic-\/block \\
+\hline
+{\em pathout} & is an optional path from the basic-\/block to the switch or -\/1 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpBasic_a0b60980f79f56d8425f2cd5c231ddc25}\label{classJumpBasic_a0b60980f79f56d8425f2cd5c231ddc25}} 
+\index{JumpBasic@{JumpBasic}!backup2Switch@{backup2Switch}}
+\index{backup2Switch@{backup2Switch}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{backup2Switch()}{backup2Switch()}}
+{\footnotesize\ttfamily uintb Jump\+Basic\+::backup2\+Switch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{uintb}]{output,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{outvn,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{invn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Back up the constant value in the output \mbox{\hyperlink{classVarnode}{Varnode}} to the value in the input \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+This does the work of going from a normalized switch value to the unnormalized value. Pcode\+Ops between the output and input Varnodes must be reversible or an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em output} & is the constant value to back up \\
+\hline
+{\em outvn} & is the output \mbox{\hyperlink{classVarnode}{Varnode}} of the data-\/flow \\
+\hline
+{\em invn} & is the input \mbox{\hyperlink{classVarnode}{Varnode}} to back up to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the recovered value associated with the input \mbox{\hyperlink{classVarnode}{Varnode}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpBasic_a42533b11d12a5f819bb88abb21037d94}\label{classJumpBasic_a42533b11d12a5f819bb88abb21037d94}} 
+\index{JumpBasic@{JumpBasic}!buildAddresses@{buildAddresses}}
+\index{buildAddresses@{buildAddresses}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{buildAddresses()}{buildAddresses()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::build\+Addresses (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable,  }\item[{vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ $\ast$}]{loadpoints }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct the explicit list of target addresses (the \mbox{\hyperlink{classAddress}{Address}} Table) from {\bfseries{this}} model. 
+
+The addresses produced all come from the B\+R\+A\+N\+C\+H\+I\+ND and may not be deduped. Alternate guard destinations are not yet included. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the root B\+R\+A\+N\+C\+H\+I\+ND of the switch \\
+\hline
+{\em addresstable} & will hold the list of Addresses \\
+\hline
+{\em loadpoints} & if non-\/null will hold L\+O\+AD table information used by the model \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a12659a93442cc2940a8fed8dc55be2e0}{Jump\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpBasicOverride_ad9a026df124c7e57722bdc1903033ebb}{Jump\+Basic\+Override}}.
+
+\mbox{\Hypertarget{classJumpBasic_ad3c8a1257f973c18e25935ee932076c4}\label{classJumpBasic_ad3c8a1257f973c18e25935ee932076c4}} 
+\index{JumpBasic@{JumpBasic}!buildLabels@{buildLabels}}
+\index{buildLabels@{buildLabels}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{buildLabels()}{buildLabels()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::build\+Labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable,  }\item[{vector$<$ uintb $>$ \&}]{label,  }\item[{const \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$}]{orig }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover {\itshape case} labels associated with the \mbox{\hyperlink{classAddress}{Address}} table. 
+
+The unnormalized switch variable must already be recovered. Values that the normalized switch value can hold or walked back to obtain the value that the unnormalized switch variable would hold. Labels are returned in the order provided by normalized switch variable iterator \mbox{\hyperlink{classJumpValues}{Jump\+Values}}. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em addresstable} & is the address table (used to label code blocks with bad or missing labels) \\
+\hline
+{\em label} & will hold recovered labels in \mbox{\hyperlink{classJumpValues}{Jump\+Values}} order \\
+\hline
+{\em orig} & is the \mbox{\hyperlink{classJumpModel}{Jump\+Model}} to use for the \mbox{\hyperlink{classJumpValues}{Jump\+Values}} iterator \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_af8e7b936b4b51d87b7690693f756ffd6}{Jump\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpBasicOverride_a1fff9a672edb2225dae051d7ed6b57b5}{Jump\+Basic\+Override}}.
+
+\mbox{\Hypertarget{classJumpBasic_ad7d08e00d715fb0b2edce7d4d09a71f2}\label{classJumpBasic_ad7d08e00d715fb0b2edce7d4d09a71f2}} 
+\index{JumpBasic@{JumpBasic}!calcRange@{calcRange}}
+\index{calcRange@{calcRange}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{calcRange()}{calcRange()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::calc\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{\mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{rng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculate the range of values in the given \mbox{\hyperlink{classVarnode}{Varnode}} that direct control-\/flow to the switch. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} is evaluated against each \mbox{\hyperlink{classGuardRecord}{Guard\+Record}} to determine if its range of values can be restricted. Multiple guards may provide different restrictions. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em rng} & will hold resulting range of values the \mbox{\hyperlink{classVarnode}{Varnode}} can hold at the switch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpBasic_a4a9fc453c42caeb6857b80d4e216d544}\label{classJumpBasic_a4a9fc453c42caeb6857b80d4e216d544}} 
+\index{JumpBasic@{JumpBasic}!findDeterminingVarnodes@{findDeterminingVarnodes}}
+\index{findDeterminingVarnodes@{findDeterminingVarnodes}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{findDeterminingVarnodes()}{findDeterminingVarnodes()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::find\+Determining\+Varnodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculate the initial set of Varnodes that might be switch variables. 
+
+Paths that terminate at the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} are calculated and organized in a \mbox{\hyperlink{classPathMeld}{Path\+Meld}} object that determines Varnodes that are common to all the paths. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+{\em slot} & is input slot to the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} all paths must terminate at \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpBasic_aefc7762595790f46334f6e09a88e4432}\label{classJumpBasic_aefc7762595790f46334f6e09a88e4432}} 
+\index{JumpBasic@{JumpBasic}!findNormalized@{findNormalized}}
+\index{findNormalized@{findNormalized}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{findNormalized()}{findNormalized()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::find\+Normalized (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$}]{rootbl,  }\item[{int4}]{pathout,  }\item[{uint4}]{matchsize,  }\item[{uint4}]{maxtablesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Do all the work necessary to recover the normalized switch variable. 
+
+The switch can be specified as the basic-\/block containing the B\+R\+A\+N\+C\+H\+I\+ND, or as a block that flows to the B\+R\+A\+N\+C\+H\+I\+ND block by following the specified path out. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em rootbl} & is the basic-\/block \\
+\hline
+{\em pathout} & is the (optional) path to the B\+R\+A\+N\+C\+H\+I\+ND or -\/1 \\
+\hline
+{\em matchsize} & is an (optional) size to expect for the normalized switch variable range \\
+\hline
+{\em maxtablesize} & is the maximum size expected for the normalized switch variable range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpBasic_a32cfae8f5cf7b8573e09d415e2b1da52}\label{classJumpBasic_a32cfae8f5cf7b8573e09d415e2b1da52}} 
+\index{JumpBasic@{JumpBasic}!findSmallestNormal@{findSmallestNormal}}
+\index{findSmallestNormal@{findSmallestNormal}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{findSmallestNormal()}{findSmallestNormal()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::find\+Smallest\+Normal (\begin{DoxyParamCaption}\item[{uint4}]{matchsize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Find the putative switch variable with the smallest range of values reaching the switch. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} with the smallest range and closest to the B\+R\+A\+N\+C\+H\+I\+ND is assumed to be the normalized switch variable. If an expected range size is provided, it is used to {\itshape prefer} a particular \mbox{\hyperlink{classVarnode}{Varnode}} as the switch variable. Whatever \mbox{\hyperlink{classVarnode}{Varnode}} is selected, the Jump\+Value object is set up to iterator over its range. 
+\begin{DoxyParams}{Parameters}
+{\em matchsize} & optionally gives an expected size of the range, or it can be 0 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpBasic_a2d542e5a6b74bd116d89ba4e5bb4da9b}\label{classJumpBasic_a2d542e5a6b74bd116d89ba4e5bb4da9b}} 
+\index{JumpBasic@{JumpBasic}!findUnnormalized@{findUnnormalized}}
+\index{findUnnormalized@{findUnnormalized}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{findUnnormalized()}{findUnnormalized()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::find\+Unnormalized (\begin{DoxyParamCaption}\item[{uint4}]{maxaddsub,  }\item[{uint4}]{maxleftright,  }\item[{uint4}]{maxext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the unnormalized switch variable. 
+
+The normalized switch variable must already be recovered. The amount of normalization between the two switch variables can be restricted. 
+\begin{DoxyParams}{Parameters}
+{\em maxaddsub} & is a restriction on arithmetic operations \\
+\hline
+{\em maxleftright} & is a restriction on shift operations \\
+\hline
+{\em maxext} & is a restriction on extension operations \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_aac83f52fbf3ee566e760dfabe6e67ee6}{Jump\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpBasic2_ab5d1cebab5d2f98d0caf6fc551b29980}{Jump\+Basic2}}.
+
+\mbox{\Hypertarget{classJumpBasic_ad4e573e05c2fd7fe0f1ffef1985a0dea}\label{classJumpBasic_ad4e573e05c2fd7fe0f1ffef1985a0dea}} 
+\index{JumpBasic@{JumpBasic}!flowsOnlyToModel@{flowsOnlyToModel}}
+\index{flowsOnlyToModel@{flowsOnlyToModel}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{flowsOnlyToModel()}{flowsOnlyToModel()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+::flows\+Only\+To\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{trail\+Op }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Check if the given \mbox{\hyperlink{classVarnode}{Varnode}} flows to anything other than {\bfseries{this}} model. 
+
+The Pcode\+Ops in {\bfseries{this}} model must have been previously marked with \mbox{\hyperlink{classJumpBasic_a3e72822194cb4432f8d3ecc2f4208ad5}{mark\+Model()}}. Run through the descendants of the given \mbox{\hyperlink{classVarnode}{Varnode}} and look for this mark. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em trail\+Op} & is an optional known \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that leads to the model \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the only flow is into {\bfseries{this}} model 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpBasic_ae70d6baeeecb4b16e79de8516868ffe4}\label{classJumpBasic_ae70d6baeeecb4b16e79de8516868ffe4}} 
+\index{JumpBasic@{JumpBasic}!foldInGuards@{foldInGuards}}
+\index{foldInGuards@{foldInGuards}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{foldInGuards()}{foldInGuards()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+::fold\+In\+Guards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$}]{jump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Eliminate any {\itshape guard} code involved in computing the switch destination. 
+
+We now think of the B\+R\+A\+N\+C\+H\+I\+ND as encompassing any guard function. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em jump} & is the \mbox{\hyperlink{classJumpTable}{Jump\+Table}} owning {\bfseries{this}} model. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a6f40ba77ddc8f4cf40f6071248103d9c}{Jump\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpBasicOverride_a65b9faa5ee96e07e8a90ce492bc8c179}{Jump\+Basic\+Override}}.
+
+\mbox{\Hypertarget{classJumpBasic_a8e275e4e4165100780429e12fac9b39b}\label{classJumpBasic_a8e275e4e4165100780429e12fac9b39b}} 
+\index{JumpBasic@{JumpBasic}!foldInNormalization@{foldInNormalization}}
+\index{foldInNormalization@{foldInNormalization}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{foldInNormalization()}{foldInNormalization()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Jump\+Basic\+::fold\+In\+Normalization (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Do normalization of the given switch specific to {\bfseries{this}} model. 
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} machinery is removed so it looks like the C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND simply takes the switch variable as an input \mbox{\hyperlink{classVarnode}{Varnode}} and automatically interprets its values to reach the correct destination. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the given switch as a C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classVarnode}{Varnode}} holding the final unnormalized switch variable 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a7e8f2d4d8a1ae1954e00aae96c74a8c4}{Jump\+Model}}.
+
+\mbox{\Hypertarget{classJumpBasic_a27ac3c21abdfc602f857802a7479c6d4}\label{classJumpBasic_a27ac3c21abdfc602f857802a7479c6d4}} 
+\index{JumpBasic@{JumpBasic}!foldInOneGuard@{foldInOneGuard}}
+\index{foldInOneGuard@{foldInOneGuard}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{foldInOneGuard()}{foldInOneGuard()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+::fold\+In\+One\+Guard (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classGuardRecord}{Guard\+Record}} \&}]{guard,  }\item[{\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$}]{jump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Eliminate the given guard to {\bfseries{this}} switch. 
+
+We {\itshape disarm} the guard instructions by making the guard condition always {\bfseries{false}}. If the simplification removes the unusable branches, we are left with only one path through the switch. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em guard} & is a description of the particular guard mechanism \\
+\hline
+{\em jump} & is the \mbox{\hyperlink{classJumpTable}{Jump\+Table}} owning {\bfseries{this}} model \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made to data-\/flow 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpBasic_aa3f22d1fb6cac19435f1276f0d7d912a}\label{classJumpBasic_aa3f22d1fb6cac19435f1276f0d7d912a}} 
+\index{JumpBasic@{JumpBasic}!getStride@{getStride}}
+\index{getStride@{getStride}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{getStride()}{getStride()}}
+{\footnotesize\ttfamily int4 Jump\+Basic\+::get\+Stride (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Get the step/stride associated with the \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+If the some of the least significant bits of the given \mbox{\hyperlink{classVarnode}{Varnode}} are known to be zero, translate this into a stride for the jumptable range. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calculated stride = 1,2,4,... 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpBasic_a1a00a767da59463a1b552a9fc6760156}\label{classJumpBasic_a1a00a767da59463a1b552a9fc6760156}} 
+\index{JumpBasic@{JumpBasic}!ispoint@{ispoint}}
+\index{ispoint@{ispoint}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{ispoint()}{ispoint()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+::ispoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Is it possible for the given \mbox{\hyperlink{classVarnode}{Varnode}} to be a switch variable? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{false}} if it is impossible for the \mbox{\hyperlink{classVarnode}{Varnode}} to be the switch variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpBasic_adfafb975d3e72f1ebe55f8dd6544fd44}\label{classJumpBasic_adfafb975d3e72f1ebe55f8dd6544fd44}} 
+\index{JumpBasic@{JumpBasic}!isprune@{isprune}}
+\index{isprune@{isprune}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{isprune()}{isprune()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+::isprune (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Do we prune in here in our depth-\/first search for the normalized switch variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} we are testing for pruning \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the search should be pruned here 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpBasic_a8a8537f11c7ee4431d0b7ccce30d3241}\label{classJumpBasic_a8a8537f11c7ee4431d0b7ccce30d3241}} 
+\index{JumpBasic@{JumpBasic}!markFoldableGuards@{markFoldableGuards}}
+\index{markFoldableGuards@{markFoldableGuards}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{markFoldableGuards()}{markFoldableGuards()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::mark\+Foldable\+Guards (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mark the guard C\+B\+R\+A\+N\+C\+Hs that are truly part of the model. 
+
+These C\+B\+R\+A\+N\+C\+Hs will be removed from the active control-\/flow graph, their function {\itshape folded} into the action of the model, as represented by B\+R\+A\+N\+C\+H\+I\+ND. \mbox{\Hypertarget{classJumpBasic_a3e72822194cb4432f8d3ecc2f4208ad5}\label{classJumpBasic_a3e72822194cb4432f8d3ecc2f4208ad5}} 
+\index{JumpBasic@{JumpBasic}!markModel@{markModel}}
+\index{markModel@{markModel}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{markModel()}{markModel()}}
+{\footnotesize\ttfamily void Jump\+Basic\+::mark\+Model (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Mark (or unmark) all Pcode\+Ops involved in the model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to set marks, {\bfseries{false}} to clear marks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpBasic_aebf055ad4baf1a138107d8dd3a40c809}\label{classJumpBasic_aebf055ad4baf1a138107d8dd3a40c809}} 
+\index{JumpBasic@{JumpBasic}!recoverModel@{recoverModel}}
+\index{recoverModel@{recoverModel}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{recoverModel()}{recoverModel()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+::recover\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{uint4}]{matchsize,  }\item[{uint4}]{maxtablesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. 
+
+This generally recovers the normalized switch variable and any guards. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the given B\+R\+A\+N\+C\+H\+I\+ND \\
+\hline
+{\em matchsize} & is the expected number of address table entries to recover, or 0 for no expectation \\
+\hline
+{\em maxtablesize} & is maximum number of address table entries to allow in the model \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if details of the model were successfully recovered 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a9c2326278dd18c9d78dd5cd5795e802b}{Jump\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpBasicOverride_a4fd706bf7ee1023bd1d93c78ba66852f}{Jump\+Basic\+Override}}, and \mbox{\hyperlink{classJumpBasic2_adc60ecb0d804d1a7754161b38ae3299f}{Jump\+Basic2}}.
+
+\mbox{\Hypertarget{classJumpBasic_a1cba6b6c963e4a70efc439c27e53bd44}\label{classJumpBasic_a1cba6b6c963e4a70efc439c27e53bd44}} 
+\index{JumpBasic@{JumpBasic}!sanityCheck@{sanityCheck}}
+\index{sanityCheck@{sanityCheck}!JumpBasic@{JumpBasic}}
+\doxysubsubsection{\texorpdfstring{sanityCheck()}{sanityCheck()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+::sanity\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform a sanity check on recovered addresses. 
+
+Individual addresses are checked against the function or its program to determine if they are reasonable. This method can optionally remove addresses from the table. If it does so, the underlying model is changed to reflect the removal. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the root B\+R\+A\+N\+C\+H\+I\+ND of the switch \\
+\hline
+{\em addresstable} & is the list of recovered Addresses, which may be modified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are (at least some) reasonable addresses in the table 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classJumpModel_a76a52bf3311e9d97a61d1117f6de1b0a}{Jump\+Model}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classJumpBasicOverride_a050d3faa295ff61d04f1406443ac83b1}{Jump\+Basic\+Override}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

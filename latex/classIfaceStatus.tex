@@ -1,0 +1,271 @@
+\hypertarget{classIfaceStatus}{}\doxysection{Iface\+Status Class Reference}
+\label{classIfaceStatus}\index{IfaceStatus@{IfaceStatus}}
+
+
+A generic console mode interface and command executor.  
+
+
+
+
+{\ttfamily \#include $<$interface.\+hh$>$}
+
+
+
+Inheritance diagram for Iface\+Status\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classIfaceStatus__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classIfaceStatus_a3fb8c2669b6a1727653960ac168425b6}{Iface\+Status}} (const string \&prmpt, ostream \&os, int4 mxhist=10)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_a152d9671686caf590fd91af5eb6e5b9a}\label{classIfaceStatus_a152d9671686caf590fd91af5eb6e5b9a}} 
+virtual \mbox{\hyperlink{classIfaceStatus_a152d9671686caf590fd91af5eb6e5b9a}{$\sim$\+Iface\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIfaceStatus_a4be96e0e55138d3b6a74496b6ae61a88}{push\+Script}} (const string \&filename, const string \&newprompt)
+\begin{DoxyCompactList}\small\item\em Provide a new script file to execute, with an associated command prompt. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIfaceStatus_a8091c5bf341cfb11997893f0a35ba516}{pop\+Script}} (void)
+\begin{DoxyCompactList}\small\item\em Return to processing the parent stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_a0598cb73613fe759187ba3f65e2f83ce}\label{classIfaceStatus_a0598cb73613fe759187ba3f65e2f83ce}} 
+void \mbox{\hyperlink{classIfaceStatus_a0598cb73613fe759187ba3f65e2f83ce}{reset}} (void)
+\begin{DoxyCompactList}\small\item\em Pop any existing script streams and return to processing from the base stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceStatus_ad4fec227b244e8242fef9d36020a76fa}{register\+Com}} (\mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$fptr, const char $\ast$nm1, const char $\ast$nm2=(const char $\ast$) 0, const char $\ast$nm3=(const char $\ast$) 0, const char $\ast$nm4=(const char $\ast$) 0, const char $\ast$nm5=(const char $\ast$) 0)
+\begin{DoxyCompactList}\small\item\em Register a command with this interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$ \mbox{\hyperlink{classIfaceStatus_af88322ddf5aa11ccdc483193a0a64152}{get\+Data}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Get data associated with a \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} module. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classIfaceStatus_a78057db3e8cbf3c50cd1a6e4312892e5}{run\+Command}} (void)
+\begin{DoxyCompactList}\small\item\em Run the next command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceStatus_a2ee164e918fff2ea7901fffa1fb6ad9b}{get\+History}} (string \&line, int4 i) const
+\begin{DoxyCompactList}\small\item\em Get the i-\/th command line from history. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_af0260e5d967a998de2412c3e56364a3d}\label{classIfaceStatus_af0260e5d967a998de2412c3e56364a3d}} 
+virtual bool \mbox{\hyperlink{classIfaceStatus_af0260e5d967a998de2412c3e56364a3d}{is\+Stream\+Finished}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the current stream is finished. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_a07467671ab32029fffb11bad9f7c634e}\label{classIfaceStatus_a07467671ab32029fffb11bad9f7c634e}} 
+void \mbox{\hyperlink{classIfaceStatus_a07467671ab32029fffb11bad9f7c634e}{evaluate\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em Adjust which stream to process based on last error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIfaceStatus_aacefbcd5c2cf3fddd11051682b614854}{words\+To\+String}} (string \&res, const vector$<$ string $>$ \&list)
+\begin{DoxyCompactList}\small\item\em Concatenate tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceStatus_aa8a31d6b1164019ee725b33e52769254}\label{classIfaceStatus_aa8a31d6b1164019ee725b33e52769254}} 
+bool \mbox{\hyperlink{classIfaceStatus_aa8a31d6b1164019ee725b33e52769254}{done}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} (by a command) to indicate processing is finished. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_a10ef65be4b8810a0445aa3ddf113e5b4}\label{classIfaceStatus_a10ef65be4b8810a0445aa3ddf113e5b4}} 
+ostream $\ast$ \mbox{\hyperlink{classIfaceStatus_a10ef65be4b8810a0445aa3ddf113e5b4}{optr}}
+\begin{DoxyCompactList}\small\item\em Where to put command line output. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_ac17129c5b310027bbdf5cea44c0de3d6}\label{classIfaceStatus_ac17129c5b310027bbdf5cea44c0de3d6}} 
+ostream $\ast$ \mbox{\hyperlink{classIfaceStatus_ac17129c5b310027bbdf5cea44c0de3d6}{fileoptr}}
+\begin{DoxyCompactList}\small\item\em Where to put bulk output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int4 \mbox{\hyperlink{classIfaceStatus_adb7a0b05e7487a3f75dcb3de2a447b45}{expand\+Com}} (vector$<$ string $>$ \&expand, istream \&s, vector$<$ \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$ $>$\+::const\+\_\+iterator \&first, vector$<$ \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$ $>$\+::const\+\_\+iterator \&last)
+\begin{DoxyCompactList}\small\item\em Expand tokens from the given input stream to a full command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceStatus_afce1270d0b7e227d9472932832fa706e}\label{classIfaceStatus_afce1270d0b7e227d9472932832fa706e}} 
+bool \mbox{\hyperlink{classIfaceStatus_afce1270d0b7e227d9472932832fa706e}{inerror}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if last command did not succeed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_a6bbe06c5f2004969442bd49b5cad7b14}\label{classIfaceStatus_a6bbe06c5f2004969442bd49b5cad7b14}} 
+vector$<$ \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$ $>$ \mbox{\hyperlink{classIfaceStatus_a6bbe06c5f2004969442bd49b5cad7b14}{comlist}}
+\begin{DoxyCompactList}\small\item\em List of registered commands. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceStatus_ac85d5fe1254b348a3f77a9d5ec6603b8}\label{classIfaceStatus_ac85d5fe1254b348a3f77a9d5ec6603b8}} 
+map$<$ string, \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$ $>$ \mbox{\hyperlink{classIfaceStatus_ac85d5fe1254b348a3f77a9d5ec6603b8}{datamap}}
+\begin{DoxyCompactList}\small\item\em Data associated with particular modules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A generic console mode interface and command executor. 
+
+Input is provided one command line at a time by providing calling read\+Line(). Output goes to a provided ostream, {\itshape optr}. Output to a separate bulk stream can be enabled by setting {\itshape fileoptr}.
+
+A derived \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} is attached to a command string via \mbox{\hyperlink{classIfaceStatus_ad4fec227b244e8242fef9d36020a76fa}{register\+Com()}} i.\+e. stat.\+register\+Com(new \mbox{\hyperlink{classIfcQuit}{Ifc\+Quit()}},\char`\"{}quit\char`\"{}); stat.\+register\+Com(new \mbox{\hyperlink{classIfcOpenfileAppend}{Ifc\+Openfile\+Append()}},\char`\"{}openfile\char`\"{},\char`\"{}append\char`\"{}); stat.\+mainloop(); Command line processing is started with \mbox{\hyperlink{ifacedecomp_8hh_ac71bcb680ffca9a7d79b5ba44be1f612}{mainloop()}}, which prints a command prompt, allows command line editing, including command completion and history, and executes the corresponding Iface\+Comman\+::execute() callback. Command words only have to match enough to disambiguate it from other commands. A Custom history size and command prompt can be passed to the constructor. Applications should inherit from base class \mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} in order to
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classOverride}{Override}} the read\+Line() method
+\item \mbox{\hyperlink{classOverride}{Override}} \mbox{\hyperlink{classIfaceStatus_a4be96e0e55138d3b6a74496b6ae61a88}{push\+Script()}} and \mbox{\hyperlink{classIfaceStatus_a8091c5bf341cfb11997893f0a35ba516}{pop\+Script()}} to allow command scripts
+\item Get custom data into \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} callbacks 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIfaceStatus_a3fb8c2669b6a1727653960ac168425b6}\label{classIfaceStatus_a3fb8c2669b6a1727653960ac168425b6}} 
+\index{IfaceStatus@{IfaceStatus}!IfaceStatus@{IfaceStatus}}
+\index{IfaceStatus@{IfaceStatus}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{IfaceStatus()}{IfaceStatus()}}
+{\footnotesize\ttfamily Iface\+Status\+::\+Iface\+Status (\begin{DoxyParamCaption}\item[{const string \&}]{prmpt,  }\item[{ostream \&}]{os,  }\item[{int4}]{mxhist = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prmpt} & is the base command line prompt \\
+\hline
+{\em os} & is the base stream to write output to \\
+\hline
+{\em mxhist} & is the maximum number of lines to store in history \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfaceStatus_adb7a0b05e7487a3f75dcb3de2a447b45}\label{classIfaceStatus_adb7a0b05e7487a3f75dcb3de2a447b45}} 
+\index{IfaceStatus@{IfaceStatus}!expandCom@{expandCom}}
+\index{expandCom@{expandCom}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{expandCom()}{expandCom()}}
+{\footnotesize\ttfamily int4 Iface\+Status\+::expand\+Com (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{expand,  }\item[{istream \&}]{s,  }\item[{vector$<$ \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$ $>$\+::const\+\_\+iterator \&}]{first,  }\item[{vector$<$ \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$ $>$\+::const\+\_\+iterator \&}]{last }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Expand tokens from the given input stream to a full command. 
+
+A range of possible commands is returned. Processing of the stream stops as soon as at least one complete command is recognized. Tokens partially matching a command are expanded to the full command and passed back. 
+\begin{DoxyParams}{Parameters}
+{\em expand} & will hold the list of expanded tokens \\
+\hline
+{\em s} & is the input stream tokens are read from \\
+\hline
+{\em first} & will hold the beginning of the matching range of commands \\
+\hline
+{\em last} & will hold the end of the matching range of commands \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of matching commands 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIfaceStatus_af88322ddf5aa11ccdc483193a0a64152}\label{classIfaceStatus_af88322ddf5aa11ccdc483193a0a64152}} 
+\index{IfaceStatus@{IfaceStatus}!getData@{getData}}
+\index{getData@{getData}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$ Iface\+Status\+::get\+Data (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Get data associated with a \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} module. 
+
+Commands (\mbox{\hyperlink{classIfaceCommand}{Iface\+Command}}) are associated with a particular module that has a formal name and a data object associated with it. This method retrieves the module specific data object by name. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the module \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIfaceStatus_a2ee164e918fff2ea7901fffa1fb6ad9b}\label{classIfaceStatus_a2ee164e918fff2ea7901fffa1fb6ad9b}} 
+\index{IfaceStatus@{IfaceStatus}!getHistory@{getHistory}}
+\index{getHistory@{getHistory}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{getHistory()}{getHistory()}}
+{\footnotesize\ttfamily void Iface\+Status\+::get\+History (\begin{DoxyParamCaption}\item[{string \&}]{line,  }\item[{int4}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Get the i-\/th command line from history. 
+
+A command line is selected by specifying how many steps in time to go back through the list of successful command lines. 
+\begin{DoxyParams}{Parameters}
+{\em line} & will hold the selected command line from history \\
+\hline
+{\em i} & is the number of steps back to go \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceStatus_a8091c5bf341cfb11997893f0a35ba516}\label{classIfaceStatus_a8091c5bf341cfb11997893f0a35ba516}} 
+\index{IfaceStatus@{IfaceStatus}!popScript@{popScript}}
+\index{popScript@{popScript}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{popScript()}{popScript()}}
+{\footnotesize\ttfamily void Iface\+Status\+::pop\+Script (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return to processing the parent stream. 
+
+The current input stream, as established by a script, is popped from the stack, along with its command prompt, and processing continues with the previous stream. 
+
+Reimplemented in \mbox{\hyperlink{classIfaceTerm_a5427f3ca751cdcf6826150a3b2026df0}{Iface\+Term}}.
+
+\mbox{\Hypertarget{classIfaceStatus_a4be96e0e55138d3b6a74496b6ae61a88}\label{classIfaceStatus_a4be96e0e55138d3b6a74496b6ae61a88}} 
+\index{IfaceStatus@{IfaceStatus}!pushScript@{pushScript}}
+\index{pushScript@{pushScript}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{pushScript()}{pushScript()}}
+{\footnotesize\ttfamily void Iface\+Status\+::push\+Script (\begin{DoxyParamCaption}\item[{const string \&}]{filename,  }\item[{const string \&}]{newprompt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Provide a new script file to execute, with an associated command prompt. 
+
+The script provides a subsidiary input stream to the current stream. Once commands from the script are complete, processing will resume on this stream. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file containing the script \\
+\hline
+{\em newprompt} & is the command line prompt \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classIfaceTerm_a05f514a885865ae057b238c84e53a507}{Iface\+Term}}.
+
+\mbox{\Hypertarget{classIfaceStatus_ad4fec227b244e8242fef9d36020a76fa}\label{classIfaceStatus_ad4fec227b244e8242fef9d36020a76fa}} 
+\index{IfaceStatus@{IfaceStatus}!registerCom@{registerCom}}
+\index{registerCom@{registerCom}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{registerCom()}{registerCom()}}
+{\footnotesize\ttfamily void Iface\+Status\+::register\+Com (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$}]{fptr,  }\item[{const char $\ast$}]{nm1,  }\item[{const char $\ast$}]{nm2 = {\ttfamily (const~char~$\ast$)0},  }\item[{const char $\ast$}]{nm3 = {\ttfamily (const~char~$\ast$)0},  }\item[{const char $\ast$}]{nm4 = {\ttfamily (const~char~$\ast$)0},  }\item[{const char $\ast$}]{nm5 = {\ttfamily (const~char~$\ast$)0} }\end{DoxyParamCaption})}
+
+
+
+Register a command with this interface. 
+
+A command object is associated with one or more tokens on the command line. A string containing up to 5 tokens can be associated with the command.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fptr} & is the \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} object \\
+\hline
+{\em nm1} & is the first token representing the command \\
+\hline
+{\em nm2} & is the second token (or null) \\
+\hline
+{\em nm3} & is the third token (or null) \\
+\hline
+{\em nm4} & is the fourth token (or null) \\
+\hline
+{\em nm5} & is the fifth token (or null) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceStatus_a78057db3e8cbf3c50cd1a6e4312892e5}\label{classIfaceStatus_a78057db3e8cbf3c50cd1a6e4312892e5}} 
+\index{IfaceStatus@{IfaceStatus}!runCommand@{runCommand}}
+\index{runCommand@{runCommand}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{runCommand()}{runCommand()}}
+{\footnotesize\ttfamily bool Iface\+Status\+::run\+Command (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run the next command. 
+
+A single command line is read (via read\+Line) and executed. If the command is successfully executed, the command line is committed to history and {\bfseries{true}} is returned. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a command successfully executes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIfaceStatus_aacefbcd5c2cf3fddd11051682b614854}\label{classIfaceStatus_aacefbcd5c2cf3fddd11051682b614854}} 
+\index{IfaceStatus@{IfaceStatus}!wordsToString@{wordsToString}}
+\index{wordsToString@{wordsToString}!IfaceStatus@{IfaceStatus}}
+\doxysubsubsection{\texorpdfstring{wordsToString()}{wordsToString()}}
+{\footnotesize\ttfamily void Iface\+Status\+::words\+To\+String (\begin{DoxyParamCaption}\item[{string \&}]{res,  }\item[{const vector$<$ string $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Concatenate tokens. 
+
+Concatenate a list of tokens into a single string, separated by a space character. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_8hh}{interface.\+hh}}\item 
+interface.\+cc\end{DoxyCompactItemize}

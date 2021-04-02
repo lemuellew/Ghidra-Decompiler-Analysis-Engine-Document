@@ -1,0 +1,98 @@
+\hypertarget{classConditionMarker}{}\doxysection{Condition\+Marker Class Reference}
+\label{classConditionMarker}\index{ConditionMarker@{ConditionMarker}}
+
+
+A helper class for describing the similarity of the boolean condition between 2 C\+B\+R\+A\+N\+CH operations.  
+
+
+
+
+{\ttfamily \#include $<$condexe.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConditionMarker_ac532df69b0e3b0b529b42f6871e59b85}\label{classConditionMarker_ac532df69b0e3b0b529b42f6871e59b85}} 
+\mbox{\hyperlink{classConditionMarker_ac532df69b0e3b0b529b42f6871e59b85}{Condition\+Marker}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classConditionMarker_aea2636ea1affecfc44cb4aa0c00e8350}{$\sim$\+Condition\+Marker}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConditionMarker_a46df93505aa04dd2d8b77239b272092f}\label{classConditionMarker_a46df93505aa04dd2d8b77239b272092f}} 
+bool \mbox{\hyperlink{classConditionMarker_a46df93505aa04dd2d8b77239b272092f}{verify\+Condition}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$initop)
+\begin{DoxyCompactList}\small\item\em Perform the correlation test on two C\+B\+R\+A\+N\+CH operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{classConditionMarker_ab142a297ad508117562f6cdb323177b3}{varnode\+Same}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$a, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Do the given Varnodes hold the same value, possibly as constants. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classConditionMarker_a51982c64eb3d581be8276d96b4735a23}{varnode\+Complement}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$a, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Do the given boolean Varnodes always hold complementary values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A helper class for describing the similarity of the boolean condition between 2 C\+B\+R\+A\+N\+CH operations. 
+
+This class determines if two C\+B\+R\+A\+N\+C\+Hs share the same condition. It also determines if the conditions are complements of each other, and/or they are shared along only one path.
+
+The expression computing the root boolean value for one C\+B\+R\+A\+N\+CH is marked out by setup\+Init\+Op(). For the other C\+B\+R\+A\+N\+CH, find\+Match() tries to find common \mbox{\hyperlink{classVarnode}{Varnode}} in its boolean expression and then maps a critical path from the \mbox{\hyperlink{classVarnode}{Varnode}} to the final boolean. Assuming the common \mbox{\hyperlink{classVarnode}{Varnode}} exists, the method final\+Judgement() decides if the two boolean values are the same, uncorrelated, or complements of one another. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConditionMarker_aea2636ea1affecfc44cb4aa0c00e8350}\label{classConditionMarker_aea2636ea1affecfc44cb4aa0c00e8350}} 
+\index{ConditionMarker@{ConditionMarker}!````~ConditionMarker@{$\sim$ConditionMarker}}
+\index{````~ConditionMarker@{$\sim$ConditionMarker}!ConditionMarker@{ConditionMarker}}
+\doxysubsubsection{\texorpdfstring{$\sim$ConditionMarker()}{~ConditionMarker()}}
+{\footnotesize\ttfamily Condition\+Marker\+::$\sim$\+Condition\+Marker (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Any marks on Varnodes in the root expression are cleared. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConditionMarker_a51982c64eb3d581be8276d96b4735a23}\label{classConditionMarker_a51982c64eb3d581be8276d96b4735a23}} 
+\index{ConditionMarker@{ConditionMarker}!varnodeComplement@{varnodeComplement}}
+\index{varnodeComplement@{varnodeComplement}!ConditionMarker@{ConditionMarker}}
+\doxysubsubsection{\texorpdfstring{varnodeComplement()}{varnodeComplement()}}
+{\footnotesize\ttfamily bool Condition\+Marker\+::varnode\+Complement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Do the given boolean Varnodes always hold complementary values. 
+
+Test if they are constants, 1 and 0, or if one is the direct B\+O\+O\+L\+\_\+\+N\+E\+G\+A\+TE of the other. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+{\em b} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the Varnodes (always) hold complementary values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classConditionMarker_ab142a297ad508117562f6cdb323177b3}\label{classConditionMarker_ab142a297ad508117562f6cdb323177b3}} 
+\index{ConditionMarker@{ConditionMarker}!varnodeSame@{varnodeSame}}
+\index{varnodeSame@{varnodeSame}!ConditionMarker@{ConditionMarker}}
+\doxysubsubsection{\texorpdfstring{varnodeSame()}{varnodeSame()}}
+{\footnotesize\ttfamily bool Condition\+Marker\+::varnode\+Same (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{a,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Do the given Varnodes hold the same value, possibly as constants. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+{\em b} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the Varnodes (always) hold the same value 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{condexe_8hh}{condexe.\+hh}}\item 
+condexe.\+cc\end{DoxyCompactItemize}

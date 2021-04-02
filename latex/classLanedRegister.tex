@@ -1,0 +1,65 @@
+\hypertarget{classLanedRegister}{}\doxysection{Laned\+Register Class Reference}
+\label{classLanedRegister}\index{LanedRegister@{LanedRegister}}
+
+
+Describes a (register) storage location and the ways it might be split into lanes.  
+
+
+
+
+{\ttfamily \#include $<$transform.\+hh$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLanedRegister_1_1LanedIterator}{Laned\+Iterator}}
+\begin{DoxyCompactList}\small\item\em Class for iterating over possible lane sizes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLanedRegister_ab87099a74dc3ed6b91192d959e65fa19}\label{classLanedRegister_ab87099a74dc3ed6b91192d959e65fa19}} 
+typedef \mbox{\hyperlink{classLanedRegister_1_1LanedIterator}{Laned\+Iterator}} \mbox{\hyperlink{classLanedRegister_ab87099a74dc3ed6b91192d959e65fa19}{const\+\_\+iterator}}
+\begin{DoxyCompactList}\small\item\em Iterator over possible lane sizes for this register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classLanedRegister_aac521602aa1d317bdd521b489fc6e546}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore object from X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLanedRegister_a060a3147f026ce2ae0803b395cd381df}\label{classLanedRegister_a060a3147f026ce2ae0803b395cd381df}} 
+class {\bfseries Laned\+Iterator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Describes a (register) storage location and the ways it might be split into lanes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLanedRegister_aac521602aa1d317bdd521b489fc6e546}\label{classLanedRegister_aac521602aa1d317bdd521b489fc6e546}} 
+\index{LanedRegister@{LanedRegister}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!LanedRegister@{LanedRegister}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily bool Laned\+Register\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})}
+
+
+
+Restore object from X\+ML stream. 
+
+Read X\+ML of the form $<$register name=\char`\"{}..\char`\"{} vector\+\_\+lane\+\_\+sizes=\char`\"{}..\char`\"{}/$>$ 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the particular {\itshape register} tag \\
+\hline
+{\em manage} & is used to map register names to storage info \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the X\+ML description provides lane sizes 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{transform_8hh}{transform.\+hh}}\item 
+transform.\+cc\end{DoxyCompactItemize}

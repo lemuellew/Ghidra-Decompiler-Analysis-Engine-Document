@@ -1,0 +1,57 @@
+\hypertarget{classPatternExpression}{}\doxysection{Pattern\+Expression Class Reference}
+\label{classPatternExpression}\index{PatternExpression@{PatternExpression}}
+
+
+Inheritance diagram for Pattern\+Expression\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPatternExpression__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPatternExpression_a8332c6ea4c5a7e9dfc690df2a6458bb8}\label{classPatternExpression_a8332c6ea4c5a7e9dfc690df2a6458bb8}} 
+virtual intb {\bfseries get\+Value} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const =0
+\item 
+\mbox{\Hypertarget{classPatternExpression_a1dc2d0c07f64fdab9da6c0849e992b50}\label{classPatternExpression_a1dc2d0c07f64fdab9da6c0849e992b50}} 
+virtual \mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} {\bfseries gen\+Min\+Pattern} (const vector$<$ \mbox{\hyperlink{classTokenPattern}{Token\+Pattern}} $>$ \&ops) const =0
+\item 
+\mbox{\Hypertarget{classPatternExpression_a48d1a8fce687ba5c272b2e0d72760363}\label{classPatternExpression_a48d1a8fce687ba5c272b2e0d72760363}} 
+virtual void {\bfseries list\+Values} (vector$<$ const \mbox{\hyperlink{classPatternValue}{Pattern\+Value}} $\ast$ $>$ \&list) const =0
+\item 
+\mbox{\Hypertarget{classPatternExpression_a4ceb88e89308ac58bf1af4174228f3a0}\label{classPatternExpression_a4ceb88e89308ac58bf1af4174228f3a0}} 
+virtual void {\bfseries get\+Min\+Max} (vector$<$ intb $>$ \&minlist, vector$<$ intb $>$ \&maxlist) const =0
+\item 
+\mbox{\Hypertarget{classPatternExpression_ade37db4aa76dd442b189bf4a6bb2d9dd}\label{classPatternExpression_ade37db4aa76dd442b189bf4a6bb2d9dd}} 
+virtual intb {\bfseries get\+Sub\+Value} (const vector$<$ intb $>$ \&replace, int4 \&listpos) const =0
+\item 
+\mbox{\Hypertarget{classPatternExpression_a0d9c89ffbf4a22fac68189a845cde92a}\label{classPatternExpression_a0d9c89ffbf4a22fac68189a845cde92a}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const =0
+\item 
+\mbox{\Hypertarget{classPatternExpression_ad8986afdddbe7a8b64fdcf10478b5715}\label{classPatternExpression_ad8986afdddbe7a8b64fdcf10478b5715}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)=0
+\item 
+\mbox{\Hypertarget{classPatternExpression_a0842ac84a9b84a426730ddaf1ef1e509}\label{classPatternExpression_a0842ac84a9b84a426730ddaf1ef1e509}} 
+intb {\bfseries get\+Sub\+Value} (const vector$<$ intb $>$ \&replace)
+\item 
+\mbox{\Hypertarget{classPatternExpression_a922b328bd6bea398bf294e505378cee0}\label{classPatternExpression_a922b328bd6bea398bf294e505378cee0}} 
+void {\bfseries lay\+Claim} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPatternExpression_a3528f68b2f3f8ff6a12a8650a949203c}\label{classPatternExpression_a3528f68b2f3f8ff6a12a8650a949203c}} 
+static void {\bfseries release} (\mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$p)
+\item 
+\mbox{\Hypertarget{classPatternExpression_a77a394eabbb5d76013c19e7bc3455ea5}\label{classPatternExpression_a77a394eabbb5d76013c19e7bc3455ea5}} 
+static \mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$ {\bfseries restore\+Expression} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTranslate}{Translate}} $\ast$trans)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghpatexpress.\+hh\item 
+slghpatexpress.\+cc\end{DoxyCompactItemize}

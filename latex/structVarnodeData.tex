@@ -1,0 +1,164 @@
+\hypertarget{structVarnodeData}{}\doxysection{Varnode\+Data Struct Reference}
+\label{structVarnodeData}\index{VarnodeData@{VarnodeData}}
+
+
+Data defining a specific memory location.  
+
+
+
+
+{\ttfamily \#include $<$pcoderaw.\+hh$>$}
+
+
+
+Collaboration diagram for Varnode\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{structVarnodeData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structVarnodeData_ac453e3030db573d022069a80e09ea485}{operator$<$}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&op2) const
+\begin{DoxyCompactList}\small\item\em An ordering for \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structVarnodeData_ae710e3e383ace7e5f939d15bb677c054}{operator==}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare for equality. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structVarnodeData_ad28f091080d837492b6397457a77142d}{operator!=}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare for inequality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{structVarnodeData_a815490509cf832fbb9dc45214dd33c8e}{get\+Addr}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the location of the varnode as an address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structVarnodeData_a20a4c1ccbaa1f2477d036be8be923894}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Recover this object from an X\+ML tag. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structVarnodeData_a6b94e2975ca798a20e80f334de46ef2b}{contains}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} container another given \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structVarnodeData_a1a69a5187f7a6376c0c93c08962ea68d}\label{structVarnodeData_a1a69a5187f7a6376c0c93c08962ea68d}} 
+\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$ \mbox{\hyperlink{structVarnodeData_a1a69a5187f7a6376c0c93c08962ea68d}{space}}
+\begin{DoxyCompactList}\small\item\em The address space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structVarnodeData_a1a511384ee72e847b51423cc99c8233e}\label{structVarnodeData_a1a511384ee72e847b51423cc99c8233e}} 
+uintb \mbox{\hyperlink{structVarnodeData_a1a511384ee72e847b51423cc99c8233e}{offset}}
+\begin{DoxyCompactList}\small\item\em The offset within the space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structVarnodeData_a50d39ae46d51c8854b962f3ec4ee4e25}\label{structVarnodeData_a50d39ae46d51c8854b962f3ec4ee4e25}} 
+uint4 \mbox{\hyperlink{structVarnodeData_a50d39ae46d51c8854b962f3ec4ee4e25}{size}}
+\begin{DoxyCompactList}\small\item\em The number of bytes in the location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data defining a specific memory location. 
+
+Within the decompiler\textquotesingle{}s model of a processor, any register, memory location, or other variable can always be represented as an address space, an offset within the space, and the size of the sequence of bytes. This is more commonly referred to as a \mbox{\hyperlink{classVarnode}{Varnode}}, but this is a bare-\/bones container for the data that doesn\textquotesingle{}t have the cached attributes and the dataflow links of the \mbox{\hyperlink{classVarnode}{Varnode}} within its syntax tree. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structVarnodeData_a6b94e2975ca798a20e80f334de46ef2b}\label{structVarnodeData_a6b94e2975ca798a20e80f334de46ef2b}} 
+\index{VarnodeData@{VarnodeData}!contains@{contains}}
+\index{contains@{contains}!VarnodeData@{VarnodeData}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool Varnode\+Data\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Does {\bfseries{this}} container another given \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}. 
+
+Return {\bfseries{true}}, if {\bfseries{this}}, as an address range, contains the other address range 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} to test for containment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} contains the other 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structVarnodeData_a815490509cf832fbb9dc45214dd33c8e}\label{structVarnodeData_a815490509cf832fbb9dc45214dd33c8e}} 
+\index{VarnodeData@{VarnodeData}!getAddr@{getAddr}}
+\index{getAddr@{getAddr}!VarnodeData@{VarnodeData}}
+\doxysubsubsection{\texorpdfstring{getAddr()}{getAddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Varnode\+Data\+::get\+Addr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the location of the varnode as an address. 
+
+This is a convenience function to construct a full \mbox{\hyperlink{classAddress}{Address}} from the \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}\textquotesingle{}s address space and offset \begin{DoxyReturn}{Returns}
+the address of the varnode 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structVarnodeData_ad28f091080d837492b6397457a77142d}\label{structVarnodeData_ad28f091080d837492b6397457a77142d}} 
+\index{VarnodeData@{VarnodeData}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!VarnodeData@{VarnodeData}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Varnode\+Data\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare for inequality. 
+
+Compare \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} for inequality. If either the space, offset, or size is not equal, return {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the object being compared to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape this} is not equal to {\itshape op2} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structVarnodeData_ac453e3030db573d022069a80e09ea485}\label{structVarnodeData_ac453e3030db573d022069a80e09ea485}} 
+\index{VarnodeData@{VarnodeData}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!VarnodeData@{VarnodeData}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Varnode\+Data\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+An ordering for \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}. 
+
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} can be sorted in terms of the space its in (the space\textquotesingle{}s {\itshape index}), the offset within the space, and finally by the size. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the object being compared to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape this} is less than {\itshape op2} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structVarnodeData_ae710e3e383ace7e5f939d15bb677c054}\label{structVarnodeData_ae710e3e383ace7e5f939d15bb677c054}} 
+\index{VarnodeData@{VarnodeData}!operator==@{operator==}}
+\index{operator==@{operator==}!VarnodeData@{VarnodeData}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Varnode\+Data\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare for equality. 
+
+Compare \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} for equality. The space, offset, and size must all be exactly equal 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the object being compared to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape this} is equal to {\itshape op2} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structVarnodeData_a20a4c1ccbaa1f2477d036be8be923894}\label{structVarnodeData_a20a4c1ccbaa1f2477d036be8be923894}} 
+\index{VarnodeData@{VarnodeData}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!VarnodeData@{VarnodeData}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Varnode\+Data\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{manage }\end{DoxyParamCaption})}
+
+
+
+Recover this object from an X\+ML tag. 
+
+Build this \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} from an {\bfseries{$<$addr$>$}} tag 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed tag \\
+\hline
+{\em manage} & is the address space manager \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcoderaw_8hh}{pcoderaw.\+hh}}\item 
+pcoderaw.\+cc\end{DoxyCompactItemize}

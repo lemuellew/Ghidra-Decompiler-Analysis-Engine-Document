@@ -1,0 +1,62 @@
+\hypertarget{classIfcPreferSplit}{}\doxysection{Ifc\+Prefer\+Split Class Reference}
+\label{classIfcPreferSplit}\index{IfcPreferSplit@{IfcPreferSplit}}
+
+
+Mark a storage location to be split\+: {\ttfamily prefersplit $<$address+size$>$ $<$splitsize$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Prefer\+Split\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcPreferSplit__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Prefer\+Split\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcPreferSplit__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcPreferSplit_aaf3f2d962ed56ee7e784b8b88ca073d9}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Mark a storage location to be split\+: {\ttfamily prefersplit $<$address+size$>$ $<$splitsize$>$} 
+
+The storage location is marked for splitting in any future decompilation. During decompilation, any \mbox{\hyperlink{classVarnode}{Varnode}} matching the storage location on the command-\/line will be generally split into two pieces, where the final command-\/line parameter indicates the number of bytes in the first piece. A \mbox{\hyperlink{classVarnode}{Varnode}} is split only if operations involving it can also be split. See \mbox{\hyperlink{classPreferSplitManager}{Prefer\+Split\+Manager}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcPreferSplit_aaf3f2d962ed56ee7e784b8b88ca073d9}\label{classIfcPreferSplit_aaf3f2d962ed56ee7e784b8b88ca073d9}} 
+\index{IfcPreferSplit@{IfcPreferSplit}!execute@{execute}}
+\index{execute@{execute}!IfcPreferSplit@{IfcPreferSplit}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Prefer\+Split\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

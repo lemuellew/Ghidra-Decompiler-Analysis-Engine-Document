@@ -1,0 +1,140 @@
+\hypertarget{classFunctionSymbol}{}\doxysection{Function\+Symbol Class Reference}
+\label{classFunctionSymbol}\index{FunctionSymbol@{FunctionSymbol}}
+
+
+A \mbox{\hyperlink{classSymbol}{Symbol}} representing an executable function.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+
+
+Inheritance diagram for Function\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classFunctionSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Function\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classFunctionSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFunctionSymbol_afcc837dcc5610f387be7fbf78b220496}{Function\+Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc, const string \&nm, int4 size)
+\begin{DoxyCompactList}\small\item\em Construct given the name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFunctionSymbol_aa2b316a5920f3008807c6cf7d02337ec}\label{classFunctionSymbol_aa2b316a5920f3008807c6cf7d02337ec}} 
+\mbox{\hyperlink{classFunctionSymbol_aa2b316a5920f3008807c6cf7d02337ec}{Function\+Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc, int4 size)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}} for use with restore\+Xml. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFunctionSymbol_ab54ed780e0dd1abdc9447c2e772114fb}\label{classFunctionSymbol_ab54ed780e0dd1abdc9447c2e772114fb}} 
+\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ \mbox{\hyperlink{classFunctionSymbol_ab54ed780e0dd1abdc9447c2e772114fb}{get\+Function}} (void)
+\begin{DoxyCompactList}\small\item\em Get the underlying \mbox{\hyperlink{classFuncdata}{Funcdata}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFunctionSymbol_a0947d5735918439e8de8f4e6084239f2}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classFunctionSymbol_afba4e81eed1ad378ae7f0531ec8f3d2b}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classFunctionSymbol_a4bfa900c03ee8fdf82723b7f2319b78c}{get\+Bytes\+Consumed}} (void) const
+\begin{DoxyCompactList}\small\item\em Get number of bytes consumed within the address-\/$>$symbol map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classSymbol}{Symbol}} representing an executable function. 
+
+This \mbox{\hyperlink{classSymbol}{Symbol}} owns the \mbox{\hyperlink{classFuncdata}{Funcdata}} object for the function it represents. The formal \mbox{\hyperlink{classSymbol}{Symbol}} is thus associated with all the meta-\/data about the function. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFunctionSymbol_afcc837dcc5610f387be7fbf78b220496}\label{classFunctionSymbol_afcc837dcc5610f387be7fbf78b220496}} 
+\index{FunctionSymbol@{FunctionSymbol}!FunctionSymbol@{FunctionSymbol}}
+\index{FunctionSymbol@{FunctionSymbol}!FunctionSymbol@{FunctionSymbol}}
+\doxysubsubsection{\texorpdfstring{FunctionSymbol()}{FunctionSymbol()}}
+{\footnotesize\ttfamily Function\+Symbol\+::\+Function\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{sc,  }\item[{const string \&}]{nm,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Construct given the name. 
+
+Build a function {\itshape shell}, made up of just the name of the function and a placeholder data-\/type, without the underlying \mbox{\hyperlink{classFuncdata}{Funcdata}} object. A \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} for a function has a small size starting at the entry address, in order to deal with non-\/contiguous functions. We need a size (slightly) larger than 1 to accommodate pointer constants that encode extra information in the lower bit(s) of an otherwise aligned pointer. If the encoding is not initially detected, it is interpreted as a straight address that comes up 1 (or more) bytes off of the start of the function In order to detect this, we need to lay down a slightly larger size than 1 
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the \mbox{\hyperlink{classScope}{Scope}} that will contain the new \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em nm} & is the name of the new \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em size} & is the number of bytes a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} should consume \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFunctionSymbol_a4bfa900c03ee8fdf82723b7f2319b78c}\label{classFunctionSymbol_a4bfa900c03ee8fdf82723b7f2319b78c}} 
+\index{FunctionSymbol@{FunctionSymbol}!getBytesConsumed@{getBytesConsumed}}
+\index{getBytesConsumed@{getBytesConsumed}!FunctionSymbol@{FunctionSymbol}}
+\doxysubsubsection{\texorpdfstring{getBytesConsumed()}{getBytesConsumed()}}
+{\footnotesize\ttfamily virtual int4 Function\+Symbol\+::get\+Bytes\+Consumed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get number of bytes consumed within the address-\/$>$symbol map. 
+
+Get the number of bytes consumed by a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} representing {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}}. By default, this is the number of bytes consumed by the \mbox{\hyperlink{classSymbol}{Symbol}}\textquotesingle{}s data-\/type. This gives the amount of leeway a search has when the address queried does not match the exact address of the \mbox{\hyperlink{classSymbol}{Symbol}}. With functions, the bytes consumed by a \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} may not match the data-\/type size. \begin{DoxyReturn}{Returns}
+the number of bytes in a default \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a2140bc57fb92842c2d1cc8526ef08cf1}{Symbol}}.
+
+\mbox{\Hypertarget{classFunctionSymbol_afba4e81eed1ad378ae7f0531ec8f3d2b}\label{classFunctionSymbol_afba4e81eed1ad378ae7f0531ec8f3d2b}} 
+\index{FunctionSymbol@{FunctionSymbol}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!FunctionSymbol@{FunctionSymbol}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Function\+Symbol\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML tag of the symbol \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a3266a5752c208bdfa5a28e792de67604}{Symbol}}.
+
+\mbox{\Hypertarget{classFunctionSymbol_a0947d5735918439e8de8f4e6084239f2}\label{classFunctionSymbol_a0947d5735918439e8de8f4e6084239f2}} 
+\index{FunctionSymbol@{FunctionSymbol}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!FunctionSymbol@{FunctionSymbol}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Function\+Symbol\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a0ef928814feb0a17fe95d006340eb499}{Symbol}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

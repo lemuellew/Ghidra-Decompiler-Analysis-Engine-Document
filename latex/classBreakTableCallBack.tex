@@ -1,0 +1,180 @@
+\hypertarget{classBreakTableCallBack}{}\doxysection{Break\+Table\+Call\+Back Class Reference}
+\label{classBreakTableCallBack}\index{BreakTableCallBack@{BreakTableCallBack}}
+
+
+A basic instantiation of a breakpoint table.  
+
+
+
+
+{\ttfamily \#include $<$emulate.\+hh$>$}
+
+
+
+Inheritance diagram for Break\+Table\+Call\+Back\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classBreakTableCallBack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Break\+Table\+Call\+Back\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classBreakTableCallBack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBreakTableCallBack_ada0c6a6ba41fe406768cb37cee7daaa2}{Break\+Table\+Call\+Back}} (\mbox{\hyperlink{classTranslate}{Translate}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Basic breaktable constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBreakTableCallBack_a7c2ea1b2996ea556188e1c09a8f6ec1f}{register\+Pcode\+Callback}} (const string \&nm, \mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} $\ast$func)
+\begin{DoxyCompactList}\small\item\em Register a pcode based breakpoint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBreakTableCallBack_a22f1cb661549be082a71edcca5eb7f5f}{register\+Address\+Callback}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} $\ast$func)
+\begin{DoxyCompactList}\small\item\em Register an address based breakpoint. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBreakTableCallBack_a341d8841e68c7237e1502e2643016abc}{set\+Emulate}} (\mbox{\hyperlink{classEmulate}{Emulate}} $\ast$emu)
+\begin{DoxyCompactList}\small\item\em Associate an emulator with all breakpoints in the table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBreakTableCallBack_a16b989de8c0b55d15940ac41bf7cdd73}{do\+Pcode\+Op\+Break}} (\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$curop)
+\begin{DoxyCompactList}\small\item\em Invoke any breakpoints for the given pcode op. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBreakTableCallBack_af2d28bc35a414feed38205b41f387afc}{do\+Address\+Break}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Invoke any breakpoints for the given address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A basic instantiation of a breakpoint table. 
+
+This object allows breakpoints to registered in the table via either
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classBreakTableCallBack_a7c2ea1b2996ea556188e1c09a8f6ec1f}{register\+Pcode\+Callback()}} or = \mbox{\hyperlink{classBreakTableCallBack_a22f1cb661549be082a71edcca5eb7f5f}{register\+Address\+Callback()}}
+\end{DoxyItemize}
+
+Breakpoints are stored in map containers, and the core \mbox{\hyperlink{classBreakTable}{Break\+Table}} methods are implemented to search in these containers 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBreakTableCallBack_ada0c6a6ba41fe406768cb37cee7daaa2}\label{classBreakTableCallBack_ada0c6a6ba41fe406768cb37cee7daaa2}} 
+\index{BreakTableCallBack@{BreakTableCallBack}!BreakTableCallBack@{BreakTableCallBack}}
+\index{BreakTableCallBack@{BreakTableCallBack}!BreakTableCallBack@{BreakTableCallBack}}
+\doxysubsubsection{\texorpdfstring{BreakTableCallBack()}{BreakTableCallBack()}}
+{\footnotesize\ttfamily Break\+Table\+Call\+Back\+::\+Break\+Table\+Call\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Basic breaktable constructor. 
+
+The break table needs a translator object so user-\/defined pcode ops can be registered against by name. 
+\begin{DoxyParams}{Parameters}
+{\em t} & is the translator object \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBreakTableCallBack_af2d28bc35a414feed38205b41f387afc}\label{classBreakTableCallBack_af2d28bc35a414feed38205b41f387afc}} 
+\index{BreakTableCallBack@{BreakTableCallBack}!doAddressBreak@{doAddressBreak}}
+\index{doAddressBreak@{doAddressBreak}!BreakTableCallBack@{BreakTableCallBack}}
+\doxysubsubsection{\texorpdfstring{doAddressBreak()}{doAddressBreak()}}
+{\footnotesize\ttfamily bool Break\+Table\+Call\+Back\+::do\+Address\+Break (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Invoke any breakpoints for the given address. 
+
+This routine examines the address based container for any breakpoints associated with the given address. If one is found, its address\+Callback method is invoked. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address being checked for breakpoints \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the breakpoint exists and returns {\bfseries{true}}, otherwise return {\bfseries{false}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBreakTable_a7833a73318fadd483f73fbd33bdffd23}{Break\+Table}}.
+
+\mbox{\Hypertarget{classBreakTableCallBack_a16b989de8c0b55d15940ac41bf7cdd73}\label{classBreakTableCallBack_a16b989de8c0b55d15940ac41bf7cdd73}} 
+\index{BreakTableCallBack@{BreakTableCallBack}!doPcodeOpBreak@{doPcodeOpBreak}}
+\index{doPcodeOpBreak@{doPcodeOpBreak}!BreakTableCallBack@{BreakTableCallBack}}
+\doxysubsubsection{\texorpdfstring{doPcodeOpBreak()}{doPcodeOpBreak()}}
+{\footnotesize\ttfamily bool Break\+Table\+Call\+Back\+::do\+Pcode\+Op\+Break (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$}]{curop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Invoke any breakpoints for the given pcode op. 
+
+This routine examines the pcode-\/op based container for any breakpoints associated with the given op. If one is found, its pcode\+Callback method is invoked. 
+\begin{DoxyParams}{Parameters}
+{\em curop} & is pcode op being checked for breakpoints \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the breakpoint exists and returns {\bfseries{true}}, otherwise return {\bfseries{false}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classBreakTable_af8829327f29c768f834825fe40b54bad}{Break\+Table}}.
+
+\mbox{\Hypertarget{classBreakTableCallBack_a22f1cb661549be082a71edcca5eb7f5f}\label{classBreakTableCallBack_a22f1cb661549be082a71edcca5eb7f5f}} 
+\index{BreakTableCallBack@{BreakTableCallBack}!registerAddressCallback@{registerAddressCallback}}
+\index{registerAddressCallback@{registerAddressCallback}!BreakTableCallBack@{BreakTableCallBack}}
+\doxysubsubsection{\texorpdfstring{registerAddressCallback()}{registerAddressCallback()}}
+{\footnotesize\ttfamily void Break\+Table\+Call\+Back\+::register\+Address\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} $\ast$}]{func }\end{DoxyParamCaption})}
+
+
+
+Register an address based breakpoint. 
+
+Any time the emulator is about to execute (the pcode translation of) a particular machine instruction at this address, the indicated breakpoint is invoked first. The break table does {\itshape not} assume responsibility for freeing the breakpoint object. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address associated with the breakpoint \\
+\hline
+{\em func} & is the breakpoint being registered \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBreakTableCallBack_a7c2ea1b2996ea556188e1c09a8f6ec1f}\label{classBreakTableCallBack_a7c2ea1b2996ea556188e1c09a8f6ec1f}} 
+\index{BreakTableCallBack@{BreakTableCallBack}!registerPcodeCallback@{registerPcodeCallback}}
+\index{registerPcodeCallback@{registerPcodeCallback}!BreakTableCallBack@{BreakTableCallBack}}
+\doxysubsubsection{\texorpdfstring{registerPcodeCallback()}{registerPcodeCallback()}}
+{\footnotesize\ttfamily void Break\+Table\+Call\+Back\+::register\+Pcode\+Callback (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{\mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} $\ast$}]{func }\end{DoxyParamCaption})}
+
+
+
+Register a pcode based breakpoint. 
+
+Any time the emulator is about to execute a user-\/defined pcode op with the given name, the indicated breakpoint is invoked first. The break table does {\itshape not} assume responsibility for freeing the breakpoint object. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the user-\/defined pcode op \\
+\hline
+{\em func} & is the breakpoint object to associate with the pcode op \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBreakTableCallBack_a341d8841e68c7237e1502e2643016abc}\label{classBreakTableCallBack_a341d8841e68c7237e1502e2643016abc}} 
+\index{BreakTableCallBack@{BreakTableCallBack}!setEmulate@{setEmulate}}
+\index{setEmulate@{setEmulate}!BreakTableCallBack@{BreakTableCallBack}}
+\doxysubsubsection{\texorpdfstring{setEmulate()}{setEmulate()}}
+{\footnotesize\ttfamily void Break\+Table\+Call\+Back\+::set\+Emulate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classEmulate}{Emulate}} $\ast$}]{emu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Associate an emulator with all breakpoints in the table. 
+
+This routine invokes the set\+Emulate method on each breakpoint currently in the table 
+\begin{DoxyParams}{Parameters}
+{\em emu} & is the emulator to be associated with the breakpoints \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classBreakTable_a7efdfc549d576cf17235aa74bbf19a79}{Break\+Table}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{emulate_8hh}{emulate.\+hh}}\item 
+emulate.\+cc\end{DoxyCompactItemize}

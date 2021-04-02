@@ -1,0 +1,130 @@
+\hypertarget{op_8hh}{}\doxysection{op.\+hh File Reference}
+\label{op_8hh}\index{op.hh@{op.hh}}
+
+
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and \mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}} classes.  
+
+
+{\ttfamily \#include \char`\"{}typeop.\+hh\char`\"{}}\newline
+Include dependency graph for op.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{op_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{op_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classIopSpace}{Iop\+Space}}
+\begin{DoxyCompactList}\small\item\em Space for storing internal \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} pointers as addresses. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\begin{DoxyCompactList}\small\item\em Lowest level operation of the {\bfseries{p-\/code}} language. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPcodeOpNode}{Pcode\+Op\+Node}}
+\begin{DoxyCompactList}\small\item\em An edge in a data-\/flow path or graph. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}}
+\begin{DoxyCompactList}\small\item\em Container class for Pcode\+Ops associated with a single function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{op_8hh_abaa8ab6f8d0f797e72a3cb80ff40e7fa}\label{op_8hh_abaa8ab6f8d0f797e72a3cb80ff40e7fa}} 
+typedef map$<$ \mbox{\hyperlink{classSeqNum}{Seq\+Num}}, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ $>$ \mbox{\hyperlink{op_8hh_abaa8ab6f8d0f797e72a3cb80ff40e7fa}{Pcode\+Op\+Tree}}
+\begin{DoxyCompactList}\small\item\em A map from sequence number (\mbox{\hyperlink{classSeqNum}{Seq\+Num}}) to \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int4 \mbox{\hyperlink{op_8hh_a1761d74696f37bc47ecdbd773ddbabec}{functional\+Equality\+Level}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$$\ast$res1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$$\ast$res2)
+\begin{DoxyCompactList}\small\item\em Try to determine if {\bfseries{vn1}} and {\bfseries{vn2}} contain the same value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{op_8hh_acabcf7c5d200986ab0afdbf80b7bd933}{functional\+Equality}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2)
+\begin{DoxyCompactList}\small\item\em Determine if two Varnodes hold the same value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{op_8hh_aa4d21476a58095d82737e3bb10e64701}{functional\+Difference}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn1, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn2, int4 depth)
+\begin{DoxyCompactList}\small\item\em Return true if vn1 and vn2 are verifiably different values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and \mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}} classes. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{op_8hh_aa4d21476a58095d82737e3bb10e64701}\label{op_8hh_aa4d21476a58095d82737e3bb10e64701}} 
+\index{op.hh@{op.hh}!functionalDifference@{functionalDifference}}
+\index{functionalDifference@{functionalDifference}!op.hh@{op.hh}}
+\doxysubsubsection{\texorpdfstring{functionalDifference()}{functionalDifference()}}
+{\footnotesize\ttfamily bool functional\+Difference (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2,  }\item[{int4}]{depth }\end{DoxyParamCaption})}
+
+
+
+Return true if vn1 and vn2 are verifiably different values. 
+
+This is actually a rather speculative test 
+\begin{DoxyParams}{Parameters}
+{\em vn1} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+{\em vn2} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em depth} & is the maximum level to recurse while testing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if they are different 
+\end{DoxyReturn}
+\mbox{\Hypertarget{op_8hh_acabcf7c5d200986ab0afdbf80b7bd933}\label{op_8hh_acabcf7c5d200986ab0afdbf80b7bd933}} 
+\index{op.hh@{op.hh}!functionalEquality@{functionalEquality}}
+\index{functionalEquality@{functionalEquality}!op.hh@{op.hh}}
+\doxysubsubsection{\texorpdfstring{functionalEquality()}{functionalEquality()}}
+{\footnotesize\ttfamily bool functional\+Equality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2 }\end{DoxyParamCaption})}
+
+
+
+Determine if two Varnodes hold the same value. 
+
+Only return {\bfseries{true}} if it can be immediately determined they are equivalent 
+\begin{DoxyParams}{Parameters}
+{\em vn1} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em vn2} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they are provably equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{op_8hh_a1761d74696f37bc47ecdbd773ddbabec}\label{op_8hh_a1761d74696f37bc47ecdbd773ddbabec}} 
+\index{op.hh@{op.hh}!functionalEqualityLevel@{functionalEqualityLevel}}
+\index{functionalEqualityLevel@{functionalEqualityLevel}!op.hh@{op.hh}}
+\doxysubsubsection{\texorpdfstring{functionalEqualityLevel()}{functionalEqualityLevel()}}
+{\footnotesize\ttfamily int4 functional\+Equality\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn2,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$$\ast$}]{res1,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$$\ast$}]{res2 }\end{DoxyParamCaption})}
+
+
+
+Try to determine if {\bfseries{vn1}} and {\bfseries{vn2}} contain the same value. 
+
+Return\+:
+\begin{DoxyItemize}
+\item -\/1, if they do {\bfseries{not}}, or if it can\textquotesingle{}t be immediately verified
+\item 0, if they {\bfseries{do}} hold the same value
+\item $>$0, if the result is contingent on additional varnode pairs having the same value In the last case, the varnode pairs are returned as (res1\mbox{[}i\mbox{]},res2\mbox{[}i\mbox{]}), where the return value is the number of pairs. 
+\begin{DoxyParams}{Parameters}
+{\em vn1} & is the first \mbox{\hyperlink{classVarnode}{Varnode}} to compare \\
+\hline
+{\em vn2} & is the second \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em res1} & is a reference to the first returned \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em res2} & is a reference to the second returned \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of the comparison 
+\end{DoxyReturn}
+
+\end{DoxyItemize}

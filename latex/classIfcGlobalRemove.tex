@@ -1,0 +1,62 @@
+\hypertarget{classIfcGlobalRemove}{}\doxysection{Ifc\+Global\+Remove Class Reference}
+\label{classIfcGlobalRemove}\index{IfcGlobalRemove@{IfcGlobalRemove}}
+
+
+Remove a memory range from discoverable global variables\+: {\ttfamily global remove $<$address+size$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Global\+Remove\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcGlobalRemove__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Global\+Remove\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcGlobalRemove__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcGlobalRemove_acb81449b281ae69ff0dac554beeb0318}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Remove a memory range from discoverable global variables\+: {\ttfamily global remove $<$address+size$>$} 
+
+The will no longer treat Varnodes stored in the memory range as persistent global variables. The will be treated as local or temporary storage. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcGlobalRemove_acb81449b281ae69ff0dac554beeb0318}\label{classIfcGlobalRemove_acb81449b281ae69ff0dac554beeb0318}} 
+\index{IfcGlobalRemove@{IfcGlobalRemove}!execute@{execute}}
+\index{execute@{execute}!IfcGlobalRemove@{IfcGlobalRemove}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Global\+Remove\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

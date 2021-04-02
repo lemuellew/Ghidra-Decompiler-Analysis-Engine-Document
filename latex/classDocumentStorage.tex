@@ -1,0 +1,108 @@
+\hypertarget{classDocumentStorage}{}\doxysection{Document\+Storage Class Reference}
+\label{classDocumentStorage}\index{DocumentStorage@{DocumentStorage}}
+
+
+A container for parsed X\+ML documents.  
+
+
+
+
+{\ttfamily \#include $<$xml.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDocumentStorage_a873c6e80bdd551f411a77b4d61a06b22}\label{classDocumentStorage_a873c6e80bdd551f411a77b4d61a06b22}} 
+\mbox{\hyperlink{classDocumentStorage_a873c6e80bdd551f411a77b4d61a06b22}{$\sim$\+Document\+Storage}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classDocumentStorage_afbd98f84aa39db7d76185281c7e9783d}{parse\+Document}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Parse an X\+ML document from the given stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classDocumentStorage_a5704fb0e3632b65ca568e1e7e3ac646d}{open\+Document}} (const string \&filename)
+\begin{DoxyCompactList}\small\item\em Open and parse an X\+ML file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDocumentStorage_a0f74401ca5bd1e2f40ccb93ba1cf5349}{register\+Tag}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Register the given X\+ML \mbox{\hyperlink{classElement}{Element}} object under its tag name. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classElement}{Element}} $\ast$ \mbox{\hyperlink{classDocumentStorage_ab23de6c166f5759b9438a772cb269081}{get\+Tag}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Retrieve a registered X\+ML \mbox{\hyperlink{classElement}{Element}} by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container for parsed X\+ML documents. 
+
+This holds multiple X\+ML documents that have already been parsed. Documents can be put in this container, either by handing it a stream via \mbox{\hyperlink{classDocumentStorage_afbd98f84aa39db7d76185281c7e9783d}{parse\+Document()}} or a filename via \mbox{\hyperlink{classDocumentStorage_a5704fb0e3632b65ca568e1e7e3ac646d}{open\+Document()}}. If they are explicitly registered, specific X\+ML Elements can be looked up by name via \mbox{\hyperlink{classDocumentStorage_ab23de6c166f5759b9438a772cb269081}{get\+Tag()}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDocumentStorage_ab23de6c166f5759b9438a772cb269081}\label{classDocumentStorage_ab23de6c166f5759b9438a772cb269081}} 
+\index{DocumentStorage@{DocumentStorage}!getTag@{getTag}}
+\index{getTag@{getTag}!DocumentStorage@{DocumentStorage}}
+\doxysubsubsection{\texorpdfstring{getTag()}{getTag()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classElement}{Element}} $\ast$ Document\+Storage\+::get\+Tag (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Retrieve a registered X\+ML \mbox{\hyperlink{classElement}{Element}} by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the X\+ML tag name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching registered \mbox{\hyperlink{classElement}{Element}} or null 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDocumentStorage_a5704fb0e3632b65ca568e1e7e3ac646d}\label{classDocumentStorage_a5704fb0e3632b65ca568e1e7e3ac646d}} 
+\index{DocumentStorage@{DocumentStorage}!openDocument@{openDocument}}
+\index{openDocument@{openDocument}!DocumentStorage@{DocumentStorage}}
+\doxysubsubsection{\texorpdfstring{openDocument()}{openDocument()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Document\+Storage\+::open\+Document (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption})}
+
+
+
+Open and parse an X\+ML file. 
+
+The given filename is opened on the local filesystem and an attempt is made to parse its contents into an in-\/memory D\+OM tree. An Xml\+Exception is thrown for any parsing error. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the X\+ML document file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the in-\/memory D\+OM tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDocumentStorage_afbd98f84aa39db7d76185281c7e9783d}\label{classDocumentStorage_afbd98f84aa39db7d76185281c7e9783d}} 
+\index{DocumentStorage@{DocumentStorage}!parseDocument@{parseDocument}}
+\index{parseDocument@{parseDocument}!DocumentStorage@{DocumentStorage}}
+\doxysubsubsection{\texorpdfstring{parseDocument()}{parseDocument()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Document\+Storage\+::parse\+Document (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Parse an X\+ML document from the given stream. 
+
+Parsing starts immediately on the stream, attempting to make an in-\/memory D\+OM tree. An Xml\+Exception is thrown for any parsing error. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given stream to parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the in-\/memory D\+OM tree 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDocumentStorage_a0f74401ca5bd1e2f40ccb93ba1cf5349}\label{classDocumentStorage_a0f74401ca5bd1e2f40ccb93ba1cf5349}} 
+\index{DocumentStorage@{DocumentStorage}!registerTag@{registerTag}}
+\index{registerTag@{registerTag}!DocumentStorage@{DocumentStorage}}
+\doxysubsubsection{\texorpdfstring{registerTag()}{registerTag()}}
+{\footnotesize\ttfamily void Document\+Storage\+::register\+Tag (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Register the given X\+ML \mbox{\hyperlink{classElement}{Element}} object under its tag name. 
+
+Only one \mbox{\hyperlink{classElement}{Element}} can be stored on {\bfseries{this}} object per tag name. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the given X\+ML element \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{xml_8hh}{xml.\+hh}}\item 
+xml.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\hypertarget{classParamListRegister}{}\doxysection{Param\+List\+Register Class Reference}
+\label{classParamListRegister}\index{ParamListRegister@{ParamListRegister}}
+
+
+An unstructured model for passing input parameters to a function.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Param\+List\+Register\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classParamListRegister__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Param\+List\+Register\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{classParamListRegister__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParamListRegister_af11af105230d3d6bf2824ae8b6a527a6}\label{classParamListRegister_af11af105230d3d6bf2824ae8b6a527a6}} 
+virtual uint4 \mbox{\hyperlink{classParamListRegister_af11af105230d3d6bf2824ae8b6a527a6}{get\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the type of parameter list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParamListRegister_a35bf1a7b1033500cb3657608c27d4786}{fillin\+Map}} (\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$active) const
+\begin{DoxyCompactList}\small\item\em Given an unordered list of storage locations, calculate a function prototype. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParamListRegister_a1c4f79c909f11b3859f93f293acb9a1d}\label{classParamListRegister_a1c4f79c909f11b3859f93f293acb9a1d}} 
+virtual \mbox{\hyperlink{classParamList}{Param\+List}} $\ast$ \mbox{\hyperlink{classParamListRegister_a1c4f79c909f11b3859f93f293acb9a1d}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone this parameter list model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An unstructured model for passing input parameters to a function. 
+
+This is the {\bfseries{register}} model, meaning a collection of registers, any of which can be used to pass a parameter. This is nearly identical to \mbox{\hyperlink{classParamListStandard}{Param\+List\+Standard}}, but rules banning {\itshape holes} are not enforced, any subset of the resource list can be used. This makes sense for executables where parameters follow no conventions or only loose conventions. The \mbox{\hyperlink{classParamListStandard_a4819bb8291e202e3d11737d586878525}{assign\+Map()}} method may make less sense in this scenario. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParamListRegister_a35bf1a7b1033500cb3657608c27d4786}\label{classParamListRegister_a35bf1a7b1033500cb3657608c27d4786}} 
+\index{ParamListRegister@{ParamListRegister}!fillinMap@{fillinMap}}
+\index{fillinMap@{fillinMap}!ParamListRegister@{ParamListRegister}}
+\doxysubsubsection{\texorpdfstring{fillinMap()}{fillinMap()}}
+{\footnotesize\ttfamily void Param\+List\+Register\+::fillin\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParamActive}{Param\+Active}} $\ast$}]{active }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given an unordered list of storage locations, calculate a function prototype. 
+
+A list of input (or output) trials is given, which may have holes, invalid inputs etc. Decide on the formal ordered parameter list. Trials within the \mbox{\hyperlink{classParamActive}{Param\+Active}} are added, removed, or reordered as needed. 
+\begin{DoxyParams}{Parameters}
+{\em active} & is the given list of trials \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classParamListStandard_a7fa7043f5c6bba995e2ea716ca16ccaf}{Param\+List\+Standard}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

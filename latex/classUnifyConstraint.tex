@@ -1,0 +1,77 @@
+\hypertarget{classUnifyConstraint}{}\doxysection{Unify\+Constraint Class Reference}
+\label{classUnifyConstraint}\index{UnifyConstraint@{UnifyConstraint}}
+
+
+Inheritance diagram for Unify\+Constraint\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classUnifyConstraint__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a049013abc1805120f71abef80bc6435a}\label{classUnifyConstraint_a049013abc1805120f71abef80bc6435a}} 
+int4 {\bfseries get\+Id} (void) const
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a93c5666cbe0707cfb6aa40d284dca457}\label{classUnifyConstraint_a93c5666cbe0707cfb6aa40d284dca457}} 
+int4 {\bfseries get\+Max\+Num} (void)
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a4f068343932637d355644bb21559aa12}\label{classUnifyConstraint_a4f068343932637d355644bb21559aa12}} 
+virtual \mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$ {\bfseries clone} (void) const =0
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_ac812e2cf68c95e8a5c0e7e8ac02f2fc2}\label{classUnifyConstraint_ac812e2cf68c95e8a5c0e7e8ac02f2fc2}} 
+virtual void {\bfseries initialize} (\mbox{\hyperlink{classUnifyState}{Unify\+State}} \&state)
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_ad9ab4ad91037f96bf803735d414d212d}\label{classUnifyConstraint_ad9ab4ad91037f96bf803735d414d212d}} 
+virtual bool {\bfseries step} (\mbox{\hyperlink{classUnifyState}{Unify\+State}} \&state)=0
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a5e1db6cd9dc1c2c22f6a98d5c1556e41}\label{classUnifyConstraint_a5e1db6cd9dc1c2c22f6a98d5c1556e41}} 
+virtual void {\bfseries build\+Traverse\+State} (\mbox{\hyperlink{classUnifyState}{Unify\+State}} \&state)
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_ae839484226265859ee04807fd7bb7775}\label{classUnifyConstraint_ae839484226265859ee04807fd7bb7775}} 
+virtual void {\bfseries set\+Id} (int4 \&id)
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_acb83b6bea3b21e13054e72ac9cfaba0f}\label{classUnifyConstraint_acb83b6bea3b21e13054e72ac9cfaba0f}} 
+virtual void {\bfseries collect\+Types} (vector$<$ \mbox{\hyperlink{classUnifyDatatype}{Unify\+Datatype}} $>$ \&typelist) const
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a44f0164f38ac1fdc44fc73ebe7678de1}\label{classUnifyConstraint_a44f0164f38ac1fdc44fc73ebe7678de1}} 
+virtual int4 {\bfseries get\+Base\+Index} (void) const
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a774f6a611a96384766cb8e8d8f5ff41f}\label{classUnifyConstraint_a774f6a611a96384766cb8e8d8f5ff41f}} 
+virtual void {\bfseries print} (ostream \&s, \mbox{\hyperlink{classUnifyCPrinter}{Unify\+C\+Printer}} \&printstate) const =0
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a260263ddd2fea5ac847302d12feeb031}\label{classUnifyConstraint_a260263ddd2fea5ac847302d12feeb031}} 
+virtual bool {\bfseries is\+Dummy} (void) const
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_ab2ca6cad0ed83f5c765bd0ee8682ca36}\label{classUnifyConstraint_ab2ca6cad0ed83f5c765bd0ee8682ca36}} 
+virtual void {\bfseries remove\+Dummy} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_ad437d193c74ae8e03077da359df718c2}\label{classUnifyConstraint_ad437d193c74ae8e03077da359df718c2}} 
+\mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$ {\bfseries copyid} (const \mbox{\hyperlink{classUnifyConstraint}{Unify\+Constraint}} $\ast$op)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a0cda7b149850ec9d85684f1d626751c0}\label{classUnifyConstraint_a0cda7b149850ec9d85684f1d626751c0}} 
+int4 {\bfseries uniqid}
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a9123065d84784017ba4e08a1bcc03450}\label{classUnifyConstraint_a9123065d84784017ba4e08a1bcc03450}} 
+int4 {\bfseries maxnum}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classUnifyConstraint_a2131c775acfc52d54dfc7a22b4f538db}\label{classUnifyConstraint_a2131c775acfc52d54dfc7a22b4f538db}} 
+class {\bfseries Constraint\+Group}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+unify.\+hh\end{DoxyCompactItemize}

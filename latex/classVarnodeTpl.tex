@@ -1,0 +1,83 @@
+\hypertarget{classVarnodeTpl}{}\doxysection{Varnode\+Tpl Class Reference}
+\label{classVarnodeTpl}\index{VarnodeTpl@{VarnodeTpl}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_ad569769b7b2b38750b2a7c95cdb0918c}\label{classVarnodeTpl_ad569769b7b2b38750b2a7c95cdb0918c}} 
+{\bfseries Varnode\+Tpl} (int4 hand, bool zerosize)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_aba58713dad10cec86f4a9a9936d19f89}\label{classVarnodeTpl_aba58713dad10cec86f4a9a9936d19f89}} 
+{\bfseries Varnode\+Tpl} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&sp, const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&off, const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&sz)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_ae4523006f0e3dfba71a4ff2870ee0b05}\label{classVarnodeTpl_ae4523006f0e3dfba71a4ff2870ee0b05}} 
+{\bfseries Varnode\+Tpl} (const \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} \&vn)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a8e64fde8b1b76550d7bec9ad48cce669}\label{classVarnodeTpl_a8e64fde8b1b76550d7bec9ad48cce669}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Space} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a451245a703d57112521947df5336574d}\label{classVarnodeTpl_a451245a703d57112521947df5336574d}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Offset} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_ad40485cfdd6a2e6bc2e2d62df26c664b}\label{classVarnodeTpl_ad40485cfdd6a2e6bc2e2d62df26c664b}} 
+const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \& {\bfseries get\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a2a8ab3751ee12b01f405e377911b3098}\label{classVarnodeTpl_a2a8ab3751ee12b01f405e377911b3098}} 
+bool {\bfseries is\+Dynamic} (const \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a693d67734f6eb8c72419db6c7e977b6e}\label{classVarnodeTpl_a693d67734f6eb8c72419db6c7e977b6e}} 
+int4 {\bfseries transfer} (const vector$<$ \mbox{\hyperlink{classHandleTpl}{Handle\+Tpl}} $\ast$ $>$ \&params)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_afb237a19b4a1a81572066ecec94bfa14}\label{classVarnodeTpl_afb237a19b4a1a81572066ecec94bfa14}} 
+bool {\bfseries is\+Zero\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a3254e33a5648c3e580419af7e77340ed}\label{classVarnodeTpl_a3254e33a5648c3e580419af7e77340ed}} 
+bool {\bfseries operator$<$} (const \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} \&op2) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_ad1fec1f52f255bad6d19f6e071ef9742}\label{classVarnodeTpl_ad1fec1f52f255bad6d19f6e071ef9742}} 
+void {\bfseries set\+Offset} (uintb const\+Val)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a3bd0bf265d8ea0d8465b3d366b5e399c}\label{classVarnodeTpl_a3bd0bf265d8ea0d8465b3d366b5e399c}} 
+void {\bfseries set\+Relative} (uintb const\+Val)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a83320b75a364cdc5c335df6bb5595b30}\label{classVarnodeTpl_a83320b75a364cdc5c335df6bb5595b30}} 
+void {\bfseries set\+Size} (const \mbox{\hyperlink{classConstTpl}{Const\+Tpl}} \&sz)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a0c5a2963be70cc43f2b75d75413b000d}\label{classVarnodeTpl_a0c5a2963be70cc43f2b75d75413b000d}} 
+bool {\bfseries is\+Unnamed} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a29e83b9bc3e299e73ec67f3ae3f76e70}\label{classVarnodeTpl_a29e83b9bc3e299e73ec67f3ae3f76e70}} 
+void {\bfseries set\+Unnamed} (bool val)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a8f21f8da0ea1eae3995b90787849b592}\label{classVarnodeTpl_a8f21f8da0ea1eae3995b90787849b592}} 
+bool {\bfseries is\+Local\+Temp} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_acc2762c411899ba3a7801566aebdcbef}\label{classVarnodeTpl_acc2762c411899ba3a7801566aebdcbef}} 
+bool {\bfseries is\+Relative} (void) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a2cd82b00a027189ff761b0d6db930ea6}\label{classVarnodeTpl_a2cd82b00a027189ff761b0d6db930ea6}} 
+void {\bfseries change\+Handle\+Index} (const vector$<$ int4 $>$ \&handmap)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a667fba2ee7a49e3ef4ba3b82e4200048}\label{classVarnodeTpl_a667fba2ee7a49e3ef4ba3b82e4200048}} 
+bool {\bfseries adjust\+Truncation} (int4 sz, bool isbigendian)
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a04f5e3155274e1edf51585d8cd09183c}\label{classVarnodeTpl_a04f5e3155274e1edf51585d8cd09183c}} 
+void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a66657e67cb1b92bd59ff3a5c00b6daf8}\label{classVarnodeTpl_a66657e67cb1b92bd59ff3a5c00b6daf8}} 
+void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a025636ce30ef2482bde0e65990ce710e}\label{classVarnodeTpl_a025636ce30ef2482bde0e65990ce710e}} 
+class {\bfseries Op\+Tpl}
+\item 
+\mbox{\Hypertarget{classVarnodeTpl_a47ccc5db4f81caa67fccdc5c8ee95d56}\label{classVarnodeTpl_a47ccc5db4f81caa67fccdc5c8ee95d56}} 
+class {\bfseries Handle\+Tpl}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+semantics.\+hh\item 
+semantics.\+cc\end{DoxyCompactItemize}

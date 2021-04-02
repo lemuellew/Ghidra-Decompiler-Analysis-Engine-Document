@@ -1,0 +1,161 @@
+\hypertarget{classBlockIf}{}\doxysection{Block\+If Class Reference}
+\label{classBlockIf}\index{BlockIf@{BlockIf}}
+
+
+A basic \char`\"{}if\char`\"{} block.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+If\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classBlockIf__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+If\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classBlockIf__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockIf_a6fb92878f6e42112610ac0dee44c63a9}\label{classBlockIf_a6fb92878f6e42112610ac0dee44c63a9}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classBlockIf_a7e394df8ba02a9ba48bd9ec239e84d52}\label{classBlockIf_a7e394df8ba02a9ba48bd9ec239e84d52}} 
+virtual void {\bfseries mark\+Unstructured} (void)
+\item 
+\mbox{\Hypertarget{classBlockIf_afeafc0ad59b47dde90d4b477a2ef7637}\label{classBlockIf_afeafc0ad59b47dde90d4b477a2ef7637}} 
+virtual void {\bfseries scope\+Break} (int4 curexit, int4 curloopexit)
+\item 
+virtual void \mbox{\hyperlink{classBlockIf_a6c45f688f991ec5f1412c51e56bf5fd3}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockIf_a81d526be9d8cca137f9008ac7a12d410}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBlockIf_a41fef7fb5278f859257b6e560c0a08dd}{prefer\+Complement}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Rearrange {\bfseries{this}} hierarchy to simplify boolean expressions. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockIf_a9adb3bd7302e374459669718f1265826}\label{classBlockIf_a9adb3bd7302e374459669718f1265826}} 
+virtual const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries get\+Exit\+Leaf} (void) const
+\item 
+\mbox{\Hypertarget{classBlockIf_a94053e78df44aef0ee7a225dc4f3a5a5}\label{classBlockIf_a94053e78df44aef0ee7a225dc4f3a5a5}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ {\bfseries last\+Op} (void) const
+\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockIf_adbc4cd5fb6cad60aa333c12532b55e1f}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockIf_ae2abef245decb84faf212ce156389d9e}\label{classBlockIf_ae2abef245decb84faf212ce156389d9e}} 
+virtual void {\bfseries save\+Xml\+Body} (ostream \&s) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A basic \char`\"{}if\char`\"{} block. 
+
+This represents a formal \char`\"{}if\char`\"{} structure in code, with a expression for the condition, and one or two bodies of the conditionally executed code. An instance has one, two, or three components. One component is always the {\itshape conditional} block. If there is a second component, it is the block of code executed when the condition is true. If there is a third component, it is the \char`\"{}else\char`\"{} block, executed when the condition is false.
+
+If there is only one component, this represents the case where the conditionally executed branch is unstructured. This is generally emitted where the conditionally executed body is the single {\itshape goto} statement.
+
+A \mbox{\hyperlink{classBlockIf}{Block\+If}} will always have at most one (structured) exit edge. With one component, one of the edges of the conditional component is unstructured. With two components, one of the conditional block edges flows to the body block, and the body\textquotesingle{}s out edge and the remaining conditional block out edge flow to the same exit block. With three components, the one conditional edge flows to the {\itshape true} body block, the other conditional edge flows to the {\itshape false} body block, and outgoing edges from the body blocks, if they exist, flow to the same exit block. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockIf_a81d526be9d8cca137f9008ac7a12d410}\label{classBlockIf_a81d526be9d8cca137f9008ac7a12d410}} 
+\index{BlockIf@{BlockIf}!emit@{emit}}
+\index{emit@{emit}!BlockIf@{BlockIf}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+If\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockIf_adbc4cd5fb6cad60aa333c12532b55e1f}\label{classBlockIf_adbc4cd5fb6cad60aa333c12532b55e1f}} 
+\index{BlockIf@{BlockIf}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!BlockIf@{BlockIf}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+If\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockIf_a41fef7fb5278f859257b6e560c0a08dd}\label{classBlockIf_a41fef7fb5278f859257b6e560c0a08dd}} 
+\index{BlockIf@{BlockIf}!preferComplement@{preferComplement}}
+\index{preferComplement@{preferComplement}!BlockIf@{BlockIf}}
+\doxysubsubsection{\texorpdfstring{preferComplement()}{preferComplement()}}
+{\footnotesize\ttfamily bool Block\+If\+::prefer\+Complement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Rearrange {\bfseries{this}} hierarchy to simplify boolean expressions. 
+
+For the instructions in this block, decide if the control-\/flow structure can be rearranged so that boolean expressions come out more naturally. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to analyze \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a6ab46f9a87bc94b30bd3bee0923b3f51}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockIf_a6c45f688f991ec5f1412c51e56bf5fd3}\label{classBlockIf_a6c45f688f991ec5f1412c51e56bf5fd3}} 
+\index{BlockIf@{BlockIf}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockIf@{BlockIf}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+If\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

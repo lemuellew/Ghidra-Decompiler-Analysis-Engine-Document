@@ -1,0 +1,55 @@
+\hypertarget{crc32_8hh}{}\doxysection{crc32.\+hh File Reference}
+\label{crc32_8hh}\index{crc32.hh@{crc32.hh}}
+
+
+Table and function for computing a C\+R\+C32.  
+
+
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for crc32.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=138pt]{crc32_8hh__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint4 \mbox{\hyperlink{crc32_8hh_a2f8ef4e0e22c330442924367a838a87c}{crc\+\_\+update}} (uint4 reg, uint4 val)
+\begin{DoxyCompactList}\small\item\em Feed 8 bits into a C\+RC register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{crc32_8hh_a4b40516b18f2e8bbf32c619a0d9958d0}\label{crc32_8hh_a4b40516b18f2e8bbf32c619a0d9958d0}} 
+uint4 \mbox{\hyperlink{crc32_8hh_a4b40516b18f2e8bbf32c619a0d9958d0}{crc32tab}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Table for quickly computing a 32-\/bit Cyclic Redundacy Check (C\+RC) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Table and function for computing a C\+R\+C32. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{crc32_8hh_a2f8ef4e0e22c330442924367a838a87c}\label{crc32_8hh_a2f8ef4e0e22c330442924367a838a87c}} 
+\index{crc32.hh@{crc32.hh}!crc\_update@{crc\_update}}
+\index{crc\_update@{crc\_update}!crc32.hh@{crc32.hh}}
+\doxysubsubsection{\texorpdfstring{crc\_update()}{crc\_update()}}
+{\footnotesize\ttfamily uint4 crc\+\_\+update (\begin{DoxyParamCaption}\item[{uint4}]{reg,  }\item[{uint4}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Feed 8 bits into a C\+RC register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg} & is the current state of the C\+RC register \\
+\hline
+{\em val} & holds 8 bits (least significant) to feed in \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new value of the register 
+\end{DoxyReturn}

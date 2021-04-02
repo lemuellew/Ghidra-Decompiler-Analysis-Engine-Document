@@ -1,0 +1,77 @@
+\hypertarget{classRegisterProgram}{}\doxysection{Register\+Program Class Reference}
+\label{classRegisterProgram}\index{RegisterProgram@{RegisterProgram}}
+
+
+Command to {\bfseries{register}} a new Program (executable) with the decompiler.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Register\+Program\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classRegisterProgram__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Register\+Program\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegisterProgram__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classRegisterProgram_ae79c022fba3244f9969aa007058f4b53}{raw\+Action}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the action of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRegisterProgram_a1b29c81cd1e53d56e6521e5ad2f54823}\label{classRegisterProgram_a1b29c81cd1e53d56e6521e5ad2f54823}} 
+int4 \mbox{\hyperlink{classRegisterProgram_a1b29c81cd1e53d56e6521e5ad2f54823}{archid}}
+\begin{DoxyCompactList}\small\item\em Resulting id of the program to send back. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to {\bfseries{register}} a new Program (executable) with the decompiler. 
+
+An id is assigned to the program, and an \mbox{\hyperlink{classArchitecture}{Architecture}} object for the program is created and initialized. This must be issued before any other command. The command expects four X\+ML document parameters\+:
+\begin{DoxyItemize}
+\item The processor specification
+\item The compiler specification
+\item The stripped down $<$sleigh$>$ tag describing address spaces for the program
+\item The $<$coretypes$>$ tag describing the built-\/in datatypes for the program 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRegisterProgram_ae79c022fba3244f9969aa007058f4b53}\label{classRegisterProgram_ae79c022fba3244f9969aa007058f4b53}} 
+\index{RegisterProgram@{RegisterProgram}!rawAction@{rawAction}}
+\index{rawAction@{rawAction}!RegisterProgram@{RegisterProgram}}
+\doxysubsubsection{\texorpdfstring{rawAction()}{rawAction()}}
+{\footnotesize\ttfamily void Register\+Program\+::raw\+Action (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the action of the command. 
+
+Configuration is assumed to have happened, and {\bfseries{this}} object can immediately begin examining and manipulating data under the active \mbox{\hyperlink{classArchitecture}{Architecture}} object to perform the command. 
+
+Implements \mbox{\hyperlink{classGhidraCommand_a7d1a5cfedfd8f1d05161d27627302716}{Ghidra\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

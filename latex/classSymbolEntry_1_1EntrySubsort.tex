@@ -1,0 +1,56 @@
+\hypertarget{classSymbolEntry_1_1EntrySubsort}{}\doxysection{Symbol\+Entry\+::Entry\+Subsort Class Reference}
+\label{classSymbolEntry_1_1EntrySubsort}\index{SymbolEntry::EntrySubsort@{SymbolEntry::EntrySubsort}}
+
+
+Class for sub-\/sorting different \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects at the same address.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort_aaf47207b765a3369dd0b86db939d6c75}{Entry\+Subsort}} (bool val)
+\begin{DoxyCompactList}\small\item\em Given a boolean value, construct the earliest/latest possible sub-\/sort. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbolEntry_1_1EntrySubsort_a887b5a3c21dadb45e2e85f83cd827e28}\label{classSymbolEntry_1_1EntrySubsort_a887b5a3c21dadb45e2e85f83cd827e28}} 
+\mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort_a887b5a3c21dadb45e2e85f83cd827e28}{Entry\+Subsort}} (const \mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort}{Entry\+Subsort}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSymbolEntry_1_1EntrySubsort_ab741d5e84221244d593cd57e651ca0a7}\label{classSymbolEntry_1_1EntrySubsort_ab741d5e84221244d593cd57e651ca0a7}} 
+bool \mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort_ab741d5e84221244d593cd57e651ca0a7}{operator$<$}} (const \mbox{\hyperlink{classSymbolEntry_1_1EntrySubsort}{Entry\+Subsort}} \&op2)
+\begin{DoxyCompactList}\small\item\em Compare {\bfseries{this}} with another sub-\/sort. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSymbolEntry_1_1EntrySubsort_a66ab73b76c4868b7a9981390ad794dbc}\label{classSymbolEntry_1_1EntrySubsort_a66ab73b76c4868b7a9981390ad794dbc}} 
+class {\bfseries Symbol\+Entry}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for sub-\/sorting different \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects at the same address. 
+
+This is built from the \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} {\bfseries{uselimit}} object (see \mbox{\hyperlink{classSymbolEntry_afb88a4dae96af6bb42c0bd0434d7e756}{Symbol\+Entry\+::get\+Subsort()}}) Relevant portions of an \mbox{\hyperlink{classAddress}{Address}} object or pulled out for smaller storage and quick comparisons. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSymbolEntry_1_1EntrySubsort_aaf47207b765a3369dd0b86db939d6c75}\label{classSymbolEntry_1_1EntrySubsort_aaf47207b765a3369dd0b86db939d6c75}} 
+\index{SymbolEntry::EntrySubsort@{SymbolEntry::EntrySubsort}!EntrySubsort@{EntrySubsort}}
+\index{EntrySubsort@{EntrySubsort}!SymbolEntry::EntrySubsort@{SymbolEntry::EntrySubsort}}
+\doxysubsubsection{\texorpdfstring{EntrySubsort()}{EntrySubsort()}}
+{\footnotesize\ttfamily Symbol\+Entry\+::\+Entry\+Subsort\+::\+Entry\+Subsort (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given a boolean value, construct the earliest/latest possible sub-\/sort. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} for the latest and {\bfseries{false}} for the earliest possible sub-\/sort \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\end{DoxyCompactItemize}

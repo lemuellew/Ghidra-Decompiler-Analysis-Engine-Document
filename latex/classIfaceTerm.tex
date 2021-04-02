@@ -1,0 +1,94 @@
+\hypertarget{classIfaceTerm}{}\doxysection{Iface\+Term Class Reference}
+\label{classIfaceTerm}\index{IfaceTerm@{IfaceTerm}}
+
+
+Implement the command-\/line interface on top of a specific input stream.  
+
+
+
+
+{\ttfamily \#include $<$ifaceterm.\+hh$>$}
+
+
+
+Inheritance diagram for Iface\+Term\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classIfaceTerm__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Iface\+Term\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classIfaceTerm__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceTerm_a6eedea34ceeec75017bcb49d512e9b59}\label{classIfaceTerm_a6eedea34ceeec75017bcb49d512e9b59}} 
+\mbox{\hyperlink{classIfaceTerm_a6eedea34ceeec75017bcb49d512e9b59}{Iface\+Term}} (const string \&prmpt, istream \&is, ostream \&os)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIfaceTerm_a05f514a885865ae057b238c84e53a507}{push\+Script}} (const string \&filename, const string \&newprompt)
+\begin{DoxyCompactList}\small\item\em Provide a new script file to execute, with an associated command prompt. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIfaceTerm_a5427f3ca751cdcf6826150a3b2026df0}{pop\+Script}} (void)
+\begin{DoxyCompactList}\small\item\em Return to processing the parent stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceTerm_a91756d2aa09a2d1941a38090257699f1}\label{classIfaceTerm_a91756d2aa09a2d1941a38090257699f1}} 
+virtual bool \mbox{\hyperlink{classIfaceTerm_a91756d2aa09a2d1941a38090257699f1}{is\+Stream\+Finished}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the current stream is finished. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Implement the command-\/line interface on top of a specific input stream. 
+
+An initial input stream is provided as the base stream to parse for commands. Additional input streams can be stacked by invoking scripts. If the stream supports it, the stream parser recognizes special command-\/line editing and completion keys. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfaceTerm_a5427f3ca751cdcf6826150a3b2026df0}\label{classIfaceTerm_a5427f3ca751cdcf6826150a3b2026df0}} 
+\index{IfaceTerm@{IfaceTerm}!popScript@{popScript}}
+\index{popScript@{popScript}!IfaceTerm@{IfaceTerm}}
+\doxysubsubsection{\texorpdfstring{popScript()}{popScript()}}
+{\footnotesize\ttfamily void Iface\+Term\+::pop\+Script (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return to processing the parent stream. 
+
+The current input stream, as established by a script, is popped from the stack, along with its command prompt, and processing continues with the previous stream. 
+
+Reimplemented from \mbox{\hyperlink{classIfaceStatus_a8091c5bf341cfb11997893f0a35ba516}{Iface\+Status}}.
+
+\mbox{\Hypertarget{classIfaceTerm_a05f514a885865ae057b238c84e53a507}\label{classIfaceTerm_a05f514a885865ae057b238c84e53a507}} 
+\index{IfaceTerm@{IfaceTerm}!pushScript@{pushScript}}
+\index{pushScript@{pushScript}!IfaceTerm@{IfaceTerm}}
+\doxysubsubsection{\texorpdfstring{pushScript()}{pushScript()}}
+{\footnotesize\ttfamily void Iface\+Term\+::push\+Script (\begin{DoxyParamCaption}\item[{const string \&}]{filename,  }\item[{const string \&}]{newprompt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Provide a new script file to execute, with an associated command prompt. 
+
+The script provides a subsidiary input stream to the current stream. Once commands from the script are complete, processing will resume on this stream. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file containing the script \\
+\hline
+{\em newprompt} & is the command line prompt \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIfaceStatus_a4be96e0e55138d3b6a74496b6ae61a88}{Iface\+Status}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifaceterm_8hh}{ifaceterm.\+hh}}\item 
+ifaceterm.\+cc\end{DoxyCompactItemize}

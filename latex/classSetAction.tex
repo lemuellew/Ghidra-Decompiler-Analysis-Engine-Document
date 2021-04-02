@@ -1,0 +1,93 @@
+\hypertarget{classSetAction}{}\doxysection{Set\+Action Class Reference}
+\label{classSetAction}\index{SetAction@{SetAction}}
+
+
+Command to {\bfseries{set}} the {\itshape root} \mbox{\hyperlink{classAction}{Action}} used by the decompiler or {\bfseries{toggle}} output components.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Set\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classSetAction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Set\+Action\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSetAction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classSetAction_af53890c4472a36b4c78d0c97bb1f39d4}{raw\+Action}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the action of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSetAction_ae5987516b802495e4367f41b038d1d2d}\label{classSetAction_ae5987516b802495e4367f41b038d1d2d}} 
+bool \mbox{\hyperlink{classSetAction_ae5987516b802495e4367f41b038d1d2d}{res}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if the configuration action was successful. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to {\bfseries{set}} the {\itshape root} \mbox{\hyperlink{classAction}{Action}} used by the decompiler or {\bfseries{toggle}} output components. 
+
+The command expects 3 string parameters, the encoded integer id of the program being decompiled, the {\itshape root} action name, and the name of the output {\itshape printing} configuration. If the {\itshape root} action name is empty, no change is made to the {\itshape root} action. If the {\itshape printing} name is empty, no change is made to what gets output. The {\itshape root} action name can be\+:
+\begin{DoxyItemize}
+\item decompile -- The main decompiler action
+\item normalize -- Decompilation tuned for normalization
+\item jumptable -- Simplify just enough to recover a jump-\/table
+\item paramid -- Simplify enough to recover function parameters
+\item register -- Perform one analysis pass on registers, without stack variables
+\item firstpass -- Construct the initial raw syntax tree, with no simplification
+\end{DoxyItemize}
+
+The {\itshape printing} configuration can be\+:
+\begin{DoxyItemize}
+\item tree -- Send data-\/flow and control-\/flow structures
+\item notree -- Do {\itshape not} send data-\/flow and control-\/flow
+\item c -- Send recovered source code
+\item noc -- Do {\itshape not} send recovered source code
+\item parammeasures -- Send parameter measures
+\item noparammeasures -- Do {\itshape not} send parameter measures
+\item jumpload -- Send addresses of jump-\/table entries, when recovering switch destinations
+\item nojumpload -- Do {\itshape not} send addresses of jump-\/table entries
+\end{DoxyItemize}
+
+The command returns a single character message, \textquotesingle{}t\textquotesingle{} or \textquotesingle{}f\textquotesingle{}, indicating whether the action succeeded. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSetAction_af53890c4472a36b4c78d0c97bb1f39d4}\label{classSetAction_af53890c4472a36b4c78d0c97bb1f39d4}} 
+\index{SetAction@{SetAction}!rawAction@{rawAction}}
+\index{rawAction@{rawAction}!SetAction@{SetAction}}
+\doxysubsubsection{\texorpdfstring{rawAction()}{rawAction()}}
+{\footnotesize\ttfamily void Set\+Action\+::raw\+Action (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the action of the command. 
+
+Configuration is assumed to have happened, and {\bfseries{this}} object can immediately begin examining and manipulating data under the active \mbox{\hyperlink{classArchitecture}{Architecture}} object to perform the command. 
+
+Implements \mbox{\hyperlink{classGhidraCommand_a7d1a5cfedfd8f1d05161d27627302716}{Ghidra\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

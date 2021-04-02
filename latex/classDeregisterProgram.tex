@@ -1,0 +1,71 @@
+\hypertarget{classDeregisterProgram}{}\doxysection{Deregister\+Program Class Reference}
+\label{classDeregisterProgram}\index{DeregisterProgram@{DeregisterProgram}}
+
+
+Command to {\bfseries{release}} all resources associated with a Program (executable) in the decompiler.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Deregister\+Program\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classDeregisterProgram__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Deregister\+Program\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDeregisterProgram__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDeregisterProgram_a3086821f7a4e57a5f3cf585513d48b73}{raw\+Action}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the action of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDeregisterProgram_a16f594587cf7aca26cfd85143cba8c05}\label{classDeregisterProgram_a16f594587cf7aca26cfd85143cba8c05}} 
+int4 \mbox{\hyperlink{classDeregisterProgram_a16f594587cf7aca26cfd85143cba8c05}{res}}
+\begin{DoxyCompactList}\small\item\em The meta-\/command being issued to send back. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to {\bfseries{release}} all resources associated with a Program (executable) in the decompiler. 
+
+The command frees the \mbox{\hyperlink{classArchitectureGhidra}{Architecture\+Ghidra}} object (recursively affecting all resources) associated with the program. A {\itshape termination} meta-\/command is issued for this process. The command expects a single string parameter encoding the id of the program. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDeregisterProgram_a3086821f7a4e57a5f3cf585513d48b73}\label{classDeregisterProgram_a3086821f7a4e57a5f3cf585513d48b73}} 
+\index{DeregisterProgram@{DeregisterProgram}!rawAction@{rawAction}}
+\index{rawAction@{rawAction}!DeregisterProgram@{DeregisterProgram}}
+\doxysubsubsection{\texorpdfstring{rawAction()}{rawAction()}}
+{\footnotesize\ttfamily void Deregister\+Program\+::raw\+Action (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the action of the command. 
+
+Configuration is assumed to have happened, and {\bfseries{this}} object can immediately begin examining and manipulating data under the active \mbox{\hyperlink{classArchitecture}{Architecture}} object to perform the command. 
+
+Implements \mbox{\hyperlink{classGhidraCommand_a7d1a5cfedfd8f1d05161d27627302716}{Ghidra\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

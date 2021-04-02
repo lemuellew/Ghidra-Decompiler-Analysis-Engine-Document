@@ -1,0 +1,67 @@
+\hypertarget{classTransformOp}{}\doxysection{Transform\+Op Class Reference}
+\label{classTransformOp}\index{TransformOp@{TransformOp}}
+
+
+Placeholder node for \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that will exist after a transform is applied to a function.  
+
+
+
+
+{\ttfamily \#include $<$transform.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1afe4dbbf2a5a3ba87fab61a816aa56591}{op\+\_\+replacement}} = 1, 
+\mbox{\hyperlink{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1a3e406261a611b825f2ee44b0d7fd1940}{op\+\_\+preexisting}} = 2, 
+\mbox{\hyperlink{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1a40bac18fe10106a68030ab0afff94944}{indirect\+\_\+creation}} = 4, 
+\mbox{\hyperlink{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1aa2b958629e49d856b84d1ea16463a3d7}{indirect\+\_\+creation\+\_\+possible\+\_\+out}} = 8
+ \}
+\begin{DoxyCompactList}\small\item\em Special annotations on new pcode ops. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTransformOp_a7999b6671fa3688562935ff84de182de}\label{classTransformOp_a7999b6671fa3688562935ff84de182de}} 
+class {\bfseries Transform\+Manager}
+\item 
+\mbox{\Hypertarget{classTransformOp_a93722776fbb0304908962d075d5212ba}\label{classTransformOp_a93722776fbb0304908962d075d5212ba}} 
+class {\bfseries Transform\+Var}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Placeholder node for \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that will exist after a transform is applied to a function. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1}\label{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+
+
+Special annotations on new pcode ops. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{op\_replacement@{op\_replacement}!TransformOp@{TransformOp}}\index{TransformOp@{TransformOp}!op\_replacement@{op\_replacement}}}\mbox{\Hypertarget{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1afe4dbbf2a5a3ba87fab61a816aa56591}\label{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1afe4dbbf2a5a3ba87fab61a816aa56591}} 
+op\+\_\+replacement&Op replaces an existing op. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{op\_preexisting@{op\_preexisting}!TransformOp@{TransformOp}}\index{TransformOp@{TransformOp}!op\_preexisting@{op\_preexisting}}}\mbox{\Hypertarget{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1a3e406261a611b825f2ee44b0d7fd1940}\label{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1a3e406261a611b825f2ee44b0d7fd1940}} 
+op\+\_\+preexisting&Op already exists (but will be transformed) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirect\_creation@{indirect\_creation}!TransformOp@{TransformOp}}\index{TransformOp@{TransformOp}!indirect\_creation@{indirect\_creation}}}\mbox{\Hypertarget{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1a40bac18fe10106a68030ab0afff94944}\label{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1a40bac18fe10106a68030ab0afff94944}} 
+indirect\+\_\+creation&Mark op as indirect creation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirect\_creation\_possible\_out@{indirect\_creation\_possible\_out}!TransformOp@{TransformOp}}\index{TransformOp@{TransformOp}!indirect\_creation\_possible\_out@{indirect\_creation\_possible\_out}}}\mbox{\Hypertarget{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1aa2b958629e49d856b84d1ea16463a3d7}\label{classTransformOp_abfe628d6fdd81561aebeb366af8c0ba1aa2b958629e49d856b84d1ea16463a3d7}} 
+indirect\+\_\+creation\+\_\+possible\+\_\+out&Mark op as indirect creation and possible call output. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{transform_8hh}{transform.\+hh}}\item 
+transform.\+cc\end{DoxyCompactItemize}

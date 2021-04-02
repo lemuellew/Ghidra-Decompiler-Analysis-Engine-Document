@@ -1,0 +1,70 @@
+\hypertarget{classBlockVarnode}{}\doxysection{Block\+Varnode Class Reference}
+\label{classBlockVarnode}\index{BlockVarnode@{BlockVarnode}}
+
+
+Helper class associating a \mbox{\hyperlink{classVarnode}{Varnode}} with the block where it is defined.  
+
+
+
+
+{\ttfamily \#include $<$merge.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBlockVarnode_af4aa0725ff5d05784b84fe6db6a69480}{set}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$v)
+\begin{DoxyCompactList}\small\item\em Set {\bfseries{this}} as representing the given \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int4 \mbox{\hyperlink{classBlockVarnode_a944320adf17c44b207d095cca216ee63}{find\+Front}} (int4 blocknum, const vector$<$ \mbox{\hyperlink{classBlockVarnode}{Block\+Varnode}} $>$ \&list)
+\begin{DoxyCompactList}\small\item\em Find the first \mbox{\hyperlink{classVarnode}{Varnode}} defined in the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} of the given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class associating a \mbox{\hyperlink{classVarnode}{Varnode}} with the block where it is defined. 
+
+This class explicitly stores a \mbox{\hyperlink{classVarnode}{Varnode}} with the index of the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} that defines it. If a \mbox{\hyperlink{classVarnode}{Varnode}} does not have a defining \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} it is assigned an index of 0. This facilitates quicker sorting of Varnodes based on their defining block. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockVarnode_a944320adf17c44b207d095cca216ee63}\label{classBlockVarnode_a944320adf17c44b207d095cca216ee63}} 
+\index{BlockVarnode@{BlockVarnode}!findFront@{findFront}}
+\index{findFront@{findFront}!BlockVarnode@{BlockVarnode}}
+\doxysubsubsection{\texorpdfstring{findFront()}{findFront()}}
+{\footnotesize\ttfamily int4 Block\+Varnode\+::find\+Front (\begin{DoxyParamCaption}\item[{int4}]{blocknum,  }\item[{const vector$<$ \mbox{\hyperlink{classBlockVarnode}{Block\+Varnode}} $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Find the first \mbox{\hyperlink{classVarnode}{Varnode}} defined in the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} of the given index. 
+
+A \mbox{\hyperlink{classBlockVarnode}{Block\+Varnode}} is identified from a sorted {\bfseries{list}}. The position of the first \mbox{\hyperlink{classBlockVarnode}{Block\+Varnode}} in this list that has the given \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} {\itshape index} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em blocknum} & is the index of the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} to search for \\
+\hline
+{\em list} & is the sorted list of Block\+Varnodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the \mbox{\hyperlink{classBlockVarnode}{Block\+Varnode}} within the list or -\/1 if no \mbox{\hyperlink{classVarnode}{Varnode}} in the block is found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBlockVarnode_af4aa0725ff5d05784b84fe6db6a69480}\label{classBlockVarnode_af4aa0725ff5d05784b84fe6db6a69480}} 
+\index{BlockVarnode@{BlockVarnode}!set@{set}}
+\index{set@{set}!BlockVarnode@{BlockVarnode}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Block\+Varnode\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{v }\end{DoxyParamCaption})}
+
+
+
+Set {\bfseries{this}} as representing the given \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+This instance assumes the identity of the given \mbox{\hyperlink{classVarnode}{Varnode}} and the defining index is cached to facilitate quick sorting. 
+\begin{DoxyParams}{Parameters}
+{\em v} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{merge_8hh}{merge.\+hh}}\item 
+merge.\+cc\end{DoxyCompactItemize}

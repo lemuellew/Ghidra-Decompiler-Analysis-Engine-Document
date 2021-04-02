@@ -1,0 +1,86 @@
+\hypertarget{classGhidraCapability}{}\doxysection{Ghidra\+Capability Class Reference}
+\label{classGhidraCapability}\index{GhidraCapability@{GhidraCapability}}
+
+
+Registration point and dispatcher for commands sent to the decompiler.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Ghidra\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classGhidraCapability__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ghidra\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classGhidraCapability__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int4 \mbox{\hyperlink{classGhidraCapability_a778472d4da43daeda23553684f87ad80}{read\+Command}} (istream \&sin, ostream \&out)
+\begin{DoxyCompactList}\small\item\em Dispatch a Ghidra command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classGhidraCapability_a3fd0105536597651f42c98ed1dbc2b7e}\label{classGhidraCapability_a3fd0105536597651f42c98ed1dbc2b7e}} 
+static void \mbox{\hyperlink{classGhidraCapability_a3fd0105536597651f42c98ed1dbc2b7e}{shut\+Down}} (void)
+\begin{DoxyCompactList}\small\item\em Release all \mbox{\hyperlink{classGhidraCommand}{Ghidra\+Command}} resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGhidraCapability_acb74036589d576cd7241c92337ca0eb4}\label{classGhidraCapability_acb74036589d576cd7241c92337ca0eb4}} 
+string \mbox{\hyperlink{classGhidraCapability_acb74036589d576cd7241c92337ca0eb4}{name}}
+\begin{DoxyCompactList}\small\item\em Identifier for capability and associated commands. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classGhidraCapability_a01f9c0ce45ccac28d5fa79d75c752587}\label{classGhidraCapability_a01f9c0ce45ccac28d5fa79d75c752587}} 
+static map$<$ string, \mbox{\hyperlink{classGhidraCommand}{Ghidra\+Command}} $\ast$ $>$ \mbox{\hyperlink{classGhidraCapability_a01f9c0ce45ccac28d5fa79d75c752587}{commandmap}}
+\begin{DoxyCompactList}\small\item\em The central map from {\itshape name} to Ghidra command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Registration point and dispatcher for commands sent to the decompiler. 
+
+This is the base class for {\bfseries{command}} {\bfseries{capabilities}} (sets of commands). All sets register their commands with a static {\bfseries{commandmap}}. This class provides the method \mbox{\hyperlink{classGhidraCapability_a778472d4da43daeda23553684f87ad80}{read\+Command()}}, which does the work of parsing a command from the stream and dispatching to the correct \mbox{\hyperlink{classGhidraCommand}{Ghidra\+Command}} object. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGhidraCapability_a778472d4da43daeda23553684f87ad80}\label{classGhidraCapability_a778472d4da43daeda23553684f87ad80}} 
+\index{GhidraCapability@{GhidraCapability}!readCommand@{readCommand}}
+\index{readCommand@{readCommand}!GhidraCapability@{GhidraCapability}}
+\doxysubsubsection{\texorpdfstring{readCommand()}{readCommand()}}
+{\footnotesize\ttfamily int4 Ghidra\+Capability\+::read\+Command (\begin{DoxyParamCaption}\item[{istream \&}]{sin,  }\item[{ostream \&}]{out }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Dispatch a Ghidra command. 
+
+A command is read from the Ghidra client. The matching \mbox{\hyperlink{classGhidraCommand}{Ghidra\+Command}} object is looked up in the {\bfseries{commandmap}}, and control is handed over to the command, with the i/o streams. The command must be issued following the proper message protocol (see \mbox{\hyperlink{classArchitectureGhidra_a3132c5fe1bb675952197aa4eafcf298e}{Architecture\+Ghidra\+::read\+To\+Any\+Burst}}) or an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em sin} & is the input stream from the client \\
+\hline
+{\em out} & is the output stream to the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result code of the command 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

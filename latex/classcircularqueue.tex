@@ -1,0 +1,90 @@
+\hypertarget{classcircularqueue}{}\doxysection{circularqueue$<$ \+\_\+type $>$ Class Template Reference}
+\label{classcircularqueue}\index{circularqueue$<$ \_type $>$@{circularqueue$<$ \_type $>$}}
+
+
+A circular buffer template.  
+
+
+
+
+{\ttfamily \#include $<$prettyprint.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcircularqueue_a42319b17b68d214cbf35f4d92d6bb32e}{circularqueue}} (int4 sz)
+\begin{DoxyCompactList}\small\item\em Construct queue of a given size. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcircularqueue_aaeebb1a2be28d813c1c8794ae4500dde}\label{classcircularqueue_aaeebb1a2be28d813c1c8794ae4500dde}} 
+\mbox{\hyperlink{classcircularqueue_aaeebb1a2be28d813c1c8794ae4500dde}{$\sim$circularqueue}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircularqueue_ae6a9f2564ea93c5beec9212764bf25de}{set\+Max}} (int4 sz)
+\begin{DoxyCompactList}\small\item\em Establish a new maximum queue size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classcircularqueue_aef399e8b70e1ba008d6f515d9f45b59f}{expand}} (int4 amount)
+\begin{DoxyCompactList}\small\item\em Expand the (maximum) size of the queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename \+\_\+type$>$\newline
+class circularqueue$<$ \+\_\+type $>$}
+
+A circular buffer template. 
+
+A circular buffer implementation that can act as a stack\+: push(), pop(). Or it can act as a queue\+: push(), popbottom(). The size of the buffer can be expanded on the fly using \mbox{\hyperlink{classcircularqueue_aef399e8b70e1ba008d6f515d9f45b59f}{expand()}}. The object being buffered must support a void constructor and the assignment operator. Objects can also be looked up via an integer reference. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcircularqueue_a42319b17b68d214cbf35f4d92d6bb32e}\label{classcircularqueue_a42319b17b68d214cbf35f4d92d6bb32e}} 
+\index{circularqueue$<$ \_type $>$@{circularqueue$<$ \_type $>$}!circularqueue@{circularqueue}}
+\index{circularqueue@{circularqueue}!circularqueue$<$ \_type $>$@{circularqueue$<$ \_type $>$}}
+\doxysubsubsection{\texorpdfstring{circularqueue()}{circularqueue()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+type $>$ \\
+\mbox{\hyperlink{classcircularqueue}{circularqueue}}$<$ \+\_\+type $>$\+::\mbox{\hyperlink{classcircularqueue}{circularqueue}} (\begin{DoxyParamCaption}\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Construct queue of a given size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sz} & is the maximum number of objects the queue will hold \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcircularqueue_aef399e8b70e1ba008d6f515d9f45b59f}\label{classcircularqueue_aef399e8b70e1ba008d6f515d9f45b59f}} 
+\index{circularqueue$<$ \_type $>$@{circularqueue$<$ \_type $>$}!expand@{expand}}
+\index{expand@{expand}!circularqueue$<$ \_type $>$@{circularqueue$<$ \_type $>$}}
+\doxysubsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+type $>$ \\
+void \mbox{\hyperlink{classcircularqueue}{circularqueue}}$<$ \+\_\+type $>$\+::expand (\begin{DoxyParamCaption}\item[{int4}]{amount }\end{DoxyParamCaption})}
+
+
+
+Expand the (maximum) size of the queue. 
+
+Expand the maximum size of {\bfseries{this}} queue. Objects currently in the queue are preserved, which involves copying the objects. This routine invalidates references referring to objects currently in the queue, although the references can be systematically adjusted to be valid again. 
+\begin{DoxyParams}{Parameters}
+{\em amount} & is the number of additional objects the resized queue will support \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classcircularqueue_ae6a9f2564ea93c5beec9212764bf25de}\label{classcircularqueue_ae6a9f2564ea93c5beec9212764bf25de}} 
+\index{circularqueue$<$ \_type $>$@{circularqueue$<$ \_type $>$}!setMax@{setMax}}
+\index{setMax@{setMax}!circularqueue$<$ \_type $>$@{circularqueue$<$ \_type $>$}}
+\doxysubsubsection{\texorpdfstring{setMax()}{setMax()}}
+{\footnotesize\ttfamily template$<$typename \+\_\+type $>$ \\
+void \mbox{\hyperlink{classcircularqueue}{circularqueue}}$<$ \+\_\+type $>$\+::set\+Max (\begin{DoxyParamCaption}\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Establish a new maximum queue size. 
+
+This destroys the old queue and reallocates a new queue with the given maximum size 
+\begin{DoxyParams}{Parameters}
+{\em sz} & the maximum size of the new queue \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{prettyprint_8hh}{prettyprint.\+hh}}\end{DoxyCompactItemize}

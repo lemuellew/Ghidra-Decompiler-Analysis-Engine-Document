@@ -1,0 +1,353 @@
+\hypertarget{classFlowInfo}{}\doxysection{Flow\+Info Class Reference}
+\label{classFlowInfo}\index{FlowInfo@{FlowInfo}}
+
+
+A class for generating the control-\/flow structure for a single function.  
+
+
+
+
+{\ttfamily \#include $<$flow.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \newline
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa28bbd3df72fa1d22f4d1cba5e44e15c3}{ignore\+\_\+outofbounds}} = 1, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa36aeebccad195685e73dcb9cfd30b0e5}{ignore\+\_\+unimplemented}} = 2, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efae0f754081ade3178cf53426e2189cfac}{error\+\_\+outofbounds}} = 4, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa5fd70506bccfcdb97b9c714be668a51a}{error\+\_\+unimplemented}} = 8, 
+\newline
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa05fc1972b52ac192b30dfea8c2f4d2c7}{error\+\_\+reinterpreted}} = 0x10, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa16ca3b61de5548e85ad28fdb221e3f54}{error\+\_\+toomanyinstructions}} = 0x20, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efae2dfb6d73ffa37e211353b27bb6e60d4}{unimplemented\+\_\+present}} = 0x40, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa9c78c0dc3c0876f360432b1ea4895347}{baddata\+\_\+present}} = 0x80, 
+\newline
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efafd7df0984de9145a0560dddb95f2f040}{outofbounds\+\_\+present}} = 0x100, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0eface3d6862adccc05eb87519854efa8afe}{reinterpreted\+\_\+present}} = 0x200, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa3e10e4b2f7c47cb136374cb1d7438260}{toomanyinstructions\+\_\+present}} = 0x400, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa6dc22b8a298dc4a3b91ddb7b3574835d}{possible\+\_\+unreachable}} = 0x1000, 
+\newline
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa87e8c8e18649576cb22d8285f5a6ebb8}{flow\+\_\+forinline}} = 0x2000, 
+\mbox{\hyperlink{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efaa2cb6d0ce1856147cf59a4b80d2c0bb8}{record\+\_\+jumploads}} = 0x4000
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classFlowInfo_a9c45181b9741e1a35af5b76ffdc3fe5e}{Flow\+Info}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&d, \mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}} \&o, \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&b, vector$<$ \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ $>$ \&q)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classFlowInfo_a5d3d5378e522e75cedb21a80964dd2ad}{Flow\+Info}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&d, \mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}} \&o, \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&b, vector$<$ \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ $>$ \&q, const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} $\ast$op2)
+\begin{DoxyCompactList}\small\item\em Cloning constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classFlowInfo_a79b96fb0e47a98e97da11975f9fd5e0b}{target}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Return first p-\/code op for instruction at given address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classFlowInfo_a85b5e5174e678b9a0bf451fba51a4019}{branch\+Target}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Find the target referred to by a given B\+R\+A\+N\+CH or C\+B\+R\+A\+N\+CH. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFlowInfo_afe680152d016a3ec80e155f3ea85f26c}\label{classFlowInfo_afe680152d016a3ec80e155f3ea85f26c}} 
+void \mbox{\hyperlink{classFlowInfo_afe680152d016a3ec80e155f3ea85f26c}{generate\+Ops}} (void)
+\begin{DoxyCompactList}\small\item\em Generate raw control-\/flow from the function\textquotesingle{}s base address. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classFlowInfo_a5c8f51cb6c88719657801a2f26e87fae}\label{classFlowInfo_a5c8f51cb6c88719657801a2f26e87fae}} 
+void \mbox{\hyperlink{classFlowInfo_a5c8f51cb6c88719657801a2f26e87fae}{generate\+Blocks}} (void)
+\begin{DoxyCompactList}\small\item\em Generate basic blocks from the raw control-\/flow. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlowInfo_a7ce3b6b33fb219117c69700e32b0c1ef}{test\+Hard\+Inline\+Restrictions}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$inlinefd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classAddress}{Address}} \&retaddr)
+\begin{DoxyCompactList}\small\item\em For in-\/lining using the {\itshape hard} model, make sure some restrictions are met. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classFlowInfo_a30fc4e81c062827b6e9f31c6ab6cd983}{check\+E\+Z\+Model}} (void) const
+\begin{DoxyCompactList}\small\item\em Check if {\bfseries{this}} flow matches the EX in-\/lining model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowInfo_af91718ae694b4852c24f4af6cb0b07a0}{inject\+Pcode}} (void)
+\begin{DoxyCompactList}\small\item\em Perform substitution on any op that requires {\itshape injection}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowInfo_a47f656fb99cdb06587c0e86d86a6ff84}{forward\+Recursion}} (const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&op2)
+\begin{DoxyCompactList}\small\item\em Pull in-\/lining recursion information from another flow. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowInfo_acb0b9cbb6144cd2963c63072d6d72882}{inline\+Clone}} (const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&inlineflow, const \mbox{\hyperlink{classAddress}{Address}} \&retaddr)
+\begin{DoxyCompactList}\small\item\em Clone the given in-\/line flow into {\bfseries{this}} flow using the {\itshape hard} model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classFlowInfo_a5819105426192965fb0a73831a785060}{inline\+E\+Z\+Clone}} (const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&inlineflow, const \mbox{\hyperlink{classAddress}{Address}} \&calladdr)
+\begin{DoxyCompactList}\small\item\em Clone the given in-\/line flow into {\bfseries{this}} flow using the EZ model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for generating the control-\/flow structure for a single function. 
+
+Control-\/flow for the function is generated in two phases\+: the method \mbox{\hyperlink{classFlowInfo_afe680152d016a3ec80e155f3ea85f26c}{generate\+Ops()}} produces all the raw p-\/code ops for the function, and the method \mbox{\hyperlink{classFlowInfo_a5c8f51cb6c88719657801a2f26e87fae}{generate\+Blocks()}} organizes the p-\/code ops into basic blocks (Pcode\+Block\+Basic). In \mbox{\hyperlink{classFlowInfo_afe680152d016a3ec80e155f3ea85f26c}{generate\+Ops()}}, p-\/code is generated for every machine instruction that is reachable starting with the entry point address of the function. All possible flow is followed, trimming flow at instructions that end with the formal R\+E\+T\+U\+RN p-\/code operation. C\+A\+LL and C\+A\+L\+L\+I\+ND are treated as fall-\/through operations, and flow is not followed into the sub-\/function.
+
+The class supports various options for handling corner cases during the flow following process, including how to handle\+:
+\begin{DoxyItemize}
+\item Flow out of range (specified by set\+Range())
+\item Flow into unimplemened instructions
+\item Flow into unaccessible data
+\item Flow into previously traversed data at an {\itshape off} cut ({\bfseries{reinterpreted}} data)
+\item Flow that (seemingly) doesn\textquotesingle{}t end, exceeding a threshold on the number of instructions
+\end{DoxyItemize}
+
+In \mbox{\hyperlink{classFlowInfo_a5c8f51cb6c88719657801a2f26e87fae}{generate\+Blocks()}}, all previously generated \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} instructions are assigned to a Pcode\+Block\+Basic. These objects define the formal basic block structure of the function. Directed control-\/flow edges between the blocks are created at this time based on the flow of p-\/code.
+
+A \mbox{\hyperlink{classFuncdata}{Funcdata}} object provided to the constructor holds\+:
+\begin{DoxyItemize}
+\item The generated \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} objects (within its \mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}}).
+\item The control-\/flow graph (within its \mbox{\hyperlink{classBlockGraph}{Block\+Graph}})
+\item The list of discovered sub-\/function calls (as Func\+Call\+Spec objects)
+\end{DoxyItemize}
+
+The \mbox{\hyperlink{classTranslate}{Translate}} object (provided by the \mbox{\hyperlink{classArchitecture}{Architecture}} owning the function) generates the raw p-\/code ops for a single instruction. This \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} class also handles p-\/code {\itshape injection} triggers encountered during flow following, primarily using the architecture\textquotesingle{}s \mbox{\hyperlink{classPcodeInjectLibrary}{Pcode\+Inject\+Library}} to resolve them. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0ef}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0ef}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ignore\_outofbounds@{ignore\_outofbounds}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!ignore\_outofbounds@{ignore\_outofbounds}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa28bbd3df72fa1d22f4d1cba5e44e15c3}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa28bbd3df72fa1d22f4d1cba5e44e15c3}} 
+ignore\+\_\+outofbounds&Ignore/truncate flow into addresses out of the specified range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ignore\_unimplemented@{ignore\_unimplemented}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!ignore\_unimplemented@{ignore\_unimplemented}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa36aeebccad195685e73dcb9cfd30b0e5}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa36aeebccad195685e73dcb9cfd30b0e5}} 
+ignore\+\_\+unimplemented&Treat unimplemented instructions as a N\+OP (no operation) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{error\_outofbounds@{error\_outofbounds}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!error\_outofbounds@{error\_outofbounds}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efae0f754081ade3178cf53426e2189cfac}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efae0f754081ade3178cf53426e2189cfac}} 
+error\+\_\+outofbounds&Throw an exception for flow into addresses out of the specified range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{error\_unimplemented@{error\_unimplemented}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!error\_unimplemented@{error\_unimplemented}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa5fd70506bccfcdb97b9c714be668a51a}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa5fd70506bccfcdb97b9c714be668a51a}} 
+error\+\_\+unimplemented&Throw an exception for flow into unimplemented instructions. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{error\_reinterpreted@{error\_reinterpreted}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!error\_reinterpreted@{error\_reinterpreted}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa05fc1972b52ac192b30dfea8c2f4d2c7}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa05fc1972b52ac192b30dfea8c2f4d2c7}} 
+error\+\_\+reinterpreted&Throw an exception for flow into previously encountered data at a difference {\itshape cut}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{error\_toomanyinstructions@{error\_toomanyinstructions}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!error\_toomanyinstructions@{error\_toomanyinstructions}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa16ca3b61de5548e85ad28fdb221e3f54}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa16ca3b61de5548e85ad28fdb221e3f54}} 
+error\+\_\+toomanyinstructions&Throw an exception if too many instructions are encountered. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unimplemented\_present@{unimplemented\_present}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!unimplemented\_present@{unimplemented\_present}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efae2dfb6d73ffa37e211353b27bb6e60d4}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efae2dfb6d73ffa37e211353b27bb6e60d4}} 
+unimplemented\+\_\+present&Indicate we have encountered unimplemented instructions. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{baddata\_present@{baddata\_present}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!baddata\_present@{baddata\_present}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa9c78c0dc3c0876f360432b1ea4895347}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa9c78c0dc3c0876f360432b1ea4895347}} 
+baddata\+\_\+present&Indicate we have encountered flow into unaccessible data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{outofbounds\_present@{outofbounds\_present}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!outofbounds\_present@{outofbounds\_present}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efafd7df0984de9145a0560dddb95f2f040}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efafd7df0984de9145a0560dddb95f2f040}} 
+outofbounds\+\_\+present&Indicate we have encountered flow out of the specified range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reinterpreted\_present@{reinterpreted\_present}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!reinterpreted\_present@{reinterpreted\_present}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0eface3d6862adccc05eb87519854efa8afe}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0eface3d6862adccc05eb87519854efa8afe}} 
+reinterpreted\+\_\+present&Indicate we have encountered reinterpreted data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{toomanyinstructions\_present@{toomanyinstructions\_present}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!toomanyinstructions\_present@{toomanyinstructions\_present}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa3e10e4b2f7c47cb136374cb1d7438260}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa3e10e4b2f7c47cb136374cb1d7438260}} 
+toomanyinstructions\+\_\+present&Indicate the maximum instruction threshold was reached. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{possible\_unreachable@{possible\_unreachable}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!possible\_unreachable@{possible\_unreachable}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa6dc22b8a298dc4a3b91ddb7b3574835d}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa6dc22b8a298dc4a3b91ddb7b3574835d}} 
+possible\+\_\+unreachable&Indicate a C\+A\+LL was converted to a B\+R\+A\+N\+CH and some code may be unreachable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{flow\_forinline@{flow\_forinline}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!flow\_forinline@{flow\_forinline}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa87e8c8e18649576cb22d8285f5a6ebb8}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efa87e8c8e18649576cb22d8285f5a6ebb8}} 
+flow\+\_\+forinline&Indicate flow is being generated to in-\/line (a function) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{record\_jumploads@{record\_jumploads}!FlowInfo@{FlowInfo}}\index{FlowInfo@{FlowInfo}!record\_jumploads@{record\_jumploads}}}\mbox{\Hypertarget{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efaa2cb6d0ce1856147cf59a4b80d2c0bb8}\label{classFlowInfo_a76909fdb45a32a5b570e61179bbce0efaa2cb6d0ce1856147cf59a4b80d2c0bb8}} 
+record\+\_\+jumploads&Indicate that any jump table recovery should record the table structure. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classFlowInfo_a9c45181b9741e1a35af5b76ffdc3fe5e}\label{classFlowInfo_a9c45181b9741e1a35af5b76ffdc3fe5e}} 
+\index{FlowInfo@{FlowInfo}!FlowInfo@{FlowInfo}}
+\index{FlowInfo@{FlowInfo}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{FlowInfo()}{FlowInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Flow\+Info\+::\+Flow\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{d,  }\item[{\mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}} \&}]{o,  }\item[{\mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&}]{b,  }\item[{vector$<$ \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ $>$ \&}]{q }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+Prepare for tracing flow for a new function. The \mbox{\hyperlink{classFuncdata}{Funcdata}} object and references to its internal containers must be explicitly given. 
+\begin{DoxyParams}{Parameters}
+{\em d} & is the new function to trace \\
+\hline
+{\em o} & is the internal p-\/code container for the function \\
+\hline
+{\em b} & is the internal basic block container \\
+\hline
+{\em q} & is the internal container of call sites \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowInfo_a5d3d5378e522e75cedb21a80964dd2ad}\label{classFlowInfo_a5d3d5378e522e75cedb21a80964dd2ad}} 
+\index{FlowInfo@{FlowInfo}!FlowInfo@{FlowInfo}}
+\index{FlowInfo@{FlowInfo}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{FlowInfo()}{FlowInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Flow\+Info\+::\+Flow\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{d,  }\item[{\mbox{\hyperlink{classPcodeOpBank}{Pcode\+Op\+Bank}} \&}]{o,  }\item[{\mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&}]{b,  }\item[{vector$<$ \mbox{\hyperlink{classFuncCallSpecs}{Func\+Call\+Specs}} $\ast$ $>$ \&}]{q,  }\item[{const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} $\ast$}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Cloning constructor. 
+
+Prepare a new flow cloned from an existing flow. Configuration from the existing flow is copied, but the actual Pcode\+Ops must already be cloned within the new function. 
+\begin{DoxyParams}{Parameters}
+{\em d} & is the new function that has been cloned \\
+\hline
+{\em o} & is the internal p-\/code container for the function \\
+\hline
+{\em b} & is the internal basic block container \\
+\hline
+{\em q} & is the internal container of call sites \\
+\hline
+{\em op2} & is the existing flow \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classFlowInfo_a85b5e5174e678b9a0bf451fba51a4019}\label{classFlowInfo_a85b5e5174e678b9a0bf451fba51a4019}} 
+\index{FlowInfo@{FlowInfo}!branchTarget@{branchTarget}}
+\index{branchTarget@{branchTarget}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{branchTarget()}{branchTarget()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Flow\+Info\+::branch\+Target (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Find the target referred to by a given B\+R\+A\+N\+CH or C\+B\+R\+A\+N\+CH. 
+
+The {\itshape code} {\itshape reference} passed as the first parameter to the branch is examined, and the p-\/code op it refers to is returned. The reference may be a normal direct address or a relative offset. If no target p-\/code can be found, an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given branch op \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the targetted p-\/code op 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowInfo_a30fc4e81c062827b6e9f31c6ab6cd983}\label{classFlowInfo_a30fc4e81c062827b6e9f31c6ab6cd983}} 
+\index{FlowInfo@{FlowInfo}!checkEZModel@{checkEZModel}}
+\index{checkEZModel@{checkEZModel}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{checkEZModel()}{checkEZModel()}}
+{\footnotesize\ttfamily bool Flow\+Info\+::check\+E\+Z\+Model (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if {\bfseries{this}} flow matches the EX in-\/lining model. 
+
+A function is in the EZ model if it is a straight-\/line leaf function. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if this flow contains no C\+A\+LL or B\+R\+A\+N\+CH ops 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowInfo_a47f656fb99cdb06587c0e86d86a6ff84}\label{classFlowInfo_a47f656fb99cdb06587c0e86d86a6ff84}} 
+\index{FlowInfo@{FlowInfo}!forwardRecursion@{forwardRecursion}}
+\index{forwardRecursion@{forwardRecursion}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{forwardRecursion()}{forwardRecursion()}}
+{\footnotesize\ttfamily void Flow\+Info\+::forward\+Recursion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Pull in-\/lining recursion information from another flow. 
+
+When preparing p-\/code for an in-\/lined function, the generation process needs to be informed of in-\/lining that has already been performed. This method copies the in-\/lining information from the parent flow, prior to p-\/code generation. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the parent flow \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowInfo_af91718ae694b4852c24f4af6cb0b07a0}\label{classFlowInfo_af91718ae694b4852c24f4af6cb0b07a0}} 
+\index{FlowInfo@{FlowInfo}!injectPcode@{injectPcode}}
+\index{injectPcode@{injectPcode}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{injectPcode()}{injectPcode()}}
+{\footnotesize\ttfamily void Flow\+Info\+::inject\+Pcode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Perform substitution on any op that requires {\itshape injection}. 
+
+Types of substitution include\+:
+\begin{DoxyItemize}
+\item Sub-\/function in-\/lining
+\item Sub-\/function injection
+\item User defined op injection
+\end{DoxyItemize}
+
+Make sure to truncate recursion, and otherwise don\textquotesingle{}t allow a sub-\/function to be in-\/lined more than once. \mbox{\Hypertarget{classFlowInfo_acb0b9cbb6144cd2963c63072d6d72882}\label{classFlowInfo_acb0b9cbb6144cd2963c63072d6d72882}} 
+\index{FlowInfo@{FlowInfo}!inlineClone@{inlineClone}}
+\index{inlineClone@{inlineClone}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{inlineClone()}{inlineClone()}}
+{\footnotesize\ttfamily void Flow\+Info\+::inline\+Clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&}]{inlineflow,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{retaddr }\end{DoxyParamCaption})}
+
+
+
+Clone the given in-\/line flow into {\bfseries{this}} flow using the {\itshape hard} model. 
+
+Individual Pcode\+Ops from the \mbox{\hyperlink{classFuncdata}{Funcdata}} being in-\/lined are cloned into the \mbox{\hyperlink{classFuncdata}{Funcdata}} for {\bfseries{this}} flow, preserving their original address. Any R\+E\+T\+U\+RN op is replaced with jump to first address following the call site. 
+\begin{DoxyParams}{Parameters}
+{\em inlineflow} & is the given in-\/line flow to clone \\
+\hline
+{\em retaddr} & is the first address after the call site in {\bfseries{this}} flow \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowInfo_a5819105426192965fb0a73831a785060}\label{classFlowInfo_a5819105426192965fb0a73831a785060}} 
+\index{FlowInfo@{FlowInfo}!inlineEZClone@{inlineEZClone}}
+\index{inlineEZClone@{inlineEZClone}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{inlineEZClone()}{inlineEZClone()}}
+{\footnotesize\ttfamily void Flow\+Info\+::inline\+E\+Z\+Clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&}]{inlineflow,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{calladdr }\end{DoxyParamCaption})}
+
+
+
+Clone the given in-\/line flow into {\bfseries{this}} flow using the EZ model. 
+
+Individual Pcode\+Ops from the \mbox{\hyperlink{classFuncdata}{Funcdata}} being in-\/lined are cloned into the \mbox{\hyperlink{classFuncdata}{Funcdata}} for {\bfseries{this}} flow but are reassigned a new fixed address, and the R\+E\+T\+U\+RN op is eliminated. 
+\begin{DoxyParams}{Parameters}
+{\em inlineflow} & is the given in-\/line flow to clone \\
+\hline
+{\em calladdr} & is the fixed address assigned to the cloned Pcode\+Ops \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classFlowInfo_a79b96fb0e47a98e97da11975f9fd5e0b}\label{classFlowInfo_a79b96fb0e47a98e97da11975f9fd5e0b}} 
+\index{FlowInfo@{FlowInfo}!target@{target}}
+\index{target@{target}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{target()}{target()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Flow\+Info\+::target (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Return first p-\/code op for instruction at given address. 
+
+The first p-\/code op associated with the machine instruction at the given address is returned. If the instruction generated no p-\/code, an attempt is made to fall-\/thru to the next instruction. If no p-\/code op is ultimately found, an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address of the instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the targetted p-\/code op 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classFlowInfo_a7ce3b6b33fb219117c69700e32b0c1ef}\label{classFlowInfo_a7ce3b6b33fb219117c69700e32b0c1ef}} 
+\index{FlowInfo@{FlowInfo}!testHardInlineRestrictions@{testHardInlineRestrictions}}
+\index{testHardInlineRestrictions@{testHardInlineRestrictions}!FlowInfo@{FlowInfo}}
+\doxysubsubsection{\texorpdfstring{testHardInlineRestrictions()}{testHardInlineRestrictions()}}
+{\footnotesize\ttfamily bool Flow\+Info\+::test\+Hard\+Inline\+Restrictions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{inlinefd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classAddress}{Address}} \&}]{retaddr }\end{DoxyParamCaption})}
+
+
+
+For in-\/lining using the {\itshape hard} model, make sure some restrictions are met. 
+
+
+\begin{DoxyItemize}
+\item Can only in-\/line the function once.
+\item There must be a p-\/code op to return to.
+\item There must be a distinct return address, so that the R\+E\+T\+U\+RN can be replaced with a B\+R\+A\+N\+CH.
+\end{DoxyItemize}
+
+Pass back the distinct return address, unless the in-\/lined function doesn\textquotesingle{}t return. 
+\begin{DoxyParams}{Parameters}
+{\em inlinefd} & is the function being in-\/lined into {\bfseries{this}} flow \\
+\hline
+{\em op} & is C\+A\+LL instruction at the site of the in-\/line \\
+\hline
+{\em retaddr} & holds the passed back return address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if all the {\itshape hard} model restrictions are met 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{flow_8hh}{flow.\+hh}}\item 
+flow.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,163 @@
+\hypertarget{classSegmentOp}{}\doxysection{Segment\+Op Class Reference}
+\label{classSegmentOp}\index{SegmentOp@{SegmentOp}}
+
+
+The {\itshape segmented} {\itshape address} operator.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Segment\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classSegmentOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Segment\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSegmentOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSegmentOp_ad7459a581b241b35100f9fe260f0509f}{Segment\+Op}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, const string \&nm, int4 ind)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSegmentOp_a0a5b69caea8e60eaebe045f49c9351e1}\label{classSegmentOp_a0a5b69caea8e60eaebe045f49c9351e1}} 
+virtual int4 \mbox{\hyperlink{classSegmentOp_a0a5b69caea8e60eaebe045f49c9351e1}{get\+Num\+Variable\+Terms}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of input Varnodes expected. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classSegmentOp_acb25104d3aad5e44a3c9d5b471e39c48}{unify}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&bindlist) const
+\begin{DoxyCompactList}\small\item\em Gather the formal input \mbox{\hyperlink{classVarnode}{Varnode}} objects given the root \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classSegmentOp_a1857d8c2eef84b0a8c1bb7c624210c6c}{execute}} (const vector$<$ uintb $>$ \&input) const
+\begin{DoxyCompactList}\small\item\em Compute the output value of {\bfseries{this}} operation, given constant inputs. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSegmentOp_a6f311b351e8d30119469650d5e33f84b}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore the detailed description from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The {\itshape segmented} {\itshape address} operator. 
+
+This op is a placeholder for address mappings involving {\bfseries{segments}}. The map goes between a {\bfseries{high-\/level}} view of a pointer, consisting of multiple pieces, and a {\bfseries{low-\/level}} view, where there is only a single absolute pointer. The mapping could be
+\begin{DoxyItemize}
+\item a virtual to physical mapping for instance or
+\item a segment + near pointer to a full address
+\end{DoxyItemize}
+
+The output of the operator is always a full low-\/level pointer. The operator takes two inputs\+:
+\begin{DoxyItemize}
+\item the {\bfseries{base}} or {\bfseries{segment}} and
+\item the high-\/level {\bfseries{near}} pointer
+\end{DoxyItemize}
+
+High-\/level analysis can ignore the base/segment and any normalization on the near pointer. Emitted expressions involving {\bfseries{this}} segment op prints only the {\bfseries{near}} portion. Data-\/type information propagates only through this high-\/level side.
+
+The decompiler looks for the term-\/tree defined in \mbox{\hyperlink{classSegmentOp}{Segment\+Op}} and replaces it with the S\+E\+G\+M\+E\+N\+T\+OP operator in any p-\/code it analyzes. The core routine that looks for the term-\/tree is \mbox{\hyperlink{classSegmentOp_acb25104d3aad5e44a3c9d5b471e39c48}{unify()}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSegmentOp_ad7459a581b241b35100f9fe260f0509f}\label{classSegmentOp_ad7459a581b241b35100f9fe260f0509f}} 
+\index{SegmentOp@{SegmentOp}!SegmentOp@{SegmentOp}}
+\index{SegmentOp@{SegmentOp}!SegmentOp@{SegmentOp}}
+\doxysubsubsection{\texorpdfstring{SegmentOp()}{SegmentOp()}}
+{\footnotesize\ttfamily Segment\+Op\+::\+Segment\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g,  }\item[{const string \&}]{nm,  }\item[{int4}]{ind }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the owning \mbox{\hyperlink{classArchitecture}{Architecture}} for this instance of the segment operation \\
+\hline
+{\em nm} & is the low-\/level name of the segment operation \\
+\hline
+{\em ind} & is the constant id identifying the specific C\+A\+L\+L\+O\+T\+H\+ER variant \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSegmentOp_a1857d8c2eef84b0a8c1bb7c624210c6c}\label{classSegmentOp_a1857d8c2eef84b0a8c1bb7c624210c6c}} 
+\index{SegmentOp@{SegmentOp}!execute@{execute}}
+\index{execute@{execute}!SegmentOp@{SegmentOp}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily uintb Segment\+Op\+::execute (\begin{DoxyParamCaption}\item[{const vector$<$ uintb $>$ \&}]{input }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute the output value of {\bfseries{this}} operation, given constant inputs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & is the ordered list of constant inputs \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting value as a constant 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTermPatternOp_a766fd191b337e60fb882b2e7bc9b42a6}{Term\+Pattern\+Op}}.
+
+\mbox{\Hypertarget{classSegmentOp_a6f311b351e8d30119469650d5e33f84b}\label{classSegmentOp_a6f311b351e8d30119469650d5e33f84b}} 
+\index{SegmentOp@{SegmentOp}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!SegmentOp@{SegmentOp}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Segment\+Op\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the detailed description from an X\+ML stream. 
+
+The details of how a user defined operation behaves can be dynamically configured from an X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element describing the op \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUserPcodeOp_a2a7b7c637369bc4fba4604cd83a937af}{User\+Pcode\+Op}}.
+
+\mbox{\Hypertarget{classSegmentOp_acb25104d3aad5e44a3c9d5b471e39c48}\label{classSegmentOp_acb25104d3aad5e44a3c9d5b471e39c48}} 
+\index{SegmentOp@{SegmentOp}!unify@{unify}}
+\index{unify@{unify}!SegmentOp@{SegmentOp}}
+\doxysubsubsection{\texorpdfstring{unify()}{unify()}}
+{\footnotesize\ttfamily bool Segment\+Op\+::unify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{bindlist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gather the formal input \mbox{\hyperlink{classVarnode}{Varnode}} objects given the root \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function being analyzed \\
+\hline
+{\em op} & is the root operation \\
+\hline
+{\em bindlist} & will hold the ordered list of input Varnodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the requisite inputs were found 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTermPatternOp_afe2a8a69c8f803e3134eaaaf087cc0b0}{Term\+Pattern\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

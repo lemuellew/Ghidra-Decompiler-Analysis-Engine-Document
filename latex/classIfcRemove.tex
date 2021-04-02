@@ -1,0 +1,62 @@
+\hypertarget{classIfcRemove}{}\doxysection{Ifc\+Remove Class Reference}
+\label{classIfcRemove}\index{IfcRemove@{IfcRemove}}
+
+
+Remove a symbol by name\+: {\ttfamily remove $<$varname$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Remove\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcRemove__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Remove\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcRemove__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcRemove_a170d67940736747f8043483426214f54}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Remove a symbol by name\+: {\ttfamily remove $<$varname$>$} 
+
+The symbol is searched for starting in the current function\textquotesingle{}s scope. The resulting symbol is removed completely from the symbol table. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcRemove_a170d67940736747f8043483426214f54}\label{classIfcRemove_a170d67940736747f8043483426214f54}} 
+\index{IfcRemove@{IfcRemove}!execute@{execute}}
+\index{execute@{execute}!IfcRemove@{IfcRemove}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Remove\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

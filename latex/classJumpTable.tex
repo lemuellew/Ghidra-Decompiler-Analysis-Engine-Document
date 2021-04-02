@@ -1,0 +1,322 @@
+\hypertarget{classJumpTable}{}\doxysection{Jump\+Table Class Reference}
+\label{classJumpTable}\index{JumpTable@{JumpTable}}
+
+
+A map from values to control-\/flow targets within a function.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJumpTable_a319075559bee7b7d3ae6b0485965a14e}{Jump\+Table}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, \mbox{\hyperlink{classAddress}{Address}} ad=\mbox{\hyperlink{classAddress}{Address}}())
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classJumpTable_a5dc7b9ca334dba4d61a615f7a016b820}{Jump\+Table}} (const \mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$op2)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpTable_a03847c123233a3f60e923fa6ae27af88}\label{classJumpTable_a03847c123233a3f60e923fa6ae27af88}} 
+\mbox{\hyperlink{classJumpTable_a03847c123233a3f60e923fa6ae27af88}{$\sim$\+Jump\+Table}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpTable_af02131615a17c9fa6ee4693c3988eb5a}\label{classJumpTable_af02131615a17c9fa6ee4693c3988eb5a}} 
+bool \mbox{\hyperlink{classJumpTable_af02131615a17c9fa6ee4693c3988eb5a}{is\+Override}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\bfseries{this}} table was manually overridden. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_a3e013d86f11f8df367c3979dd6310163}{set\+Override}} (const vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addrtable, const \mbox{\hyperlink{classAddress}{Address}} \&naddr, uintb h, uintb sv)
+\begin{DoxyCompactList}\small\item\em Force manual override information on {\bfseries{this}} jump-\/table. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classJumpTable_a3ff393c996f2c495f86917927c451dfe}{num\+Indices\+By\+Block}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Return the number of address table entries that target the given basic-\/block. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classJumpTable_abc8399a772fe0bd6bbcb94304af98d5b}{get\+Index\+By\+Block}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl, int4 i) const
+\begin{DoxyCompactList}\small\item\em Get the index of the i-\/th address table entry that corresponds to the given basic-\/block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpTable_a02f58e3cb38a6bc41c0d7932370998be}\label{classJumpTable_a02f58e3cb38a6bc41c0d7932370998be}} 
+void \mbox{\hyperlink{classJumpTable_a02f58e3cb38a6bc41c0d7932370998be}{set\+Last\+As\+Most\+Common}} (void)
+\begin{DoxyCompactList}\small\item\em Set the most common jump-\/table target to be the last address in the table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_a0cb2459aa5c38bda12cfb8be1ac6fcfe}{add\+Block\+To\+Switch}} (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$bl, uintb lab)
+\begin{DoxyCompactList}\small\item\em Force a given basic-\/block to be a switch destination. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_a421a6817e059ff862b9e057701da8f01}{switch\+Over}} (const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&flow)
+\begin{DoxyCompactList}\small\item\em Convert absolute addresses to block indices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_adce4756430ff5677d7acbe42ffe28775}{fold\+In\+Normalization}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Hide the normalization code for the switch. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_a98aaa32e26ede9547d5979cab872322c}{recover\+Addresses}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Recover the raw jump-\/table addresses (the address table) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_afba6e59f39d15b0f5b231ef9d849625e}{recover\+Multistage}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Recover jump-\/table addresses keeping track of a possible previous stage. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJumpTable_aa104a5da577eb8a1a5ab9aa30bbc7210}{recover\+Labels}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Recover the case labels for {\bfseries{this}} jump-\/table. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classJumpTable_a738bcb6e673e65e1d054d102da1cbdc5}{check\+For\+Multistage}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Check if this jump-\/table requires an additional recovery stage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_a99d3224b0c24b9ef1140f86fe372879d}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear instance specific data for {\bfseries{this}} jump-\/table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_a314231b6a4d240c21de28f39fd0a8b57}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} jump-\/table as a $<$jumptable$>$ X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpTable_a6c61097c622f85e04db056d9613e94f1}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover {\bfseries{this}} jump-\/table from a $<$jumptable$>$ X\+ML tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A map from values to control-\/flow targets within a function. 
+
+A \mbox{\hyperlink{classJumpTable}{Jump\+Table}} is attached to a specific C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND and encapsulates all the information necessary to model the indirect jump as a {\itshape switch} statement. It knows how to map from specific switch variable values to the destination {\itshape case} block and how to label the value. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJumpTable_a319075559bee7b7d3ae6b0485965a14e}\label{classJumpTable_a319075559bee7b7d3ae6b0485965a14e}} 
+\index{JumpTable@{JumpTable}!JumpTable@{JumpTable}}
+\index{JumpTable@{JumpTable}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{JumpTable()}{JumpTable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Jump\+Table\+::\+Jump\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g,  }\item[{\mbox{\hyperlink{classAddress}{Address}}}]{ad = {\ttfamily \mbox{\hyperlink{classAddress}{Address}}()} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} the table exists within \\
+\hline
+{\em ad} & is the \mbox{\hyperlink{classAddress}{Address}} of the B\+R\+A\+N\+C\+H\+I\+ND {\bfseries{this}} models \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_a5dc7b9ca334dba4d61a615f7a016b820}\label{classJumpTable_a5dc7b9ca334dba4d61a615f7a016b820}} 
+\index{JumpTable@{JumpTable}!JumpTable@{JumpTable}}
+\index{JumpTable@{JumpTable}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{JumpTable()}{JumpTable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Jump\+Table\+::\+Jump\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+This is a partial clone of another jump-\/table. Objects that are specific to the particular \mbox{\hyperlink{classFuncdata}{Funcdata}} instance must be recalculated. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the jump-\/table to clone \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpTable_a0cb2459aa5c38bda12cfb8be1ac6fcfe}\label{classJumpTable_a0cb2459aa5c38bda12cfb8be1ac6fcfe}} 
+\index{JumpTable@{JumpTable}!addBlockToSwitch@{addBlockToSwitch}}
+\index{addBlockToSwitch@{addBlockToSwitch}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{addBlockToSwitch()}{addBlockToSwitch()}}
+{\footnotesize\ttfamily void Jump\+Table\+::add\+Block\+To\+Switch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$}]{bl,  }\item[{uintb}]{lab }\end{DoxyParamCaption})}
+
+
+
+Force a given basic-\/block to be a switch destination. 
+
+This is used to add address targets from guard branches if they are not already in the address table. A specific case label for the block can also be provided. The new target is appended directly to the end of the table. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given basic-\/block \\
+\hline
+{\em lab} & is the case label for the block \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_a738bcb6e673e65e1d054d102da1cbdc5}\label{classJumpTable_a738bcb6e673e65e1d054d102da1cbdc5}} 
+\index{JumpTable@{JumpTable}!checkForMultistage@{checkForMultistage}}
+\index{checkForMultistage@{checkForMultistage}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{checkForMultistage()}{checkForMultistage()}}
+{\footnotesize\ttfamily bool Jump\+Table\+::check\+For\+Multistage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Check if this jump-\/table requires an additional recovery stage. 
+
+Look for the override directive that indicates we need an additional recovery stage for {\bfseries{this}} jump-\/table. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if an additional recovery stage is required. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpTable_a99d3224b0c24b9ef1140f86fe372879d}\label{classJumpTable_a99d3224b0c24b9ef1140f86fe372879d}} 
+\index{JumpTable@{JumpTable}!clear@{clear}}
+\index{clear@{clear}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void Jump\+Table\+::clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clear instance specific data for {\bfseries{this}} jump-\/table. 
+
+Clear out any data that is specific to a \mbox{\hyperlink{classFuncdata}{Funcdata}} instance. The address table is not cleared if it was recovered, and override information is left intact. Right now this is only getting called, when the jumptable is an override in order to clear out derived data. \mbox{\Hypertarget{classJumpTable_adce4756430ff5677d7acbe42ffe28775}\label{classJumpTable_adce4756430ff5677d7acbe42ffe28775}} 
+\index{JumpTable@{JumpTable}!foldInNormalization@{foldInNormalization}}
+\index{foldInNormalization@{foldInNormalization}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{foldInNormalization()}{foldInNormalization()}}
+{\footnotesize\ttfamily void Jump\+Table\+::fold\+In\+Normalization (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Hide the normalization code for the switch. 
+
+Eliminate any code involved in actually computing the destination address so it looks like the C\+P\+U\+I\+\_\+\+B\+R\+A\+N\+C\+H\+I\+ND operation does it all internally. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing {\bfseries{this}} switch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_abc8399a772fe0bd6bbcb94304af98d5b}\label{classJumpTable_abc8399a772fe0bd6bbcb94304af98d5b}} 
+\index{JumpTable@{JumpTable}!getIndexByBlock@{getIndexByBlock}}
+\index{getIndexByBlock@{getIndexByBlock}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{getIndexByBlock()}{getIndexByBlock()}}
+{\footnotesize\ttfamily int4 Jump\+Table\+::get\+Index\+By\+Block (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl,  }\item[{int4}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Get the index of the i-\/th address table entry that corresponds to the given basic-\/block. 
+
+An exception is thrown if no address table entry targets the block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given basic-\/block \\
+\hline
+{\em i} & requests a specific position within the duplicate entries \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the address table index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpTable_a3ff393c996f2c495f86917927c451dfe}\label{classJumpTable_a3ff393c996f2c495f86917927c451dfe}} 
+\index{JumpTable@{JumpTable}!numIndicesByBlock@{numIndicesByBlock}}
+\index{numIndicesByBlock@{numIndicesByBlock}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{numIndicesByBlock()}{numIndicesByBlock()}}
+{\footnotesize\ttfamily int4 Jump\+Table\+::num\+Indices\+By\+Block (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const}
+
+
+
+Return the number of address table entries that target the given basic-\/block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given basic-\/block \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the count of entries 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpTable_a98aaa32e26ede9547d5979cab872322c}\label{classJumpTable_a98aaa32e26ede9547d5979cab872322c}} 
+\index{JumpTable@{JumpTable}!recoverAddresses@{recoverAddresses}}
+\index{recoverAddresses@{recoverAddresses}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{recoverAddresses()}{recoverAddresses()}}
+{\footnotesize\ttfamily void Jump\+Table\+::recover\+Addresses (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Recover the raw jump-\/table addresses (the address table) 
+
+The addresses that the raw B\+R\+A\+N\+C\+H\+I\+ND op might branch to itself are recovered, not including other targets of the final model, like guard addresses. The normalized switch variable and the guards are identified in the process however.
+
+Generally this method is run during flow analysis when we only have partial information about the function (and possibly the switch itself). The \mbox{\hyperlink{classFuncdata}{Funcdata}} instance is a partial clone of the function and is different from the final instance that will hold the fully recovered jump-\/table. The final instance inherits the addresses recovered here, but recover\+Model() will need to be run on it separately.
+
+A sanity check is also run, which might truncate the original set of addresses. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_aa104a5da577eb8a1a5ab9aa30bbc7210}\label{classJumpTable_aa104a5da577eb8a1a5ab9aa30bbc7210}} 
+\index{JumpTable@{JumpTable}!recoverLabels@{recoverLabels}}
+\index{recoverLabels@{recoverLabels}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{recoverLabels()}{recoverLabels()}}
+{\footnotesize\ttfamily bool Jump\+Table\+::recover\+Labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Recover the case labels for {\bfseries{this}} jump-\/table. 
+
+This is run assuming the address table has already been recovered, via \mbox{\hyperlink{classJumpTable_a98aaa32e26ede9547d5979cab872322c}{recover\+Addresses()}} in another \mbox{\hyperlink{classFuncdata}{Funcdata}} instance. So recover\+Model() needs to be rerun on the instance passed in here.
+
+The unnormalized switch variable is recovered, and for each possible address table entry, the variable value that produces it is calculated and stored as the formal {\itshape case} label for the associated code block. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the (final instance of the) function containing the switch \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if it looks like a multi-\/stage restart is needed. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classJumpTable_afba6e59f39d15b0f5b231ef9d849625e}\label{classJumpTable_afba6e59f39d15b0f5b231ef9d849625e}} 
+\index{JumpTable@{JumpTable}!recoverMultistage@{recoverMultistage}}
+\index{recoverMultistage@{recoverMultistage}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{recoverMultistage()}{recoverMultistage()}}
+{\footnotesize\ttfamily void Jump\+Table\+::recover\+Multistage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Recover jump-\/table addresses keeping track of a possible previous stage. 
+
+Do a normal recover\+Addresses, but save off the old \mbox{\hyperlink{classJumpModel}{Jump\+Model}}, and if we fail recovery, put back the old model. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_a6c61097c622f85e04db056d9613e94f1}\label{classJumpTable_a6c61097c622f85e04db056d9613e94f1}} 
+\index{JumpTable@{JumpTable}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Jump\+Table\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Recover {\bfseries{this}} jump-\/table from a $<$jumptable$>$ X\+ML tag. 
+
+Restore the addresses, {\itshape case} labels, and any override information from the tag. Other parts of the model and jump-\/table will still need to be recovered. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$jumptable$>$ tag to restore from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_a314231b6a4d240c21de28f39fd0a8b57}\label{classJumpTable_a314231b6a4d240c21de28f39fd0a8b57}} 
+\index{JumpTable@{JumpTable}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Jump\+Table\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save {\bfseries{this}} jump-\/table as a $<$jumptable$>$ X\+ML tag. 
+
+The recovered addresses and case labels are saved to the X\+ML stream. If override information is present, this is also incorporated into the tag. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_a3e013d86f11f8df367c3979dd6310163}\label{classJumpTable_a3e013d86f11f8df367c3979dd6310163}} 
+\index{JumpTable@{JumpTable}!setOverride@{setOverride}}
+\index{setOverride@{setOverride}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{setOverride()}{setOverride()}}
+{\footnotesize\ttfamily void Jump\+Table\+::set\+Override (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addrtable,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{naddr,  }\item[{uintb}]{h,  }\item[{uintb}]{sv }\end{DoxyParamCaption})}
+
+
+
+Force manual override information on {\bfseries{this}} jump-\/table. 
+
+The model is switched over to \mbox{\hyperlink{classJumpBasicOverride}{Jump\+Basic\+Override}}, which is initialized with an externally provided list of addresses. The addresses are forced as the output addresses the B\+R\+A\+N\+C\+H\+I\+ND for {\bfseries{this}} jump-\/table. If a non-\/zero hash and an address is provided, this identifies a specific \mbox{\hyperlink{classVarnode}{Varnode}} to use as the normalized switch variable. A potential starting value for normalized switch variable range is provided. 
+\begin{DoxyParams}{Parameters}
+{\em addrtable} & is the manually provided list of addresses to put in the address table \\
+\hline
+{\em naddr} & is the address where the normalized switch variable is defined \\
+\hline
+{\em h} & is a hash identifying the normalized switch variable (or 0) \\
+\hline
+{\em sv} & is the starting value for the range of possible normalized switch variable values (usually 0) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classJumpTable_a421a6817e059ff862b9e057701da8f01}\label{classJumpTable_a421a6817e059ff862b9e057701da8f01}} 
+\index{JumpTable@{JumpTable}!switchOver@{switchOver}}
+\index{switchOver@{switchOver}!JumpTable@{JumpTable}}
+\doxysubsubsection{\texorpdfstring{switchOver()}{switchOver()}}
+{\footnotesize\ttfamily void Jump\+Table\+::switch\+Over (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowInfo}{Flow\+Info}} \&}]{flow }\end{DoxyParamCaption})}
+
+
+
+Convert absolute addresses to block indices. 
+
+Convert addresses in {\bfseries{this}} table to actual targeted basic-\/blocks.
+
+This constructs a map from each out-\/edge from the basic-\/block containing the B\+R\+A\+N\+C\+H\+I\+ND to addresses in the table targetting that out-\/block. The most common address table entry is also calculated here. 
+\begin{DoxyParams}{Parameters}
+{\em flow} & is used to resolve address targets \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

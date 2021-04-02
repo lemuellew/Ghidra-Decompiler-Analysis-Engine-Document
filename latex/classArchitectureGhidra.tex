@@ -1,0 +1,745 @@
+\hypertarget{classArchitectureGhidra}{}\doxysection{Architecture\+Ghidra Class Reference}
+\label{classArchitectureGhidra}\index{ArchitectureGhidra@{ArchitectureGhidra}}
+
+
+An implementation of the \mbox{\hyperlink{classArchitecture}{Architecture}} interface and connection to a Ghidra client.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Architecture\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classArchitectureGhidra__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Architecture\+Ghidra\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArchitectureGhidra__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArchitectureGhidra_ac2dd133afc911293c1c6d059661fbf0f}{Architecture\+Ghidra}} (const string \&pspec, const string \&cspec, const string \&tspec, const string \&corespec, istream \&i, ostream \&o)
+\begin{DoxyCompactList}\small\item\em Construct given specification files and i/o streams. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_ad1e8a5eaefce58038fc774a6083818e8}{get\+Register}} (const string \&regname)
+\begin{DoxyCompactList}\small\item\em Retrieve a register description given a name. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classArchitectureGhidra_a37f48166235bff1cf154a989aa22bfde}{get\+Register\+Name}} (const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&vndata)
+\begin{DoxyCompactList}\small\item\em Retrieve a register name given its storage location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a124a08d65c25451f2900064445ca704f}{get\+Tracked\+Registers}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Retrieve {\itshape tracked} register values at the given address. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classArchitectureGhidra_a743c6158bb0075ab7c13d15725d13414}{get\+User\+Op\+Name}} (int4 index)
+\begin{DoxyCompactList}\small\item\em Get the name of a user-\/defined p-\/code op. \end{DoxyCompactList}\item 
+uint1 $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a4ebbc30bfe4806007c73b4c5ea0645bf}{get\+Pcode\+Packed}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Get p-\/code for a single instruction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a03d6804fba40e0c09e6be5e3ad5f8723}{get\+Mapped\+Symbols\+X\+ML}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Get symbols associated with the given address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_ab3f7d8642e6d84aa7ee3806620ef34ff}{get\+External\+Ref\+X\+ML}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Retrieve a description of an external function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a34d8dd44d4670c74fc0c2e627cea5b8e}{get\+Namespace\+Path}} (uint8 id)
+\begin{DoxyCompactList}\small\item\em Get a description of a namespace path. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classArchitectureGhidra_aaccc4fbe0717e82227a644229139e7e3}\label{classArchitectureGhidra_aaccc4fbe0717e82227a644229139e7e3}} 
+bool \mbox{\hyperlink{classArchitectureGhidra_aaccc4fbe0717e82227a644229139e7e3}{is\+Name\+Used}} (const string \&nm, uint8 start\+Id, uint8 stop\+Id)
+\begin{DoxyCompactList}\small\item\em Is given name used along namespace path. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classArchitectureGhidra_ad66f093e36881a04b3dd40971373ce9e}{get\+Code\+Label}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Retrieve a label at the given address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_ad3176a91f7b9643326d94eaab5613a1c}{get\+Type}} (const string \&name, uint8 id)
+\begin{DoxyCompactList}\small\item\em Retrieve a data-\/type description for the given name and id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_adf2db85014f4129a11f6aadc3ac53776}{get\+Comments}} (const \mbox{\hyperlink{classAddress}{Address}} \&fad, uint4 flags)
+\begin{DoxyCompactList}\small\item\em Retrieve comments for a particular function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArchitectureGhidra_a466a3f9dfecdbaacfae1dd93e7d5d3a6}{get\+Bytes}} (uint1 $\ast$buf, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&inaddr)
+\begin{DoxyCompactList}\small\item\em Retrieve bytes in the \mbox{\hyperlink{classLoadImage}{Load\+Image}} at the given address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a68392af0ec054e9c2a3d2f4774bfce28}{get\+Pcode\+Inject}} (const string \&name, int4 type, const \mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&con)
+\begin{DoxyCompactList}\small\item\em Retrieve p-\/code to inject for a specific context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a3806ce145501bdeb8dc6d60bad920d24}{get\+C\+Pool\+Ref}} (const vector$<$ uintb $>$ \&refs)
+\begin{DoxyCompactList}\small\item\em Resolve a constant pool reference. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArchitectureGhidra_a26c9c47c970ba0b6f1dedaf23f638eb2}{set\+Send\+Syntax\+Tree}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether the data-\/flow and control-\/flow is emitted as part of the main decompile action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArchitectureGhidra_a9c5dc81edf25bc5754821f69a83cd091}{set\+Send\+C\+Code}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether the recovered source code is emitted as part of the main decompile action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArchitectureGhidra_a1a81c2e3fb902ec976afd5e639a1ba90}{set\+Send\+Param\+Measures}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether recovered parameter information is emitted as part of the main decompile action. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classArchitectureGhidra_a2be5c2418d8454b2ca497b96f721ad9f}{get\+String\+Data}} (vector$<$ uint1 $>$ \&buffer, const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, int4 max\+Bytes, bool \&is\+Trunc)
+\begin{DoxyCompactList}\small\item\em Get string data at a specific address. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classArchitectureGhidra_ae7cdac6309428d288bc2317f9997aa4e}{print\+Message}} (const string \&message) const
+\begin{DoxyCompactList}\small\item\em Print an error message to console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classArchitectureGhidra_a606fbae6a63c41723343137c56f84eca}{segv\+Handler}} (int4 sig)
+\begin{DoxyCompactList}\small\item\em Handler for a segment violation (S\+I\+G\+S\+E\+GV) signal. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classArchitectureGhidra_a3132c5fe1bb675952197aa4eafcf298e}{read\+To\+Any\+Burst}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read the next message protocol marker. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classArchitectureGhidra_a0df8309f575e876cfab6f331ccf40363}{read\+Bool\+Stream}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read a boolean value from the client. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArchitectureGhidra_a80e284d7f210bb4f528607a5a62de7ec}{read\+String\+Stream}} (istream \&s, string \&res)
+\begin{DoxyCompactList}\small\item\em Receive a string from the client. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArchitectureGhidra_a438f8405f19893ac1aa3057f67188f4a}{write\+String\+Stream}} (ostream \&s, const string \&msg)
+\begin{DoxyCompactList}\small\item\em Send a string to the client. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArchitectureGhidra_a3b18a5a9e669ac8adabe9da47d2aaddf}{read\+To\+Response}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read the query response protocol marker. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArchitectureGhidra_a948fffd4d8e181563ade259d97074419}{read\+Response\+End}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read the ending query response protocol marker. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_ae71b65457955432775931afde0d1c933}{read\+X\+M\+L\+All}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read a whole response as an X\+ML document. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classDocument}{Document}} $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a76b1d30cc0f0f69f003ba3aceccd8063}{read\+X\+M\+L\+Stream}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Receive an X\+ML document from the client. \end{DoxyCompactList}\item 
+static uint1 $\ast$ \mbox{\hyperlink{classArchitectureGhidra_a363a85f21c006421b43cec46fe82df10}{read\+Packed\+Stream}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read packed p-\/code op information. \end{DoxyCompactList}\item 
+static uint1 $\ast$ \mbox{\hyperlink{classArchitectureGhidra_ae2bca9976342b1edd992bf084a028b0b}{read\+Packed\+All}} (istream \&s)
+\begin{DoxyCompactList}\small\item\em Read a whole response as packed p-\/code op information. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classArchitectureGhidra_afed66db0ba46a6c4bb1c42e173d021fa}{pass\+Java\+Exception}} (ostream \&s, const string \&tp, const string \&msg)
+\begin{DoxyCompactList}\small\item\em Send an exception message to the Ghidra client. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classArchitectureGhidra_a1b466216dbdf426025148ff90f7e8c22}\label{classArchitectureGhidra_a1b466216dbdf426025148ff90f7e8c22}} 
+static bool \mbox{\hyperlink{classArchitectureGhidra_a1b466216dbdf426025148ff90f7e8c22}{is\+Dynamic\+Symbol\+Name}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Check if name is of form F\+U\+N\+\_\+.. or D\+A\+T\+\_\+.. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An implementation of the \mbox{\hyperlink{classArchitecture}{Architecture}} interface and connection to a Ghidra client. 
+
+In addition to managing the major pieces of the architecture (\mbox{\hyperlink{classLoadImage}{Load\+Image}}, \mbox{\hyperlink{classTranslate}{Translate}}, \mbox{\hyperlink{classDatabase}{Database}}, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}}, Context\+Datbase, \mbox{\hyperlink{classCommentDatabase}{Comment\+Database}} etc.), this class manages a communication channel between the decompiler and a Ghidra client for a single executable. The protocol supports a simple query/response format with exceptions. On top of the low level protocol, this class manages a higher level interface that performs specific queries, providing addresses, names, and other info as input, and returning an X\+ML document or other structure as a result.
+
+This class overrides the build$\ast$ methods to produce \mbox{\hyperlink{classArchitecture}{Architecture}} components that are also backed by the Ghidra client. These all use this same object to do their communication.
+
+This class acts as a main control point for what information gets sent back to the Ghidra client when it requests the main decompilation action. Generally the decompiler sends back the recovered source representation of the function but optionally it can send back\+:
+\begin{DoxyItemize}
+\item Recovered source code (with mark up)
+\item Data-\/flow and control-\/flow structures
+\item Local symbol and jump-\/table information
+\item Parameter identification information 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classArchitectureGhidra_ac2dd133afc911293c1c6d059661fbf0f}\label{classArchitectureGhidra_ac2dd133afc911293c1c6d059661fbf0f}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!ArchitectureGhidra@{ArchitectureGhidra}}
+\index{ArchitectureGhidra@{ArchitectureGhidra}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{ArchitectureGhidra()}{ArchitectureGhidra()}}
+{\footnotesize\ttfamily Architecture\+Ghidra\+::\+Architecture\+Ghidra (\begin{DoxyParamCaption}\item[{const string \&}]{pspec,  }\item[{const string \&}]{cspec,  }\item[{const string \&}]{tspec,  }\item[{const string \&}]{corespec,  }\item[{istream \&}]{i,  }\item[{ostream \&}]{o }\end{DoxyParamCaption})}
+
+
+
+Construct given specification files and i/o streams. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pspec} & is the processor specification presented as an X\+ML string \\
+\hline
+{\em cspec} & is the compiler specification presented as an X\+ML string \\
+\hline
+{\em tspec} & is a stripped down form of the S\+L\+E\+I\+GH specification presented as an X\+ML string \\
+\hline
+{\em corespec} & is a list of core data-\/types presented as a $<$coretypes$>$ X\+ML tag \\
+\hline
+{\em i} & is the input stream from the Ghidra client \\
+\hline
+{\em o} & is the output stream to the Ghidra client \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArchitectureGhidra_a466a3f9dfecdbaacfae1dd93e7d5d3a6}\label{classArchitectureGhidra_a466a3f9dfecdbaacfae1dd93e7d5d3a6}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getBytes@{getBytes}}
+\index{getBytes@{getBytes}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getBytes()}{getBytes()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::get\+Bytes (\begin{DoxyParamCaption}\item[{uint1 $\ast$}]{buf,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{inaddr }\end{DoxyParamCaption})}
+
+
+
+Retrieve bytes in the \mbox{\hyperlink{classLoadImage}{Load\+Image}} at the given address. 
+
+The Ghidra client is queried for a range of bytes, which are returned in the given array. This method throws a \mbox{\hyperlink{structDataUnavailError}{Data\+Unavail\+Error}} if the provided address doesn\textquotesingle{}t make sense. 
+\begin{DoxyParams}{Parameters}
+{\em buf} & is the preallocated array in which to store the bytes \\
+\hline
+{\em size} & is the number of bytes requested \\
+\hline
+{\em inaddr} & is the address in the \mbox{\hyperlink{classLoadImage}{Load\+Image}} from which to grab bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_ad66f093e36881a04b3dd40971373ce9e}\label{classArchitectureGhidra_ad66f093e36881a04b3dd40971373ce9e}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getCodeLabel@{getCodeLabel}}
+\index{getCodeLabel@{getCodeLabel}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getCodeLabel()}{getCodeLabel()}}
+{\footnotesize\ttfamily string Architecture\+Ghidra\+::get\+Code\+Label (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Retrieve a label at the given address. 
+
+Get the name of the primary symbol at the given address. This is used to fetch within function {\itshape labels}. Only a name is returned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the symbol name or \char`\"{}\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_adf2db85014f4129a11f6aadc3ac53776}\label{classArchitectureGhidra_adf2db85014f4129a11f6aadc3ac53776}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getComments@{getComments}}
+\index{getComments@{getComments}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getComments()}{getComments()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+Comments (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{fad,  }\item[{uint4}]{flags }\end{DoxyParamCaption})}
+
+
+
+Retrieve comments for a particular function. 
+
+Ask Ghidra client for all comments associated with one function. The caller must provide the sub-\/set of properties (\mbox{\hyperlink{classComment_a25e5457bf3deeb109bdef2f532317cf2}{Comment\+::comment\+\_\+type}}) for the query to match. The client will return a $<$commentdb$>$ tag with a $<$comment$>$ tag child for each comment found. 
+\begin{DoxyParams}{Parameters}
+{\em fad} & is the address of the function to query \\
+\hline
+{\em flags} & specifies the properties the query will match (must be non-\/zero) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an X\+ML document describing each comment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a3806ce145501bdeb8dc6d60bad920d24}\label{classArchitectureGhidra_a3806ce145501bdeb8dc6d60bad920d24}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getCPoolRef@{getCPoolRef}}
+\index{getCPoolRef@{getCPoolRef}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getCPoolRef()}{getCPoolRef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+C\+Pool\+Ref (\begin{DoxyParamCaption}\item[{const vector$<$ uintb $>$ \&}]{refs }\end{DoxyParamCaption})}
+
+
+
+Resolve a constant pool reference. 
+
+The Ghidra client is provided a sequence of 1 or more integer values extracted from a C\+P\+O\+O\+L\+R\+EF op. It returns an X\+ML document describing the constant pool record referenced by the integer(s) or will throw an exception if record isn\textquotesingle{}t properly referenced. 
+\begin{DoxyParams}{Parameters}
+{\em refs} & is an array of 1 or more integer values referencing a constant pool record \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a description of the record as a $<$cpoolrec$>$ X\+ML document. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_ab3f7d8642e6d84aa7ee3806620ef34ff}\label{classArchitectureGhidra_ab3f7d8642e6d84aa7ee3806620ef34ff}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getExternalRefXML@{getExternalRefXML}}
+\index{getExternalRefXML@{getExternalRefXML}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getExternalRefXML()}{getExternalRefXML()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+External\+Ref\+X\+ML (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Retrieve a description of an external function. 
+
+This asks the Ghidra client to resolve an {\itshape external} {\itshape reference}. This is an address for which the client holds a reference to a function that is elsewhere in memory or not in memory at all. The client should unravel the reference from the given address and return either a $<$function$>$ tag describing the referred to function symbol or a $<$hole$>$ tag if the reference can\textquotesingle{}t be resolved 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a description of the referred to function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a03d6804fba40e0c09e6be5e3ad5f8723}\label{classArchitectureGhidra_a03d6804fba40e0c09e6be5e3ad5f8723}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getMappedSymbolsXML@{getMappedSymbolsXML}}
+\index{getMappedSymbolsXML@{getMappedSymbolsXML}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getMappedSymbolsXML()}{getMappedSymbolsXML()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+Mapped\+Symbols\+X\+ML (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Get symbols associated with the given address. 
+
+The Ghidra client will return a $<$symbol$>$ tag, $<$function$>$ tag, or some other related \mbox{\hyperlink{classSymbol}{Symbol}} information. If there no symbol at the address the client should return a $<$hole$>$ tag describing the size of the memory region that is free of symbols. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the symbol document 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a34d8dd44d4670c74fc0c2e627cea5b8e}\label{classArchitectureGhidra_a34d8dd44d4670c74fc0c2e627cea5b8e}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getNamespacePath@{getNamespacePath}}
+\index{getNamespacePath@{getNamespacePath}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getNamespacePath()}{getNamespacePath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+Namespace\+Path (\begin{DoxyParamCaption}\item[{uint8}]{id }\end{DoxyParamCaption})}
+
+
+
+Get a description of a namespace path. 
+
+Ask the Ghidra client to list all namespace elements between the global root and the namespace of the given id. The client should return a $<$parent$>$ tag with a $<$val$>$ child for each namespace in the path. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the given id of the namespace to resolve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the X\+ML document 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a68392af0ec054e9c2a3d2f4774bfce28}\label{classArchitectureGhidra_a68392af0ec054e9c2a3d2f4774bfce28}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getPcodeInject@{getPcodeInject}}
+\index{getPcodeInject@{getPcodeInject}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getPcodeInject()}{getPcodeInject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+Pcode\+Inject (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{int4}]{type,  }\item[{const \mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&}]{con }\end{DoxyParamCaption})}
+
+
+
+Retrieve p-\/code to inject for a specific context. 
+
+The particular injection is named and is of one of the types\+:
+\begin{DoxyItemize}
+\item C\+A\+L\+L\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE
+\item C\+A\+L\+L\+O\+T\+H\+E\+R\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE
+\item C\+A\+L\+L\+M\+E\+C\+H\+A\+N\+I\+S\+M\+\_\+\+T\+Y\+PE
+\item E\+X\+E\+C\+U\+T\+A\+B\+L\+E\+P\+C\+O\+D\+E\+\_\+\+T\+Y\+PE
+\end{DoxyItemize}
+
+This and additional context is provided to the Ghidra client which returns an X\+ML document describing the p-\/code. The document will be an $<$inst$>$ tag containing individual $<$op$>$ tags corresponding to individual p-\/code ops. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the injection \\
+\hline
+{\em type} & is the type of injection \\
+\hline
+{\em con} & is the context object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an X\+ML document describing the p-\/code ops to inject 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a4ebbc30bfe4806007c73b4c5ea0645bf}\label{classArchitectureGhidra_a4ebbc30bfe4806007c73b4c5ea0645bf}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getPcodePacked@{getPcodePacked}}
+\index{getPcodePacked@{getPcodePacked}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getPcodePacked()}{getPcodePacked()}}
+{\footnotesize\ttfamily uint1 $\ast$ Architecture\+Ghidra\+::get\+Pcode\+Packed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Get p-\/code for a single instruction. 
+
+Get a description of all the p-\/code ops for the instruction at the given address. The information is stored in a special compressed format. (See \mbox{\hyperlink{classPcodeEmit_a8136f8c678e250f77907ed57dc6956ac}{Pcode\+Emit\+::restore\+Packed\+Op}}) 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address of the instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an array of the packed data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_ad1e8a5eaefce58038fc774a6083818e8}\label{classArchitectureGhidra_ad1e8a5eaefce58038fc774a6083818e8}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getRegister@{getRegister}}
+\index{getRegister@{getRegister}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getRegister()}{getRegister()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+Register (\begin{DoxyParamCaption}\item[{const string \&}]{regname }\end{DoxyParamCaption})}
+
+
+
+Retrieve a register description given a name. 
+
+Ask the Ghidra client if it knows about a specific processor register. The client responds with a $<$addr$>$ X\+ML element describing the storage location of the register. 
+\begin{DoxyParams}{Parameters}
+{\em regname} & is the name to query for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the storage address as X\+ML or N\+U\+LL if the register is unknown 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a37f48166235bff1cf154a989aa22bfde}\label{classArchitectureGhidra_a37f48166235bff1cf154a989aa22bfde}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getRegisterName@{getRegisterName}}
+\index{getRegisterName@{getRegisterName}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getRegisterName()}{getRegisterName()}}
+{\footnotesize\ttfamily string Architecture\+Ghidra\+::get\+Register\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \&}]{vndata }\end{DoxyParamCaption})}
+
+
+
+Retrieve a register name given its storage location. 
+
+Given a storage location and size, ask the Ghidra client if it knows of a register that occupies those bytes. The register name is passed back. The name may not exactly match the given memory range, it may contain it. 
+\begin{DoxyParams}{Parameters}
+{\em vndata} & is the location and size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the register name or \char`\"{}\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a2be5c2418d8454b2ca497b96f721ad9f}\label{classArchitectureGhidra_a2be5c2418d8454b2ca497b96f721ad9f}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getStringData@{getStringData}}
+\index{getStringData@{getStringData}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getStringData()}{getStringData()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::get\+String\+Data (\begin{DoxyParamCaption}\item[{vector$<$ uint1 $>$ \&}]{buffer,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{int4}]{max\+Bytes,  }\item[{bool \&}]{is\+Trunc }\end{DoxyParamCaption})}
+
+
+
+Get string data at a specific address. 
+
+The data is always returned as a sequence of bytes in U\+T\+F-\/8 format. The in-\/memory form of the string may be different than U\+T\+F-\/8 but is always translated into U\+T\+F-\/8 by this method. The caller can inform the in-\/memory format of the string by specifying a specific string data-\/type. A maximum number of bytes to return is specified. If this is exceeded, a boolean reference is set to {\bfseries{true}}. 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & will hold the string bytes in U\+T\+F-\/8 format \\
+\hline
+{\em addr} & is program \mbox{\hyperlink{classAddress}{Address}} that holds the string data in memory \\
+\hline
+{\em ct} & is string data-\/type expected \\
+\hline
+{\em max\+Bytes} & is the maximum number of bytes to return \\
+\hline
+{\em is\+Trunc} & is the boolean reference indicating whether the data is truncated \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_a124a08d65c25451f2900064445ca704f}\label{classArchitectureGhidra_a124a08d65c25451f2900064445ca704f}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getTrackedRegisters@{getTrackedRegisters}}
+\index{getTrackedRegisters@{getTrackedRegisters}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getTrackedRegisters()}{getTrackedRegisters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+Tracked\+Registers (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Retrieve {\itshape tracked} register values at the given address. 
+
+The Ghidra client will return a description of registers that have known values at the given address. The response is generally a $<$tracked\+\_\+pointset$>$ which contains $<$set$>$ children which contains a storage location and value. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the response \mbox{\hyperlink{classDocument}{Document}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_ad3176a91f7b9643326d94eaab5613a1c}\label{classArchitectureGhidra_ad3176a91f7b9643326d94eaab5613a1c}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getType@{getType}}
+\index{getType@{getType}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::get\+Type (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{uint8}]{id }\end{DoxyParamCaption})}
+
+
+
+Retrieve a data-\/type description for the given name and id. 
+
+The Ghidra client should respond with a $<$type$>$ tag giving details about the data-\/type. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the data-\/type \\
+\hline
+{\em id} & is a unique id associated with the data-\/type, pass 0 if unknown \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the data-\/type X\+ML element or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a743c6158bb0075ab7c13d15725d13414}\label{classArchitectureGhidra_a743c6158bb0075ab7c13d15725d13414}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!getUserOpName@{getUserOpName}}
+\index{getUserOpName@{getUserOpName}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{getUserOpName()}{getUserOpName()}}
+{\footnotesize\ttfamily string Architecture\+Ghidra\+::get\+User\+Op\+Name (\begin{DoxyParamCaption}\item[{int4}]{index }\end{DoxyParamCaption})}
+
+
+
+Get the name of a user-\/defined p-\/code op. 
+
+The first operand to a C\+A\+L\+L\+O\+T\+H\+ER op indicates the specific user-\/defined op. This method queries the Ghidra client and passes back the name of the op. 
+\begin{DoxyParams}{Parameters}
+{\em index} & is the value of the C\+A\+L\+L\+O\+T\+H\+ER operand \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the recovered name or \char`\"{}\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_afed66db0ba46a6c4bb1c42e173d021fa}\label{classArchitectureGhidra_afed66db0ba46a6c4bb1c42e173d021fa}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!passJavaException@{passJavaException}}
+\index{passJavaException@{passJavaException}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{passJavaException()}{passJavaException()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::pass\+Java\+Exception (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const string \&}]{tp,  }\item[{const string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Send an exception message to the Ghidra client. 
+
+This generally called because of some sort of alignment issue in the message protocol and lets the client know to abort (and hopefully resync) 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream to the client \\
+\hline
+{\em tp} & is the type of exception \\
+\hline
+{\em msg} & is the exception message \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_ae7cdac6309428d288bc2317f9997aa4e}\label{classArchitectureGhidra_ae7cdac6309428d288bc2317f9997aa4e}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!printMessage@{printMessage}}
+\index{printMessage@{printMessage}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{printMessage()}{printMessage()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::print\+Message (\begin{DoxyParamCaption}\item[{const string \&}]{message }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print an error message to console. 
+
+Write the given message to whatever the registered error stream is 
+\begin{DoxyParams}{Parameters}
+{\em message} & is the error message \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classArchitecture_a69348906c7601efa002f1f1365decda9}{Architecture}}.
+
+\mbox{\Hypertarget{classArchitectureGhidra_a0df8309f575e876cfab6f331ccf40363}\label{classArchitectureGhidra_a0df8309f575e876cfab6f331ccf40363}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readBoolStream@{readBoolStream}}
+\index{readBoolStream@{readBoolStream}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readBoolStream()}{readBoolStream()}}
+{\footnotesize\ttfamily bool Architecture\+Ghidra\+::read\+Bool\+Stream (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read a boolean value from the client. 
+
+Read the string protocol start, a single character, then the protocol end. If the character is a \textquotesingle{}t\textquotesingle{}, return {\bfseries{true}}, otherwise {\bfseries{false}}. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the passed back boolean value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_ae2bca9976342b1edd992bf084a028b0b}\label{classArchitectureGhidra_ae2bca9976342b1edd992bf084a028b0b}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readPackedAll@{readPackedAll}}
+\index{readPackedAll@{readPackedAll}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readPackedAll()}{readPackedAll()}}
+{\footnotesize\ttfamily uint1 $\ast$ Architecture\+Ghidra\+::read\+Packed\+All (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read a whole response as packed p-\/code op information. 
+
+Read up to the beginning of a query response, check for an exception record, otherwise read in packed p-\/code op data. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the array of packed p-\/coded data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a363a85f21c006421b43cec46fe82df10}\label{classArchitectureGhidra_a363a85f21c006421b43cec46fe82df10}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readPackedStream@{readPackedStream}}
+\index{readPackedStream@{readPackedStream}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readPackedStream()}{readPackedStream()}}
+{\footnotesize\ttfamily uint1 $\ast$ Architecture\+Ghidra\+::read\+Packed\+Stream (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read packed p-\/code op information. 
+
+The method expects to see protocol markers indicating a string from the client, otherwise it throws and exception. An array size is encoded in the first 4 characters of the string. An array of this size is allocated and filled with the rest of the string. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the array of packed p-\/code data 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a948fffd4d8e181563ade259d97074419}\label{classArchitectureGhidra_a948fffd4d8e181563ade259d97074419}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readResponseEnd@{readResponseEnd}}
+\index{readResponseEnd@{readResponseEnd}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readResponseEnd()}{readResponseEnd()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::read\+Response\+End (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read the ending query response protocol marker. 
+
+Read the next protocol marker. If it does not indicate the end of a query response, throw an exception 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_a80e284d7f210bb4f528607a5a62de7ec}\label{classArchitectureGhidra_a80e284d7f210bb4f528607a5a62de7ec}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readStringStream@{readStringStream}}
+\index{readStringStream@{readStringStream}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readStringStream()}{readStringStream()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::read\+String\+Stream (\begin{DoxyParamCaption}\item[{istream \&}]{s,  }\item[{string \&}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Receive a string from the client. 
+
+Characters are read up to the next protocol marked and placed into a string. The protocol marker is consumed and must indicate the end of a string or an exception is thrown. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+{\em res} & will hold the string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_a3132c5fe1bb675952197aa4eafcf298e}\label{classArchitectureGhidra_a3132c5fe1bb675952197aa4eafcf298e}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readToAnyBurst@{readToAnyBurst}}
+\index{readToAnyBurst@{readToAnyBurst}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readToAnyBurst()}{readToAnyBurst()}}
+{\footnotesize\ttfamily int4 Architecture\+Ghidra\+::read\+To\+Any\+Burst (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read the next message protocol marker. 
+
+All communications between the Ghidra client and the decompiler are surrounded by alignment bursts. A burst is 1 or more zero bytes followed by an 0x01 byte, then followed by a code byte. Open alignment (as in open paren) is even. Close alignment is odd. Code bytes are as follows\+:
+\begin{DoxyItemize}
+\item Command open=2 close=3
+\item Query open=4 close=5
+\item Command response open=6 close=7
+\item Query response open=8 close=9
+\item Exception open=a close=b
+\item Byte stream open=c close=d
+\item String stream open=e close=f
+\end{DoxyItemize}
+
+The protocol is as follows\+:
+\begin{DoxyItemize}
+\item ghidra sends a command
+\begin{DoxyItemize}
+\item \mbox{[} decompiler sends a query
+\item ghidra sends a query response \mbox{]} zero or more occurences
+\end{DoxyItemize}
+\item decompiler sends a command response
+\end{DoxyItemize}
+
+Commands, queries, and responses all consist of zero or more string streams or byte streams.
+
+In place of any response an exception can be sent. The decompiler can interrupt a command response with a query or exception once the query is finished the response picks up where it left off an exception however permanently cancels the query. Ghidra cannot interrupt either of its responses. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the command code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a3b18a5a9e669ac8adabe9da47d2aaddf}\label{classArchitectureGhidra_a3b18a5a9e669ac8adabe9da47d2aaddf}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readToResponse@{readToResponse}}
+\index{readToResponse@{readToResponse}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readToResponse()}{readToResponse()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::read\+To\+Response (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read the query response protocol marker. 
+
+Consume the query response header. If it indicates an exception, read details of the exception and throw \mbox{\hyperlink{structJavaError}{Java\+Error}}. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_ae71b65457955432775931afde0d1c933}\label{classArchitectureGhidra_ae71b65457955432775931afde0d1c933}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readXMLAll@{readXMLAll}}
+\index{readXMLAll@{readXMLAll}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readXMLAll()}{readXMLAll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::read\+X\+M\+L\+All (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read a whole response as an X\+ML document. 
+
+Read up to the beginning of a query response, check for an exception record, otherwise read in a string as an X\+ML document. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the X\+ML document 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a76b1d30cc0f0f69f003ba3aceccd8063}\label{classArchitectureGhidra_a76b1d30cc0f0f69f003ba3aceccd8063}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!readXMLStream@{readXMLStream}}
+\index{readXMLStream@{readXMLStream}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{readXMLStream()}{readXMLStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDocument}{Document}} $\ast$ Architecture\+Ghidra\+::read\+X\+M\+L\+Stream (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Receive an X\+ML document from the client. 
+
+The method expects to see protocol markers indicating a string from the client, otherwise it throws and exception. The string is read in and then parsed as X\+ML. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the client. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the X\+ML document 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classArchitectureGhidra_a606fbae6a63c41723343137c56f84eca}\label{classArchitectureGhidra_a606fbae6a63c41723343137c56f84eca}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!segvHandler@{segvHandler}}
+\index{segvHandler@{segvHandler}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{segvHandler()}{segvHandler()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::segv\+Handler (\begin{DoxyParamCaption}\item[{int4}]{sig }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handler for a segment violation (S\+I\+G\+S\+E\+GV) signal. 
+
+Catch the signal so the OS doesn\textquotesingle{}t pop up a dialog 
+\begin{DoxyParams}{Parameters}
+{\em sig} & is the OS signal (should always be S\+I\+G\+S\+E\+GV) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_a9c5dc81edf25bc5754821f69a83cd091}\label{classArchitectureGhidra_a9c5dc81edf25bc5754821f69a83cd091}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!setSendCCode@{setSendCCode}}
+\index{setSendCCode@{setSendCCode}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{setSendCCode()}{setSendCCode()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::set\+Send\+C\+Code (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle whether the recovered source code is emitted as part of the main decompile action. 
+
+If the toggle is {\bfseries{on}}, the decompiler will emit source code (marked up in an X\+ML document) 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to enable emitting \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_a1a81c2e3fb902ec976afd5e639a1ba90}\label{classArchitectureGhidra_a1a81c2e3fb902ec976afd5e639a1ba90}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!setSendParamMeasures@{setSendParamMeasures}}
+\index{setSendParamMeasures@{setSendParamMeasures}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{setSendParamMeasures()}{setSendParamMeasures()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::set\+Send\+Param\+Measures (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle whether recovered parameter information is emitted as part of the main decompile action. 
+
+If the toggle is {\bfseries{on}}, the decompiler will emit a more detailed description of what it thinks the input parameters to the function are. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} enable emitting \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_a26c9c47c970ba0b6f1dedaf23f638eb2}\label{classArchitectureGhidra_a26c9c47c970ba0b6f1dedaf23f638eb2}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!setSendSyntaxTree@{setSendSyntaxTree}}
+\index{setSendSyntaxTree@{setSendSyntaxTree}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{setSendSyntaxTree()}{setSendSyntaxTree()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::set\+Send\+Syntax\+Tree (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Toggle whether the data-\/flow and control-\/flow is emitted as part of the main decompile action. 
+
+If the toggle is {\bfseries{on}}, the decompiler will emit complete descriptions of the graphs. 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to enable emitting \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classArchitectureGhidra_a438f8405f19893ac1aa3057f67188f4a}\label{classArchitectureGhidra_a438f8405f19893ac1aa3057f67188f4a}} 
+\index{ArchitectureGhidra@{ArchitectureGhidra}!writeStringStream@{writeStringStream}}
+\index{writeStringStream@{writeStringStream}!ArchitectureGhidra@{ArchitectureGhidra}}
+\doxysubsubsection{\texorpdfstring{writeStringStream()}{writeStringStream()}}
+{\footnotesize\ttfamily void Architecture\+Ghidra\+::write\+String\+Stream (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const string \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Send a string to the client. 
+
+Write out a string with correct protocol markers 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream to the client \\
+\hline
+{\em msg} & is the string to send \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__arch_8hh}{ghidra\+\_\+arch.\+hh}}\item 
+ghidra\+\_\+arch.\+cc\end{DoxyCompactItemize}

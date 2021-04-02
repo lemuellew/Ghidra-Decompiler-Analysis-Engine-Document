@@ -1,0 +1,50 @@
+\hypertarget{structCommentOrder}{}\doxysection{Comment\+Order Struct Reference}
+\label{structCommentOrder}\index{CommentOrder@{CommentOrder}}
+
+
+Compare two \mbox{\hyperlink{classComment}{Comment}} pointers.  
+
+
+
+
+{\ttfamily \#include $<$comment.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{structCommentOrder_abc25c16ce85b2992b4218788df3732f7}{operator()}} (const \mbox{\hyperlink{classComment}{Comment}} $\ast$a, const \mbox{\hyperlink{classComment}{Comment}} $\ast$b) const
+\begin{DoxyCompactList}\small\item\em Comparison operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Compare two \mbox{\hyperlink{classComment}{Comment}} pointers. 
+
+Comments are ordered first by function, then address, then the sub-\/sort index. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structCommentOrder_abc25c16ce85b2992b4218788df3732f7}\label{structCommentOrder_abc25c16ce85b2992b4218788df3732f7}} 
+\index{CommentOrder@{CommentOrder}!operator()@{operator()}}
+\index{operator()@{operator()}!CommentOrder@{CommentOrder}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily bool Comment\+Order\+::operator() (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classComment}{Comment}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{classComment}{Comment}} $\ast$}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Comparison operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is the first \mbox{\hyperlink{classComment}{Comment}} to compare \\
+\hline
+{\em b} & is the second \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} is the first is ordered before the second 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{comment_8hh}{comment.\+hh}}\item 
+comment.\+cc\end{DoxyCompactItemize}

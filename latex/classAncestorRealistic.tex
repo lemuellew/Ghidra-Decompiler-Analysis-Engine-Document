@@ -1,0 +1,54 @@
+\hypertarget{classAncestorRealistic}{}\doxysection{Ancestor\+Realistic Class Reference}
+\label{classAncestorRealistic}\index{AncestorRealistic@{AncestorRealistic}}
+
+
+Helper class for determining if Varnodes can trace their value from a legitimate source.  
+
+
+
+
+{\ttfamily \#include $<$funcdata.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classAncestorRealistic_a5812787dc51e5f5238f8b595ed8cf084}{execute}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 slot, \mbox{\hyperlink{classParamTrial}{Param\+Trial}} $\ast$t, bool allow\+Fail)
+\begin{DoxyCompactList}\small\item\em Perform a full ancestor check on a given parameter trial. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Helper class for determining if Varnodes can trace their value from a legitimate source. 
+
+Try to determine if a \mbox{\hyperlink{classVarnode}{Varnode}} (expressed as a particular input to a C\+A\+LL, C\+A\+L\+L\+I\+ND, or R\+E\+T\+U\+RN op) makes sense as parameter passing (or return value) storage by examining the \mbox{\hyperlink{classVarnode}{Varnode}}\textquotesingle{}s ancestors. If it has ancestors that are {\itshape unaffected}, {\itshape abnormal} inputs, or {\itshape killedbycall}, then this is a sign that the \mbox{\hyperlink{classVarnode}{Varnode}} doesn\textquotesingle{}t make a good parameter. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAncestorRealistic_a5812787dc51e5f5238f8b595ed8cf084}\label{classAncestorRealistic_a5812787dc51e5f5238f8b595ed8cf084}} 
+\index{AncestorRealistic@{AncestorRealistic}!execute@{execute}}
+\index{execute@{execute}!AncestorRealistic@{AncestorRealistic}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily bool Ancestor\+Realistic\+::execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4}]{slot,  }\item[{\mbox{\hyperlink{classParamTrial}{Param\+Trial}} $\ast$}]{t,  }\item[{bool}]{allow\+Fail }\end{DoxyParamCaption})}
+
+
+
+Perform a full ancestor check on a given parameter trial. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & is the C\+A\+LL or R\+E\+T\+U\+RN to test parameter passing for \\
+\hline
+{\em slot} & is the index of the particular input varnode to test \\
+\hline
+{\em t} & is the \mbox{\hyperlink{classParamTrial}{Param\+Trial}} object corresponding to the varnode \\
+\hline
+{\em allow\+Fail} & is {\bfseries{true}} if we allow and test for failing paths due to conditional execution \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the varnode has realistic ancestors for a parameter passing location 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{funcdata_8hh}{funcdata.\+hh}}\item 
+funcdata\+\_\+varnode.\+cc\end{DoxyCompactItemize}

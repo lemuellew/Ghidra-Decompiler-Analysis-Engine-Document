@@ -1,0 +1,351 @@
+\hypertarget{classSleighCompile}{}\doxysection{Sleigh\+Compile Class Reference}
+\label{classSleighCompile}\index{SleighCompile@{SleighCompile}}
+
+
+Inheritance diagram for Sleigh\+Compile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classSleighCompile__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sleigh\+Compile\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSleighCompile__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighCompile_ad5043b6029e2454707935807e53e1735}\label{classSleighCompile_ad5043b6029e2454707935807e53e1735}} 
+const \mbox{\hyperlink{classLocation}{Location}} $\ast$ {\bfseries get\+Location} (\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ctor) const
+\item 
+\mbox{\Hypertarget{classSleighCompile_a55568cb9cf68ce8e2dc0d9ec88c0a936}\label{classSleighCompile_a55568cb9cf68ce8e2dc0d9ec88c0a936}} 
+const \mbox{\hyperlink{classLocation}{Location}} $\ast$ {\bfseries get\+Location} (\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$sym) const
+\item 
+\mbox{\Hypertarget{classSleighCompile_ac835875c13311fc5f216f003a9a3fa7b}\label{classSleighCompile_ac835875c13311fc5f216f003a9a3fa7b}} 
+string {\bfseries format\+Status\+Message} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a540e67ad21bcad4153d910a5fe857e77}\label{classSleighCompile_a540e67ad21bcad4153d910a5fe857e77}} 
+void {\bfseries report\+Error} (const string \&msg)
+\item 
+\mbox{\Hypertarget{classSleighCompile_accebfdb1e1b896a5ce125ba20bcd3630}\label{classSleighCompile_accebfdb1e1b896a5ce125ba20bcd3630}} 
+void {\bfseries report\+Error} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a63b191da3fb1779d9a0072aa2591cc2d}\label{classSleighCompile_a63b191da3fb1779d9a0072aa2591cc2d}} 
+void {\bfseries report\+Warning} (const string \&msg)
+\item 
+\mbox{\Hypertarget{classSleighCompile_ac37ae73af6e0355a25ca673f76cf7cb2}\label{classSleighCompile_ac37ae73af6e0355a25ca673f76cf7cb2}} 
+void {\bfseries report\+Warning} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a5d784f8080b11074ee3eb7be024a4acb}\label{classSleighCompile_a5d784f8080b11074ee3eb7be024a4acb}} 
+int4 {\bfseries num\+Errors} (void) const
+\item 
+\mbox{\Hypertarget{classSleighCompile_aeb65f4023aa88e7ae4f3f644ad96f637}\label{classSleighCompile_aeb65f4023aa88e7ae4f3f644ad96f637}} 
+void {\bfseries report\+Info} (const string \&msg)
+\item 
+\mbox{\Hypertarget{classSleighCompile_aeff07a2cab11524d1ca3ef60d81e4bad}\label{classSleighCompile_aeff07a2cab11524d1ca3ef60d81e4bad}} 
+void {\bfseries report\+Info} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a32f70f8b08cba76013faffe61966a080}\label{classSleighCompile_a32f70f8b08cba76013faffe61966a080}} 
+uintb {\bfseries get\+Unique\+Addr} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_aea70d98ce950acdc4530ffdf5a6a2f31}\label{classSleighCompile_aea70d98ce950acdc4530ffdf5a6a2f31}} 
+void {\bfseries set\+Unnecessary\+Pcode\+Warning} (bool val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_aa206cd0acacbdbf18d38cc0138926049}\label{classSleighCompile_aa206cd0acacbdbf18d38cc0138926049}} 
+void {\bfseries set\+Dead\+Temp\+Warning} (bool val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a32aa844100006a43c9ecc9e4273337b4}\label{classSleighCompile_a32aa844100006a43c9ecc9e4273337b4}} 
+void {\bfseries set\+Enforce\+Local\+Key\+Word} (bool val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_af06d9df1ab890392ccd6fba6ace7feb8}\label{classSleighCompile_af06d9df1ab890392ccd6fba6ace7feb8}} 
+void {\bfseries set\+Large\+Temporary\+Warning} (bool val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_abffd3f40ea361e9d75de94285738c7de}\label{classSleighCompile_abffd3f40ea361e9d75de94285738c7de}} 
+void {\bfseries set\+Lenient\+Conflict} (bool val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_af05f4073368dd8ae0db5e601d6bf64bd}\label{classSleighCompile_af05f4073368dd8ae0db5e601d6bf64bd}} 
+void {\bfseries set\+Local\+Collision\+Warning} (bool val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a4a1ac06e98efdf630947f401cb6c355c}\label{classSleighCompile_a4a1ac06e98efdf630947f401cb6c355c}} 
+void {\bfseries set\+All\+Nop\+Warning} (bool val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a2f2a10a6cc1f1b03f02ebd2f63a2264f}\label{classSleighCompile_a2f2a10a6cc1f1b03f02ebd2f63a2264f}} 
+void {\bfseries process} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_abf73e7515a8035b45682451849f2b5be}\label{classSleighCompile_abf73e7515a8035b45682451849f2b5be}} 
+void {\bfseries calc\+Context\+Layout} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_afe364bd89e5cc56e0e6579138d214772}\label{classSleighCompile_afe364bd89e5cc56e0e6579138d214772}} 
+string {\bfseries grab\+Current\+File\+Path} (void) const
+\item 
+\mbox{\Hypertarget{classSleighCompile_aaf7be52d56942f5de10d908e00826d22}\label{classSleighCompile_aaf7be52d56942f5de10d908e00826d22}} 
+void {\bfseries parse\+From\+New\+File} (const string \&fname)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a0e8ce37c68e8460ca6d82e45b55d7ac7}\label{classSleighCompile_a0e8ce37c68e8460ca6d82e45b55d7ac7}} 
+void {\bfseries parse\+Preproc\+Macro} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a70eb25a26cb9e8f0b4e8ef44511c3f78}\label{classSleighCompile_a70eb25a26cb9e8f0b4e8ef44511c3f78}} 
+void {\bfseries parse\+File\+Finished} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a46a32d2f2db362b1f29264b6a7e648ec}\label{classSleighCompile_a46a32d2f2db362b1f29264b6a7e648ec}} 
+void {\bfseries next\+Line} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a009d448b5035a45a520b85074b0d545a}\label{classSleighCompile_a009d448b5035a45a520b85074b0d545a}} 
+bool {\bfseries get\+Preproc\+Value} (const string \&nm, string \&res) const
+\item 
+\mbox{\Hypertarget{classSleighCompile_af5f1126e010ecd977386150a77349137}\label{classSleighCompile_af5f1126e010ecd977386150a77349137}} 
+void {\bfseries set\+Preproc\+Value} (const string \&nm, const string \&value)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a02e6d60fbc4ba8092f484f586ed34397}\label{classSleighCompile_a02e6d60fbc4ba8092f484f586ed34397}} 
+bool {\bfseries undefine\+Preproc\+Value} (const string \&nm)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a183bc299279791e856448e9d1badd073}\label{classSleighCompile_a183bc299279791e856448e9d1badd073}} 
+\mbox{\hyperlink{classTokenSymbol}{Token\+Symbol}} $\ast$ {\bfseries define\+Token} (string $\ast$name, uintb $\ast$sz, int4 endian)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a5c22093ca6485e902e05da5df71d651a}\label{classSleighCompile_a5c22093ca6485e902e05da5df71d651a}} 
+void {\bfseries add\+Token\+Field} (\mbox{\hyperlink{classTokenSymbol}{Token\+Symbol}} $\ast$sym, \mbox{\hyperlink{structFieldQuality}{Field\+Quality}} $\ast$qual)
+\item 
+\mbox{\Hypertarget{classSleighCompile_aa78e3d963607a1caea759cff7127123b}\label{classSleighCompile_aa78e3d963607a1caea759cff7127123b}} 
+bool {\bfseries add\+Context\+Field} (\mbox{\hyperlink{classVarnodeSymbol}{Varnode\+Symbol}} $\ast$sym, \mbox{\hyperlink{structFieldQuality}{Field\+Quality}} $\ast$qual)
+\item 
+\mbox{\Hypertarget{classSleighCompile_afadd41c3c850e824d48ec7c2638304c8}\label{classSleighCompile_afadd41c3c850e824d48ec7c2638304c8}} 
+void {\bfseries new\+Space} (\mbox{\hyperlink{structSpaceQuality}{Space\+Quality}} $\ast$qual)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a1ba500a5fecf35e16b0721afa600e857}\label{classSleighCompile_a1ba500a5fecf35e16b0721afa600e857}} 
+\mbox{\hyperlink{classSectionSymbol}{Section\+Symbol}} $\ast$ {\bfseries new\+Section\+Symbol} (const string \&nm)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a4790923ffdd979ec948a9396ab23b969}\label{classSleighCompile_a4790923ffdd979ec948a9396ab23b969}} 
+void {\bfseries set\+Endian} (int4 end)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a603d689850a06d968f17792238764e32}\label{classSleighCompile_a603d689850a06d968f17792238764e32}} 
+void {\bfseries set\+Alignment} (int4 val)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a97fb4d4cb94d8de8eaba37c0aac16bce}\label{classSleighCompile_a97fb4d4cb94d8de8eaba37c0aac16bce}} 
+void {\bfseries define\+Varnodes} (\mbox{\hyperlink{classSpaceSymbol}{Space\+Symbol}} $\ast$spacesym, uintb $\ast$off, uintb $\ast$size, vector$<$ string $>$ $\ast$names)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a5bab7ee59435857526ed02fd3071f4d7}\label{classSleighCompile_a5bab7ee59435857526ed02fd3071f4d7}} 
+void {\bfseries define\+Bitrange} (string $\ast$name, \mbox{\hyperlink{classVarnodeSymbol}{Varnode\+Symbol}} $\ast$sym, uint4 bitoffset, uint4 numb)
+\item 
+\mbox{\Hypertarget{classSleighCompile_ab5e2aa6387dbb75df28a3418665cdd51}\label{classSleighCompile_ab5e2aa6387dbb75df28a3418665cdd51}} 
+void {\bfseries add\+User\+Op} (vector$<$ string $>$ $\ast$names)
+\item 
+\mbox{\Hypertarget{classSleighCompile_aaa65f4c8bab6da49b695e36808ee6724}\label{classSleighCompile_aaa65f4c8bab6da49b695e36808ee6724}} 
+void {\bfseries attach\+Values} (vector$<$ \mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ $>$ $\ast$symlist, vector$<$ intb $>$ $\ast$numlist)
+\item 
+\mbox{\Hypertarget{classSleighCompile_aeb453f70cf88dfa1459a859c5d3ef551}\label{classSleighCompile_aeb453f70cf88dfa1459a859c5d3ef551}} 
+void {\bfseries attach\+Names} (vector$<$ \mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ $>$ $\ast$symlist, vector$<$ string $>$ $\ast$names)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a3bf9c02ba7c649ca151116c181817555}\label{classSleighCompile_a3bf9c02ba7c649ca151116c181817555}} 
+void {\bfseries attach\+Varnodes} (vector$<$ \mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ $>$ $\ast$symlist, vector$<$ \mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$ $>$ $\ast$varlist)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a6a59f980ee7792e983275d1cb3913ba2}\label{classSleighCompile_a6a59f980ee7792e983275d1cb3913ba2}} 
+\mbox{\hyperlink{classSubtableSymbol}{Subtable\+Symbol}} $\ast$ {\bfseries new\+Table} (string $\ast$nm)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a012c6e9fcecbbbaeea20a1e7cbe38e9d}\label{classSleighCompile_a012c6e9fcecbbbaeea20a1e7cbe38e9d}} 
+void {\bfseries new\+Operand} (\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ct, string $\ast$nm)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a5c736771ead9a6bec61df50946f98de8}\label{classSleighCompile_a5c736771ead9a6bec61df50946f98de8}} 
+\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$ {\bfseries address\+Of} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$var, uint4 size)
+\item 
+\mbox{\Hypertarget{classSleighCompile_af726f70a39e1b7e9a7695f7fcae7523e}\label{classSleighCompile_af726f70a39e1b7e9a7695f7fcae7523e}} 
+\mbox{\hyperlink{classPatternEquation}{Pattern\+Equation}} $\ast$ {\bfseries constrain\+Operand} (\mbox{\hyperlink{classOperandSymbol}{Operand\+Symbol}} $\ast$sym, \mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$patexp)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a13ca459265a60fa719375491070a378c}\label{classSleighCompile_a13ca459265a60fa719375491070a378c}} 
+void {\bfseries define\+Operand} (\mbox{\hyperlink{classOperandSymbol}{Operand\+Symbol}} $\ast$sym, \mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$patexp)
+\item 
+\mbox{\Hypertarget{classSleighCompile_ab9d0f1be08e773533a23ef417399ac87}\label{classSleighCompile_ab9d0f1be08e773533a23ef417399ac87}} 
+\mbox{\hyperlink{classPatternEquation}{Pattern\+Equation}} $\ast$ {\bfseries define\+Invisible\+Operand} (\mbox{\hyperlink{classTripleSymbol}{Triple\+Symbol}} $\ast$sym)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a506e372776432e6ba9d06ccf0402bfa9}\label{classSleighCompile_a506e372776432e6ba9d06ccf0402bfa9}} 
+void {\bfseries self\+Define} (\mbox{\hyperlink{classOperandSymbol}{Operand\+Symbol}} $\ast$sym)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a4faccf9bdca5d00e52a51ad46ce6de91}\label{classSleighCompile_a4faccf9bdca5d00e52a51ad46ce6de91}} 
+\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$ {\bfseries set\+Result\+Varnode} (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$ct, \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vn)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a5d9ed43987bc167ad93691052361975d}\label{classSleighCompile_a5d9ed43987bc167ad93691052361975d}} 
+\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$ {\bfseries set\+Result\+Star\+Varnode} (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$ct, \mbox{\hyperlink{structStarQuality}{Star\+Quality}} $\ast$star, \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$vn)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a84c46e7d0a62a9fbdb300e9b2df3f303}\label{classSleighCompile_a84c46e7d0a62a9fbdb300e9b2df3f303}} 
+bool {\bfseries context\+Mod} (vector$<$ \mbox{\hyperlink{classContextChange}{Context\+Change}} $\ast$ $>$ $\ast$vec, \mbox{\hyperlink{classContextSymbol}{Context\+Symbol}} $\ast$sym, \mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$pe)
+\item 
+\mbox{\Hypertarget{classSleighCompile_ac7162d3b41a8315268b9a0d44d82d049}\label{classSleighCompile_ac7162d3b41a8315268b9a0d44d82d049}} 
+void {\bfseries context\+Set} (vector$<$ \mbox{\hyperlink{classContextChange}{Context\+Change}} $\ast$ $>$ $\ast$vec, \mbox{\hyperlink{classTripleSymbol}{Triple\+Symbol}} $\ast$sym, \mbox{\hyperlink{classContextSymbol}{Context\+Symbol}} $\ast$cvar)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a1ccff5875e71c234e97714f364a66ebf}\label{classSleighCompile_a1ccff5875e71c234e97714f364a66ebf}} 
+\mbox{\hyperlink{classMacroSymbol}{Macro\+Symbol}} $\ast$ {\bfseries create\+Macro} (string $\ast$name, vector$<$ string $>$ $\ast$param)
+\item 
+\mbox{\Hypertarget{classSleighCompile_adce2cad9a79bab4e9d03357e96668774}\label{classSleighCompile_adce2cad9a79bab4e9d03357e96668774}} 
+void {\bfseries compare\+Macro\+Params} (\mbox{\hyperlink{classMacroSymbol}{Macro\+Symbol}} $\ast$sym, const vector$<$ \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ $>$ \&param)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a9576fc0c7e5e7ed41b3adf76a31edd72}\label{classSleighCompile_a9576fc0c7e5e7ed41b3adf76a31edd72}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries create\+Macro\+Use} (\mbox{\hyperlink{classMacroSymbol}{Macro\+Symbol}} $\ast$sym, vector$<$ \mbox{\hyperlink{classExprTree}{Expr\+Tree}} $\ast$ $>$ $\ast$param)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a3f62e53fa5c0f511490d4e01653de8eb}\label{classSleighCompile_a3f62e53fa5c0f511490d4e01653de8eb}} 
+\mbox{\hyperlink{classSectionVector}{Section\+Vector}} $\ast$ {\bfseries standalone\+Section} (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$main)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a5b1db8a0c6f01322e117577d323c75cd}\label{classSleighCompile_a5b1db8a0c6f01322e117577d323c75cd}} 
+\mbox{\hyperlink{classSectionVector}{Section\+Vector}} $\ast$ {\bfseries first\+Named\+Section} (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$main, \mbox{\hyperlink{classSectionSymbol}{Section\+Symbol}} $\ast$sym)
+\item 
+\mbox{\Hypertarget{classSleighCompile_aa13d1d257844710ebb377e734e1ca6e6}\label{classSleighCompile_aa13d1d257844710ebb377e734e1ca6e6}} 
+\mbox{\hyperlink{classSectionVector}{Section\+Vector}} $\ast$ {\bfseries next\+Named\+Section} (\mbox{\hyperlink{classSectionVector}{Section\+Vector}} $\ast$vec, \mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$section, \mbox{\hyperlink{classSectionSymbol}{Section\+Symbol}} $\ast$sym)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a95a09437387d25e9c256633a487bd6cd}\label{classSleighCompile_a95a09437387d25e9c256633a487bd6cd}} 
+\mbox{\hyperlink{classSectionVector}{Section\+Vector}} $\ast$ {\bfseries final\+Named\+Section} (\mbox{\hyperlink{classSectionVector}{Section\+Vector}} $\ast$vec, \mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$section)
+\item 
+\mbox{\Hypertarget{classSleighCompile_ac6de6c64a443c17ee0c0b33d0dbf4458}\label{classSleighCompile_ac6de6c64a443c17ee0c0b33d0dbf4458}} 
+vector$<$ \mbox{\hyperlink{classOpTpl}{Op\+Tpl}} $\ast$ $>$ $\ast$ {\bfseries create\+Cross\+Build} (\mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$addr, \mbox{\hyperlink{classSectionSymbol}{Section\+Symbol}} $\ast$sym)
+\item 
+\mbox{\Hypertarget{classSleighCompile_ac31ebb2619890f9c574cd2c18d198995}\label{classSleighCompile_ac31ebb2619890f9c574cd2c18d198995}} 
+\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ {\bfseries create\+Constructor} (\mbox{\hyperlink{classSubtableSymbol}{Subtable\+Symbol}} $\ast$sym)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a2171aa9db2aaed657dd587ca5a098747}\label{classSleighCompile_a2171aa9db2aaed657dd587ca5a098747}} 
+bool {\bfseries is\+In\+Root} (\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ct) const
+\item 
+\mbox{\Hypertarget{classSleighCompile_a95789f902da8678b1ef5fa019b1733ec}\label{classSleighCompile_a95789f902da8678b1ef5fa019b1733ec}} 
+void {\bfseries reset\+Constructors} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a2f5d83b885d823b22f3591795f8e3457}\label{classSleighCompile_a2f5d83b885d823b22f3591795f8e3457}} 
+void {\bfseries push\+With} (\mbox{\hyperlink{classSubtableSymbol}{Subtable\+Symbol}} $\ast$ss, \mbox{\hyperlink{classPatternEquation}{Pattern\+Equation}} $\ast$pateq, vector$<$ \mbox{\hyperlink{classContextChange}{Context\+Change}} $\ast$ $>$ $\ast$contvec)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a6debbf54d93edca9385ae391968bec76}\label{classSleighCompile_a6debbf54d93edca9385ae391968bec76}} 
+void {\bfseries pop\+With} (void)
+\item 
+\mbox{\Hypertarget{classSleighCompile_a2d11b92b6c5db7386b319ad88202c2b2}\label{classSleighCompile_a2d11b92b6c5db7386b319ad88202c2b2}} 
+void {\bfseries build\+Constructor} (\mbox{\hyperlink{classConstructor}{Constructor}} $\ast$big, \mbox{\hyperlink{classPatternEquation}{Pattern\+Equation}} $\ast$pateq, vector$<$ \mbox{\hyperlink{classContextChange}{Context\+Change}} $\ast$ $>$ $\ast$contvec, \mbox{\hyperlink{classSectionVector}{Section\+Vector}} $\ast$vec)
+\item 
+\mbox{\Hypertarget{classSleighCompile_af1254837779064d42c7d575f30b66b68}\label{classSleighCompile_af1254837779064d42c7d575f30b66b68}} 
+void {\bfseries build\+Macro} (\mbox{\hyperlink{classMacroSymbol}{Macro\+Symbol}} $\ast$sym, \mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$rtl)
+\item 
+\mbox{\Hypertarget{classSleighCompile_ab611793098a7d9c4cd867862e9d01701}\label{classSleighCompile_ab611793098a7d9c4cd867862e9d01701}} 
+void {\bfseries record\+Nop} (void)
+\item 
+virtual void \mbox{\hyperlink{classSleighCompile_afbc2737c7b6421eba8b0cca13039270c}{initialize}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\begin{DoxyCompactList}\small\item\em Initialize the translator given X\+ML configuration documents. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSleighCompile_acec92daa9826ded3fe156d2b58ccc2ca}{instruction\+Length}} (const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Get the length of a machine instruction. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSleighCompile_acdc475de0a5d086c9d256f28c2f6862d}{one\+Instruction}} (\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&emit, const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Transform a single machine instruction into pcode. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSleighCompile_a3bf70750db89c91c441bac3a58e15401}{print\+Assembly}} (\mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} \&emit, const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Disassemble a single machine instruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighCompile_aa733427b680421c7473d0b6f945ff6f2}\label{classSleighCompile_aa733427b680421c7473d0b6f945ff6f2}} 
+\mbox{\hyperlink{classSleighPcode}{Sleigh\+Pcode}} {\bfseries pcode}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSleighCompile_a1a6174ea5a2d029404c087827849b5d5}\label{classSleighCompile_a1a6174ea5a2d029404c087827849b5d5}} 
+class {\bfseries Sleigh\+Pcode}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSleighCompile_afbc2737c7b6421eba8b0cca13039270c}\label{classSleighCompile_afbc2737c7b6421eba8b0cca13039270c}} 
+\index{SleighCompile@{SleighCompile}!initialize@{initialize}}
+\index{initialize@{initialize}!SleighCompile@{SleighCompile}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void Sleigh\+Compile\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the translator given X\+ML configuration documents. 
+
+A translator gets initialized once, possibly using X\+ML documents to configure it. 
+\begin{DoxyParams}{Parameters}
+{\em store} & is a set of configuration documents \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_af8e71e9a9477e9a91be400ecca565df5}{Translate}}.
+
+\mbox{\Hypertarget{classSleighCompile_acec92daa9826ded3fe156d2b58ccc2ca}\label{classSleighCompile_acec92daa9826ded3fe156d2b58ccc2ca}} 
+\index{SleighCompile@{SleighCompile}!instructionLength@{instructionLength}}
+\index{instructionLength@{instructionLength}!SleighCompile@{SleighCompile}}
+\doxysubsubsection{\texorpdfstring{instructionLength()}{instructionLength()}}
+{\footnotesize\ttfamily virtual int4 Sleigh\+Compile\+::instruction\+Length (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the length of a machine instruction. 
+
+This method decodes an instruction at a specific address just enough to find the number of bytes it uses within the instruction stream. 
+\begin{DoxyParams}{Parameters}
+{\em baseaddr} & is the \mbox{\hyperlink{classAddress}{Address}} of the instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes in the instruction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_aa7139376886fccfdcda529fc74f7b382}{Translate}}.
+
+\mbox{\Hypertarget{classSleighCompile_acdc475de0a5d086c9d256f28c2f6862d}\label{classSleighCompile_acdc475de0a5d086c9d256f28c2f6862d}} 
+\index{SleighCompile@{SleighCompile}!oneInstruction@{oneInstruction}}
+\index{oneInstruction@{oneInstruction}!SleighCompile@{SleighCompile}}
+\doxysubsubsection{\texorpdfstring{oneInstruction()}{oneInstruction()}}
+{\footnotesize\ttfamily virtual int4 Sleigh\+Compile\+::one\+Instruction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&}]{emit,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Transform a single machine instruction into pcode. 
+
+This is the main interface to the pcode translation engine. The {\itshape dump} method in the {\itshape emit} object is invoked exactly once for each pcode operation in the translation for the machine instruction at the given address. This routine can throw either
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{structUnimplError}{Unimpl\+Error}} or
+\item \mbox{\hyperlink{structBadDataError}{Bad\+Data\+Error}}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em emit} & is the tailored pcode emitting object \\
+\hline
+{\em baseaddr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes in the machine instruction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_a1737782c38ee43de62ae2e7572321fc9}{Translate}}.
+
+\mbox{\Hypertarget{classSleighCompile_a3bf70750db89c91c441bac3a58e15401}\label{classSleighCompile_a3bf70750db89c91c441bac3a58e15401}} 
+\index{SleighCompile@{SleighCompile}!printAssembly@{printAssembly}}
+\index{printAssembly@{printAssembly}!SleighCompile@{SleighCompile}}
+\doxysubsubsection{\texorpdfstring{printAssembly()}{printAssembly()}}
+{\footnotesize\ttfamily virtual int4 Sleigh\+Compile\+::print\+Assembly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} \&}]{emit,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Disassemble a single machine instruction. 
+
+This is the main interface to the disassembler for the processor. It disassembles a single instruction and returns the result to the application via the {\itshape dump} method in the {\itshape emit} object. 
+\begin{DoxyParams}{Parameters}
+{\em emit} & is the disassembly emitting object \\
+\hline
+{\em baseaddr} & is the address of the machine instruction to disassemble \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{Translate}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slgh\+\_\+compile.\+hh\item 
+slgh\+\_\+compile.\+cc\end{DoxyCompactItemize}

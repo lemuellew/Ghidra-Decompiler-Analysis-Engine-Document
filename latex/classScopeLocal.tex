@@ -1,0 +1,269 @@
+\hypertarget{classScopeLocal}{}\doxysection{Scope\+Local Class Reference}
+\label{classScopeLocal}\index{ScopeLocal@{ScopeLocal}}
+
+
+A \mbox{\hyperlink{classSymbol}{Symbol}} scope for {\itshape local} variables of a particular function.  
+
+
+
+
+{\ttfamily \#include $<$varmap.\+hh$>$}
+
+
+
+Inheritance diagram for Scope\+Local\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classScopeLocal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scope\+Local\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScopeLocal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScopeLocal_a549766191cb3b272c7c5c05d1f6a9ff9}{Scope\+Local}} (uint8 id, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$\mbox{\hyperlink{classScope_a72f6c31e73c46216482a6902d22b3330}{fd}}, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classScopeLocal_ac6913e22130acb08f7d075a136c36780}{is\+Unaffected\+Storage}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn) const
+\begin{DoxyCompactList}\small\item\em Is this a storage location for {\itshape unaffected} registers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeLocal_a560ea5441b79ef3c17b890c7d37ccaf1}{mark\+Not\+Mapped}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spc, uintb first, int4 sz, bool param)
+\begin{DoxyCompactList}\small\item\em Mark a specific address range is not mapped. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeLocal_a5ce828992aceb086c5bcc62d8cf2f3ae}\label{classScopeLocal_a5ce828992aceb086c5bcc62d8cf2f3ae}} 
+virtual void \mbox{\hyperlink{classScopeLocal_a5ce828992aceb086c5bcc62d8cf2f3ae}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write out {\bfseries{this}} as a $<$scope$>$ X\+ML tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeLocal_a5eeb1756bc706b8d5211fda106ad82ae}\label{classScopeLocal_a5eeb1756bc706b8d5211fda106ad82ae}} 
+virtual void \mbox{\hyperlink{classScopeLocal_a5eeb1756bc706b8d5211fda106ad82ae}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}} from a $<$scope$>$ X\+ML tag. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classScopeLocal_a7c86528490f519a64d44ae6dc8438393}{build\+Variable\+Name}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&pc, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, int4 \&index, uint4 flags) const
+\begin{DoxyCompactList}\small\item\em Given an address and data-\/type, build a suitable generic symbol name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeLocal_a3bf9941188eb64423d2ed49a08dab8ca}{reset\+Local\+Window}} (void)
+\begin{DoxyCompactList}\small\item\em Reset the set of addresses that are considered mapped by the scope to the default. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeLocal_a4f0d61de6d043ae92af2c2cf1836453a}{restructure\+Varnode}} (bool aliasyes)
+\begin{DoxyCompactList}\small\item\em Layout mapped symbols based on \mbox{\hyperlink{classVarnode}{Varnode}} information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeLocal_a308e308109ca1964d49d6a3a539a9acf}{restructure\+High}} (void)
+\begin{DoxyCompactList}\small\item\em Layout mapped symbols based on \mbox{\hyperlink{classHighVariable}{High\+Variable}} information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeLocal_a6b25f3fe8692539d3de175e522b6f3dc}{remap\+Symbol}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint)
+\begin{DoxyCompactList}\small\item\em Change the primary mapping for the given \mbox{\hyperlink{classSymbol}{Symbol}} to be a specific storage address and use point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeLocal_a26680d26758921aa47298aae50e8c043}{remap\+Symbol\+Dynamic}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint8 hash, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint)
+\begin{DoxyCompactList}\small\item\em Make the primary mapping for the given \mbox{\hyperlink{classSymbol}{Symbol}}, dynamic. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeLocal_a1999d076161d34f1fc117dffb9b98fad}{recover\+Name\+Recommendations\+For\+Symbols}} (void)
+\begin{DoxyCompactList}\small\item\em Run through name recommendations, checking if any match unnamed symbols. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeLocal_aff1c4038a56d5caaad4e074a0efca2bc}{apply\+Type\+Recommendations}} (void)
+\begin{DoxyCompactList}\small\item\em Try to apply recommended data-\/type information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classSymbol}{Symbol}} scope for {\itshape local} variables of a particular function. 
+
+This acts like any other variable \mbox{\hyperlink{classScope}{Scope}}, but is associated with a specific function and the address space where the function maps its local variables and parameters, typically the {\itshape stack} space. This object in addition to managing the local Symbols, builds up information about the {\itshape stack} address space\+: what portions of it are used for mapped local variables, what portions are used for temporary storage (not mapped), and what portion is for parameters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScopeLocal_a549766191cb3b272c7c5c05d1f6a9ff9}\label{classScopeLocal_a549766191cb3b272c7c5c05d1f6a9ff9}} 
+\index{ScopeLocal@{ScopeLocal}!ScopeLocal@{ScopeLocal}}
+\index{ScopeLocal@{ScopeLocal}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{ScopeLocal()}{ScopeLocal()}}
+{\footnotesize\ttfamily Scope\+Local\+::\+Scope\+Local (\begin{DoxyParamCaption}\item[{uint8}]{id,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the globally unique id associated with the function scope \\
+\hline
+{\em spc} & is the (stack) address space associated with this function\textquotesingle{}s local variables \\
+\hline
+{\em fd} & is the function associated with these local variables \\
+\hline
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScopeLocal_aff1c4038a56d5caaad4e074a0efca2bc}\label{classScopeLocal_aff1c4038a56d5caaad4e074a0efca2bc}} 
+\index{ScopeLocal@{ScopeLocal}!applyTypeRecommendations@{applyTypeRecommendations}}
+\index{applyTypeRecommendations@{applyTypeRecommendations}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{applyTypeRecommendations()}{applyTypeRecommendations()}}
+{\footnotesize\ttfamily void Scope\+Local\+::apply\+Type\+Recommendations (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Try to apply recommended data-\/type information. 
+
+Run through the recommended list, search for an input \mbox{\hyperlink{classVarnode}{Varnode}} matching the storage address and try to apply the data-\/type to it. Do not override existing type lock. \mbox{\Hypertarget{classScopeLocal_a7c86528490f519a64d44ae6dc8438393}\label{classScopeLocal_a7c86528490f519a64d44ae6dc8438393}} 
+\index{ScopeLocal@{ScopeLocal}!buildVariableName@{buildVariableName}}
+\index{buildVariableName@{buildVariableName}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{buildVariableName()}{buildVariableName()}}
+{\footnotesize\ttfamily string Scope\+Local\+::build\+Variable\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{pc,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{int4 \&}]{index,  }\item[{uint4}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given an address and data-\/type, build a suitable generic symbol name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em pc} & is the address at which the name is getting used \\
+\hline
+{\em ct} & is a data-\/type used to inform the name \\
+\hline
+{\em index} & is a reference to an index used to make the name unique, which will be updated \\
+\hline
+{\em flags} & are boolean properties of the variable we need the name for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new variable name 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classScopeInternal_a6009aeaf0d3973344438fb412adccd00}{Scope\+Internal}}.
+
+\mbox{\Hypertarget{classScopeLocal_ac6913e22130acb08f7d075a136c36780}\label{classScopeLocal_ac6913e22130acb08f7d075a136c36780}} 
+\index{ScopeLocal@{ScopeLocal}!isUnaffectedStorage@{isUnaffectedStorage}}
+\index{isUnaffectedStorage@{isUnaffectedStorage}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{isUnaffectedStorage()}{isUnaffectedStorage()}}
+{\footnotesize\ttfamily bool Scope\+Local\+::is\+Unaffected\+Storage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is this a storage location for {\itshape unaffected} registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} storing an {\itshape unaffected} register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} is the \mbox{\hyperlink{classVarnode}{Varnode}} can be used as unaffected storage 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScopeLocal_a560ea5441b79ef3c17b890c7d37ccaf1}\label{classScopeLocal_a560ea5441b79ef3c17b890c7d37ccaf1}} 
+\index{ScopeLocal@{ScopeLocal}!markNotMapped@{markNotMapped}}
+\index{markNotMapped@{markNotMapped}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{markNotMapped()}{markNotMapped()}}
+{\footnotesize\ttfamily void Scope\+Local\+::mark\+Not\+Mapped (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spc,  }\item[{uintb}]{first,  }\item[{int4}]{sz,  }\item[{bool}]{parameter }\end{DoxyParamCaption})}
+
+
+
+Mark a specific address range is not mapped. 
+
+The given range can no longer hold a {\itshape mapped} local variable. This indicates the range is being used for temporary storage. 
+\begin{DoxyParams}{Parameters}
+{\em spc} & is the address space holding the given range \\
+\hline
+{\em first} & is the starting offset of the given range \\
+\hline
+{\em sz} & is the number of bytes in the range \\
+\hline
+{\em parameter} & is {\bfseries{true}} if the range is being used to store a sub-\/function parameter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScopeLocal_a1999d076161d34f1fc117dffb9b98fad}\label{classScopeLocal_a1999d076161d34f1fc117dffb9b98fad}} 
+\index{ScopeLocal@{ScopeLocal}!recoverNameRecommendationsForSymbols@{recoverNameRecommendationsForSymbols}}
+\index{recoverNameRecommendationsForSymbols@{recoverNameRecommendationsForSymbols}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{recoverNameRecommendationsForSymbols()}{recoverNameRecommendationsForSymbols()}}
+{\footnotesize\ttfamily void Scope\+Local\+::recover\+Name\+Recommendations\+For\+Symbols (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run through name recommendations, checking if any match unnamed symbols. 
+
+Unlocked symbols that are presented to the decompiler are stored off as {\itshape recommended} names. These can be reattached after the decompiler makes a determination of what the final Symbols are. This method runs through the recommended names and checks if they can be applied to an existing unnamed \mbox{\hyperlink{classSymbol}{Symbol}}. \mbox{\Hypertarget{classScopeLocal_a6b25f3fe8692539d3de175e522b6f3dc}\label{classScopeLocal_a6b25f3fe8692539d3de175e522b6f3dc}} 
+\index{ScopeLocal@{ScopeLocal}!remapSymbol@{remapSymbol}}
+\index{remapSymbol@{remapSymbol}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{remapSymbol()}{remapSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Local\+::remap\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption})}
+
+
+
+Change the primary mapping for the given \mbox{\hyperlink{classSymbol}{Symbol}} to be a specific storage address and use point. 
+
+Remove any other mapping and create a mapping based on the given storage. 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} to remap \\
+\hline
+{\em addr} & is the starting address of the storage \\
+\hline
+{\em usepoint} & is the use point for the mapping \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new mapping 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScopeLocal_a26680d26758921aa47298aae50e8c043}\label{classScopeLocal_a26680d26758921aa47298aae50e8c043}} 
+\index{ScopeLocal@{ScopeLocal}!remapSymbolDynamic@{remapSymbolDynamic}}
+\index{remapSymbolDynamic@{remapSymbolDynamic}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{remapSymbolDynamic()}{remapSymbolDynamic()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Local\+::remap\+Symbol\+Dynamic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{uint8}]{hash,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption})}
+
+
+
+Make the primary mapping for the given \mbox{\hyperlink{classSymbol}{Symbol}}, dynamic. 
+
+Remove any other mapping and create a new dynamic mapping based on a given size and hash 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} to remap \\
+\hline
+{\em hash} & is the dynamic hash \\
+\hline
+{\em usepoint} & is the use point for the mapping \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new dynamic mapping 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classScopeLocal_a3bf9941188eb64423d2ed49a08dab8ca}\label{classScopeLocal_a3bf9941188eb64423d2ed49a08dab8ca}} 
+\index{ScopeLocal@{ScopeLocal}!resetLocalWindow@{resetLocalWindow}}
+\index{resetLocalWindow@{resetLocalWindow}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{resetLocalWindow()}{resetLocalWindow()}}
+{\footnotesize\ttfamily void Scope\+Local\+::reset\+Local\+Window (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reset the set of addresses that are considered mapped by the scope to the default. 
+
+This resets the discovery process for new local variables mapped to the scope\textquotesingle{}s address space. Any analysis removing specific ranges from the mapped set (via \mbox{\hyperlink{classScopeLocal_a560ea5441b79ef3c17b890c7d37ccaf1}{mark\+Not\+Mapped()}}) is cleared. \mbox{\Hypertarget{classScopeLocal_a308e308109ca1964d49d6a3a539a9acf}\label{classScopeLocal_a308e308109ca1964d49d6a3a539a9acf}} 
+\index{ScopeLocal@{ScopeLocal}!restructureHigh@{restructureHigh}}
+\index{restructureHigh@{restructureHigh}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{restructureHigh()}{restructureHigh()}}
+{\footnotesize\ttfamily void Scope\+Local\+::restructure\+High (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Layout mapped symbols based on \mbox{\hyperlink{classHighVariable}{High\+Variable}} information. 
+
+Define stack Symbols based on High\+Variables. This method is called once at the end of decompilation to create the final set of stack Symbols after all data-\/type propagation has settled. It creates a consistent data-\/type for all \mbox{\hyperlink{classVarnode}{Varnode}} instances of a \mbox{\hyperlink{classHighVariable}{High\+Variable}}. \mbox{\Hypertarget{classScopeLocal_a4f0d61de6d043ae92af2c2cf1836453a}\label{classScopeLocal_a4f0d61de6d043ae92af2c2cf1836453a}} 
+\index{ScopeLocal@{ScopeLocal}!restructureVarnode@{restructureVarnode}}
+\index{restructureVarnode@{restructureVarnode}!ScopeLocal@{ScopeLocal}}
+\doxysubsubsection{\texorpdfstring{restructureVarnode()}{restructureVarnode()}}
+{\footnotesize\ttfamily void Scope\+Local\+::restructure\+Varnode (\begin{DoxyParamCaption}\item[{bool}]{aliasyes }\end{DoxyParamCaption})}
+
+
+
+Layout mapped symbols based on \mbox{\hyperlink{classVarnode}{Varnode}} information. 
+
+Define stack Symbols based on Varnodes. This method can be called repeatedly during decompilation. It helps propagate data-\/types. Unaliased symbols can optionally be marked to facilitate removal of I\+N\+D\+I\+R\+E\+CT ops, but this is generally done later in the process. 
+\begin{DoxyParams}{Parameters}
+{\em aliasyes} & is {\bfseries{true}} if unaliased Symbols should be marked \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varmap_8hh}{varmap.\+hh}}\item 
+varmap.\+cc\end{DoxyCompactItemize}

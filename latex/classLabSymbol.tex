@@ -1,0 +1,128 @@
+\hypertarget{classLabSymbol}{}\doxysection{Lab\+Symbol Class Reference}
+\label{classLabSymbol}\index{LabSymbol@{LabSymbol}}
+
+
+A \mbox{\hyperlink{classSymbol}{Symbol}} that labels code internal to a function.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+
+
+Inheritance diagram for Lab\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{classLabSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Lab\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classLabSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLabSymbol_a76e210c2bacb1a5deffed6b390f9ad1c}{Lab\+Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc, const string \&nm)
+\begin{DoxyCompactList}\small\item\em Construct given name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLabSymbol_a4e7a6b23242e0a18660c00480d55d1f9}{Lab\+Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}} for use with restore\+Xml. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLabSymbol_aa923d358bf51dff4957f202e34d140be}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classLabSymbol_a856b8496e06601889db4abc4ac76fa71}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classSymbol}{Symbol}} that labels code internal to a function. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLabSymbol_a76e210c2bacb1a5deffed6b390f9ad1c}\label{classLabSymbol_a76e210c2bacb1a5deffed6b390f9ad1c}} 
+\index{LabSymbol@{LabSymbol}!LabSymbol@{LabSymbol}}
+\index{LabSymbol@{LabSymbol}!LabSymbol@{LabSymbol}}
+\doxysubsubsection{\texorpdfstring{LabSymbol()}{LabSymbol()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Lab\+Symbol\+::\+Lab\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{sc,  }\item[{const string \&}]{nm }\end{DoxyParamCaption})}
+
+
+
+Construct given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the \mbox{\hyperlink{classScope}{Scope}} that will contain the new \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em nm} & is the name of the new \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLabSymbol_a4e7a6b23242e0a18660c00480d55d1f9}\label{classLabSymbol_a4e7a6b23242e0a18660c00480d55d1f9}} 
+\index{LabSymbol@{LabSymbol}!LabSymbol@{LabSymbol}}
+\index{LabSymbol@{LabSymbol}!LabSymbol@{LabSymbol}}
+\doxysubsubsection{\texorpdfstring{LabSymbol()}{LabSymbol()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Lab\+Symbol\+::\+Lab\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{sc }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}} for use with restore\+Xml. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the \mbox{\hyperlink{classScope}{Scope}} that will contain the new \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLabSymbol_a856b8496e06601889db4abc4ac76fa71}\label{classLabSymbol_a856b8496e06601889db4abc4ac76fa71}} 
+\index{LabSymbol@{LabSymbol}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!LabSymbol@{LabSymbol}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Lab\+Symbol\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML tag of the symbol \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a3266a5752c208bdfa5a28e792de67604}{Symbol}}.
+
+\mbox{\Hypertarget{classLabSymbol_aa923d358bf51dff4957f202e34d140be}\label{classLabSymbol_aa923d358bf51dff4957f202e34d140be}} 
+\index{LabSymbol@{LabSymbol}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!LabSymbol@{LabSymbol}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Lab\+Symbol\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a0ef928814feb0a17fe95d006340eb499}{Symbol}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

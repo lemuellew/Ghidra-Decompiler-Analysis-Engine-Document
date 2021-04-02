@@ -1,0 +1,133 @@
+\hypertarget{classBlockMultiGoto}{}\doxysection{Block\+Multi\+Goto Class Reference}
+\label{classBlockMultiGoto}\index{BlockMultiGoto@{BlockMultiGoto}}
+
+
+A block with multiple edges out, at least one of which is an unstructured (goto) branch.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+Multi\+Goto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classBlockMultiGoto__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+Multi\+Goto\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classBlockMultiGoto__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockMultiGoto_a9fd5bfdaa3202a1cd604213c2be88bf2}\label{classBlockMultiGoto_a9fd5bfdaa3202a1cd604213c2be88bf2}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classBlockMultiGoto_a1957286b0a3a4a2d280caae3c1f19cc7}\label{classBlockMultiGoto_a1957286b0a3a4a2d280caae3c1f19cc7}} 
+virtual void {\bfseries scope\+Break} (int4 curexit, int4 curloopexit)
+\item 
+virtual void \mbox{\hyperlink{classBlockMultiGoto_a0886201717ed839e30e4e8e2b39d33d7}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockMultiGoto_a56b9c331488b4bf0c0f01cc583192630}\label{classBlockMultiGoto_a56b9c331488b4bf0c0f01cc583192630}} 
+virtual void {\bfseries print\+Raw} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classBlockMultiGoto_a8eee38e26a13873ceaff6d37b46eaafd}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockMultiGoto_a54ba810882911521ff2ca84b6458228a}\label{classBlockMultiGoto_a54ba810882911521ff2ca84b6458228a}} 
+virtual const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries get\+Exit\+Leaf} (void) const
+\item 
+\mbox{\Hypertarget{classBlockMultiGoto_a70cc69b1b4835ae574cebbbf13b868bd}\label{classBlockMultiGoto_a70cc69b1b4835ae574cebbbf13b868bd}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ {\bfseries last\+Op} (void) const
+\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockMultiGoto_a44d0021262e569ac4ecf6ecddbdf1d41}{next\+Flow\+After}} (const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$bl) const
+\begin{DoxyCompactList}\small\item\em Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockMultiGoto_ac537bd161b597061aeca88bcc01e260c}\label{classBlockMultiGoto_ac537bd161b597061aeca88bcc01e260c}} 
+virtual void {\bfseries save\+Xml\+Body} (ostream \&s) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A block with multiple edges out, at least one of which is an unstructured (goto) branch. 
+
+An instance of this class is used to mirror a basic block with multiple out edges at the point where one of the edges can\textquotesingle{}t be structured. The instance keeps track of this edge but otherwise presents a view to the structuring algorithm as if the edge didn\textquotesingle{}t exist. If at a later point, more edges can\textquotesingle{}t be structured, the one instance can hold this information as well. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockMultiGoto_a8eee38e26a13873ceaff6d37b46eaafd}\label{classBlockMultiGoto_a8eee38e26a13873ceaff6d37b46eaafd}} 
+\index{BlockMultiGoto@{BlockMultiGoto}!emit@{emit}}
+\index{emit@{emit}!BlockMultiGoto@{BlockMultiGoto}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+Multi\+Goto\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockMultiGoto_a44d0021262e569ac4ecf6ecddbdf1d41}\label{classBlockMultiGoto_a44d0021262e569ac4ecf6ecddbdf1d41}} 
+\index{BlockMultiGoto@{BlockMultiGoto}!nextFlowAfter@{nextFlowAfter}}
+\index{nextFlowAfter@{nextFlowAfter}!BlockMultiGoto@{BlockMultiGoto}}
+\doxysubsubsection{\texorpdfstring{nextFlowAfter()}{nextFlowAfter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+Multi\+Goto\+::next\+Flow\+After (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$}]{bl }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+
+Within the hierarchy of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}, assume the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} will fall-\/thru in its execution at some point. Return the first leaf block (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} or \mbox{\hyperlink{classBlockCopy}{Block\+Copy}}) that will execute after the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} completes, assuming this is a unique block. 
+\begin{DoxyParams}{Parameters}
+{\em bl} & is the given \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the next \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} to execute or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_aba0d42cf572bdcf2bca44d22fad971f6}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockMultiGoto_a0886201717ed839e30e4e8e2b39d33d7}\label{classBlockMultiGoto_a0886201717ed839e30e4e8e2b39d33d7}} 
+\index{BlockMultiGoto@{BlockMultiGoto}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockMultiGoto@{BlockMultiGoto}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+Multi\+Goto\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

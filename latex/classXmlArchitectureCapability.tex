@@ -1,0 +1,120 @@
+\hypertarget{classXmlArchitectureCapability}{}\doxysection{Xml\+Architecture\+Capability Class Reference}
+\label{classXmlArchitectureCapability}\index{XmlArchitectureCapability@{XmlArchitectureCapability}}
+
+
+Extension for building an X\+ML format capable \mbox{\hyperlink{classArchitecture}{Architecture}}.  
+
+
+
+
+{\ttfamily \#include $<$xml\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Xml\+Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classXmlArchitectureCapability__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Xml\+Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{classXmlArchitectureCapability__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classXmlArchitectureCapability_a3aedd28755471c050f539d7fcb9553f9}{build\+Architecture}} (const string \&filename, const string \&target, ostream $\ast$estream)
+\begin{DoxyCompactList}\small\item\em Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classXmlArchitectureCapability_a90009c1feff64b66e29562b68b5f2a5a}{is\+File\+Match}} (const string \&filename) const
+\begin{DoxyCompactList}\small\item\em Determine if this extension can handle this file. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classXmlArchitectureCapability_ab834c8722ce6813e4b5cf34a207b0f52}{is\+Xml\+Match}} (\mbox{\hyperlink{classDocument}{Document}} $\ast$doc) const
+\begin{DoxyCompactList}\small\item\em Determine is this extension can handle this X\+ML document. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Extension for building an X\+ML format capable \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classXmlArchitectureCapability_a3aedd28755471c050f539d7fcb9553f9}\label{classXmlArchitectureCapability_a3aedd28755471c050f539d7fcb9553f9}} 
+\index{XmlArchitectureCapability@{XmlArchitectureCapability}!buildArchitecture@{buildArchitecture}}
+\index{buildArchitecture@{buildArchitecture}!XmlArchitectureCapability@{XmlArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{buildArchitecture()}{buildArchitecture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ Xml\+Architecture\+Capability\+::build\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{filename,  }\item[{const string \&}]{target,  }\item[{ostream $\ast$}]{estream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. 
+
+This is implemented by each separate extension. The method is handed a {\itshape filename} and possibly external target information and must build the \mbox{\hyperlink{classArchitecture}{Architecture}} object, initializing all the major subcomponents, using just this info. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the path to the executable file to examine \\
+\hline
+{\em target} & if non-\/empty is a language id string \\
+\hline
+{\em estream} & is an output stream for error messages \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_a42e418206c4bcd9c0bc86d8ddfbf03e0}{Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classXmlArchitectureCapability_a90009c1feff64b66e29562b68b5f2a5a}\label{classXmlArchitectureCapability_a90009c1feff64b66e29562b68b5f2a5a}} 
+\index{XmlArchitectureCapability@{XmlArchitectureCapability}!isFileMatch@{isFileMatch}}
+\index{isFileMatch@{isFileMatch}!XmlArchitectureCapability@{XmlArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isFileMatch()}{isFileMatch()}}
+{\footnotesize\ttfamily bool Xml\+Architecture\+Capability\+::is\+File\+Match (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determine if this extension can handle this file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to examine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} is {\bfseries{this}} extension is suitable for analyzing the file 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_aa3d4fed15e42f3e853851babaf379376}{Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classXmlArchitectureCapability_ab834c8722ce6813e4b5cf34a207b0f52}\label{classXmlArchitectureCapability_ab834c8722ce6813e4b5cf34a207b0f52}} 
+\index{XmlArchitectureCapability@{XmlArchitectureCapability}!isXmlMatch@{isXmlMatch}}
+\index{isXmlMatch@{isXmlMatch}!XmlArchitectureCapability@{XmlArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isXmlMatch()}{isXmlMatch()}}
+{\footnotesize\ttfamily bool Xml\+Architecture\+Capability\+::is\+Xml\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocument}{Document}} $\ast$}]{doc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determine is this extension can handle this X\+ML document. 
+
+If a file to analyze is X\+ML based, this method examines the X\+ML parse to determine if {\bfseries{this}} extension can understand the document 
+\begin{DoxyParams}{Parameters}
+{\em doc} & is the parsed X\+ML document \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} extension understands the X\+ML 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_a653243b342d480273e0f04f7194094b8}{Architecture\+Capability}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{xml__arch_8hh}{xml\+\_\+arch.\+hh}}\item 
+xml\+\_\+arch.\+cc\end{DoxyCompactItemize}

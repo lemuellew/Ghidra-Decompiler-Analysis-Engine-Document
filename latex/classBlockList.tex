@@ -1,0 +1,143 @@
+\hypertarget{classBlockList}{}\doxysection{Block\+List Class Reference}
+\label{classBlockList}\index{BlockList@{BlockList}}
+
+
+A series of blocks that execute in sequence.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classBlockList__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+List\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=153pt]{classBlockList__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockList_ab77ac8f833192e59773b7e3829823dc5}\label{classBlockList_ab77ac8f833192e59773b7e3829823dc5}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+virtual void \mbox{\hyperlink{classBlockList_ac49227f39d0238f4d86c76a170cc009b}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockList_a391529d850ca5f97c74acee00c080c43}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockList_afa30fcb7c819884d7bbfe07548b4253d}\label{classBlockList_afa30fcb7c819884d7bbfe07548b4253d}} 
+virtual const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries get\+Exit\+Leaf} (void) const
+\item 
+\mbox{\Hypertarget{classBlockList_acd80d60a0cb7257e4ada35f62c6ddb91}\label{classBlockList_acd80d60a0cb7257e4ada35f62c6ddb91}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ {\bfseries last\+Op} (void) const
+\item 
+virtual bool \mbox{\hyperlink{classBlockList_a97202688e117da20c82ef225318536ca}{negate\+Condition}} (bool toporbottom)
+\begin{DoxyCompactList}\small\item\em Flip the condition computed by {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockList_a18e5d3b6de59ea0522dfb1eb96c012c6}{get\+Split\+Point}} (void)
+\begin{DoxyCompactList}\small\item\em Get the leaf splitting block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A series of blocks that execute in sequence. 
+
+When structuring control-\/flow, an instance of this class represents blocks that execute in sequence and fall-\/thru to each other. In general, the component blocks may not be basic blocks and can have their own sub-\/structures. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockList_a391529d850ca5f97c74acee00c080c43}\label{classBlockList_a391529d850ca5f97c74acee00c080c43}} 
+\index{BlockList@{BlockList}!emit@{emit}}
+\index{emit@{emit}!BlockList@{BlockList}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+List\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classBlockGraph_a535d3c7cb13e5e45b6e121b024fa339f}{Block\+Graph}}.
+
+\mbox{\Hypertarget{classBlockList_a18e5d3b6de59ea0522dfb1eb96c012c6}\label{classBlockList_a18e5d3b6de59ea0522dfb1eb96c012c6}} 
+\index{BlockList@{BlockList}!getSplitPoint@{getSplitPoint}}
+\index{getSplitPoint@{getSplitPoint}!BlockList@{BlockList}}
+\doxysubsubsection{\texorpdfstring{getSplitPoint()}{getSplitPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ Block\+List\+::get\+Split\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the leaf splitting block. 
+
+If {\bfseries{this}} block ends with a conditional branch, return the deepest component block that performs the split. This component needs to be able to perform \mbox{\hyperlink{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}{flip\+In\+Place\+Test()}} and \mbox{\hyperlink{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}{flip\+In\+Place\+Execute()}} \begin{DoxyReturn}{Returns}
+the component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} or N\+U\+LL if this doesn\textquotesingle{}t end in a conditional branch 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a20996aacbad259e2e4a7bb0c72482335}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockList_a97202688e117da20c82ef225318536ca}\label{classBlockList_a97202688e117da20c82ef225318536ca}} 
+\index{BlockList@{BlockList}!negateCondition@{negateCondition}}
+\index{negateCondition@{negateCondition}!BlockList@{BlockList}}
+\doxysubsubsection{\texorpdfstring{negateCondition()}{negateCondition()}}
+{\footnotesize\ttfamily bool Block\+List\+::negate\+Condition (\begin{DoxyParamCaption}\item[{bool}]{toporbottom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Flip the condition computed by {\bfseries{this}}. 
+
+Flip the order of outgoing edges (at least). This should also affect the original op causing the condition. Note\+: we don\textquotesingle{}t have to flip at all levels of the hierarchy only at the top and at the bottom 
+\begin{DoxyParams}{Parameters}
+{\em toporbottom} & is {\bfseries{true}} if {\bfseries{this}} is the top outermost block of the hierarchy getting negated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made to data-\/flow 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_ae0f8a479ae1548280ff0b4f45bc08dc3}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockList_ac49227f39d0238f4d86c76a170cc009b}\label{classBlockList_ac49227f39d0238f4d86c76a170cc009b}} 
+\index{BlockList@{BlockList}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockList@{BlockList}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+List\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\hypertarget{classIfcProtooverride}{}\doxysection{Ifc\+Protooverride Class Reference}
+\label{classIfcProtooverride}\index{IfcProtooverride@{IfcProtooverride}}
+
+
+\mbox{\hyperlink{classOverride}{Override}} the prototype of a called function\+: {\ttfamily override prototype $<$address$>$ $<$declaration$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Protooverride\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcProtooverride__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Protooverride\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcProtooverride__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcProtooverride_adf9d52b83faac64aae4fb2e27890755c}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classOverride}{Override}} the prototype of a called function\+: {\ttfamily override prototype $<$address$>$ $<$declaration$>$} 
+
+Force a specified prototype declaration on a called function when decompiling the current function. The current function must be decompiled again to see the effect. The called function is indicated by the address of its calling instruction. The prototype only affects decompilation for the {\itshape current} function. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcProtooverride_adf9d52b83faac64aae4fb2e27890755c}\label{classIfcProtooverride_adf9d52b83faac64aae4fb2e27890755c}} 
+\index{IfcProtooverride@{IfcProtooverride}!execute@{execute}}
+\index{execute@{execute}!IfcProtooverride@{IfcProtooverride}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Protooverride\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

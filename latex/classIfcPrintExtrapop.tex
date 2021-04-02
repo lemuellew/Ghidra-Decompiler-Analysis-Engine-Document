@@ -1,0 +1,62 @@
+\hypertarget{classIfcPrintExtrapop}{}\doxysection{Ifc\+Print\+Extrapop Class Reference}
+\label{classIfcPrintExtrapop}\index{IfcPrintExtrapop@{IfcPrintExtrapop}}
+
+
+Print change to stack pointer for called function\+: {\ttfamily print extrapop \mbox{[}$<$functionname$>$\mbox{]}}  
+
+
+
+
+Inheritance diagram for Ifc\+Print\+Extrapop\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcPrintExtrapop__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Print\+Extrapop\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcPrintExtrapop__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcPrintExtrapop_a57b328ffae6e3282b8cf789b702ba496}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Print change to stack pointer for called function\+: {\ttfamily print extrapop \mbox{[}$<$functionname$>$\mbox{]}} 
+
+For the selected function, the extra amount each called function changes the stack pointer (over popping the return value) is printed to console. The function is selected by name, or if no name is given, the {\itshape current} function is selected. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcPrintExtrapop_a57b328ffae6e3282b8cf789b702ba496}\label{classIfcPrintExtrapop_a57b328ffae6e3282b8cf789b702ba496}} 
+\index{IfcPrintExtrapop@{IfcPrintExtrapop}!execute@{execute}}
+\index{execute@{execute}!IfcPrintExtrapop@{IfcPrintExtrapop}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Print\+Extrapop\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

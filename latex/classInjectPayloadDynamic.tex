@@ -1,0 +1,68 @@
+\hypertarget{classInjectPayloadDynamic}{}\doxysection{Inject\+Payload\+Dynamic Class Reference}
+\label{classInjectPayloadDynamic}\index{InjectPayloadDynamic@{InjectPayloadDynamic}}
+
+
+Inheritance diagram for Inject\+Payload\+Dynamic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classInjectPayloadDynamic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Inject\+Payload\+Dynamic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classInjectPayloadDynamic__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInjectPayloadDynamic_a3f24e368f1073084237d16b88efd7aac}\label{classInjectPayloadDynamic_a3f24e368f1073084237d16b88efd7aac}} 
+{\bfseries Inject\+Payload\+Dynamic} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, const string \&nm, int4 tp)
+\item 
+\mbox{\Hypertarget{classInjectPayloadDynamic_a0cce9f9b5053cacbd52f4635a687bae2}\label{classInjectPayloadDynamic_a0cce9f9b5053cacbd52f4635a687bae2}} 
+void {\bfseries restore\+Entry} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\item 
+virtual void \mbox{\hyperlink{classInjectPayloadDynamic_a3016f641e5901ad165b08969ac33730f}{inject}} (\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&context, \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&emit) const
+\item 
+\mbox{\Hypertarget{classInjectPayloadDynamic_a683f6cc0b43395ad3644743f95292d59}\label{classInjectPayloadDynamic_a683f6cc0b43395ad3644743f95292d59}} 
+virtual void \mbox{\hyperlink{classInjectPayloadDynamic_a683f6cc0b43395ad3644743f95292d59}{print\+Template}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print the p-\/code ops of the injection to a stream (for debugging) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInjectPayloadDynamic_a8c3b9e0779ebc8369ad309d2299b46b6}\label{classInjectPayloadDynamic_a8c3b9e0779ebc8369ad309d2299b46b6}} 
+virtual string \mbox{\hyperlink{classInjectPayloadDynamic_a8c3b9e0779ebc8369ad309d2299b46b6}{get\+Source}} (void) const
+\begin{DoxyCompactList}\small\item\em Return a string describing the {\itshape source} of the injection (.cspec, prototype model, etc.) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInjectPayloadDynamic_a3016f641e5901ad165b08969ac33730f}\label{classInjectPayloadDynamic_a3016f641e5901ad165b08969ac33730f}} 
+\index{InjectPayloadDynamic@{InjectPayloadDynamic}!inject@{inject}}
+\index{inject@{inject}!InjectPayloadDynamic@{InjectPayloadDynamic}}
+\doxysubsubsection{\texorpdfstring{inject()}{inject()}}
+{\footnotesize\ttfamily void Inject\+Payload\+Dynamic\+::inject (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&}]{context,  }\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&}]{emit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Perform the injection of {\bfseries{this}} payload into data-\/flow.
+
+P-\/code operations representing {\bfseries{this}} payload are copied into the controlling analysis context. The provided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object dictates exactly where the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and \mbox{\hyperlink{classVarnode}{Varnode}} objects are inserted and to what container. An \mbox{\hyperlink{classInjectContext}{Inject\+Context}} object specifies how placeholder elements become concrete Varnodes in the appropriate context. 
+\begin{DoxyParams}{Parameters}
+{\em context} & is the provided Inject\+Conject object \\
+\hline
+{\em emit} & is the provovided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInjectPayload_aca9c322377f54e8e45c9a79e44ce0ff9}{Inject\+Payload}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inject\+\_\+sleigh.\+hh\item 
+inject\+\_\+sleigh.\+cc\end{DoxyCompactItemize}

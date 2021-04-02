@@ -1,0 +1,213 @@
+\hypertarget{type_8hh}{}\doxysection{type.\+hh File Reference}
+\label{type_8hh}\index{type.hh@{type.hh}}
+
+
+Classes for describing and printing data-\/types.  
+
+
+{\ttfamily \#include \char`\"{}address.\+hh\char`\"{}}\newline
+Include dependency graph for type.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{type_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{type_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classDatatype}{Datatype}}
+\begin{DoxyCompactList}\small\item\em The base datatype class for the decompiler. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structTypeField}{Type\+Field}}
+\begin{DoxyCompactList}\small\item\em Specifies subfields of a structure or what a pointer points to. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structDatatypeCompare}{Datatype\+Compare}}
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{classDatatype}{Datatype}} pointers for equivalence of their description. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structDatatypeNameCompare}{Datatype\+Name\+Compare}}
+\begin{DoxyCompactList}\small\item\em Compare two \mbox{\hyperlink{classDatatype}{Datatype}} pointers\+: first by name, then by id. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeBase}{Type\+Base}}
+\begin{DoxyCompactList}\small\item\em Base class for the fundamental atomic types. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeChar}{Type\+Char}}
+\begin{DoxyCompactList}\small\item\em Base type for character data-\/types\+: i.\+e. char. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeUnicode}{Type\+Unicode}}
+\begin{DoxyCompactList}\small\item\em The unicode data-\/type\+: i.\+e. wchar. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeVoid}{Type\+Void}}
+\begin{DoxyCompactList}\small\item\em Formal \char`\"{}void\char`\"{} data-\/type object. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypePointer}{Type\+Pointer}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDatatype}{Datatype}} object representing a pointer. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeArray}{Type\+Array}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDatatype}{Datatype}} object representing an array of elements. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeEnum}{Type\+Enum}}
+\begin{DoxyCompactList}\small\item\em An enumerated \mbox{\hyperlink{classDatatype}{Datatype}} object\+: an integer with named values. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeStruct}{Type\+Struct}}
+\begin{DoxyCompactList}\small\item\em A composite \mbox{\hyperlink{classDatatype}{Datatype}} object\+: A \char`\"{}structure\char`\"{} with component \char`\"{}fields\char`\"{}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeCode}{Type\+Code}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classDatatype}{Datatype}} object representing executable code. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeSpacebase}{Type\+Spacebase}}
+\begin{DoxyCompactList}\small\item\em Special \mbox{\hyperlink{classDatatype}{Datatype}} object used to describe pointers that index into the symbol table. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTypeFactory}{Type\+Factory}}
+\begin{DoxyCompactList}\small\item\em Container class for all \mbox{\hyperlink{classDatatype}{Datatype}} objects in an \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{type_8hh_a718b9f8902a3f2dcc61b4eb84c58adf2}\label{type_8hh_a718b9f8902a3f2dcc61b4eb84c58adf2}} 
+typedef set$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$, \mbox{\hyperlink{structDatatypeCompare}{Datatype\+Compare}} $>$ \mbox{\hyperlink{type_8hh_a718b9f8902a3f2dcc61b4eb84c58adf2}{Datatype\+Set}}
+\begin{DoxyCompactList}\small\item\em A set of data-\/types sorted by function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{type_8hh_aa1db0a143363e2b1d1150e3f2168c3ea}\label{type_8hh_aa1db0a143363e2b1d1150e3f2168c3ea}} 
+typedef set$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$, \mbox{\hyperlink{structDatatypeNameCompare}{Datatype\+Name\+Compare}} $>$ \mbox{\hyperlink{type_8hh_aa1db0a143363e2b1d1150e3f2168c3ea}{Datatype\+Name\+Set}}
+\begin{DoxyCompactList}\small\item\em A set of data-\/types sorted by name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} \{ \newline
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa84de340fe64164ed0dcf473aad846961}{T\+Y\+P\+E\+\_\+\+V\+O\+ID}} = 10, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fae8e2fb69af09eb8907e86b16ff585324}{T\+Y\+P\+E\+\_\+\+S\+P\+A\+C\+E\+B\+A\+SE}} = 9, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa64599dea7071bc28732936e0bfddff3e}{T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN}} = 8, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa4fcd4421533bb21c827865bdbac4fef9}{T\+Y\+P\+E\+\_\+\+I\+NT}} = 7, 
+\newline
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61faba807ad7d41a3ac08fd4a71e9e013192}{T\+Y\+P\+E\+\_\+\+U\+I\+NT}} = 6, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa3e0f738756c5205d71c69d955603f46c}{T\+Y\+P\+E\+\_\+\+B\+O\+OL}} = 5, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa88922d1c65a64d2f39ebaba3411aa057}{T\+Y\+P\+E\+\_\+\+C\+O\+DE}} = 4, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa19a0a402d33a2e049e91ea9e37e90c2f}{T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT}} = 3, 
+\newline
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa311715f465e358409d513be004f82b2f}{T\+Y\+P\+E\+\_\+\+P\+TR}} = 2, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fad189c0a53681ec74eeea1f56d08d741f}{T\+Y\+P\+E\+\_\+\+A\+R\+R\+AY}} = 1, 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa9001cd1bc103bb1d664228d46715f65c}{T\+Y\+P\+E\+\_\+\+S\+T\+R\+U\+CT}} = 0
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{type_8hh_a796dc3d5c66a81c95642a224e24ddb46}{print\+\_\+data}} (ostream \&s, uint1 $\ast$buffer, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr)
+\begin{DoxyCompactList}\small\item\em Print a hex dump of a data buffer to stream. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{type_8hh_ab61b3376ec08add3c7e899d703d5f34e}{metatype2string}} (\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} metatype, string \&res)
+\begin{DoxyCompactList}\small\item\em Convert type {\bfseries{meta-\/type}} to name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} \mbox{\hyperlink{type_8hh_ae2f04f32a572d784b4c46f6745239c42}{string2metatype}} (const string \&metastring)
+\begin{DoxyCompactList}\small\item\em Convert string to type {\bfseries{meta-\/type}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes for describing and printing data-\/types. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}} 
+\index{type.hh@{type.hh}!type\_metatype@{type\_metatype}}
+\index{type\_metatype@{type\_metatype}!type.hh@{type.hh}}
+\doxysubsubsection{\texorpdfstring{type\_metatype}{type\_metatype}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}}}
+
+The core meta-\/types supported by the decompiler. These are sizeless templates for the elements making up the type algebra. Ordering is important\+: The lower the number, the more {\bfseries{specific}} the type, in calculations involving the generality of a type. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_VOID@{TYPE\_VOID}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_VOID@{TYPE\_VOID}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa84de340fe64164ed0dcf473aad846961}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa84de340fe64164ed0dcf473aad846961}} 
+T\+Y\+P\+E\+\_\+\+V\+O\+ID&Standard \char`\"{}void\char`\"{} type, absence of type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_SPACEBASE@{TYPE\_SPACEBASE}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_SPACEBASE@{TYPE\_SPACEBASE}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fae8e2fb69af09eb8907e86b16ff585324}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fae8e2fb69af09eb8907e86b16ff585324}} 
+T\+Y\+P\+E\+\_\+\+S\+P\+A\+C\+E\+B\+A\+SE&Placeholder for symbol/type look-\/up calculations. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_UNKNOWN@{TYPE\_UNKNOWN}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_UNKNOWN@{TYPE\_UNKNOWN}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa64599dea7071bc28732936e0bfddff3e}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa64599dea7071bc28732936e0bfddff3e}} 
+T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN&An unknown low-\/level type. Treated as an unsigned integer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_INT@{TYPE\_INT}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_INT@{TYPE\_INT}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa4fcd4421533bb21c827865bdbac4fef9}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa4fcd4421533bb21c827865bdbac4fef9}} 
+T\+Y\+P\+E\+\_\+\+I\+NT&Signed integer. Signed is considered less specific than unsigned in C. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_UINT@{TYPE\_UINT}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_UINT@{TYPE\_UINT}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61faba807ad7d41a3ac08fd4a71e9e013192}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61faba807ad7d41a3ac08fd4a71e9e013192}} 
+T\+Y\+P\+E\+\_\+\+U\+I\+NT&Unsigned integer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_BOOL@{TYPE\_BOOL}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_BOOL@{TYPE\_BOOL}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa3e0f738756c5205d71c69d955603f46c}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa3e0f738756c5205d71c69d955603f46c}} 
+T\+Y\+P\+E\+\_\+\+B\+O\+OL&Boolean. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_CODE@{TYPE\_CODE}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_CODE@{TYPE\_CODE}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa88922d1c65a64d2f39ebaba3411aa057}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa88922d1c65a64d2f39ebaba3411aa057}} 
+T\+Y\+P\+E\+\_\+\+C\+O\+DE&Data is actual executable code. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_FLOAT@{TYPE\_FLOAT}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_FLOAT@{TYPE\_FLOAT}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa19a0a402d33a2e049e91ea9e37e90c2f}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa19a0a402d33a2e049e91ea9e37e90c2f}} 
+T\+Y\+P\+E\+\_\+\+F\+L\+O\+AT&Floating-\/point. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_PTR@{TYPE\_PTR}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_PTR@{TYPE\_PTR}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa311715f465e358409d513be004f82b2f}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa311715f465e358409d513be004f82b2f}} 
+T\+Y\+P\+E\+\_\+\+P\+TR&Pointer data-\/type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_ARRAY@{TYPE\_ARRAY}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_ARRAY@{TYPE\_ARRAY}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fad189c0a53681ec74eeea1f56d08d741f}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fad189c0a53681ec74eeea1f56d08d741f}} 
+T\+Y\+P\+E\+\_\+\+A\+R\+R\+AY&Array data-\/type, made up of a sequence of \char`\"{}element\char`\"{} datatype. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_STRUCT@{TYPE\_STRUCT}!type.hh@{type.hh}}\index{type.hh@{type.hh}!TYPE\_STRUCT@{TYPE\_STRUCT}}}\mbox{\Hypertarget{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa9001cd1bc103bb1d664228d46715f65c}\label{type_8hh_aef6429f2523cdf4d415ba04a0209e61fa9001cd1bc103bb1d664228d46715f65c}} 
+T\+Y\+P\+E\+\_\+\+S\+T\+R\+U\+CT&Structure data-\/type, made up of component datatypes. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{type_8hh_ab61b3376ec08add3c7e899d703d5f34e}\label{type_8hh_ab61b3376ec08add3c7e899d703d5f34e}} 
+\index{type.hh@{type.hh}!metatype2string@{metatype2string}}
+\index{metatype2string@{metatype2string}!type.hh@{type.hh}}
+\doxysubsubsection{\texorpdfstring{metatype2string()}{metatype2string()}}
+{\footnotesize\ttfamily void metatype2string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}}}]{metatype,  }\item[{string \&}]{res }\end{DoxyParamCaption})}
+
+
+
+Convert type {\bfseries{meta-\/type}} to name. 
+
+Convert a type {\bfseries{meta-\/type}} into the string name of the meta-\/type 
+\begin{DoxyParams}{Parameters}
+{\em metatype} & is the encoded type meta-\/type \\
+\hline
+{\em res} & will hold the resulting string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{type_8hh_a796dc3d5c66a81c95642a224e24ddb46}\label{type_8hh_a796dc3d5c66a81c95642a224e24ddb46}} 
+\index{type.hh@{type.hh}!print\_data@{print\_data}}
+\index{print\_data@{print\_data}!type.hh@{type.hh}}
+\doxysubsubsection{\texorpdfstring{print\_data()}{print\_data()}}
+{\footnotesize\ttfamily void print\+\_\+data (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uint1 $\ast$}]{buffer,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption})}
+
+
+
+Print a hex dump of a data buffer to stream. 
+
+Display an array of bytes as a hex dump at a given address. Each line displays an address and 16 bytes in hexadecimal 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+{\em buffer} & is a pointer to the bytes \\
+\hline
+{\em size} & is the number of bytes \\
+\hline
+{\em baseaddr} & is the address of the first byte in the buffer \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{type_8hh_ae2f04f32a572d784b4c46f6745239c42}\label{type_8hh_ae2f04f32a572d784b4c46f6745239c42}} 
+\index{type.hh@{type.hh}!string2metatype@{string2metatype}}
+\index{string2metatype@{string2metatype}!type.hh@{type.hh}}
+\doxysubsubsection{\texorpdfstring{string2metatype()}{string2metatype()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{type_8hh_aef6429f2523cdf4d415ba04a0209e61f}{type\+\_\+metatype}} string2metatype (\begin{DoxyParamCaption}\item[{const string \&}]{metastring }\end{DoxyParamCaption})}
+
+
+
+Convert string to type {\bfseries{meta-\/type}}. 
+
+Given a string description of a type {\bfseries{meta-\/type}}. Return the meta-\/type. 
+\begin{DoxyParams}{Parameters}
+{\em metastring} & is the description of the meta-\/type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the encoded type meta-\/type 
+\end{DoxyReturn}

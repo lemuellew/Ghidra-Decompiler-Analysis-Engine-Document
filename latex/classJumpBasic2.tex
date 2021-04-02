@@ -1,0 +1,120 @@
+\hypertarget{classJumpBasic2}{}\doxysection{Jump\+Basic2 Class Reference}
+\label{classJumpBasic2}\index{JumpBasic2@{JumpBasic2}}
+
+
+A basic jump-\/table model with an added default address path.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+
+
+Inheritance diagram for Jump\+Basic2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classJumpBasic2__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jump\+Basic2\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJumpBasic2__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classJumpBasic2_ac228c931935854c24c0e4d7893e93510}\label{classJumpBasic2_ac228c931935854c24c0e4d7893e93510}} 
+void \mbox{\hyperlink{classJumpBasic2_ac228c931935854c24c0e4d7893e93510}{initialize\+Start}} (const \mbox{\hyperlink{classPathMeld}{Path\+Meld}} \&\mbox{\hyperlink{classJumpBasic_aade10e6498d3f6146674b7b9ae1938e5}{path\+Meld}})
+\begin{DoxyCompactList}\small\item\em Pass in the prior \mbox{\hyperlink{classPathMeld}{Path\+Meld}} calculation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasic2_adc60ecb0d804d1a7754161b38ae3299f}{recover\+Model}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, uint4 matchsize, uint4 maxtablesize)
+\begin{DoxyCompactList}\small\item\em Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpBasic2_ab5d1cebab5d2f98d0caf6fc551b29980}{find\+Unnormalized}} (uint4 maxaddsub, uint4 maxleftright, uint4 maxext)
+\begin{DoxyCompactList}\small\item\em Recover the unnormalized switch variable. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic2_a8d19ff3f441509f74402fdbefabb0801}\label{classJumpBasic2_a8d19ff3f441509f74402fdbefabb0801}} 
+virtual \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$ \mbox{\hyperlink{classJumpBasic2_a8d19ff3f441509f74402fdbefabb0801}{clone}} (\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jt) const
+\begin{DoxyCompactList}\small\item\em Clone {\bfseries{this}} model. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasic2_a5eb65ff4a67499c48f720462d65f8152}\label{classJumpBasic2_a5eb65ff4a67499c48f720462d65f8152}} 
+virtual void {\bfseries clear} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A basic jump-\/table model with an added default address path. 
+
+This model expects two paths to the switch, 1 from a default value, 1 from the other values that hit the switch If A is the guarding control-\/flow block, C is the block setting the default value, and S the switch block itself, We expect one of the following situations\+:
+\begin{DoxyItemize}
+\item A -\/$>$ C or S and C -\/$>$ S
+\item A -\/$>$ C or D and C -\/$>$ S D -\/$>$ S
+\item C -\/$>$ S and S -\/$>$ A A -\/$>$ S or \char`\"{}out of loop\char`\"{}, i.\+e. S is in a loop, and the guard block doubles as the loop condition
+\end{DoxyItemize}
+
+This builds on the analysis performed for \mbox{\hyperlink{classJumpBasic}{Jump\+Basic}}, which fails because there are too many paths to the B\+R\+A\+N\+C\+H\+I\+ND, preventing the guards from being interpreted properly. This class expects to reuse the \mbox{\hyperlink{classPathMeld}{Path\+Meld}} calculation from \mbox{\hyperlink{classJumpBasic}{Jump\+Basic}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpBasic2_ab5d1cebab5d2f98d0caf6fc551b29980}\label{classJumpBasic2_ab5d1cebab5d2f98d0caf6fc551b29980}} 
+\index{JumpBasic2@{JumpBasic2}!findUnnormalized@{findUnnormalized}}
+\index{findUnnormalized@{findUnnormalized}!JumpBasic2@{JumpBasic2}}
+\doxysubsubsection{\texorpdfstring{findUnnormalized()}{findUnnormalized()}}
+{\footnotesize\ttfamily void Jump\+Basic2\+::find\+Unnormalized (\begin{DoxyParamCaption}\item[{uint4}]{maxaddsub,  }\item[{uint4}]{maxleftright,  }\item[{uint4}]{maxext }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the unnormalized switch variable. 
+
+The normalized switch variable must already be recovered. The amount of normalization between the two switch variables can be restricted. 
+\begin{DoxyParams}{Parameters}
+{\em maxaddsub} & is a restriction on arithmetic operations \\
+\hline
+{\em maxleftright} & is a restriction on shift operations \\
+\hline
+{\em maxext} & is a restriction on extension operations \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classJumpBasic_a2d542e5a6b74bd116d89ba4e5bb4da9b}{Jump\+Basic}}.
+
+\mbox{\Hypertarget{classJumpBasic2_adc60ecb0d804d1a7754161b38ae3299f}\label{classJumpBasic2_adc60ecb0d804d1a7754161b38ae3299f}} 
+\index{JumpBasic2@{JumpBasic2}!recoverModel@{recoverModel}}
+\index{recoverModel@{recoverModel}!JumpBasic2@{JumpBasic2}}
+\doxysubsubsection{\texorpdfstring{recoverModel()}{recoverModel()}}
+{\footnotesize\ttfamily bool Jump\+Basic2\+::recover\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{uint4}]{matchsize,  }\item[{uint4}]{maxtablesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. 
+
+This generally recovers the normalized switch variable and any guards. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the given B\+R\+A\+N\+C\+H\+I\+ND \\
+\hline
+{\em matchsize} & is the expected number of address table entries to recover, or 0 for no expectation \\
+\hline
+{\em maxtablesize} & is maximum number of address table entries to allow in the model \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if details of the model were successfully recovered 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classJumpBasic_aebf055ad4baf1a138107d8dd3a40c809}{Jump\+Basic}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

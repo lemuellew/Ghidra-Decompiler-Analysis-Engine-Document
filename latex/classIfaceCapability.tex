@@ -1,0 +1,96 @@
+\hypertarget{classIfaceCapability}{}\doxysection{Iface\+Capability Class Reference}
+\label{classIfaceCapability}\index{IfaceCapability@{IfaceCapability}}
+
+
+Groups of console commands that are {\itshape discovered} by the loader.  
+
+
+
+
+{\ttfamily \#include $<$interface.\+hh$>$}
+
+
+
+Inheritance diagram for Iface\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfaceCapability__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Iface\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classIfaceCapability__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfaceCapability_a65449e5d8ca98ab3febfa3dd23f451a4}{initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Complete initialization of an extension point. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceCapability_a8ed0987e781e5213db777be93e85af6e}\label{classIfaceCapability_a8ed0987e781e5213db777be93e85af6e}} 
+virtual void \mbox{\hyperlink{classIfaceCapability_a8ed0987e781e5213db777be93e85af6e}{register\+Commands}} (\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$status)=0
+\begin{DoxyCompactList}\small\item\em Register commands for {\bfseries{this}} grouping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classIfaceCapability_a0585d08799177d081f703f09e2ab18e4}{register\+All\+Commands}} (\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$status)
+\begin{DoxyCompactList}\small\item\em Register all discovered commands with the interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classIfaceCapability_adaca15af193ff9e326a0f9f96a87e6e2}\label{classIfaceCapability_adaca15af193ff9e326a0f9f96a87e6e2}} 
+string \mbox{\hyperlink{classIfaceCapability_adaca15af193ff9e326a0f9f96a87e6e2}{name}}
+\begin{DoxyCompactList}\small\item\em Identifying name for the capability. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Groups of console commands that are {\itshape discovered} by the loader. 
+
+Any \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} that is registered with a grouping derived from this class is automatically made available to any \mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} object just by calling the static \mbox{\hyperlink{classIfaceCapability_a0585d08799177d081f703f09e2ab18e4}{register\+All\+Commands()}} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfaceCapability_a65449e5d8ca98ab3febfa3dd23f451a4}\label{classIfaceCapability_a65449e5d8ca98ab3febfa3dd23f451a4}} 
+\index{IfaceCapability@{IfaceCapability}!initialize@{initialize}}
+\index{initialize@{initialize}!IfaceCapability@{IfaceCapability}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Iface\+Capability\+::initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Complete initialization of an extension point. 
+
+This method is implemented by each extension so it can do specialized integration 
+
+Implements \mbox{\hyperlink{classCapabilityPoint_a493d24125e7e024a9b2d6c2ad4bfbfab}{Capability\+Point}}.
+
+\mbox{\Hypertarget{classIfaceCapability_a0585d08799177d081f703f09e2ab18e4}\label{classIfaceCapability_a0585d08799177d081f703f09e2ab18e4}} 
+\index{IfaceCapability@{IfaceCapability}!registerAllCommands@{registerAllCommands}}
+\index{registerAllCommands@{registerAllCommands}!IfaceCapability@{IfaceCapability}}
+\doxysubsubsection{\texorpdfstring{registerAllCommands()}{registerAllCommands()}}
+{\footnotesize\ttfamily void Iface\+Capability\+::register\+All\+Commands (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Register all discovered commands with the interface. 
+
+Allow each capability to register its own commands
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & is the command line interface to register commands with \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_8hh}{interface.\+hh}}\item 
+interface.\+cc\end{DoxyCompactItemize}

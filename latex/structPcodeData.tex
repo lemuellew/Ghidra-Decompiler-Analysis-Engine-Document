@@ -1,0 +1,46 @@
+\hypertarget{structPcodeData}{}\doxysection{Pcode\+Data Struct Reference}
+\label{structPcodeData}\index{PcodeData@{PcodeData}}
+
+
+Data for building one p-\/code instruction.  
+
+
+
+
+{\ttfamily \#include $<$sleigh.\+hh$>$}
+
+
+
+Collaboration diagram for Pcode\+Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{structPcodeData__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPcodeData_a79e291dfd074383adc36230588ed193c}\label{structPcodeData_a79e291dfd074383adc36230588ed193c}} 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{structPcodeData_a79e291dfd074383adc36230588ed193c}{opc}}
+\begin{DoxyCompactList}\small\item\em The op code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPcodeData_a59a94589691bb191caf9efdc7e1d7b1d}\label{structPcodeData_a59a94589691bb191caf9efdc7e1d7b1d}} 
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ \mbox{\hyperlink{structPcodeData_a59a94589691bb191caf9efdc7e1d7b1d}{outvar}}
+\begin{DoxyCompactList}\small\item\em Output \mbox{\hyperlink{classVarnode}{Varnode}} data (or null) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPcodeData_ab0572b3620e623607f76ad6b580dc589}\label{structPcodeData_ab0572b3620e623607f76ad6b580dc589}} 
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ \mbox{\hyperlink{structPcodeData_ab0572b3620e623607f76ad6b580dc589}{invar}}
+\begin{DoxyCompactList}\small\item\em Array of input \mbox{\hyperlink{classVarnode}{Varnode}} data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPcodeData_a32d8b960a624c445680fb478f203a18e}\label{structPcodeData_a32d8b960a624c445680fb478f203a18e}} 
+int4 \mbox{\hyperlink{structPcodeData_a32d8b960a624c445680fb478f203a18e}{isize}}
+\begin{DoxyCompactList}\small\item\em Number of input Varnodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Data for building one p-\/code instruction. 
+
+Raw data used by the emitter to produce a single \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh_8hh}{sleigh.\+hh}}\end{DoxyCompactItemize}

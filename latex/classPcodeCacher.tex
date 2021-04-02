@@ -1,0 +1,137 @@
+\hypertarget{classPcodeCacher}{}\doxysection{Pcode\+Cacher Class Reference}
+\label{classPcodeCacher}\index{PcodeCacher@{PcodeCacher}}
+
+
+Class for caching a chunk of p-\/code, prior to emitting.  
+
+
+
+
+{\ttfamily \#include $<$sleigh.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeCacher_ab165af5d7b6e70864878b6c481b3c7ee}\label{classPcodeCacher_ab165af5d7b6e70864878b6c481b3c7ee}} 
+\mbox{\hyperlink{classPcodeCacher_ab165af5d7b6e70864878b6c481b3c7ee}{Pcode\+Cacher}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeCacher_a9c5967c5d408d69a7b0cabe9897a7d42}\label{classPcodeCacher_a9c5967c5d408d69a7b0cabe9897a7d42}} 
+\mbox{\hyperlink{classPcodeCacher_a9c5967c5d408d69a7b0cabe9897a7d42}{$\sim$\+Pcode\+Cacher}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ \mbox{\hyperlink{classPcodeCacher_adea4c5effe401cd5d08eafa7dcf7940d}{allocate\+Varnodes}} (uint4 size)
+\begin{DoxyCompactList}\small\item\em Allocate data objects for a new set of Varnodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPcodeData}{Pcode\+Data}} $\ast$ \mbox{\hyperlink{classPcodeCacher_aa29fd61027450c899c91b11bbca180d3}{allocate\+Instruction}} (void)
+\begin{DoxyCompactList}\small\item\em Allocate a data object for a new p-\/code operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeCacher_a41cbff0ce922ff8b8d18c396c63a3157}{add\+Label\+Ref}} (\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$ptr)
+\begin{DoxyCompactList}\small\item\em Denote a \mbox{\hyperlink{classVarnode}{Varnode}} holding a {\itshape relative} {\itshape branch} offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeCacher_a0c78362135eeb99f2b1acef6615c3428}{add\+Label}} (uint4 id)
+\begin{DoxyCompactList}\small\item\em Attach a label to the {\itshape next} p-\/code instruction. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeCacher_afa7aaee06ffc63d4200619c52728181e}\label{classPcodeCacher_afa7aaee06ffc63d4200619c52728181e}} 
+void \mbox{\hyperlink{classPcodeCacher_afa7aaee06ffc63d4200619c52728181e}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Reset the cache so that all objects are unallocated. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeCacher_a43bb71389841843cc69d3a36d46674f1}{resolve\+Relatives}} (void)
+\begin{DoxyCompactList}\small\item\em Rewrite branch target Varnodes as {\itshape relative} offsets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeCacher_a75c21a233c9eef255c53a498790882fc}{emit}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} $\ast$emt) const
+\begin{DoxyCompactList}\small\item\em Pass the cached p-\/code data to the emitter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for caching a chunk of p-\/code, prior to emitting. 
+
+The engine accumulates \mbox{\hyperlink{structPcodeData}{Pcode\+Data}} and \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} objects for a single instruction. Once the full instruction is constructed, the objects are passed to the emitter (\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}}) via the \mbox{\hyperlink{classPcodeCacher_a75c21a233c9eef255c53a498790882fc}{emit()}} method. The class acts as a pool of memory for \mbox{\hyperlink{structPcodeData}{Pcode\+Data}} and \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} objects that can be reused repeatedly to emit multiple instructions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeCacher_a0c78362135eeb99f2b1acef6615c3428}\label{classPcodeCacher_a0c78362135eeb99f2b1acef6615c3428}} 
+\index{PcodeCacher@{PcodeCacher}!addLabel@{addLabel}}
+\index{addLabel@{addLabel}!PcodeCacher@{PcodeCacher}}
+\doxysubsubsection{\texorpdfstring{addLabel()}{addLabel()}}
+{\footnotesize\ttfamily void Pcode\+Cacher\+::add\+Label (\begin{DoxyParamCaption}\item[{uint4}]{id }\end{DoxyParamCaption})}
+
+
+
+Attach a label to the {\itshape next} p-\/code instruction. 
+
+The label has an id that is referred to by Varnodes holding intra-\/instruction branch targets, prior to converting them to a {\itshape relative} {\itshape branch} offset. The label is associated with the absolute index of the next \mbox{\hyperlink{structPcodeData}{Pcode\+Data}} object to be issued, facilitating this conversion. 
+\begin{DoxyParams}{Parameters}
+{\em id} & is the given id of the label \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeCacher_a41cbff0ce922ff8b8d18c396c63a3157}\label{classPcodeCacher_a41cbff0ce922ff8b8d18c396c63a3157}} 
+\index{PcodeCacher@{PcodeCacher}!addLabelRef@{addLabelRef}}
+\index{addLabelRef@{addLabelRef}!PcodeCacher@{PcodeCacher}}
+\doxysubsubsection{\texorpdfstring{addLabelRef()}{addLabelRef()}}
+{\footnotesize\ttfamily void Pcode\+Cacher\+::add\+Label\+Ref (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Denote a \mbox{\hyperlink{classVarnode}{Varnode}} holding a {\itshape relative} {\itshape branch} offset. 
+
+Store off a reference to the \mbox{\hyperlink{classVarnode}{Varnode}} and the absolute index of the next instruction. The \mbox{\hyperlink{classVarnode}{Varnode}} must be an operand of the current instruction. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & is the \mbox{\hyperlink{classVarnode}{Varnode}} reference \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeCacher_aa29fd61027450c899c91b11bbca180d3}\label{classPcodeCacher_aa29fd61027450c899c91b11bbca180d3}} 
+\index{PcodeCacher@{PcodeCacher}!allocateInstruction@{allocateInstruction}}
+\index{allocateInstruction@{allocateInstruction}!PcodeCacher@{PcodeCacher}}
+\doxysubsubsection{\texorpdfstring{allocateInstruction()}{allocateInstruction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPcodeData}{Pcode\+Data}}$\ast$ Pcode\+Cacher\+::allocate\+Instruction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allocate a data object for a new p-\/code operation. 
+
+\begin{DoxyReturn}{Returns}
+the new \mbox{\hyperlink{structPcodeData}{Pcode\+Data}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeCacher_adea4c5effe401cd5d08eafa7dcf7940d}\label{classPcodeCacher_adea4c5effe401cd5d08eafa7dcf7940d}} 
+\index{PcodeCacher@{PcodeCacher}!allocateVarnodes@{allocateVarnodes}}
+\index{allocateVarnodes@{allocateVarnodes}!PcodeCacher@{PcodeCacher}}
+\doxysubsubsection{\texorpdfstring{allocateVarnodes()}{allocateVarnodes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}$\ast$ Pcode\+Cacher\+::allocate\+Varnodes (\begin{DoxyParamCaption}\item[{uint4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allocate data objects for a new set of Varnodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & is the number of objects to allocate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the array of available \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeCacher_a75c21a233c9eef255c53a498790882fc}\label{classPcodeCacher_a75c21a233c9eef255c53a498790882fc}} 
+\index{PcodeCacher@{PcodeCacher}!emit@{emit}}
+\index{emit@{emit}!PcodeCacher@{PcodeCacher}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily void Pcode\+Cacher\+::emit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} $\ast$}]{emt }\end{DoxyParamCaption}) const}
+
+
+
+Pass the cached p-\/code data to the emitter. 
+
+Each p-\/code operation is presented to the emitter via its dump() method. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} associated with the p-\/code operation \\
+\hline
+{\em emt} & is the emitter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeCacher_a43bb71389841843cc69d3a36d46674f1}\label{classPcodeCacher_a43bb71389841843cc69d3a36d46674f1}} 
+\index{PcodeCacher@{PcodeCacher}!resolveRelatives@{resolveRelatives}}
+\index{resolveRelatives@{resolveRelatives}!PcodeCacher@{PcodeCacher}}
+\doxysubsubsection{\texorpdfstring{resolveRelatives()}{resolveRelatives()}}
+{\footnotesize\ttfamily void Pcode\+Cacher\+::resolve\+Relatives (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Rewrite branch target Varnodes as {\itshape relative} offsets. 
+
+Assuming all the \mbox{\hyperlink{structPcodeData}{Pcode\+Data}} has been generated for an instruction, go resolve any relative offsets and back patch their value(s) into the \mbox{\hyperlink{structPcodeData}{Pcode\+Data}} 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh_8hh}{sleigh.\+hh}}\item 
+sleigh.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,74 @@
+\hypertarget{classInstructionPattern}{}\doxysection{Instruction\+Pattern Class Reference}
+\label{classInstructionPattern}\index{InstructionPattern@{InstructionPattern}}
+
+
+Inheritance diagram for Instruction\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classInstructionPattern__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Instruction\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classInstructionPattern__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classInstructionPattern_ab870093af41bb7026c5caad2a4a0c4cd}\label{classInstructionPattern_ab870093af41bb7026c5caad2a4a0c4cd}} 
+{\bfseries Instruction\+Pattern} (\mbox{\hyperlink{classPatternBlock}{Pattern\+Block}} $\ast$mv)
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a29cccf4d6de13ac39a1f022bb86ef688}\label{classInstructionPattern_a29cccf4d6de13ac39a1f022bb86ef688}} 
+{\bfseries Instruction\+Pattern} (bool tf)
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a5edf1821ebaebb15cf835d80745e203e}\label{classInstructionPattern_a5edf1821ebaebb15cf835d80745e203e}} 
+\mbox{\hyperlink{classPatternBlock}{Pattern\+Block}} $\ast$ {\bfseries get\+Block} (void)
+\item 
+\mbox{\Hypertarget{classInstructionPattern_ad257e6ff03279c9366d7568b011c72a5}\label{classInstructionPattern_ad257e6ff03279c9366d7568b011c72a5}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries simplify\+Clone} (void) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a85d29caf8da56fad4bf0805f7fdeb4a8}\label{classInstructionPattern_a85d29caf8da56fad4bf0805f7fdeb4a8}} 
+virtual void {\bfseries shift\+Instruction} (int4 sa)
+\item 
+\mbox{\Hypertarget{classInstructionPattern_ae44ac91ca0f01f366cdd5e89d7fe0d06}\label{classInstructionPattern_ae44ac91ca0f01f366cdd5e89d7fe0d06}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+Or} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_ac56875a4e5fca7c5a3ea2a92a3afc47b}\label{classInstructionPattern_ac56875a4e5fca7c5a3ea2a92a3afc47b}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+And} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a22b45bc904929f0f094a0a64174bb70c}\label{classInstructionPattern_a22b45bc904929f0f094a0a64174bb70c}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries common\+Sub\+Pattern} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a879ab052ff7d4082fde3bd53a457a21b}\label{classInstructionPattern_a879ab052ff7d4082fde3bd53a457a21b}} 
+virtual bool {\bfseries is\+Match} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a06048b3a010b4822734d34774184f02d}\label{classInstructionPattern_a06048b3a010b4822734d34774184f02d}} 
+virtual bool {\bfseries always\+True} (void) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a0b239a933cc9220adb175d602919986d}\label{classInstructionPattern_a0b239a933cc9220adb175d602919986d}} 
+virtual bool {\bfseries always\+False} (void) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a82ae35b557a32c6f208c6ff19967173b}\label{classInstructionPattern_a82ae35b557a32c6f208c6ff19967173b}} 
+virtual bool {\bfseries always\+Instruction\+True} (void) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_a355f6e3868e5d1e43b324bdad38e27ed}\label{classInstructionPattern_a355f6e3868e5d1e43b324bdad38e27ed}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classInstructionPattern_adeb7cb99c731f21b58f201972d923ac8}\label{classInstructionPattern_adeb7cb99c731f21b58f201972d923ac8}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghpattern.\+hh\item 
+slghpattern.\+cc\end{DoxyCompactItemize}

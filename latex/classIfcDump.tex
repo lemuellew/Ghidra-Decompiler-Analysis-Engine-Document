@@ -1,0 +1,62 @@
+\hypertarget{classIfcDump}{}\doxysection{Ifc\+Dump Class Reference}
+\label{classIfcDump}\index{IfcDump@{IfcDump}}
+
+
+Display bytes in the load image\+: {\ttfamily dump $<$address+size$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Dump\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcDump__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Dump\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcDump__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcDump_a4e3abbc8ca445ed10d88c2cf31f57601}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Display bytes in the load image\+: {\ttfamily dump $<$address+size$>$} 
+
+The command does a hex listing of the specific memory region. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcDump_a4e3abbc8ca445ed10d88c2cf31f57601}\label{classIfcDump_a4e3abbc8ca445ed10d88c2cf31f57601}} 
+\index{IfcDump@{IfcDump}!execute@{execute}}
+\index{execute@{execute}!IfcDump@{IfcDump}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Dump\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

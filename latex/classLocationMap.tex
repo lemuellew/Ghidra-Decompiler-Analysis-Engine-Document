@@ -1,0 +1,105 @@
+\hypertarget{classLocationMap}{}\doxysection{Location\+Map Class Reference}
+\label{classLocationMap}\index{LocationMap@{LocationMap}}
+
+
+Map object for keeping track of which address ranges have been heritaged.  
+
+
+
+
+{\ttfamily \#include $<$heritage.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}\label{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}} 
+typedef map$<$ \mbox{\hyperlink{classAddress}{Address}}, \mbox{\hyperlink{structSizePass}{Size\+Pass}} $>$\+::\mbox{\hyperlink{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}{iterator}} \mbox{\hyperlink{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}{iterator}}
+\begin{DoxyCompactList}\small\item\em Iterator into the main map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}{iterator}} \mbox{\hyperlink{classLocationMap_a72014909f852e240636856c3fec0ca04}{add}} (\mbox{\hyperlink{classAddress}{Address}} addr, int4 size, int4 pass, int4 \&intersect)
+\begin{DoxyCompactList}\small\item\em Mark new address as {\bfseries{heritaged}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}{iterator}} \mbox{\hyperlink{classLocationMap_a12b6c4fbb6ee188bf272515aed11dd93}{find}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Look up if/how given address was heritaged. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classLocationMap_ad34e6dd1b3941d4842c65c3ea15553de}{find\+Pass}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Look up if/how given address was heritaged. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Map object for keeping track of which address ranges have been heritaged. 
+
+We keep track of a fairly fine grained description of when each address range was entered in S\+SA form, referred to as {\bfseries{heritaged}} or, for \mbox{\hyperlink{classVarnode}{Varnode}} objects, no longer {\bfseries{free}}. An address range is added using the \mbox{\hyperlink{classLocationMap_a72014909f852e240636856c3fec0ca04}{add()}} method, which includes the particular pass when it was entered. The map can be queried using \mbox{\hyperlink{classLocationMap_ad34e6dd1b3941d4842c65c3ea15553de}{find\+Pass()}} that informs the caller whether the address has been heritaged and if so in which pass. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLocationMap_a72014909f852e240636856c3fec0ca04}\label{classLocationMap_a72014909f852e240636856c3fec0ca04}} 
+\index{LocationMap@{LocationMap}!add@{add}}
+\index{add@{add}!LocationMap@{LocationMap}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}{Location\+Map\+::iterator}} Location\+Map\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddress}{Address}}}]{addr,  }\item[{int4}]{size,  }\item[{int4}]{pass,  }\item[{int4 \&}]{intersect }\end{DoxyParamCaption})}
+
+
+
+Mark new address as {\bfseries{heritaged}}. 
+
+Update disjoint cover making sure (addr,size) is contained in a single element and return iterator to this element. Pass back {\bfseries{intersect}} value\+:
+\begin{DoxyItemize}
+\item 0 if the only intersection is with range from the same pass
+\item 1 if there is a partial intersection with something old
+\item 2 if the range is contained in an old range 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the range to add \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+{\em pass} & is the pass number when the range was heritaged \\
+\hline
+{\em intersect} & is a reference for passing back the intersect code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the iterator to the map element containing the added range 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classLocationMap_a12b6c4fbb6ee188bf272515aed11dd93}\label{classLocationMap_a12b6c4fbb6ee188bf272515aed11dd93}} 
+\index{LocationMap@{LocationMap}!find@{find}}
+\index{find@{find}!LocationMap@{LocationMap}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLocationMap_a13612b4d0583b85205f3ad6476c2aef9}{Location\+Map\+::iterator}} Location\+Map\+::find (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Look up if/how given address was heritaged. 
+
+If the given address was heritaged, return (the iterator to) the Size\+Map entry describing the associated range and when it was heritaged. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the iterator to the Size\+Map entry or the end iterator is the address is unheritaged 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLocationMap_ad34e6dd1b3941d4842c65c3ea15553de}\label{classLocationMap_ad34e6dd1b3941d4842c65c3ea15553de}} 
+\index{LocationMap@{LocationMap}!findPass@{findPass}}
+\index{findPass@{findPass}!LocationMap@{LocationMap}}
+\doxysubsubsection{\texorpdfstring{findPass()}{findPass()}}
+{\footnotesize\ttfamily int4 Location\+Map\+::find\+Pass (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Look up if/how given address was heritaged. 
+
+Return the pass number when the given address was heritaged, or -\/1 if it was not heritaged 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pass number of -\/1 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{heritage_8hh}{heritage.\+hh}}\item 
+heritage.\+cc\end{DoxyCompactItemize}

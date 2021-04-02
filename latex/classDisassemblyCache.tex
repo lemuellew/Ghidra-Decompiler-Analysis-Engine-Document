@@ -1,0 +1,80 @@
+\hypertarget{classDisassemblyCache}{}\doxysection{Disassembly\+Cache Class Reference}
+\label{classDisassemblyCache}\index{DisassemblyCache@{DisassemblyCache}}
+
+
+A container for disassembly context used by the S\+L\+E\+I\+GH engine.  
+
+
+
+
+{\ttfamily \#include $<$sleigh.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDisassemblyCache_a3473405cd9c2d6d890c0b28376fde40a}{Disassembly\+Cache}} (\mbox{\hyperlink{classContextCache}{Context\+Cache}} $\ast$ccache, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$cspace, int4 cachesize, int4 windowsize)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$ \mbox{\hyperlink{classDisassemblyCache_afab4ffc5dc52eb4cc6da82e13a1d5107}{get\+Parser\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Get the parser for a particular \mbox{\hyperlink{classAddress}{Address}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container for disassembly context used by the S\+L\+E\+I\+GH engine. 
+
+This acts as a factor for the \mbox{\hyperlink{classParserContext}{Parser\+Context}} objects which are used to disassemble a single instruction. These all share a \mbox{\hyperlink{classContextCache}{Context\+Cache}} which is a front end for accessing the \mbox{\hyperlink{classContextDatabase}{Context\+Database}} and resolving context variables from the S\+L\+E\+I\+GH spec. \mbox{\hyperlink{classParserContext}{Parser\+Context}} objects are stored in a hash-\/table keyed by the address of the instruction. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDisassemblyCache_a3473405cd9c2d6d890c0b28376fde40a}\label{classDisassemblyCache_a3473405cd9c2d6d890c0b28376fde40a}} 
+\index{DisassemblyCache@{DisassemblyCache}!DisassemblyCache@{DisassemblyCache}}
+\index{DisassemblyCache@{DisassemblyCache}!DisassemblyCache@{DisassemblyCache}}
+\doxysubsubsection{\texorpdfstring{DisassemblyCache()}{DisassemblyCache()}}
+{\footnotesize\ttfamily Disassembly\+Cache\+::\+Disassembly\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classContextCache}{Context\+Cache}} $\ast$}]{ccache,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{cspace,  }\item[{int4}]{cachesize,  }\item[{int4}]{windowsize }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ccache} & is the \mbox{\hyperlink{classContextCache}{Context\+Cache}} front-\/end shared across all the parser contexts \\
+\hline
+{\em cspace} & is the constant address space used for minting constant Varnodes \\
+\hline
+{\em cachesize} & is the number of distinct \mbox{\hyperlink{classParserContext}{Parser\+Context}} objects in this cache \\
+\hline
+{\em windowsize} & is the size of the \mbox{\hyperlink{classParserContext}{Parser\+Context}} hash-\/table \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDisassemblyCache_afab4ffc5dc52eb4cc6da82e13a1d5107}\label{classDisassemblyCache_afab4ffc5dc52eb4cc6da82e13a1d5107}} 
+\index{DisassemblyCache@{DisassemblyCache}!getParserContext@{getParserContext}}
+\index{getParserContext@{getParserContext}!DisassemblyCache@{DisassemblyCache}}
+\doxysubsubsection{\texorpdfstring{getParserContext()}{getParserContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$ Disassembly\+Cache\+::get\+Parser\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})}
+
+
+
+Get the parser for a particular \mbox{\hyperlink{classAddress}{Address}}. 
+
+Return a (possibly cached) \mbox{\hyperlink{classParserContext}{Parser\+Context}} that is associated with {\itshape addr} If n different calls to this interface are made with n different Addresses, if
+\begin{DoxyItemize}
+\item n $<$= minimumreuse A\+ND
+\item all the addresses are within the windowsize (=mask+1)
+\end{DoxyItemize}
+
+then the cacher guarantees that you get all different \mbox{\hyperlink{classParserContext}{Parser\+Context}} objects 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} to disassemble at \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classParserContext}{Parser\+Context}} associated with the address 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh_8hh}{sleigh.\+hh}}\item 
+sleigh.\+cc\end{DoxyCompactItemize}

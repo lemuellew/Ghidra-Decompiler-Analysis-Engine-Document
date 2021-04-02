@@ -1,0 +1,241 @@
+\hypertarget{classEmulatePcodeCache}{}\doxysection{Emulate\+Pcode\+Cache Class Reference}
+\label{classEmulatePcodeCache}\index{EmulatePcodeCache@{EmulatePcodeCache}}
+
+
+A S\+L\+E\+I\+GH based implementation of the \mbox{\hyperlink{classEmulate}{Emulate}} interface.  
+
+
+
+
+{\ttfamily \#include $<$emulate.\+hh$>$}
+
+
+
+Inheritance diagram for Emulate\+Pcode\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classEmulatePcodeCache__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Emulate\+Pcode\+Cache\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEmulatePcodeCache__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEmulatePcodeCache_a1efa63681c9911be126f6dd38a2fb4f6}{Emulate\+Pcode\+Cache}} (\mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, \mbox{\hyperlink{classMemoryState}{Memory\+State}} $\ast$s, \mbox{\hyperlink{classBreakTable}{Break\+Table}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Pcode cache emulator constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classEmulatePcodeCache_a2181035b11cf4b7df9e67c95aaedbed6}{is\+Instruction\+Start}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if we are at an instruction start. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classEmulatePcodeCache_a8f19e816af73f36a2d2c6633aba71711}{num\+Current\+Ops}} (void) const
+\begin{DoxyCompactList}\small\item\em Return number of pcode ops in translation of current instruction. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classEmulatePcodeCache_a733683ca5bfdae3d607cf10c8db341e6}{get\+Current\+Op\+Index}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the index of current pcode op within current instruction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$ \mbox{\hyperlink{classEmulatePcodeCache_ae96cdbb6e6128965335fb7cddb20500b}{get\+Op\+By\+Index}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get pcode op in current instruction translation by index. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmulatePcodeCache_a732fcebcb6aae1a9e7b9e833df6f1e85}{set\+Execute\+Address}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Set current execution address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classEmulatePcodeCache_a0552fb840bb762ee41b4bbc7fce2b608}{get\+Execute\+Address}} (void) const
+\begin{DoxyCompactList}\small\item\em Get current execution address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEmulatePcodeCache_affaf407ab847a7ec409bac7d564c119c}{execute\+Instruction}} (void)
+\begin{DoxyCompactList}\small\item\em Execute (the rest of) a single machine instruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classEmulatePcodeCache_a57be50a3c9751a6bcb40bf8c080f7774}{fallthru\+Op}} (void)
+\begin{DoxyCompactList}\small\item\em Execute fallthru semantics for the pcode cache. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmulatePcodeCache_a6108efef1c0291ca887228781e4c1238}{execute\+Branch}} (void)
+\begin{DoxyCompactList}\small\item\em Execute branch (including relative branches) \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEmulatePcodeCache_a5f90b72957b644a794455f051cb3ad2d}{execute\+Callother}} (void)
+\begin{DoxyCompactList}\small\item\em Execute breakpoint for this user-\/defined op. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A S\+L\+E\+I\+GH based implementation of the \mbox{\hyperlink{classEmulate}{Emulate}} interface. 
+
+This implementation uses a \mbox{\hyperlink{classTranslate}{Translate}} object to translate machine instructions into pcode and caches pcode ops for later use by the emulator. The pcode is cached as soon as the execution address is set, either explicitly, or via branches and fallthrus. There are additional methods for inspecting the pcode ops in the current instruction as a sequence. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classEmulatePcodeCache_a1efa63681c9911be126f6dd38a2fb4f6}\label{classEmulatePcodeCache_a1efa63681c9911be126f6dd38a2fb4f6}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!EmulatePcodeCache@{EmulatePcodeCache}}
+\index{EmulatePcodeCache@{EmulatePcodeCache}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{EmulatePcodeCache()}{EmulatePcodeCache()}}
+{\footnotesize\ttfamily Emulate\+Pcode\+Cache\+::\+Emulate\+Pcode\+Cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{\mbox{\hyperlink{classMemoryState}{Memory\+State}} $\ast$}]{s,  }\item[{\mbox{\hyperlink{classBreakTable}{Break\+Table}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Pcode cache emulator constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & is the S\+L\+E\+I\+GH translator \\
+\hline
+{\em s} & is the \mbox{\hyperlink{classMemoryState}{Memory\+State}} the emulator should manipulate \\
+\hline
+{\em b} & is the table of breakpoints the emulator should invoke \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classEmulatePcodeCache_a6108efef1c0291ca887228781e4c1238}\label{classEmulatePcodeCache_a6108efef1c0291ca887228781e4c1238}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!executeBranch@{executeBranch}}
+\index{executeBranch@{executeBranch}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{executeBranch()}{executeBranch()}}
+{\footnotesize\ttfamily void Emulate\+Pcode\+Cache\+::execute\+Branch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Execute branch (including relative branches) 
+
+Since the full instruction is cached, we can do relative branches properly. 
+
+Reimplemented from \mbox{\hyperlink{classEmulateMemory_ac69d1f93ffc1a86d3486af34bb520302}{Emulate\+Memory}}.
+
+\mbox{\Hypertarget{classEmulatePcodeCache_a5f90b72957b644a794455f051cb3ad2d}\label{classEmulatePcodeCache_a5f90b72957b644a794455f051cb3ad2d}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!executeCallother@{executeCallother}}
+\index{executeCallother@{executeCallother}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{executeCallother()}{executeCallother()}}
+{\footnotesize\ttfamily void Emulate\+Pcode\+Cache\+::execute\+Callother (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Execute breakpoint for this user-\/defined op. 
+
+Look for a breakpoint for the given user-\/defined op and invoke it. If it doesn\textquotesingle{}t exist, or doesn\textquotesingle{}t replace the action, throw an exception 
+
+Reimplemented from \mbox{\hyperlink{classEmulateMemory_a9a7bbbdeb9ca7f696fb8070119eb304a}{Emulate\+Memory}}.
+
+\mbox{\Hypertarget{classEmulatePcodeCache_affaf407ab847a7ec409bac7d564c119c}\label{classEmulatePcodeCache_affaf407ab847a7ec409bac7d564c119c}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!executeInstruction@{executeInstruction}}
+\index{executeInstruction@{executeInstruction}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{executeInstruction()}{executeInstruction()}}
+{\footnotesize\ttfamily void Emulate\+Pcode\+Cache\+::execute\+Instruction (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Execute (the rest of) a single machine instruction. 
+
+This routine executes an entire machine instruction at once, as a conventional debugger step function would do. If execution is at the start of an instruction, the breakpoints are checked and invoked as needed for the current address. If this routine is invoked while execution is in the middle of a machine instruction, execution is continued until the current instruction completes. \mbox{\Hypertarget{classEmulatePcodeCache_a57be50a3c9751a6bcb40bf8c080f7774}\label{classEmulatePcodeCache_a57be50a3c9751a6bcb40bf8c080f7774}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!fallthruOp@{fallthruOp}}
+\index{fallthruOp@{fallthruOp}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{fallthruOp()}{fallthruOp()}}
+{\footnotesize\ttfamily void Emulate\+Pcode\+Cache\+::fallthru\+Op (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Execute fallthru semantics for the pcode cache. 
+
+Update the iterator into the current pcode cache, and if necessary, generate the pcode for the fallthru instruction and reset the iterator. 
+
+Implements \mbox{\hyperlink{classEmulate_ae9cd5b56525c54479e9c7add4a17687b}{Emulate}}.
+
+\mbox{\Hypertarget{classEmulatePcodeCache_a733683ca5bfdae3d607cf10c8db341e6}\label{classEmulatePcodeCache_a733683ca5bfdae3d607cf10c8db341e6}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!getCurrentOpIndex@{getCurrentOpIndex}}
+\index{getCurrentOpIndex@{getCurrentOpIndex}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{getCurrentOpIndex()}{getCurrentOpIndex()}}
+{\footnotesize\ttfamily int4 Emulate\+Pcode\+Cache\+::get\+Current\+Op\+Index (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the index of current pcode op within current instruction. 
+
+This routine can be used to determine where, within the sequence of ops in the translation of the entire machine instruction, the currently executing op is. \begin{DoxyReturn}{Returns}
+the index of the current (next) pcode op. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmulatePcodeCache_a0552fb840bb762ee41b4bbc7fce2b608}\label{classEmulatePcodeCache_a0552fb840bb762ee41b4bbc7fce2b608}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!getExecuteAddress@{getExecuteAddress}}
+\index{getExecuteAddress@{getExecuteAddress}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{getExecuteAddress()}{getExecuteAddress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Emulate\+Pcode\+Cache\+::get\+Execute\+Address (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get current execution address. 
+
+\begin{DoxyReturn}{Returns}
+the currently executing machine address 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classEmulate_aeca3c773876b391304afffe2a5eff9de}{Emulate}}.
+
+\mbox{\Hypertarget{classEmulatePcodeCache_ae96cdbb6e6128965335fb7cddb20500b}\label{classEmulatePcodeCache_ae96cdbb6e6128965335fb7cddb20500b}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!getOpByIndex@{getOpByIndex}}
+\index{getOpByIndex@{getOpByIndex}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{getOpByIndex()}{getOpByIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} $\ast$ Emulate\+Pcode\+Cache\+::get\+Op\+By\+Index (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get pcode op in current instruction translation by index. 
+
+This routine can be used to examine ops other than the currently executing op in the machine instruction\textquotesingle{}s translation sequence. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the desired op index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pcode op at the indicated index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmulatePcodeCache_a2181035b11cf4b7df9e67c95aaedbed6}\label{classEmulatePcodeCache_a2181035b11cf4b7df9e67c95aaedbed6}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!isInstructionStart@{isInstructionStart}}
+\index{isInstructionStart@{isInstructionStart}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{isInstructionStart()}{isInstructionStart()}}
+{\footnotesize\ttfamily bool Emulate\+Pcode\+Cache\+::is\+Instruction\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return {\bfseries{true}} if we are at an instruction start. 
+
+Since the emulator can single step through individual pcode operations, the machine state may be halted in the {\itshape middle} of a single machine instruction, unlike conventional debuggers. This routine can be used to determine if execution is actually at the beginning of a machine instruction. \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the next pcode operation is at the start of the instruction translation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmulatePcodeCache_a8f19e816af73f36a2d2c6633aba71711}\label{classEmulatePcodeCache_a8f19e816af73f36a2d2c6633aba71711}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!numCurrentOps@{numCurrentOps}}
+\index{numCurrentOps@{numCurrentOps}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{numCurrentOps()}{numCurrentOps()}}
+{\footnotesize\ttfamily int4 Emulate\+Pcode\+Cache\+::num\+Current\+Ops (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return number of pcode ops in translation of current instruction. 
+
+A typical machine instruction translates into a sequence of pcode ops. \begin{DoxyReturn}{Returns}
+the number of ops in the sequence 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classEmulatePcodeCache_a732fcebcb6aae1a9e7b9e833df6f1e85}\label{classEmulatePcodeCache_a732fcebcb6aae1a9e7b9e833df6f1e85}} 
+\index{EmulatePcodeCache@{EmulatePcodeCache}!setExecuteAddress@{setExecuteAddress}}
+\index{setExecuteAddress@{setExecuteAddress}!EmulatePcodeCache@{EmulatePcodeCache}}
+\doxysubsubsection{\texorpdfstring{setExecuteAddress()}{setExecuteAddress()}}
+{\footnotesize\ttfamily void Emulate\+Pcode\+Cache\+::set\+Execute\+Address (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set current execution address. 
+
+Set the current execution address and cache the pcode translation of the machine instruction at that address 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address where execution should continue \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classEmulate_aff5f9779fdad54f853d4e799f5289410}{Emulate}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{emulate_8hh}{emulate.\+hh}}\item 
+emulate.\+cc\end{DoxyCompactItemize}

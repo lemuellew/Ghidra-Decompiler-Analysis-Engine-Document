@@ -1,0 +1,224 @@
+\hypertarget{classJoinSpace}{}\doxysection{Join\+Space Class Reference}
+\label{classJoinSpace}\index{JoinSpace@{JoinSpace}}
+
+
+The pool of logically joined variables.  
+
+
+
+
+{\ttfamily \#include $<$space.\+hh$>$}
+
+
+
+Inheritance diagram for Join\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classJoinSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Join\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classJoinSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJoinSpace_a567ec37c46a6932b744e2f2cf9e790c2}{Join\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, const string \&nm, int4 ind)
+\item 
+virtual void \mbox{\hyperlink{classJoinSpace_a1468359068efe2f1d3fe0c30a4d5ff00}{save\+Xml\+Attributes}} (ostream \&s, uintb offset) const
+\item 
+virtual void \mbox{\hyperlink{classJoinSpace_aa3674a311764fe483ed0a3b93a3735ca}{save\+Xml\+Attributes}} (ostream \&s, uintb offset, int4 size) const
+\item 
+virtual uintb \mbox{\hyperlink{classJoinSpace_aca1360dbe0abf4a9ace679887cb47c17}{restore\+Xml\+Attributes}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, uint4 \&size) const
+\item 
+virtual void \mbox{\hyperlink{classJoinSpace_a23032ea3a76390d697779a99d15c75c8}{print\+Raw}} (ostream \&s, uintb offset) const
+\begin{DoxyCompactList}\small\item\em Write an address in this space to a stream. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classJoinSpace_a8f644b1eaf92bece425a3712a205fa3b}{read}} (const string \&s, int4 \&size) const
+\begin{DoxyCompactList}\small\item\em Read in an address (and possible size) from a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJoinSpace_a7e7bdd3347396ca62a465041f13e06a1}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the details of this space as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJoinSpace_a55fb2e082c5547f3b4ff4022de86c895}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover the details of this space from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The pool of logically joined variables. 
+
+Some logical variables are split across non-\/contiguous regions of memory. This space creates a virtual place for these logical variables to exist. Any memory location within this space is backed by 2 or more memory locations in other spaces that physically hold the pieces of the logical value. The database controlling symbols is responsible for keeping track of mapping the logical address in this space to its physical pieces. Offsets into this space do not have an absolute meaning, the database may vary what offset is assigned to what set of pieces. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJoinSpace_a567ec37c46a6932b744e2f2cf9e790c2}\label{classJoinSpace_a567ec37c46a6932b744e2f2cf9e790c2}} 
+\index{JoinSpace@{JoinSpace}!JoinSpace@{JoinSpace}}
+\index{JoinSpace@{JoinSpace}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{JoinSpace()}{JoinSpace()}}
+{\footnotesize\ttfamily Join\+Space\+::\+Join\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{const string \&}]{nm,  }\item[{int4}]{ind }\end{DoxyParamCaption})}
+
+This is the constructor for the {\bfseries{join}} space, which is automatically constructed by the analysis engine, and constructed only once. The name should always be {\bfseries{join}}. 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the associated address space manager \\
+\hline
+{\em t} & is the associated processor translator \\
+\hline
+{\em nm} & is the name of the space \\
+\hline
+{\em ind} & is the integer identifier \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJoinSpace_a23032ea3a76390d697779a99d15c75c8}\label{classJoinSpace_a23032ea3a76390d697779a99d15c75c8}} 
+\index{JoinSpace@{JoinSpace}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Join\+Space\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write an address in this space to a stream. 
+
+This is a printing method for the debugging routines. It prints taking into account the {\itshape wordsize}, adding a \char`\"{}+n\char`\"{} if the offset is not on-\/cut with wordsize. It also returns the expected/typical size of values from this space. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+{\em offset} & is the offset to be printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a76819b70cd6b6ae8601ac1821f86b929}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classJoinSpace_a8f644b1eaf92bece425a3712a205fa3b}\label{classJoinSpace_a8f644b1eaf92bece425a3712a205fa3b}} 
+\index{JoinSpace@{JoinSpace}!read@{read}}
+\index{read@{read}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily uintb Join\+Space\+::read (\begin{DoxyParamCaption}\item[{const string \&}]{s,  }\item[{int4 \&}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Read in an address (and possible size) from a string. 
+
+For the console mode, an address space can tailor how it converts user strings into offsets within the space. The base routine can read and convert register names as well as absolute hex addresses. A size can be indicated by appending a \textquotesingle{}\+:\textquotesingle{} and integer, .i.\+e. 0x1000\+:2. Offsets within a register can be indicated by appending a \textquotesingle{}+\textquotesingle{} and integer, i.\+e. eax+2 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the string to be parsed \\
+\hline
+{\em size} & is a reference to the size being returned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the parsed offset 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ad0a4a2744ee7de8f592dfaf817a6c93b}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classJoinSpace_a55fb2e082c5547f3b4ff4022de86c895}\label{classJoinSpace_a55fb2e082c5547f3b4ff4022de86c895}} 
+\index{JoinSpace@{JoinSpace}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Join\+Space\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the details of this space from X\+ML. 
+
+Walk a parsed X\+ML tag and recover all the properties defining this space. The processor translator, {\itshape trans}, and the {\itshape type} must already be filled in. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classJoinSpace_aca1360dbe0abf4a9ace679887cb47c17}\label{classJoinSpace_aca1360dbe0abf4a9ace679887cb47c17}} 
+\index{JoinSpace@{JoinSpace}!restoreXmlAttributes@{restoreXmlAttributes}}
+\index{restoreXmlAttributes@{restoreXmlAttributes}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{restoreXmlAttributes()}{restoreXmlAttributes()}}
+{\footnotesize\ttfamily uintb Join\+Space\+::restore\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{uint4 \&}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Restore a join address from an X\+ML tag. Pieces of the join are encoded as a sequence of tag attributes. The \mbox{\hyperlink{classAddrSpaceManager_a1b9e7e934e22b6bea3b2b949fd2b2159}{Translate\+::find\+Add\+Join}} method is used to construct a logical address within the join space. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML element to extract the address from \\
+\hline
+{\em size} & is a reference to be filled in as the size encoded by the tag \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the offset of the final address encoded by the tag 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_aa20e53222697512db0a64db75179ead2}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classJoinSpace_a7e7bdd3347396ca62a465041f13e06a1}\label{classJoinSpace_a7e7bdd3347396ca62a465041f13e06a1}} 
+\index{JoinSpace@{JoinSpace}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Join\+Space\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the details of this space as X\+ML. 
+
+Write a tag fully describing the details of this space suitable for later recovery via restore\+Xml. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ac073a4d446677c54d769abba01318864}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classJoinSpace_a1468359068efe2f1d3fe0c30a4d5ff00}\label{classJoinSpace_a1468359068efe2f1d3fe0c30a4d5ff00}} 
+\index{JoinSpace@{JoinSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Join\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Save a join address to the stream as X\+ML. This method in the interface only outputs X\+ML attributes for a single tag, so we are forced to encode what should probably be recursive tags into an attribute 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written to \\
+\hline
+{\em offset} & is the offset within the address space to encode \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a4475d64c56141adf80cb0aca5b23e3c6}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classJoinSpace_aa3674a311764fe483ed0a3b93a3735ca}\label{classJoinSpace_aa3674a311764fe483ed0a3b93a3735ca}} 
+\index{JoinSpace@{JoinSpace}!saveXmlAttributes@{saveXmlAttributes}}
+\index{saveXmlAttributes@{saveXmlAttributes}!JoinSpace@{JoinSpace}}
+\doxysubsubsection{\texorpdfstring{saveXmlAttributes()}{saveXmlAttributes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Join\+Space\+::save\+Xml\+Attributes (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uintb}]{offset,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Save a join address to the stream as X\+ML. This method in the interface only outputs X\+ML attributes for a single tag, so we are forced to encode what should probably be recursive tags into an attribute 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written to \\
+\hline
+{\em offset} & is the offset within the address space to encode \\
+\hline
+{\em size} & is the size of the memory location being encoded \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a67510a8345fcc17157cc0389e757d504}{Addr\+Space}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{space_8hh}{space.\+hh}}\item 
+space.\+cc\end{DoxyCompactItemize}

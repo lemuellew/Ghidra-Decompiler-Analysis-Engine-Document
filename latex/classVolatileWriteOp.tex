@@ -1,0 +1,99 @@
+\hypertarget{classVolatileWriteOp}{}\doxysection{Volatile\+Write\+Op Class Reference}
+\label{classVolatileWriteOp}\index{VolatileWriteOp@{VolatileWriteOp}}
+
+
+An operation that writes to volatile memory.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Volatile\+Write\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{classVolatileWriteOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Volatile\+Write\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVolatileWriteOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classVolatileWriteOp_aba63c56acfa184a248cfa78e1d346af5}{get\+Operator\+Name}} (const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Get the symbol representing this operation in decompiled code. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classVolatileWriteOp_a7d0ae9b968d11ff809a46dec31e94d43}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore the detailed description from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An operation that writes to volatile memory. 
+
+This C\+A\+L\+L\+O\+T\+H\+ER p-\/code operation takes as its input parameters\+:
+\begin{DoxyItemize}
+\item Constant id
+\item Reference \mbox{\hyperlink{classVarnode}{Varnode}} to the memory being written
+\item The \mbox{\hyperlink{classVarnode}{Varnode}} value being written to the memory 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVolatileWriteOp_aba63c56acfa184a248cfa78e1d346af5}\label{classVolatileWriteOp_aba63c56acfa184a248cfa78e1d346af5}} 
+\index{VolatileWriteOp@{VolatileWriteOp}!getOperatorName@{getOperatorName}}
+\index{getOperatorName@{getOperatorName}!VolatileWriteOp@{VolatileWriteOp}}
+\doxysubsubsection{\texorpdfstring{getOperatorName()}{getOperatorName()}}
+{\footnotesize\ttfamily string Volatile\+Write\+Op\+::get\+Operator\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the symbol representing this operation in decompiled code. 
+
+This will return the symbol formally displayed in source code, which can be tailored more than the low-\/level name 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the operation (in context) where a symbol is needed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the symbol as a string 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classUserPcodeOp_a7529472e93f9077d5bfdb9cc1142bfbb}{User\+Pcode\+Op}}.
+
+\mbox{\Hypertarget{classVolatileWriteOp_a7d0ae9b968d11ff809a46dec31e94d43}\label{classVolatileWriteOp_a7d0ae9b968d11ff809a46dec31e94d43}} 
+\index{VolatileWriteOp@{VolatileWriteOp}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!VolatileWriteOp@{VolatileWriteOp}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Volatile\+Write\+Op\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the detailed description from an X\+ML stream. 
+
+The details of how a user defined operation behaves can be dynamically configured from an X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element describing the op \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classUserPcodeOp_a2a7b7c637369bc4fba4604cd83a937af}{User\+Pcode\+Op}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{classIfcHistory}{}\doxysection{Ifc\+History Class Reference}
+\label{classIfcHistory}\index{IfcHistory@{IfcHistory}}
+
+
+History command to list the most recent successful commands.  
+
+
+
+
+Inheritance diagram for Ifc\+History\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classIfcHistory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+History\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classIfcHistory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcHistory_a2d0c5037da245a4556030a853789275a}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+History command to list the most recent successful commands. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcHistory_a2d0c5037da245a4556030a853789275a}\label{classIfcHistory_a2d0c5037da245a4556030a853789275a}} 
+\index{IfcHistory@{IfcHistory}!execute@{execute}}
+\index{execute@{execute}!IfcHistory@{IfcHistory}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+History\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_8hh}{interface.\+hh}}\item 
+interface.\+cc\end{DoxyCompactItemize}

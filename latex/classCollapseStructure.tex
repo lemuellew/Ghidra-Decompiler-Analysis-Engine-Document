@@ -1,0 +1,69 @@
+\hypertarget{classCollapseStructure}{}\doxysection{Collapse\+Structure Class Reference}
+\label{classCollapseStructure}\index{CollapseStructure@{CollapseStructure}}
+
+
+Build a code structure from a control-\/flow graph (\mbox{\hyperlink{classBlockGraph}{Block\+Graph}}).  
+
+
+
+
+{\ttfamily \#include $<$blockaction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCollapseStructure_a86b3b578cba8a83f7c75dc28e95f39e0}{Collapse\+Structure}} (\mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&g)
+\begin{DoxyCompactList}\small\item\em Construct given a control-\/flow graph. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCollapseStructure_a5e36c78c71bf1ded2090424af870b7a0}{collapse\+All}} (void)
+\begin{DoxyCompactList}\small\item\em Run the whole algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Build a code structure from a control-\/flow graph (\mbox{\hyperlink{classBlockGraph}{Block\+Graph}}). 
+
+This class manages the main control-\/flow structuring algorithm for the decompiler. In short\+:
+\begin{DoxyItemize}
+\item Start with a control-\/flow graph of basic blocks.
+\item Repeatedly apply\+:
+\begin{DoxyItemize}
+\item Search for sub-\/graphs matching specific code structure elements.
+\item Note the structure element and collapse the component nodes to a single node.
+\end{DoxyItemize}
+\item If the process gets stuck, remove appropriate edges, marking them as unstructured. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCollapseStructure_a86b3b578cba8a83f7c75dc28e95f39e0}\label{classCollapseStructure_a86b3b578cba8a83f7c75dc28e95f39e0}} 
+\index{CollapseStructure@{CollapseStructure}!CollapseStructure@{CollapseStructure}}
+\index{CollapseStructure@{CollapseStructure}!CollapseStructure@{CollapseStructure}}
+\doxysubsubsection{\texorpdfstring{CollapseStructure()}{CollapseStructure()}}
+{\footnotesize\ttfamily Collapse\+Structure\+::\+Collapse\+Structure (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBlockGraph}{Block\+Graph}} \&}]{g }\end{DoxyParamCaption})}
+
+
+
+Construct given a control-\/flow graph. 
+
+The initial \mbox{\hyperlink{classBlockGraph}{Block\+Graph}} should be a copy of the permanent control-\/flow graph. In particular the \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} nodes should be \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} instances. 
+\begin{DoxyParams}{Parameters}
+{\em g} & is the (copy of the) control-\/flow graph \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCollapseStructure_a5e36c78c71bf1ded2090424af870b7a0}\label{classCollapseStructure_a5e36c78c71bf1ded2090424af870b7a0}} 
+\index{CollapseStructure@{CollapseStructure}!collapseAll@{collapseAll}}
+\index{collapseAll@{collapseAll}!CollapseStructure@{CollapseStructure}}
+\doxysubsubsection{\texorpdfstring{collapseAll()}{collapseAll()}}
+{\footnotesize\ttfamily void Collapse\+Structure\+::collapse\+All (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run the whole algorithm. 
+
+Collapse everything in the control-\/flow graph to isolated blocks with no inputs and outputs. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{blockaction_8hh}{blockaction.\+hh}}\item 
+blockaction.\+cc\end{DoxyCompactItemize}

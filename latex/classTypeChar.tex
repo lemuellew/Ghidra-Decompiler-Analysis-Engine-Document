@@ -1,0 +1,85 @@
+\hypertarget{classTypeChar}{}\doxysection{Type\+Char Class Reference}
+\label{classTypeChar}\index{TypeChar@{TypeChar}}
+
+
+Base type for character data-\/types\+: i.\+e. char.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Char\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classTypeChar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Char\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classTypeChar__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeChar_a4831c7367bf6b04217f778e3afc9ff3c}\label{classTypeChar_a4831c7367bf6b04217f778e3afc9ff3c}} 
+\mbox{\hyperlink{classTypeChar_a4831c7367bf6b04217f778e3afc9ff3c}{Type\+Char}} (const \mbox{\hyperlink{classTypeChar}{Type\+Char}} \&op)
+\begin{DoxyCompactList}\small\item\em Construct \mbox{\hyperlink{classTypeChar}{Type\+Char}} copying properties from another data-\/type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeChar_a83cc6e2d7bc00de3e855c118862c4aac}\label{classTypeChar_a83cc6e2d7bc00de3e855c118862c4aac}} 
+\mbox{\hyperlink{classTypeChar_a83cc6e2d7bc00de3e855c118862c4aac}{Type\+Char}} (const string \&n)
+\begin{DoxyCompactList}\small\item\em Construct a char (always 1-\/byte) given a name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeChar_af09a0ae04e18990511b4f3bda2141559}\label{classTypeChar_af09a0ae04e18990511b4f3bda2141559}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeChar_af09a0ae04e18990511b4f3bda2141559}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeChar_a29dadba593626c5de123934a5dcbe894}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize the data-\/type to X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeChar_ac8c1945d0a63785e78b3e09a13226ed6}\label{classTypeChar_ac8c1945d0a63785e78b3e09a13226ed6}} 
+class {\bfseries Type\+Factory}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Base type for character data-\/types\+: i.\+e. char. 
+
+This is always presumed to be U\+T\+F-\/8 encoded 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeChar_a29dadba593626c5de123934a5dcbe894}\label{classTypeChar_a29dadba593626c5de123934a5dcbe894}} 
+\index{TypeChar@{TypeChar}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!TypeChar@{TypeChar}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Type\+Char\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize the data-\/type to X\+ML. 
+
+Write out a formal description of the data-\/type as an X\+ML $<$type$>$ tag. For composite data-\/types, the description goes down one level, describing the component types only by reference. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a33339824f1c50d4354952296070c3902}{Datatype}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hh}{type.\+hh}}\item 
+type.\+cc\end{DoxyCompactItemize}

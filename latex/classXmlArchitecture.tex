@@ -1,0 +1,109 @@
+\hypertarget{classXmlArchitecture}{}\doxysection{Xml\+Architecture Class Reference}
+\label{classXmlArchitecture}\index{XmlArchitecture@{XmlArchitecture}}
+
+
+An \mbox{\hyperlink{classArchitecture}{Architecture}} that loads executables using an X\+ML format.  
+
+
+
+
+{\ttfamily \#include $<$xml\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Xml\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classXmlArchitecture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Xml\+Architecture\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classXmlArchitecture__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classXmlArchitecture_abf5dd16b5343f89d2b165cf2206c7bf6}{save\+Xml}} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classXmlArchitecture_aead4d5224e18ab98cd30ca89774b9faa}{restore\+Xml}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\begin{DoxyCompactList}\small\item\em Restore the \mbox{\hyperlink{classArchitecture}{Architecture}} state from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classXmlArchitecture_a1a6185aa79d3d4e6be5e10d1fb9db8ba}{Xml\+Architecture}} (const string \&fname, const string \&targ, ostream $\ast$estream)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An \mbox{\hyperlink{classArchitecture}{Architecture}} that loads executables using an X\+ML format. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classXmlArchitecture_a1a6185aa79d3d4e6be5e10d1fb9db8ba}\label{classXmlArchitecture_a1a6185aa79d3d4e6be5e10d1fb9db8ba}} 
+\index{XmlArchitecture@{XmlArchitecture}!XmlArchitecture@{XmlArchitecture}}
+\index{XmlArchitecture@{XmlArchitecture}!XmlArchitecture@{XmlArchitecture}}
+\doxysubsubsection{\texorpdfstring{XmlArchitecture()}{XmlArchitecture()}}
+{\footnotesize\ttfamily Xml\+Architecture\+::\+Xml\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{fname,  }\item[{const string \&}]{targ,  }\item[{ostream $\ast$}]{estream }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+This just wraps the base constructor 
+\begin{DoxyParams}{Parameters}
+{\em fname} & is the path to the executable file (containing X\+ML) \\
+\hline
+{\em targ} & is the (optional) language id \\
+\hline
+{\em estream} & is the stream to use for the error console \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classXmlArchitecture_aead4d5224e18ab98cd30ca89774b9faa}\label{classXmlArchitecture_aead4d5224e18ab98cd30ca89774b9faa}} 
+\index{XmlArchitecture@{XmlArchitecture}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!XmlArchitecture@{XmlArchitecture}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Xml\+Architecture\+::restore\+Xml (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore the \mbox{\hyperlink{classArchitecture}{Architecture}} state from an X\+ML stream. 
+
+Read in all the sub-\/component state from a $<$save\+\_\+state$>$ X\+ML tag When adding stuff to this B\+E\+W\+A\+RE\+: The spec file has already initialized stuff 
+\begin{DoxyParams}{Parameters}
+{\em store} & is document store containing the parsed root tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classArchitecture_ab15a398b9f84dd62ad36d1e83895783a}{Architecture}}.
+
+\mbox{\Hypertarget{classXmlArchitecture_abf5dd16b5343f89d2b165cf2206c7bf6}\label{classXmlArchitecture_abf5dd16b5343f89d2b165cf2206c7bf6}} 
+\index{XmlArchitecture@{XmlArchitecture}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!XmlArchitecture@{XmlArchitecture}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Xml\+Architecture\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Prepend extra stuff to specify binary file and spec 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classArchitecture_af760a127622d4cdd4b6b436122478cb5}{Architecture}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{xml__arch_8hh}{xml\+\_\+arch.\+hh}}\item 
+xml\+\_\+arch.\+cc\end{DoxyCompactItemize}

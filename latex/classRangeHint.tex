@@ -1,0 +1,207 @@
+\hypertarget{classRangeHint}{}\doxysection{Range\+Hint Class Reference}
+\label{classRangeHint}\index{RangeHint@{RangeHint}}
+
+
+Partial data-\/type information mapped to a specific range of bytes.  
+
+
+
+
+{\ttfamily \#include $<$varmap.\+hh$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874}{Range\+Type}} \{ \mbox{\hyperlink{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874af7ce3eb97e6fcb2043af5c19cafc04c9}{fixed}} = 0, 
+\mbox{\hyperlink{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874af15bf137d34cb3ab7f6a1d4bc62a8e3a}{open}} = 1, 
+\mbox{\hyperlink{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874a0b584885da5e584e0dafe6854b6db11b}{endpoint}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em The basic categorization of the range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classRangeHint_a10c503057e7e9fefdda8dbf9a538a3ff}{reconcile}} (const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$b) const
+\begin{DoxyCompactList}\small\item\em Can the given intersecting \mbox{\hyperlink{classRangeHint}{Range\+Hint}} coexist with {\bfseries{this}} at their given offsets. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRangeHint_a86a4c1f3b7b43aff956898114023dbd6}{contain}} (const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$b) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\bfseries{this}} or the given range contains the other. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRangeHint_abb67290f3098072cd6f5e66a5743ae29}{preferred}} (const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$b, bool \mbox{\hyperlink{classRangeHint_a10c503057e7e9fefdda8dbf9a538a3ff}{reconcile}}) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the {\bfseries{this}} range\textquotesingle{}s data-\/type is preferred over the other given range. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRangeHint_a2eefc9bb49fe4cd920cfbb8bcf01185c}{absorb}} (\mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Try to absorb the other \mbox{\hyperlink{classRangeHint}{Range\+Hint}} into {\bfseries{this}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRangeHint_acce59afd659776a70a7086f9d9024a1e}{merge}} (\mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$b, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$space, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$type\+Factory)
+\begin{DoxyCompactList}\small\item\em Try to form the union of {\bfseries{this}} with another \mbox{\hyperlink{classRangeHint}{Range\+Hint}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classRangeHint_ae093dbff08e56de958594068ad05812e}{compare}} (const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Order {\bfseries{this}} with another \mbox{\hyperlink{classRangeHint}{Range\+Hint}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRangeHint_a48396899d8b4088b8c61af5afee00f0c}\label{classRangeHint_a48396899d8b4088b8c61af5afee00f0c}} 
+class {\bfseries Map\+State}
+\item 
+\mbox{\Hypertarget{classRangeHint_a0de0242923d30e02e9645ea53c691eda}\label{classRangeHint_a0de0242923d30e02e9645ea53c691eda}} 
+class {\bfseries Scope\+Local}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Partial data-\/type information mapped to a specific range of bytes. 
+
+This object gives a hint about the data-\/type for a sequence of bytes starting at a specific address offset (typically on the stack). It describes where the data-\/type starts, what data-\/type it might be, and how far it extends from the start point (possibly as an array). 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874}\label{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874}} 
+\index{RangeHint@{RangeHint}!RangeType@{RangeType}}
+\index{RangeType@{RangeType}!RangeHint@{RangeHint}}
+\doxysubsubsection{\texorpdfstring{RangeType}{RangeType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874}{Range\+Hint\+::\+Range\+Type}}}
+
+
+
+The basic categorization of the range. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{fixed@{fixed}!RangeHint@{RangeHint}}\index{RangeHint@{RangeHint}!fixed@{fixed}}}\mbox{\Hypertarget{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874af7ce3eb97e6fcb2043af5c19cafc04c9}\label{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874af7ce3eb97e6fcb2043af5c19cafc04c9}} 
+fixed&A data-\/type with a fixed size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{open@{open}!RangeHint@{RangeHint}}\index{RangeHint@{RangeHint}!open@{open}}}\mbox{\Hypertarget{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874af15bf137d34cb3ab7f6a1d4bc62a8e3a}\label{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874af15bf137d34cb3ab7f6a1d4bc62a8e3a}} 
+open&An array with a (possibly unknown) number of elements. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{endpoint@{endpoint}!RangeHint@{RangeHint}}\index{RangeHint@{RangeHint}!endpoint@{endpoint}}}\mbox{\Hypertarget{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874a0b584885da5e584e0dafe6854b6db11b}\label{classRangeHint_acc1ba7102bf19a073c5f9de9e2873874a0b584885da5e584e0dafe6854b6db11b}} 
+endpoint&An (artificial) boundary to the range of bytes getting analyzed. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRangeHint_a2eefc9bb49fe4cd920cfbb8bcf01185c}\label{classRangeHint_a2eefc9bb49fe4cd920cfbb8bcf01185c}} 
+\index{RangeHint@{RangeHint}!absorb@{absorb}}
+\index{absorb@{absorb}!RangeHint@{RangeHint}}
+\doxysubsubsection{\texorpdfstring{absorb()}{absorb()}}
+{\footnotesize\ttfamily bool Range\+Hint\+::absorb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Try to absorb the other \mbox{\hyperlink{classRangeHint}{Range\+Hint}} into {\bfseries{this}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRangeHint}{Range\+Hint}} is an array and the following details line up, adjust {\bfseries{this}} so that it {\itshape absorbs} the other given \mbox{\hyperlink{classRangeHint}{Range\+Hint}} and return {\bfseries{true}}. The second \mbox{\hyperlink{classRangeHint}{Range\+Hint}}\+:
+\begin{DoxyItemize}
+\item must have the same element size
+\item must have close to the same data-\/type
+\item must line up with the step of the first array
+\item must not be a locked data-\/type
+\item must not extend the size of the first array beyond what is known of its limits
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & is the other \mbox{\hyperlink{classRangeHint}{Range\+Hint}} to absorb \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the other \mbox{\hyperlink{classRangeHint}{Range\+Hint}} was successfully absorbed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRangeHint_ae093dbff08e56de958594068ad05812e}\label{classRangeHint_ae093dbff08e56de958594068ad05812e}} 
+\index{RangeHint@{RangeHint}!compare@{compare}}
+\index{compare@{compare}!RangeHint@{RangeHint}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int4 Range\+Hint\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Order {\bfseries{this}} with another \mbox{\hyperlink{classRangeHint}{Range\+Hint}}. 
+
+Compare (signed) offset, size, Range\+Type, type lock, and high index, in that order. \mbox{\hyperlink{classDatatype}{Datatype}} is {\itshape not} compared. 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other \mbox{\hyperlink{classRangeHint}{Range\+Hint}} to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1, 0, or 1 depending on if {\bfseries{this}} comes before, is equal to, or comes after 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRangeHint_a86a4c1f3b7b43aff956898114023dbd6}\label{classRangeHint_a86a4c1f3b7b43aff956898114023dbd6}} 
+\index{RangeHint@{RangeHint}!contain@{contain}}
+\index{contain@{contain}!RangeHint@{RangeHint}}
+\doxysubsubsection{\texorpdfstring{contain()}{contain()}}
+{\footnotesize\ttfamily bool Range\+Hint\+::contain (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if {\bfseries{this}} or the given range contains the other. 
+
+We assume {\bfseries{this}} range starts at least as early as the given range and that the two ranges intersect. 
+\begin{DoxyParams}{Parameters}
+{\em b} & is the given range to check for containment with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if one contains the other 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRangeHint_acce59afd659776a70a7086f9d9024a1e}\label{classRangeHint_acce59afd659776a70a7086f9d9024a1e}} 
+\index{RangeHint@{RangeHint}!merge@{merge}}
+\index{merge@{merge}!RangeHint@{RangeHint}}
+\doxysubsubsection{\texorpdfstring{merge()}{merge()}}
+{\footnotesize\ttfamily bool Range\+Hint\+::merge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$}]{b,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{space,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{type\+Factory }\end{DoxyParamCaption})}
+
+
+
+Try to form the union of {\bfseries{this}} with another \mbox{\hyperlink{classRangeHint}{Range\+Hint}}. 
+
+Given that {\bfseries{this}} and the other \mbox{\hyperlink{classRangeHint}{Range\+Hint}} intersect, redefine {\bfseries{this}} so that it becomes the union of the two original ranges. The union must succeed in some form. An attempt is made to preserve the data-\/type information of both the original ranges, but changes will be made if necessary. An exception is thrown if the data-\/types are locked and cannot be reconciled. 
+\begin{DoxyParams}{Parameters}
+{\em b} & is the other \mbox{\hyperlink{classRangeHint}{Range\+Hint}} to merge with {\bfseries{this}} \\
+\hline
+{\em space} & is the address space holding the ranges \\
+\hline
+{\em type\+Factory} & is a factory for producing data-\/types \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there was an overlap that could be reconciled 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRangeHint_abb67290f3098072cd6f5e66a5743ae29}\label{classRangeHint_abb67290f3098072cd6f5e66a5743ae29}} 
+\index{RangeHint@{RangeHint}!preferred@{preferred}}
+\index{preferred@{preferred}!RangeHint@{RangeHint}}
+\doxysubsubsection{\texorpdfstring{preferred()}{preferred()}}
+{\footnotesize\ttfamily bool Range\+Hint\+::preferred (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$}]{b,  }\item[{bool}]{reconcile }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if the {\bfseries{this}} range\textquotesingle{}s data-\/type is preferred over the other given range. 
+
+A locked data-\/type is preferred over unlocked. A {\itshape fixed} size over {\itshape open} size. Otherwise data-\/type ordering is used. 
+\begin{DoxyParams}{Parameters}
+{\em b} & is the other given range \\
+\hline
+{\em reconcile} & is {\bfseries{true}} is the two ranges have {\itshape reconciled} data-\/types \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the {\bfseries{this}} ranges\textquotesingle{}s data-\/type is preferred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRangeHint_a10c503057e7e9fefdda8dbf9a538a3ff}\label{classRangeHint_a10c503057e7e9fefdda8dbf9a538a3ff}} 
+\index{RangeHint@{RangeHint}!reconcile@{reconcile}}
+\index{reconcile@{reconcile}!RangeHint@{RangeHint}}
+\doxysubsubsection{\texorpdfstring{reconcile()}{reconcile()}}
+{\footnotesize\ttfamily bool Range\+Hint\+::reconcile (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRangeHint}{Range\+Hint}} $\ast$}]{b }\end{DoxyParamCaption}) const}
+
+
+
+Can the given intersecting \mbox{\hyperlink{classRangeHint}{Range\+Hint}} coexist with {\bfseries{this}} at their given offsets. 
+
+Determine if the data-\/type information in the two ranges {\itshape line} {\itshape up} properly, in which case the union of the two ranges can exist without destroying data-\/type information. 
+\begin{DoxyParams}{Parameters}
+{\em b} & is the range to reconcile with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the data-\/type information can be reconciled 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varmap_8hh}{varmap.\+hh}}\item 
+varmap.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,76 @@
+\hypertarget{classOrPattern}{}\doxysection{Or\+Pattern Class Reference}
+\label{classOrPattern}\index{OrPattern@{OrPattern}}
+
+
+Inheritance diagram for Or\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classOrPattern__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Or\+Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=143pt]{classOrPattern__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOrPattern_a47acd6bf2f0acc89d62069ef90b41f39}\label{classOrPattern_a47acd6bf2f0acc89d62069ef90b41f39}} 
+{\bfseries Or\+Pattern} (\mbox{\hyperlink{classDisjointPattern}{Disjoint\+Pattern}} $\ast$a, \mbox{\hyperlink{classDisjointPattern}{Disjoint\+Pattern}} $\ast$b)
+\item 
+\mbox{\Hypertarget{classOrPattern_a8c14e073b96dbe15750186b3a37a17c2}\label{classOrPattern_a8c14e073b96dbe15750186b3a37a17c2}} 
+{\bfseries Or\+Pattern} (const vector$<$ \mbox{\hyperlink{classDisjointPattern}{Disjoint\+Pattern}} $\ast$ $>$ \&list)
+\item 
+\mbox{\Hypertarget{classOrPattern_ae6db76f35f6dc8661a511c9db40ecfd7}\label{classOrPattern_ae6db76f35f6dc8661a511c9db40ecfd7}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries simplify\+Clone} (void) const
+\item 
+\mbox{\Hypertarget{classOrPattern_af13615fe47dc6f432201ee4827ff1510}\label{classOrPattern_af13615fe47dc6f432201ee4827ff1510}} 
+virtual void {\bfseries shift\+Instruction} (int4 sa)
+\item 
+\mbox{\Hypertarget{classOrPattern_adb47d2014fe8dea89cd155122442c2c2}\label{classOrPattern_adb47d2014fe8dea89cd155122442c2c2}} 
+virtual bool {\bfseries is\+Match} (\mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a7cf494190ca4e0258ac7c52157347f8c}\label{classOrPattern_a7cf494190ca4e0258ac7c52157347f8c}} 
+virtual int4 {\bfseries num\+Disjoint} (void) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a0d788a68161acca8b39f4fd999a7b9d8}\label{classOrPattern_a0d788a68161acca8b39f4fd999a7b9d8}} 
+virtual \mbox{\hyperlink{classDisjointPattern}{Disjoint\+Pattern}} $\ast$ {\bfseries get\+Disjoint} (int4 i) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a22c4506e990fb885136d8684e01bcde1}\label{classOrPattern_a22c4506e990fb885136d8684e01bcde1}} 
+virtual bool {\bfseries always\+True} (void) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a8c30dc08477e285537c42e7246ec4d0e}\label{classOrPattern_a8c30dc08477e285537c42e7246ec4d0e}} 
+virtual bool {\bfseries always\+False} (void) const
+\item 
+\mbox{\Hypertarget{classOrPattern_af5c30dcc861e051d0c741cf5989f657f}\label{classOrPattern_af5c30dcc861e051d0c741cf5989f657f}} 
+virtual bool {\bfseries always\+Instruction\+True} (void) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a969bd58751ab797ec77e4c0c74168410}\label{classOrPattern_a969bd58751ab797ec77e4c0c74168410}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+Or} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a8375a0c2a661775d1211535540d68d3c}\label{classOrPattern_a8375a0c2a661775d1211535540d68d3c}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries do\+And} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a298d0540c485a3e056410848a4870c92}\label{classOrPattern_a298d0540c485a3e056410848a4870c92}} 
+virtual \mbox{\hyperlink{classPattern}{Pattern}} $\ast$ {\bfseries common\+Sub\+Pattern} (const \mbox{\hyperlink{classPattern}{Pattern}} $\ast$b, int4 sa) const
+\item 
+\mbox{\Hypertarget{classOrPattern_ace1bee495fdc71ae71193551ad0910eb}\label{classOrPattern_ace1bee495fdc71ae71193551ad0910eb}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classOrPattern_a75be51aafaaf737dc8ae34cc5907b66f}\label{classOrPattern_a75be51aafaaf737dc8ae34cc5907b66f}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghpattern.\+hh\item 
+slghpattern.\+cc\end{DoxyCompactItemize}

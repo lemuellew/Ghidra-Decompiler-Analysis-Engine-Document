@@ -1,0 +1,239 @@
+\hypertarget{classJumpBasicOverride}{}\doxysection{Jump\+Basic\+Override Class Reference}
+\label{classJumpBasicOverride}\index{JumpBasicOverride@{JumpBasicOverride}}
+
+
+A basic jump-\/table model incorporating manual override information.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+
+
+Inheritance diagram for Jump\+Basic\+Override\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classJumpBasicOverride__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Jump\+Basic\+Override\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classJumpBasicOverride__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classJumpBasicOverride_aaae11fe384046c2f59bd4dd46f9c5a89}{Jump\+Basic\+Override}} (\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jt)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classJumpBasicOverride_add96a354fac8785292195cb321899544}{set\+Addresses}} (const vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&adtable)
+\begin{DoxyCompactList}\small\item\em Manually set the address table for {\bfseries{this}} model. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasicOverride_a5ab5ce54ef01c3839fe62f97c967cbd2}\label{classJumpBasicOverride_a5ab5ce54ef01c3839fe62f97c967cbd2}} 
+virtual bool \mbox{\hyperlink{classJumpBasicOverride_a5ab5ce54ef01c3839fe62f97c967cbd2}{is\+Override}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\bfseries{this}} model was manually overridden. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasicOverride_a49b889abc5b5f57fe22b6cbc17e03f64}\label{classJumpBasicOverride_a49b889abc5b5f57fe22b6cbc17e03f64}} 
+virtual int4 \mbox{\hyperlink{classJumpBasicOverride_a49b889abc5b5f57fe22b6cbc17e03f64}{get\+Table\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Return the number of entries in the address table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasicOverride_a4fd706bf7ee1023bd1d93c78ba66852f}{recover\+Model}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, uint4 matchsize, uint4 maxtablesize)
+\begin{DoxyCompactList}\small\item\em Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpBasicOverride_ad9a026df124c7e57722bdc1903033ebb}{build\+Addresses}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable, vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ $\ast$loadpoints) const
+\begin{DoxyCompactList}\small\item\em Construct the explicit list of target addresses (the \mbox{\hyperlink{classAddress}{Address}} Table) from {\bfseries{this}} model. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classJumpBasicOverride_a1fff9a672edb2225dae051d7ed6b57b5}{build\+Labels}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable, vector$<$ uintb $>$ \&label, const \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$orig) const
+\begin{DoxyCompactList}\small\item\em Recover {\itshape case} labels associated with the \mbox{\hyperlink{classAddress}{Address}} table. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasicOverride_a65b9faa5ee96e07e8a90ce492bc8c179}{fold\+In\+Guards}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jump)
+\begin{DoxyCompactList}\small\item\em Eliminate any {\itshape guard} code involved in computing the switch destination. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classJumpBasicOverride_a050d3faa295ff61d04f1406443ac83b1}{sanity\+Check}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$indop, vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&addresstable)
+\begin{DoxyCompactList}\small\item\em Perform a sanity check on recovered addresses. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasicOverride_a139a81aba7b857ef37cf1ffa52e799b3}\label{classJumpBasicOverride_a139a81aba7b857ef37cf1ffa52e799b3}} 
+virtual \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$ \mbox{\hyperlink{classJumpBasicOverride_a139a81aba7b857ef37cf1ffa52e799b3}{clone}} (\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$jt) const
+\begin{DoxyCompactList}\small\item\em Clone {\bfseries{this}} model. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classJumpBasicOverride_a40c8f33ede7812c04d4f343ea1fc5f53}\label{classJumpBasicOverride_a40c8f33ede7812c04d4f343ea1fc5f53}} 
+virtual void {\bfseries clear} (void)
+\item 
+\mbox{\Hypertarget{classJumpBasicOverride_a62070a61c5ab32dbc287c7b32e74bd64}\label{classJumpBasicOverride_a62070a61c5ab32dbc287c7b32e74bd64}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classJumpBasicOverride_afc4f40d7eaff7e5a25804dc57323b9db}\label{classJumpBasicOverride_afc4f40d7eaff7e5a25804dc57323b9db}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A basic jump-\/table model incorporating manual override information. 
+
+The list of potential target addresses produced by the B\+R\+A\+N\+C\+H\+I\+ND is not recovered by {\bfseries{this}} model, but must provided explicitly via \mbox{\hyperlink{classJumpBasicOverride_add96a354fac8785292195cb321899544}{set\+Addresses()}}. The model tries to repurpose some of the analysis that \mbox{\hyperlink{classJumpBasic}{Jump\+Basic}} does to recover the switch variable. But it will revert to the trivial model if it can\textquotesingle{}t find a suitable switch variable. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classJumpBasicOverride_aaae11fe384046c2f59bd4dd46f9c5a89}\label{classJumpBasicOverride_aaae11fe384046c2f59bd4dd46f9c5a89}} 
+\index{JumpBasicOverride@{JumpBasicOverride}!JumpBasicOverride@{JumpBasicOverride}}
+\index{JumpBasicOverride@{JumpBasicOverride}!JumpBasicOverride@{JumpBasicOverride}}
+\doxysubsubsection{\texorpdfstring{JumpBasicOverride()}{JumpBasicOverride()}}
+{\footnotesize\ttfamily Jump\+Basic\+Override\+::\+Jump\+Basic\+Override (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$}]{jt }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jt} & is the parent \mbox{\hyperlink{classJumpTable}{Jump\+Table}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classJumpBasicOverride_ad9a026df124c7e57722bdc1903033ebb}\label{classJumpBasicOverride_ad9a026df124c7e57722bdc1903033ebb}} 
+\index{JumpBasicOverride@{JumpBasicOverride}!buildAddresses@{buildAddresses}}
+\index{buildAddresses@{buildAddresses}!JumpBasicOverride@{JumpBasicOverride}}
+\doxysubsubsection{\texorpdfstring{buildAddresses()}{buildAddresses()}}
+{\footnotesize\ttfamily void Jump\+Basic\+Override\+::build\+Addresses (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable,  }\item[{vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ $\ast$}]{loadpoints }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Construct the explicit list of target addresses (the \mbox{\hyperlink{classAddress}{Address}} Table) from {\bfseries{this}} model. 
+
+The addresses produced all come from the B\+R\+A\+N\+C\+H\+I\+ND and may not be deduped. Alternate guard destinations are not yet included. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the root B\+R\+A\+N\+C\+H\+I\+ND of the switch \\
+\hline
+{\em addresstable} & will hold the list of Addresses \\
+\hline
+{\em loadpoints} & if non-\/null will hold L\+O\+AD table information used by the model \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classJumpBasic_a42533b11d12a5f819bb88abb21037d94}{Jump\+Basic}}.
+
+\mbox{\Hypertarget{classJumpBasicOverride_a1fff9a672edb2225dae051d7ed6b57b5}\label{classJumpBasicOverride_a1fff9a672edb2225dae051d7ed6b57b5}} 
+\index{JumpBasicOverride@{JumpBasicOverride}!buildLabels@{buildLabels}}
+\index{buildLabels@{buildLabels}!JumpBasicOverride@{JumpBasicOverride}}
+\doxysubsubsection{\texorpdfstring{buildLabels()}{buildLabels()}}
+{\footnotesize\ttfamily void Jump\+Basic\+Override\+::build\+Labels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable,  }\item[{vector$<$ uintb $>$ \&}]{label,  }\item[{const \mbox{\hyperlink{classJumpModel}{Jump\+Model}} $\ast$}]{orig }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover {\itshape case} labels associated with the \mbox{\hyperlink{classAddress}{Address}} table. 
+
+The unnormalized switch variable must already be recovered. Values that the normalized switch value can hold or walked back to obtain the value that the unnormalized switch variable would hold. Labels are returned in the order provided by normalized switch variable iterator \mbox{\hyperlink{classJumpValues}{Jump\+Values}}. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em addresstable} & is the address table (used to label code blocks with bad or missing labels) \\
+\hline
+{\em label} & will hold recovered labels in \mbox{\hyperlink{classJumpValues}{Jump\+Values}} order \\
+\hline
+{\em orig} & is the \mbox{\hyperlink{classJumpModel}{Jump\+Model}} to use for the \mbox{\hyperlink{classJumpValues}{Jump\+Values}} iterator \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classJumpBasic_ad3c8a1257f973c18e25935ee932076c4}{Jump\+Basic}}.
+
+\mbox{\Hypertarget{classJumpBasicOverride_a65b9faa5ee96e07e8a90ce492bc8c179}\label{classJumpBasicOverride_a65b9faa5ee96e07e8a90ce492bc8c179}} 
+\index{JumpBasicOverride@{JumpBasicOverride}!foldInGuards@{foldInGuards}}
+\index{foldInGuards@{foldInGuards}!JumpBasicOverride@{JumpBasicOverride}}
+\doxysubsubsection{\texorpdfstring{foldInGuards()}{foldInGuards()}}
+{\footnotesize\ttfamily virtual bool Jump\+Basic\+Override\+::fold\+In\+Guards (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classJumpTable}{Jump\+Table}} $\ast$}]{jump }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Eliminate any {\itshape guard} code involved in computing the switch destination. 
+
+We now think of the B\+R\+A\+N\+C\+H\+I\+ND as encompassing any guard function. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em jump} & is the \mbox{\hyperlink{classJumpTable}{Jump\+Table}} owning {\bfseries{this}} model. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classJumpBasic_ae70d6baeeecb4b16e79de8516868ffe4}{Jump\+Basic}}.
+
+\mbox{\Hypertarget{classJumpBasicOverride_a4fd706bf7ee1023bd1d93c78ba66852f}\label{classJumpBasicOverride_a4fd706bf7ee1023bd1d93c78ba66852f}} 
+\index{JumpBasicOverride@{JumpBasicOverride}!recoverModel@{recoverModel}}
+\index{recoverModel@{recoverModel}!JumpBasicOverride@{JumpBasicOverride}}
+\doxysubsubsection{\texorpdfstring{recoverModel()}{recoverModel()}}
+{\footnotesize\ttfamily bool Jump\+Basic\+Override\+::recover\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{uint4}]{matchsize,  }\item[{uint4}]{maxtablesize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to recover details of the model, given a specific B\+R\+A\+N\+C\+H\+I\+ND. 
+
+This generally recovers the normalized switch variable and any guards. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the given B\+R\+A\+N\+C\+H\+I\+ND \\
+\hline
+{\em matchsize} & is the expected number of address table entries to recover, or 0 for no expectation \\
+\hline
+{\em maxtablesize} & is maximum number of address table entries to allow in the model \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if details of the model were successfully recovered 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classJumpBasic_aebf055ad4baf1a138107d8dd3a40c809}{Jump\+Basic}}.
+
+\mbox{\Hypertarget{classJumpBasicOverride_a050d3faa295ff61d04f1406443ac83b1}\label{classJumpBasicOverride_a050d3faa295ff61d04f1406443ac83b1}} 
+\index{JumpBasicOverride@{JumpBasicOverride}!sanityCheck@{sanityCheck}}
+\index{sanityCheck@{sanityCheck}!JumpBasicOverride@{JumpBasicOverride}}
+\doxysubsubsection{\texorpdfstring{sanityCheck()}{sanityCheck()}}
+{\footnotesize\ttfamily virtual bool Jump\+Basic\+Override\+::sanity\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{indop,  }\item[{vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{addresstable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Perform a sanity check on recovered addresses. 
+
+Individual addresses are checked against the function or its program to determine if they are reasonable. This method can optionally remove addresses from the table. If it does so, the underlying model is changed to reflect the removal. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the switch \\
+\hline
+{\em indop} & is the root B\+R\+A\+N\+C\+H\+I\+ND of the switch \\
+\hline
+{\em addresstable} & is the list of recovered Addresses, which may be modified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if there are (at least some) reasonable addresses in the table 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classJumpBasic_a1cba6b6c963e4a70efc439c27e53bd44}{Jump\+Basic}}.
+
+\mbox{\Hypertarget{classJumpBasicOverride_add96a354fac8785292195cb321899544}\label{classJumpBasicOverride_add96a354fac8785292195cb321899544}} 
+\index{JumpBasicOverride@{JumpBasicOverride}!setAddresses@{setAddresses}}
+\index{setAddresses@{setAddresses}!JumpBasicOverride@{JumpBasicOverride}}
+\doxysubsubsection{\texorpdfstring{setAddresses()}{setAddresses()}}
+{\footnotesize\ttfamily void Jump\+Basic\+Override\+::set\+Addresses (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{classAddress}{Address}} $>$ \&}]{adtable }\end{DoxyParamCaption})}
+
+
+
+Manually set the address table for {\bfseries{this}} model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adtable} & is the list of externally provided addresses, which will be deduped \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

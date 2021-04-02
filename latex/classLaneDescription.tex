@@ -1,0 +1,190 @@
+\hypertarget{classLaneDescription}{}\doxysection{Lane\+Description Class Reference}
+\label{classLaneDescription}\index{LaneDescription@{LaneDescription}}
+
+
+Description of logical lanes within a {\bfseries{big}} \mbox{\hyperlink{classVarnode}{Varnode}}.  
+
+
+
+
+{\ttfamily \#include $<$transform.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLaneDescription_a9e7fbdedeef93edbec8737903efb3e43}{Lane\+Description}} (const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLaneDescription_aa42a6185f5cb8098514dfcae66e3e1b3}{Lane\+Description}} (int4 orig\+Size, int4 sz)
+\begin{DoxyCompactList}\small\item\em Construct uniform lanes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLaneDescription_afc58e0897fffe838a82810c9f98bdabb}{Lane\+Description}} (int4 orig\+Size, int4 lo, int4 hi)
+\begin{DoxyCompactList}\small\item\em Construct two lanes of arbitrary size. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLaneDescription_aa0066b62328e7f6badc7b56b78f34d32}{subset}} (int4 lsb\+Offset, int4 size)
+\begin{DoxyCompactList}\small\item\em Trim {\bfseries{this}} to a subset of the original lanes. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classLaneDescription_aaca3127bbc2201df8b7bc84b57ad56ae}{get\+Boundary}} (int4 byte\+Pos) const
+\begin{DoxyCompactList}\small\item\em Get index of lane that starts at the given byte position. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLaneDescription_a12eb4926586745d35287c481ddb98f5e}{restriction}} (int4 num\+Lanes, int4 skip\+Lanes, int4 byte\+Pos, int4 size, int4 \&res\+Num\+Lanes, int4 \&res\+Skip\+Lanes) const
+\begin{DoxyCompactList}\small\item\em Decide if a given truncation is natural for {\bfseries{this}} description. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLaneDescription_a7d023779846912a92b02210d12cf1369}{extension}} (int4 num\+Lanes, int4 skip\+Lanes, int4 byte\+Pos, int4 size, int4 \&res\+Num\+Lanes, int4 \&res\+Skip\+Lanes) const
+\begin{DoxyCompactList}\small\item\em Decide if a given subset of lanes can be extended naturally for {\bfseries{this}} description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Description of logical lanes within a {\bfseries{big}} \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+A {\bfseries{lane}} is a byte offset and size within a \mbox{\hyperlink{classVarnode}{Varnode}}. Lanes within a \mbox{\hyperlink{classVarnode}{Varnode}} are disjoint. In general, we expect a \mbox{\hyperlink{classVarnode}{Varnode}} to be tiled with lanes all of the same size, but the A\+PI allows for possibly non-\/uniform lanes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classLaneDescription_a9e7fbdedeef93edbec8737903efb3e43}\label{classLaneDescription_a9e7fbdedeef93edbec8737903efb3e43}} 
+\index{LaneDescription@{LaneDescription}!LaneDescription@{LaneDescription}}
+\index{LaneDescription@{LaneDescription}!LaneDescription@{LaneDescription}}
+\doxysubsubsection{\texorpdfstring{LaneDescription()}{LaneDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Lane\+Description\+::\+Lane\+Description (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classLaneDescription}{Lane\+Description}} \&}]{op2 }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the lane description to copy from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLaneDescription_aa42a6185f5cb8098514dfcae66e3e1b3}\label{classLaneDescription_aa42a6185f5cb8098514dfcae66e3e1b3}} 
+\index{LaneDescription@{LaneDescription}!LaneDescription@{LaneDescription}}
+\index{LaneDescription@{LaneDescription}!LaneDescription@{LaneDescription}}
+\doxysubsubsection{\texorpdfstring{LaneDescription()}{LaneDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Lane\+Description\+::\+Lane\+Description (\begin{DoxyParamCaption}\item[{int4}]{orig\+Size,  }\item[{int4}]{sz }\end{DoxyParamCaption})}
+
+
+
+Construct uniform lanes. 
+
+Create lanes that are all the same size 
+\begin{DoxyParams}{Parameters}
+{\em orig\+Size} & is the size of the whole in bytes \\
+\hline
+{\em sz} & is the size of a lane in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLaneDescription_afc58e0897fffe838a82810c9f98bdabb}\label{classLaneDescription_afc58e0897fffe838a82810c9f98bdabb}} 
+\index{LaneDescription@{LaneDescription}!LaneDescription@{LaneDescription}}
+\index{LaneDescription@{LaneDescription}!LaneDescription@{LaneDescription}}
+\doxysubsubsection{\texorpdfstring{LaneDescription()}{LaneDescription()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Lane\+Description\+::\+Lane\+Description (\begin{DoxyParamCaption}\item[{int4}]{orig\+Size,  }\item[{int4}]{lo,  }\item[{int4}]{hi }\end{DoxyParamCaption})}
+
+
+
+Construct two lanes of arbitrary size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em orig\+Size} & is the size of the whole in bytes \\
+\hline
+{\em lo} & is the size of the least significant lane in bytes \\
+\hline
+{\em hi} & is the size of the most significant lane in bytes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLaneDescription_a7d023779846912a92b02210d12cf1369}\label{classLaneDescription_a7d023779846912a92b02210d12cf1369}} 
+\index{LaneDescription@{LaneDescription}!extension@{extension}}
+\index{extension@{extension}!LaneDescription@{LaneDescription}}
+\doxysubsubsection{\texorpdfstring{extension()}{extension()}}
+{\footnotesize\ttfamily bool Lane\+Description\+::extension (\begin{DoxyParamCaption}\item[{int4}]{num\+Lanes,  }\item[{int4}]{skip\+Lanes,  }\item[{int4}]{byte\+Pos,  }\item[{int4}]{size,  }\item[{int4 \&}]{res\+Num\+Lanes,  }\item[{int4 \&}]{res\+Skip\+Lanes }\end{DoxyParamCaption}) const}
+
+
+
+Decide if a given subset of lanes can be extended naturally for {\bfseries{this}} description. 
+
+A subset of lanes are specified and their position within an extension (given by a byte position). The size in bytes of the extension is also given. If the extension is contained within {\bfseries{this}} description, and the boundaries of the extension don\textquotesingle{}t split any lanes, then return {\bfseries{true}} and pass back the number of lanes and starting lane of the extension. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Lanes} & is the number of lanes in the original subset \\
+\hline
+{\em skip\+Lanes} & is the starting (least significant) lane index of the original subset \\
+\hline
+{\em byte\+Pos} & is the number of bytes to truncate from the front (least significant portion) of the extension \\
+\hline
+{\em size} & is the number of bytes in the extension \\
+\hline
+{\em res\+Num\+Lanes} & will hold the number of lanes in the extension \\
+\hline
+{\em res\+Skip\+Lanes} & will hold the starting lane in the extension \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the extension is natural 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLaneDescription_aaca3127bbc2201df8b7bc84b57ad56ae}\label{classLaneDescription_aaca3127bbc2201df8b7bc84b57ad56ae}} 
+\index{LaneDescription@{LaneDescription}!getBoundary@{getBoundary}}
+\index{getBoundary@{getBoundary}!LaneDescription@{LaneDescription}}
+\doxysubsubsection{\texorpdfstring{getBoundary()}{getBoundary()}}
+{\footnotesize\ttfamily int4 Lane\+Description\+::get\+Boundary (\begin{DoxyParamCaption}\item[{int4}]{byte\+Pos }\end{DoxyParamCaption}) const}
+
+
+
+Get index of lane that starts at the given byte position. 
+
+Position 0 will map to index 0 and a position equal to whole size will map to the number of lanes. Positions that are out of bounds or that do not fall on a lane boundary will return -\/1. 
+\begin{DoxyParams}{Parameters}
+{\em byte\+Pos} & is the given byte position to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the lane that start at the given position 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLaneDescription_a12eb4926586745d35287c481ddb98f5e}\label{classLaneDescription_a12eb4926586745d35287c481ddb98f5e}} 
+\index{LaneDescription@{LaneDescription}!restriction@{restriction}}
+\index{restriction@{restriction}!LaneDescription@{LaneDescription}}
+\doxysubsubsection{\texorpdfstring{restriction()}{restriction()}}
+{\footnotesize\ttfamily bool Lane\+Description\+::restriction (\begin{DoxyParamCaption}\item[{int4}]{num\+Lanes,  }\item[{int4}]{skip\+Lanes,  }\item[{int4}]{byte\+Pos,  }\item[{int4}]{size,  }\item[{int4 \&}]{res\+Num\+Lanes,  }\item[{int4 \&}]{res\+Skip\+Lanes }\end{DoxyParamCaption}) const}
+
+
+
+Decide if a given truncation is natural for {\bfseries{this}} description. 
+
+A subset of lanes are specified and a truncation (given by a byte position and byte size). If the truncation, relative to the subset, contains at least 1 lane and does not split any lanes, then return {\bfseries{true}} and pass back the number of lanes and starting lane of the truncation. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Lanes} & is the number of lanes in the original subset \\
+\hline
+{\em skip\+Lanes} & is the starting (least significant) lane index of the original subset \\
+\hline
+{\em byte\+Pos} & is the number of bytes to truncate from the front (least significant portion) of the subset \\
+\hline
+{\em size} & is the number of bytes to include in the truncation \\
+\hline
+{\em res\+Num\+Lanes} & will hold the number of lanes in the truncation \\
+\hline
+{\em res\+Skip\+Lanes} & will hold the starting lane in the truncation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the truncation is natural 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classLaneDescription_aa0066b62328e7f6badc7b56b78f34d32}\label{classLaneDescription_aa0066b62328e7f6badc7b56b78f34d32}} 
+\index{LaneDescription@{LaneDescription}!subset@{subset}}
+\index{subset@{subset}!LaneDescription@{LaneDescription}}
+\doxysubsubsection{\texorpdfstring{subset()}{subset()}}
+{\footnotesize\ttfamily bool Lane\+Description\+::subset (\begin{DoxyParamCaption}\item[{int4}]{lsb\+Offset,  }\item[{int4}]{size }\end{DoxyParamCaption})}
+
+
+
+Trim {\bfseries{this}} to a subset of the original lanes. 
+
+Given a subrange, specified as an offset into the whole and size, throw out any lanes in {\bfseries{this}} that aren\textquotesingle{}t in the subrange, so that the size of whole is the size of the subrange. If the subrange intersects partially with any of the lanes, return {\bfseries{false}}. 
+\begin{DoxyParams}{Parameters}
+{\em lsb\+Offset} & is the number of bytes to remove from the front of the description \\
+\hline
+{\em size} & is the number of bytes in the subrange \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} was successfully transformed to the subrange 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{transform_8hh}{transform.\+hh}}\item 
+transform.\+cc\end{DoxyCompactItemize}

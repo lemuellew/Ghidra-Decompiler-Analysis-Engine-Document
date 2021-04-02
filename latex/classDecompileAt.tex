@@ -1,0 +1,65 @@
+\hypertarget{classDecompileAt}{}\doxysection{Decompile\+At Class Reference}
+\label{classDecompileAt}\index{DecompileAt@{DecompileAt}}
+
+
+Command to {\bfseries{decompile}} a specific function.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Decompile\+At\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classDecompileAt__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Decompile\+At\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDecompileAt__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDecompileAt_ae5dfee8a7e5fd8343f7cf59e53d4f78c}{raw\+Action}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the action of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to {\bfseries{decompile}} a specific function. 
+
+The command expects 2 string parameters\+: the encoded integer id of the program, and an $<$addr$>$ tag describing the entry point address of the function to decompile. The function follows flow from the entry point up to R\+E\+T\+U\+RN ops or other boundaries of the function. The control-\/flow and data-\/flow structures are built and transformed according to the current configuration of the \mbox{\hyperlink{classArchitecture}{Architecture}} and the active {\itshape root} \mbox{\hyperlink{classAction}{Action}}. Symbols, data-\/types and p-\/code are fetched as needed from the client and cached in the \mbox{\hyperlink{classArchitecture}{Architecture}} object. X\+ML Documents containing source code results, data-\/flow and control-\/flow structures, symbol information, etc., are sent back to the client. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDecompileAt_ae5dfee8a7e5fd8343f7cf59e53d4f78c}\label{classDecompileAt_ae5dfee8a7e5fd8343f7cf59e53d4f78c}} 
+\index{DecompileAt@{DecompileAt}!rawAction@{rawAction}}
+\index{rawAction@{rawAction}!DecompileAt@{DecompileAt}}
+\doxysubsubsection{\texorpdfstring{rawAction()}{rawAction()}}
+{\footnotesize\ttfamily void Decompile\+At\+::raw\+Action (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the action of the command. 
+
+Configuration is assumed to have happened, and {\bfseries{this}} object can immediately begin examining and manipulating data under the active \mbox{\hyperlink{classArchitecture}{Architecture}} object to perform the command. 
+
+Implements \mbox{\hyperlink{classGhidraCommand_a7d1a5cfedfd8f1d05161d27627302716}{Ghidra\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

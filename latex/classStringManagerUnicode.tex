@@ -1,0 +1,125 @@
+\hypertarget{classStringManagerUnicode}{}\doxysection{String\+Manager\+Unicode Class Reference}
+\label{classStringManagerUnicode}\index{StringManagerUnicode@{StringManagerUnicode}}
+
+
+An implementation of \mbox{\hyperlink{classStringManager}{String\+Manager}} that understands terminated unicode strings.  
+
+
+
+
+{\ttfamily \#include $<$stringmanage.\+hh$>$}
+
+
+
+Inheritance diagram for String\+Manager\+Unicode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classStringManagerUnicode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for String\+Manager\+Unicode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classStringManagerUnicode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStringManagerUnicode_a7421b1b0e3c9657994164fb316ced589}{String\+Manager\+Unicode}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, int4 max)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual const vector$<$ uint1 $>$ \& \mbox{\hyperlink{classStringManagerUnicode_a42eeeb4a0fc1849c9ce995a4268106cf}{get\+String\+Data}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$char\+Type, bool \&is\+Trunc)
+\begin{DoxyCompactList}\small\item\em Retrieve string data at the given address as a U\+T\+F8 byte array. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStringManagerUnicode_a1b008394d9209dd2dc9fd6918a3d39ea}{write\+Unicode}} (ostream \&s, uint1 $\ast$buffer, int4 size, int4 charsize)
+\begin{DoxyCompactList}\small\item\em Translate/copy unicode to U\+T\+F8. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An implementation of \mbox{\hyperlink{classStringManager}{String\+Manager}} that understands terminated unicode strings. 
+
+This class understands U\+T\+F8, U\+T\+F16, and U\+T\+F32 encodings. It reports a string if its sees a valid encoding that is null terminated. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStringManagerUnicode_a7421b1b0e3c9657994164fb316ced589}\label{classStringManagerUnicode_a7421b1b0e3c9657994164fb316ced589}} 
+\index{StringManagerUnicode@{StringManagerUnicode}!StringManagerUnicode@{StringManagerUnicode}}
+\index{StringManagerUnicode@{StringManagerUnicode}!StringManagerUnicode@{StringManagerUnicode}}
+\doxysubsubsection{\texorpdfstring{StringManagerUnicode()}{StringManagerUnicode()}}
+{\footnotesize\ttfamily String\+Manager\+Unicode\+::\+String\+Manager\+Unicode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g,  }\item[{int4}]{max }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & is the underlying architecture (and loadimage) \\
+\hline
+{\em max} & is the maximum number of bytes to allow in a decoded string \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStringManagerUnicode_a42eeeb4a0fc1849c9ce995a4268106cf}\label{classStringManagerUnicode_a42eeeb4a0fc1849c9ce995a4268106cf}} 
+\index{StringManagerUnicode@{StringManagerUnicode}!getStringData@{getStringData}}
+\index{getStringData@{getStringData}!StringManagerUnicode@{StringManagerUnicode}}
+\doxysubsubsection{\texorpdfstring{getStringData()}{getStringData()}}
+{\footnotesize\ttfamily const vector$<$ uint1 $>$ \& String\+Manager\+Unicode\+::get\+String\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{char\+Type,  }\item[{bool \&}]{is\+Trunc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve string data at the given address as a U\+T\+F8 byte array. 
+
+If the address does not represent string data, a zero length vector is returned. Otherwise, the string data is fetched, converted to a U\+T\+F8 encoding, cached and returned. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em char\+Type} & is a character data-\/type indicating the encoding \\
+\hline
+{\em is\+Trunc} & passes back whether the string is truncated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the byte array of U\+T\+F8 data 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classStringManager_ae4b3978a8dd1e6c7f425b9fe2e651083}{String\+Manager}}.
+
+\mbox{\Hypertarget{classStringManagerUnicode_a1b008394d9209dd2dc9fd6918a3d39ea}\label{classStringManagerUnicode_a1b008394d9209dd2dc9fd6918a3d39ea}} 
+\index{StringManagerUnicode@{StringManagerUnicode}!writeUnicode@{writeUnicode}}
+\index{writeUnicode@{writeUnicode}!StringManagerUnicode@{StringManagerUnicode}}
+\doxysubsubsection{\texorpdfstring{writeUnicode()}{writeUnicode()}}
+{\footnotesize\ttfamily bool String\+Manager\+Unicode\+::write\+Unicode (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{uint1 $\ast$}]{buffer,  }\item[{int4}]{size,  }\item[{int4}]{charsize }\end{DoxyParamCaption})}
+
+
+
+Translate/copy unicode to U\+T\+F8. 
+
+Assume the buffer contains a null terminated unicode encoded string. Write the characters out (as U\+T\+F8) to the stream. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em buffer} & is the given byte buffer \\
+\hline
+{\em size} & is the number of bytes in the buffer \\
+\hline
+{\em charsize} & specifies the encoding (1=U\+T\+F8 2=U\+T\+F16 4=U\+T\+F32) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the byte array contains valid unicode 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stringmanage_8hh}{stringmanage.\+hh}}\item 
+stringmanage.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,97 @@
+\hypertarget{classActionConditionalExe}{}\doxysection{Action\+Conditional\+Exe Class Reference}
+\label{classActionConditionalExe}\index{ActionConditionalExe@{ActionConditionalExe}}
+
+
+Search for and remove various forms of redundant C\+B\+R\+A\+N\+CH operations.  
+
+
+
+
+{\ttfamily \#include $<$condexe.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Conditional\+Exe\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classActionConditionalExe__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Conditional\+Exe\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classActionConditionalExe__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionConditionalExe_af0f575a8caa8a1dce2557f5abddec8e4}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionConditionalExe_a8625b7608a9c03ab7a70b1a7ae4d34ea}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Search for and remove various forms of redundant C\+B\+R\+A\+N\+CH operations. 
+
+This action wraps the analysis performed by \mbox{\hyperlink{classConditionalExecution}{Conditional\+Execution}} to simplify control-\/flow that repeatedly branches on the same (or slightly modified) boolean expression. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionConditionalExe_a8625b7608a9c03ab7a70b1a7ae4d34ea}\label{classActionConditionalExe_a8625b7608a9c03ab7a70b1a7ae4d34ea}} 
+\index{ActionConditionalExe@{ActionConditionalExe}!apply@{apply}}
+\index{apply@{apply}!ActionConditionalExe@{ActionConditionalExe}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Conditional\+Exe\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionConditionalExe_af0f575a8caa8a1dce2557f5abddec8e4}\label{classActionConditionalExe_af0f575a8caa8a1dce2557f5abddec8e4}} 
+\index{ActionConditionalExe@{ActionConditionalExe}!clone@{clone}}
+\index{clone@{clone}!ActionConditionalExe@{ActionConditionalExe}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Conditional\+Exe\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{condexe_8hh}{condexe.\+hh}}\item 
+condexe.\+cc\end{DoxyCompactItemize}

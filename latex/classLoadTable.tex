@@ -1,0 +1,90 @@
+\hypertarget{classLoadTable}{}\doxysection{Load\+Table Class Reference}
+\label{classLoadTable}\index{LoadTable@{LoadTable}}
+
+
+A description where and how data was loaded from memory.  
+
+
+
+
+{\ttfamily \#include $<$jumptable.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLoadTable_a043aa8df51613f233226f8633aff14eb}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save a description of {\bfseries{this}} as an $<$loadtable$>$ X\+ML tag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLoadTable_a4db003d9f9ded3dce940fa9644b5874d}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Read in {\bfseries{this}} table from a $<$loadtable$>$ X\+ML description. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classLoadTable_a97a6c0e7bdf847535b4117aff4e49ede}{collapse\+Table}} (vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ \&table)
+\begin{DoxyCompactList}\small\item\em Collapse a sequence of table descriptions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLoadTable_adea2d7205b5e5454261b8f8e9ff91d81}\label{classLoadTable_adea2d7205b5e5454261b8f8e9ff91d81}} 
+class {\bfseries Emulate\+Function}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A description where and how data was loaded from memory. 
+
+This is a generic table description, giving the starting address of the table, the size of an entry, and number of entries. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadTable_a97a6c0e7bdf847535b4117aff4e49ede}\label{classLoadTable_a97a6c0e7bdf847535b4117aff4e49ede}} 
+\index{LoadTable@{LoadTable}!collapseTable@{collapseTable}}
+\index{collapseTable@{collapseTable}!LoadTable@{LoadTable}}
+\doxysubsubsection{\texorpdfstring{collapseTable()}{collapseTable()}}
+{\footnotesize\ttfamily void Load\+Table\+::collapse\+Table (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classLoadTable}{Load\+Table}} $>$ \&}]{table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Collapse a sequence of table descriptions. 
+
+We assume the list of \mbox{\hyperlink{classLoadTable}{Load\+Table}} entries is sorted and perform an in-\/place collapse of any sequences into a single \mbox{\hyperlink{classLoadTable}{Load\+Table}} entry. 
+\begin{DoxyParams}{Parameters}
+{\em table} & is the list of entries to collapse \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadTable_a4db003d9f9ded3dce940fa9644b5874d}\label{classLoadTable_a4db003d9f9ded3dce940fa9644b5874d}} 
+\index{LoadTable@{LoadTable}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!LoadTable@{LoadTable}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Load\+Table\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb }\end{DoxyParamCaption})}
+
+
+
+Read in {\bfseries{this}} table from a $<$loadtable$>$ X\+ML description. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$loadtable$>$ tag \\
+\hline
+{\em glb} & is the architecture for resolving address space tags \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classLoadTable_a043aa8df51613f233226f8633aff14eb}\label{classLoadTable_a043aa8df51613f233226f8633aff14eb}} 
+\index{LoadTable@{LoadTable}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!LoadTable@{LoadTable}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Load\+Table\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save a description of {\bfseries{this}} as an $<$loadtable$>$ X\+ML tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the X\+ML stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{jumptable_8hh}{jumptable.\+hh}}\item 
+jumptable.\+cc\end{DoxyCompactItemize}

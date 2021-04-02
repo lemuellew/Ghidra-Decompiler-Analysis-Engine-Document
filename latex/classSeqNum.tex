@@ -1,0 +1,74 @@
+\hypertarget{classSeqNum}{}\doxysection{Seq\+Num Class Reference}
+\label{classSeqNum}\index{SeqNum@{SeqNum}}
+
+
+A class for uniquely labelling and comparing Pcode\+Ops.  
+
+
+
+
+{\ttfamily \#include $<$address.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSeqNum_a7f9a1c7e68897a62f716d0b8cc4bbc5c}\label{classSeqNum_a7f9a1c7e68897a62f716d0b8cc4bbc5c}} 
+\mbox{\hyperlink{classSeqNum_a7f9a1c7e68897a62f716d0b8cc4bbc5c}{Seq\+Num}} (\mbox{\hyperlink{classAddress_ab6dfc48b4779dab420c4ae0bc5aaffd7}{Address\+::mach\+\_\+extreme}} ex)
+\begin{DoxyCompactList}\small\item\em Create an extremal sequence number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_a71be5a5e1b4161200046a9c6203abcb3}\label{classSeqNum_a71be5a5e1b4161200046a9c6203abcb3}} 
+\mbox{\hyperlink{classSeqNum_a71be5a5e1b4161200046a9c6203abcb3}{Seq\+Num}} (const \mbox{\hyperlink{classAddress}{Address}} \&a, uintm b)
+\begin{DoxyCompactList}\small\item\em Create a sequence number with a specific {\itshape time} field. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_a8ff8e92a93503828a8db088c291675bf}\label{classSeqNum_a8ff8e92a93503828a8db088c291675bf}} 
+\mbox{\hyperlink{classSeqNum_a8ff8e92a93503828a8db088c291675bf}{Seq\+Num}} (const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&op2)
+\begin{DoxyCompactList}\small\item\em Copy a sequence number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_a3c1ae4e878e3c4478303caf115afb85f}\label{classSeqNum_a3c1ae4e878e3c4478303caf115afb85f}} 
+const \mbox{\hyperlink{classAddress}{Address}} \& \mbox{\hyperlink{classSeqNum_a3c1ae4e878e3c4478303caf115afb85f}{get\+Addr}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the address portion of a sequence number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_a1f19fed862621e856d70dda65731c94c}\label{classSeqNum_a1f19fed862621e856d70dda65731c94c}} 
+uintm \mbox{\hyperlink{classSeqNum_a1f19fed862621e856d70dda65731c94c}{get\+Time}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the {\itshape time} field of a sequence number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_af42e406cdae712585cbfe1e95b2fceb8}\label{classSeqNum_af42e406cdae712585cbfe1e95b2fceb8}} 
+uintm \mbox{\hyperlink{classSeqNum_af42e406cdae712585cbfe1e95b2fceb8}{get\+Order}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the {\itshape order} field of a sequence number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_ad9cd2238d891923c360c7e2df244197c}\label{classSeqNum_ad9cd2238d891923c360c7e2df244197c}} 
+void \mbox{\hyperlink{classSeqNum_ad9cd2238d891923c360c7e2df244197c}{set\+Order}} (uintm ord)
+\begin{DoxyCompactList}\small\item\em Set the {\itshape order} field of a sequence number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_a11552f9049fa1fcd8ea255d0236c1a2f}\label{classSeqNum_a11552f9049fa1fcd8ea255d0236c1a2f}} 
+bool \mbox{\hyperlink{classSeqNum_a11552f9049fa1fcd8ea255d0236c1a2f}{operator==}} (const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare two sequence numbers for equality. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_a25f1e1917e1070653d4d934593525b97}\label{classSeqNum_a25f1e1917e1070653d4d934593525b97}} 
+bool \mbox{\hyperlink{classSeqNum_a25f1e1917e1070653d4d934593525b97}{operator!=}} (const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare two sequence numbers for inequality. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_aeb254f95288b456c6554b7950a499705}\label{classSeqNum_aeb254f95288b456c6554b7950a499705}} 
+bool \mbox{\hyperlink{classSeqNum_aeb254f95288b456c6554b7950a499705}{operator$<$}} (const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Compare two sequence numbers with their natural order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSeqNum_a31932b829fa851988806afa0d1002c24}\label{classSeqNum_a31932b829fa851988806afa0d1002c24}} 
+void \mbox{\hyperlink{classSeqNum_a31932b829fa851988806afa0d1002c24}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save a \mbox{\hyperlink{classSeqNum}{Seq\+Num}} to a stream as an X\+ML tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSeqNum_abf4894a48a7ba90309bab7c56ccb2a65}\label{classSeqNum_abf4894a48a7ba90309bab7c56ccb2a65}} 
+static \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \mbox{\hyperlink{classSeqNum_abf4894a48a7ba90309bab7c56ccb2a65}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, const \mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$manage)
+\begin{DoxyCompactList}\small\item\em Restore a \mbox{\hyperlink{classSeqNum}{Seq\+Num}} from parsed X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSeqNum_a5c297423265bab5c45a78f81ba897152}\label{classSeqNum_a5c297423265bab5c45a78f81ba897152}} 
+ostream \& \mbox{\hyperlink{classSeqNum_a5c297423265bab5c45a78f81ba897152}{operator$<$$<$}} (ostream \&s, const \mbox{\hyperlink{classSeqNum}{Seq\+Num}} \&sq)
+\begin{DoxyCompactList}\small\item\em Write out a \mbox{\hyperlink{classSeqNum}{Seq\+Num}} to a stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for uniquely labelling and comparing Pcode\+Ops. 
+
+Different Pcode\+Ops generated by a single machine instruction can only be labelled with a single \mbox{\hyperlink{classAddress}{Address}}. But Pcode\+Ops must be distinguishable and compared for execution order. A \mbox{\hyperlink{classSeqNum}{Seq\+Num}} extends the address for a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to include\+:
+\begin{DoxyItemize}
+\item A fixed {\itshape time} field, which is set at the time the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} is created. The {\itshape time} field guarantees a unique \mbox{\hyperlink{classSeqNum}{Seq\+Num}} for the life of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}.
+\item An {\itshape order} field, which is guaranteed to be comparable for the execution order of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} within its basic block. The {\itshape order} field also provides uniqueness but may change over time if the syntax tree is manipulated. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{address_8hh}{address.\+hh}}\item 
+address.\+cc\end{DoxyCompactItemize}

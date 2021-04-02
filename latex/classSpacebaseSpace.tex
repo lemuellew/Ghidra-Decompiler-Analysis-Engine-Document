@@ -1,0 +1,230 @@
+\hypertarget{classSpacebaseSpace}{}\doxysection{Spacebase\+Space Class Reference}
+\label{classSpacebaseSpace}\index{SpacebaseSpace@{SpacebaseSpace}}
+
+
+A virtual space {\itshape stack} space.  
+
+
+
+
+{\ttfamily \#include $<$translate.\+hh$>$}
+
+
+
+Inheritance diagram for Spacebase\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classSpacebaseSpace__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spacebase\+Space\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classSpacebaseSpace__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSpacebaseSpace_af5ba3d56a61942f1b4978d711e4cf844}{Spacebase\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t, const string \&nm, int4 ind, int4 sz, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$base, int4 dl)
+\item 
+\mbox{\hyperlink{classSpacebaseSpace_a8754e42b3db0e9b5df5e8003b881d15b}{Spacebase\+Space}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em For use with restore\+Xml. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSpacebaseSpace_a4d1969883a570388a7e071af0b943f0e}{num\+Spacebase}} (void) const
+\begin{DoxyCompactList}\small\item\em Number of base registers associated with this space. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& \mbox{\hyperlink{classSpacebaseSpace_af8f5c5b9da9bd74ef022bd0c5c18c2ea}{get\+Spacebase}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Get a base register that creates this virtual space. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& \mbox{\hyperlink{classSpacebaseSpace_aa6c1b1af9de6666ff998996d647ff44d}{get\+Spacebase\+Full}} (int4 i) const
+\begin{DoxyCompactList}\small\item\em Return original spacebase register before truncation. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classSpacebaseSpace_abade76813d5936d68f715cfde95a764c}{stack\+Grows\+Negative}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if a stack in this space grows negative. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSpacebaseSpace_ae98cc5d0f6f46274b1942aca597ce2ce}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write the details of this space as X\+ML. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSpacebaseSpace_adb45445a3286d78920f1c96074dd6229}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Recover the details of this space from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSpacebaseSpace_a0e578f3e90e10ec045899c0e9cb65d46}\label{classSpacebaseSpace_a0e578f3e90e10ec045899c0e9cb65d46}} 
+class {\bfseries Addr\+Space\+Manager}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A virtual space {\itshape stack} space. 
+
+In a lot of analysis situations it is convenient to extend the notion of an address space to mean bytes that are indexed relative to some base register. The canonical example of this is the {\bfseries{stack}} space, which models the concept of local variables stored on the stack. An address of ({\bfseries{stack}}, 8) might model the address of a function parameter on the stack for instance, and ({\bfseries{stack}}, 0xfffffff4) might be the address of a local variable. A space like this is inherently {\itshape virtual} and contained within whatever space is being indexed into. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSpacebaseSpace_af5ba3d56a61942f1b4978d711e4cf844}\label{classSpacebaseSpace_af5ba3d56a61942f1b4978d711e4cf844}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!SpacebaseSpace@{SpacebaseSpace}}
+\index{SpacebaseSpace@{SpacebaseSpace}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{SpacebaseSpace()}{SpacebaseSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Spacebase\+Space\+::\+Spacebase\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t,  }\item[{const string \&}]{nm,  }\item[{int4}]{ind,  }\item[{int4}]{sz,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{base,  }\item[{int4}]{dl }\end{DoxyParamCaption})}
+
+Construct a virtual space. This is usually used for the stack space, but multiple such spaces are allowed. 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the manager for this {\bfseries{program}} {\bfseries{specific}} address space \\
+\hline
+{\em t} & is associated processor translator \\
+\hline
+{\em nm} & is the name of the space \\
+\hline
+{\em ind} & is the integer identifier \\
+\hline
+{\em sz} & is the size of the space \\
+\hline
+{\em base} & is the containing space \\
+\hline
+{\em dl} & is the heritage delay \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSpacebaseSpace_a8754e42b3db0e9b5df5e8003b881d15b}\label{classSpacebaseSpace_a8754e42b3db0e9b5df5e8003b881d15b}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!SpacebaseSpace@{SpacebaseSpace}}
+\index{SpacebaseSpace@{SpacebaseSpace}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{SpacebaseSpace()}{SpacebaseSpace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Spacebase\+Space\+::\+Spacebase\+Space (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{const \mbox{\hyperlink{classTranslate}{Translate}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+For use with restore\+Xml. 
+
+This is a partial constructor, which must be followed up with restore\+Xml in order to fillin the rest of the spaces attributes 
+\begin{DoxyParams}{Parameters}
+{\em m} & is the associated address space manager \\
+\hline
+{\em t} & is the associated processor translator \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSpacebaseSpace_af8f5c5b9da9bd74ef022bd0c5c18c2ea}\label{classSpacebaseSpace_af8f5c5b9da9bd74ef022bd0c5c18c2ea}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!getSpacebase@{getSpacebase}}
+\index{getSpacebase@{getSpacebase}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{getSpacebase()}{getSpacebase()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& Spacebase\+Space\+::get\+Spacebase (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a base register that creates this virtual space. 
+
+For virtual spaces, like the stack space, this routine returns the location information for a base register of the space. This routine will throw an exception if the register does not exist 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the base register starting at \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} that describes the register 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ad6b5eb815514577118d9b998447cc4d0}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classSpacebaseSpace_aa6c1b1af9de6666ff998996d647ff44d}\label{classSpacebaseSpace_aa6c1b1af9de6666ff998996d647ff44d}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!getSpacebaseFull@{getSpacebaseFull}}
+\index{getSpacebaseFull@{getSpacebaseFull}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{getSpacebaseFull()}{getSpacebaseFull()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& Spacebase\+Space\+::get\+Spacebase\+Full (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Return original spacebase register before truncation. 
+
+If a stack pointer is truncated to fit the stack space, we may need to know the extent of the original register 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the index of the base register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the original register before truncation 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a8fb25cf630f64ad73a137393b48067a0}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classSpacebaseSpace_a4d1969883a570388a7e071af0b943f0e}\label{classSpacebaseSpace_a4d1969883a570388a7e071af0b943f0e}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!numSpacebase@{numSpacebase}}
+\index{numSpacebase@{numSpacebase}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{numSpacebase()}{numSpacebase()}}
+{\footnotesize\ttfamily int4 Spacebase\+Space\+::num\+Spacebase (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Number of base registers associated with this space. 
+
+Some spaces are \char`\"{}virtual\char`\"{}, like the stack spaces, where addresses are really relative to a base pointer stored in a register, like the stackpointer. This routine will return non-\/zero if {\bfseries{this}} space is virtual and there is 1 (or more) associated pointer registers \begin{DoxyReturn}{Returns}
+the number of base registers associated with this space 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a1bc0bc963f33dedb721489497a92c2e3}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classSpacebaseSpace_adb45445a3286d78920f1c96074dd6229}\label{classSpacebaseSpace_adb45445a3286d78920f1c96074dd6229}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Spacebase\+Space\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover the details of this space from X\+ML. 
+
+Walk a parsed X\+ML tag and recover all the properties defining this space. The processor translator, {\itshape trans}, and the {\itshape type} must already be filled in. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the parsed X\+ML tag \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_aa2fe50d288eef7ea713cce99774c4eca}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classSpacebaseSpace_ae98cc5d0f6f46274b1942aca597ce2ce}\label{classSpacebaseSpace_ae98cc5d0f6f46274b1942aca597ce2ce}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Spacebase\+Space\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write the details of this space as X\+ML. 
+
+Write a tag fully describing the details of this space suitable for later recovery via restore\+Xml. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream being written \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_ac073a4d446677c54d769abba01318864}{Addr\+Space}}.
+
+\mbox{\Hypertarget{classSpacebaseSpace_abade76813d5936d68f715cfde95a764c}\label{classSpacebaseSpace_abade76813d5936d68f715cfde95a764c}} 
+\index{SpacebaseSpace@{SpacebaseSpace}!stackGrowsNegative@{stackGrowsNegative}}
+\index{stackGrowsNegative@{stackGrowsNegative}!SpacebaseSpace@{SpacebaseSpace}}
+\doxysubsubsection{\texorpdfstring{stackGrowsNegative()}{stackGrowsNegative()}}
+{\footnotesize\ttfamily virtual bool Spacebase\+Space\+::stack\+Grows\+Negative (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Return {\bfseries{true}} if a stack in this space grows negative. 
+
+For stack (or other spacebase) spaces, this routine returns {\bfseries{true}} if the space can viewed as a stack and a {\bfseries{push}} operation causes the spacebase pointer to be decreased (grow negative) \begin{DoxyReturn}{Returns}
+{\bfseries{true}} if stacks grow in negative direction. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAddrSpace_a9468b2d0bc4cdaa762e213fb395ac434}{Addr\+Space}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{translate_8hh}{translate.\+hh}}\item 
+translate.\+cc\end{DoxyCompactItemize}

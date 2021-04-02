@@ -1,0 +1,288 @@
+\hypertarget{classTypeCode}{}\doxysection{Type\+Code Class Reference}
+\label{classTypeCode}\index{TypeCode@{TypeCode}}
+
+
+\mbox{\hyperlink{classDatatype}{Datatype}} object representing executable code.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Code\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classTypeCode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Code\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classTypeCode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeCode_a85184f290572a138c890d7d5035c8fdc}\label{classTypeCode_a85184f290572a138c890d7d5035c8fdc}} 
+\mbox{\hyperlink{classTypeCode_a85184f290572a138c890d7d5035c8fdc}{Type\+Code}} (const \mbox{\hyperlink{classTypeCode}{Type\+Code}} \&op)
+\begin{DoxyCompactList}\small\item\em Construct from another \mbox{\hyperlink{classTypeCode}{Type\+Code}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeCode_aea0c166ae7ae389f37808b17e58b582a}\label{classTypeCode_aea0c166ae7ae389f37808b17e58b582a}} 
+\mbox{\hyperlink{classTypeCode_aea0c166ae7ae389f37808b17e58b582a}{Type\+Code}} (const string \&nm)
+\begin{DoxyCompactList}\small\item\em Construct from a name. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTypeCode_a281927644a409f943d0ed740c510227a}{compare\+Basic}} (const \mbox{\hyperlink{classTypeCode}{Type\+Code}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Compare surface characteristics of two Type\+Codes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTypeCode_a634e7a06efa647d6fa756bddc005a228}{set\+Properties}} (bool is\+Constructor, bool is\+Destructor)
+\begin{DoxyCompactList}\small\item\em Set additional function properties. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeCode_a1e8d400271941042d3dcb8402876ce02}{print\+Raw}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a description of the type to stream. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeCode_aadf597df057fcdc89000bbd8cffefa83}{get\+Sub\+Type}} (uintb off, uintb $\ast$newoff) const
+\begin{DoxyCompactList}\small\item\em Recover component data-\/type one-\/level down. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classTypeCode_a96f56d57d3c88430321564e01dc1ad90}{compare}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op, int4 level) const
+\begin{DoxyCompactList}\small\item\em Compare for functional equivalence. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classTypeCode_a486209b2c4c2efe517f9b5e6a566592e}{compare\+Dependency}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op) const
+\begin{DoxyCompactList}\small\item\em Compare for storage in tree structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeCode_a450e2f5f2cd4a4573573da9a20e4d2fa}\label{classTypeCode_a450e2f5f2cd4a4573573da9a20e4d2fa}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeCode_a450e2f5f2cd4a4573573da9a20e4d2fa}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeCode_a6d47db2c7cf2a968b49cbac59de182d7}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize the data-\/type to X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTypeCode_a878a806b0169f8e0a4b7cab6c8b4c91b}{set}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$tfact, \mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$model, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$outtype, const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&intypes, bool dotdotdot, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$voidtype)
+\begin{DoxyCompactList}\small\item\em Establish a function pointer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeCode_a8b721a26b30c296fe2510738601e3333}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typegrp)
+\begin{DoxyCompactList}\small\item\em Restore data-\/type from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeCode_a60fad758bd706ce1581f87788501a4b2}\label{classTypeCode_a60fad758bd706ce1581f87788501a4b2}} 
+\mbox{\hyperlink{classFuncProto}{Func\+Proto}} $\ast$ \mbox{\hyperlink{classTypeCode_a60fad758bd706ce1581f87788501a4b2}{proto}}
+\begin{DoxyCompactList}\small\item\em If non-\/null, this describes the prototype of the underlying function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeCode_a30ffc924b40fc0e7b2b828d77e92d694}\label{classTypeCode_a30ffc924b40fc0e7b2b828d77e92d694}} 
+\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$ \mbox{\hyperlink{classTypeCode_a30ffc924b40fc0e7b2b828d77e92d694}{factory}}
+\begin{DoxyCompactList}\small\item\em Factory owning {\bfseries{this}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeCode_ac8c1945d0a63785e78b3e09a13226ed6}\label{classTypeCode_ac8c1945d0a63785e78b3e09a13226ed6}} 
+class {\bfseries Type\+Factory}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDatatype}{Datatype}} object representing executable code. 
+
+Sometimes, this holds the \char`\"{}function\char`\"{} being pointed to by a function pointer 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeCode_a96f56d57d3c88430321564e01dc1ad90}\label{classTypeCode_a96f56d57d3c88430321564e01dc1ad90}} 
+\index{TypeCode@{TypeCode}!compare@{compare}}
+\index{compare@{compare}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int4 Type\+Code\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op,  }\item[{int4}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for functional equivalence. 
+
+0 (equality) means the data-\/types are functionally equivalent (even if names differ) Smaller types come earlier. More specific types come earlier. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+{\em level} & is maximum level to descend when recursively comparing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a4d5a102b2d909180c3080fdb55d7b305}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeCode_a281927644a409f943d0ed740c510227a}\label{classTypeCode_a281927644a409f943d0ed740c510227a}} 
+\index{TypeCode@{TypeCode}!compareBasic@{compareBasic}}
+\index{compareBasic@{compareBasic}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{compareBasic()}{compareBasic()}}
+{\footnotesize\ttfamily int4 Type\+Code\+::compare\+Basic (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTypeCode}{Type\+Code}} $\ast$}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Compare surface characteristics of two Type\+Codes. 
+
+Compare basic characteristics of {\bfseries{this}} with another \mbox{\hyperlink{classTypeCode}{Type\+Code}}, not including the prototype
+\begin{DoxyItemize}
+\item -\/1 or 1 if -\/this-\/ and -\/op-\/ are different in surface characteristics
+\item 0 if they are exactly equal and have no parameters
+\item 2 if they are equal on the surface, but additional comparisons must be made on parameters 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the other data-\/type to compare to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the comparison value 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classTypeCode_a486209b2c4c2efe517f9b5e6a566592e}\label{classTypeCode_a486209b2c4c2efe517f9b5e6a566592e}} 
+\index{TypeCode@{TypeCode}!compareDependency@{compareDependency}}
+\index{compareDependency@{compareDependency}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{compareDependency()}{compareDependency()}}
+{\footnotesize\ttfamily int4 Type\+Code\+::compare\+Dependency (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for storage in tree structure. 
+
+Ordering of data-\/types for the main \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} container. Comparison only goes down one-\/level in the component structure, before just comparing pointers. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_ab26e4ca2c3091d3c5a34b4fbd7be76ae}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeCode_aadf597df057fcdc89000bbd8cffefa83}\label{classTypeCode_aadf597df057fcdc89000bbd8cffefa83}} 
+\index{TypeCode@{TypeCode}!getSubType@{getSubType}}
+\index{getSubType@{getSubType}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{getSubType()}{getSubType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Code\+::get\+Sub\+Type (\begin{DoxyParamCaption}\item[{uintb}]{off,  }\item[{uintb $\ast$}]{newoff }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover component data-\/type one-\/level down. 
+
+Given an offset into {\bfseries{this}} data-\/type, return the component data-\/type at that offset. Also, pass back a \char`\"{}renormalized\char`\"{} offset suitable for recursize \mbox{\hyperlink{classTypeCode_aadf597df057fcdc89000bbd8cffefa83}{get\+Sub\+Type()}} calls\+: i.\+e. if the original offset hits the exact start of the sub-\/type, 0 is passed back. If there is no valid component data-\/type at the offset, return N\+U\+LL and pass back the original offset 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the offset into {\bfseries{this}} data-\/type \\
+\hline
+{\em newoff} & is a pointer to the passed-\/back offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the component data-\/type or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_ac310ccfdc47d145f10699fa1e14e73b4}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeCode_a1e8d400271941042d3dcb8402876ce02}\label{classTypeCode_a1e8d400271941042d3dcb8402876ce02}} 
+\index{TypeCode@{TypeCode}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}}
+{\footnotesize\ttfamily void Type\+Code\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a description of the type to stream. 
+
+Print a raw description of the type to stream. Intended for debugging. Not intended to produce parsable C. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a034a9b665df1a06f17fd3dfe61e7bf41}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeCode_a8b721a26b30c296fe2510738601e3333}\label{classTypeCode_a8b721a26b30c296fe2510738601e3333}} 
+\index{TypeCode@{TypeCode}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Type\+Code\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Restore data-\/type from X\+ML. 
+
+Restore a \mbox{\hyperlink{classDatatype}{Datatype}} object from an X\+ML element 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+{\em typegrp} & is the underlying \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} that will hold the new object \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_aed882ae693a31a64d56fffb9abdaa575}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeCode_a6d47db2c7cf2a968b49cbac59de182d7}\label{classTypeCode_a6d47db2c7cf2a968b49cbac59de182d7}} 
+\index{TypeCode@{TypeCode}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Type\+Code\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize the data-\/type to X\+ML. 
+
+Write out a formal description of the data-\/type as an X\+ML $<$type$>$ tag. For composite data-\/types, the description goes down one level, describing the component types only by reference. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a33339824f1c50d4354952296070c3902}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeCode_a878a806b0169f8e0a4b7cab6c8b4c91b}\label{classTypeCode_a878a806b0169f8e0a4b7cab6c8b4c91b}} 
+\index{TypeCode@{TypeCode}!set@{set}}
+\index{set@{set}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily void Type\+Code\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{tfact,  }\item[{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{model,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{outtype,  }\item[{const vector$<$ \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ $>$ \&}]{intypes,  }\item[{bool}]{dotdotdot,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{voidtype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Establish a function pointer. 
+
+Turn on the data-\/type\textquotesingle{}s function prototype 
+\begin{DoxyParams}{Parameters}
+{\em tfact} & is the factory that owns {\bfseries{this}} \\
+\hline
+{\em model} & is the prototype model \\
+\hline
+{\em outtype} & is the return type of the prototype \\
+\hline
+{\em intypes} & is the list of input parameters \\
+\hline
+{\em dotdotdot} & is true if the prototype takes variable arguments \\
+\hline
+{\em voidtype} & is the reference \char`\"{}void\char`\"{} data-\/type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTypeCode_a634e7a06efa647d6fa756bddc005a228}\label{classTypeCode_a634e7a06efa647d6fa756bddc005a228}} 
+\index{TypeCode@{TypeCode}!setProperties@{setProperties}}
+\index{setProperties@{setProperties}!TypeCode@{TypeCode}}
+\doxysubsubsection{\texorpdfstring{setProperties()}{setProperties()}}
+{\footnotesize\ttfamily void Type\+Code\+::set\+Properties (\begin{DoxyParamCaption}\item[{bool}]{is\+Constructor,  }\item[{bool}]{is\+Destructor }\end{DoxyParamCaption})}
+
+
+
+Set additional function properties. 
+
+Assuming {\bfseries{this}} has an underlying function prototype, set some of its boolean properties 
+\begin{DoxyParams}{Parameters}
+{\em is\+Constructor} & toggles whether the function is a constructor \\
+\hline
+{\em is\+Destructor} & toggles whether the function is a destructor \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hh}{type.\+hh}}\item 
+type.\+cc\end{DoxyCompactItemize}

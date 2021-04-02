@@ -1,0 +1,62 @@
+\hypertarget{classIfcTypeVarnode}{}\doxysection{Ifc\+Type\+Varnode Class Reference}
+\label{classIfcTypeVarnode}\index{IfcTypeVarnode@{IfcTypeVarnode}}
+
+
+Attach a typed symbol to a specific \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily type varnode $<$varnode$>$ $<$typedeclaration$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Type\+Varnode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcTypeVarnode__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Type\+Varnode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcTypeVarnode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcTypeVarnode_a121ff1e507f74d6ec86a07e120cd3ba8}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Attach a typed symbol to a specific \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily type varnode $<$varnode$>$ $<$typedeclaration$>$} 
+
+A new local symbol is created for the {\itshape current} function, and is attached to the specified \mbox{\hyperlink{classVarnode}{Varnode}}. The {\itshape current} function must be decompiled again to see the effects. The new symbol is {\itshape type-\/locked} with the data-\/type specified in the type declaration. If a name is specified in the declaration, the symbol is {\itshape name-\/locked} as well. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcTypeVarnode_a121ff1e507f74d6ec86a07e120cd3ba8}\label{classIfcTypeVarnode_a121ff1e507f74d6ec86a07e120cd3ba8}} 
+\index{IfcTypeVarnode@{IfcTypeVarnode}!execute@{execute}}
+\index{execute@{execute}!IfcTypeVarnode@{IfcTypeVarnode}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Type\+Varnode\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

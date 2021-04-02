@@ -1,0 +1,49 @@
+\hypertarget{structPartialSymbolEntry}{}\doxysection{Partial\+Symbol\+Entry Struct Reference}
+\label{structPartialSymbolEntry}\index{PartialSymbolEntry@{PartialSymbolEntry}}
+
+
+A structure for pushing nested fields to the R\+PN stack.  
+
+
+
+
+{\ttfamily \#include $<$printc.\+hh$>$}
+
+
+
+Collaboration diagram for Partial\+Symbol\+Entry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{structPartialSymbolEntry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structPartialSymbolEntry_ab6fd2eded59cdec7422bbf6c49e46f63}\label{structPartialSymbolEntry_ab6fd2eded59cdec7422bbf6c49e46f63}} 
+const \mbox{\hyperlink{classOpToken}{Op\+Token}} $\ast$ \mbox{\hyperlink{structPartialSymbolEntry_ab6fd2eded59cdec7422bbf6c49e46f63}{token}}
+\begin{DoxyCompactList}\small\item\em Operator used to drill-\/down to the field. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPartialSymbolEntry_ab70c112a5a6a83784896b1834f9398f4}\label{structPartialSymbolEntry_ab70c112a5a6a83784896b1834f9398f4}} 
+const \mbox{\hyperlink{structTypeField}{Type\+Field}} $\ast$ \mbox{\hyperlink{structPartialSymbolEntry_ab70c112a5a6a83784896b1834f9398f4}{field}}
+\begin{DoxyCompactList}\small\item\em The component object describing the field. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPartialSymbolEntry_a71ae1afca5857bc5e1834a1393683bdd}\label{structPartialSymbolEntry_a71ae1afca5857bc5e1834a1393683bdd}} 
+const \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{structPartialSymbolEntry_a71ae1afca5857bc5e1834a1393683bdd}{parent}}
+\begin{DoxyCompactList}\small\item\em The parent data-\/type owning the field. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPartialSymbolEntry_a10cb26ea8e9f2c70ab883e1094fd6a32}\label{structPartialSymbolEntry_a10cb26ea8e9f2c70ab883e1094fd6a32}} 
+string \mbox{\hyperlink{structPartialSymbolEntry_a10cb26ea8e9f2c70ab883e1094fd6a32}{fieldname}}
+\begin{DoxyCompactList}\small\item\em The name of the field. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structPartialSymbolEntry_a6ae42a52fe2ac08f4d25c357881f2a7f}\label{structPartialSymbolEntry_a6ae42a52fe2ac08f4d25c357881f2a7f}} 
+\mbox{\hyperlink{classEmitXml_a7c3577436da429c3c75f4b82cac6864f}{Emit\+Xml\+::syntax\+\_\+highlight}} \mbox{\hyperlink{structPartialSymbolEntry_a6ae42a52fe2ac08f4d25c357881f2a7f}{hilite}}
+\begin{DoxyCompactList}\small\item\em Highlight information for the field token. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure for pushing nested fields to the R\+PN stack. 
+
+A helper class for unraveling a nested reference to a field. It links the data-\/type, field name, field object, and token together 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{printc_8hh}{printc.\+hh}}\end{DoxyCompactItemize}

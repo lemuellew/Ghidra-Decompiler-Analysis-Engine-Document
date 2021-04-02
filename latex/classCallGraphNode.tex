@@ -1,0 +1,72 @@
+\hypertarget{classCallGraphNode}{}\doxysection{Call\+Graph\+Node Class Reference}
+\label{classCallGraphNode}\index{CallGraphNode@{CallGraphNode}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a1b0706ea9d368e38db236437df844a1f}\label{classCallGraphNode_a1b0706ea9d368e38db236437df844a1f}} 
+enum \{ {\bfseries mark} = 1, 
+{\bfseries onlycyclein} = 2, 
+{\bfseries currentcycle} = 4, 
+{\bfseries entrynode} = 8
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCallGraphNode_aa61644a0a00f64254a00c04dec29a054}\label{classCallGraphNode_aa61644a0a00f64254a00c04dec29a054}} 
+void {\bfseries clear\+Mark} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_aaa58a7c325e39670fcb45b98fb9882b4}\label{classCallGraphNode_aaa58a7c325e39670fcb45b98fb9882b4}} 
+bool {\bfseries is\+Mark} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a8b884b92324abe22eb8c2442c027b660}\label{classCallGraphNode_a8b884b92324abe22eb8c2442c027b660}} 
+const \mbox{\hyperlink{classAddress}{Address}} {\bfseries get\+Addr} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a2277f2f032877d1f0251e5bdb6c4b32a}\label{classCallGraphNode_a2277f2f032877d1f0251e5bdb6c4b32a}} 
+const string \& {\bfseries get\+Name} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_af0cc63edc8f21a1fc4abe1d64fd1d17f}\label{classCallGraphNode_af0cc63edc8f21a1fc4abe1d64fd1d17f}} 
+\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ {\bfseries get\+Funcdata} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_aa6130dd67993dbf34737b9560ff88dbd}\label{classCallGraphNode_aa6130dd67993dbf34737b9560ff88dbd}} 
+int4 {\bfseries num\+In\+Edge} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a74c8585fd8fb11a824646c42d7abf3a6}\label{classCallGraphNode_a74c8585fd8fb11a824646c42d7abf3a6}} 
+const \mbox{\hyperlink{classCallGraphEdge}{Call\+Graph\+Edge}} \& {\bfseries get\+In\+Edge} (int4 i) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_ab795928265254bfa049b445baf7eabcc}\label{classCallGraphNode_ab795928265254bfa049b445baf7eabcc}} 
+\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$ {\bfseries get\+In\+Node} (int4 i) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a0c8f85c80e891f9d7fe71277d0391671}\label{classCallGraphNode_a0c8f85c80e891f9d7fe71277d0391671}} 
+int4 {\bfseries num\+Out\+Edge} (void) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_af4e36e64c9990d6e77a8858217429676}\label{classCallGraphNode_af4e36e64c9990d6e77a8858217429676}} 
+const \mbox{\hyperlink{classCallGraphEdge}{Call\+Graph\+Edge}} \& {\bfseries get\+Out\+Edge} (int4 i) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_aa3cdd86912417b09815e2a6c478f6ff2}\label{classCallGraphNode_aa3cdd86912417b09815e2a6c478f6ff2}} 
+\mbox{\hyperlink{classCallGraphNode}{Call\+Graph\+Node}} $\ast$ {\bfseries get\+Out\+Node} (int4 i) const
+\item 
+\mbox{\Hypertarget{classCallGraphNode_adf4b77eb0513240ef97b1e0381758dad}\label{classCallGraphNode_adf4b77eb0513240ef97b1e0381758dad}} 
+void {\bfseries set\+Funcdata} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$f)
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a0379699be791f33d9b411adb19bec7a5}\label{classCallGraphNode_a0379699be791f33d9b411adb19bec7a5}} 
+void {\bfseries save\+Xml} (ostream \&s) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a0b6c6ec59775a76b838b3d12c3a454f1}\label{classCallGraphNode_a0b6c6ec59775a76b838b3d12c3a454f1}} 
+static void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classCallGraph}{Call\+Graph}} $\ast$graph)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCallGraphNode_a05afb094c2637ded1f1b905b70d198a9}\label{classCallGraphNode_a05afb094c2637ded1f1b905b70d198a9}} 
+class {\bfseries Call\+Graph}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+callgraph.\+hh\item 
+callgraph.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{classConstantPoolInternal}{}\doxysection{Constant\+Pool\+Internal Class Reference}
+\label{classConstantPoolInternal}\index{ConstantPoolInternal@{ConstantPoolInternal}}
+
+
+An implementation of the \mbox{\hyperlink{classConstantPool}{Constant\+Pool}} interface storing records internally in R\+AM.  
+
+
+
+
+{\ttfamily \#include $<$cpool.\+hh$>$}
+
+
+
+Inheritance diagram for Constant\+Pool\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classConstantPoolInternal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Constant\+Pool\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classConstantPoolInternal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} $\ast$ \mbox{\hyperlink{classConstantPoolInternal_a28cbe88a2aa77b21bbf7a8027485ad37}{get\+Record}} (const vector$<$ uintb $>$ \&refs) const
+\begin{DoxyCompactList}\small\item\em Retrieve a constant pool record (\mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}}) given a {\itshape reference} to it. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConstantPoolInternal_a4de2decea0379233ebd272c8eb72355d}\label{classConstantPoolInternal_a4de2decea0379233ebd272c8eb72355d}} 
+virtual bool \mbox{\hyperlink{classConstantPoolInternal_a4de2decea0379233ebd272c8eb72355d}{empty}} (void) const
+\begin{DoxyCompactList}\small\item\em Is the container empty of records. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConstantPoolInternal_a72e240485b635c1e82282d1ae0cbd7d5}\label{classConstantPoolInternal_a72e240485b635c1e82282d1ae0cbd7d5}} 
+virtual void \mbox{\hyperlink{classConstantPoolInternal_a72e240485b635c1e82282d1ae0cbd7d5}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Release any (local) resources. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classConstantPoolInternal_a5386f07fda2fff612dca7acea0ea68ad}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save all records in this container to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classConstantPoolInternal_a28f4bf1f388ac9eb718f1790267b662d}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typegrp)
+\begin{DoxyCompactList}\small\item\em Restore constant pool records from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An implementation of the \mbox{\hyperlink{classConstantPool}{Constant\+Pool}} interface storing records internally in R\+AM. 
+
+The \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} objects are held directly in a map container. This class can be used as a stand-\/alone \mbox{\hyperlink{classConstantPool}{Constant\+Pool}} that holds all its records in R\+AM. Or, it can act as a local \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} cache for some other implementation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConstantPoolInternal_a28cbe88a2aa77b21bbf7a8027485ad37}\label{classConstantPoolInternal_a28cbe88a2aa77b21bbf7a8027485ad37}} 
+\index{ConstantPoolInternal@{ConstantPoolInternal}!getRecord@{getRecord}}
+\index{getRecord@{getRecord}!ConstantPoolInternal@{ConstantPoolInternal}}
+\doxysubsubsection{\texorpdfstring{getRecord()}{getRecord()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} $\ast$ Constant\+Pool\+Internal\+::get\+Record (\begin{DoxyParamCaption}\item[{const vector$<$ uintb $>$ \&}]{refs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a constant pool record (\mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}}) given a {\itshape reference} to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em refs} & is the {\itshape reference} (made up of 1 or more identifying integers) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} or N\+U\+LL if none matches the reference 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classConstantPool_ac17df35ff1376311f62912d29bf26cad}{Constant\+Pool}}.
+
+\mbox{\Hypertarget{classConstantPoolInternal_a28f4bf1f388ac9eb718f1790267b662d}\label{classConstantPoolInternal_a28f4bf1f388ac9eb718f1790267b662d}} 
+\index{ConstantPoolInternal@{ConstantPoolInternal}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ConstantPoolInternal@{ConstantPoolInternal}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Constant\+Pool\+Internal\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore constant pool records from an X\+ML stream. 
+
+(If supported) The container is populated with C\+Poo\+L\+Records initialized from a $<$constantpool$>$ X\+ML tag. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+{\em typegrp} & is the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} used to resolve data-\/type references in the X\+ML \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classConstantPool_a1ba24a59e40a1110cdd5d2a63f1a978c}{Constant\+Pool}}.
+
+\mbox{\Hypertarget{classConstantPoolInternal_a5386f07fda2fff612dca7acea0ea68ad}\label{classConstantPoolInternal_a5386f07fda2fff612dca7acea0ea68ad}} 
+\index{ConstantPoolInternal@{ConstantPoolInternal}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!ConstantPoolInternal@{ConstantPoolInternal}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Constant\+Pool\+Internal\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save all records in this container to an X\+ML stream. 
+
+(If supported) An $<$constantpool$>$ element is written containing $<$cpoolrec$>$ child elements for each \mbox{\hyperlink{classCPoolRecord}{C\+Pool\+Record}} in the container. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classConstantPool_a859daeda0a7969af5462f6484905ab08}{Constant\+Pool}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{cpool_8hh}{cpool.\+hh}}\item 
+cpool.\+cc\end{DoxyCompactItemize}

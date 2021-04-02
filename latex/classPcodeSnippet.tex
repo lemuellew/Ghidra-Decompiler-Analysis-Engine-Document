@@ -1,0 +1,74 @@
+\hypertarget{classPcodeSnippet}{}\doxysection{Pcode\+Snippet Class Reference}
+\label{classPcodeSnippet}\index{PcodeSnippet@{PcodeSnippet}}
+
+
+Inheritance diagram for Pcode\+Snippet\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classPcodeSnippet__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pcode\+Snippet\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classPcodeSnippet__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a7bec86c6f170c157b82c56cb8630a84b}\label{classPcodeSnippet_a7bec86c6f170c157b82c56cb8630a84b}} 
+{\bfseries Pcode\+Snippet} (const \mbox{\hyperlink{classSleighBase}{Sleigh\+Base}} $\ast$slgh)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a55276b8350568981fb7812b0e49a9ced}\label{classPcodeSnippet_a55276b8350568981fb7812b0e49a9ced}} 
+void {\bfseries set\+Result} (\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$res)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a0d97b99a25f3702e6718d9e1c2f139b1}\label{classPcodeSnippet_a0d97b99a25f3702e6718d9e1c2f139b1}} 
+\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$ {\bfseries release\+Result} (void)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a771793628fd08f05fbc1e0be40e45ad4}\label{classPcodeSnippet_a771793628fd08f05fbc1e0be40e45ad4}} 
+virtual const \mbox{\hyperlink{classLocation}{Location}} $\ast$ {\bfseries get\+Location} (\mbox{\hyperlink{classSleighSymbol}{Sleigh\+Symbol}} $\ast$sym) const
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_aea60f303e8a317c8f3876daaa42e51b0}\label{classPcodeSnippet_aea60f303e8a317c8f3876daaa42e51b0}} 
+virtual void {\bfseries report\+Error} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a2cdc5f70cd71fb867cec9ecf5fa58c98}\label{classPcodeSnippet_a2cdc5f70cd71fb867cec9ecf5fa58c98}} 
+virtual void {\bfseries report\+Warning} (const \mbox{\hyperlink{classLocation}{Location}} $\ast$loc, const string \&msg)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a349148e16b340f5b0798ce3414b35e3c}\label{classPcodeSnippet_a349148e16b340f5b0798ce3414b35e3c}} 
+bool {\bfseries has\+Errors} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a5527551fede6c9930d31e359d57c49aa}\label{classPcodeSnippet_a5527551fede6c9930d31e359d57c49aa}} 
+const string {\bfseries get\+Error\+Message} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a017937876cfc1862f422d9b2f493cf9d}\label{classPcodeSnippet_a017937876cfc1862f422d9b2f493cf9d}} 
+void {\bfseries set\+Unique\+Base} (uintb val)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a9a577f3c196fe540314d7f887af3befc}\label{classPcodeSnippet_a9a577f3c196fe540314d7f887af3befc}} 
+uintb {\bfseries get\+Unique\+Base} (void) const
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_a5b892587710fef5de90173cb73a055d8}\label{classPcodeSnippet_a5b892587710fef5de90173cb73a055d8}} 
+void {\bfseries clear} (void)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_af6fe37149aaddca5c05da7df54c17315}\label{classPcodeSnippet_af6fe37149aaddca5c05da7df54c17315}} 
+int {\bfseries lex} (void)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_afa88b6062d6e6fd89a2597be387d906d}\label{classPcodeSnippet_afa88b6062d6e6fd89a2597be387d906d}} 
+bool {\bfseries parse\+Stream} (istream \&s)
+\item 
+\mbox{\Hypertarget{classPcodeSnippet_adeeb03f199547eaf4f749e21b6f8c1cd}\label{classPcodeSnippet_adeeb03f199547eaf4f749e21b6f8c1cd}} 
+void {\bfseries add\+Operand} (const string \&name, int4 index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+pcodeparse.\+hh\item 
+pcodeparse.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,257 @@
+\hypertarget{classDummyTranslate}{}\doxysection{Dummy\+Translate Class Reference}
+\label{classDummyTranslate}\index{DummyTranslate@{DummyTranslate}}
+
+
+Inheritance diagram for Dummy\+Translate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classDummyTranslate__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dummy\+Translate\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classDummyTranslate__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classDummyTranslate_a25f1165b176b80b6b8d1a4230230c97e}{initialize}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\begin{DoxyCompactList}\small\item\em Initialize the translator given X\+ML configuration documents. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDummyTranslate_a31a861eddfd5416506d306b9578b2b2a}{add\+Register}} (const string \&nm, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$base, uintb offset, int4 size)
+\begin{DoxyCompactList}\small\item\em Add a named register to the model for this processor. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} \& \mbox{\hyperlink{classDummyTranslate_a4c030a80bc088c90ffff5b7a0a78434d}{get\+Register}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Get a register as \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} given its name. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classDummyTranslate_a231482a0c58ac93facbc643960a81891}{get\+Register\+Name}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$base, uintb off, int4 size) const
+\begin{DoxyCompactList}\small\item\em Get the name of a register given its location. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDummyTranslate_a6a27ba7b3c1826c28a5b20d6d6609717}{get\+All\+Registers}} (map$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}, string $>$ \&reglist) const
+\begin{DoxyCompactList}\small\item\em Get a list of all register names and the corresponding location. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDummyTranslate_aa60999d42adf6fddc6fb57437ffb79c3}{get\+User\+Op\+Names}} (vector$<$ string $>$ \&res) const
+\begin{DoxyCompactList}\small\item\em Get a list of all {\itshape user-\/defined} pcode ops. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classDummyTranslate_aaf7ead6c5f833e5558319725ad66fe28}{instruction\+Length}} (const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Get the length of a machine instruction. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classDummyTranslate_a429150e7328be97b17b7ee7211c23841}{one\+Instruction}} (\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&emit, const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Transform a single machine instruction into pcode. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classDummyTranslate_a7c3c565169bd97e37b568985c757ffdd}{print\+Assembly}} (\mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} \&emit, const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Disassemble a single machine instruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDummyTranslate_a31a861eddfd5416506d306b9578b2b2a}\label{classDummyTranslate_a31a861eddfd5416506d306b9578b2b2a}} 
+\index{DummyTranslate@{DummyTranslate}!addRegister@{addRegister}}
+\index{addRegister@{addRegister}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{addRegister()}{addRegister()}}
+{\footnotesize\ttfamily virtual void Dummy\+Translate\+::add\+Register (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{base,  }\item[{uintb}]{offset,  }\item[{int4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Add a named register to the model for this processor. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]All registers used to be formally added to the processor model through this method. \end{DoxyRefDesc}
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the new register \\
+\hline
+{\em base} & is the address space containing the register \\
+\hline
+{\em offset} & is the offset of the register \\
+\hline
+{\em size} & is the number of bytes in the register \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_a2614aefa5c03a9f1ed0b2dba794cad2c}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_a6a27ba7b3c1826c28a5b20d6d6609717}\label{classDummyTranslate_a6a27ba7b3c1826c28a5b20d6d6609717}} 
+\index{DummyTranslate@{DummyTranslate}!getAllRegisters@{getAllRegisters}}
+\index{getAllRegisters@{getAllRegisters}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{getAllRegisters()}{getAllRegisters()}}
+{\footnotesize\ttfamily virtual void Dummy\+Translate\+::get\+All\+Registers (\begin{DoxyParamCaption}\item[{map$<$ \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}, string $>$ \&}]{reglist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get a list of all register names and the corresponding location. 
+
+Most processors have a list of named registers and possibly other memory locations that are specific to it. This function populates a map from the location information to the name, for every named location known by the translator 
+\begin{DoxyParams}{Parameters}
+{\em reglist} & is the map which will be populated by the call \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_a4de12a5d1ad5f080604451e2ed3c163e}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_a4c030a80bc088c90ffff5b7a0a78434d}\label{classDummyTranslate_a4c030a80bc088c90ffff5b7a0a78434d}} 
+\index{DummyTranslate@{DummyTranslate}!getRegister@{getRegister}}
+\index{getRegister@{getRegister}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{getRegister()}{getRegister()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}}\& Dummy\+Translate\+::get\+Register (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get a register as \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} given its name. 
+
+Retrieve the location and size of a register given its name 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the name of the register \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} for the register 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_a3a62c460db4eccc285fa3dd29dd4a29b}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_a231482a0c58ac93facbc643960a81891}\label{classDummyTranslate_a231482a0c58ac93facbc643960a81891}} 
+\index{DummyTranslate@{DummyTranslate}!getRegisterName@{getRegisterName}}
+\index{getRegisterName@{getRegisterName}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{getRegisterName()}{getRegisterName()}}
+{\footnotesize\ttfamily virtual string Dummy\+Translate\+::get\+Register\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{base,  }\item[{uintb}]{off,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the name of a register given its location. 
+
+Generic references to locations in a {\itshape register} space can be translated into the associated register {\itshape name}. If the location doesn\textquotesingle{}t match a register {\itshape exactly}, an empty string is returned. 
+\begin{DoxyParams}{Parameters}
+{\em base} & is the address space containing the location \\
+\hline
+{\em off} & is the offset of the location \\
+\hline
+{\em size} & is the size of the location \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the register, or an empty string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_a1da0ef001f801641313d9168fb359f02}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_aa60999d42adf6fddc6fb57437ffb79c3}\label{classDummyTranslate_aa60999d42adf6fddc6fb57437ffb79c3}} 
+\index{DummyTranslate@{DummyTranslate}!getUserOpNames@{getUserOpNames}}
+\index{getUserOpNames@{getUserOpNames}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{getUserOpNames()}{getUserOpNames()}}
+{\footnotesize\ttfamily virtual void Dummy\+Translate\+::get\+User\+Op\+Names (\begin{DoxyParamCaption}\item[{vector$<$ string $>$ \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get a list of all {\itshape user-\/defined} pcode ops. 
+
+The pcode model allows processors to define new pcode instructions that are specific to that processor. These {\itshape user-\/defined} instructions are all identified by a name and an index. This method returns a list of these ops in index order. 
+\begin{DoxyParams}{Parameters}
+{\em res} & is the resulting vector of user op names \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_a2475ba8a71e0d514903b3b5458e6cf45}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_a25f1165b176b80b6b8d1a4230230c97e}\label{classDummyTranslate_a25f1165b176b80b6b8d1a4230230c97e}} 
+\index{DummyTranslate@{DummyTranslate}!initialize@{initialize}}
+\index{initialize@{initialize}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily virtual void Dummy\+Translate\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Initialize the translator given X\+ML configuration documents. 
+
+A translator gets initialized once, possibly using X\+ML documents to configure it. 
+\begin{DoxyParams}{Parameters}
+{\em store} & is a set of configuration documents \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_af8e71e9a9477e9a91be400ecca565df5}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_aaf7ead6c5f833e5558319725ad66fe28}\label{classDummyTranslate_aaf7ead6c5f833e5558319725ad66fe28}} 
+\index{DummyTranslate@{DummyTranslate}!instructionLength@{instructionLength}}
+\index{instructionLength@{instructionLength}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{instructionLength()}{instructionLength()}}
+{\footnotesize\ttfamily virtual int4 Dummy\+Translate\+::instruction\+Length (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the length of a machine instruction. 
+
+This method decodes an instruction at a specific address just enough to find the number of bytes it uses within the instruction stream. 
+\begin{DoxyParams}{Parameters}
+{\em baseaddr} & is the \mbox{\hyperlink{classAddress}{Address}} of the instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes in the instruction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_aa7139376886fccfdcda529fc74f7b382}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_a429150e7328be97b17b7ee7211c23841}\label{classDummyTranslate_a429150e7328be97b17b7ee7211c23841}} 
+\index{DummyTranslate@{DummyTranslate}!oneInstruction@{oneInstruction}}
+\index{oneInstruction@{oneInstruction}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{oneInstruction()}{oneInstruction()}}
+{\footnotesize\ttfamily virtual int4 Dummy\+Translate\+::one\+Instruction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&}]{emit,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Transform a single machine instruction into pcode. 
+
+This is the main interface to the pcode translation engine. The {\itshape dump} method in the {\itshape emit} object is invoked exactly once for each pcode operation in the translation for the machine instruction at the given address. This routine can throw either
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{structUnimplError}{Unimpl\+Error}} or
+\item \mbox{\hyperlink{structBadDataError}{Bad\+Data\+Error}}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em emit} & is the tailored pcode emitting object \\
+\hline
+{\em baseaddr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes in the machine instruction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_a1737782c38ee43de62ae2e7572321fc9}{Translate}}.
+
+\mbox{\Hypertarget{classDummyTranslate_a7c3c565169bd97e37b568985c757ffdd}\label{classDummyTranslate_a7c3c565169bd97e37b568985c757ffdd}} 
+\index{DummyTranslate@{DummyTranslate}!printAssembly@{printAssembly}}
+\index{printAssembly@{printAssembly}!DummyTranslate@{DummyTranslate}}
+\doxysubsubsection{\texorpdfstring{printAssembly()}{printAssembly()}}
+{\footnotesize\ttfamily virtual int4 Dummy\+Translate\+::print\+Assembly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} \&}]{emit,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Disassemble a single machine instruction. 
+
+This is the main interface to the disassembler for the processor. It disassembles a single instruction and returns the result to the application via the {\itshape dump} method in the {\itshape emit} object. 
+\begin{DoxyParams}{Parameters}
+{\em emit} & is the disassembly emitting object \\
+\hline
+{\em baseaddr} & is the address of the machine instruction to disassemble \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{Translate}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+rulecompile.\+hh\end{DoxyCompactItemize}

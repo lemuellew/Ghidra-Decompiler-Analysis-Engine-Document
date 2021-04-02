@@ -1,0 +1,54 @@
+\hypertarget{classLoadGuard}{}\doxysection{Load\+Guard Class Reference}
+\label{classLoadGuard}\index{LoadGuard@{LoadGuard}}
+
+
+Description of a L\+O\+AD operation that needs to be guarded.  
+
+
+
+
+{\ttfamily \#include $<$heritage.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classLoadGuard_a9deeb5c054ba84b4f0025d62eb4882d0}{is\+Guarded}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} guard apply to the given address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classLoadGuard_a856a6ac40847cd2931af8dbd470881cb}\label{classLoadGuard_a856a6ac40847cd2931af8dbd470881cb}} 
+class {\bfseries Heritage}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Description of a L\+O\+AD operation that needs to be guarded. 
+
+\mbox{\hyperlink{classHeritage}{Heritage}} maintains a list of C\+P\+U\+I\+\_\+\+L\+O\+AD ops that reference the stack dynamically. These can potentially alias stack Varnodes, so we maintain what (possibly limited) information we known about the range of stack addresses that can be referenced. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLoadGuard_a9deeb5c054ba84b4f0025d62eb4882d0}\label{classLoadGuard_a9deeb5c054ba84b4f0025d62eb4882d0}} 
+\index{LoadGuard@{LoadGuard}!isGuarded@{isGuarded}}
+\index{isGuarded@{isGuarded}!LoadGuard@{LoadGuard}}
+\doxysubsubsection{\texorpdfstring{isGuarded()}{isGuarded()}}
+{\footnotesize\ttfamily bool Load\+Guard\+::is\+Guarded (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Does {\bfseries{this}} guard apply to the given address. 
+
+Check if the address falls within the range defined by {\bfseries{this}} 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the address is contained 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{heritage_8hh}{heritage.\+hh}}\item 
+heritage.\+cc\end{DoxyCompactItemize}

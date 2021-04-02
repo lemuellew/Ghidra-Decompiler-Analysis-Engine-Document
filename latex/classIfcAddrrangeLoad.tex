@@ -1,0 +1,62 @@
+\hypertarget{classIfcAddrrangeLoad}{}\doxysection{Ifc\+Addrrange\+Load Class Reference}
+\label{classIfcAddrrangeLoad}\index{IfcAddrrangeLoad@{IfcAddrrangeLoad}}
+
+
+Create a new function at an address\+: {\ttfamily load addr $<$address$>$ \mbox{[}$<$funcname$>$\mbox{]}}  
+
+
+
+
+Inheritance diagram for Ifc\+Addrrange\+Load\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcAddrrangeLoad__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Addrrange\+Load\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcAddrrangeLoad__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcAddrrangeLoad_ae9d83583bd9d087d4b821dd3055968d0}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Create a new function at an address\+: {\ttfamily load addr $<$address$>$ \mbox{[}$<$funcname$>$\mbox{]}} 
+
+A new function is created at the provided address. If a name is provided, this becomes the function symbol, otherwise a default name is generated. The function becomes {\itshape current} for the interface, and if bytes are present, raw p-\/code and control-\/flow are generated. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcAddrrangeLoad_ae9d83583bd9d087d4b821dd3055968d0}\label{classIfcAddrrangeLoad_ae9d83583bd9d087d4b821dd3055968d0}} 
+\index{IfcAddrrangeLoad@{IfcAddrrangeLoad}!execute@{execute}}
+\index{execute@{execute}!IfcAddrrangeLoad@{IfcAddrrangeLoad}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Addrrange\+Load\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

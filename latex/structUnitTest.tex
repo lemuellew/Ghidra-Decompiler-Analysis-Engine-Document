@@ -1,0 +1,85 @@
+\hypertarget{structUnitTest}{}\doxysection{Unit\+Test Struct Reference}
+\label{structUnitTest}\index{UnitTest@{UnitTest}}
+
+
+Simple unit test class.  
+
+
+
+
+{\ttfamily \#include $<$test.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structUnitTest_a80827b904ac0476e04a0cbd6515931ee}{Unit\+Test}} (const std\+::string \&\mbox{\hyperlink{structUnitTest_ada619c08874400064149da34ab46990d}{name}}, \mbox{\hyperlink{test_8hh_ade4579b4751b72d896e109600c33b70c}{testfunc\+\_\+t}} \mbox{\hyperlink{structUnitTest_a3b867e9dedd19e69ae8610c4319db525}{func}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{structUnitTest_ac3027b4d9fd45f681b9a896721227117}{run}} (std\+::set$<$ std\+::string $>$ \&test\+Names)
+\begin{DoxyCompactList}\small\item\em Run all the instantiated tests. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structUnitTest_ada619c08874400064149da34ab46990d}\label{structUnitTest_ada619c08874400064149da34ab46990d}} 
+std\+::string \mbox{\hyperlink{structUnitTest_ada619c08874400064149da34ab46990d}{name}}
+\begin{DoxyCompactList}\small\item\em Name of the test. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structUnitTest_a3b867e9dedd19e69ae8610c4319db525}\label{structUnitTest_a3b867e9dedd19e69ae8610c4319db525}} 
+\mbox{\hyperlink{test_8hh_ade4579b4751b72d896e109600c33b70c}{testfunc\+\_\+t}} \mbox{\hyperlink{structUnitTest_a3b867e9dedd19e69ae8610c4319db525}{func}}
+\begin{DoxyCompactList}\small\item\em Call-\/back function executing the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structUnitTest_a50a42e502e725312139fda07521eb094}\label{structUnitTest_a50a42e502e725312139fda07521eb094}} 
+static std\+::vector$<$ \mbox{\hyperlink{structUnitTest}{Unit\+Test}} $\ast$ $>$ \mbox{\hyperlink{structUnitTest_a50a42e502e725312139fda07521eb094}{tests}}
+\begin{DoxyCompactList}\small\item\em The collection of test objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Simple unit test class. 
+
+The macro T\+E\+ST instantiates this object with a name and function pointer. The static \mbox{\hyperlink{structUnitTest_ac3027b4d9fd45f681b9a896721227117}{run()}} method calls all the function pointers of all instantiated objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structUnitTest_a80827b904ac0476e04a0cbd6515931ee}\label{structUnitTest_a80827b904ac0476e04a0cbd6515931ee}} 
+\index{UnitTest@{UnitTest}!UnitTest@{UnitTest}}
+\index{UnitTest@{UnitTest}!UnitTest@{UnitTest}}
+\doxysubsubsection{\texorpdfstring{UnitTest()}{UnitTest()}}
+{\footnotesize\ttfamily Unit\+Test\+::\+Unit\+Test (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{test_8hh_ade4579b4751b72d896e109600c33b70c}{testfunc\+\_\+t}}}]{func }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & is the identifier for the test \\
+\hline
+{\em func} & is a call-\/back function that executes the test \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structUnitTest_ac3027b4d9fd45f681b9a896721227117}\label{structUnitTest_ac3027b4d9fd45f681b9a896721227117}} 
+\index{UnitTest@{UnitTest}!run@{run}}
+\index{run@{run}!UnitTest@{UnitTest}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Unit\+Test\+::run (\begin{DoxyParamCaption}\item[{std\+::set$<$ std\+::string $>$ \&}]{test\+Names }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Run all the instantiated tests. 
+
+Run all the tests unless a non-\/empty set of names is passed in. In which case, only the named tests in the set are run. 
+\begin{DoxyParams}{Parameters}
+{\em test\+Names} & is the set of names \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{test_8hh}{test.\+hh}}\item 
+test.\+cc\end{DoxyCompactItemize}

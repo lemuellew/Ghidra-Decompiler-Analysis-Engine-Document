@@ -1,0 +1,62 @@
+\hypertarget{classIfcMapfunction}{}\doxysection{Ifc\+Mapfunction Class Reference}
+\label{classIfcMapfunction}\index{IfcMapfunction@{IfcMapfunction}}
+
+
+Create a new function\+: {\ttfamily map function $<$address$>$ \mbox{[}$<$functionname$>$\mbox{]} \mbox{[}nocode\mbox{]}}  
+
+
+
+
+Inheritance diagram for Ifc\+Mapfunction\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcMapfunction__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Mapfunction\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcMapfunction__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcMapfunction_acf9d7edac75150821f0b9c6318e11dea}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Create a new function\+: {\ttfamily map function $<$address$>$ \mbox{[}$<$functionname$>$\mbox{]} \mbox{[}nocode\mbox{]}} 
+
+Create a new function symbol at the provided address. A symbol name can be provided, otherwise a default name is selected. The new function becomes {\itshape current} for the console. The provided address gives the entry point for the function. Unless the final keyword \char`\"{}nocode\char`\"{} is provided, the underlying bytes in the load image are used for any future disassembly or decompilation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcMapfunction_acf9d7edac75150821f0b9c6318e11dea}\label{classIfcMapfunction_acf9d7edac75150821f0b9c6318e11dea}} 
+\index{IfcMapfunction@{IfcMapfunction}!execute@{execute}}
+\index{execute@{execute}!IfcMapfunction@{IfcMapfunction}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Mapfunction\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\hypertarget{classIfcMaplabel}{}\doxysection{Ifc\+Maplabel Class Reference}
+\label{classIfcMaplabel}\index{IfcMaplabel@{IfcMaplabel}}
+
+
+Create a code label\+: {\ttfamily map label $<$name$>$ $<$address$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Maplabel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcMaplabel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Maplabel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcMaplabel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcMaplabel_a14a4b538cfef0467342d45812b5dfbdd}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Create a code label\+: {\ttfamily map label $<$name$>$ $<$address$>$} 
+
+Label a specific code address. This creates a \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} which is usually an internal control-\/flow target. The symbol is local to the {\itshape current} function if it exists, otherwise the symbol is added to the global scope. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcMaplabel_a14a4b538cfef0467342d45812b5dfbdd}\label{classIfcMaplabel_a14a4b538cfef0467342d45812b5dfbdd}} 
+\index{IfcMaplabel@{IfcMaplabel}!execute@{execute}}
+\index{execute@{execute}!IfcMaplabel@{IfcMaplabel}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Maplabel\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

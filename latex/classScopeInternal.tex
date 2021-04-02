@@ -1,0 +1,729 @@
+\hypertarget{classScopeInternal}{}\doxysection{Scope\+Internal Class Reference}
+\label{classScopeInternal}\index{ScopeInternal@{ScopeInternal}}
+
+
+An in-\/memory implementation of the \mbox{\hyperlink{classScope}{Scope}} interface.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+
+
+Inheritance diagram for Scope\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classScopeInternal__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Scope\+Internal\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classScopeInternal__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classScopeInternal_ab1fe90d86cd92ba9f2b2aa61aab8c8b4}{Scope\+Internal}} (uint8 id, const string \&nm, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g)
+\begin{DoxyCompactList}\small\item\em Construct the \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a5106f6b06392ff50390bc4cc253ff78c}\label{classScopeInternal_a5106f6b06392ff50390bc4cc253ff78c}} 
+\mbox{\hyperlink{classScopeInternal_a5106f6b06392ff50390bc4cc253ff78c}{Scope\+Internal}} (uint8 id, const string \&nm, \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, \mbox{\hyperlink{classScope}{Scope}} $\ast$own)
+\begin{DoxyCompactList}\small\item\em Construct as a cache. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a3d5c9c8e68da7f36ae7e0e228b4734d2}\label{classScopeInternal_a3d5c9c8e68da7f36ae7e0e228b4734d2}} 
+virtual void \mbox{\hyperlink{classScopeInternal_a3d5c9c8e68da7f36ae7e0e228b4734d2}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all symbols from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeInternal_a7093bf1f5daeac84fc971fc6ab352224}{category\+Sanity}} (void)
+\begin{DoxyCompactList}\small\item\em Make sure \mbox{\hyperlink{classSymbol}{Symbol}} categories are sane. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a4139d0dd5d98849bd42291246cdb2f9a}\label{classScopeInternal_a4139d0dd5d98849bd42291246cdb2f9a}} 
+virtual void \mbox{\hyperlink{classScopeInternal_a4139d0dd5d98849bd42291246cdb2f9a}{clear\+Category}} (int4 cat)
+\begin{DoxyCompactList}\small\item\em Clear all symbols of the given category from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_ab95e3712f0b536e014bfb3c8d3d2287a}\label{classScopeInternal_ab95e3712f0b536e014bfb3c8d3d2287a}} 
+virtual void \mbox{\hyperlink{classScopeInternal_ab95e3712f0b536e014bfb3c8d3d2287a}{clear\+Unlocked}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all unlocked symbols from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_ac73cc9a432d1e7a383c9758486ffe58d}\label{classScopeInternal_ac73cc9a432d1e7a383c9758486ffe58d}} 
+virtual void \mbox{\hyperlink{classScopeInternal_ac73cc9a432d1e7a383c9758486ffe58d}{clear\+Unlocked\+Category}} (int4 cat)
+\begin{DoxyCompactList}\small\item\em Clear unlocked symbols of the given category from {\bfseries{this}} scope. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeInternal_a97acebc4cfd2fc9aa3c87f8b63fd07c2}{adjust\+Caches}} (void)
+\begin{DoxyCompactList}\small\item\em Let scopes internally adjust any caches. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_ace6700a82166765cf943bb95f1efeb10}\label{classScopeInternal_ace6700a82166765cf943bb95f1efeb10}} 
+virtual \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \mbox{\hyperlink{classScopeInternal_ace6700a82166765cf943bb95f1efeb10}{begin}} (void) const
+\begin{DoxyCompactList}\small\item\em Beginning iterator to mapped Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a47df37673b1cea67ac1b4980037eafe0}\label{classScopeInternal_a47df37673b1cea67ac1b4980037eafe0}} 
+virtual \mbox{\hyperlink{classMapIterator}{Map\+Iterator}} \mbox{\hyperlink{classScopeInternal_a47df37673b1cea67ac1b4980037eafe0}{end}} (void) const
+\begin{DoxyCompactList}\small\item\em Ending iterator to mapped Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a3e1111265c90754ecafd2331f9c7a684}\label{classScopeInternal_a3e1111265c90754ecafd2331f9c7a684}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classScopeInternal_a3e1111265c90754ecafd2331f9c7a684}{begin\+Dynamic}} (void) const
+\begin{DoxyCompactList}\small\item\em Beginning iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_ad1690a1aacfecff51b6d5832cccafd95}\label{classScopeInternal_ad1690a1aacfecff51b6d5832cccafd95}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::const\+\_\+iterator \mbox{\hyperlink{classScopeInternal_ad1690a1aacfecff51b6d5832cccafd95}{end\+Dynamic}} (void) const
+\begin{DoxyCompactList}\small\item\em Ending iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_afc5849bd91bd3eb1aa65900888317f98}\label{classScopeInternal_afc5849bd91bd3eb1aa65900888317f98}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::iterator \mbox{\hyperlink{classScopeInternal_afc5849bd91bd3eb1aa65900888317f98}{begin\+Dynamic}} (void)
+\begin{DoxyCompactList}\small\item\em Beginning iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a705f7003cbadcddbb621b951573c61e7}\label{classScopeInternal_a705f7003cbadcddbb621b951573c61e7}} 
+virtual list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$\+::iterator \mbox{\hyperlink{classScopeInternal_a705f7003cbadcddbb621b951573c61e7}{end\+Dynamic}} (void)
+\begin{DoxyCompactList}\small\item\em Ending iterator to dynamic Symbol\+Entrys. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a043019aabe6e66d9be2698d0caae1291}\label{classScopeInternal_a043019aabe6e66d9be2698d0caae1291}} 
+virtual void \mbox{\hyperlink{classScopeInternal_a043019aabe6e66d9be2698d0caae1291}{remove\+Symbol\+Mappings}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$symbol)
+\begin{DoxyCompactList}\small\item\em Remove all Symbol\+Entrys from the given \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a77c1ceb048a903b047c1e52108890979}\label{classScopeInternal_a77c1ceb048a903b047c1e52108890979}} 
+virtual void \mbox{\hyperlink{classScopeInternal_a77c1ceb048a903b047c1e52108890979}{remove\+Symbol}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$symbol)
+\begin{DoxyCompactList}\small\item\em Remove the given \mbox{\hyperlink{classSymbol}{Symbol}} from {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_ada63ff8f4efed6fd4605441a0150ae6f}\label{classScopeInternal_ada63ff8f4efed6fd4605441a0150ae6f}} 
+virtual void \mbox{\hyperlink{classScopeInternal_ada63ff8f4efed6fd4605441a0150ae6f}{rename\+Symbol}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, const string \&newname)
+\begin{DoxyCompactList}\small\item\em Rename a \mbox{\hyperlink{classSymbol}{Symbol}} within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeInternal_a9711a8084e1ac5c4417a4452c96a36b7}{retype\+Symbol}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Change the data-\/type of a \mbox{\hyperlink{classSymbol}{Symbol}} within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a320fb817d3062994cb994e38a45fc0e1}\label{classScopeInternal_a320fb817d3062994cb994e38a45fc0e1}} 
+virtual void \mbox{\hyperlink{classScopeInternal_a320fb817d3062994cb994e38a45fc0e1}{set\+Attribute}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 attr)
+\begin{DoxyCompactList}\small\item\em Set boolean \mbox{\hyperlink{classVarnode}{Varnode}} properties on a \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a8c42cfc4ea5d359bd11d1251ef8d21d7}\label{classScopeInternal_a8c42cfc4ea5d359bd11d1251ef8d21d7}} 
+virtual void \mbox{\hyperlink{classScopeInternal_a8c42cfc4ea5d359bd11d1251ef8d21d7}{clear\+Attribute}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 attr)
+\begin{DoxyCompactList}\small\item\em Clear boolean \mbox{\hyperlink{classVarnode}{Varnode}} properties on a \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a4f5d61b1f41e067018e1cc4ecc044536}\label{classScopeInternal_a4f5d61b1f41e067018e1cc4ecc044536}} 
+virtual void \mbox{\hyperlink{classScopeInternal_a4f5d61b1f41e067018e1cc4ecc044536}{set\+Display\+Format}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 attr)
+\begin{DoxyCompactList}\small\item\em Set the display format for a \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeInternal_ac256d087718065edb1c3a96fbfdf7a33}{find\+Addr}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint) const
+\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classSymbol}{Symbol}} at a given address and {\bfseries{usepoint}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeInternal_ae1eedf2f27fd8b0a7431568c4e4e2994}{find\+Container}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint) const
+\begin{DoxyCompactList}\small\item\em Find the smallest \mbox{\hyperlink{classSymbol}{Symbol}} containing the given memory range. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeInternal_a27135ecccccc6784b292a354d6801289}{find\+Closest\+Fit}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint) const
+\begin{DoxyCompactList}\small\item\em Find \mbox{\hyperlink{classSymbol}{Symbol}} which is the closest fit to the given memory range. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ \mbox{\hyperlink{classScopeInternal_a03a52c629c51ad660eec8d10cf7f92aa}{find\+Function}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Find the function starting at the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$ \mbox{\hyperlink{classScopeInternal_a7e440965cfb5642bcc751a622e5ec58d}{find\+External\+Ref}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Find an {\itshape external} {\itshape reference} at the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} $\ast$ \mbox{\hyperlink{classScopeInternal_a602029280a3bc0dac8aac016ec934d5b}{find\+Code\+Label}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Find a label \mbox{\hyperlink{classSymbol}{Symbol}} at the given address. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeInternal_a3c241113085be88a74f73d2431de72f3}{find\+Overlap}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 size) const
+\begin{DoxyCompactList}\small\item\em Find first \mbox{\hyperlink{classSymbol}{Symbol}} overlapping the given memory range. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeInternal_a06599bc2d7c1ccfd18f0e91a5ee956ca}{find\+By\+Name}} (const string \&\mbox{\hyperlink{classScope_abb4900f6409e8a82c1b1cea827e4e2c5}{name}}, vector$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ $>$ \&res) const
+\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classSymbol}{Symbol}} by name within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classScopeInternal_ad92dba88239145749dd5b33820828f84}{is\+Name\+Used}} (const string \&nm, const \mbox{\hyperlink{classScope}{Scope}} $\ast$op2) const
+\begin{DoxyCompactList}\small\item\em Check if the given name is occurs within the given scope path. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ \mbox{\hyperlink{classScopeInternal_acf54c42b2ce7edfa37f9bf1223bc2840}{resolve\+External\+Ref\+Function}} (\mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$sym) const
+\begin{DoxyCompactList}\small\item\em Convert an {\itshape external} {\itshape reference} to the referenced function. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classScopeInternal_a6009aeaf0d3973344438fb412adccd00}{build\+Variable\+Name}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&pc, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, int4 \&index, uint4 flags) const
+\begin{DoxyCompactList}\small\item\em Given an address and data-\/type, build a suitable generic symbol name. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classScopeInternal_a17225ae39210e0dbf1efb1a3ee847d72}{build\+Undefined\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Build a formal {\bfseries{undefined}} name, used internally when a \mbox{\hyperlink{classSymbol}{Symbol}} is not given a name. \end{DoxyCompactList}\item 
+virtual string \mbox{\hyperlink{classScopeInternal_a193e6fb792e7cad6e451c8ecf2f7e589}{make\+Name\+Unique}} (const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Produce a version of the given symbol name that won\textquotesingle{}t collide with other names in {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_af73cb738b4a29cf9aa076ce382ff110f}\label{classScopeInternal_af73cb738b4a29cf9aa076ce382ff110f}} 
+virtual void \mbox{\hyperlink{classScopeInternal_af73cb738b4a29cf9aa076ce382ff110f}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Write out {\bfseries{this}} as a $<$scope$>$ X\+ML tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_ad79bd78299b2bea6c0f4221682e81b07}\label{classScopeInternal_ad79bd78299b2bea6c0f4221682e81b07}} 
+virtual void \mbox{\hyperlink{classScopeInternal_ad79bd78299b2bea6c0f4221682e81b07}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}} from a $<$scope$>$ X\+ML tag. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_aac820e63b0d1739b9f14e15898fc9a9e}\label{classScopeInternal_aac820e63b0d1739b9f14e15898fc9a9e}} 
+virtual void \mbox{\hyperlink{classScopeInternal_aac820e63b0d1739b9f14e15898fc9a9e}{print\+Entries}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Dump a description of all \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects to a stream. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classScopeInternal_a4ccbbc37afa4eee7c6cce98dbd3a5bff}{get\+Category\+Size}} (int4 cat) const
+\begin{DoxyCompactList}\small\item\em Get the number of Symbols in the given category. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ \mbox{\hyperlink{classScopeInternal_af0414fde624b56947bfa25863ea1a01e}{get\+Category\+Symbol}} (int4 cat, int4 ind) const
+\begin{DoxyCompactList}\small\item\em Retrieve a \mbox{\hyperlink{classSymbol}{Symbol}} by index within a specific {\itshape category}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeInternal_aee7ec7a7253a5cdcfa61b88f01e9918d}{set\+Category}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, int4 cat, int4 ind)
+\begin{DoxyCompactList}\small\item\em Set the {\itshape category} and index for the given \mbox{\hyperlink{classSymbol}{Symbol}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classScopeInternal_ab78d1338500ed2ef280cdf4580e8f7dc}{assign\+Default\+Names}} (int4 \&base)
+\begin{DoxyCompactList}\small\item\em Assign a default name (via build\+Variable\+Name) to any unnamed symbol. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScopeInternal_a92ae6f2e9145b34b7e6049b7149d8431}\label{classScopeInternal_a92ae6f2e9145b34b7e6049b7149d8431}} 
+virtual \mbox{\hyperlink{classScope}{Scope}} $\ast$ \mbox{\hyperlink{classScopeInternal_a92ae6f2e9145b34b7e6049b7149d8431}{build\+Sub\+Scope}} (uint8 id, const string \&nm)
+\begin{DoxyCompactList}\small\item\em Build an unattached \mbox{\hyperlink{classScope}{Scope}} to be associated as a sub-\/scope of {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classScopeInternal_af252bcb614abeea3af1750442087304a}{add\+Symbol\+Internal}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym)
+\begin{DoxyCompactList}\small\item\em Put a \mbox{\hyperlink{classSymbol}{Symbol}} into the name map. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeInternal_a3b6e20fcb0624056020f2fc20d0a06ee}{add\+Map\+Internal}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 exfl, const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 off, int4 sz, const \mbox{\hyperlink{classRangeList}{Range\+List}} \&uselim)
+\begin{DoxyCompactList}\small\item\em Create a new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} for a \mbox{\hyperlink{classSymbol}{Symbol}} given a memory range. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ \mbox{\hyperlink{classScopeInternal_abd7bd6f565efa0e9eb5a7415fab0fca5}{add\+Dynamic\+Map\+Internal}} (\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$sym, uint4 exfl, uint8 hash, int4 off, int4 sz, const \mbox{\hyperlink{classRangeList}{Range\+List}} \&uselim)
+\begin{DoxyCompactList}\small\item\em Create a new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} for a \mbox{\hyperlink{classSymbol}{Symbol}} given a dynamic hash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classScopeInternal_ad4084595095b578e1c8fd25301ffb02d}\label{classScopeInternal_ad4084595095b578e1c8fd25301ffb02d}} 
+\mbox{\hyperlink{database_8hh_a6ed1db9b39a7f86a7a00b392bbe3f0d1}{Symbol\+Name\+Tree}} \mbox{\hyperlink{classScopeInternal_ad4084595095b578e1c8fd25301ffb02d}{nametree}}
+\begin{DoxyCompactList}\small\item\em The set of \mbox{\hyperlink{classSymbol}{Symbol}} objects, sorted by name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_ab5658fe9f8073010df73298690099872}\label{classScopeInternal_ab5658fe9f8073010df73298690099872}} 
+vector$<$ \mbox{\hyperlink{database_8hh_a44a8ea0c0009b316b2651d374e5d4260}{Entry\+Map}} $\ast$ $>$ \mbox{\hyperlink{classScopeInternal_ab5658fe9f8073010df73298690099872}{maptable}}
+\begin{DoxyCompactList}\small\item\em Rangemaps of \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}, one map for each address space. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a52896f135c4c695914fba0e28d198308}\label{classScopeInternal_a52896f135c4c695914fba0e28d198308}} 
+vector$<$ vector$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ $>$ $>$ \mbox{\hyperlink{classScopeInternal_a52896f135c4c695914fba0e28d198308}{category}}
+\begin{DoxyCompactList}\small\item\em References to \mbox{\hyperlink{classSymbol}{Symbol}} objects organized by category. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a74bb56d748daae518b88b73d8f687d75}\label{classScopeInternal_a74bb56d748daae518b88b73d8f687d75}} 
+list$<$ \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $>$ \mbox{\hyperlink{classScopeInternal_a74bb56d748daae518b88b73d8f687d75}{dynamicentry}}
+\begin{DoxyCompactList}\small\item\em Dynamic symbol entries. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a0f2337aa8ad89ac22fd4b0860b929772}\label{classScopeInternal_a0f2337aa8ad89ac22fd4b0860b929772}} 
+\mbox{\hyperlink{database_8hh_a6ed1db9b39a7f86a7a00b392bbe3f0d1}{Symbol\+Name\+Tree}} \mbox{\hyperlink{classScopeInternal_a0f2337aa8ad89ac22fd4b0860b929772}{multi\+Entry\+Set}}
+\begin{DoxyCompactList}\small\item\em Set of symbols with multiple entries. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classScopeInternal_a8bbea99d80b335619df0af68d9bf7926}\label{classScopeInternal_a8bbea99d80b335619df0af68d9bf7926}} 
+uint8 \mbox{\hyperlink{classScopeInternal_a8bbea99d80b335619df0af68d9bf7926}{next\+Unique\+Id}}
+\begin{DoxyCompactList}\small\item\em Next available symbol id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An in-\/memory implementation of the \mbox{\hyperlink{classScope}{Scope}} interface. 
+
+This can act as a stand-\/alone \mbox{\hyperlink{classScope}{Scope}} object or serve as an in-\/memory cache for another implementation. This implements a {\bfseries{nametree}}, which is a a set of \mbox{\hyperlink{classSymbol}{Symbol}} objects (the set owns the \mbox{\hyperlink{classSymbol}{Symbol}} objects). It also implements a {\bfseries{maptable}}, which is a list of rangemaps that own the \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} objects. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classScopeInternal_ab1fe90d86cd92ba9f2b2aa61aab8c8b4}\label{classScopeInternal_ab1fe90d86cd92ba9f2b2aa61aab8c8b4}} 
+\index{ScopeInternal@{ScopeInternal}!ScopeInternal@{ScopeInternal}}
+\index{ScopeInternal@{ScopeInternal}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{ScopeInternal()}{ScopeInternal()}}
+{\footnotesize\ttfamily Scope\+Internal\+::\+Scope\+Internal (\begin{DoxyParamCaption}\item[{uint8}]{id,  }\item[{const string \&}]{nm,  }\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{g }\end{DoxyParamCaption})}
+
+
+
+Construct the \mbox{\hyperlink{classScope}{Scope}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the globally unique id associated with the scope \\
+\hline
+{\em nm} & is the name of the \mbox{\hyperlink{classScope}{Scope}} \\
+\hline
+{\em g} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} it belongs to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classScopeInternal_abd7bd6f565efa0e9eb5a7415fab0fca5}\label{classScopeInternal_abd7bd6f565efa0e9eb5a7415fab0fca5}} 
+\index{ScopeInternal@{ScopeInternal}!addDynamicMapInternal@{addDynamicMapInternal}}
+\index{addDynamicMapInternal@{addDynamicMapInternal}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{addDynamicMapInternal()}{addDynamicMapInternal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Internal\+::add\+Dynamic\+Map\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{uint4}]{exfl,  }\item[{uint8}]{hash,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{uselim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Create a new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} for a \mbox{\hyperlink{classSymbol}{Symbol}} given a dynamic hash. 
+
+The \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} is specified in terms of a {\bfseries{hash}} and {\bfseries{usepoint}}, which describe how to find the temporary \mbox{\hyperlink{classVarnode}{Varnode}} holding the symbol value. 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} being mapped \\
+\hline
+{\em exfl} & are any boolean \mbox{\hyperlink{classVarnode}{Varnode}} properties \\
+\hline
+{\em hash} & is the given dynamic hash \\
+\hline
+{\em off} & is the byte offset of the new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} (relative to the whole \mbox{\hyperlink{classSymbol}{Symbol}}) \\
+\hline
+{\em sz} & is the number of bytes occupied by the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em uselim} & is the given {\bfseries{usepoint}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly created \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a5d3b5f792b07b023d43309472cd6f4d9}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a3b6e20fcb0624056020f2fc20d0a06ee}\label{classScopeInternal_a3b6e20fcb0624056020f2fc20d0a06ee}} 
+\index{ScopeInternal@{ScopeInternal}!addMapInternal@{addMapInternal}}
+\index{addMapInternal@{addMapInternal}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{addMapInternal()}{addMapInternal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Internal\+::add\+Map\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{uint4}]{exfl,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{const \mbox{\hyperlink{classRangeList}{Range\+List}} \&}]{uselim }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Create a new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} for a \mbox{\hyperlink{classSymbol}{Symbol}} given a memory range. 
+
+The \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} is specified in terms of a memory range and {\bfseries{usepoint}} 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} being mapped \\
+\hline
+{\em exfl} & are any boolean \mbox{\hyperlink{classVarnode}{Varnode}} properties specific to the memory range \\
+\hline
+{\em addr} & is the starting address of the given memory range \\
+\hline
+{\em off} & is the byte offset of the new \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} (relative to the whole \mbox{\hyperlink{classSymbol}{Symbol}}) \\
+\hline
+{\em sz} & is the number of bytes in the range \\
+\hline
+{\em uselim} & is the given {\bfseries{usepoint}} (which may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly created \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_aec0451f131ea214a174e00a434be36e9}{Scope}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classScopeGhidraNamespace_aa172c9a51885ac46f20967d68ca2a24c}{Scope\+Ghidra\+Namespace}}.
+
+\mbox{\Hypertarget{classScopeInternal_af252bcb614abeea3af1750442087304a}\label{classScopeInternal_af252bcb614abeea3af1750442087304a}} 
+\index{ScopeInternal@{ScopeInternal}!addSymbolInternal@{addSymbolInternal}}
+\index{addSymbolInternal@{addSymbolInternal}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{addSymbolInternal()}{addSymbolInternal()}}
+{\footnotesize\ttfamily void Scope\+Internal\+::add\+Symbol\+Internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Put a \mbox{\hyperlink{classSymbol}{Symbol}} into the name map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the preconstructed \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_a66d3198f4bd28cf9e8a2a6bc00d065d8}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a97acebc4cfd2fc9aa3c87f8b63fd07c2}\label{classScopeInternal_a97acebc4cfd2fc9aa3c87f8b63fd07c2}} 
+\index{ScopeInternal@{ScopeInternal}!adjustCaches@{adjustCaches}}
+\index{adjustCaches@{adjustCaches}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{adjustCaches()}{adjustCaches()}}
+{\footnotesize\ttfamily void Scope\+Internal\+::adjust\+Caches (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Let scopes internally adjust any caches. 
+
+This is called once after \mbox{\hyperlink{classArchitecture}{Architecture}} configuration is complete. 
+
+Implements \mbox{\hyperlink{classScope_a6654289ce3a02ab373eb96e78818d3ca}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_ab78d1338500ed2ef280cdf4580e8f7dc}\label{classScopeInternal_ab78d1338500ed2ef280cdf4580e8f7dc}} 
+\index{ScopeInternal@{ScopeInternal}!assignDefaultNames@{assignDefaultNames}}
+\index{assignDefaultNames@{assignDefaultNames}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{assignDefaultNames()}{assignDefaultNames()}}
+{\footnotesize\ttfamily void Scope\+Internal\+::assign\+Default\+Names (\begin{DoxyParamCaption}\item[{int4 \&}]{base }\end{DoxyParamCaption})}
+
+
+
+Assign a default name (via build\+Variable\+Name) to any unnamed symbol. 
+
+Run through all the symbols whose name is undefined. Build a variable name, uniquify it, and rename the variable. 
+\begin{DoxyParams}{Parameters}
+{\em base} & is the base index to start at for generating generic names \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classScopeInternal_a17225ae39210e0dbf1efb1a3ee847d72}\label{classScopeInternal_a17225ae39210e0dbf1efb1a3ee847d72}} 
+\index{ScopeInternal@{ScopeInternal}!buildUndefinedName@{buildUndefinedName}}
+\index{buildUndefinedName@{buildUndefinedName}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{buildUndefinedName()}{buildUndefinedName()}}
+{\footnotesize\ttfamily string Scope\+Internal\+::build\+Undefined\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Build a formal {\bfseries{undefined}} name, used internally when a \mbox{\hyperlink{classSymbol}{Symbol}} is not given a name. 
+
+\begin{DoxyReturn}{Returns}
+a special internal name that won\textquotesingle{}t collide with other names in {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_ac47d5c1c949be84a27a138be0febacb2}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a6009aeaf0d3973344438fb412adccd00}\label{classScopeInternal_a6009aeaf0d3973344438fb412adccd00}} 
+\index{ScopeInternal@{ScopeInternal}!buildVariableName@{buildVariableName}}
+\index{buildVariableName@{buildVariableName}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{buildVariableName()}{buildVariableName()}}
+{\footnotesize\ttfamily string Scope\+Internal\+::build\+Variable\+Name (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{pc,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{int4 \&}]{index,  }\item[{uint4}]{flags }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Given an address and data-\/type, build a suitable generic symbol name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em pc} & is the address at which the name is getting used \\
+\hline
+{\em ct} & is a data-\/type used to inform the name \\
+\hline
+{\em index} & is a reference to an index used to make the name unique, which will be updated \\
+\hline
+{\em flags} & are boolean properties of the variable we need the name for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new variable name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a925baecb33b6f0d9212e42c1b48a64ba}{Scope}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classScopeLocal_a7c86528490f519a64d44ae6dc8438393}{Scope\+Local}}.
+
+\mbox{\Hypertarget{classScopeInternal_a7093bf1f5daeac84fc971fc6ab352224}\label{classScopeInternal_a7093bf1f5daeac84fc971fc6ab352224}} 
+\index{ScopeInternal@{ScopeInternal}!categorySanity@{categorySanity}}
+\index{categorySanity@{categorySanity}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{categorySanity()}{categorySanity()}}
+{\footnotesize\ttfamily void Scope\+Internal\+::category\+Sanity (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make sure \mbox{\hyperlink{classSymbol}{Symbol}} categories are sane. 
+
+Look for N\+U\+LL entries in the category tables. If there are, clear out the entire category, marking all symbols as uncategorized \mbox{\Hypertarget{classScopeInternal_ac256d087718065edb1c3a96fbfdf7a33}\label{classScopeInternal_ac256d087718065edb1c3a96fbfdf7a33}} 
+\index{ScopeInternal@{ScopeInternal}!findAddr@{findAddr}}
+\index{findAddr@{findAddr}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findAddr()}{findAddr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Internal\+::find\+Addr (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find a \mbox{\hyperlink{classSymbol}{Symbol}} at a given address and {\bfseries{usepoint}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+{\em usepoint} & is the point at which the \mbox{\hyperlink{classSymbol}{Symbol}} is accessed (may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_aae4ea61f9a55ddfc9defd8548654c8e5}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a06599bc2d7c1ccfd18f0e91a5ee956ca}\label{classScopeInternal_a06599bc2d7c1ccfd18f0e91a5ee956ca}} 
+\index{ScopeInternal@{ScopeInternal}!findByName@{findByName}}
+\index{findByName@{findByName}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findByName()}{findByName()}}
+{\footnotesize\ttfamily void Scope\+Internal\+::find\+By\+Name (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{vector$<$ \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ $>$ \&}]{res }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find a \mbox{\hyperlink{classSymbol}{Symbol}} by name within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. 
+
+If there are multiple Symbols with the same name, all are passed back. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name to search for \\
+\hline
+{\em res} & will contain any matching Symbols \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_a979222d28577e6e8d07e35f12d38bff7}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a27135ecccccc6784b292a354d6801289}\label{classScopeInternal_a27135ecccccc6784b292a354d6801289}} 
+\index{ScopeInternal@{ScopeInternal}!findClosestFit@{findClosestFit}}
+\index{findClosestFit@{findClosestFit}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findClosestFit()}{findClosestFit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Internal\+::find\+Closest\+Fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find \mbox{\hyperlink{classSymbol}{Symbol}} which is the closest fit to the given memory range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given memory range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+{\em usepoint} & is the point at which the \mbox{\hyperlink{classSymbol}{Symbol}} is accessed (may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_ab679fe786be2fb949af78054cb2041a8}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a602029280a3bc0dac8aac016ec934d5b}\label{classScopeInternal_a602029280a3bc0dac8aac016ec934d5b}} 
+\index{ScopeInternal@{ScopeInternal}!findCodeLabel@{findCodeLabel}}
+\index{findCodeLabel@{findCodeLabel}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findCodeLabel()}{findCodeLabel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} $\ast$ Scope\+Internal\+::find\+Code\+Label (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find a label \mbox{\hyperlink{classSymbol}{Symbol}} at the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classLabSymbol}{Lab\+Symbol}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_af4bac52b9d64974b87432c0379cc38c6}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_ae1eedf2f27fd8b0a7431568c4e4e2994}\label{classScopeInternal_ae1eedf2f27fd8b0a7431568c4e4e2994}} 
+\index{ScopeInternal@{ScopeInternal}!findContainer@{findContainer}}
+\index{findContainer@{findContainer}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findContainer()}{findContainer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Internal\+::find\+Container (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the smallest \mbox{\hyperlink{classSymbol}{Symbol}} containing the given memory range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given memory range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+{\em usepoint} & is the point at which the \mbox{\hyperlink{classSymbol}{Symbol}} is accessed (may be {\itshape invalid}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a609fc1ef47d047717da65827e025cfdd}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a7e440965cfb5642bcc751a622e5ec58d}\label{classScopeInternal_a7e440965cfb5642bcc751a622e5ec58d}} 
+\index{ScopeInternal@{ScopeInternal}!findExternalRef@{findExternalRef}}
+\index{findExternalRef@{findExternalRef}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findExternalRef()}{findExternalRef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$ Scope\+Internal\+::find\+External\+Ref (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find an {\itshape external} {\itshape reference} at the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_af69e0f77b621a3ba6436f8a1c0010d1c}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a03a52c629c51ad660eec8d10cf7f92aa}\label{classScopeInternal_a03a52c629c51ad660eec8d10cf7f92aa}} 
+\index{ScopeInternal@{ScopeInternal}!findFunction@{findFunction}}
+\index{findFunction@{findFunction}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findFunction()}{findFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ Scope\+Internal\+::find\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find the function starting at the given address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classFuncdata}{Funcdata}} object or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a2c621196f6fdb4b8ce4ee1f3dc953107}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a3c241113085be88a74f73d2431de72f3}\label{classScopeInternal_a3c241113085be88a74f73d2431de72f3}} 
+\index{ScopeInternal@{ScopeInternal}!findOverlap@{findOverlap}}
+\index{findOverlap@{findOverlap}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{findOverlap()}{findOverlap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} $\ast$ Scope\+Internal\+::find\+Overlap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Find first \mbox{\hyperlink{classSymbol}{Symbol}} overlapping the given memory range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the starting address of the given range \\
+\hline
+{\em size} & is the number of bytes in the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an overlapping \mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}} or N\+U\+LL if none exists 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a3395b6194a59515caa1ede92fd6ac511}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a4ccbbc37afa4eee7c6cce98dbd3a5bff}\label{classScopeInternal_a4ccbbc37afa4eee7c6cce98dbd3a5bff}} 
+\index{ScopeInternal@{ScopeInternal}!getCategorySize@{getCategorySize}}
+\index{getCategorySize@{getCategorySize}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{getCategorySize()}{getCategorySize()}}
+{\footnotesize\ttfamily int4 Scope\+Internal\+::get\+Category\+Size (\begin{DoxyParamCaption}\item[{int4}]{cat }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the number of Symbols in the given category. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cat} & is the \mbox{\hyperlink{classSymbol}{Symbol}} {\itshape category} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number in that {\itshape category} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a909e15a7a96c9b402855b56b6bfdbd9f}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_af0414fde624b56947bfa25863ea1a01e}\label{classScopeInternal_af0414fde624b56947bfa25863ea1a01e}} 
+\index{ScopeInternal@{ScopeInternal}!getCategorySymbol@{getCategorySymbol}}
+\index{getCategorySymbol@{getCategorySymbol}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{getCategorySymbol()}{getCategorySymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ Scope\+Internal\+::get\+Category\+Symbol (\begin{DoxyParamCaption}\item[{int4}]{cat,  }\item[{int4}]{ind }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve a \mbox{\hyperlink{classSymbol}{Symbol}} by index within a specific {\itshape category}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cat} & is the \mbox{\hyperlink{classSymbol}{Symbol}} {\itshape category} \\
+\hline
+{\em ind} & is the index (within the category) of the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the indicated \mbox{\hyperlink{classSymbol}{Symbol}} or N\+U\+LL if no \mbox{\hyperlink{classSymbol}{Symbol}} with that index exists 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a491a168d7ea71f00da419dd864901ccb}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_ad92dba88239145749dd5b33820828f84}\label{classScopeInternal_ad92dba88239145749dd5b33820828f84}} 
+\index{ScopeInternal@{ScopeInternal}!isNameUsed@{isNameUsed}}
+\index{isNameUsed@{isNameUsed}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{isNameUsed()}{isNameUsed()}}
+{\footnotesize\ttfamily bool Scope\+Internal\+::is\+Name\+Used (\begin{DoxyParamCaption}\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{classScope}{Scope}} $\ast$}]{op2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the given name is occurs within the given scope path. 
+
+Test for the presence of a symbol with the given name in either {\bfseries{this}} scope or an ancestor scope up to but not including the given terminating scope. If the name is used {\bfseries{true}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given name to test \\
+\hline
+{\em op2} & is the terminating ancestor scope (or null) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_a7bc7f2e38bb4a16ad059bd1edd844dcf}{Scope}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classScopeGhidraNamespace_a3a25b6d1d0ffd81f77e229ce0b52c3e3}{Scope\+Ghidra\+Namespace}}.
+
+\mbox{\Hypertarget{classScopeInternal_a193e6fb792e7cad6e451c8ecf2f7e589}\label{classScopeInternal_a193e6fb792e7cad6e451c8ecf2f7e589}} 
+\index{ScopeInternal@{ScopeInternal}!makeNameUnique@{makeNameUnique}}
+\index{makeNameUnique@{makeNameUnique}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{makeNameUnique()}{makeNameUnique()}}
+{\footnotesize\ttfamily string Scope\+Internal\+::make\+Name\+Unique (\begin{DoxyParamCaption}\item[{const string \&}]{nm }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Produce a version of the given symbol name that won\textquotesingle{}t collide with other names in {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nm} & is the given name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return a unique version of the name 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_a2e0d945c44f4874743496b2814fbb631}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_acf54c42b2ce7edfa37f9bf1223bc2840}\label{classScopeInternal_acf54c42b2ce7edfa37f9bf1223bc2840}} 
+\index{ScopeInternal@{ScopeInternal}!resolveExternalRefFunction@{resolveExternalRefFunction}}
+\index{resolveExternalRefFunction@{resolveExternalRefFunction}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{resolveExternalRefFunction()}{resolveExternalRefFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$ Scope\+Internal\+::resolve\+External\+Ref\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classExternRefSymbol}{Extern\+Ref\+Symbol}} $\ast$}]{sym }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Convert an {\itshape external} {\itshape reference} to the referenced function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the \mbox{\hyperlink{classSymbol}{Symbol}} marking the external reference \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the underlying \mbox{\hyperlink{classFuncdata}{Funcdata}} object or N\+U\+LL if none exists 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classScope_af4c45025894f1996ef0f3556752cd997}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_a9711a8084e1ac5c4417a4452c96a36b7}\label{classScopeInternal_a9711a8084e1ac5c4417a4452c96a36b7}} 
+\index{ScopeInternal@{ScopeInternal}!retypeSymbol@{retypeSymbol}}
+\index{retypeSymbol@{retypeSymbol}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{retypeSymbol()}{retypeSymbol()}}
+{\footnotesize\ttfamily void Scope\+Internal\+::retype\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Change the data-\/type of a \mbox{\hyperlink{classSymbol}{Symbol}} within {\bfseries{this}} \mbox{\hyperlink{classScope}{Scope}}. 
+
+If the size of the \mbox{\hyperlink{classSymbol}{Symbol}} changes, any mapping (\mbox{\hyperlink{classSymbolEntry}{Symbol\+Entry}}) is adjusted 
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em ct} & is the new data-\/type \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_afeef6a133b07fa176c08b67c44064e69}{Scope}}.
+
+\mbox{\Hypertarget{classScopeInternal_aee7ec7a7253a5cdcfa61b88f01e9918d}\label{classScopeInternal_aee7ec7a7253a5cdcfa61b88f01e9918d}} 
+\index{ScopeInternal@{ScopeInternal}!setCategory@{setCategory}}
+\index{setCategory@{setCategory}!ScopeInternal@{ScopeInternal}}
+\doxysubsubsection{\texorpdfstring{setCategory()}{setCategory()}}
+{\footnotesize\ttfamily void Scope\+Internal\+::set\+Category (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classSymbol}{Symbol}} $\ast$}]{sym,  }\item[{int4}]{cat,  }\item[{int4}]{ind }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the {\itshape category} and index for the given \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sym} & is the given \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em cat} & is the {\itshape category} to set for the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em ind} & is the index position to set (within the category) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classScope_ac807e11df36854d2f7983bdd6779e83a}{Scope}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

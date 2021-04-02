@@ -1,0 +1,63 @@
+\hypertarget{classPcodeRawOut}{}\doxysection{Pcode\+Raw\+Out Class Reference}
+\label{classPcodeRawOut}\index{PcodeRawOut@{PcodeRawOut}}
+
+
+Inheritance diagram for Pcode\+Raw\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classPcodeRawOut__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pcode\+Raw\+Out\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{classPcodeRawOut__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classPcodeRawOut_a69df78fbc3cdae072cdd8938c88bb4b3}{dump}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} opc, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$outvar, \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$vars, int4 isize)
+\begin{DoxyCompactList}\small\item\em The main pcode emit method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeRawOut_a69df78fbc3cdae072cdd8938c88bb4b3}\label{classPcodeRawOut_a69df78fbc3cdae072cdd8938c88bb4b3}} 
+\index{PcodeRawOut@{PcodeRawOut}!dump@{dump}}
+\index{dump@{dump}!PcodeRawOut@{PcodeRawOut}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily void Pcode\+Raw\+Out\+::dump (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}}}]{opc,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{outvar,  }\item[{\mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} $\ast$}]{vars,  }\item[{int4}]{isize }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The main pcode emit method. 
+
+A single pcode instruction is returned to the application via this method. Particular applications override it to tailor how the operations are used. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+{\em opc} & is the opcode of the particular pcode instruction \\
+\hline
+{\em outvar} & if not {\itshape null} is a pointer to data about the output varnode \\
+\hline
+{\em vars} & is a pointer to an array of \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} for each input varnode \\
+\hline
+{\em isize} & is the number of input varnodes \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPcodeEmit_a00f25999bbdea677b82577b21bdfff8e}{Pcode\+Emit}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sleighexample.\+cc\end{DoxyCompactItemize}

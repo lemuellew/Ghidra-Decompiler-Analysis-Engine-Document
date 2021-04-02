@@ -1,0 +1,205 @@
+\hypertarget{classProtoStoreSymbol}{}\doxysection{Proto\+Store\+Symbol Class Reference}
+\label{classProtoStoreSymbol}\index{ProtoStoreSymbol@{ProtoStoreSymbol}}
+
+
+A collection of parameter descriptions backed by \mbox{\hyperlink{classSymbol}{Symbol}} information.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Proto\+Store\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classProtoStoreSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Proto\+Store\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classProtoStoreSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classProtoStoreSymbol_ac124539bc8682646d3cd44dcb84ee960}{Proto\+Store\+Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc, const \mbox{\hyperlink{classAddress}{Address}} \&usepoint)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreSymbol_af9e24d39271ea90fc074010e4b24a2b1}{set\+Input}} (int4 i, const string \&nm, const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&pieces)
+\begin{DoxyCompactList}\small\item\em Establish name, data-\/type, storage of a specific input parameter. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classProtoStoreSymbol_aa36f84c14205c90e18708858a3ae4ae5}{clear\+Input}} (int4 i)
+\begin{DoxyCompactList}\small\item\em Clear the input parameter at the specified slot. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreSymbol_a4542dcfd95d5a0e225c327e40208ea71}\label{classProtoStoreSymbol_a4542dcfd95d5a0e225c327e40208ea71}} 
+virtual void \mbox{\hyperlink{classProtoStoreSymbol_a4542dcfd95d5a0e225c327e40208ea71}{clear\+All\+Inputs}} (void)
+\begin{DoxyCompactList}\small\item\em Clear all input parameters (and any backing symbols) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreSymbol_a26d8910259e3965c4491048935c277ec}\label{classProtoStoreSymbol_a26d8910259e3965c4491048935c277ec}} 
+virtual int4 \mbox{\hyperlink{classProtoStoreSymbol_a26d8910259e3965c4491048935c277ec}{get\+Num\+Inputs}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of input parameters for {\bfseries{this}} prototype. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreSymbol_a55788c21f1b3699731f1956d75ef1d45}\label{classProtoStoreSymbol_a55788c21f1b3699731f1956d75ef1d45}} 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreSymbol_a55788c21f1b3699731f1956d75ef1d45}{get\+Input}} (int4 i)
+\begin{DoxyCompactList}\small\item\em Get the i-\/th input parameter (or N\+U\+LL if it doesn\textquotesingle{}t exist) \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreSymbol_a06c54299b4b14b6b41a26cdcee6d5484}{set\+Output}} (const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&piece)
+\begin{DoxyCompactList}\small\item\em Establish the data-\/type and storage of the return value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreSymbol_aadbd3a9fba172e28405eeb0001292bff}\label{classProtoStoreSymbol_aadbd3a9fba172e28405eeb0001292bff}} 
+virtual void \mbox{\hyperlink{classProtoStoreSymbol_aadbd3a9fba172e28405eeb0001292bff}{clear\+Output}} (void)
+\begin{DoxyCompactList}\small\item\em Clear the return value to T\+Y\+P\+E\+\_\+\+V\+O\+ID. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreSymbol_a19fe1743657cce5d27aec73bf9056566}\label{classProtoStoreSymbol_a19fe1743657cce5d27aec73bf9056566}} 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classProtoStoreSymbol_a19fe1743657cce5d27aec73bf9056566}{get\+Output}} (void)
+\begin{DoxyCompactList}\small\item\em Get the return-\/value description. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classProtoStoreSymbol_aa6631290325889edb7ef7699fdd8a90f}\label{classProtoStoreSymbol_aa6631290325889edb7ef7699fdd8a90f}} 
+virtual \mbox{\hyperlink{classProtoStore}{Proto\+Store}} $\ast$ \mbox{\hyperlink{classProtoStoreSymbol_aa6631290325889edb7ef7699fdd8a90f}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the entire collection of parameter descriptions. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classProtoStoreSymbol_a0989f9e72831242facf0f4d1b563ec38}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save any parameters that are not backed by symbols to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classProtoStoreSymbol_a6438185b37fc367226073f194a38d110}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$model)
+\begin{DoxyCompactList}\small\item\em Restore any internal parameter descriptions from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collection of parameter descriptions backed by \mbox{\hyperlink{classSymbol}{Symbol}} information. 
+
+Input parameters are determined by symbols a function \mbox{\hyperlink{classScope}{Scope}} (category 0). Information about the return-\/value is stored internally. \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} objects are constructed on the fly as requested and cached. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classProtoStoreSymbol_ac124539bc8682646d3cd44dcb84ee960}\label{classProtoStoreSymbol_ac124539bc8682646d3cd44dcb84ee960}} 
+\index{ProtoStoreSymbol@{ProtoStoreSymbol}!ProtoStoreSymbol@{ProtoStoreSymbol}}
+\index{ProtoStoreSymbol@{ProtoStoreSymbol}!ProtoStoreSymbol@{ProtoStoreSymbol}}
+\doxysubsubsection{\texorpdfstring{ProtoStoreSymbol()}{ProtoStoreSymbol()}}
+{\footnotesize\ttfamily Proto\+Store\+Symbol\+::\+Proto\+Store\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{sc,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{usepoint }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the function \mbox{\hyperlink{classScope}{Scope}} that will back {\bfseries{this}} store \\
+\hline
+{\em usepoint} & is the starting address of the function (-\/1) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classProtoStoreSymbol_aa36f84c14205c90e18708858a3ae4ae5}\label{classProtoStoreSymbol_aa36f84c14205c90e18708858a3ae4ae5}} 
+\index{ProtoStoreSymbol@{ProtoStoreSymbol}!clearInput@{clearInput}}
+\index{clearInput@{clearInput}!ProtoStoreSymbol@{ProtoStoreSymbol}}
+\doxysubsubsection{\texorpdfstring{clearInput()}{clearInput()}}
+{\footnotesize\ttfamily void Proto\+Store\+Symbol\+::clear\+Input (\begin{DoxyParamCaption}\item[{int4}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear the input parameter at the specified slot. 
+
+The parameter is excised, any following parameters are shifted to fill its spot. If there is a backing \mbox{\hyperlink{classSymbol}{Symbol}}, it is removed from the \mbox{\hyperlink{classSymbolTable}{Symbol\+Table}} 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the specified parameter slot to remove \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoStore_afa6361ac313cdd2ccef1531209389cdc}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreSymbol_a6438185b37fc367226073f194a38d110}\label{classProtoStoreSymbol_a6438185b37fc367226073f194a38d110}} 
+\index{ProtoStoreSymbol@{ProtoStoreSymbol}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ProtoStoreSymbol@{ProtoStoreSymbol}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Proto\+Store\+Symbol\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classProtoModel}{Proto\+Model}} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore any internal parameter descriptions from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is a root $<$internallist$>$ element containing $<$param$>$ and $<$retparam$>$ sub-\/tags. \\
+\hline
+{\em model} & is prototype model for determining storage for unassigned parameters \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoStore_a7311214c33205be191361836d716f99b}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreSymbol_a0989f9e72831242facf0f4d1b563ec38}\label{classProtoStoreSymbol_a0989f9e72831242facf0f4d1b563ec38}} 
+\index{ProtoStoreSymbol@{ProtoStoreSymbol}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!ProtoStoreSymbol@{ProtoStoreSymbol}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Proto\+Store\+Symbol\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save any parameters that are not backed by symbols to an X\+ML stream. 
+
+Symbols are stored elsewhere, so symbol backed parameters are not serialized. If there are any internal parameters an $<$internallist$>$ tag is emitted. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoStore_ac6e8cc6bfcb10d84a69c3f6011c5de06}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreSymbol_af9e24d39271ea90fc074010e4b24a2b1}\label{classProtoStoreSymbol_af9e24d39271ea90fc074010e4b24a2b1}} 
+\index{ProtoStoreSymbol@{ProtoStoreSymbol}!setInput@{setInput}}
+\index{setInput@{setInput}!ProtoStoreSymbol@{ProtoStoreSymbol}}
+\doxysubsubsection{\texorpdfstring{setInput()}{setInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ Proto\+Store\+Symbol\+::set\+Input (\begin{DoxyParamCaption}\item[{int4}]{i,  }\item[{const string \&}]{nm,  }\item[{const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&}]{pieces }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Establish name, data-\/type, storage of a specific input parameter. 
+
+This either allocates a new parameter or replaces the existing one at the specified input slot. If there is a backing symbol table, a \mbox{\hyperlink{classSymbol}{Symbol}} is created or modified. 
+\begin{DoxyParams}{Parameters}
+{\em i} & is the specified input slot \\
+\hline
+{\em nm} & is the (optional) name of the parameter \\
+\hline
+{\em pieces} & holds the raw storage address and data-\/type to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new/modified \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classProtoStore_af24924b3d08fedff7e55788f2b7a0043}{Proto\+Store}}.
+
+\mbox{\Hypertarget{classProtoStoreSymbol_a06c54299b4b14b6b41a26cdcee6d5484}\label{classProtoStoreSymbol_a06c54299b4b14b6b41a26cdcee6d5484}} 
+\index{ProtoStoreSymbol@{ProtoStoreSymbol}!setOutput@{setOutput}}
+\index{setOutput@{setOutput}!ProtoStoreSymbol@{ProtoStoreSymbol}}
+\doxysubsubsection{\texorpdfstring{setOutput()}{setOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ Proto\+Store\+Symbol\+::set\+Output (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structParameterPieces}{Parameter\+Pieces}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Establish the data-\/type and storage of the return value. 
+
+This either allocates a new parameter or replaces the existing one. A {\itshape void} return value can be specified with an {\itshape invalid} address and T\+Y\+P\+E\+\_\+\+V\+O\+ID data-\/type. 
+\begin{DoxyParams}{Parameters}
+{\em piece} & holds the raw storage address and data-\/type to set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the new/modified \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classProtoStore_a51a4d28fac8dc3ba5037190ed0cc0edc}{Proto\+Store}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,323 @@
+\hypertarget{classTypeStruct}{}\doxysection{Type\+Struct Class Reference}
+\label{classTypeStruct}\index{TypeStruct@{TypeStruct}}
+
+
+A composite \mbox{\hyperlink{classDatatype}{Datatype}} object\+: A \char`\"{}structure\char`\"{} with component \char`\"{}fields\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$type.\+hh$>$}
+
+
+
+Inheritance diagram for Type\+Struct\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classTypeStruct__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Type\+Struct\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classTypeStruct__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeStruct_a59569e7e7c6d5fc43ec7617199cd8a19}\label{classTypeStruct_a59569e7e7c6d5fc43ec7617199cd8a19}} 
+\mbox{\hyperlink{classTypeStruct_a59569e7e7c6d5fc43ec7617199cd8a19}{Type\+Struct}} (const \mbox{\hyperlink{classTypeStruct}{Type\+Struct}} \&op)
+\begin{DoxyCompactList}\small\item\em Construct from another \mbox{\hyperlink{classTypeStruct}{Type\+Struct}}. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{structTypeField}{Type\+Field}} $\ast$ \mbox{\hyperlink{classTypeStruct_aebb450d9b8d2ad526b35ff135d5640a1}{get\+Field}} (int4 off, int4 sz, int4 $\ast$newoff) const
+\begin{DoxyCompactList}\small\item\em Get field based on offset. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeStruct_abf638d0fc1902b030f0134c5152a3818}{get\+Sub\+Type}} (uintb off, uintb $\ast$newoff) const
+\begin{DoxyCompactList}\small\item\em Recover component data-\/type one-\/level down. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeStruct_a7edba8d806148f847f7363b05899fe96}{nearest\+Arrayed\+Component\+Forward}} (uintb off, uintb $\ast$newoff, int4 $\ast$el\+Size) const
+\item 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeStruct_ac09ae52ad2e4b3abf92ffc60a6b49210}{nearest\+Arrayed\+Component\+Backward}} (uintb off, uintb $\ast$newoff, int4 $\ast$el\+Size) const
+\item 
+\mbox{\Hypertarget{classTypeStruct_ad4722efdae4b6f71e7c9d2b6624e4c12}\label{classTypeStruct_ad4722efdae4b6f71e7c9d2b6624e4c12}} 
+virtual int4 {\bfseries num\+Depend} (void) const
+\item 
+\mbox{\Hypertarget{classTypeStruct_ae60274464ed0003c0ee86f8bf3fa28c8}\label{classTypeStruct_ae60274464ed0003c0ee86f8bf3fa28c8}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ {\bfseries get\+Depend} (int4 index) const
+\item 
+virtual int4 \mbox{\hyperlink{classTypeStruct_a7f06b400a7d74394512a9f67ec925310}{compare}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op, int4 level) const
+\begin{DoxyCompactList}\small\item\em Compare for functional equivalence. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classTypeStruct_a12078b87b7fbc0f2ed5cb01ee5c61050}{compare\+Dependency}} (const \mbox{\hyperlink{classDatatype}{Datatype}} \&op) const
+\begin{DoxyCompactList}\small\item\em Compare for storage in tree structure. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTypeStruct_a24e7e1af1cc231759cecf8445532f613}\label{classTypeStruct_a24e7e1af1cc231759cecf8445532f613}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classTypeStruct_a24e7e1af1cc231759cecf8445532f613}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the data-\/type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeStruct_a5284d41a9de3664a4e08ed8649164873}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Serialize the data-\/type to X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTypeStruct_abf9d27b301d027a5fad874b1f8c93b8c}{set\+Fields}} (const vector$<$ \mbox{\hyperlink{structTypeField}{Type\+Field}} $>$ \&fd)
+\begin{DoxyCompactList}\small\item\em Establish fields for {\bfseries{this}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTypeStruct_a82d2668e499477ae063f30d8f1b9daab}{get\+Field\+Iter}} (int4 off) const
+\begin{DoxyCompactList}\small\item\em Get index into field list. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classTypeStruct_a025c316726fe07e06e5ef7b00787a110}{get\+Lower\+Bound\+Field}} (int4 off) const
+\begin{DoxyCompactList}\small\item\em Get index of last field before or equal to given offset. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTypeStruct_af2b09832da8420f6da67382a4e2d9f0e}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&typegrp)
+\begin{DoxyCompactList}\small\item\em Restore data-\/type from X\+ML. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeStruct_a4d5a49b12324fb588f6c1631c35bc37d}\label{classTypeStruct_a4d5a49b12324fb588f6c1631c35bc37d}} 
+vector$<$ \mbox{\hyperlink{structTypeField}{Type\+Field}} $>$ \mbox{\hyperlink{classTypeStruct_a4d5a49b12324fb588f6c1631c35bc37d}{field}}
+\begin{DoxyCompactList}\small\item\em The list of fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTypeStruct_ac8c1945d0a63785e78b3e09a13226ed6}\label{classTypeStruct_ac8c1945d0a63785e78b3e09a13226ed6}} 
+class {\bfseries Type\+Factory}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A composite \mbox{\hyperlink{classDatatype}{Datatype}} object\+: A \char`\"{}structure\char`\"{} with component \char`\"{}fields\char`\"{}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTypeStruct_a7f06b400a7d74394512a9f67ec925310}\label{classTypeStruct_a7f06b400a7d74394512a9f67ec925310}} 
+\index{TypeStruct@{TypeStruct}!compare@{compare}}
+\index{compare@{compare}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int4 Type\+Struct\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op,  }\item[{int4}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for functional equivalence. 
+
+0 (equality) means the data-\/types are functionally equivalent (even if names differ) Smaller types come earlier. More specific types come earlier. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+{\em level} & is maximum level to descend when recursively comparing \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a4d5a102b2d909180c3080fdb55d7b305}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeStruct_a12078b87b7fbc0f2ed5cb01ee5c61050}\label{classTypeStruct_a12078b87b7fbc0f2ed5cb01ee5c61050}} 
+\index{TypeStruct@{TypeStruct}!compareDependency@{compareDependency}}
+\index{compareDependency@{compareDependency}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{compareDependency()}{compareDependency()}}
+{\footnotesize\ttfamily int4 Type\+Struct\+::compare\+Dependency (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classDatatype}{Datatype}} \&}]{op }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compare for storage in tree structure. 
+
+Ordering of data-\/types for the main \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} container. Comparison only goes down one-\/level in the component structure, before just comparing pointers. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the data-\/type to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+negative, 0, positive depending on ordering of types 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_ab26e4ca2c3091d3c5a34b4fbd7be76ae}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeStruct_aebb450d9b8d2ad526b35ff135d5640a1}\label{classTypeStruct_aebb450d9b8d2ad526b35ff135d5640a1}} 
+\index{TypeStruct@{TypeStruct}!getField@{getField}}
+\index{getField@{getField}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{getField()}{getField()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{structTypeField}{Type\+Field}} $\ast$ Type\+Struct\+::get\+Field (\begin{DoxyParamCaption}\item[{int4}]{off,  }\item[{int4}]{sz,  }\item[{int4 $\ast$}]{newoff }\end{DoxyParamCaption}) const}
+
+
+
+Get field based on offset. 
+
+Given a byte range within {\bfseries{this}} data-\/type, determine the field it is contained in and pass back the renormalized offset. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the byte offset into {\bfseries{this}} \\
+\hline
+{\em sz} & is the size of the byte range \\
+\hline
+{\em newoff} & points to the renormalized offset to pass back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the containing field or N\+U\+LL if the range is not contained 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeStruct_a82d2668e499477ae063f30d8f1b9daab}\label{classTypeStruct_a82d2668e499477ae063f30d8f1b9daab}} 
+\index{TypeStruct@{TypeStruct}!getFieldIter@{getFieldIter}}
+\index{getFieldIter@{getFieldIter}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{getFieldIter()}{getFieldIter()}}
+{\footnotesize\ttfamily int4 Type\+Struct\+::get\+Field\+Iter (\begin{DoxyParamCaption}\item[{int4}]{off }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get index into field list. 
+
+Find the proper subfield given an offset. Return the index of that field or -\/1 if the offset is not inside a field. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the offset into the structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index into the field list or -\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeStruct_a025c316726fe07e06e5ef7b00787a110}\label{classTypeStruct_a025c316726fe07e06e5ef7b00787a110}} 
+\index{TypeStruct@{TypeStruct}!getLowerBoundField@{getLowerBoundField}}
+\index{getLowerBoundField@{getLowerBoundField}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{getLowerBoundField()}{getLowerBoundField()}}
+{\footnotesize\ttfamily int4 Type\+Struct\+::get\+Lower\+Bound\+Field (\begin{DoxyParamCaption}\item[{int4}]{off }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Get index of last field before or equal to given offset. 
+
+The field returned may or may not contain the offset. If there are no fields that occur earlier than the offset, return -\/1. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the given offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the nearest field or -\/1 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTypeStruct_abf638d0fc1902b030f0134c5152a3818}\label{classTypeStruct_abf638d0fc1902b030f0134c5152a3818}} 
+\index{TypeStruct@{TypeStruct}!getSubType@{getSubType}}
+\index{getSubType@{getSubType}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{getSubType()}{getSubType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Struct\+::get\+Sub\+Type (\begin{DoxyParamCaption}\item[{uintb}]{off,  }\item[{uintb $\ast$}]{newoff }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recover component data-\/type one-\/level down. 
+
+Given an offset into {\bfseries{this}} data-\/type, return the component data-\/type at that offset. Also, pass back a \char`\"{}renormalized\char`\"{} offset suitable for recursize \mbox{\hyperlink{classTypeStruct_abf638d0fc1902b030f0134c5152a3818}{get\+Sub\+Type()}} calls\+: i.\+e. if the original offset hits the exact start of the sub-\/type, 0 is passed back. If there is no valid component data-\/type at the offset, return N\+U\+LL and pass back the original offset 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the offset into {\bfseries{this}} data-\/type \\
+\hline
+{\em newoff} & is a pointer to the passed-\/back offset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the component data-\/type or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_ac310ccfdc47d145f10699fa1e14e73b4}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeStruct_ac09ae52ad2e4b3abf92ffc60a6b49210}\label{classTypeStruct_ac09ae52ad2e4b3abf92ffc60a6b49210}} 
+\index{TypeStruct@{TypeStruct}!nearestArrayedComponentBackward@{nearestArrayedComponentBackward}}
+\index{nearestArrayedComponentBackward@{nearestArrayedComponentBackward}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{nearestArrayedComponentBackward()}{nearestArrayedComponentBackward()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Struct\+::nearest\+Arrayed\+Component\+Backward (\begin{DoxyParamCaption}\item[{uintb}]{off,  }\item[{uintb $\ast$}]{newoff,  }\item[{int4 $\ast$}]{el\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Find the first component data-\/type before the given offset that is (or contains) an array, and pass back the difference between the component\textquotesingle{}s start and the given offset. Return the component data-\/type or null if no array is found. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the given offset into {\bfseries{this}} data-\/type \\
+\hline
+{\em newoff} & is used to pass back the offset difference \\
+\hline
+{\em el\+Size} & is used to pass back the array element size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the component data-\/type or null 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_aa1e841435c9b1b3200c542e8ed72277c}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeStruct_a7edba8d806148f847f7363b05899fe96}\label{classTypeStruct_a7edba8d806148f847f7363b05899fe96}} 
+\index{TypeStruct@{TypeStruct}!nearestArrayedComponentForward@{nearestArrayedComponentForward}}
+\index{nearestArrayedComponentForward@{nearestArrayedComponentForward}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{nearestArrayedComponentForward()}{nearestArrayedComponentForward()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Type\+Struct\+::nearest\+Arrayed\+Component\+Forward (\begin{DoxyParamCaption}\item[{uintb}]{off,  }\item[{uintb $\ast$}]{newoff,  }\item[{int4 $\ast$}]{el\+Size }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Find the first component data-\/type after the given offset that is (or contains) an array, and pass back the difference between the component\textquotesingle{}s start and the given offset. Return the component data-\/type or null if no array is found. 
+\begin{DoxyParams}{Parameters}
+{\em off} & is the given offset into {\bfseries{this}} data-\/type \\
+\hline
+{\em newoff} & is used to pass back the offset difference \\
+\hline
+{\em el\+Size} & is used to pass back the array element size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the component data-\/type or null 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_acbb33e15f39ba19fff6235defd7a6412}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeStruct_af2b09832da8420f6da67382a4e2d9f0e}\label{classTypeStruct_af2b09832da8420f6da67382a4e2d9f0e}} 
+\index{TypeStruct@{TypeStruct}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Type\+Struct\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el,  }\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} \&}]{typegrp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Restore data-\/type from X\+ML. 
+
+Restore a \mbox{\hyperlink{classDatatype}{Datatype}} object from an X\+ML element 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+{\em typegrp} & is the underlying \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} that will hold the new object \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_aed882ae693a31a64d56fffb9abdaa575}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeStruct_a5284d41a9de3664a4e08ed8649164873}\label{classTypeStruct_a5284d41a9de3664a4e08ed8649164873}} 
+\index{TypeStruct@{TypeStruct}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Type\+Struct\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize the data-\/type to X\+ML. 
+
+Write out a formal description of the data-\/type as an X\+ML $<$type$>$ tag. For composite data-\/types, the description goes down one level, describing the component types only by reference. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write to \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDatatype_a33339824f1c50d4354952296070c3902}{Datatype}}.
+
+\mbox{\Hypertarget{classTypeStruct_abf9d27b301d027a5fad874b1f8c93b8c}\label{classTypeStruct_abf9d27b301d027a5fad874b1f8c93b8c}} 
+\index{TypeStruct@{TypeStruct}!setFields@{setFields}}
+\index{setFields@{setFields}!TypeStruct@{TypeStruct}}
+\doxysubsubsection{\texorpdfstring{setFields()}{setFields()}}
+{\footnotesize\ttfamily void Type\+Struct\+::set\+Fields (\begin{DoxyParamCaption}\item[{const vector$<$ \mbox{\hyperlink{structTypeField}{Type\+Field}} $>$ \&}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Establish fields for {\bfseries{this}}. 
+
+Copy a list of fields into this structure, establishing its size. Should only be called once when constructing the type 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the list of fields to copy in \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{type_8hh}{type.\+hh}}\item 
+type.\+cc\end{DoxyCompactItemize}

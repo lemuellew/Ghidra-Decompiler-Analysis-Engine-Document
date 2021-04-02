@@ -1,0 +1,65 @@
+\hypertarget{classConditionalJoin}{}\doxysection{Conditional\+Join Class Reference}
+\label{classConditionalJoin}\index{ConditionalJoin@{ConditionalJoin}}
+
+
+Discover and eliminate {\itshape split} conditions.  
+
+
+
+
+{\ttfamily \#include $<$blockaction.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classConditionalJoin_ab4f86556c6387f177e341329ed346e99}{match}} (\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$b1, \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$b2)
+\begin{DoxyCompactList}\small\item\em Test blocks for the merge condition. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConditionalJoin_a7ddeb5ef416cda6bec2ca424b22e00a7}{execute}} (void)
+\begin{DoxyCompactList}\small\item\em Execute the merge. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConditionalJoin_a9e69ebb78367803c598edfdc5ef04f5a}\label{classConditionalJoin_a9e69ebb78367803c598edfdc5ef04f5a}} 
+void \mbox{\hyperlink{classConditionalJoin_a9e69ebb78367803c598edfdc5ef04f5a}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear for a new test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Discover and eliminate {\itshape split} conditions. 
+
+A {\bfseries{split}} condition is when a conditional expression, resulting in a C\+B\+R\+A\+N\+CH, is duplicated across two blocks that would otherwise merge. Instead of a single conditional in a merged block, there are two copies of the conditional, two splitting blocks and no direct merge. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConditionalJoin_a7ddeb5ef416cda6bec2ca424b22e00a7}\label{classConditionalJoin_a7ddeb5ef416cda6bec2ca424b22e00a7}} 
+\index{ConditionalJoin@{ConditionalJoin}!execute@{execute}}
+\index{execute@{execute}!ConditionalJoin@{ConditionalJoin}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Conditional\+Join\+::execute (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Execute the merge. 
+
+All the conditions have been met. Go ahead and do the join. \mbox{\Hypertarget{classConditionalJoin_ab4f86556c6387f177e341329ed346e99}\label{classConditionalJoin_ab4f86556c6387f177e341329ed346e99}} 
+\index{ConditionalJoin@{ConditionalJoin}!match@{match}}
+\index{match@{match}!ConditionalJoin@{ConditionalJoin}}
+\doxysubsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily bool Conditional\+Join\+::match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$}]{b1,  }\item[{\mbox{\hyperlink{classBlockBasic}{Block\+Basic}} $\ast$}]{b2 }\end{DoxyParamCaption})}
+
+
+
+Test blocks for the merge condition. 
+
+Given a pair of conditional blocks, make sure that they match the {\itshape split} conditions necessary for merging and set up to do the merge. If the conditions are not met, this method cleans up so that additional calls can be made. 
+\begin{DoxyParams}{Parameters}
+{\em b1} & is the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} exhibiting one side of the split \\
+\hline
+{\em b2} & is the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} on the other side of the split \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the conditions for merging are met 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{blockaction_8hh}{blockaction.\+hh}}\item 
+blockaction.\+cc\end{DoxyCompactItemize}

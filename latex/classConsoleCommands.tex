@@ -1,0 +1,73 @@
+\hypertarget{classConsoleCommands}{}\doxysection{Console\+Commands Class Reference}
+\label{classConsoleCommands}\index{ConsoleCommands@{ConsoleCommands}}
+
+
+A console command run as part of a test sequence.  
+
+
+
+
+{\ttfamily \#include $<$testfunction.\+hh$>$}
+
+
+
+Inheritance diagram for Console\+Commands\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classConsoleCommands__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Console\+Commands\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classConsoleCommands__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConsoleCommands_a1c867a01a199445d4c50e6956c7bc73c}\label{classConsoleCommands_a1c867a01a199445d4c50e6956c7bc73c}} 
+\mbox{\hyperlink{classConsoleCommands_a1c867a01a199445d4c50e6956c7bc73c}{Console\+Commands}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConsoleCommands_a0abd6cf1fc93eed180935ca891e15628}\label{classConsoleCommands_a0abd6cf1fc93eed180935ca891e15628}} 
+void \mbox{\hyperlink{classConsoleCommands_a0abd6cf1fc93eed180935ca891e15628}{reset}} (void)
+\begin{DoxyCompactList}\small\item\em Reset console for a new program. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classConsoleCommands_a66d363ff12234ae3d44ee357db312bce}\label{classConsoleCommands_a66d363ff12234ae3d44ee357db312bce}} 
+virtual bool \mbox{\hyperlink{classConsoleCommands_a66d363ff12234ae3d44ee357db312bce}{is\+Stream\+Finished}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the current stream is finished. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classConsoleCommands_a3250d9d1c47c114c1e35436125d26020}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Reconstruct the command from an X\+ML tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A console command run as part of a test sequence. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classConsoleCommands_a3250d9d1c47c114c1e35436125d26020}\label{classConsoleCommands_a3250d9d1c47c114c1e35436125d26020}} 
+\index{ConsoleCommands@{ConsoleCommands}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ConsoleCommands@{ConsoleCommands}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Console\+Commands\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Reconstruct the command from an X\+ML tag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root $<$script$>$ tag \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{testfunction_8hh}{testfunction.\+hh}}\item 
+testfunction.\+cc\end{DoxyCompactItemize}

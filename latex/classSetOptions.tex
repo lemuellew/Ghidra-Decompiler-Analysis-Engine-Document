@@ -1,0 +1,71 @@
+\hypertarget{classSetOptions}{}\doxysection{Set\+Options Class Reference}
+\label{classSetOptions}\index{SetOptions@{SetOptions}}
+
+
+Command to {\bfseries{toggle}} {\bfseries{options}} within the decompiler.  
+
+
+
+
+{\ttfamily \#include $<$ghidra\+\_\+process.\+hh$>$}
+
+
+
+Inheritance diagram for Set\+Options\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{classSetOptions__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Set\+Options\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSetOptions__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classSetOptions_a1e73126b79340651e9fa9cfc47e80649}{raw\+Action}} (void)
+\begin{DoxyCompactList}\small\item\em Perform the action of the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSetOptions_aed159d40f964c60e9983bbfac3787c76}\label{classSetOptions_aed159d40f964c60e9983bbfac3787c76}} 
+bool \mbox{\hyperlink{classSetOptions_aed159d40f964c60e9983bbfac3787c76}{res}}
+\begin{DoxyCompactList}\small\item\em Set to {\bfseries{true}} if the option change succeeded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Command to {\bfseries{toggle}} {\bfseries{options}} within the decompiler. 
+
+The decompiler supports configuration of a variety of named options that affect everything from how code is transformed to how it is displayed (See \mbox{\hyperlink{classArchOption}{Arch\+Option}}). The command expects 2 string parameters\+: the encoded integer id of the program, and an X\+ML document containing an $<$optionslist$>$ tag. The $<$optionslist$>$ tag contains one child tag for each option to be configured. The command returns a single character message, \textquotesingle{}t\textquotesingle{} or \textquotesingle{}f\textquotesingle{}, indicating whether the configuration succeeded. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSetOptions_a1e73126b79340651e9fa9cfc47e80649}\label{classSetOptions_a1e73126b79340651e9fa9cfc47e80649}} 
+\index{SetOptions@{SetOptions}!rawAction@{rawAction}}
+\index{rawAction@{rawAction}!SetOptions@{SetOptions}}
+\doxysubsubsection{\texorpdfstring{rawAction()}{rawAction()}}
+{\footnotesize\ttfamily void Set\+Options\+::raw\+Action (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the action of the command. 
+
+Configuration is assumed to have happened, and {\bfseries{this}} object can immediately begin examining and manipulating data under the active \mbox{\hyperlink{classArchitecture}{Architecture}} object to perform the command. 
+
+Implements \mbox{\hyperlink{classGhidraCommand_a7d1a5cfedfd8f1d05161d27627302716}{Ghidra\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ghidra__process_8hh}{ghidra\+\_\+process.\+hh}}\item 
+ghidra\+\_\+process.\+cc\end{DoxyCompactItemize}

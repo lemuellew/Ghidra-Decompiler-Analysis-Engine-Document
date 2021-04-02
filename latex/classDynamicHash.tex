@@ -1,0 +1,283 @@
+\hypertarget{classDynamicHash}{}\doxysection{Dynamic\+Hash Class Reference}
+\label{classDynamicHash}\index{DynamicHash@{DynamicHash}}
+
+
+A hash utility to uniquely identify a temporary \mbox{\hyperlink{classVarnode}{Varnode}} in data-\/flow.  
+
+
+
+
+{\ttfamily \#include $<$dynamic.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDynamicHash_aa260964020db06dfcee8565544aa3b96}\label{classDynamicHash_aa260964020db06dfcee8565544aa3b96}} 
+void \mbox{\hyperlink{classDynamicHash_aa260964020db06dfcee8565544aa3b96}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Called for each additional hash (after the first) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDynamicHash_ae48f268d1cc95b75aeda1b6d563df0a9}{calc\+Hash}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$root, uint4 method)
+\begin{DoxyCompactList}\small\item\em Calculate the hash for given \mbox{\hyperlink{classVarnode}{Varnode}} and method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDynamicHash_a9255e5fffe4408f9e3f84a3f0847527e}{unique\+Hash}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$root, \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Select a unique hash for the given \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classDynamicHash_ad3428d1e0ef5ea4f535dc4bb6ed1c6d0}{find\+Varnode}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, const \mbox{\hyperlink{classAddress}{Address}} \&addr, uint8 h)
+\begin{DoxyCompactList}\small\item\em Given an address and hash, find the unique matching \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classDynamicHash_aeb593c1811174c5012f3148c2ddc6fe8}{gather\+First\+Level\+Vars}} (vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&varlist, const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd, const \mbox{\hyperlink{classAddress}{Address}} \&addr, uint8 h)
+\begin{DoxyCompactList}\small\item\em Get the Varnodes immediately attached to Pcode\+Ops at the given address. \end{DoxyCompactList}\item 
+static int4 \mbox{\hyperlink{classDynamicHash_ac5d5cb3b8c23327a82efe7f5f011fbbf}{get\+Slot\+From\+Hash}} (uint8 h)
+\begin{DoxyCompactList}\small\item\em Retrieve the encoded slot from a hash. \end{DoxyCompactList}\item 
+static uint4 \mbox{\hyperlink{classDynamicHash_a0f43ee0fdfcd0ad103fc7125cc8d5ad0}{get\+Method\+From\+Hash}} (uint8 h)
+\begin{DoxyCompactList}\small\item\em Retrieve the encoded method from a hash. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{classDynamicHash_acf0da7edbf8321e9489e819ffbb5111b}{get\+Op\+Code\+From\+Hash}} (uint8 h)
+\begin{DoxyCompactList}\small\item\em Retrieve the encoded op-\/code from a hash. \end{DoxyCompactList}\item 
+static uint4 \mbox{\hyperlink{classDynamicHash_a82c7a255745be65f7395d489a0bd4201}{get\+Position\+From\+Hash}} (uint8 h)
+\begin{DoxyCompactList}\small\item\em Retrieve the encoded position from a hash. \end{DoxyCompactList}\item 
+static uint4 \mbox{\hyperlink{classDynamicHash_a1776a0b6908b317435afca5d33954b44}{get\+Total\+From\+Hash}} (uint8 h)
+\begin{DoxyCompactList}\small\item\em Retrieve the encoded collision total from a hash. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classDynamicHash_a670928958cd93677cc459e9b4f063fd3}{get\+Is\+Not\+Attached}} (uint8 h)
+\begin{DoxyCompactList}\small\item\em Retrieve the attachment boolean from a hash. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classDynamicHash_a4eb9f9e5767cc8c956a0111d4a5ca89b}{clear\+Total\+Position}} (uint8 \&h)
+\begin{DoxyCompactList}\small\item\em Clear the collision total and position fields within a hash. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDynamicHash_a63ef9a666444db8c81bce80dd96bb965}\label{classDynamicHash_a63ef9a666444db8c81bce80dd96bb965}} 
+static uint4 \mbox{\hyperlink{classDynamicHash_a63ef9a666444db8c81bce80dd96bb965}{transtable}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Translation of op-\/codes to hash values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A hash utility to uniquely identify a temporary \mbox{\hyperlink{classVarnode}{Varnode}} in data-\/flow. 
+
+Most Varnodes can be identified within the data-\/flow graph by their storage address and the address of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that defines them. For temporary registers, this does not work because the storage address is ephemeral. This class allows Varnodes like temporary registers (and constants) to be robustly identified by hashing details of the local data-\/flow.
+
+This class, when presented a \mbox{\hyperlink{classVarnode}{Varnode}} via \mbox{\hyperlink{classDynamicHash_ae48f268d1cc95b75aeda1b6d563df0a9}{calc\+Hash()}}, calculates a hash (get\+Hash()) and an address (get\+Address()) of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} most closely associated with the \mbox{\hyperlink{classVarnode}{Varnode}}, either the defining op or the op directly reading the \mbox{\hyperlink{classVarnode}{Varnode}}. There are actually four hash variants that can be calculated, labeled 0, 1, 2, or 3, which incrementally hash in a larger portion of data-\/flow. The method \mbox{\hyperlink{classDynamicHash_a9255e5fffe4408f9e3f84a3f0847527e}{unique\+Hash()}} selects the simplest variant that causes the hash to be unique for the \mbox{\hyperlink{classVarnode}{Varnode}}, among all the Varnodes that share the same address.
+
+The variant index is encoded in the hash, so the hash and the address are enough information to uniquely identify the \mbox{\hyperlink{classVarnode}{Varnode}}. This is what is stored in the symbol table for a {\itshape dynamic} \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDynamicHash_ae48f268d1cc95b75aeda1b6d563df0a9}\label{classDynamicHash_ae48f268d1cc95b75aeda1b6d563df0a9}} 
+\index{DynamicHash@{DynamicHash}!calcHash@{calcHash}}
+\index{calcHash@{calcHash}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{calcHash()}{calcHash()}}
+{\footnotesize\ttfamily void Dynamic\+Hash\+::calc\+Hash (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{root,  }\item[{uint4}]{method }\end{DoxyParamCaption})}
+
+
+
+Calculate the hash for given \mbox{\hyperlink{classVarnode}{Varnode}} and method. 
+
+A sub-\/graph is formed extending from the given \mbox{\hyperlink{classVarnode}{Varnode}} as the root. The method specifies how the sub-\/graph is extended. In particular\+:
+\begin{DoxyItemize}
+\item Method 0 is extends to just immediate p-\/code ops reading or writing root
+\item Method 1 extends to one more level of inputs from method 0.
+\item Method 2 extends to one more level of outputs from method 0.
+\item Method 3 extends to inputs and outputs
+\end{DoxyItemize}
+
+The resulting hash and address can be obtained after calling this method through get\+Hash() and get\+Address(). 
+\begin{DoxyParams}{Parameters}
+{\em root} & is the given root \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em method} & is the hashing method to use\+: 0, 1, 2, 3 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDynamicHash_a4eb9f9e5767cc8c956a0111d4a5ca89b}\label{classDynamicHash_a4eb9f9e5767cc8c956a0111d4a5ca89b}} 
+\index{DynamicHash@{DynamicHash}!clearTotalPosition@{clearTotalPosition}}
+\index{clearTotalPosition@{clearTotalPosition}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{clearTotalPosition()}{clearTotalPosition()}}
+{\footnotesize\ttfamily void Dynamic\+Hash\+::clear\+Total\+Position (\begin{DoxyParamCaption}\item[{uint8 \&}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Clear the collision total and position fields within a hash. 
+
+The position and total collisions fields are set by the uniqueness and need to be cleared when comparing raw hashes. 
+\begin{DoxyParams}{Parameters}
+{\em h} & is a reference to the hash to modify \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDynamicHash_ad3428d1e0ef5ea4f535dc4bb6ed1c6d0}\label{classDynamicHash_ad3428d1e0ef5ea4f535dc4bb6ed1c6d0}} 
+\index{DynamicHash@{DynamicHash}!findVarnode@{findVarnode}}
+\index{findVarnode@{findVarnode}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{findVarnode()}{findVarnode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Dynamic\+Hash\+::find\+Varnode (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uint8}]{h }\end{DoxyParamCaption})}
+
+
+
+Given an address and hash, find the unique matching \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+The method, number of collisions, and position are pulled out of the hash. Hashes for the method are performed at Varnodes linked to the given address, and the \mbox{\hyperlink{classVarnode}{Varnode}} which matches the hash (and the position) is returned. If the number of collisions for the hash does not match, this method will not return a \mbox{\hyperlink{classVarnode}{Varnode}}, even if the position looks valid. 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the function containing the data-\/flow \\
+\hline
+{\em addr} & is the given address \\
+\hline
+{\em h} & is the hash \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classVarnode}{Varnode}} or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDynamicHash_aeb593c1811174c5012f3148c2ddc6fe8}\label{classDynamicHash_aeb593c1811174c5012f3148c2ddc6fe8}} 
+\index{DynamicHash@{DynamicHash}!gatherFirstLevelVars@{gatherFirstLevelVars}}
+\index{gatherFirstLevelVars@{gatherFirstLevelVars}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{gatherFirstLevelVars()}{gatherFirstLevelVars()}}
+{\footnotesize\ttfamily void Dynamic\+Hash\+::gather\+First\+Level\+Vars (\begin{DoxyParamCaption}\item[{vector$<$ \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ $>$ \&}]{varlist,  }\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uint8}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Varnodes immediately attached to Pcode\+Ops at the given address. 
+
+Varnodes can be either inputs or outputs to the Pcode\+Ops. The op-\/code, slot, and attachment boolean encoded in the hash are used to further filter the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and \mbox{\hyperlink{classVarnode}{Varnode}} objects. Varnodes are passed back in sequence with a list container. 
+\begin{DoxyParams}{Parameters}
+{\em varlist} & is the container that will hold the matching Varnodes \\
+\hline
+{\em fd} & is the function holding the data-\/flow \\
+\hline
+{\em addr} & is the given address \\
+\hline
+{\em h} & is the given hash \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDynamicHash_a670928958cd93677cc459e9b4f063fd3}\label{classDynamicHash_a670928958cd93677cc459e9b4f063fd3}} 
+\index{DynamicHash@{DynamicHash}!getIsNotAttached@{getIsNotAttached}}
+\index{getIsNotAttached@{getIsNotAttached}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{getIsNotAttached()}{getIsNotAttached()}}
+{\footnotesize\ttfamily bool Dynamic\+Hash\+::get\+Is\+Not\+Attached (\begin{DoxyParamCaption}\item[{uint8}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the attachment boolean from a hash. 
+
+The hash encodes whether or not the root was directly attached to its \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} 
+\begin{DoxyParams}{Parameters}
+{\em h} & is the hash value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the root was not attached 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDynamicHash_a0f43ee0fdfcd0ad103fc7125cc8d5ad0}\label{classDynamicHash_a0f43ee0fdfcd0ad103fc7125cc8d5ad0}} 
+\index{DynamicHash@{DynamicHash}!getMethodFromHash@{getMethodFromHash}}
+\index{getMethodFromHash@{getMethodFromHash}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{getMethodFromHash()}{getMethodFromHash()}}
+{\footnotesize\ttfamily uint4 Dynamic\+Hash\+::get\+Method\+From\+Hash (\begin{DoxyParamCaption}\item[{uint8}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the encoded method from a hash. 
+
+The hash encodes the {\itshape method} used to produce it. 
+\begin{DoxyParams}{Parameters}
+{\em h} & is the hash value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the method\+: 0, 1, 2, 3 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDynamicHash_acf0da7edbf8321e9489e819ffbb5111b}\label{classDynamicHash_acf0da7edbf8321e9489e819ffbb5111b}} 
+\index{DynamicHash@{DynamicHash}!getOpCodeFromHash@{getOpCodeFromHash}}
+\index{getOpCodeFromHash@{getOpCodeFromHash}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{getOpCodeFromHash()}{getOpCodeFromHash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} Dynamic\+Hash\+::get\+Op\+Code\+From\+Hash (\begin{DoxyParamCaption}\item[{uint8}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the encoded op-\/code from a hash. 
+
+The hash encodes the op-\/code of the p-\/code op attached to the root \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em h} & is the hash value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the op-\/code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDynamicHash_a82c7a255745be65f7395d489a0bd4201}\label{classDynamicHash_a82c7a255745be65f7395d489a0bd4201}} 
+\index{DynamicHash@{DynamicHash}!getPositionFromHash@{getPositionFromHash}}
+\index{getPositionFromHash@{getPositionFromHash}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{getPositionFromHash()}{getPositionFromHash()}}
+{\footnotesize\ttfamily uint4 Dynamic\+Hash\+::get\+Position\+From\+Hash (\begin{DoxyParamCaption}\item[{uint8}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the encoded position from a hash. 
+
+The hash encodes the position of the root \mbox{\hyperlink{classVarnode}{Varnode}} within the list of hash collisions 
+\begin{DoxyParams}{Parameters}
+{\em h} & is the hash value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the position of the root 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDynamicHash_ac5d5cb3b8c23327a82efe7f5f011fbbf}\label{classDynamicHash_ac5d5cb3b8c23327a82efe7f5f011fbbf}} 
+\index{DynamicHash@{DynamicHash}!getSlotFromHash@{getSlotFromHash}}
+\index{getSlotFromHash@{getSlotFromHash}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{getSlotFromHash()}{getSlotFromHash()}}
+{\footnotesize\ttfamily int4 Dynamic\+Hash\+::get\+Slot\+From\+Hash (\begin{DoxyParamCaption}\item[{uint8}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the encoded slot from a hash. 
+
+The hash encodes the input {\itshape slot} the root \mbox{\hyperlink{classVarnode}{Varnode}} was attached to in its \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+\begin{DoxyParams}{Parameters}
+{\em h} & is the hash value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the slot index or -\/1 if the \mbox{\hyperlink{classVarnode}{Varnode}} was attached as output 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDynamicHash_a1776a0b6908b317435afca5d33954b44}\label{classDynamicHash_a1776a0b6908b317435afca5d33954b44}} 
+\index{DynamicHash@{DynamicHash}!getTotalFromHash@{getTotalFromHash}}
+\index{getTotalFromHash@{getTotalFromHash}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{getTotalFromHash()}{getTotalFromHash()}}
+{\footnotesize\ttfamily uint4 Dynamic\+Hash\+::get\+Total\+From\+Hash (\begin{DoxyParamCaption}\item[{uint8}]{h }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retrieve the encoded collision total from a hash. 
+
+The hash encodes the total number of collisions for that hash 
+\begin{DoxyParams}{Parameters}
+{\em h} & is the hash value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the total number of collisions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDynamicHash_a9255e5fffe4408f9e3f84a3f0847527e}\label{classDynamicHash_a9255e5fffe4408f9e3f84a3f0847527e}} 
+\index{DynamicHash@{DynamicHash}!uniqueHash@{uniqueHash}}
+\index{uniqueHash@{uniqueHash}!DynamicHash@{DynamicHash}}
+\doxysubsubsection{\texorpdfstring{uniqueHash()}{uniqueHash()}}
+{\footnotesize\ttfamily void Dynamic\+Hash\+::unique\+Hash (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})}
+
+
+
+Select a unique hash for the given \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Collect the set of Varnodes at the same address as the given \mbox{\hyperlink{classVarnode}{Varnode}}. Starting with method 0, increment the method and calculate hashes of the Varnodes until the given \mbox{\hyperlink{classVarnode}{Varnode}} has a unique hash within the set. The resulting hash and address can be obtained after calling this method through get\+Hash() and get\+Address().
+
+In the rare situation that the last method still does not yield a unique hash, the hash encodes\+:
+\begin{DoxyItemize}
+\item the smallest number of hash collisions
+\item the method that produced the smallest number of hash collisions
+\item the position of the root within the collision list
+\end{DoxyItemize}
+
+For most cases, this will still uniquely identify the root \mbox{\hyperlink{classVarnode}{Varnode}}. 
+\begin{DoxyParams}{Parameters}
+{\em root} & is the given root \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em fd} & is the function (holding the data-\/flow graph) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{dynamic_8hh}{dynamic.\+hh}}\item 
+dynamic.\+cc\end{DoxyCompactItemize}

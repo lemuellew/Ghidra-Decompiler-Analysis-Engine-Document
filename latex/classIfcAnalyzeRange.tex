@@ -1,0 +1,62 @@
+\hypertarget{classIfcAnalyzeRange}{}\doxysection{Ifc\+Analyze\+Range Class Reference}
+\label{classIfcAnalyzeRange}\index{IfcAnalyzeRange@{IfcAnalyzeRange}}
+
+
+Run value-\/set analysis on the {\itshape current} function\+: {\ttfamily analyze range full$\vert$partial $<$varnode$>$}  
+
+
+
+
+Inheritance diagram for Ifc\+Analyze\+Range\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcAnalyzeRange__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Analyze\+Range\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcAnalyzeRange__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcAnalyzeRange_a56bb172dc0ed81b268717560b2839c27}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Run value-\/set analysis on the {\itshape current} function\+: {\ttfamily analyze range full$\vert$partial $<$varnode$>$} 
+
+The analysis targets a single varnode as specified on the command-\/line and is based on the existing data-\/flow graph for the current function. The possible values that can reach the varnode at its point of definition, and at any point it is involved in a L\+O\+AD or S\+T\+O\+RE, are displayed. The keywords {\bfseries{full}} and {\bfseries{partial}} choose whether the value-\/set analysis uses full or partial widening. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcAnalyzeRange_a56bb172dc0ed81b268717560b2839c27}\label{classIfcAnalyzeRange_a56bb172dc0ed81b268717560b2839c27}} 
+\index{IfcAnalyzeRange@{IfcAnalyzeRange}!execute@{execute}}
+\index{execute@{execute}!IfcAnalyzeRange@{IfcAnalyzeRange}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Analyze\+Range\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

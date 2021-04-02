@@ -1,0 +1,115 @@
+\hypertarget{classExternRefSymbol}{}\doxysection{Extern\+Ref\+Symbol Class Reference}
+\label{classExternRefSymbol}\index{ExternRefSymbol@{ExternRefSymbol}}
+
+
+A function \mbox{\hyperlink{classSymbol}{Symbol}} referring to an external location.  
+
+
+
+
+{\ttfamily \#include $<$database.\+hh$>$}
+
+
+
+Inheritance diagram for Extern\+Ref\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classExternRefSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Extern\+Ref\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classExternRefSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classExternRefSymbol_ac9c052df8c2ee617cdc3d1bd985121be}{Extern\+Ref\+Symbol}} (\mbox{\hyperlink{classScope}{Scope}} $\ast$sc, const \mbox{\hyperlink{classAddress}{Address}} \&ref, const string \&nm)
+\begin{DoxyCompactList}\small\item\em Construct given a {\itshape placeholder} address. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classExternRefSymbol_aaff9d3efb4a2594f857799db35eddc1d}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classExternRefSymbol_a84cae4cba0ca0ec757c93c63cd55921e}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A function \mbox{\hyperlink{classSymbol}{Symbol}} referring to an external location. 
+
+This \mbox{\hyperlink{classSymbol}{Symbol}} is intended to label functions that have not been mapped directly into the image being analyzed. It holds a level of indirection between the address the image expects the symbol to be at and a {\bfseries{placeholder}} address the system hangs meta-\/data on. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classExternRefSymbol_ac9c052df8c2ee617cdc3d1bd985121be}\label{classExternRefSymbol_ac9c052df8c2ee617cdc3d1bd985121be}} 
+\index{ExternRefSymbol@{ExternRefSymbol}!ExternRefSymbol@{ExternRefSymbol}}
+\index{ExternRefSymbol@{ExternRefSymbol}!ExternRefSymbol@{ExternRefSymbol}}
+\doxysubsubsection{\texorpdfstring{ExternRefSymbol()}{ExternRefSymbol()}}
+{\footnotesize\ttfamily Extern\+Ref\+Symbol\+::\+Extern\+Ref\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classScope}{Scope}} $\ast$}]{sc,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{ref,  }\item[{const string \&}]{nm }\end{DoxyParamCaption})}
+
+
+
+Construct given a {\itshape placeholder} address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & is the \mbox{\hyperlink{classScope}{Scope}} containing the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+{\em ref} & is the placeholder address where the system will hold meta-\/data \\
+\hline
+{\em nm} & is the name of the \mbox{\hyperlink{classSymbol}{Symbol}} \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classExternRefSymbol_a84cae4cba0ca0ec757c93c63cd55921e}\label{classExternRefSymbol_a84cae4cba0ca0ec757c93c63cd55921e}} 
+\index{ExternRefSymbol@{ExternRefSymbol}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ExternRefSymbol@{ExternRefSymbol}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Extern\+Ref\+Symbol\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} from an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML tag of the symbol \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a3266a5752c208bdfa5a28e792de67604}{Symbol}}.
+
+\mbox{\Hypertarget{classExternRefSymbol_aaff9d3efb4a2594f857799db35eddc1d}\label{classExternRefSymbol_aaff9d3efb4a2594f857799db35eddc1d}} 
+\index{ExternRefSymbol@{ExternRefSymbol}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!ExternRefSymbol@{ExternRefSymbol}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Extern\+Ref\+Symbol\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save {\bfseries{this}} \mbox{\hyperlink{classSymbol}{Symbol}} to an X\+ML stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classSymbol_a0ef928814feb0a17fe95d006340eb499}{Symbol}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{database_8hh}{database.\+hh}}\item 
+database.\+cc\end{DoxyCompactItemize}

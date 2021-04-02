@@ -1,0 +1,83 @@
+\hypertarget{classIfcPrintInputsAll}{}\doxysection{Ifc\+Print\+Inputs\+All Class Reference}
+\label{classIfcPrintInputsAll}\index{IfcPrintInputsAll@{IfcPrintInputsAll}}
+
+
+Print info about input Varnodes for all functions\+: {\ttfamily print inputs all}  
+
+
+
+
+Inheritance diagram for Ifc\+Print\+Inputs\+All\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcPrintInputsAll__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Print\+Inputs\+All\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcPrintInputsAll__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcPrintInputsAll_aaf763e010c0f82c94d95d9443fbe6f2c}{execute}} (istream \&s)
+\item 
+virtual void \mbox{\hyperlink{classIfcPrintInputsAll_af1ed619938898b1dd91be98c256a7512}{iteration\+Callback}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$fd)
+\begin{DoxyCompactList}\small\item\em Perform the per-\/function aspect of {\bfseries{this}} command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Print info about input Varnodes for all functions\+: {\ttfamily print inputs all} 
+
+Each function is decompiled, and info about its input Varnodes are printed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcPrintInputsAll_aaf763e010c0f82c94d95d9443fbe6f2c}\label{classIfcPrintInputsAll_aaf763e010c0f82c94d95d9443fbe6f2c}} 
+\index{IfcPrintInputsAll@{IfcPrintInputsAll}!execute@{execute}}
+\index{execute@{execute}!IfcPrintInputsAll@{IfcPrintInputsAll}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Print\+Inputs\+All\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+\mbox{\Hypertarget{classIfcPrintInputsAll_af1ed619938898b1dd91be98c256a7512}\label{classIfcPrintInputsAll_af1ed619938898b1dd91be98c256a7512}} 
+\index{IfcPrintInputsAll@{IfcPrintInputsAll}!iterationCallback@{iterationCallback}}
+\index{iterationCallback@{iterationCallback}!IfcPrintInputsAll@{IfcPrintInputsAll}}
+\doxysubsubsection{\texorpdfstring{iterationCallback()}{iterationCallback()}}
+{\footnotesize\ttfamily void Ifc\+Print\+Inputs\+All\+::iteration\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} $\ast$}]{fd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Perform the per-\/function aspect of {\bfseries{this}} command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the particular function to operate on \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIfaceDecompCommand_a619d9358a4e77bef66a26f02ea7a6c8e}{Iface\+Decomp\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

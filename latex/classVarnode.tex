@@ -1,0 +1,860 @@
+\hypertarget{classVarnode}{}\doxysection{Varnode Class Reference}
+\label{classVarnode}\index{Varnode@{Varnode}}
+
+
+A low-\/level variable or contiguous set of bytes described by an \mbox{\hyperlink{classAddress}{Address}} and a size.  
+
+
+
+
+{\ttfamily \#include $<$varnode.\+hh$>$}
+
+
+
+Collaboration diagram for Varnode\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classVarnode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8c}{varnode\+\_\+flags}} \{ \newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca342d968e37003a12f9026a15dda2e8f6}{mark}} = 0x01, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caa3c42d4b456f7dcaa76f7b4f7fa7f5b0}{constant}} = 0x02, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cada11eee7331d13bd3034be76475cedac}{annotation}} = 0x04, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}{input}} = 0x08, 
+\newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}{written}} = 0x10, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2b40cdc5083e1a49cd5195d46711e5f5}{insert}} = 0x20, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caa94f6c51e33e8e9732fc45896d586088}{implied}} = 0x40, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca7261c587f617694d7d4fc11ad193c6f8}{explict}} = 0x80, 
+\newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cae49e063a1b1e7de4592afd3f19abbdc7}{typelock}} = 0x100, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0b1de824f917f0c708db4fa4b8caaeb8}{namelock}} = 0x200, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca682ddee1f9b9f32c4d8a69dc53b8bf69}{nolocalalias}} = 0x400, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cafd8f85c37b5ee3374d865cafbaf6f7e5}{volatil}} = 0x800, 
+\newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca01456896881c6bb4ee5840596e85f0d5}{externref}} = 0x1000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0d7f659884b50f2fa71a3d700a729258}{readonly}} = 0x2000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca952005b91ba1b04e4d431eecb1309112}{persist}} = 0x4000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca7d4bde53093050741edab33ff1b80b0a}{addrtied}} = 0x8000, 
+\newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2d46de16bfee21b62047a6a477f4bee8}{unaffected}} = 0x10000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cac66fb19d44cde4a461d513f6d50a818f}{spacebase}} = 0x20000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca6cf5a81c518255d279def65267974e8a}{indirectonly}} = 0x40000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caac2abc47efea38d093747758c9b204fd}{directwrite}} = 0x80000, 
+\newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cabecfcc64c4827f783e3e538b3b9dfd6c}{addrforce}} = 0x100000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca6512f0039b21ce7e6586f14d3b1bd9a2}{mapped}} = 0x200000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca50b14789b3198743399e2f2f8c8116e9}{indirect\+\_\+creation}} = 0x400000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cac4272b1c3ffd7fe8518140f35d9f81d6}{return\+\_\+address}} = 0x800000, 
+\newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caeda31ed57cae145dd1d35cfc874ae16a}{coverdirty}} = 0x1000000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2e26b7277dd6b11db8498c07974935d1}{precislo}} = 0x2000000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caeb173e0f2c992f3b7a15fbede0805629}{precishi}} = 0x4000000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca8bc73667e547486cbabc443d0c90f2c5}{indirectstorage}} = 0x8000000, 
+\newline
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca98c9b8ae27e32db19e64422a37b8be74}{hiddenretparm}} = 0x10000000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cae9fccd0da71d0cbf7ba0b169330dccc9}{incidental\+\_\+copy}} = 0x20000000, 
+\mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0bd67bde6d7a29cca9c9f6f360364d69}{autolive\+\_\+hold}} = 0x40000000
+ \}
+\item 
+enum \mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900}{addl\+\_\+flags}} \{ \newline
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a0ccdeeca68411e9937913ad972d283e3}{activeheritage}} = 0x01, 
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a40c06c888128db9c29582a508e516dd9}{writemask}} = 0x02, 
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900aaaa10f65253aaec3d24b78d7bc342d64}{vacconsume}} = 0x04, 
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a623c7c3682639480ce5868861b9f8be8}{lisconsume}} = 0x08, 
+\newline
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900ae344f3791147f1ec91d3bf816d9b57eb}{ptrcheck}} = 0x10, 
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a1f2ae0f17f28d7daed75dd8c1c06ba89}{ptrflow}} = 0x20, 
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900add3a6c6a8ceb360f9f6024edc4d72f80}{unsignedprint}} = 0x40, 
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a08bdeb602d4ddc6dcd8c30e5769283e6}{stack\+\_\+store}} = 0x80, 
+\newline
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a81cfef62f64bf1ced05478343f7a9d11}{locked\+\_\+input}} = 0x100, 
+\mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a98e1bfe28cbc1ab15b7658d1d436c685}{spacebase\+\_\+placeholder}} = 0x200
+ \}
+\begin{DoxyCompactList}\small\item\em Additional boolean properties on a \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$ \mbox{\hyperlink{classVarnode_a99192dea44cf05e3c619f65cbde949c7}{get\+High}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the high-\/level variable associated with this \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classVarnode_a1899f1f493fed54c6dea1f445f146de6}{lone\+Descend}} (void) const
+\begin{DoxyCompactList}\small\item\em Return unique reading \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, or {\bfseries{null}} if there are zero or more than 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classVarnode_a9eab83050278fb3bd44d6179154e38de}{get\+Use\+Point}} (const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&fd) const
+\begin{DoxyCompactList}\small\item\em Get \mbox{\hyperlink{classAddress}{Address}} when this \mbox{\hyperlink{classVarnode}{Varnode}} first comes into scope. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classVarnode_aa90c838f1e0116747e09e3d1fe72b18e}{print\+Raw\+No\+Markup}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple identifier for the \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnode_aa4c614218fd461a8c5de1e27880f56fe}{print\+Raw}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple identifier plus additional info identifying \mbox{\hyperlink{classVarnode}{Varnode}} with S\+SA form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnode_a0668e171937a1db3155563d0b1fd9324}{print\+Cover}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print raw coverage info about the \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnode_ac23b9dc5c3f9e94389d454184f11cff8}{print\+Info}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print raw attribute info about the \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode_ab532ee1bda485d4292dd48f7313986fa}{Varnode}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&m, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$dt)
+\begin{DoxyCompactList}\small\item\em Construct a {\itshape free} \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVarnode_a3a2b6667e362e55c82ab0c983693ad92}{operator$<$}} (const \mbox{\hyperlink{classVarnode}{Varnode}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Comparison operator on \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVarnode_afab4c9a244385f9c849ead46102b69d8}{operator==}} (const \mbox{\hyperlink{classVarnode}{Varnode}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode_a923a208c2607e493576deac0765ef058}{$\sim$\+Varnode}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVarnode_a0750524b7c076892cf123c37b00db5af}{intersects}} (const \mbox{\hyperlink{classVarnode}{Varnode}} \&op) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if the storage locations intersect. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVarnode_a74edc3b590c862473137a27517d3777a}{intersects}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2loc, int4 op2size) const
+\begin{DoxyCompactList}\small\item\em Check intersection against an \mbox{\hyperlink{classAddress}{Address}} range. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classVarnode_afe43c9eba2e162f06ff29888db703d4d}{contains}} (const \mbox{\hyperlink{classVarnode}{Varnode}} \&op) const
+\begin{DoxyCompactList}\small\item\em Return info about the containment of {\itshape op} in {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVarnode_aadb56ff77a01d15e7a66f3a3851bf8e1}\label{classVarnode_aadb56ff77a01d15e7a66f3a3851bf8e1}} 
+int4 \mbox{\hyperlink{classVarnode_aadb56ff77a01d15e7a66f3a3851bf8e1}{characterize\+Overlap}} (const \mbox{\hyperlink{classVarnode}{Varnode}} \&op) const
+\begin{DoxyCompactList}\small\item\em Return 0, 1, or 2 for \char`\"{}no overlap\char`\"{}, \char`\"{}partial overlap\char`\"{}, \char`\"{}identical storage\char`\"{}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classVarnode_a3317ab5e04ef326f4c68ece1929539a6}{overlap}} (const \mbox{\hyperlink{classVarnode}{Varnode}} \&op) const
+\begin{DoxyCompactList}\small\item\em Return relative point of overlap between two Varnodes. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classVarnode_a76b9fae2eedacde995415262b7e46189}{overlap}} (const \mbox{\hyperlink{classAddress}{Address}} \&op2loc, int4 op2size) const
+\begin{DoxyCompactList}\small\item\em Return relative point of overlap with \mbox{\hyperlink{classAddress}{Address}} range. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classVarnode_a97a1df25894d4457f7442303381fc80a}{term\+Order}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$op) const
+\begin{DoxyCompactList}\small\item\em Compare two Varnodes based on their term order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnode_ae14d6bd40ea442939aecc888d7fcaa39}{print\+Raw\+Heritage}} (ostream \&s, int4 depth) const
+\begin{DoxyCompactList}\small\item\em Print a simple S\+SA subtree rooted at {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVarnode_a61fd3ac206edbb80a9c42f3b69755b61}\label{classVarnode_a61fd3ac206edbb80a9c42f3b69755b61}} 
+bool \mbox{\hyperlink{classVarnode_a61fd3ac206edbb80a9c42f3b69755b61}{is\+Addr\+Tied}} (void) const
+\begin{DoxyCompactList}\small\item\em Are all Varnodes at this storage location components of the same high-\/level variable? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVarnode_abba0a1aed3783ba8fdb8de79fcfe1708}\label{classVarnode_abba0a1aed3783ba8fdb8de79fcfe1708}} 
+bool \mbox{\hyperlink{classVarnode_abba0a1aed3783ba8fdb8de79fcfe1708}{is\+Indirect\+Zero}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} just a special placeholder representing I\+N\+D\+I\+R\+E\+CT creation? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVarnode_a1759575be3f53457006b912a008fc532}\label{classVarnode_a1759575be3f53457006b912a008fc532}} 
+bool \mbox{\hyperlink{classVarnode_a1759575be3f53457006b912a008fc532}{is\+Extra\+Out}} (void) const
+\begin{DoxyCompactList}\small\item\em Is this \mbox{\hyperlink{classVarnode}{Varnode}} {\bfseries{created}} indirectly by a C\+A\+LL operation? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVarnode_a907053b388958d0f381226828ac4d47e}\label{classVarnode_a907053b388958d0f381226828ac4d47e}} 
+bool \mbox{\hyperlink{classVarnode_a907053b388958d0f381226828ac4d47e}{has\+Cover}} (void) const
+\begin{DoxyCompactList}\small\item\em Does {\bfseries{this}} have \mbox{\hyperlink{classCover}{Cover}} information? \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVarnode_a74744382f6e164a333b06640517018fc}\label{classVarnode_a74744382f6e164a333b06640517018fc}} 
+bool \mbox{\hyperlink{classVarnode_a74744382f6e164a333b06640517018fc}{constant\+Match}} (uintb val) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if {\bfseries{this}} is a constant with value {\bfseries{val}}. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classVarnode_ab6a24df6723e760e4fa32e2cbad8b6df}{is\+Constant\+Extended}} (uintb \&val) const
+\item 
+\mbox{\Hypertarget{classVarnode_a110890cf5213263aa7ee1f2dc47c1acd}\label{classVarnode_a110890cf5213263aa7ee1f2dc47c1acd}} 
+bool \mbox{\hyperlink{classVarnode_a110890cf5213263aa7ee1f2dc47c1acd}{is\+Heritage\+Known}} (void) const
+\begin{DoxyCompactList}\small\item\em Return {\bfseries{true}} if this \mbox{\hyperlink{classVarnode}{Varnode}} is linked into the S\+SA tree. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVarnode_a48932e5bf8aab53ae9b3a6a6d9b25ce8}{update\+Type}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, bool lock, bool override)
+\begin{DoxyCompactList}\small\item\em (Possibly) set the \mbox{\hyperlink{classDatatype}{Datatype}} given various restrictions \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnode_a5b21f0980bc223331c25bf4e609b1254}{copy\+Symbol}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Copy symbol info from {\bfseries{vn}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnode_a436ec606351beaa6fb2fe7dc1bb4312c}{copy\+Symbol\+If\+Valid}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Copy symbol info from {\bfseries{vn}} if constant value matches. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classVarnode_ae02e0cb9be55fc557361b707068599c5}{get\+Local\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Calculate type of \mbox{\hyperlink{classVarnode}{Varnode}} based on local information. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVarnode_ad543c86a9969b04287f7c4037f5f2eac}{copy\+Shadow}} (const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$op2) const
+\begin{DoxyCompactList}\small\item\em Are {\bfseries{this}} and {\bfseries{op2}} copied from the same source? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnode_ab594852b697b20dea20d2f4d7551b8dd}{save\+Xml}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save a description of {\bfseries{this}} as an X\+ML tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classVarnode_a3aefb411714c9c066113cc4efd15eed6}{print\+Raw}} (ostream \&s, const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Print raw info about a \mbox{\hyperlink{classVarnode}{Varnode}} to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVarnode_a794a269a99c505d3cd54abc16c456e0d}\label{classVarnode_a794a269a99c505d3cd54abc16c456e0d}} 
+class {\bfseries Varnode\+Bank}
+\item 
+\mbox{\Hypertarget{classVarnode_ada039d79291c7baead36ca12c2f1737b}\label{classVarnode_ada039d79291c7baead36ca12c2f1737b}} 
+class {\bfseries Merge}
+\item 
+\mbox{\Hypertarget{classVarnode_a16ade990887167c11c41cb88121bb449}\label{classVarnode_a16ade990887167c11c41cb88121bb449}} 
+class {\bfseries Funcdata}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A low-\/level variable or contiguous set of bytes described by an \mbox{\hyperlink{classAddress}{Address}} and a size. 
+
+A \mbox{\hyperlink{classVarnode}{Varnode}} is the fundemental {\itshape variable} in the p-\/code language model. A \mbox{\hyperlink{classVarnode}{Varnode}} represents anything that holds data, including registers, stack locations, global R\+AM locations, and constants. It is described most simply as a storage location for some number of bytes, and is identified by
+\begin{DoxyItemize}
+\item an \mbox{\hyperlink{classAddress}{Address}} (an \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} and an offset into that space) and
+\item a size in bytes
+\end{DoxyItemize}
+
+In its raw form, the \mbox{\hyperlink{classVarnode}{Varnode}} is referred to as {\bfseries{free}}, and this pair uniquely identifies the \mbox{\hyperlink{classVarnode}{Varnode}}, as determined by its comparison operators. In terms of the Static Single Assignment (S\+SA) form for the decompiler analysis, the \mbox{\hyperlink{classVarnode}{Varnode}} class also represents a node in the tree. In this case the \mbox{\hyperlink{classVarnode}{Varnode}} is not free, and each individual write to a storage location, as per S\+SA form, creates a unique \mbox{\hyperlink{classVarnode}{Varnode}}, which is represented by a separate instance, so there may be multiple \mbox{\hyperlink{classVarnode}{Varnode}} instances with the same \mbox{\hyperlink{classAddress}{Address}} and size. ~\newline
+ 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900}} 
+\index{Varnode@{Varnode}!addl\_flags@{addl\_flags}}
+\index{addl\_flags@{addl\_flags}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{addl\_flags}{addl\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900}{Varnode\+::addl\+\_\+flags}}}
+
+
+
+Additional boolean properties on a \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{activeheritage@{activeheritage}!Varnode@{Varnode}}\index{Varnode@{Varnode}!activeheritage@{activeheritage}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a0ccdeeca68411e9937913ad972d283e3}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a0ccdeeca68411e9937913ad972d283e3}} 
+activeheritage&The varnode is actively being heritaged. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{writemask@{writemask}!Varnode@{Varnode}}\index{Varnode@{Varnode}!writemask@{writemask}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a40c06c888128db9c29582a508e516dd9}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a40c06c888128db9c29582a508e516dd9}} 
+writemask&Should not be considered a write in heritage calculation. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vacconsume@{vacconsume}!Varnode@{Varnode}}\index{Varnode@{Varnode}!vacconsume@{vacconsume}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900aaaa10f65253aaec3d24b78d7bc342d64}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900aaaa10f65253aaec3d24b78d7bc342d64}} 
+vacconsume&Vacuous consume. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lisconsume@{lisconsume}!Varnode@{Varnode}}\index{Varnode@{Varnode}!lisconsume@{lisconsume}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a623c7c3682639480ce5868861b9f8be8}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a623c7c3682639480ce5868861b9f8be8}} 
+lisconsume&In consume worklist. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ptrcheck@{ptrcheck}!Varnode@{Varnode}}\index{Varnode@{Varnode}!ptrcheck@{ptrcheck}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900ae344f3791147f1ec91d3bf816d9b57eb}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900ae344f3791147f1ec91d3bf816d9b57eb}} 
+ptrcheck&The \mbox{\hyperlink{classVarnode}{Varnode}} value is {\itshape N\+OT} a pointer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ptrflow@{ptrflow}!Varnode@{Varnode}}\index{Varnode@{Varnode}!ptrflow@{ptrflow}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a1f2ae0f17f28d7daed75dd8c1c06ba89}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a1f2ae0f17f28d7daed75dd8c1c06ba89}} 
+ptrflow&If this varnode flows to or from a pointer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unsignedprint@{unsignedprint}!Varnode@{Varnode}}\index{Varnode@{Varnode}!unsignedprint@{unsignedprint}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900add3a6c6a8ceb360f9f6024edc4d72f80}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900add3a6c6a8ceb360f9f6024edc4d72f80}} 
+unsignedprint&Constant that must be explicitly printed as unsigned. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stack\_store@{stack\_store}!Varnode@{Varnode}}\index{Varnode@{Varnode}!stack\_store@{stack\_store}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a08bdeb602d4ddc6dcd8c30e5769283e6}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a08bdeb602d4ddc6dcd8c30e5769283e6}} 
+stack\+\_\+store&Created by an explicit S\+T\+O\+RE. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{locked\_input@{locked\_input}!Varnode@{Varnode}}\index{Varnode@{Varnode}!locked\_input@{locked\_input}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a81cfef62f64bf1ced05478343f7a9d11}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a81cfef62f64bf1ced05478343f7a9d11}} 
+locked\+\_\+input&Input that exists even if its unused. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spacebase\_placeholder@{spacebase\_placeholder}!Varnode@{Varnode}}\index{Varnode@{Varnode}!spacebase\_placeholder@{spacebase\_placeholder}}}\mbox{\Hypertarget{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a98e1bfe28cbc1ab15b7658d1d436c685}\label{classVarnode_a54e5d14b3fc1c7916863ba2a2d7ee900a98e1bfe28cbc1ab15b7658d1d436c685}} 
+spacebase\+\_\+placeholder&value at a specific point in the code This varnode is inserted artificially to track a register \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8c}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8c}} 
+\index{Varnode@{Varnode}!varnode\_flags@{varnode\_flags}}
+\index{varnode\_flags@{varnode\_flags}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{varnode\_flags}{varnode\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8c}{Varnode\+::varnode\+\_\+flags}}}
+
+There are a large number of boolean attributes that can be placed on a \mbox{\hyperlink{classVarnode}{Varnode}}. Some are calculated and maintained by the friend classes \mbox{\hyperlink{classFuncdata}{Funcdata}} and \mbox{\hyperlink{classVarnodeBank}{Varnode\+Bank}}, and others can be set and cleared publicly by separate subsystems. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mark@{mark}!Varnode@{Varnode}}\index{Varnode@{Varnode}!mark@{mark}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca342d968e37003a12f9026a15dda2e8f6}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca342d968e37003a12f9026a15dda2e8f6}} 
+mark&Prevents infinite loops. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{constant@{constant}!Varnode@{Varnode}}\index{Varnode@{Varnode}!constant@{constant}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caa3c42d4b456f7dcaa76f7b4f7fa7f5b0}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caa3c42d4b456f7dcaa76f7b4f7fa7f5b0}} 
+constant&The varnode is constant. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{annotation@{annotation}!Varnode@{Varnode}}\index{Varnode@{Varnode}!annotation@{annotation}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cada11eee7331d13bd3034be76475cedac}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cada11eee7331d13bd3034be76475cedac}} 
+annotation&This varnode is an annotation and has no dataflow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{input@{input}!Varnode@{Varnode}}\index{Varnode@{Varnode}!input@{input}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}} 
+input&This varnode has no ancestor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{written@{written}!Varnode@{Varnode}}\index{Varnode@{Varnode}!written@{written}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}} 
+written&This varnode has a defining op (def is nonzero) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{insert@{insert}!Varnode@{Varnode}}\index{Varnode@{Varnode}!insert@{insert}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2b40cdc5083e1a49cd5195d46711e5f5}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2b40cdc5083e1a49cd5195d46711e5f5}} 
+insert&This varnode has been inserted in a tree This means the varnode is the output of an op {\itshape or} The output is a constant {\itshape or} the output is an input \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{implied@{implied}!Varnode@{Varnode}}\index{Varnode@{Varnode}!implied@{implied}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caa94f6c51e33e8e9732fc45896d586088}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caa94f6c51e33e8e9732fc45896d586088}} 
+implied&This varnode is a temporary variable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{explict@{explict}!Varnode@{Varnode}}\index{Varnode@{Varnode}!explict@{explict}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca7261c587f617694d7d4fc11ad193c6f8}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca7261c587f617694d7d4fc11ad193c6f8}} 
+explict&This varnode {\itshape C\+A\+N\+N\+OT} be a temporary variable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{typelock@{typelock}!Varnode@{Varnode}}\index{Varnode@{Varnode}!typelock@{typelock}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cae49e063a1b1e7de4592afd3f19abbdc7}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cae49e063a1b1e7de4592afd3f19abbdc7}} 
+typelock&The Dataype of the \mbox{\hyperlink{classVarnode}{Varnode}} is locked. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{namelock@{namelock}!Varnode@{Varnode}}\index{Varnode@{Varnode}!namelock@{namelock}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0b1de824f917f0c708db4fa4b8caaeb8}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0b1de824f917f0c708db4fa4b8caaeb8}} 
+namelock&The Name of the \mbox{\hyperlink{classVarnode}{Varnode}} is locked. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nolocalalias@{nolocalalias}!Varnode@{Varnode}}\index{Varnode@{Varnode}!nolocalalias@{nolocalalias}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca682ddee1f9b9f32c4d8a69dc53b8bf69}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca682ddee1f9b9f32c4d8a69dc53b8bf69}} 
+nolocalalias&There are no aliases pointing to this varnode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{volatil@{volatil}!Varnode@{Varnode}}\index{Varnode@{Varnode}!volatil@{volatil}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cafd8f85c37b5ee3374d865cafbaf6f7e5}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cafd8f85c37b5ee3374d865cafbaf6f7e5}} 
+volatil&This varnode\textquotesingle{}s value is volatile. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{externref@{externref}!Varnode@{Varnode}}\index{Varnode@{Varnode}!externref@{externref}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca01456896881c6bb4ee5840596e85f0d5}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca01456896881c6bb4ee5840596e85f0d5}} 
+externref&\mbox{\hyperlink{classVarnode}{Varnode}} address is specially mapped by the loader. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{readonly@{readonly}!Varnode@{Varnode}}\index{Varnode@{Varnode}!readonly@{readonly}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0d7f659884b50f2fa71a3d700a729258}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0d7f659884b50f2fa71a3d700a729258}} 
+readonly&\mbox{\hyperlink{classVarnode}{Varnode}} is stored at a readonly location. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{persist@{persist}!Varnode@{Varnode}}\index{Varnode@{Varnode}!persist@{persist}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca952005b91ba1b04e4d431eecb1309112}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca952005b91ba1b04e4d431eecb1309112}} 
+persist&Persists after (and before) function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{addrtied@{addrtied}!Varnode@{Varnode}}\index{Varnode@{Varnode}!addrtied@{addrtied}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca7d4bde53093050741edab33ff1b80b0a}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca7d4bde53093050741edab33ff1b80b0a}} 
+addrtied&High-\/level variable is tied to address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{unaffected@{unaffected}!Varnode@{Varnode}}\index{Varnode@{Varnode}!unaffected@{unaffected}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2d46de16bfee21b62047a6a477f4bee8}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2d46de16bfee21b62047a6a477f4bee8}} 
+unaffected&Input which is unaffected by the function. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{spacebase@{spacebase}!Varnode@{Varnode}}\index{Varnode@{Varnode}!spacebase@{spacebase}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cac66fb19d44cde4a461d513f6d50a818f}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cac66fb19d44cde4a461d513f6d50a818f}} 
+spacebase&This is a base register for an address space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirectonly@{indirectonly}!Varnode@{Varnode}}\index{Varnode@{Varnode}!indirectonly@{indirectonly}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca6cf5a81c518255d279def65267974e8a}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca6cf5a81c518255d279def65267974e8a}} 
+indirectonly&If all uses of illegalinput varnode are inputs to I\+N\+D\+I\+R\+E\+CT. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{directwrite@{directwrite}!Varnode@{Varnode}}\index{Varnode@{Varnode}!directwrite@{directwrite}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caac2abc47efea38d093747758c9b204fd}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caac2abc47efea38d093747758c9b204fd}} 
+directwrite&(could be) Directly affected by a valid input \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{addrforce@{addrforce}!Varnode@{Varnode}}\index{Varnode@{Varnode}!addrforce@{addrforce}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cabecfcc64c4827f783e3e538b3b9dfd6c}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cabecfcc64c4827f783e3e538b3b9dfd6c}} 
+addrforce&\mbox{\hyperlink{classVarnode}{Varnode}} is used to force variable into an address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mapped@{mapped}!Varnode@{Varnode}}\index{Varnode@{Varnode}!mapped@{mapped}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca6512f0039b21ce7e6586f14d3b1bd9a2}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca6512f0039b21ce7e6586f14d3b1bd9a2}} 
+mapped&\mbox{\hyperlink{classVarnode}{Varnode}} has a database entry associated with it. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirect\_creation@{indirect\_creation}!Varnode@{Varnode}}\index{Varnode@{Varnode}!indirect\_creation@{indirect\_creation}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca50b14789b3198743399e2f2f8c8116e9}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca50b14789b3198743399e2f2f8c8116e9}} 
+indirect\+\_\+creation&The value in this \mbox{\hyperlink{classVarnode}{Varnode}} is created indirectly. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{return\_address@{return\_address}!Varnode@{Varnode}}\index{Varnode@{Varnode}!return\_address@{return\_address}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cac4272b1c3ffd7fe8518140f35d9f81d6}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cac4272b1c3ffd7fe8518140f35d9f81d6}} 
+return\+\_\+address&Is the varnode storage for a return address. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{coverdirty@{coverdirty}!Varnode@{Varnode}}\index{Varnode@{Varnode}!coverdirty@{coverdirty}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caeda31ed57cae145dd1d35cfc874ae16a}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caeda31ed57cae145dd1d35cfc874ae16a}} 
+coverdirty&\mbox{\hyperlink{classCover}{Cover}} is not upto date. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{precislo@{precislo}!Varnode@{Varnode}}\index{Varnode@{Varnode}!precislo@{precislo}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2e26b7277dd6b11db8498c07974935d1}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca2e26b7277dd6b11db8498c07974935d1}} 
+precislo&Is this \mbox{\hyperlink{classVarnode}{Varnode}} the low part of a double precision value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{precishi@{precishi}!Varnode@{Varnode}}\index{Varnode@{Varnode}!precishi@{precishi}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caeb173e0f2c992f3b7a15fbede0805629}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8caeb173e0f2c992f3b7a15fbede0805629}} 
+precishi&Is this \mbox{\hyperlink{classVarnode}{Varnode}} the high part of a double precision value. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{indirectstorage@{indirectstorage}!Varnode@{Varnode}}\index{Varnode@{Varnode}!indirectstorage@{indirectstorage}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca8bc73667e547486cbabc443d0c90f2c5}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca8bc73667e547486cbabc443d0c90f2c5}} 
+indirectstorage&Is this \mbox{\hyperlink{classVarnode}{Varnode}} storing a pointer to the actual symbol. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hiddenretparm@{hiddenretparm}!Varnode@{Varnode}}\index{Varnode@{Varnode}!hiddenretparm@{hiddenretparm}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca98c9b8ae27e32db19e64422a37b8be74}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca98c9b8ae27e32db19e64422a37b8be74}} 
+hiddenretparm&Does this varnode point to the return value storage location. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{incidental\_copy@{incidental\_copy}!Varnode@{Varnode}}\index{Varnode@{Varnode}!incidental\_copy@{incidental\_copy}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cae9fccd0da71d0cbf7ba0b169330dccc9}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8cae9fccd0da71d0cbf7ba0b169330dccc9}} 
+incidental\+\_\+copy&Do copies of this varnode happen as a side-\/effect. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{autolive\_hold@{autolive\_hold}!Varnode@{Varnode}}\index{Varnode@{Varnode}!autolive\_hold@{autolive\_hold}}}\mbox{\Hypertarget{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0bd67bde6d7a29cca9c9f6f360364d69}\label{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca0bd67bde6d7a29cca9c9f6f360364d69}} 
+autolive\+\_\+hold&Temporarily block dead-\/code removal of {\bfseries{this}}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVarnode_ab532ee1bda485d4292dd48f7313986fa}\label{classVarnode_ab532ee1bda485d4292dd48f7313986fa}} 
+\index{Varnode@{Varnode}!Varnode@{Varnode}}
+\index{Varnode@{Varnode}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{Varnode()}{Varnode()}}
+{\footnotesize\ttfamily Varnode\+::\+Varnode (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{m,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{dt }\end{DoxyParamCaption})}
+
+
+
+Construct a {\itshape free} \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+This is the constructor for making an unmanaged \mbox{\hyperlink{classVarnode}{Varnode}} It creates a {\bfseries{free}} \mbox{\hyperlink{classVarnode}{Varnode}} with possibly a \mbox{\hyperlink{classDatatype}{Datatype}} attribute. Most applications create Varnodes through the \mbox{\hyperlink{classFuncdata}{Funcdata}} interface 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the new \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em m} & is the starting storage \mbox{\hyperlink{classAddress}{Address}} \\
+\hline
+{\em dt} & is the \mbox{\hyperlink{classDatatype}{Datatype}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_a923a208c2607e493576deac0765ef058}\label{classVarnode_a923a208c2607e493576deac0765ef058}} 
+\index{Varnode@{Varnode}!````~Varnode@{$\sim$Varnode}}
+\index{````~Varnode@{$\sim$Varnode}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{$\sim$Varnode()}{~Varnode()}}
+{\footnotesize\ttfamily Varnode\+::$\sim$\+Varnode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Delete the \mbox{\hyperlink{classVarnode}{Varnode}} object. This routine assumes all other cross-\/references have been removed. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVarnode_afe43c9eba2e162f06ff29888db703d4d}\label{classVarnode_afe43c9eba2e162f06ff29888db703d4d}} 
+\index{Varnode@{Varnode}!contains@{contains}}
+\index{contains@{contains}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily int4 Varnode\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} \&}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Return info about the containment of {\itshape op} in {\bfseries{this}}. 
+
+Return various values depending on the containment of another \mbox{\hyperlink{classVarnode}{Varnode}} within {\bfseries{this}}. Return
+\begin{DoxyItemize}
+\item -\/1 if op.\+loc starts before -\/this-\/
+\item 0 if op is contained in -\/this-\/
+\item 1 if op.\+start is contained in -\/this-\/
+\item 2 if op.\+loc comes after -\/this-\/ or
+\item 3 if op and -\/this-\/ are in non-\/comparable spaces 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to test for containment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the integer containment code 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnode_ad543c86a9969b04287f7c4037f5f2eac}\label{classVarnode_ad543c86a9969b04287f7c4037f5f2eac}} 
+\index{Varnode@{Varnode}!copyShadow@{copyShadow}}
+\index{copyShadow@{copyShadow}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{copyShadow()}{copyShadow()}}
+{\footnotesize\ttfamily bool Varnode\+::copy\+Shadow (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Are {\bfseries{this}} and {\bfseries{op2}} copied from the same source? 
+
+Make a local determination if {\bfseries{this}} and {\bfseries{op2}} hold the same value. We check if there is a common ancester for which both {\bfseries{this}} and {\bfseries{op2}} are created from a direct sequence of C\+O\+PY operations. N\+O\+TE\+: This is a transitive relationship 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to compare to {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the Varnodes are copied from a common ancestor 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_a5b21f0980bc223331c25bf4e609b1254}\label{classVarnode_a5b21f0980bc223331c25bf4e609b1254}} 
+\index{Varnode@{Varnode}!copySymbol@{copySymbol}}
+\index{copySymbol@{copySymbol}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{copySymbol()}{copySymbol()}}
+{\footnotesize\ttfamily void Varnode\+::copy\+Symbol (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Copy symbol info from {\bfseries{vn}}. 
+
+Copy any symbol and type information from -\/vn-\/ into this 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to copy from \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_a436ec606351beaa6fb2fe7dc1bb4312c}\label{classVarnode_a436ec606351beaa6fb2fe7dc1bb4312c}} 
+\index{Varnode@{Varnode}!copySymbolIfValid@{copySymbolIfValid}}
+\index{copySymbolIfValid@{copySymbolIfValid}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{copySymbolIfValid()}{copySymbolIfValid()}}
+{\footnotesize\ttfamily void Varnode\+::copy\+Symbol\+If\+Valid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Copy symbol info from {\bfseries{vn}} if constant value matches. 
+
+\mbox{\hyperlink{classSymbol}{Symbol}} information (if present) is copied from the given constant \mbox{\hyperlink{classVarnode}{Varnode}} into {\bfseries{this}}, which also must be constant, but only if the two constants are {\itshape close} in the sense of an equate. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the given constant \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_a99192dea44cf05e3c619f65cbde949c7}\label{classVarnode_a99192dea44cf05e3c619f65cbde949c7}} 
+\index{Varnode@{Varnode}!getHigh@{getHigh}}
+\index{getHigh@{getHigh}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{getHigh()}{getHigh()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHighVariable}{High\+Variable}} $\ast$ Varnode\+::get\+High (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the high-\/level variable associated with this \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+During the course of analysis Varnodes are merged into high-\/level variables that are intended to be closer to the concept of variables in C source code. For a large portion of the decompiler analysis this concept hasn\textquotesingle{}t been built yet, and this routine will return {\bfseries{null}}. But after a certain point, every \mbox{\hyperlink{classVarnode}{Varnode}} managed by the \mbox{\hyperlink{classFuncdata}{Funcdata}} object, with the exception of ones that are marked as {\itshape annotations}, is associated with some \mbox{\hyperlink{classHighVariable}{High\+Variable}} and will return a non-\/null result. \begin{DoxyReturn}{Returns}
+the associated \mbox{\hyperlink{classHighVariable}{High\+Variable}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_ae02e0cb9be55fc557361b707068599c5}\label{classVarnode_ae02e0cb9be55fc557361b707068599c5}} 
+\index{Varnode@{Varnode}!getLocalType@{getLocalType}}
+\index{getLocalType@{getLocalType}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{getLocalType()}{getLocalType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ Varnode\+::get\+Local\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculate type of \mbox{\hyperlink{classVarnode}{Varnode}} based on local information. 
+
+Make an initial determination of the \mbox{\hyperlink{classDatatype}{Datatype}} of this \mbox{\hyperlink{classVarnode}{Varnode}}. If a \mbox{\hyperlink{classDatatype}{Datatype}} is already set and locked return it. Otherwise look through all the read Pcode\+Ops and the write \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} to determine if the \mbox{\hyperlink{classVarnode}{Varnode}} is getting used as an {\bfseries{int}}, {\bfseries{float}}, or {\bfseries{pointer}}, etc. Throw an exception if no \mbox{\hyperlink{classDatatype}{Datatype}} can be found at all. \begin{DoxyReturn}{Returns}
+the determined \mbox{\hyperlink{classDatatype}{Datatype}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_a9eab83050278fb3bd44d6179154e38de}\label{classVarnode_a9eab83050278fb3bd44d6179154e38de}} 
+\index{Varnode@{Varnode}!getUsePoint@{getUsePoint}}
+\index{getUsePoint@{getUsePoint}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{getUsePoint()}{getUsePoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAddress}{Address}} Varnode\+::get\+Use\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{fd }\end{DoxyParamCaption}) const}
+
+
+
+Get \mbox{\hyperlink{classAddress}{Address}} when this \mbox{\hyperlink{classVarnode}{Varnode}} first comes into scope. 
+
+A \mbox{\hyperlink{classVarnode}{Varnode}} can be defined as \char`\"{}coming into scope\char`\"{} at the \mbox{\hyperlink{classAddress}{Address}} of the first \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that writes to that storage location. Within S\+SA form this {\bfseries{first-\/use}} address always exists and is unique if we consider inputs to come into scope at the start \mbox{\hyperlink{classAddress}{Address}} of the function they are in 
+\begin{DoxyParams}{Parameters}
+{\em fd} & is the \mbox{\hyperlink{classFuncdata}{Funcdata}} containing the tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the first-\/use \mbox{\hyperlink{classAddress}{Address}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_a74edc3b590c862473137a27517d3777a}\label{classVarnode_a74edc3b590c862473137a27517d3777a}} 
+\index{Varnode@{Varnode}!intersects@{intersects}}
+\index{intersects@{intersects}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Varnode\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2loc,  }\item[{int4}]{op2size }\end{DoxyParamCaption}) const}
+
+
+
+Check intersection against an \mbox{\hyperlink{classAddress}{Address}} range. 
+
+Check if {\bfseries{this}} intersects the given \mbox{\hyperlink{classAddress}{Address}} range 
+\begin{DoxyParams}{Parameters}
+{\em op2loc} & is the start of the range \\
+\hline
+{\em op2size} & is the size of the range in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} intersects the range 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_a0750524b7c076892cf123c37b00db5af}\label{classVarnode_a0750524b7c076892cf123c37b00db5af}} 
+\index{Varnode@{Varnode}!intersects@{intersects}}
+\index{intersects@{intersects}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Varnode\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} \&}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Return {\bfseries{true}} if the storage locations intersect. 
+
+Check whether the storage locations of two varnodes intersect 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the locations intersect 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_ab6a24df6723e760e4fa32e2cbad8b6df}\label{classVarnode_ab6a24df6723e760e4fa32e2cbad8b6df}} 
+\index{Varnode@{Varnode}!isConstantExtended@{isConstantExtended}}
+\index{isConstantExtended@{isConstantExtended}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{isConstantExtended()}{isConstantExtended()}}
+{\footnotesize\ttfamily int4 Varnode\+::is\+Constant\+Extended (\begin{DoxyParamCaption}\item[{uintb \&}]{val }\end{DoxyParamCaption}) const}
+
+Is {\bfseries{this}} an (extended) constant
+
+If {\bfseries{this}} is a constant, or is extended (I\+N\+T\+\_\+\+Z\+E\+XT,I\+N\+T\+\_\+\+S\+E\+XT) from a constant, the {\itshape value} of the constant is passed back and a non-\/negative integer is returned, either\+:
+\begin{DoxyItemize}
+\item 0 for a normal constant \mbox{\hyperlink{classVarnode}{Varnode}}
+\item 1 for a zero extension (I\+N\+T\+\_\+\+Z\+E\+XT) of a normal constant
+\item 2 for a sign extension (I\+N\+T\+\_\+\+S\+E\+XT) of a normal constant 
+\begin{DoxyParams}{Parameters}
+{\em val} & is a reference to the constant value that is passed back \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the extension code (or -\/1 if {\bfseries{this}} cannot be interpreted as a constant) 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnode_a1899f1f493fed54c6dea1f445f146de6}\label{classVarnode_a1899f1f493fed54c6dea1f445f146de6}} 
+\index{Varnode@{Varnode}!loneDescend@{loneDescend}}
+\index{loneDescend@{loneDescend}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{loneDescend()}{loneDescend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Varnode\+::lone\+Descend (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Return unique reading \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}, or {\bfseries{null}} if there are zero or more than 1. 
+
+This is a convenience method for quickly finding the unique \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} that reads this \mbox{\hyperlink{classVarnode}{Varnode}} \begin{DoxyReturn}{Returns}
+only descendant (if there is 1 and O\+N\+LY 1) or {\bfseries{null}} otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_a3a2b6667e362e55c82ab0c983693ad92}\label{classVarnode_a3a2b6667e362e55c82ab0c983693ad92}} 
+\index{Varnode@{Varnode}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Varnode\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Comparison operator on \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Compare two Varnodes
+\begin{DoxyItemize}
+\item First by storage location
+\item Second by size
+\item Then by defining \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \mbox{\hyperlink{classSeqNum}{Seq\+Num}} if appropriate
+\end{DoxyItemize}
+
+{\itshape Input} Varnodes come before {\itshape written} Varnodes {\itshape Free} Varnodes come after everything else 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to compare {\bfseries{this}} to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} is less than {\bfseries{op2}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_afab4c9a244385f9c849ead46102b69d8}\label{classVarnode_afab4c9a244385f9c849ead46102b69d8}} 
+\index{Varnode@{Varnode}!operator==@{operator==}}
+\index{operator==@{operator==}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Varnode\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Equality operator. 
+
+Determine if two Varnodes are equivalent. They must match
+\begin{DoxyItemize}
+\item Storage location
+\item Size
+\item Defining \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} if it exists
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to compare {\bfseries{this}} to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if they are equivalent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_a76b9fae2eedacde995415262b7e46189}\label{classVarnode_a76b9fae2eedacde995415262b7e46189}} 
+\index{Varnode@{Varnode}!overlap@{overlap}}
+\index{overlap@{overlap}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{overlap()}{overlap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int4 Varnode\+::overlap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{op2loc,  }\item[{int4}]{op2size }\end{DoxyParamCaption}) const}
+
+
+
+Return relative point of overlap with \mbox{\hyperlink{classAddress}{Address}} range. 
+
+Return whether {\itshape Least} {\itshape Signifigant} {\itshape Byte} of {\bfseries{this}} occurs in an \mbox{\hyperlink{classAddress}{Address}} range I.\+e. return
+\begin{DoxyItemize}
+\item 0 if it overlaps op\textquotesingle{}s lsb
+\item 1 if it overlaps op\textquotesingle{}s second lsb and so on 
+\begin{DoxyParams}{Parameters}
+{\em op2loc} & is the starting \mbox{\hyperlink{classAddress}{Address}} of the range \\
+\hline
+{\em op2size} & is the size of the range in bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the relative overlap point or -\/1 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnode_a3317ab5e04ef326f4c68ece1929539a6}\label{classVarnode_a3317ab5e04ef326f4c68ece1929539a6}} 
+\index{Varnode@{Varnode}!overlap@{overlap}}
+\index{overlap@{overlap}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{overlap()}{overlap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int4 Varnode\+::overlap (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} \&}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Return relative point of overlap between two Varnodes. 
+
+Return whether {\itshape Least} {\itshape Signifigant} {\itshape Byte} of {\bfseries{this}} occurs in {\bfseries{op}} I.\+e. return
+\begin{DoxyItemize}
+\item 0 if it overlaps op\textquotesingle{}s lsb
+\item 1 if it overlaps op\textquotesingle{}s second lsb and so on 
+\begin{DoxyParams}{Parameters}
+{\em op} & is \mbox{\hyperlink{classVarnode}{Varnode}} to test for overlap \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the relative overlap point or -\/1 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnode_a0668e171937a1db3155563d0b1fd9324}\label{classVarnode_a0668e171937a1db3155563d0b1fd9324}} 
+\index{Varnode@{Varnode}!printCover@{printCover}}
+\index{printCover@{printCover}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{printCover()}{printCover()}}
+{\footnotesize\ttfamily void Varnode\+::print\+Cover (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print raw coverage info about the \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Print, to a stream, textual information about where {\bfseries{this}} \mbox{\hyperlink{classVarnode}{Varnode}} is in scope within its particular \mbox{\hyperlink{classFuncdata}{Funcdata}}. This amounts to a list of address ranges bounding the writes and reads of the \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_ac23b9dc5c3f9e94389d454184f11cff8}\label{classVarnode_ac23b9dc5c3f9e94389d454184f11cff8}} 
+\index{Varnode@{Varnode}!printInfo@{printInfo}}
+\index{printInfo@{printInfo}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{printInfo()}{printInfo()}}
+{\footnotesize\ttfamily void Varnode\+::print\+Info (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print raw attribute info about the \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Print boolean attribute information about {\bfseries{this}} as keywords to a stream 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_aa4c614218fd461a8c5de1e27880f56fe}\label{classVarnode_aa4c614218fd461a8c5de1e27880f56fe}} 
+\index{Varnode@{Varnode}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Varnode\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print a simple identifier plus additional info identifying \mbox{\hyperlink{classVarnode}{Varnode}} with S\+SA form. 
+
+Print textual information about this \mbox{\hyperlink{classVarnode}{Varnode}} including a base identifier along with enough size and attribute information to uniquely identify the \mbox{\hyperlink{classVarnode}{Varnode}} within a text S\+SA listing In particular, the identifiers have either \char`\"{}i\char`\"{} or defining op \mbox{\hyperlink{classSeqNum}{Seq\+Num}} information appended to them in parantheses. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_a3aefb411714c9c066113cc4efd15eed6}\label{classVarnode_a3aefb411714c9c066113cc4efd15eed6}} 
+\index{Varnode@{Varnode}!printRaw@{printRaw}}
+\index{printRaw@{printRaw}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{printRaw()}{printRaw()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Varnode\+::print\+Raw (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Print raw info about a \mbox{\hyperlink{classVarnode}{Varnode}} to stream. 
+
+Invoke the print\+Raw method on the given \mbox{\hyperlink{classVarnode}{Varnode}} pointer, but take into account that it might be null. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream to write to \\
+\hline
+{\em vn} & is the given \mbox{\hyperlink{classVarnode}{Varnode}} pointer (may be null) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_ae14d6bd40ea442939aecc888d7fcaa39}\label{classVarnode_ae14d6bd40ea442939aecc888d7fcaa39}} 
+\index{Varnode@{Varnode}!printRawHeritage@{printRawHeritage}}
+\index{printRawHeritage@{printRawHeritage}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{printRawHeritage()}{printRawHeritage()}}
+{\footnotesize\ttfamily void Varnode\+::print\+Raw\+Heritage (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{depth }\end{DoxyParamCaption}) const}
+
+
+
+Print a simple S\+SA subtree rooted at {\bfseries{this}}. 
+
+Recursively print a terse textual representation of the data-\/flow (S\+SA) tree rooted at this \mbox{\hyperlink{classVarnode}{Varnode}} 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em depth} & is the current depth of the tree we are at \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_aa90c838f1e0116747e09e3d1fe72b18e}\label{classVarnode_aa90c838f1e0116747e09e3d1fe72b18e}} 
+\index{Varnode@{Varnode}!printRawNoMarkup@{printRawNoMarkup}}
+\index{printRawNoMarkup@{printRawNoMarkup}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{printRawNoMarkup()}{printRawNoMarkup()}}
+{\footnotesize\ttfamily int4 Varnode\+::print\+Raw\+No\+Markup (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Print a simple identifier for the \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Print to the stream either the name of the \mbox{\hyperlink{classVarnode}{Varnode}}, such as a register name, if it exists or print a shortcut character representing the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} and a hex representation of the offset. This function also computes and returns the {\itshape expected} size of the identifier it prints to facilitate the printing of size modifiers by other print routines 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the expected size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_ab594852b697b20dea20d2f4d7551b8dd}\label{classVarnode_ab594852b697b20dea20d2f4d7551b8dd}} 
+\index{Varnode@{Varnode}!saveXml@{saveXml}}
+\index{saveXml@{saveXml}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{saveXml()}{saveXml()}}
+{\footnotesize\ttfamily void Varnode\+::save\+Xml (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Save a description of {\bfseries{this}} as an X\+ML tag. 
+
+Write an X\+ML tag, {\bfseries{$<$addr$>$}}, with at least the following attributes\+:
+\begin{DoxyItemize}
+\item {\bfseries{space}} describes the \mbox{\hyperlink{classAddrSpace}{Addr\+Space}}
+\item {\bfseries{offset}} of the \mbox{\hyperlink{classVarnode}{Varnode}} within the space
+\item {\bfseries{size}} of the \mbox{\hyperlink{classVarnode}{Varnode}} is bytes
+\end{DoxyItemize}
+
+Additionally the tag will contain other optional attributes. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the stream to write the tag to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnode_a97a1df25894d4457f7442303381fc80a}\label{classVarnode_a97a1df25894d4457f7442303381fc80a}} 
+\index{Varnode@{Varnode}!termOrder@{termOrder}}
+\index{termOrder@{termOrder}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{termOrder()}{termOrder()}}
+{\footnotesize\ttfamily int4 Varnode\+::term\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{op }\end{DoxyParamCaption}) const}
+
+
+
+Compare two Varnodes based on their term order. 
+
+Compare term order of two Varnodes. Used in Term Rewriting strategies to order operands of commutative ops 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to order against {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if {\bfseries{this}} comes before {\bfseries{op}}, 1 if op before this, or 0 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnode_a48932e5bf8aab53ae9b3a6a6d9b25ce8}\label{classVarnode_a48932e5bf8aab53ae9b3a6a6d9b25ce8}} 
+\index{Varnode@{Varnode}!updateType@{updateType}}
+\index{updateType@{updateType}!Varnode@{Varnode}}
+\doxysubsubsection{\texorpdfstring{updateType()}{updateType()}}
+{\footnotesize\ttfamily bool Varnode\+::update\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{bool}]{lock,  }\item[{bool}]{override }\end{DoxyParamCaption})}
+
+
+
+(Possibly) set the \mbox{\hyperlink{classDatatype}{Datatype}} given various restrictions 
+
+Change the \mbox{\hyperlink{classDatatype}{Datatype}} and lock state associated with this \mbox{\hyperlink{classVarnode}{Varnode}} if various conditions are met
+\begin{DoxyItemize}
+\item Don\textquotesingle{}t change a previously locked \mbox{\hyperlink{classDatatype}{Datatype}} (unless {\bfseries{override}} flag is {\bfseries{true}})
+\item Don\textquotesingle{}t consider an {\bfseries{undefined}} type to be locked
+\item Don\textquotesingle{}t change to an identical \mbox{\hyperlink{classDatatype}{Datatype}} 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the \mbox{\hyperlink{classDatatype}{Datatype}} to change to \\
+\hline
+{\em lock} & is {\bfseries{true}} if the new \mbox{\hyperlink{classDatatype}{Datatype}} should be locked \\
+\hline
+{\em override} & is {\bfseries{true}} if an old lock should be overridden \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the \mbox{\hyperlink{classDatatype}{Datatype}} or the lock setting was changed 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varnode_8hh}{varnode.\+hh}}\item 
+varnode.\+cc\end{DoxyCompactItemize}

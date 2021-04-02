@@ -1,0 +1,57 @@
+\hypertarget{structOpFollow}{}\doxysection{Op\+Follow Struct Reference}
+\label{structOpFollow}\index{OpFollow@{OpFollow}}
+
+
+A simple node used to dynamically define a sequence of operations.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{structOpFollow_a31cd6faa65b443adea57d0830b87d16b}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} node from an X\+ML stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structOpFollow_a9b8a62fc43b7a806b8cc339d68422749}\label{structOpFollow_a9b8a62fc43b7a806b8cc339d68422749}} 
+\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \mbox{\hyperlink{structOpFollow_a9b8a62fc43b7a806b8cc339d68422749}{opc}}
+\begin{DoxyCompactList}\small\item\em The particular p-\/code operation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structOpFollow_a1a70586a4329aae03bf49b7e129eed8c}\label{structOpFollow_a1a70586a4329aae03bf49b7e129eed8c}} 
+uintb \mbox{\hyperlink{structOpFollow_a1a70586a4329aae03bf49b7e129eed8c}{val}}
+\begin{DoxyCompactList}\small\item\em A possible constant second input. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structOpFollow_a6a4f47ec389b5c9ef9ee6ecfa259fdb8}\label{structOpFollow_a6a4f47ec389b5c9ef9ee6ecfa259fdb8}} 
+int4 \mbox{\hyperlink{structOpFollow_a6a4f47ec389b5c9ef9ee6ecfa259fdb8}{slot}}
+\begin{DoxyCompactList}\small\item\em Slot to follow. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A simple node used to dynamically define a sequence of operations. 
+
+This should be deprecated in favor of \mbox{\hyperlink{classExecutablePcode}{Executable\+Pcode}} objects. This class holds a single operation (within a sequence). It acts on the output of the previous operation with an optional constant value as the second input. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structOpFollow_a31cd6faa65b443adea57d0830b87d16b}\label{structOpFollow_a31cd6faa65b443adea57d0830b87d16b}} 
+\index{OpFollow@{OpFollow}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!OpFollow@{OpFollow}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Op\+Follow\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Restore {\bfseries{this}} node from an X\+ML stream. 
+
+Process either a $<$baseop$>$ or $<$innerop$>$ element. Currently this only supports I\+N\+T\+\_\+\+Z\+E\+XT, I\+N\+T\+\_\+\+L\+E\+FT, and I\+N\+T\+\_\+\+A\+ND operations 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the root X\+ML element \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

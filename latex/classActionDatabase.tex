@@ -1,0 +1,187 @@
+\hypertarget{classActionDatabase}{}\doxysection{Action\+Database Class Reference}
+\label{classActionDatabase}\index{ActionDatabase@{ActionDatabase}}
+
+
+\mbox{\hyperlink{classDatabase}{Database}} of root \mbox{\hyperlink{classAction}{Action}} objects that can be used to transform a function.  
+
+
+
+
+{\ttfamily \#include $<$action.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classActionDatabase_ad00598cb3da2f8bb682a4bdfabf7e6c0}\label{classActionDatabase_ad00598cb3da2f8bb682a4bdfabf7e6c0}} 
+\mbox{\hyperlink{classActionDatabase_ad00598cb3da2f8bb682a4bdfabf7e6c0}{$\sim$\+Action\+Database}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActionDatabase_a5db5842b2440ab92a19317e9fa9ad623}{reset\+Defaults}} (void)
+\begin{DoxyCompactList}\small\item\em (Re)set the default configuration \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classActionDatabase_ad8f31b8112d7da028a3091e176151f14}\label{classActionDatabase_ad8f31b8112d7da028a3091e176151f14}} 
+const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \& \mbox{\hyperlink{classActionDatabase_ad8f31b8112d7da028a3091e176151f14}{get\+Group}} (const string \&grp) const
+\begin{DoxyCompactList}\small\item\em Get a specific grouplist by name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionDatabase_a19e09431e4e66936090715ab8afe774b}{set\+Current}} (const string \&actname)
+\begin{DoxyCompactList}\small\item\em Set the current {\itshape root} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionDatabase_a3b83440563e2eb689ab44c715679f41f}{toggle\+Action}} (const string \&grp, const string \&basegrp, bool val)
+\begin{DoxyCompactList}\small\item\em Toggle a group of Actions with a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActionDatabase_adcd5e496a007d4d18456da556c755a42}{set\+Group}} (const string \&grp, const char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Establish a new {\itshape root} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActionDatabase_a8a73393a21e7ae50bcdb138eab1dcaff}{clone\+Group}} (const string \&oldname, const string \&newname)
+\begin{DoxyCompactList}\small\item\em Clone a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classActionDatabase_a7b00339734448a709998615ced5cbd04}{add\+To\+Group}} (const string \&grp, const string \&basegroup)
+\begin{DoxyCompactList}\small\item\em Add a group to a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classActionDatabase_af5e2e83dbc5ec8baa906081101307c74}{remove\+From\+Group}} (const string \&grp, const string \&basegroup)
+\begin{DoxyCompactList}\small\item\em Remove a group from a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classActionDatabase_a9113469a778d7b2e867cb627f764d747}{universal\+Action}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb)
+\begin{DoxyCompactList}\small\item\em Build the universal action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classDatabase}{Database}} of root \mbox{\hyperlink{classAction}{Action}} objects that can be used to transform a function. 
+
+This is a container for \mbox{\hyperlink{classAction}{Action}} objects. It also manages {\bfseries{root}} \mbox{\hyperlink{classAction}{Action}} objects, which encapsulate a complete transformation system that can be applied to functions. {\itshape Root} \mbox{\hyperlink{classAction}{Action}} objects are derived from a single {\bfseries{universal}} \mbox{\hyperlink{classAction}{Action}} object that has every possible sub-\/action within it. A {\itshape root} \mbox{\hyperlink{classAction}{Action}} has its own name and is derived from the {\itshape universal} via a grouplist, which lists a particular subset of \mbox{\hyperlink{classAction}{Action}} and \mbox{\hyperlink{classRule}{Rule}} groups to use for the root. A new {\itshape root} \mbox{\hyperlink{classAction}{Action}} is created by providing a new grouplist via \mbox{\hyperlink{classActionDatabase_adcd5e496a007d4d18456da556c755a42}{set\+Group()}} or modifying an existing grouplist. This class is intended to be instantiated as a singleton and keeps track of the {\itshape current} root \mbox{\hyperlink{classAction}{Action}}, which is the one that will be actively applied to functions. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionDatabase_a7b00339734448a709998615ced5cbd04}\label{classActionDatabase_a7b00339734448a709998615ced5cbd04}} 
+\index{ActionDatabase@{ActionDatabase}!addToGroup@{addToGroup}}
+\index{addToGroup@{addToGroup}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{addToGroup()}{addToGroup()}}
+{\footnotesize\ttfamily bool Action\+Database\+::add\+To\+Group (\begin{DoxyParamCaption}\item[{const string \&}]{grp,  }\item[{const string \&}]{basegroup }\end{DoxyParamCaption})}
+
+
+
+Add a group to a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. 
+
+Add a group to the grouplist for a particular {\itshape root} \mbox{\hyperlink{classAction}{Action}}. Do not use to redefine a {\itshape root} \mbox{\hyperlink{classAction}{Action}} that has already been instantiated. 
+\begin{DoxyParams}{Parameters}
+{\em grp} & is the name of the {\itshape root} \mbox{\hyperlink{classAction}{Action}} \\
+\hline
+{\em basegroup} & is the group to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} for a new addition, {\bfseries{false}} is the group was already present 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionDatabase_a8a73393a21e7ae50bcdb138eab1dcaff}\label{classActionDatabase_a8a73393a21e7ae50bcdb138eab1dcaff}} 
+\index{ActionDatabase@{ActionDatabase}!cloneGroup@{cloneGroup}}
+\index{cloneGroup@{cloneGroup}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{cloneGroup()}{cloneGroup()}}
+{\footnotesize\ttfamily void Action\+Database\+::clone\+Group (\begin{DoxyParamCaption}\item[{const string \&}]{oldname,  }\item[{const string \&}]{newname }\end{DoxyParamCaption})}
+
+
+
+Clone a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. 
+
+Copy an existing {\itshape root} \mbox{\hyperlink{classAction}{Action}} by copying its grouplist, giving it a new name. This is suitable for a copy then modify strategy to create a new {\itshape root} \mbox{\hyperlink{classAction}{Action}}. Do not use to redefine a {\itshape root} \mbox{\hyperlink{classAction}{Action}} that has already been instantiated 
+\begin{DoxyParams}{Parameters}
+{\em oldname} & is the name of an existing {\itshape root} \mbox{\hyperlink{classAction}{Action}} \\
+\hline
+{\em newname} & is the name of the copy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionDatabase_af5e2e83dbc5ec8baa906081101307c74}\label{classActionDatabase_af5e2e83dbc5ec8baa906081101307c74}} 
+\index{ActionDatabase@{ActionDatabase}!removeFromGroup@{removeFromGroup}}
+\index{removeFromGroup@{removeFromGroup}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{removeFromGroup()}{removeFromGroup()}}
+{\footnotesize\ttfamily bool Action\+Database\+::remove\+From\+Group (\begin{DoxyParamCaption}\item[{const string \&}]{grp,  }\item[{const string \&}]{basegrp }\end{DoxyParamCaption})}
+
+
+
+Remove a group from a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. 
+
+The group is removed from the grouplist of a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. Do not use to redefine a {\itshape root} \mbox{\hyperlink{classAction}{Action}} that has already been instantiated. 
+\begin{DoxyParams}{Parameters}
+{\em grp} & is the name of the {\itshape root} \mbox{\hyperlink{classAction}{Action}} \\
+\hline
+{\em basegrp} & is the group to remove \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the group existed and was removed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionDatabase_a5db5842b2440ab92a19317e9fa9ad623}\label{classActionDatabase_a5db5842b2440ab92a19317e9fa9ad623}} 
+\index{ActionDatabase@{ActionDatabase}!resetDefaults@{resetDefaults}}
+\index{resetDefaults@{resetDefaults}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{resetDefaults()}{resetDefaults()}}
+{\footnotesize\ttfamily void Action\+Database\+::reset\+Defaults (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+(Re)set the default configuration 
+
+Clear out (possibly altered) root Actions. Reset the default groups. Set the default root action \char`\"{}decompile\char`\"{} \mbox{\Hypertarget{classActionDatabase_a19e09431e4e66936090715ab8afe774b}\label{classActionDatabase_a19e09431e4e66936090715ab8afe774b}} 
+\index{ActionDatabase@{ActionDatabase}!setCurrent@{setCurrent}}
+\index{setCurrent@{setCurrent}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{setCurrent()}{setCurrent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAction}{Action}} $\ast$ Action\+Database\+::set\+Current (\begin{DoxyParamCaption}\item[{const string \&}]{actname }\end{DoxyParamCaption})}
+
+
+
+Set the current {\itshape root} \mbox{\hyperlink{classAction}{Action}}. 
+
+The \mbox{\hyperlink{classAction}{Action}} is specified by name. A grouplist must already exist for this name. If the \mbox{\hyperlink{classAction}{Action}} doesn\textquotesingle{}t already exist, it will be derived from the {\itshape universal} action via this grouplist. 
+\begin{DoxyParams}{Parameters}
+{\em actname} & is the name of the {\itshape root} \mbox{\hyperlink{classAction}{Action}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionDatabase_adcd5e496a007d4d18456da556c755a42}\label{classActionDatabase_adcd5e496a007d4d18456da556c755a42}} 
+\index{ActionDatabase@{ActionDatabase}!setGroup@{setGroup}}
+\index{setGroup@{setGroup}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{setGroup()}{setGroup()}}
+{\footnotesize\ttfamily void Action\+Database\+::set\+Group (\begin{DoxyParamCaption}\item[{const string \&}]{grp,  }\item[{const char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Establish a new {\itshape root} \mbox{\hyperlink{classAction}{Action}}. 
+
+(Re)set the grouplist for a particular {\itshape root} \mbox{\hyperlink{classAction}{Action}}. Do not use this routine to redefine an existing {\itshape root} \mbox{\hyperlink{classAction}{Action}}. 
+\begin{DoxyParams}{Parameters}
+{\em grp} & is the name of the {\itshape root} \mbox{\hyperlink{classAction}{Action}} \\
+\hline
+{\em argv} & is a list of static char pointers, which must end with a N\+U\+LL pointer, or a zero length string. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classActionDatabase_a3b83440563e2eb689ab44c715679f41f}\label{classActionDatabase_a3b83440563e2eb689ab44c715679f41f}} 
+\index{ActionDatabase@{ActionDatabase}!toggleAction@{toggleAction}}
+\index{toggleAction@{toggleAction}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{toggleAction()}{toggleAction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAction}{Action}} $\ast$ Action\+Database\+::toggle\+Action (\begin{DoxyParamCaption}\item[{const string \&}]{grp,  }\item[{const string \&}]{basegrp,  }\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Toggle a group of Actions with a {\itshape root} \mbox{\hyperlink{classAction}{Action}}. 
+
+A particular group is either added or removed from the grouplist defining a particular {\itshape root} \mbox{\hyperlink{classAction}{Action}}. The {\itshape root} \mbox{\hyperlink{classAction}{Action}} is then (re)derived from the universal 
+\begin{DoxyParams}{Parameters}
+{\em grp} & is the name of the {\itshape root} \mbox{\hyperlink{classAction}{Action}} \\
+\hline
+{\em basegrp} & is name of group (within the grouplist) to toggle \\
+\hline
+{\em val} & is {\bfseries{true}} if the group should be added or {\bfseries{false}} if it should be removed \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the modified {\itshape root} \mbox{\hyperlink{classAction}{Action}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classActionDatabase_a9113469a778d7b2e867cb627f764d747}\label{classActionDatabase_a9113469a778d7b2e867cb627f764d747}} 
+\index{ActionDatabase@{ActionDatabase}!universalAction@{universalAction}}
+\index{universalAction@{universalAction}!ActionDatabase@{ActionDatabase}}
+\doxysubsubsection{\texorpdfstring{universalAction()}{universalAction()}}
+{\footnotesize\ttfamily void Action\+Database\+::universal\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{conf }\end{DoxyParamCaption})}
+
+
+
+Build the universal action. 
+
+Construct the {\bfseries{universal}} \mbox{\hyperlink{classAction}{Action}} that contains all possible components 
+\begin{DoxyParams}{Parameters}
+{\em conf} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} that will use the \mbox{\hyperlink{classAction}{Action}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{action_8hh}{action.\+hh}}\item 
+action.\+cc\item 
+coreaction.\+cc\end{DoxyCompactItemize}

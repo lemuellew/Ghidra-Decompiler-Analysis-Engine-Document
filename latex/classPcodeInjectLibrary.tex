@@ -1,0 +1,440 @@
+\hypertarget{classPcodeInjectLibrary}{}\doxysection{Pcode\+Inject\+Library Class Reference}
+\label{classPcodeInjectLibrary}\index{PcodeInjectLibrary@{PcodeInjectLibrary}}
+
+
+A collection of p-\/code injection payloads.  
+
+
+
+
+{\ttfamily \#include $<$pcodeinject.\+hh$>$}
+
+
+
+Inheritance diagram for Pcode\+Inject\+Library\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPcodeInjectLibrary__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Pcode\+Inject\+Library\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classPcodeInjectLibrary__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_ae7a4417915e073736f49f698b95eb450}\label{classPcodeInjectLibrary_ae7a4417915e073736f49f698b95eb450}} 
+virtual \mbox{\hyperlink{classPcodeInjectLibrary_ae7a4417915e073736f49f698b95eb450}{$\sim$\+Pcode\+Inject\+Library}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classPcodeInjectLibrary_ad49624d6aa508e6e75d7c23f9c839c02}{get\+Payload\+Id}} (int4 type, const string \&nm) const
+\begin{DoxyCompactList}\small\item\em Map name and type to the payload id. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPcodeInjectLibrary_a436ac8db6c2f5735481c86a937d3db55}{get\+Call\+Fixup\+Name}} (int4 injectid) const
+\begin{DoxyCompactList}\small\item\em Get the call-\/fixup name associated with an id. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPcodeInjectLibrary_a928588313e2dfb9454b65f932985d97c}{get\+Call\+Other\+Target}} (int4 injectid) const
+\begin{DoxyCompactList}\small\item\em Get the callother-\/fixup name associated with an id. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classPcodeInjectLibrary_aaf5cb3c65ea01b0db1d38777f23b8796}{get\+Call\+Mechanism\+Name}} (int4 injectid) const
+\begin{DoxyCompactList}\small\item\em Get the call mechanism name associated with an id. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classPcodeInjectLibrary_a738666065a924346cf552b1d62c84848}{restore\+Xml\+Inject}} (const string \&src, const string \&nm, int4 tp, const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Read in and register an injection payload from an X\+ML stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPcodeInjectLibrary_a48cebdddd48a1fa5db300d80ed6bdaa2}{restore\+Debug}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em A method for reading in p-\/code generated externally for use in debugging. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classPcodeInjectLibrary_a0e360443cbc6ff94ea71d197882c55a8}{manual\+Call\+Fixup}} (const string \&name, const string \&snippetstring)=0
+\begin{DoxyCompactList}\small\item\em Manually add a call-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classPcodeInjectLibrary_a93f4e4b0f75d81b96bd92623d392269a}{manual\+Call\+Other\+Fixup}} (const string \&name, const string \&outname, const vector$<$ string $>$ \&inname, const string \&snippet)=0
+\begin{DoxyCompactList}\small\item\em Manually add a callother-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classInjectContext}{Inject\+Context}} \& \mbox{\hyperlink{classPcodeInjectLibrary_a3a1ca9f7ea2cea02de1141cc35c79b18}{get\+Cached\+Context}} (void)=0
+\begin{DoxyCompactList}\small\item\em Retrieve a reusable context object for {\bfseries{this}} library. \end{DoxyCompactList}\item 
+virtual const vector$<$ \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$ $>$ \& \mbox{\hyperlink{classPcodeInjectLibrary_aa2c520dab5db72d968e383b56d1ea8f6}{get\+Behaviors}} (void)=0
+\begin{DoxyCompactList}\small\item\em Get the array of op-\/code behaviors for initializing and emulator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classPcodeInjectLibrary_a2c6c5deb054a7ab6f8e59653ce9d984f}{register\+Call\+Fixup}} (const string \&fixup\+Name, int4 injectid)
+\begin{DoxyCompactList}\small\item\em Map a {\itshape call-\/fixup} name to a payload id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeInjectLibrary_aa06eaa0357d6aeed80a3f64a5e914a53}{register\+Call\+Other\+Fixup}} (const string \&fixup\+Name, int4 injectid)
+\begin{DoxyCompactList}\small\item\em Map a {\itshape callother-\/fixup} name to a payload id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeInjectLibrary_a8e767c1d87d0cfabac0341c35c188b88}{register\+Call\+Mechanism}} (const string \&fixup\+Name, int4 injectid)
+\begin{DoxyCompactList}\small\item\em Map a {\itshape call} {\itshape mechanism} name to a payload id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPcodeInjectLibrary_a73430017e8dc38985a1e20196e59eb85}{register\+Exe\+Script}} (const string \&script\+Name, int4 injectid)
+\begin{DoxyCompactList}\small\item\em Map a {\itshape p-\/code} {\itshape script} name to a payload id. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classPcodeInjectLibrary_a386a617992fcdd31d9abbf0728126686}{allocate\+Inject}} (const string \&source\+Name, const string \&name, int4 type)=0
+\begin{DoxyCompactList}\small\item\em Allocate a new \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classPcodeInjectLibrary_a0b75b562fb736f23269114fec5ca36d9}{register\+Inject}} (int4 injectid)=0
+\begin{DoxyCompactList}\small\item\em Finalize a payload within the library, once the payload is initialized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a132ab1eb8c759a0cfaa78ad1b25f5b8b}\label{classPcodeInjectLibrary_a132ab1eb8c759a0cfaa78ad1b25f5b8b}} 
+\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classPcodeInjectLibrary_a132ab1eb8c759a0cfaa78ad1b25f5b8b}{glb}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classArchitecture}{Architecture}} to which the injection payloads apply. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a52091b5829f5085157ec948cd1eef60c}\label{classPcodeInjectLibrary_a52091b5829f5085157ec948cd1eef60c}} 
+uintb \mbox{\hyperlink{classPcodeInjectLibrary_a52091b5829f5085157ec948cd1eef60c}{tempbase}}
+\begin{DoxyCompactList}\small\item\em Offset within {\itshape unique} space for allocating temporaries within a payload. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_ab56d641b00776993e15d0349627a8672}\label{classPcodeInjectLibrary_ab56d641b00776993e15d0349627a8672}} 
+vector$<$ \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} $\ast$ $>$ \mbox{\hyperlink{classPcodeInjectLibrary_ab56d641b00776993e15d0349627a8672}{injection}}
+\begin{DoxyCompactList}\small\item\em Registered injections. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a8ee8b14330c4a1a686bcecd84dc0c2e9}\label{classPcodeInjectLibrary_a8ee8b14330c4a1a686bcecd84dc0c2e9}} 
+map$<$ string, int4 $>$ \mbox{\hyperlink{classPcodeInjectLibrary_a8ee8b14330c4a1a686bcecd84dc0c2e9}{call\+Fixup\+Map}}
+\begin{DoxyCompactList}\small\item\em Map of registered call-\/fixup names to injection id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a7bc738dd5cedca8a28dad33fac7629b6}\label{classPcodeInjectLibrary_a7bc738dd5cedca8a28dad33fac7629b6}} 
+map$<$ string, int4 $>$ \mbox{\hyperlink{classPcodeInjectLibrary_a7bc738dd5cedca8a28dad33fac7629b6}{call\+Other\+Fixup\+Map}}
+\begin{DoxyCompactList}\small\item\em Map of registered callother-\/fixup names to injection id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a5e60d3c9319a18387281404cb92503e3}\label{classPcodeInjectLibrary_a5e60d3c9319a18387281404cb92503e3}} 
+map$<$ string, int4 $>$ \mbox{\hyperlink{classPcodeInjectLibrary_a5e60d3c9319a18387281404cb92503e3}{call\+Mech\+Fixup\+Map}}
+\begin{DoxyCompactList}\small\item\em Map of registered mechanism names to injection id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a6c35289813560d4552f2464e1a804bc2}\label{classPcodeInjectLibrary_a6c35289813560d4552f2464e1a804bc2}} 
+map$<$ string, int4 $>$ \mbox{\hyperlink{classPcodeInjectLibrary_a6c35289813560d4552f2464e1a804bc2}{script\+Map}}
+\begin{DoxyCompactList}\small\item\em Map of registered script names to \mbox{\hyperlink{classExecutablePcode}{Executable\+Pcode}} id. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a6546a7f92bd290b988efe959e3fd84f6}\label{classPcodeInjectLibrary_a6546a7f92bd290b988efe959e3fd84f6}} 
+vector$<$ string $>$ \mbox{\hyperlink{classPcodeInjectLibrary_a6546a7f92bd290b988efe959e3fd84f6}{call\+Fixup\+Names}}
+\begin{DoxyCompactList}\small\item\em Map from injectid to call-\/fixup name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_aac7dd876176633699593928163eb9336}\label{classPcodeInjectLibrary_aac7dd876176633699593928163eb9336}} 
+vector$<$ string $>$ \mbox{\hyperlink{classPcodeInjectLibrary_aac7dd876176633699593928163eb9336}{call\+Other\+Target}}
+\begin{DoxyCompactList}\small\item\em Map from injectid to callother-\/fixup target-\/op name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_a082b2a2b26f725dc6bc43224e528664d}\label{classPcodeInjectLibrary_a082b2a2b26f725dc6bc43224e528664d}} 
+vector$<$ string $>$ \mbox{\hyperlink{classPcodeInjectLibrary_a082b2a2b26f725dc6bc43224e528664d}{call\+Mech\+Target}}
+\begin{DoxyCompactList}\small\item\em Map from injectid to call-\/mech name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classPcodeInjectLibrary_ac78d668f99a551401c0a88ad6ea52a45}\label{classPcodeInjectLibrary_ac78d668f99a551401c0a88ad6ea52a45}} 
+vector$<$ string $>$ \mbox{\hyperlink{classPcodeInjectLibrary_ac78d668f99a551401c0a88ad6ea52a45}{script\+Names}}
+\begin{DoxyCompactList}\small\item\em Map from injectid to script name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collection of p-\/code injection payloads. 
+
+This is a container of \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} objects that can be applied for a specific \mbox{\hyperlink{classArchitecture}{Architecture}}. Payloads can be read in via X\+ML (\mbox{\hyperlink{classPcodeInjectLibrary_a738666065a924346cf552b1d62c84848}{restore\+Xml\+Inject()}}) and manually via \mbox{\hyperlink{classPcodeInjectLibrary_a0e360443cbc6ff94ea71d197882c55a8}{manual\+Call\+Fixup()}} and \mbox{\hyperlink{classPcodeInjectLibrary_a93f4e4b0f75d81b96bd92623d392269a}{manual\+Call\+Other\+Fixup()}}. Each payload is assigned an integer {\itshape id} when it is read in, and get\+Payload() fetches the payload during analysis. The library also associates the formal names of payloads with the id. Payloads of different types, C\+A\+L\+L\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE, C\+A\+L\+L\+O\+T\+H\+E\+R\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE, etc., are stored in separate namespaces.
+
+This is an abstract base class. The derived classes determine the type of storage used by the payloads. The library also provides a reusable \mbox{\hyperlink{classInjectContext}{Inject\+Context}} object to match the payloads, which can be obtained via \mbox{\hyperlink{classPcodeInjectLibrary_a3a1ca9f7ea2cea02de1141cc35c79b18}{get\+Cached\+Context()}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPcodeInjectLibrary_a386a617992fcdd31d9abbf0728126686}\label{classPcodeInjectLibrary_a386a617992fcdd31d9abbf0728126686}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!allocateInject@{allocateInject}}
+\index{allocateInject@{allocateInject}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{allocateInject()}{allocateInject()}}
+{\footnotesize\ttfamily virtual int4 Pcode\+Inject\+Library\+::allocate\+Inject (\begin{DoxyParamCaption}\item[{const string \&}]{source\+Name,  }\item[{const string \&}]{name,  }\item[{int4}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Allocate a new \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object. 
+
+This acts as an \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} factory. The formal name and type of the payload are given, {\bfseries{this}} library allocates a new object that fits with its storage scheme and returns the id. 
+\begin{DoxyParams}{Parameters}
+{\em source\+Name} & is a string describing the source of the new payload \\
+\hline
+{\em name} & is the formal name of the payload \\
+\hline
+{\em type} & is the formal type (C\+A\+L\+L\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE, C\+A\+L\+L\+O\+T\+H\+E\+R\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE, etc.) of the payload \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id associated with the new \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPcodeInjectLibrarySleigh_abb567ddc0d8f5e05d96fc87a87f72c34}{Pcode\+Inject\+Library\+Sleigh}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrary_aa2c520dab5db72d968e383b56d1ea8f6}\label{classPcodeInjectLibrary_aa2c520dab5db72d968e383b56d1ea8f6}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!getBehaviors@{getBehaviors}}
+\index{getBehaviors@{getBehaviors}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{getBehaviors()}{getBehaviors()}}
+{\footnotesize\ttfamily virtual const vector$<$\mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} $\ast$$>$\& Pcode\+Inject\+Library\+::get\+Behaviors (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the array of op-\/code behaviors for initializing and emulator. 
+
+Behaviors are pulled from the underlying architecture in order to initialize the \mbox{\hyperlink{classEmulate}{Emulate}} object which services the {\itshape p-\/code} {\itshape script} payloads. \begin{DoxyReturn}{Returns}
+the array of \mbox{\hyperlink{classOpBehavior}{Op\+Behavior}} objects indexed by op-\/code 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a878ef6bdf58bd19fa82318248836b3d8}{Pcode\+Inject\+Library\+Sleigh}}, and \mbox{\hyperlink{classPcodeInjectLibraryGhidra_a1195225ccb9918e6ca0b62d9a932b66f}{Pcode\+Inject\+Library\+Ghidra}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrary_a3a1ca9f7ea2cea02de1141cc35c79b18}\label{classPcodeInjectLibrary_a3a1ca9f7ea2cea02de1141cc35c79b18}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!getCachedContext@{getCachedContext}}
+\index{getCachedContext@{getCachedContext}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{getCachedContext()}{getCachedContext()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classInjectContext}{Inject\+Context}}\& Pcode\+Inject\+Library\+::get\+Cached\+Context (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Retrieve a reusable context object for {\bfseries{this}} library. 
+
+The object returned by this method gets passed to the payload inject() method. The clear() method must be called between uses. \begin{DoxyReturn}{Returns}
+the cached context object 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a37471f5a78e16c84fc26cfaff1a7434b}{Pcode\+Inject\+Library\+Sleigh}}, and \mbox{\hyperlink{classPcodeInjectLibraryGhidra_a59bd920e9392308e571f2e18b30537a6}{Pcode\+Inject\+Library\+Ghidra}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrary_a436ac8db6c2f5735481c86a937d3db55}\label{classPcodeInjectLibrary_a436ac8db6c2f5735481c86a937d3db55}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!getCallFixupName@{getCallFixupName}}
+\index{getCallFixupName@{getCallFixupName}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{getCallFixupName()}{getCallFixupName()}}
+{\footnotesize\ttfamily string Pcode\+Inject\+Library\+::get\+Call\+Fixup\+Name (\begin{DoxyParamCaption}\item[{int4}]{injectid }\end{DoxyParamCaption}) const}
+
+
+
+Get the call-\/fixup name associated with an id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em injectid} & is an integer id of a call-\/fixup payload \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the payload or the empty string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeInjectLibrary_aaf5cb3c65ea01b0db1d38777f23b8796}\label{classPcodeInjectLibrary_aaf5cb3c65ea01b0db1d38777f23b8796}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!getCallMechanismName@{getCallMechanismName}}
+\index{getCallMechanismName@{getCallMechanismName}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{getCallMechanismName()}{getCallMechanismName()}}
+{\footnotesize\ttfamily string Pcode\+Inject\+Library\+::get\+Call\+Mechanism\+Name (\begin{DoxyParamCaption}\item[{int4}]{injectid }\end{DoxyParamCaption}) const}
+
+
+
+Get the call mechanism name associated with an id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em injectid} & is an integer id of a call mechanism payload \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the payload or the empty string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeInjectLibrary_a928588313e2dfb9454b65f932985d97c}\label{classPcodeInjectLibrary_a928588313e2dfb9454b65f932985d97c}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!getCallOtherTarget@{getCallOtherTarget}}
+\index{getCallOtherTarget@{getCallOtherTarget}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{getCallOtherTarget()}{getCallOtherTarget()}}
+{\footnotesize\ttfamily string Pcode\+Inject\+Library\+::get\+Call\+Other\+Target (\begin{DoxyParamCaption}\item[{int4}]{injectid }\end{DoxyParamCaption}) const}
+
+
+
+Get the callother-\/fixup name associated with an id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em injectid} & is an integer id of a callother-\/fixup payload \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the payload or the empty string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeInjectLibrary_ad49624d6aa508e6e75d7c23f9c839c02}\label{classPcodeInjectLibrary_ad49624d6aa508e6e75d7c23f9c839c02}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!getPayloadId@{getPayloadId}}
+\index{getPayloadId@{getPayloadId}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{getPayloadId()}{getPayloadId()}}
+{\footnotesize\ttfamily int4 Pcode\+Inject\+Library\+::get\+Payload\+Id (\begin{DoxyParamCaption}\item[{int4}]{type,  }\item[{const string \&}]{nm }\end{DoxyParamCaption}) const}
+
+
+
+Map name and type to the payload id. 
+
+The given name is looked up in a symbol table depending on the given type. The integer id of the matching \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} is returned. 
+\begin{DoxyParams}{Parameters}
+{\em type} & is the payload type \\
+\hline
+{\em nm} & is the formal name of the payload \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the payload id or -\/1 if there is no matching payload 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPcodeInjectLibrary_a0e360443cbc6ff94ea71d197882c55a8}\label{classPcodeInjectLibrary_a0e360443cbc6ff94ea71d197882c55a8}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!manualCallFixup@{manualCallFixup}}
+\index{manualCallFixup@{manualCallFixup}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{manualCallFixup()}{manualCallFixup()}}
+{\footnotesize\ttfamily virtual int4 Pcode\+Inject\+Library\+::manual\+Call\+Fixup (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{snippetstring }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Manually add a call-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. 
+
+The snippet is compiled immediately to produce the payload. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the formal name of the new payload \\
+\hline
+{\em snippetstring} & is the compilable snippet of p-\/code {\itshape source} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the new payload 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a4cce009469fb3679881ea73bc2ed9284}{Pcode\+Inject\+Library\+Sleigh}}, and \mbox{\hyperlink{classPcodeInjectLibraryGhidra_a2e8265c935ddb94e4a2354706d823e14}{Pcode\+Inject\+Library\+Ghidra}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrary_a93f4e4b0f75d81b96bd92623d392269a}\label{classPcodeInjectLibrary_a93f4e4b0f75d81b96bd92623d392269a}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!manualCallOtherFixup@{manualCallOtherFixup}}
+\index{manualCallOtherFixup@{manualCallOtherFixup}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{manualCallOtherFixup()}{manualCallOtherFixup()}}
+{\footnotesize\ttfamily virtual int4 Pcode\+Inject\+Library\+::manual\+Call\+Other\+Fixup (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{const string \&}]{outname,  }\item[{const vector$<$ string $>$ \&}]{inname,  }\item[{const string \&}]{snippet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Manually add a callother-\/fixup payload given a compilable snippet of p-\/code {\itshape source}. 
+
+The snippet is compiled immediately to produce the payload. \mbox{\hyperlink{classSymbol}{Symbol}} names for input and output parameters must be provided to the compiler. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the formal name of the new payload \\
+\hline
+{\em outname} & is the name of the output symbol \\
+\hline
+{\em inname} & is the ordered list of input symbol names \\
+\hline
+{\em snippet} & is the compilable snippet of p-\/code {\itshape source} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the new payload 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a5effe6ebe2d5b20644c2066d427283ae}{Pcode\+Inject\+Library\+Sleigh}}, and \mbox{\hyperlink{classPcodeInjectLibraryGhidra_a1c38e037571239e59daa21c08f2a2bbb}{Pcode\+Inject\+Library\+Ghidra}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrary_a2c6c5deb054a7ab6f8e59653ce9d984f}\label{classPcodeInjectLibrary_a2c6c5deb054a7ab6f8e59653ce9d984f}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!registerCallFixup@{registerCallFixup}}
+\index{registerCallFixup@{registerCallFixup}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{registerCallFixup()}{registerCallFixup()}}
+{\footnotesize\ttfamily void Pcode\+Inject\+Library\+::register\+Call\+Fixup (\begin{DoxyParamCaption}\item[{const string \&}]{fixup\+Name,  }\item[{int4}]{injectid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map a {\itshape call-\/fixup} name to a payload id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fixup\+Name} & is the formal name of the call-\/fixup \\
+\hline
+{\em injectid} & is the integer id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeInjectLibrary_a8e767c1d87d0cfabac0341c35c188b88}\label{classPcodeInjectLibrary_a8e767c1d87d0cfabac0341c35c188b88}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!registerCallMechanism@{registerCallMechanism}}
+\index{registerCallMechanism@{registerCallMechanism}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{registerCallMechanism()}{registerCallMechanism()}}
+{\footnotesize\ttfamily void Pcode\+Inject\+Library\+::register\+Call\+Mechanism (\begin{DoxyParamCaption}\item[{const string \&}]{fixup\+Name,  }\item[{int4}]{injectid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map a {\itshape call} {\itshape mechanism} name to a payload id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fixup\+Name} & is the formal name of the call mechanism \\
+\hline
+{\em injectid} & is the integer id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeInjectLibrary_aa06eaa0357d6aeed80a3f64a5e914a53}\label{classPcodeInjectLibrary_aa06eaa0357d6aeed80a3f64a5e914a53}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!registerCallOtherFixup@{registerCallOtherFixup}}
+\index{registerCallOtherFixup@{registerCallOtherFixup}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{registerCallOtherFixup()}{registerCallOtherFixup()}}
+{\footnotesize\ttfamily void Pcode\+Inject\+Library\+::register\+Call\+Other\+Fixup (\begin{DoxyParamCaption}\item[{const string \&}]{fixup\+Name,  }\item[{int4}]{injectid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map a {\itshape callother-\/fixup} name to a payload id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fixup\+Name} & is the formal name of the callother-\/fixup \\
+\hline
+{\em injectid} & is the integer id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeInjectLibrary_a73430017e8dc38985a1e20196e59eb85}\label{classPcodeInjectLibrary_a73430017e8dc38985a1e20196e59eb85}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!registerExeScript@{registerExeScript}}
+\index{registerExeScript@{registerExeScript}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{registerExeScript()}{registerExeScript()}}
+{\footnotesize\ttfamily void Pcode\+Inject\+Library\+::register\+Exe\+Script (\begin{DoxyParamCaption}\item[{const string \&}]{script\+Name,  }\item[{int4}]{injectid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Map a {\itshape p-\/code} {\itshape script} name to a payload id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em script\+Name} & is the formal name of the p-\/code script \\
+\hline
+{\em injectid} & is the integer id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classPcodeInjectLibrary_a0b75b562fb736f23269114fec5ca36d9}\label{classPcodeInjectLibrary_a0b75b562fb736f23269114fec5ca36d9}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!registerInject@{registerInject}}
+\index{registerInject@{registerInject}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{registerInject()}{registerInject()}}
+{\footnotesize\ttfamily virtual void Pcode\+Inject\+Library\+::register\+Inject (\begin{DoxyParamCaption}\item[{int4}]{injectid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Finalize a payload within the library, once the payload is initialized. 
+
+This provides the derived class the opportunity to add the payload name to the symbol tables or do anything else it needs to once the \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} object has been fully initialized. 
+\begin{DoxyParams}{Parameters}
+{\em injectid} & is the id of the \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} to finalize \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a8aa3b83b22fef0799e95dfaf346ca89e}{Pcode\+Inject\+Library\+Sleigh}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrary_a48cebdddd48a1fa5db300d80ed6bdaa2}\label{classPcodeInjectLibrary_a48cebdddd48a1fa5db300d80ed6bdaa2}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!restoreDebug@{restoreDebug}}
+\index{restoreDebug@{restoreDebug}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{restoreDebug()}{restoreDebug()}}
+{\footnotesize\ttfamily virtual void Pcode\+Inject\+Library\+::restore\+Debug (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+A method for reading in p-\/code generated externally for use in debugging. 
+
+Instantiate a special \mbox{\hyperlink{classInjectPayloadDynamic}{Inject\+Payload\+Dynamic}} object initialized with an $<$injectdebug$>$ tag. Within the library, this replaces the original \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}}, allowing its p-\/code to be {\itshape replayed} for debugging purposes. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the $<$injectdebug$>$ element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classPcodeInjectLibrarySleigh_a121a82e796311b4d5b163cdf773e2235}{Pcode\+Inject\+Library\+Sleigh}}.
+
+\mbox{\Hypertarget{classPcodeInjectLibrary_a738666065a924346cf552b1d62c84848}\label{classPcodeInjectLibrary_a738666065a924346cf552b1d62c84848}} 
+\index{PcodeInjectLibrary@{PcodeInjectLibrary}!restoreXmlInject@{restoreXmlInject}}
+\index{restoreXmlInject@{restoreXmlInject}!PcodeInjectLibrary@{PcodeInjectLibrary}}
+\doxysubsubsection{\texorpdfstring{restoreXmlInject()}{restoreXmlInject()}}
+{\footnotesize\ttfamily int4 Pcode\+Inject\+Library\+::restore\+Xml\+Inject (\begin{DoxyParamCaption}\item[{const string \&}]{src,  }\item[{const string \&}]{nm,  }\item[{int4}]{tp,  }\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})}
+
+
+
+Read in and register an injection payload from an X\+ML stream. 
+
+The root X\+ML element describing the payload is given ($<$pcode$>$, $<$callfixup$>$ $<$callotherfixup$>$, etc.), the \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} is allocated and then initialized using the element. Then the \mbox{\hyperlink{classInjectPayload}{Inject\+Payload}} is finalized with the library. 
+\begin{DoxyParams}{Parameters}
+{\em src} & is a string describing the source of the payload being restored \\
+\hline
+{\em nm} & is the name of the payload \\
+\hline
+{\em tp} & is the type of the payload (C\+A\+L\+L\+F\+I\+X\+U\+P\+\_\+\+T\+Y\+PE, E\+X\+E\+C\+U\+T\+A\+B\+L\+E\+P\+C\+O\+D\+E\+\_\+\+T\+Y\+PE, etc.) \\
+\hline
+{\em el} & is the given X\+ML element \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the id of the newly registered payload 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pcodeinject_8hh}{pcodeinject.\+hh}}\item 
+pcodeinject.\+cc\end{DoxyCompactItemize}

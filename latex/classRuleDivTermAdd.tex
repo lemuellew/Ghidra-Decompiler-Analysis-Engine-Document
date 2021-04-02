@@ -1,0 +1,151 @@
+\hypertarget{classRuleDivTermAdd}{}\doxysection{Rule\+Div\+Term\+Add Class Reference}
+\label{classRuleDivTermAdd}\index{RuleDivTermAdd@{RuleDivTermAdd}}
+
+
+Simplify expressions associated with optimized division expressions.  
+
+
+
+
+Inheritance diagram for Rule\+Div\+Term\+Add\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classRuleDivTermAdd__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Rule\+Div\+Term\+Add\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{classRuleDivTermAdd__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classRule}{Rule}} $\ast$ \mbox{\hyperlink{classRuleDivTermAdd_a28bccfa9d7315e4e2493302bb18f4691}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classRuleDivTermAdd_a151f25f34a814b53139fb9860d70ce9b}{get\+Op\+List}} (vector$<$ uint4 $>$ \&oplist) const
+\begin{DoxyCompactList}\small\item\em List of op codes this rule operates on. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classRuleDivTermAdd_ad39ae5dc8516af986340cd55e063afcc}{apply\+Op}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, \mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ \mbox{\hyperlink{classRuleDivTermAdd_ae34117c8e568ae2f6d45002c433b9ff9}{find\+Subshift}} (\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op, int4 \&n, \mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \&shiftopc)
+\begin{DoxyCompactList}\small\item\em Check for shift form of expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Simplify expressions associated with optimized division expressions. 
+
+The form looks like\+:
+\begin{DoxyItemize}
+\item {\ttfamily sub(ext(\+V)$\ast$c,b)$>$$>$d + V -\/$>$ sub( (ext(\+V)$\ast$(c+2$^\wedge$n))$>$$>$n,0)}
+\end{DoxyItemize}
+
+where n = d + b$\ast$8, and the left-\/shift signedness (if it exists) matches the extension signedness. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRuleDivTermAdd_ad39ae5dc8516af986340cd55e063afcc}\label{classRuleDivTermAdd_ad39ae5dc8516af986340cd55e063afcc}} 
+\index{RuleDivTermAdd@{RuleDivTermAdd}!applyOp@{applyOp}}
+\index{applyOp@{applyOp}!RuleDivTermAdd@{RuleDivTermAdd}}
+\doxysubsubsection{\texorpdfstring{applyOp()}{applyOp()}}
+{\footnotesize\ttfamily int4 Rule\+Div\+Term\+Add\+::apply\+Op (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attempt to apply {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}}. 
+
+This method contains the main logic for applying the \mbox{\hyperlink{classRule}{Rule}}. It must use a given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} as the point at which the \mbox{\hyperlink{classRule}{Rule}} applies. If it does apply, changes are made directly to the function and 1 (non-\/zero) is returned, otherwise 0 is returned. 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} where the \mbox{\hyperlink{classRule}{Rule}} may apply \\
+\hline
+{\em data} & is the function to which to apply \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4e3e61f066670175009f60fb9dc60848}{Rule}}.
+
+\mbox{\Hypertarget{classRuleDivTermAdd_a28bccfa9d7315e4e2493302bb18f4691}\label{classRuleDivTermAdd_a28bccfa9d7315e4e2493302bb18f4691}} 
+\index{RuleDivTermAdd@{RuleDivTermAdd}!clone@{clone}}
+\index{clone@{clone}!RuleDivTermAdd@{RuleDivTermAdd}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classRule}{Rule}}$\ast$ Rule\+Div\+Term\+Add\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classRule}{Rule}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classRule}{Rule}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classRule}{Rule}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classRule}{Rule}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classRule_a70de90a76461bfa7ea0b575ce3c11e4d}{Rule}}.
+
+\mbox{\Hypertarget{classRuleDivTermAdd_ae34117c8e568ae2f6d45002c433b9ff9}\label{classRuleDivTermAdd_ae34117c8e568ae2f6d45002c433b9ff9}} 
+\index{RuleDivTermAdd@{RuleDivTermAdd}!findSubshift@{findSubshift}}
+\index{findSubshift@{findSubshift}!RuleDivTermAdd@{RuleDivTermAdd}}
+\doxysubsubsection{\texorpdfstring{findSubshift()}{findSubshift()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ Rule\+Div\+Term\+Add\+::find\+Subshift (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op,  }\item[{int4 \&}]{n,  }\item[{\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{Op\+Code}} \&}]{shiftopc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check for shift form of expression. 
+
+Look for the two forms\+:
+\begin{DoxyItemize}
+\item {\ttfamily sub(\+V,c)} or
+\item {\ttfamily sub(\+V,c) $>$$>$ n}
+\end{DoxyItemize}
+
+Pass back whether a shift was involved and the total truncation in bits\+: {\ttfamily n+c$\ast$8} 
+\begin{DoxyParams}{Parameters}
+{\em op} & is the root of the expression \\
+\hline
+{\em n} & is the reference that will hold the total truncation \\
+\hline
+{\em shiftopc} & will hold the shift Op\+Code if used, C\+P\+U\+I\+\_\+\+M\+AX otherwise \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the S\+U\+B\+P\+I\+E\+CE op if present or N\+U\+LL otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRuleDivTermAdd_a151f25f34a814b53139fb9860d70ce9b}\label{classRuleDivTermAdd_a151f25f34a814b53139fb9860d70ce9b}} 
+\index{RuleDivTermAdd@{RuleDivTermAdd}!getOpList@{getOpList}}
+\index{getOpList@{getOpList}!RuleDivTermAdd@{RuleDivTermAdd}}
+\doxysubsubsection{\texorpdfstring{getOpList()}{getOpList()}}
+{\footnotesize\ttfamily void Rule\+Div\+Term\+Add\+::get\+Op\+List (\begin{DoxyParamCaption}\item[{vector$<$ uint4 $>$ \&}]{oplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+List of op codes this rule operates on. 
+
+Populate the given array with all possible Op\+Codes this \mbox{\hyperlink{classRule}{Rule}} might apply to. By default, this method returns all possible Op\+Codes 
+\begin{DoxyParams}{Parameters}
+{\em oplist} & is the array to populate \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classRule_a4023bfc7825de0ab866790551856d10e}{Rule}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ruleaction_8hh}{ruleaction.\+hh}}\item 
+ruleaction.\+cc\end{DoxyCompactItemize}

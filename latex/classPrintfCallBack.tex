@@ -1,0 +1,58 @@
+\hypertarget{classPrintfCallBack}{}\doxysection{Printf\+Call\+Back Class Reference}
+\label{classPrintfCallBack}\index{PrintfCallBack@{PrintfCallBack}}
+
+
+Inheritance diagram for Printf\+Call\+Back\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classPrintfCallBack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Printf\+Call\+Back\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classPrintfCallBack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classPrintfCallBack_a9ff8d8997e91d769c03a4e09ad8373b5}{address\+Callback}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr)
+\begin{DoxyCompactList}\small\item\em Call back method for address based breakpoints. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classPrintfCallBack_a9ff8d8997e91d769c03a4e09ad8373b5}\label{classPrintfCallBack_a9ff8d8997e91d769c03a4e09ad8373b5}} 
+\index{PrintfCallBack@{PrintfCallBack}!addressCallback@{addressCallback}}
+\index{addressCallback@{addressCallback}!PrintfCallBack@{PrintfCallBack}}
+\doxysubsubsection{\texorpdfstring{addressCallback()}{addressCallback()}}
+{\footnotesize\ttfamily bool Printf\+Call\+Back\+::address\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Call back method for address based breakpoints. 
+
+This routine is invoked during emulation, if this breakpoint has somehow been associated with this address. The callback can perform any operation on the emulator context it wants. It then returns {\bfseries{true}} if these actions are intended to replace the action of the {\bfseries{entire}} machine instruction at this address. Or it returns {\bfseries{false}} if the machine instruction should still be executed normally. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the address where the break has occurred \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the machine instruction should not be executed 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classBreakCallBack_adb97ba6b111cb9a84856c9e0f9d506f9}{Break\+Call\+Back}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+sleighexample.\+cc\end{DoxyCompactItemize}

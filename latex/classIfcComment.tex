@@ -1,0 +1,69 @@
+\hypertarget{classIfcComment}{}\doxysection{Ifc\+Comment Class Reference}
+\label{classIfcComment}\index{IfcComment@{IfcComment}}
+
+
+A comment within a command script\+: {\ttfamily \% A comment in a script}  
+
+
+
+
+Inheritance diagram for Ifc\+Comment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{classIfcComment__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ifc\+Comment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classIfcComment__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfcComment_ab3ec87a9d5332b0f4c10bd349f807650}{execute}} (istream \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A comment within a command script\+: {\ttfamily \% A comment in a script} 
+
+This commands does nothing but attaches to comment tokens like\+:
+\begin{DoxyItemize}
+\item \#
+\item \%
+\item //
+\end{DoxyItemize}
+
+allowing comment lines in a script file 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfcComment_ab3ec87a9d5332b0f4c10bd349f807650}\label{classIfcComment_ab3ec87a9d5332b0f4c10bd349f807650}} 
+\index{IfcComment@{IfcComment}!execute@{execute}}
+\index{execute@{execute}!IfcComment@{IfcComment}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void Ifc\+Comment\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{Iface\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ifacedecomp_8hh}{ifacedecomp.\+hh}}\item 
+ifacedecomp.\+cc\end{DoxyCompactItemize}

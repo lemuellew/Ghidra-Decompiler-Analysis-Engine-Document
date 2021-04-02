@@ -1,0 +1,262 @@
+\hypertarget{ifacedecomp_8hh}{}\doxysection{ifacedecomp.\+hh File Reference}
+\label{ifacedecomp_8hh}\index{ifacedecomp.hh@{ifacedecomp.hh}}
+
+
+Console interface commands for the decompiler engine.  
+
+
+{\ttfamily \#include \char`\"{}ifaceterm.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}graph.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}grammar.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}callgraph.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}paramid.\+hh\char`\"{}}\newline
+Include dependency graph for ifacedecomp.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ifacedecomp_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{ifacedecomp_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classIfaceDecompCapability}{Iface\+Decomp\+Capability}}
+\begin{DoxyCompactList}\small\item\em Interface capability point for all decompiler commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceDecompData}{Iface\+Decomp\+Data}}
+\begin{DoxyCompactList}\small\item\em Common data shared by decompiler commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceAssemblyEmit}{Iface\+Assembly\+Emit}}
+\begin{DoxyCompactList}\small\item\em Disassembly emitter that prints to a console stream. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceDecompCommand}{Iface\+Decomp\+Command}}
+\begin{DoxyCompactList}\small\item\em Root class for all decompiler specific commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcSource}{Ifc\+Source}}
+\begin{DoxyCompactList}\small\item\em Execute a command script \+: {\ttfamily source $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcOption}{Ifc\+Option}}
+\begin{DoxyCompactList}\small\item\em Adjust a decompiler option\+: {\ttfamily option $<$optionname$>$ \mbox{[}$<$param1$>$\mbox{]} \mbox{[}$<$param2$>$\mbox{]} \mbox{[}$<$param3$>$\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcParseLine}{Ifc\+Parse\+Line}}
+\begin{DoxyCompactList}\small\item\em Parse a line of C syntax\+: {\ttfamily parse line ...} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcParseFile}{Ifc\+Parse\+File}}
+\begin{DoxyCompactList}\small\item\em Parse a file with C declarations\+: {\ttfamily parse file $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcAdjustVma}{Ifc\+Adjust\+Vma}}
+\begin{DoxyCompactList}\small\item\em Change the base address of the load image\+: {\ttfamily adjust vma 0xabcd0123} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcFuncload}{Ifc\+Funcload}}
+\begin{DoxyCompactList}\small\item\em Make a specific function current\+: {\ttfamily load function $<$functionname$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcAddrrangeLoad}{Ifc\+Addrrange\+Load}}
+\begin{DoxyCompactList}\small\item\em Create a new function at an address\+: {\ttfamily load addr $<$address$>$ \mbox{[}$<$funcname$>$\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCleararch}{Ifc\+Cleararch}}
+\begin{DoxyCompactList}\small\item\em Clear the current architecture/program\+: {\ttfamily clear architecture} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcReadSymbols}{Ifc\+Read\+Symbols}}
+\begin{DoxyCompactList}\small\item\em Read in symbols from the load image\+: {\ttfamily read symbols} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcMapaddress}{Ifc\+Mapaddress}}
+\begin{DoxyCompactList}\small\item\em Map a new symbol into the program\+: {\ttfamily map address $<$address$>$ $<$typedeclaration$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcMaphash}{Ifc\+Maphash}}
+\begin{DoxyCompactList}\small\item\em Add a dynamic symbol to the current function\+: {\ttfamily map hash $<$address$>$ $<$hash$>$ $<$typedeclaration$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcMapfunction}{Ifc\+Mapfunction}}
+\begin{DoxyCompactList}\small\item\em Create a new function\+: {\ttfamily map function $<$address$>$ \mbox{[}$<$functionname$>$\mbox{]} \mbox{[}nocode\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcMapexternalref}{Ifc\+Mapexternalref}}
+\begin{DoxyCompactList}\small\item\em Create an external ref symbol {\ttfamily map externalref $<$address$>$ $<$refaddress$>$ \mbox{[}$<$name$>$\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcMaplabel}{Ifc\+Maplabel}}
+\begin{DoxyCompactList}\small\item\em Create a code label\+: {\ttfamily map label $<$name$>$ $<$address$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintdisasm}{Ifc\+Printdisasm}}
+\begin{DoxyCompactList}\small\item\em Print disassembly of a memory range\+: {\ttfamily disassemble \mbox{[}$<$address1$>$ $<$address2$>$\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcDump}{Ifc\+Dump}}
+\begin{DoxyCompactList}\small\item\em Display bytes in the load image\+: {\ttfamily dump $<$address+size$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcDumpbinary}{Ifc\+Dumpbinary}}
+\begin{DoxyCompactList}\small\item\em Dump a memory to file\+: {\ttfamily binary $<$address+size$>$ $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcDecompile}{Ifc\+Decompile}}
+\begin{DoxyCompactList}\small\item\em Decompile the current function\+: {\ttfamily decompile} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintLanguage}{Ifc\+Print\+Language}}
+\begin{DoxyCompactList}\small\item\em Print current output using a specific language\+: {\ttfamily print language $<$langname$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintCXml}{Ifc\+Print\+C\+Xml}}
+\begin{DoxyCompactList}\small\item\em Print the current function with C syntax and X\+ML markup\+:{\ttfamily print C xml} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintCFlat}{Ifc\+Print\+C\+Flat}}
+\begin{DoxyCompactList}\small\item\em Print current function without control-\/flow\+: {\ttfamily print C flat} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintCStruct}{Ifc\+Print\+C\+Struct}}
+\begin{DoxyCompactList}\small\item\em Print the current function using C syntax\+:{\ttfamily print C} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintCGlobals}{Ifc\+Print\+C\+Globals}}
+\begin{DoxyCompactList}\small\item\em Print declarations for any known global variables\+: {\ttfamily print C globals} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintCTypes}{Ifc\+Print\+C\+Types}}
+\begin{DoxyCompactList}\small\item\em Print any known type definitions\+: {\ttfamily print C types} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcProduceC}{Ifc\+ProduceC}}
+\begin{DoxyCompactList}\small\item\em Write decompilation for all functions to a file\+: {\ttfamily produce C $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcProducePrototypes}{Ifc\+Produce\+Prototypes}}
+\begin{DoxyCompactList}\small\item\em Determine the prototype model for all functions\+: {\ttfamily produce prototypes} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcListaction}{Ifc\+Listaction}}
+\begin{DoxyCompactList}\small\item\em List all current actions and rules for the decompiler\+: {\ttfamily list action} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcListOverride}{Ifc\+List\+Override}}
+\begin{DoxyCompactList}\small\item\em Display any overrides for the current function\+: {\ttfamily list override} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcListprototypes}{Ifc\+Listprototypes}}
+\begin{DoxyCompactList}\small\item\em List known prototype models\+: {\ttfamily list prototypes} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcSetcontextrange}{Ifc\+Setcontextrange}}
+\begin{DoxyCompactList}\small\item\em Set a context variable\+: {\ttfamily set context $<$name$>$ $<$value$>$ \mbox{[}$<$startaddress$>$ $<$endaddress$>$\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcSettrackedrange}{Ifc\+Settrackedrange}}
+\begin{DoxyCompactList}\small\item\em Set the value of a register\+: {\ttfamily set track $<$name$>$ $<$value$>$ \mbox{[}$<$startaddress$>$ $<$endaddress$>$\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcBreakstart}{Ifc\+Breakstart}}
+\begin{DoxyCompactList}\small\item\em Set a break point at the start of an \mbox{\hyperlink{classAction}{Action}}\+: {\ttfamily break start $<$actionname$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcBreakaction}{Ifc\+Breakaction}}
+\begin{DoxyCompactList}\small\item\em Set a breakpoint when a \mbox{\hyperlink{classRule}{Rule}} or \mbox{\hyperlink{classAction}{Action}} executes\+: {\ttfamily break action $<$actionname$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintTree}{Ifc\+Print\+Tree}}
+\begin{DoxyCompactList}\small\item\em Print all Varnodes in the {\itshape current} function\+: {\ttfamily print tree varnode} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintBlocktree}{Ifc\+Print\+Blocktree}}
+\begin{DoxyCompactList}\small\item\em Print a description of the {\itshape current} functions control-\/flow\+: {\ttfamily print tree block} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintSpaces}{Ifc\+Print\+Spaces}}
+\begin{DoxyCompactList}\small\item\em Print all address spaces\+: {\ttfamily print spaces} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintHigh}{Ifc\+Print\+High}}
+\begin{DoxyCompactList}\small\item\em Display all Varnodes in a \mbox{\hyperlink{classHighVariable}{High\+Variable}}\+: {\ttfamily print high $<$name$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintParamMeasures}{Ifc\+Print\+Param\+Measures}}
+\begin{DoxyCompactList}\small\item\em Perform parameter-\/id analysis on the {\itshape current} function\+: {\ttfamily print parammeasures} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcRename}{Ifc\+Rename}}
+\begin{DoxyCompactList}\small\item\em Rename a variable\+: {\ttfamily rename $<$oldname$>$ $<$newname$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcRetype}{Ifc\+Retype}}
+\begin{DoxyCompactList}\small\item\em Change the data-\/type of a symbol\+: {\ttfamily retype $<$varname$>$ $<$typedeclaration$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcRemove}{Ifc\+Remove}}
+\begin{DoxyCompactList}\small\item\em Remove a symbol by name\+: {\ttfamily remove $<$varname$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintVarnode}{Ifc\+Print\+Varnode}}
+\begin{DoxyCompactList}\small\item\em Print information about a \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily print varnode $<$varnode$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintCover}{Ifc\+Print\+Cover}}
+\begin{DoxyCompactList}\small\item\em Print cover info about a \mbox{\hyperlink{classHighVariable}{High\+Variable}}\+: {\ttfamily print cover high $<$name$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcVarnodehighCover}{Ifc\+Varnodehigh\+Cover}}
+\begin{DoxyCompactList}\small\item\em Print cover info about a \mbox{\hyperlink{classHighVariable}{High\+Variable}}\+: {\ttfamily print cover varnodehigh $<$varnode$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintExtrapop}{Ifc\+Print\+Extrapop}}
+\begin{DoxyCompactList}\small\item\em Print change to stack pointer for called function\+: {\ttfamily print extrapop \mbox{[}$<$functionname$>$\mbox{]}} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcVarnodeCover}{Ifc\+Varnode\+Cover}}
+\begin{DoxyCompactList}\small\item\em Print cover information about a \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily print cover varnode $<$varnode$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcNameVarnode}{Ifc\+Name\+Varnode}}
+\begin{DoxyCompactList}\small\item\em Attach a named symbol to a specific \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily name varnode $<$varnode$>$ $<$name$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcTypeVarnode}{Ifc\+Type\+Varnode}}
+\begin{DoxyCompactList}\small\item\em Attach a typed symbol to a specific \mbox{\hyperlink{classVarnode}{Varnode}}\+: {\ttfamily type varnode $<$varnode$>$ $<$typedeclaration$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcForceHex}{Ifc\+Force\+Hex}}
+\begin{DoxyCompactList}\small\item\em Mark a constant to be printed in hex format\+: {\ttfamily force hex $<$varnode$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcForceDec}{Ifc\+Force\+Dec}}
+\begin{DoxyCompactList}\small\item\em Mark a constant to be printed in decimal format\+: {\ttfamily force dec $<$varnode$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcForcegoto}{Ifc\+Forcegoto}}
+\begin{DoxyCompactList}\small\item\em Force a branch to be an unstructured {\bfseries{goto\+:}} {\ttfamily force goto $<$branchaddr$>$ $<$targetaddr$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcProtooverride}{Ifc\+Protooverride}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classOverride}{Override}} the prototype of a called function\+: {\ttfamily override prototype $<$address$>$ $<$declaration$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcJumpOverride}{Ifc\+Jump\+Override}}
+\begin{DoxyCompactList}\small\item\em Provide an overriding jump-\/table for an indirect branch\+: {\ttfamily override jumptable ...} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcFlowOverride}{Ifc\+Flow\+Override}}
+\begin{DoxyCompactList}\small\item\em Create a control-\/flow override\+: {\ttfamily override flow $<$address$>$ branch$\vert$call$\vert$callreturn$\vert$return} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcDeadcodedelay}{Ifc\+Deadcodedelay}}
+\begin{DoxyCompactList}\small\item\em Change when dead code elimination starts\+: {\ttfamily deadcode delay $<$name$>$ $<$delay$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcGlobalAdd}{Ifc\+Global\+Add}}
+\begin{DoxyCompactList}\small\item\em Add a memory range as discoverable global variables\+: {\ttfamily global add $<$address+size$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcGlobalRemove}{Ifc\+Global\+Remove}}
+\begin{DoxyCompactList}\small\item\em Remove a memory range from discoverable global variables\+: {\ttfamily global remove $<$address+size$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcGlobalify}{Ifc\+Globalify}}
+\begin{DoxyCompactList}\small\item\em Treat all normal memory as discoverable global variables\+: {\ttfamily global spaces} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcGlobalRegisters}{Ifc\+Global\+Registers}}
+\begin{DoxyCompactList}\small\item\em Name global registers\+: {\ttfamily global registers} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintInputs}{Ifc\+Print\+Inputs}}
+\begin{DoxyCompactList}\small\item\em Print info about the current function\textquotesingle{}s input Varnodes\+: {\ttfamily print inputs} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintInputsAll}{Ifc\+Print\+Inputs\+All}}
+\begin{DoxyCompactList}\small\item\em Print info about input Varnodes for all functions\+: {\ttfamily print inputs all} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcLockPrototype}{Ifc\+Lock\+Prototype}}
+\begin{DoxyCompactList}\small\item\em Lock in the {\itshape current} function\textquotesingle{}s prototype\+: {\ttfamily prototype lock} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcUnlockPrototype}{Ifc\+Unlock\+Prototype}}
+\begin{DoxyCompactList}\small\item\em Unlock the {\itshape current} function\textquotesingle{}s prototype\+: {\ttfamily prototype unlock} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintLocalrange}{Ifc\+Print\+Localrange}}
+\begin{DoxyCompactList}\small\item\em Print range of locals on the stack\+: {\ttfamily print localrange} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintMap}{Ifc\+Print\+Map}}
+\begin{DoxyCompactList}\small\item\em Print info about a scope/namespace\+: {\ttfamily print map $<$name$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcContinue}{Ifc\+Continue}}
+\begin{DoxyCompactList}\small\item\em Continue decompilation after a break point\+: {\ttfamily continue} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintRaw}{Ifc\+Print\+Raw}}
+\begin{DoxyCompactList}\small\item\em Print the raw p-\/code for the {\itshape current} function\+: {\ttfamily print raw} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcGraphDataflow}{Ifc\+Graph\+Dataflow}}
+\begin{DoxyCompactList}\small\item\em Write a graph representation of data-\/flow to a file\+: {\ttfamily graph dataflow $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcGraphControlflow}{Ifc\+Graph\+Controlflow}}
+\begin{DoxyCompactList}\small\item\em Write a graph representation of control-\/flow to a file\+: {\ttfamily graph controlflow $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcGraphDom}{Ifc\+Graph\+Dom}}
+\begin{DoxyCompactList}\small\item\em Write the forward dominance graph to a file\+: {\ttfamily graph dom $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCommentInstr}{Ifc\+Comment\+Instr}}
+\begin{DoxyCompactList}\small\item\em Attach a comment to an address\+: {\ttfamily comment $<$address$>$ comment text...} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcDuplicateHash}{Ifc\+Duplicate\+Hash}}
+\begin{DoxyCompactList}\small\item\em Check for duplicate hashes in functions\+: {\ttfamily duplicate hash} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCallGraphDump}{Ifc\+Call\+Graph\+Dump}}
+\begin{DoxyCompactList}\small\item\em Write the current call-\/graph to a file\+: {\ttfamily callgraph dump $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCallGraphBuild}{Ifc\+Call\+Graph\+Build}}
+\begin{DoxyCompactList}\small\item\em Build the call-\/graph for the architecture/program\+: {\ttfamily callgraph build} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCallGraphBuildQuick}{Ifc\+Call\+Graph\+Build\+Quick}}
+\begin{DoxyCompactList}\small\item\em Build the call-\/graph using quick analysis\+: {\ttfamily callgraph build quick} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCallGraphLoad}{Ifc\+Call\+Graph\+Load}}
+\begin{DoxyCompactList}\small\item\em Load the call-\/graph from a file\+: {\ttfamily callgraph load $<$filename$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCallGraphList}{Ifc\+Call\+Graph\+List}}
+\begin{DoxyCompactList}\small\item\em List all functions in {\itshape leaf} order\+: {\ttfamily callgraph list} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcComment}{Ifc\+Comment}}
+\begin{DoxyCompactList}\small\item\em A comment within a command script\+: {\ttfamily \% A comment in a script} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCallFixup}{Ifc\+Call\+Fixup}}
+\begin{DoxyCompactList}\small\item\em Add a new call fix-\/up to the program\+: {\ttfamily fixup call ...} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCallOtherFixup}{Ifc\+Call\+Other\+Fixup}}
+\begin{DoxyCompactList}\small\item\em Add a new callother fix-\/up to the program\+: {\ttfamily fixup callother ...} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcCountPcode}{Ifc\+Count\+Pcode}}
+\begin{DoxyCompactList}\small\item\em Count p-\/code in the {\itshape current} function\+: {\ttfamily count pcode} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPrintActionstats}{Ifc\+Print\+Actionstats}}
+\begin{DoxyCompactList}\small\item\em Print transform statistics for the decompiler engine\+: {\ttfamily print actionstats} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcResetActionstats}{Ifc\+Reset\+Actionstats}}
+\begin{DoxyCompactList}\small\item\em Reset transform statistics for the decompiler engine\+: {\ttfamily reset actionstats} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcVolatile}{Ifc\+Volatile}}
+\begin{DoxyCompactList}\small\item\em Mark a memory range as volatile\+: {\ttfamily volatile $<$address+size$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcReadonly}{Ifc\+Readonly}}
+\begin{DoxyCompactList}\small\item\em Mark a memory range as read-\/only\+: {\ttfamily readonly $<$address+size$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcPreferSplit}{Ifc\+Prefer\+Split}}
+\begin{DoxyCompactList}\small\item\em Mark a storage location to be split\+: {\ttfamily prefersplit $<$address+size$>$ $<$splitsize$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcStructureBlocks}{Ifc\+Structure\+Blocks}}
+\begin{DoxyCompactList}\small\item\em Structure an external control-\/flow graph\+: {\ttfamily structure blocks $<$infile$>$ $<$outfile$>$} \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcAnalyzeRange}{Ifc\+Analyze\+Range}}
+\begin{DoxyCompactList}\small\item\em Run value-\/set analysis on the {\itshape current} function\+: {\ttfamily analyze range full$\vert$partial $<$varnode$>$} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ifacedecomp_8hh_a613e6f3576092d815632ad7329d741e7}{execute}} (\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$status, \mbox{\hyperlink{classIfaceDecompData}{Iface\+Decomp\+Data}} $\ast$dcp)
+\begin{DoxyCompactList}\small\item\em Execute one command for the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ifacedecomp_8hh_ac71bcb680ffca9a7d79b5ba44be1f612}{mainloop}} (\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$status)
+\begin{DoxyCompactList}\small\item\em Execute commands as they become available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Console interface commands for the decompiler engine. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ifacedecomp_8hh_a613e6f3576092d815632ad7329d741e7}\label{ifacedecomp_8hh_a613e6f3576092d815632ad7329d741e7}} 
+\index{ifacedecomp.hh@{ifacedecomp.hh}!execute@{execute}}
+\index{execute@{execute}!ifacedecomp.hh@{ifacedecomp.hh}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily void execute (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$}]{status,  }\item[{\mbox{\hyperlink{classIfaceDecompData}{Iface\+Decomp\+Data}} $\ast$}]{dcp }\end{DoxyParamCaption})}
+
+
+
+Execute one command for the console. 
+
+Execute one command and handle any exceptions. Error messages are printed to the console. For low-\/level errors, the current function is reset to null 
+\begin{DoxyParams}{Parameters}
+{\em status} & is the console interface \\
+\hline
+{\em dcp} & is the shared program data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ifacedecomp_8hh_ac71bcb680ffca9a7d79b5ba44be1f612}\label{ifacedecomp_8hh_ac71bcb680ffca9a7d79b5ba44be1f612}} 
+\index{ifacedecomp.hh@{ifacedecomp.hh}!mainloop@{mainloop}}
+\index{mainloop@{mainloop}!ifacedecomp.hh@{ifacedecomp.hh}}
+\doxysubsubsection{\texorpdfstring{mainloop()}{mainloop()}}
+{\footnotesize\ttfamily void mainloop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+
+Execute commands as they become available. 
+
+Execution loops until either the {\itshape done} field in the console is set or if all streams have ended. This handles popping script states pushed on by the \mbox{\hyperlink{classIfcSource}{Ifc\+Source}} command. 
+\begin{DoxyParams}{Parameters}
+{\em status} & is the console interface \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,75 @@
+\hypertarget{classOptionErrorReinterpreted}{}\doxysection{Option\+Error\+Reinterpreted Class Reference}
+\label{classOptionErrorReinterpreted}\index{OptionErrorReinterpreted@{OptionErrorReinterpreted}}
+
+
+Toggle whether off-\/cut reinterpretation of an instruction is a fatal error.  
+
+
+
+
+Inheritance diagram for Option\+Error\+Reinterpreted\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classOptionErrorReinterpreted__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Option\+Error\+Reinterpreted\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{classOptionErrorReinterpreted__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{classOptionErrorReinterpreted_a62b6697ee1cc195531f65cd383f6c3d7}{apply}} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$glb, const string \&p1, const string \&p2, const string \&p3) const
+\begin{DoxyCompactList}\small\item\em Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Toggle whether off-\/cut reinterpretation of an instruction is a fatal error. 
+
+If the first parameter is \char`\"{}on\char`\"{}, interpreting the same code bytes at two or more different {\itshape cuts}, during disassembly, is considered a fatal error. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOptionErrorReinterpreted_a62b6697ee1cc195531f65cd383f6c3d7}\label{classOptionErrorReinterpreted_a62b6697ee1cc195531f65cd383f6c3d7}} 
+\index{OptionErrorReinterpreted@{OptionErrorReinterpreted}!apply@{apply}}
+\index{apply@{apply}!OptionErrorReinterpreted@{OptionErrorReinterpreted}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily string Option\+Error\+Reinterpreted\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$}]{glb,  }\item[{const string \&}]{p1,  }\item[{const string \&}]{p2,  }\item[{const string \&}]{p3 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Apply a particular configuration option to the \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+This method is overloaded by the different Option classes to provide possible configuration of different parts of the \mbox{\hyperlink{classArchitecture}{Architecture}}. The user can provide up to three optional parameters to tailor a specific type of configuration. The method returns a confirmation/failure message as feedback. 
+\begin{DoxyParams}{Parameters}
+{\em glb} & is the \mbox{\hyperlink{classArchitecture}{Architecture}} being configured \\
+\hline
+{\em p1} & is the first optional configuration string \\
+\hline
+{\em p2} & is the second optional configuration string \\
+\hline
+{\em p3} & is the third optional configuration string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a confirmation/failure message 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchOption_a5dc1b3adaee0d11e6018b85640272498}{Arch\+Option}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{options_8hh}{options.\+hh}}\item 
+options.\+cc\end{DoxyCompactItemize}

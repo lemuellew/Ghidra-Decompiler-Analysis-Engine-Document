@@ -1,0 +1,113 @@
+\hypertarget{classWidener}{}\doxysection{Widener Class Reference}
+\label{classWidener}\index{Widener@{Widener}}
+
+
+Class holding a particular widening strategy for the \mbox{\hyperlink{classValueSetSolver}{Value\+Set\+Solver}} iteration algorithm.  
+
+
+
+
+{\ttfamily \#include $<$rangeutil.\+hh$>$}
+
+
+
+Inheritance diagram for Widener\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classWidener__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int4 \mbox{\hyperlink{classWidener_ad2dae5401b12d1ae6839b7475d5d8cb4}{determine\+Iteration\+Reset}} (const \mbox{\hyperlink{classValueSet}{Value\+Set}} \&value\+Set)=0
+\begin{DoxyCompactList}\small\item\em Upon entering a fresh partition, determine how the given \mbox{\hyperlink{classValueSet}{Value\+Set}} count should be reset. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classWidener_a44e6ae8f9832a564a2e8f9b86fa72d83}{check\+Freeze}} (const \mbox{\hyperlink{classValueSet}{Value\+Set}} \&value\+Set)=0
+\begin{DoxyCompactList}\small\item\em Check if the given value set has been frozen for the remainder of the iteration process. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classWidener_a5c9bd4db7928361e7277cdbf3d8287c8}{do\+Widening}} (const \mbox{\hyperlink{classValueSet}{Value\+Set}} \&value\+Set, \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&range, const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&new\+Range)=0
+\begin{DoxyCompactList}\small\item\em For an iteration that isn\textquotesingle{}t stabilizing attempt to widen the given \mbox{\hyperlink{classValueSet}{Value\+Set}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class holding a particular widening strategy for the \mbox{\hyperlink{classValueSetSolver}{Value\+Set\+Solver}} iteration algorithm. 
+
+This obects gets to decide when a value set gets {\itshape frozen} (\mbox{\hyperlink{classWidener_a44e6ae8f9832a564a2e8f9b86fa72d83}{check\+Freeze()}}), meaning the set doesn\textquotesingle{}t change for the remaining iteration steps. It also gets to decide when and by how much value sets get artificially increased in size to accelerate reaching their stable state (\mbox{\hyperlink{classWidener_a5c9bd4db7928361e7277cdbf3d8287c8}{do\+Widening()}}). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWidener_a44e6ae8f9832a564a2e8f9b86fa72d83}\label{classWidener_a44e6ae8f9832a564a2e8f9b86fa72d83}} 
+\index{Widener@{Widener}!checkFreeze@{checkFreeze}}
+\index{checkFreeze@{checkFreeze}!Widener@{Widener}}
+\doxysubsubsection{\texorpdfstring{checkFreeze()}{checkFreeze()}}
+{\footnotesize\ttfamily virtual bool Widener\+::check\+Freeze (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classValueSet}{Value\+Set}} \&}]{value\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the given value set has been frozen for the remainder of the iteration process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+Set} & is the given value set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the value\+Set will no longer change 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWidenerNone_a67987765dbcb9ad333c85d5e4576d001}{Widener\+None}}, and \mbox{\hyperlink{classWidenerFull_ae9e45dfe159a65a1472098c0d9c351fa}{Widener\+Full}}.
+
+\mbox{\Hypertarget{classWidener_ad2dae5401b12d1ae6839b7475d5d8cb4}\label{classWidener_ad2dae5401b12d1ae6839b7475d5d8cb4}} 
+\index{Widener@{Widener}!determineIterationReset@{determineIterationReset}}
+\index{determineIterationReset@{determineIterationReset}!Widener@{Widener}}
+\doxysubsubsection{\texorpdfstring{determineIterationReset()}{determineIterationReset()}}
+{\footnotesize\ttfamily virtual int4 Widener\+::determine\+Iteration\+Reset (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classValueSet}{Value\+Set}} \&}]{value\+Set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Upon entering a fresh partition, determine how the given \mbox{\hyperlink{classValueSet}{Value\+Set}} count should be reset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value\+Set} & is the given value set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the value of the iteration counter to reset to 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWidenerNone_aca06dbb0ccea57451cde68170be96377}{Widener\+None}}, and \mbox{\hyperlink{classWidenerFull_a14121c0317f54930e1ad47d811d75cbf}{Widener\+Full}}.
+
+\mbox{\Hypertarget{classWidener_a5c9bd4db7928361e7277cdbf3d8287c8}\label{classWidener_a5c9bd4db7928361e7277cdbf3d8287c8}} 
+\index{Widener@{Widener}!doWidening@{doWidening}}
+\index{doWidening@{doWidening}!Widener@{Widener}}
+\doxysubsubsection{\texorpdfstring{doWidening()}{doWidening()}}
+{\footnotesize\ttfamily virtual bool Widener\+::do\+Widening (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classValueSet}{Value\+Set}} \&}]{value\+Set,  }\item[{\mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{range,  }\item[{const \mbox{\hyperlink{classCircleRange}{Circle\+Range}} \&}]{new\+Range }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+For an iteration that isn\textquotesingle{}t stabilizing attempt to widen the given \mbox{\hyperlink{classValueSet}{Value\+Set}}. 
+
+Change the given range based on its previous iteration so that it stabilizes more rapidly on future iterations. 
+\begin{DoxyParams}{Parameters}
+{\em value\+Set} & is the given value set \\
+\hline
+{\em range} & is the previous form of the given range (and storage for the widening result) \\
+\hline
+{\em new\+Range} & is the current iteration of the given range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if widening succeeded 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWidenerNone_a88060b09a9668384590e89ad901100a8}{Widener\+None}}, and \mbox{\hyperlink{classWidenerFull_a8061cb7b17fb8231d689a44cf2b78a13}{Widener\+Full}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{rangeutil_8hh}{rangeutil.\+hh}}\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\hypertarget{printlanguage_8hh}{}\doxysection{printlanguage.\+hh File Reference}
+\label{printlanguage_8hh}\index{printlanguage.hh@{printlanguage.hh}}
+
+
+Classes for printing tokens in a high-\/level language.  
+
+
+{\ttfamily \#include \char`\"{}capability.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cast.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prettyprint.\+hh\char`\"{}}\newline
+Include dependency graph for printlanguage.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{printlanguage_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{printlanguage_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPrintLanguageCapability}{Print\+Language\+Capability}}
+\begin{DoxyCompactList}\small\item\em Base class for high-\/level language capabilities. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classOpToken}{Op\+Token}}
+\begin{DoxyCompactList}\small\item\em A token representing an operator in the high-\/level language. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPrintLanguage}{Print\+Language}}
+\begin{DoxyCompactList}\small\item\em The base class A\+PI for emitting a high-\/level language. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPrintLanguage_1_1ReversePolish}{Print\+Language\+::\+Reverse\+Polish}}
+\begin{DoxyCompactList}\small\item\em An entry on the reverse polish notation (R\+PN) stack. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPrintLanguage_1_1NodePending}{Print\+Language\+::\+Node\+Pending}}
+\begin{DoxyCompactList}\small\item\em A pending data-\/flow node; waiting to be placed on the reverse polish notation stack. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structPrintLanguage_1_1Atom}{Print\+Language\+::\+Atom}}
+\begin{DoxyCompactList}\small\item\em A single non-\/operator token emitted by the decompiler. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes for printing tokens in a high-\/level language. 
+

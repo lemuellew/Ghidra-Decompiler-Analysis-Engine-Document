@@ -1,0 +1,109 @@
+\hypertarget{classOpBehaviorIntRight}{}\doxysection{Op\+Behavior\+Int\+Right Class Reference}
+\label{classOpBehaviorIntRight}\index{OpBehaviorIntRight@{OpBehaviorIntRight}}
+
+
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+I\+G\+HT behavior.  
+
+
+
+
+{\ttfamily \#include $<$opbehavior.\+hh$>$}
+
+
+
+Inheritance diagram for Op\+Behavior\+Int\+Right\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classOpBehaviorIntRight__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Op\+Behavior\+Int\+Right\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classOpBehaviorIntRight__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual uintb \mbox{\hyperlink{classOpBehaviorIntRight_a9d85dc8a305522589e394b4b14ff8caa}{evaluate\+Binary}} (int4 sizeout, int4 sizein, uintb in1, uintb in2) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classEmulate}{Emulate}} the binary op-\/code on input values. \end{DoxyCompactList}\item 
+virtual uintb \mbox{\hyperlink{classOpBehaviorIntRight_a8ee48eb765dc6c9427c0f10aceee4fe8}{recover\+Input\+Binary}} (int4 slot, int4 sizeout, uintb out, int4 sizein, uintb in) const
+\begin{DoxyCompactList}\small\item\em Reverse the binary op-\/code operation, recovering an input value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+C\+P\+U\+I\+\_\+\+I\+N\+T\+\_\+\+R\+I\+G\+HT behavior. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOpBehaviorIntRight_a9d85dc8a305522589e394b4b14ff8caa}\label{classOpBehaviorIntRight_a9d85dc8a305522589e394b4b14ff8caa}} 
+\index{OpBehaviorIntRight@{OpBehaviorIntRight}!evaluateBinary@{evaluateBinary}}
+\index{evaluateBinary@{evaluateBinary}!OpBehaviorIntRight@{OpBehaviorIntRight}}
+\doxysubsubsection{\texorpdfstring{evaluateBinary()}{evaluateBinary()}}
+{\footnotesize\ttfamily uintb Op\+Behavior\+Int\+Right\+::evaluate\+Binary (\begin{DoxyParamCaption}\item[{int4}]{sizeout,  }\item[{int4}]{sizein,  }\item[{uintb}]{in1,  }\item[{uintb}]{in2 }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classEmulate}{Emulate}} the binary op-\/code on input values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em sizein} & is the size of the inputs in bytes \\
+\hline
+{\em in1} & is the first input value \\
+\hline
+{\em in2} & is the second input value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output value 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classOpBehavior_aeeed3af7aa35264b31a1f182884214a9}{Op\+Behavior}}.
+
+\mbox{\Hypertarget{classOpBehaviorIntRight_a8ee48eb765dc6c9427c0f10aceee4fe8}\label{classOpBehaviorIntRight_a8ee48eb765dc6c9427c0f10aceee4fe8}} 
+\index{OpBehaviorIntRight@{OpBehaviorIntRight}!recoverInputBinary@{recoverInputBinary}}
+\index{recoverInputBinary@{recoverInputBinary}!OpBehaviorIntRight@{OpBehaviorIntRight}}
+\doxysubsubsection{\texorpdfstring{recoverInputBinary()}{recoverInputBinary()}}
+{\footnotesize\ttfamily uintb Op\+Behavior\+Int\+Right\+::recover\+Input\+Binary (\begin{DoxyParamCaption}\item[{int4}]{slot,  }\item[{int4}]{sizeout,  }\item[{uintb}]{out,  }\item[{int4}]{sizein,  }\item[{uintb}]{in }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reverse the binary op-\/code operation, recovering an input value. 
+
+If the output value and one of the input values is known, recover the value of the other input. 
+\begin{DoxyParams}{Parameters}
+{\em slot} & is the input slot to recover \\
+\hline
+{\em sizeout} & is the size of the output in bytes \\
+\hline
+{\em out} & is the output value \\
+\hline
+{\em sizein} & is the size of the inputs in bytes \\
+\hline
+{\em in} & is the known input value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input value corresponding to the {\bfseries{slot}} 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classOpBehavior_adebec9b6516f4efa5c65323abd3619c3}{Op\+Behavior}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{opbehavior_8hh}{opbehavior.\+hh}}\item 
+opbehavior.\+cc\end{DoxyCompactItemize}

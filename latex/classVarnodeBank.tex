@@ -1,0 +1,668 @@
+\hypertarget{classVarnodeBank}{}\doxysection{Varnode\+Bank Class Reference}
+\label{classVarnodeBank}\index{VarnodeBank@{VarnodeBank}}
+
+
+A container for \mbox{\hyperlink{classVarnode}{Varnode}} objects from a specific function.  
+
+
+
+
+{\ttfamily \#include $<$varnode.\+hh$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVarnodeBank_a146fadaeb5504c61639d4d9ec9ddb98e}{Varnode\+Bank}} (\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$m, \mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$uspace, uintm ubase)
+\begin{DoxyCompactList}\small\item\em Construct the container. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVarnodeBank_addcb9e8b2e8d92552c2b142eeacb6f75}\label{classVarnodeBank_addcb9e8b2e8d92552c2b142eeacb6f75}} 
+void \mbox{\hyperlink{classVarnodeBank_addcb9e8b2e8d92552c2b142eeacb6f75}{clear}} (void)
+\begin{DoxyCompactList}\small\item\em Clear out all Varnodes and reset counters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_ae2effd128dce9205fba1015b45959f1c}{create}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&m, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Create a {\itshape free} \mbox{\hyperlink{classVarnode}{Varnode}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_a8acd91c7c2d886e404e531996f7962eb}{create\+Def}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&m, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classVarnode}{Varnode}} as the output of a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_ab73cb940a84d7cb07870f4cb50c66fb1}{create\+Unique}} (int4 s, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Create a temporary varnode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_a9b47054374533bec02c4b467b390b6ca}{create\+Def\+Unique}} (int4 s, \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Create a temporary \mbox{\hyperlink{classVarnode}{Varnode}} as output of a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnodeBank_abec625ab3cf6d593cf8edc7955e5a414}{destroy}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Remove a \mbox{\hyperlink{classVarnode}{Varnode}} from the container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_a132b64906ef393d34a4363ff816e4ba2}{set\+Input}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Mark a \mbox{\hyperlink{classVarnode}{Varnode}} as an input to the function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_ac151db372e9299db20ad0808140877e1}{set\+Def}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn, \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$op)
+\begin{DoxyCompactList}\small\item\em Change \mbox{\hyperlink{classVarnode}{Varnode}} to be defined by the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnodeBank_a8020195947e2b6faea7f18f591572c47}{make\+Free}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$vn)
+\begin{DoxyCompactList}\small\item\em Convert a \mbox{\hyperlink{classVarnode}{Varnode}} to be {\itshape free}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVarnodeBank_a9475fbf8af64f0e08f9d853791717169}{replace}} (\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$oldvn, \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$newvn)
+\begin{DoxyCompactList}\small\item\em Replace every read of one \mbox{\hyperlink{classVarnode}{Varnode}} with another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_a056ab94c55c202947cdaf9ccce709d01}{find}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&loc, const \mbox{\hyperlink{classAddress}{Address}} \&pc, uintm uniq=$\sim$((uintm) 0)) const
+\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_a5375b59862f62539df76d67de60414c6}{find\+Input}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&loc) const
+\begin{DoxyCompactList}\small\item\em Find an input \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_aacfc015d8ce76e8f1cacd6da9c7cd93f}{find\+Covered\+Input}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&loc) const
+\begin{DoxyCompactList}\small\item\em Find an input \mbox{\hyperlink{classVarnode}{Varnode}} contained within this range. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ \mbox{\hyperlink{classVarnodeBank_ae582ca41dcfbcb24895320c371113052}{find\+Covering\+Input}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&loc) const
+\begin{DoxyCompactList}\small\item\em Find an input \mbox{\hyperlink{classVarnode}{Varnode}} covering a range. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a58e2a7364cd253c9dc935233269a9bb2}{begin\+Loc}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spaceid) const
+\begin{DoxyCompactList}\small\item\em Beginning of Varnodes in given address space sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_abdbae6976cda0615c7bf24026bac0d67}{end\+Loc}} (\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$spaceid) const
+\begin{DoxyCompactList}\small\item\em Ending of Varnodes in given address space sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a10c8010d9b6fc375f83cb6605487e5bf}{begin\+Loc}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Beginning of Varnodes starting at a given address sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_ad4f1a373644dccfa63af8cdd56753afd}{end\+Loc}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em End of Varnodes starting at a given address sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a136ff36679b30898f9284ad2eaea60e9}{begin\+Loc}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Beginning of Varnodes of given size and starting address sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_ac38dab2a950a91fffdc237b5427641f5}{end\+Loc}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em End of Varnodes of given size and starting address sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_aea9169bdd43c3e81e16757c4a3a8b03a}{begin\+Loc}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&addr, uint4 fl) const
+\begin{DoxyCompactList}\small\item\em Beginning of Varnodes sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a71bad5566277bed12953f025937a0a9e}{end\+Loc}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&addr, uint4 fl) const
+\begin{DoxyCompactList}\small\item\em End of Varnodes sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a7ae63dd4a024cc425c1457529202c956}{begin\+Loc}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&pc, uintm uniq) const
+\begin{DoxyCompactList}\small\item\em Beginning of Varnodes sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Loc\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a419ca31b8891185aea76f56ac0fe7437}{end\+Loc}} (int4 s, const \mbox{\hyperlink{classAddress}{Address}} \&addr, const \mbox{\hyperlink{classAddress}{Address}} \&pc, uintm uniq) const
+\begin{DoxyCompactList}\small\item\em End of Varnodes sorted by location. \end{DoxyCompactList}\item 
+Varnode\+Def\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a64420e8511a793ca45128d54a5766f03}{begin\+Def}} (uint4 fl) const
+\begin{DoxyCompactList}\small\item\em Beginning of varnodes with set definition property. \end{DoxyCompactList}\item 
+Varnode\+Def\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a84936e0c795704467a7de83f5a83582d}{end\+Def}} (uint4 fl) const
+\begin{DoxyCompactList}\small\item\em End of varnodes with set definition property. \end{DoxyCompactList}\item 
+Varnode\+Def\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a657f9d8a88aa678d39ec1ba3691647eb}{begin\+Def}} (uint4 fl, const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em Beginning of varnodes starting at a given address with a set definition property. \end{DoxyCompactList}\item 
+Varnode\+Def\+Set\+::const\+\_\+iterator \mbox{\hyperlink{classVarnodeBank_a5b7c4e02a9a82a7a98e6555383f1ccb3}{end\+Def}} (uint4 fl, const \mbox{\hyperlink{classAddress}{Address}} \&addr) const
+\begin{DoxyCompactList}\small\item\em End of varnodes starting at a given address with a set definition property. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A container for \mbox{\hyperlink{classVarnode}{Varnode}} objects from a specific function. 
+
+The A\+PI allows the creation, deletion, search, and iteration of \mbox{\hyperlink{classVarnode}{Varnode}} objects from one function. The class maintains two ordering for efficiency\+:
+\begin{DoxyItemize}
+\item Sorting based on storage location ({\bfseries{loc}})
+\item Sorting based on point of definition ({\bfseries{def}}) The class maintains a {\itshape last} {\itshape offset} counter for allocation temporary \mbox{\hyperlink{classVarnode}{Varnode}} objects in the {\itshape unique} space. Constants are created by passing a constant address to the \mbox{\hyperlink{classVarnodeBank_ae2effd128dce9205fba1015b45959f1c}{create()}} method. 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVarnodeBank_a146fadaeb5504c61639d4d9ec9ddb98e}\label{classVarnodeBank_a146fadaeb5504c61639d4d9ec9ddb98e}} 
+\index{VarnodeBank@{VarnodeBank}!VarnodeBank@{VarnodeBank}}
+\index{VarnodeBank@{VarnodeBank}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{VarnodeBank()}{VarnodeBank()}}
+{\footnotesize\ttfamily Varnode\+Bank\+::\+Varnode\+Bank (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpaceManager}{Addr\+Space\+Manager}} $\ast$}]{m,  }\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{uspace,  }\item[{uintm}]{ubase }\end{DoxyParamCaption})}
+
+
+
+Construct the container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & is the underlying address space manager \\
+\hline
+{\em uspace} & is the {\itshape unique} space \\
+\hline
+{\em ubase} & is the base offset for allocating temporaries \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVarnodeBank_a64420e8511a793ca45128d54a5766f03}\label{classVarnodeBank_a64420e8511a793ca45128d54a5766f03}} 
+\index{VarnodeBank@{VarnodeBank}!beginDef@{beginDef}}
+\index{beginDef@{beginDef}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{beginDef()}{beginDef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Varnode\+Def\+Set\+::const\+\_\+iterator Varnode\+Bank\+::begin\+Def (\begin{DoxyParamCaption}\item[{uint4}]{fl }\end{DoxyParamCaption}) const}
+
+
+
+Beginning of varnodes with set definition property. 
+
+Get an iterator to Varnodes in definition order restricted with the following properties\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}{Varnode\+::input}} for Varnodes which are inputs to the function
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}{Varnode\+::written}} for Varnodes that are defined by a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\item 0 for {\itshape free} Varnodes 
+\begin{DoxyParams}{Parameters}
+{\em fl} & is the property restriction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnodeBank_a657f9d8a88aa678d39ec1ba3691647eb}\label{classVarnodeBank_a657f9d8a88aa678d39ec1ba3691647eb}} 
+\index{VarnodeBank@{VarnodeBank}!beginDef@{beginDef}}
+\index{beginDef@{beginDef}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{beginDef()}{beginDef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Varnode\+Def\+Set\+::const\+\_\+iterator Varnode\+Bank\+::begin\+Def (\begin{DoxyParamCaption}\item[{uint4}]{fl,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Beginning of varnodes starting at a given address with a set definition property. 
+
+Get an iterator to Varnodes in definition order. The starting address of the Varnodes must match the given address, and they are further restricted by the following properties\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}{Varnode\+::input}} for Varnodes which are inputs to the function
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}{Varnode\+::written}} for Varnodes that are defined by a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\item 0 for {\itshape free} Varnodes 
+\begin{DoxyParams}{Parameters}
+{\em fl} & is the property restriction \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnodeBank_a58e2a7364cd253c9dc935233269a9bb2}\label{classVarnodeBank_a58e2a7364cd253c9dc935233269a9bb2}} 
+\index{VarnodeBank@{VarnodeBank}!beginLoc@{beginLoc}}
+\index{beginLoc@{beginLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{beginLoc()}{beginLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::begin\+Loc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spaceid }\end{DoxyParamCaption}) const}
+
+
+
+Beginning of Varnodes in given address space sorted by location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spaceid} & is the given address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a10c8010d9b6fc375f83cb6605487e5bf}\label{classVarnodeBank_a10c8010d9b6fc375f83cb6605487e5bf}} 
+\index{VarnodeBank@{VarnodeBank}!beginLoc@{beginLoc}}
+\index{beginLoc@{beginLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{beginLoc()}{beginLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::begin\+Loc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Beginning of Varnodes starting at a given address sorted by location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a136ff36679b30898f9284ad2eaea60e9}\label{classVarnodeBank_a136ff36679b30898f9284ad2eaea60e9}} 
+\index{VarnodeBank@{VarnodeBank}!beginLoc@{beginLoc}}
+\index{beginLoc@{beginLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{beginLoc()}{beginLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::begin\+Loc (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+Beginning of Varnodes of given size and starting address sorted by location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given size \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a7ae63dd4a024cc425c1457529202c956}\label{classVarnodeBank_a7ae63dd4a024cc425c1457529202c956}} 
+\index{VarnodeBank@{VarnodeBank}!beginLoc@{beginLoc}}
+\index{beginLoc@{beginLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{beginLoc()}{beginLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::begin\+Loc (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{pc,  }\item[{uintm}]{uniq }\end{DoxyParamCaption}) const}
+
+
+
+Beginning of Varnodes sorted by location. 
+
+Varnodes are restricted by a given size and location and by the sequence number of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} defining it 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given size \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+{\em pc} & is the address of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} defining the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em uniq} & is the sequence number of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} or -\/1 for now sequence number restriction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_aea9169bdd43c3e81e16757c4a3a8b03a}\label{classVarnodeBank_aea9169bdd43c3e81e16757c4a3a8b03a}} 
+\index{VarnodeBank@{VarnodeBank}!beginLoc@{beginLoc}}
+\index{beginLoc@{beginLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{beginLoc()}{beginLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::begin\+Loc (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uint4}]{fl }\end{DoxyParamCaption}) const}
+
+
+
+Beginning of Varnodes sorted by location. 
+
+Varnodes are restricted by a given size and location and by the property
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}{Varnode\+::input}} for Varnodes that are inputs to the function
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}{Varnode\+::written}} for Varnodes that are defined by a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\item 0 for {\itshape free} Varnodes 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given size \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+{\em fl} & is the property restriction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the beginning iterator 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnodeBank_ae2effd128dce9205fba1015b45959f1c}\label{classVarnodeBank_ae2effd128dce9205fba1015b45959f1c}} 
+\index{VarnodeBank@{VarnodeBank}!create@{create}}
+\index{create@{create}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::create (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{m,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})}
+
+
+
+Create a {\itshape free} \mbox{\hyperlink{classVarnode}{Varnode}} object. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} is created and inserted into the maps as {\itshape free\+:} not defined as the output of a p-\/code op or the input to a function. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the \mbox{\hyperlink{classVarnode}{Varnode}} in bytes \\
+\hline
+{\em m} & is the starting address \\
+\hline
+{\em ct} & is the data-\/type of the new varnode (must not be N\+U\+LL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the newly allocated \mbox{\hyperlink{classVarnode}{Varnode}} object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a8acd91c7c2d886e404e531996f7962eb}\label{classVarnodeBank_a8acd91c7c2d886e404e531996f7962eb}} 
+\index{VarnodeBank@{VarnodeBank}!createDef@{createDef}}
+\index{createDef@{createDef}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{createDef()}{createDef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::create\+Def (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{m,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+Create a \mbox{\hyperlink{classVarnode}{Varnode}} as the output of a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+The new \mbox{\hyperlink{classVarnode}{Varnode}} object will already be put in the {\itshape definition} list as if it were the output of the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. The \mbox{\hyperlink{classVarnode}{Varnode}} must still be set as the output. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size in bytes \\
+\hline
+{\em m} & is the starting address \\
+\hline
+{\em ct} & is the data-\/type to associate \\
+\hline
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnodeBank_a9b47054374533bec02c4b467b390b6ca}\label{classVarnodeBank_a9b47054374533bec02c4b467b390b6ca}} 
+\index{VarnodeBank@{VarnodeBank}!createDefUnique@{createDefUnique}}
+\index{createDefUnique@{createDefUnique}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{createDefUnique()}{createDefUnique()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::create\+Def\+Unique (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+Create a temporary \mbox{\hyperlink{classVarnode}{Varnode}} as output of a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+The new \mbox{\hyperlink{classVarnode}{Varnode}} will be assigned from the {\itshape unique} space, and it will already be put in the {\itshape definition} list as if it were the output of the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. The \mbox{\hyperlink{classVarnode}{Varnode}} must still be set as the output. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size in bytes \\
+\hline
+{\em ct} & is the data-\/type to associate \\
+\hline
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnodeBank_ab73cb940a84d7cb07870f4cb50c66fb1}\label{classVarnodeBank_ab73cb940a84d7cb07870f4cb50c66fb1}} 
+\index{VarnodeBank@{VarnodeBank}!createUnique@{createUnique}}
+\index{createUnique@{createUnique}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{createUnique()}{createUnique()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::create\+Unique (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})}
+
+
+
+Create a temporary varnode. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} is allocated in the {\itshape unique} space and automatically assigned an offset. The \mbox{\hyperlink{classVarnode}{Varnode}} is initially {\itshape free}. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the \mbox{\hyperlink{classVarnode}{Varnode}} in bytes \\
+\hline
+{\em ct} & is the data-\/type to assign (must not be N\+U\+LL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnodeBank_abec625ab3cf6d593cf8edc7955e5a414}\label{classVarnodeBank_abec625ab3cf6d593cf8edc7955e5a414}} 
+\index{VarnodeBank@{VarnodeBank}!destroy@{destroy}}
+\index{destroy@{destroy}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{destroy()}{destroy()}}
+{\footnotesize\ttfamily void Varnode\+Bank\+::destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Remove a \mbox{\hyperlink{classVarnode}{Varnode}} from the container. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} object is removed from the sorted lists and its memory reclaimed 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnodeBank_a84936e0c795704467a7de83f5a83582d}\label{classVarnodeBank_a84936e0c795704467a7de83f5a83582d}} 
+\index{VarnodeBank@{VarnodeBank}!endDef@{endDef}}
+\index{endDef@{endDef}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{endDef()}{endDef()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Varnode\+Def\+Set\+::const\+\_\+iterator Varnode\+Bank\+::end\+Def (\begin{DoxyParamCaption}\item[{uint4}]{fl }\end{DoxyParamCaption}) const}
+
+
+
+End of varnodes with set definition property. 
+
+Get an iterator to Varnodes in definition order restricted with the following properties\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}{Varnode\+::input}} for Varnodes which are inputs to the function
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}{Varnode\+::written}} for Varnodes that are defined by a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\item 0 for {\itshape free} Varnodes 
+\begin{DoxyParams}{Parameters}
+{\em fl} & is the property restriction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnodeBank_a5b7c4e02a9a82a7a98e6555383f1ccb3}\label{classVarnodeBank_a5b7c4e02a9a82a7a98e6555383f1ccb3}} 
+\index{VarnodeBank@{VarnodeBank}!endDef@{endDef}}
+\index{endDef@{endDef}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{endDef()}{endDef()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Varnode\+Def\+Set\+::const\+\_\+iterator Varnode\+Bank\+::end\+Def (\begin{DoxyParamCaption}\item[{uint4}]{fl,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+End of varnodes starting at a given address with a set definition property. 
+
+Get an iterator to Varnodes in definition order. The starting address of the Varnodes must match the given address, and they are further restricted by the following properties\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}{Varnode\+::input}} for Varnodes which are inputs to the function
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}{Varnode\+::written}} for Varnodes that are defined by a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\item 0 for {\itshape free} Varnodes 
+\begin{DoxyParams}{Parameters}
+{\em fl} & is the property restriction \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnodeBank_abdbae6976cda0615c7bf24026bac0d67}\label{classVarnodeBank_abdbae6976cda0615c7bf24026bac0d67}} 
+\index{VarnodeBank@{VarnodeBank}!endLoc@{endLoc}}
+\index{endLoc@{endLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{endLoc()}{endLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::end\+Loc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAddrSpace}{Addr\+Space}} $\ast$}]{spaceid }\end{DoxyParamCaption}) const}
+
+
+
+Ending of Varnodes in given address space sorted by location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spaceid} & is the given address space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_ad4f1a373644dccfa63af8cdd56753afd}\label{classVarnodeBank_ad4f1a373644dccfa63af8cdd56753afd}} 
+\index{VarnodeBank@{VarnodeBank}!endLoc@{endLoc}}
+\index{endLoc@{endLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{endLoc()}{endLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::end\+Loc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+End of Varnodes starting at a given address sorted by location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_ac38dab2a950a91fffdc237b5427641f5}\label{classVarnodeBank_ac38dab2a950a91fffdc237b5427641f5}} 
+\index{VarnodeBank@{VarnodeBank}!endLoc@{endLoc}}
+\index{endLoc@{endLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{endLoc()}{endLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::end\+Loc (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr }\end{DoxyParamCaption}) const}
+
+
+
+End of Varnodes of given size and starting address sorted by location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given size \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a419ca31b8891185aea76f56ac0fe7437}\label{classVarnodeBank_a419ca31b8891185aea76f56ac0fe7437}} 
+\index{VarnodeBank@{VarnodeBank}!endLoc@{endLoc}}
+\index{endLoc@{endLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{endLoc()}{endLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::end\+Loc (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{pc,  }\item[{uintm}]{uniq }\end{DoxyParamCaption}) const}
+
+
+
+End of Varnodes sorted by location. 
+
+Varnodes are restricted by a given size and location and by the sequence number of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} defining it 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given size \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+{\em pc} & is the address of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} defining the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em uniq} & is the sequence number of the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} or -\/1 for now sequence number restriction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a71bad5566277bed12953f025937a0a9e}\label{classVarnodeBank_a71bad5566277bed12953f025937a0a9e}} 
+\index{VarnodeBank@{VarnodeBank}!endLoc@{endLoc}}
+\index{endLoc@{endLoc}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{endLoc()}{endLoc()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Varnode\+Loc\+Set\+::const\+\_\+iterator Varnode\+Bank\+::end\+Loc (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{uint4}]{fl }\end{DoxyParamCaption}) const}
+
+
+
+End of Varnodes sorted by location. 
+
+Varnodes are restricted by a given size and location and by the property
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca9c9363556459d8828a5ab58c370ccd2e}{Varnode\+::input}} for Varnodes that are inputs to the function
+\item \mbox{\hyperlink{classVarnode_ad367c0ac3c08b6f41e7334e90a138e8ca16c6748ecb7542c2f79d81be83098dd5}{Varnode\+::written}} for Varnodes that are defined by a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}
+\item 0 for {\itshape free} Varnodes 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the given size \\
+\hline
+{\em addr} & is the given starting address \\
+\hline
+{\em fl} & is the property restriction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ending iterator 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classVarnodeBank_a056ab94c55c202947cdaf9ccce709d01}\label{classVarnodeBank_a056ab94c55c202947cdaf9ccce709d01}} 
+\index{VarnodeBank@{VarnodeBank}!find@{find}}
+\index{find@{find}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::find (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{pc,  }\item[{uintm}]{uniq = {\ttfamily $\sim$((uintm)0)} }\end{DoxyParamCaption}) const}
+
+
+
+Find a \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Find a \mbox{\hyperlink{classVarnode}{Varnode}} given its (loc,size) and the address where it is defined. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em loc} & is its starting address \\
+\hline
+{\em pc} & is the address where it is defined \\
+\hline
+{\em uniq} & is the sequence number or -\/1 if not specified \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the matching \mbox{\hyperlink{classVarnode}{Varnode}} or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_aacfc015d8ce76e8f1cacd6da9c7cd93f}\label{classVarnodeBank_aacfc015d8ce76e8f1cacd6da9c7cd93f}} 
+\index{VarnodeBank@{VarnodeBank}!findCoveredInput@{findCoveredInput}}
+\index{findCoveredInput@{findCoveredInput}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{findCoveredInput()}{findCoveredInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::find\+Covered\+Input (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc }\end{DoxyParamCaption}) const}
+
+
+
+Find an input \mbox{\hyperlink{classVarnode}{Varnode}} contained within this range. 
+
+Find the first \mbox{\hyperlink{classVarnode}{Varnode}} completely contained within the given range, which is also marked as a function input. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the range \\
+\hline
+{\em loc} & is the starting address of the range \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the \mbox{\hyperlink{classVarnode}{Varnode}} object or N\+U\+LL if no \mbox{\hyperlink{classVarnode}{Varnode}} met the conditions 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_ae582ca41dcfbcb24895320c371113052}\label{classVarnodeBank_ae582ca41dcfbcb24895320c371113052}} 
+\index{VarnodeBank@{VarnodeBank}!findCoveringInput@{findCoveringInput}}
+\index{findCoveringInput@{findCoveringInput}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{findCoveringInput()}{findCoveringInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::find\+Covering\+Input (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc }\end{DoxyParamCaption}) const}
+
+
+
+Find an input \mbox{\hyperlink{classVarnode}{Varnode}} covering a range. 
+
+Search for the \mbox{\hyperlink{classVarnode}{Varnode}} that completely contains the given range and is marked as an input to the function. If it exists, it is unique. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size of the range \\
+\hline
+{\em loc} & is the starting address of the range \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnodeBank_a5375b59862f62539df76d67de60414c6}\label{classVarnodeBank_a5375b59862f62539df76d67de60414c6}} 
+\index{VarnodeBank@{VarnodeBank}!findInput@{findInput}}
+\index{findInput@{findInput}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{findInput()}{findInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::find\+Input (\begin{DoxyParamCaption}\item[{int4}]{s,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{loc }\end{DoxyParamCaption}) const}
+
+
+
+Find an input \mbox{\hyperlink{classVarnode}{Varnode}}. 
+
+Find a \mbox{\hyperlink{classVarnode}{Varnode}} marked as a function input given its size and address 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the size \\
+\hline
+{\em loc} & is the starting address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the match \mbox{\hyperlink{classVarnode}{Varnode}} object or N\+U\+LL 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a8020195947e2b6faea7f18f591572c47}\label{classVarnodeBank_a8020195947e2b6faea7f18f591572c47}} 
+\index{VarnodeBank@{VarnodeBank}!makeFree@{makeFree}}
+\index{makeFree@{makeFree}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{makeFree()}{makeFree()}}
+{\footnotesize\ttfamily void Varnode\+Bank\+::make\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Convert a \mbox{\hyperlink{classVarnode}{Varnode}} to be {\itshape free}. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} is removed from the cross-\/referencing lists and reinserted as as if it were not defined by any \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and not an input to the function. If the \mbox{\hyperlink{classVarnode}{Varnode}} was originally a \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} output, this must be explicitly cleared. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to modify \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnodeBank_a9475fbf8af64f0e08f9d853791717169}\label{classVarnodeBank_a9475fbf8af64f0e08f9d853791717169}} 
+\index{VarnodeBank@{VarnodeBank}!replace@{replace}}
+\index{replace@{replace}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{replace()}{replace()}}
+{\footnotesize\ttfamily void Varnode\+Bank\+::replace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{oldvn,  }\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{newvn }\end{DoxyParamCaption})}
+
+
+
+Replace every read of one \mbox{\hyperlink{classVarnode}{Varnode}} with another. 
+
+Any Pcode\+Ops that read {\bfseries{oldvn}} are changed to read {\bfseries{newvn}} 
+\begin{DoxyParams}{Parameters}
+{\em oldvn} & is the old \mbox{\hyperlink{classVarnode}{Varnode}} \\
+\hline
+{\em newvn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to replace it with \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classVarnodeBank_ac151db372e9299db20ad0808140877e1}\label{classVarnodeBank_ac151db372e9299db20ad0808140877e1}} 
+\index{VarnodeBank@{VarnodeBank}!setDef@{setDef}}
+\index{setDef@{setDef}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{setDef()}{setDef()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::set\+Def (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn,  }\item[{\mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$}]{op }\end{DoxyParamCaption})}
+
+
+
+Change \mbox{\hyperlink{classVarnode}{Varnode}} to be defined by the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. 
+
+The \mbox{\hyperlink{classVarnode}{Varnode}} must initially be {\itshape free}. It will be removed from the cross-\/referencing lists and reinserted as if its were the output of the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}}. It still must be explicitly set as the output. 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to modify \\
+\hline
+{\em op} & is the given \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the modified \mbox{\hyperlink{classVarnode}{Varnode}}, which may be a different object than the original 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVarnodeBank_a132b64906ef393d34a4363ff816e4ba2}\label{classVarnodeBank_a132b64906ef393d34a4363ff816e4ba2}} 
+\index{VarnodeBank@{VarnodeBank}!setInput@{setInput}}
+\index{setInput@{setInput}!VarnodeBank@{VarnodeBank}}
+\doxysubsubsection{\texorpdfstring{setInput()}{setInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVarnode}{Varnode}} $\ast$ Varnode\+Bank\+::set\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVarnode}{Varnode}} $\ast$}]{vn }\end{DoxyParamCaption})}
+
+
+
+Mark a \mbox{\hyperlink{classVarnode}{Varnode}} as an input to the function. 
+
+Define the \mbox{\hyperlink{classVarnode}{Varnode}} as an input formally; it is no longer considered {\itshape free}. Its position in the cross-\/referencing lists will change 
+\begin{DoxyParams}{Parameters}
+{\em vn} & is the \mbox{\hyperlink{classVarnode}{Varnode}} to mark \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the modified \mbox{\hyperlink{classVarnode}{Varnode}}, which be a different object than the original 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{varnode_8hh}{varnode.\+hh}}\item 
+varnode.\+cc\end{DoxyCompactItemize}

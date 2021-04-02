@@ -1,0 +1,102 @@
+\hypertarget{classActionVarnodeProps}{}\doxysection{Action\+Varnode\+Props Class Reference}
+\label{classActionVarnodeProps}\index{ActionVarnodeProps@{ActionVarnodeProps}}
+
+
+Transform based on \mbox{\hyperlink{classVarnode}{Varnode}} properties, such as {\itshape read-\/only} and {\itshape volatile}.  
+
+
+
+
+{\ttfamily \#include $<$coreaction.\+hh$>$}
+
+
+
+Inheritance diagram for Action\+Varnode\+Props\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classActionVarnodeProps__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Action\+Varnode\+Props\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{classActionVarnodeProps__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAction}{Action}} $\ast$ \mbox{\hyperlink{classActionVarnodeProps_a5703787530b66de1bea8f6b33091d68f}{clone}} (const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&grouplist) const
+\begin{DoxyCompactList}\small\item\em Clone the \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classActionVarnodeProps_a531c9985eb2e6a5796009bea79a465fe}{apply}} (\mbox{\hyperlink{classFuncdata}{Funcdata}} \&data)
+\begin{DoxyCompactList}\small\item\em Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Transform based on \mbox{\hyperlink{classVarnode}{Varnode}} properties, such as {\itshape read-\/only} and {\itshape volatile}. 
+
+This performs various transforms that are based on \mbox{\hyperlink{classVarnode}{Varnode}} properties.
+\begin{DoxyItemize}
+\item Read-\/only Varnodes are converted to the underlying constant
+\item Volatile Varnodes are converted read/write functions
+\item Varnodes whose values are not consumed are replaced with constant 0 Varnodes 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classActionVarnodeProps_a531c9985eb2e6a5796009bea79a465fe}\label{classActionVarnodeProps_a531c9985eb2e6a5796009bea79a465fe}} 
+\index{ActionVarnodeProps@{ActionVarnodeProps}!apply@{apply}}
+\index{apply@{apply}!ActionVarnodeProps@{ActionVarnodeProps}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily int4 Action\+Varnode\+Props\+::apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classFuncdata}{Funcdata}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Make a single attempt to apply {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. 
+
+This is the main entry point for applying changes to a function that are specific to {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}}. The method can inspect whatever it wants to decide if the \mbox{\hyperlink{classAction}{Action}} does or does not apply. Changes are indicated by incrementing the {\bfseries{count}} field. 
+\begin{DoxyParams}{Parameters}
+{\em data} & is the function to inspect/modify \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 for a complete application, -\/1 for a partial completion (due to breakpoint) 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_aac1c3999d6c685b15f5d9765a4d04173}{Action}}.
+
+\mbox{\Hypertarget{classActionVarnodeProps_a5703787530b66de1bea8f6b33091d68f}\label{classActionVarnodeProps_a5703787530b66de1bea8f6b33091d68f}} 
+\index{ActionVarnodeProps@{ActionVarnodeProps}!clone@{clone}}
+\index{clone@{clone}!ActionVarnodeProps@{ActionVarnodeProps}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classAction}{Action}}$\ast$ Action\+Varnode\+Props\+::clone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classActionGroupList}{Action\+Group\+List}} \&}]{grouplist }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Clone the \mbox{\hyperlink{classAction}{Action}}. 
+
+If {\bfseries{this}} \mbox{\hyperlink{classAction}{Action}} is a member of one of the groups in the grouplist, this returns a clone of the \mbox{\hyperlink{classAction}{Action}}, otherwise N\+U\+LL is returned. 
+\begin{DoxyParams}{Parameters}
+{\em grouplist} & is the list of groups being cloned \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cloned \mbox{\hyperlink{classAction}{Action}} or N\+U\+LL 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAction_af8242e41d09e5df52f97df9e65cc626f}{Action}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{coreaction_8hh}{coreaction.\+hh}}\item 
+coreaction.\+cc\end{DoxyCompactItemize}

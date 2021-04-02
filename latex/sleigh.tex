@@ -1,0 +1,350 @@
+\hypertarget{sleigh_sleightoc}{}\doxysection{Table of Contents}\label{sleigh_sleightoc}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{sleigh_sleighoverview}{Overview}}
+\item \mbox{\hyperlink{sleigh_sleighbuild}{Building S\+L\+E\+I\+GH}}
+\item \mbox{\hyperlink{sleigh_sleighuse}{Using S\+L\+E\+I\+GH}}
+\item \mbox{\hyperlink{sleighAPIbasic}{The Basic S\+L\+E\+I\+GH Interface}}
+\item \mbox{\hyperlink{sleighAPIemulate}{The S\+L\+E\+I\+GH Emulator}}
+\end{DoxyItemize}
+
+{\bfseries{Key}} {\bfseries{Classes}} 
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classTranslate}{Translate}}
+\item \mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}}
+\item \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}}
+\item \mbox{\hyperlink{classLoadImage}{Load\+Image}}
+\item \mbox{\hyperlink{classContextDatabase}{Context\+Database}}
+\end{DoxyItemize}\hypertarget{sleigh_sleighoverview}{}\doxysection{Overview}\label{sleigh_sleighoverview}
+Welcome to {\bfseries{S\+L\+E\+I\+GH}}, a machine language translation and dissassembly engine. S\+L\+E\+I\+GH is both a processor specification language and the associated library and tools for using such a specification to generate assembly and to generate {\bfseries{pcode}}, a reverse engineering Register Transfer Language (R\+TL), from binary machine instructions.
+
+S\+L\+E\+I\+GH was originally based on {\bfseries{S\+L\+ED}}, a {\itshape Specification} {\itshape Language} {\itshape for} {\itshape Encoding} {\itshape and} {\itshape Decoding}, designed by Norman Ramsey and Mary F. Fernandez, which performed disassembly (and assembly). S\+L\+E\+I\+GH extends S\+L\+ED by providing semantic descriptions (via the R\+TL) of machine instructions and other practical enhancements for doing real world reverse engineering.
+
+S\+L\+E\+I\+GH is part of Project {\bfseries{G\+H\+I\+D\+RA}}. It provides the core of the G\+H\+I\+D\+RA disassembler and the data-\/flow and decompilation analysis. However, S\+L\+E\+I\+GH can serve as a standalone library for use in other applications for providing a generic disassembly and R\+TL translation interface.\hypertarget{sleigh_sleighbuild}{}\doxysection{Building S\+L\+E\+I\+GH}\label{sleigh_sleighbuild}
+There are a couple of {\itshape make} targets for building the S\+L\+E\+I\+GH library from source. These are\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make libsla.a               \# Build the main library}
+\DoxyCodeLine{}
+\DoxyCodeLine{make libsla\_dbg.a           \# Build the library with debug symbols}
+\end{DoxyCode}
+
+
+The source code file {\itshape sleighexample.\+cc} has a complete example of initializing the \mbox{\hyperlink{classTranslate}{Translate}} engine and using it to generate assembly and pcode. The source has a hard-\/coded file name, {\itshape x86testcode}, as the example binary executable it attempts to decode, but this can easily be changed. It also needs a S\+L\+E\+I\+GH specification file ({\itshape }.sla) to be present.
+
+Building the example application can be done with something similar to the following makefile fragment.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\# The C compiler}}
+\DoxyCodeLine{CXX=g++}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\# Debug flags}}
+\DoxyCodeLine{DBG\_CXXFLAGS=-\/g -\/Wall -\/Wno-\/sign-\/compare}
+\DoxyCodeLine{}
+\DoxyCodeLine{OPT\_CXXFLAGS=-\/O2 -\/Wall -\/Wno-\/sign-\/compare}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\# libraries}}
+\DoxyCodeLine{INCLUDES=-\/I./src}
+\DoxyCodeLine{}
+\DoxyCodeLine{LNK=src/libsla\_dbg.a}
+\DoxyCodeLine{}
+\DoxyCodeLine{sleighexample.o:      sleighexample.cc}
+\DoxyCodeLine{      \$(CXX) -\/c \$(DBG\_CXXFLAGS) -\/o sleighexample sleighexample.o \$(LNK)}
+\DoxyCodeLine{}
+\DoxyCodeLine{clean:}
+\DoxyCodeLine{      rm -\/rf *.o sleighexample}
+\end{DoxyCode}
+\hypertarget{sleigh_sleighuse}{}\doxysection{Using S\+L\+E\+I\+GH}\label{sleigh_sleighuse}
+S\+L\+E\+I\+GH is a generic reverse engineering tool in the sense that the A\+PI is designed to be completely processor independent. In order to process binary executables for a specific processor, The library reads in a {\itshape specification} {\itshape file}, which describes how instructions are encoded and how they are interpreted by the processor. An application which needs to do disassembly or generate {\bfseries{pcode}} can design to the S\+L\+E\+I\+GH A\+PI once, and then the application will automatically support any processor for which there is a specification.
+
+For working with a single processor, the S\+L\+E\+I\+GH library needs to load a single {\itshape compiled} form of the processor specification, which is traditionally given a \char`\"{}.\+sla\char`\"{} suffix. Most common processors already have a \char`\"{}.\+sla\char`\"{} file available. So to use S\+L\+E\+I\+GH with these processors, the library merely needs to be made aware of the desired file. This documentation covers the use of the S\+L\+E\+I\+GH A\+PI, assuming that this specification file is available.
+
+The \char`\"{}.\+sla\char`\"{} files themselves are created by running the {\itshape compiler} on a file written in the formal S\+L\+E\+I\+GH language. These files traditionally have the suffix \char`\"{}.\+slaspec\char`\"{} For those who want to design such a specification for a new processor, please refer to the document, \char`\"{}\+S\+L\+E\+I\+G\+H\+: A Language
+for Rapid Processor Specification.\char`\"{} \hypertarget{sleighAPIbasic}{}\doxysection{The Basic S\+L\+E\+I\+GH Interface}\label{sleighAPIbasic}
+To use S\+L\+E\+I\+GH as a library within an application, there are basically five classes that you need to be aware of.
+
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{sleighAPIbasic_sleightranslate}{Translate (or Sleigh)}}
+\item \mbox{\hyperlink{sleighAPIbasic_sleighassememit}{Assembly\+Emit}}
+\item \mbox{\hyperlink{sleighAPIbasic_sleighpcodeemit}{Pcode\+Emit}}
+\item \mbox{\hyperlink{sleighAPIbasic_sleighloadimage}{Load\+Image}}
+\item \mbox{\hyperlink{sleighAPIbasic_sleighcontext}{Context\+Database}}
+\end{DoxyItemize}\hypertarget{sleighAPIbasic_sleightranslate}{}\doxysubsection{Translate (or Sleigh)}\label{sleighAPIbasic_sleightranslate}
+The core S\+L\+E\+I\+GH class is \mbox{\hyperlink{classSleigh}{Sleigh}}, which is derived from the interface, \mbox{\hyperlink{classTranslate}{Translate}}. In order to instantiate it in your code, you need a \mbox{\hyperlink{classLoadImage}{Load\+Image}} object, and a \mbox{\hyperlink{classContextDatabase}{Context\+Database}} object. The load image is responsible for retrieving instruction bytes, based on address, from a binary executable. The context database provides the library extra mode information that may be necessary to do the disassembly or translation. This can be used, for instance, to specify that an x86 binary is running in 32-\/bit mode, or to specify that an A\+RM processor is running in T\+H\+U\+MB mode. Once these objects are built, the \mbox{\hyperlink{classSleigh}{Sleigh}} object can be immediately instantiated.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classLoadImageBfd}{LoadImageBfd}} *loader;}
+\DoxyCodeLine{\mbox{\hyperlink{classContextDatabase}{ContextDatabase}} *context;}
+\DoxyCodeLine{\mbox{\hyperlink{classTranslate}{Translate}} *trans;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set up the loadimage}}
+\DoxyCodeLine{\textcolor{comment}{// Providing an executable name and architecture}}
+\DoxyCodeLine{\textcolor{keywordtype}{string} loadimagename = \textcolor{stringliteral}{"x86testcode"};}
+\DoxyCodeLine{\textcolor{keywordtype}{string} bfdtarget= \textcolor{stringliteral}{"default"};}
+\DoxyCodeLine{}
+\DoxyCodeLine{loader = \textcolor{keyword}{new} \mbox{\hyperlink{classLoadImageBfd}{LoadImageBfd}}(loadimagename,bfdtarget);}
+\DoxyCodeLine{loader-\/>open();       \textcolor{comment}{// Load the executable from file}}
+\DoxyCodeLine{}
+\DoxyCodeLine{context = \textcolor{keyword}{new} \mbox{\hyperlink{classContextInternal}{ContextInternal}}();   \textcolor{comment}{// Create a processor context}}
+\DoxyCodeLine{}
+\DoxyCodeLine{trans = \textcolor{keyword}{new} \mbox{\hyperlink{classSleigh}{Sleigh}}(loader,context);  \textcolor{comment}{// Instantiate the translator}}
+\end{DoxyCode}
+
+
+Once the \mbox{\hyperlink{classSleigh}{Sleigh}} object is in hand, the only required initialization step left is to inform it of the \char`\"{}.\+sla\char`\"{} file. The file is in X\+ML format and needs to be read in using S\+L\+E\+I\+GH\textquotesingle{}s built-\/in X\+ML parser. The following code accomplishes this.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{string} sleighfilename = \textcolor{stringliteral}{"specfiles/x86.sla"};}
+\DoxyCodeLine{\mbox{\hyperlink{classDocumentStorage}{DocumentStorage}} docstorage;}
+\DoxyCodeLine{\mbox{\hyperlink{classElement}{Element}} *sleighroot = docstorage.\mbox{\hyperlink{classDocumentStorage_a5704fb0e3632b65ca568e1e7e3ac646d}{openDocument}}(sleighfilename)-\/>getRoot();}
+\DoxyCodeLine{docstorage.\mbox{\hyperlink{classDocumentStorage_a0f74401ca5bd1e2f40ccb93ba1cf5349}{registerTag}}(sleighroot);}
+\DoxyCodeLine{trans-\/>\mbox{\hyperlink{classTranslate_af8e71e9a9477e9a91be400ecca565df5}{initialize}}(docstorage);  \textcolor{comment}{// Initialize the translator}}
+\end{DoxyCode}
+\hypertarget{sleighAPIbasic_sleighassememit}{}\doxysubsection{Assembly\+Emit}\label{sleighAPIbasic_sleighassememit}
+In order to do disassembly, you need to derive a class from \mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}}, and implement the method {\itshape dump}. The library will call this method exactly once, for each instruction disassembled.
+
+This routine simply needs to decide how (and where) to print the corresponding portion of the disassembly. For instance,
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classAssemblyRaw}{AssemblyRaw}} : \textcolor{keyword}{public} \mbox{\hyperlink{classAssemblyEmit}{AssemblyEmit}} \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classAssemblyRaw_aafc6f15595f048c5e5ce4f055eab200d}{dump}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}} \&addr,\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&mnem,\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&body) \{}
+\DoxyCodeLine{    addr.\mbox{\hyperlink{classAddress_abc8be0370dd8397596c06a5f68bcc8e8}{printRaw}}(cout);}
+\DoxyCodeLine{    cout << \textcolor{stringliteral}{": "} << mnem << \textcolor{charliteral}{' '} << body << endl;}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+This is a minimal implementation that simply dumps the disassembly straight to standard out. Once this object is instantiated, the \mbox{\hyperlink{classSleigh}{Sleigh}} object can use it to write out assembly via the \mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{Translate\+::print\+Assembly()}} method.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classAssemblyEmit}{AssemblyEmit}} *assememit = \textcolor{keyword}{new} \mbox{\hyperlink{classAssemblyRaw}{AssemblyRaw}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classAddress}{Address}} addr(trans-\/>\mbox{\hyperlink{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}{getDefaultCodeSpace}}(),0x80484c0);}
+\DoxyCodeLine{int4 length;                  \textcolor{comment}{// Length of instruction in bytes}}
+\DoxyCodeLine{}
+\DoxyCodeLine{length = trans-\/>\mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{printAssembly}}(*assememit,addr);}
+\DoxyCodeLine{addr = addr + length;        \textcolor{comment}{// Advance to next instruction}}
+\DoxyCodeLine{length = trans-\/>\mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{printAssembly}}(*assememit,addr);}
+\DoxyCodeLine{addr = addr + length;}
+\DoxyCodeLine{length = trans-\/>\mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{printAssembly}}(*assememit,addr);}
+\end{DoxyCode}
+\hypertarget{sleighAPIbasic_sleighpcodeemit}{}\doxysubsection{Pcode\+Emit}\label{sleighAPIbasic_sleighpcodeemit}
+In order to generate a {\bfseries{pcode}} translation of a machine instruction, you need to derive a class from \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} and implement the virtual method {\itshape dump}. This method will be invoked once for each {\bfseries{pcode}} operation in the translation of a machine instruction. There will likely be multiple calls per instruction. Each call passes in a single {\bfseries{pcode}} operation, complete with its possible varnode output, and all of its varnode inputs. Here is an example of a \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object that simply prints out the {\bfseries{pcode}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classPcodeRawOut}{PcodeRawOut}} : \textcolor{keyword}{public} \mbox{\hyperlink{classPcodeEmit}{PcodeEmit}} \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classPcodeRawOut_a69df78fbc3cdae072cdd8938c88bb4b3}{dump}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}} \&addr,\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{OpCode}} opc,\mbox{\hyperlink{structVarnodeData}{VarnodeData}} *outvar,\mbox{\hyperlink{structVarnodeData}{VarnodeData}} *vars,int4 isize);}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{static} \textcolor{keywordtype}{void} print\_vardata(ostream \&s,\mbox{\hyperlink{structVarnodeData}{VarnodeData}} \&data)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  s << \textcolor{charliteral}{'('} << data.\mbox{\hyperlink{structVarnodeData_a1a69a5187f7a6376c0c93c08962ea68d}{space}}-\/>\mbox{\hyperlink{classAddrSpace_a0ff86055617ff65ee8961b7c4e6caf98}{getName}}() << \textcolor{charliteral}{','};}
+\DoxyCodeLine{  data.\mbox{\hyperlink{structVarnodeData_a1a69a5187f7a6376c0c93c08962ea68d}{space}}-\/>\mbox{\hyperlink{classAddrSpace_aac551de6286f9260153c1d7d1bacdab8}{printOffset}}(s,data.\mbox{\hyperlink{structVarnodeData_a1a511384ee72e847b51423cc99c8233e}{offset}});}
+\DoxyCodeLine{  s << \textcolor{charliteral}{','} << dec << data.\mbox{\hyperlink{structVarnodeData_a50d39ae46d51c8854b962f3ec4ee4e25}{size}} << \textcolor{charliteral}{')'};}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void} \mbox{\hyperlink{classPcodeRawOut_a69df78fbc3cdae072cdd8938c88bb4b3}{PcodeRawOut::dump}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}} \&addr,\mbox{\hyperlink{opcodes_8hh_abeb7dfb0e9e2b3114e240a405d046ea7}{OpCode}} opc,\mbox{\hyperlink{structVarnodeData}{VarnodeData}} *outvar,\mbox{\hyperlink{structVarnodeData}{VarnodeData}} *vars,int4 isize)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (outvar != (\mbox{\hyperlink{structVarnodeData}{VarnodeData}} *)0) \{     \textcolor{comment}{// The output is optional}}
+\DoxyCodeLine{    print\_vardata(cout,*outvar);}
+\DoxyCodeLine{    cout << \textcolor{stringliteral}{" = "};}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  cout << \mbox{\hyperlink{opcodes_8hh_af739d367233d5c761457f782e249ce7a}{get\_opname}}(opc);}
+\DoxyCodeLine{  \textcolor{comment}{// Possibly check for a code reference or a space reference}}
+\DoxyCodeLine{  \textcolor{keywordflow}{for}(int4 i=0;i<isize;++i) \{}
+\DoxyCodeLine{    cout << \textcolor{charliteral}{' '};}
+\DoxyCodeLine{    print\_vardata(cout,vars[i]);}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{  cout << endl;}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Notice that the {\itshape dump} routine uses the built-\/in function {\itshape get\+\_\+opname} to find a string version of the opcode. Each varnode is defined in terms of the \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} object, which is defined simply\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{struct }\mbox{\hyperlink{structVarnodeData}{VarnodeData}} \{}
+\DoxyCodeLine{  \mbox{\hyperlink{classAddrSpace}{AddrSpace}} *\mbox{\hyperlink{structVarnodeData_a1a69a5187f7a6376c0c93c08962ea68d}{space}};          \textcolor{comment}{// The address space}}
+\DoxyCodeLine{  uintb \mbox{\hyperlink{structVarnodeData_a1a511384ee72e847b51423cc99c8233e}{offset}};              \textcolor{comment}{// The offset within the space}}
+\DoxyCodeLine{  uint4 \mbox{\hyperlink{structVarnodeData_a50d39ae46d51c8854b962f3ec4ee4e25}{size}};                \textcolor{comment}{// The number of bytes at that location}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+
+
+Once the \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object is instantiated, the \mbox{\hyperlink{classSleigh}{Sleigh}} object can use it to generate pcode, one instruction at a time, using the Translate\+::one\+Instruction() const method.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classPcodeEmit}{PcodeEmit}} *pcodeemit = \textcolor{keyword}{new} \mbox{\hyperlink{classPcodeRawOut}{PcodeRawOut}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classAddress}{Address}} addr(trans-\/>\mbox{\hyperlink{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}{getDefaultCodeSpace}}(),0x80484c0);}
+\DoxyCodeLine{int4 length;                   \textcolor{comment}{// Length of instruction in bytes}}
+\DoxyCodeLine{}
+\DoxyCodeLine{length = trans-\/>\mbox{\hyperlink{classTranslate_a1737782c38ee43de62ae2e7572321fc9}{oneInstruction}}(*pcodeemit,addr);}
+\DoxyCodeLine{addr = addr + length;         \textcolor{comment}{// Advance to next instruction}}
+\DoxyCodeLine{length = trans-\/>\mbox{\hyperlink{classTranslate_a1737782c38ee43de62ae2e7572321fc9}{oneInstruction}}(*pcodeemit,addr);}
+\DoxyCodeLine{addr = addr + length;}
+\DoxyCodeLine{length = trans-\/>\mbox{\hyperlink{classTranslate_a1737782c38ee43de62ae2e7572321fc9}{oneInstruction}}(*pcodeemit,addr);}
+\end{DoxyCode}
+
+
+For an application to properly {\itshape follow} {\itshape flow}, while translating machine instructions into pcode, the emitted pcode must be inspected for the various branch operations.\hypertarget{sleighAPIbasic_sleighloadimage}{}\doxysubsection{Load\+Image}\label{sleighAPIbasic_sleighloadimage}
+A \mbox{\hyperlink{classLoadImage}{Load\+Image}} holds all the binary data from an executable file in the format similar to how it would exist when being executed by a real processor. The interface to this from S\+L\+E\+I\+GH is actually very simple, although it can hide a complicated structure. One method does most of the work, \mbox{\hyperlink{classLoadImage_af00d3957284bf0b4721be0ada5ef4328}{Load\+Image\+::load\+Fill()}}. It takes a byte pointer, a size, and an \mbox{\hyperlink{classAddress}{Address}}. The method is expected to fill in the {\itshape ptr} array with {\itshape size} bytes taken from the load image, corresponding to the address {\itshape addr}. There are two more virtual methods that are required for a complete implementation of \mbox{\hyperlink{classLoadImage}{Load\+Image}}, {\itshape get\+Arch\+Type} and {\itshape adjust\+Vma}, but these do not need to be implemented fully.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classMyLoadImage}{MyLoadImage}} : \textcolor{keyword}{public} \mbox{\hyperlink{classLoadImage}{LoadImage}} \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  \mbox{\hyperlink{classMyLoadImage}{MyLoadImage}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string} \&nm) : Loadimage(nm) \{\}}
+\DoxyCodeLine{  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classMyLoadImage_ac06717c19db7a80515b6f330540bce1d}{loadFill}}(uint1 *ptr,int4 size,\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}} \&addr);}
+\DoxyCodeLine{  \textcolor{keyword}{virtual} \textcolor{keywordtype}{string} \mbox{\hyperlink{classMyLoadImage_aae5307e132d6736494b7da8ace1b41f1}{getArchType}}(\textcolor{keywordtype}{void})\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{stringliteral}{"mytype"}; \}}
+\DoxyCodeLine{  \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classMyLoadImage_aa395d2908f2d6d61295ce0d5995838a9}{adjustVma}}(\textcolor{keywordtype}{long} adjust) \{\}}
+\DoxyCodeLine{\};}
+\end{DoxyCode}
+\hypertarget{sleighAPIbasic_sleighcontext}{}\doxysubsection{Context\+Database}\label{sleighAPIbasic_sleighcontext}
+The \mbox{\hyperlink{classContextDatabase}{Context\+Database}} needs to keep track of any possible context variable and its value, over different address ranges. In most cases, you probably don\textquotesingle{}t need to override the class yourself, but can use the built-\/in class, \mbox{\hyperlink{classContextInternal}{Context\+Internal}}. This provides the basic functionality required and will work for different architectures. What you may need to do is set values for certain variables, depending on the processor and the environment it is running in. For instance, for the x86 platform, you need to set the {\itshape addrsize} and {\itshape opsize} bits, to indicate the processor would be running in 32-\/bit mode. The context variables specific to a particular processor are established by the S\+L\+E\+I\+GH spec. So the variables can only be set {\itshape after} the spec has been loaded.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{...}
+\DoxyCodeLine{context = \textcolor{keyword}{new} \mbox{\hyperlink{classContextInternal}{ContextInternal}}();}
+\DoxyCodeLine{trans = \textcolor{keyword}{new} \mbox{\hyperlink{classSleigh}{Sleigh}}(loader,context);}
+\DoxyCodeLine{\mbox{\hyperlink{classDocumentStorage}{DocumentStorage}} docstorage;}
+\DoxyCodeLine{\mbox{\hyperlink{classElement}{Element}} *root = docstorage.\mbox{\hyperlink{classDocumentStorage_a5704fb0e3632b65ca568e1e7e3ac646d}{openDocument}}(\textcolor{stringliteral}{"specfiles/x86.sla"})-\/>getRoot();}
+\DoxyCodeLine{docstorage.\mbox{\hyperlink{classDocumentStorage_a0f74401ca5bd1e2f40ccb93ba1cf5349}{registerTag}}(root);}
+\DoxyCodeLine{trans-\/>\mbox{\hyperlink{classTranslate_af8e71e9a9477e9a91be400ecca565df5}{initialize}}(docstorage);}
+\DoxyCodeLine{}
+\DoxyCodeLine{context-\/>\mbox{\hyperlink{classContextDatabase_ad076227dbe22aad0f4a379e2f39ef488}{setVariableDefault}}(\textcolor{stringliteral}{"addrsize"},1);  \textcolor{comment}{// Address size is 32-\/bits}}
+\DoxyCodeLine{context-\/>\mbox{\hyperlink{classContextDatabase_ad076227dbe22aad0f4a379e2f39ef488}{setVariableDefault}}(\textcolor{stringliteral}{"opsize"},1);    \textcolor{comment}{// Operand size is 32-\/bits}}
+\end{DoxyCode}
+ \hypertarget{sleighAPIemulate}{}\doxysection{The S\+L\+E\+I\+GH Emulator}\label{sleighAPIemulate}
+\hypertarget{sleighAPIemulate_emu_overview}{}\doxysubsection{Overview}\label{sleighAPIemulate_emu_overview}
+{\bfseries{S\+L\+E\+I\+GH}} provides a framework for emulating the processors which have a specification written for them. The key classes in this framework are\+:
+
+{\bfseries{Key}} {\bfseries{Classes}} 
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classMemoryState}{Memory\+State}}
+\item \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}}
+\item \mbox{\hyperlink{classBreakTable}{Break\+Table}}
+\item \mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}}
+\item \mbox{\hyperlink{classEmulate}{Emulate}}
+\item \mbox{\hyperlink{classEmulatePcodeCache}{Emulate\+Pcode\+Cache}}
+\end{DoxyItemize}
+
+The \mbox{\hyperlink{classMemoryState}{Memory\+State}} object holds the representation of registers and memory during emulation. It understands the address spaces defined in the {\bfseries{S\+L\+E\+I\+GH}} specification and how data is encoded in these spaces. It also knows any register names defined by the specification, so these can be used to set or query the state of these registers naturally.
+
+The emulation framework can be tailored to a particular environment by creating {\bfseries{breakpoint}} objects, which derive off the \mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} interface. These can be used to create callbacks during emulation that have full access to the memory state and the emulator, so any action can be accomplished. The breakpoint callbacks can be designed to either augment or replace the instruction at a particular address, or the callback can be used to implement the action of a user-\/defined pcode op. The \mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} objects are managed by the \mbox{\hyperlink{classBreakTable}{Break\+Table}} object, which takes care of invoking the callback at the appropriate time.
+
+The \mbox{\hyperlink{classEmulate}{Emulate}} object serves as a basic execution engine. Its main method is \mbox{\hyperlink{classEmulate_aad37ba97a90d7cd5338a75afce3a21b9}{Emulate\+::execute\+Current\+Op()}} which executes a single pcode operation on the memory state. Methods exist for querying and setting the current execution address and examining the pcode op being executed.
+
+The main implementation of the \mbox{\hyperlink{classEmulate}{Emulate}} interface is the \mbox{\hyperlink{classEmulatePcodeCache}{Emulate\+Pcode\+Cache}} object. It uses S\+L\+E\+I\+GH to translate machine instructions as they are executed. The currently executing instruction is translated into a cached sequence of pcode operations. Additional methods allow this entire sequence to be inspected, and there is another stepping function which allows the emulator to be stepped through an entire machine instruction at a time. The single pcode stepping methods are of course still available and the two methods can be used together without conflict.\hypertarget{sleighAPIemulate_emu_membuild}{}\doxysubsection{Building a Memory State}\label{sleighAPIemulate_emu_membuild}
+Assuming the S\+L\+E\+I\+GH \mbox{\hyperlink{classTranslate}{Translate}} object and the \mbox{\hyperlink{classLoadImage}{Load\+Image}} object have already been built (see \mbox{\hyperlink{sleighAPIbasic}{The Basic S\+L\+E\+I\+GH Interface}}), the only required step left before instantiating an emulator is to create a \mbox{\hyperlink{classMemoryState}{Memory\+State}} object. The \mbox{\hyperlink{classMemoryState}{Memory\+State}} object can be instantiated simply by passing the constructor the \mbox{\hyperlink{classTranslate}{Translate}} object, but before it will work properly, you need to register individual \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} objects with it, for each address space that might get used by the emulator.
+
+A \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} is a representation of data stored in a single address space There are some choices for the type of \mbox{\hyperlink{classMemoryBank}{Memory\+Bank}} associated with an address space. A \mbox{\hyperlink{classMemoryImage}{Memory\+Image}} is a read-\/only memory bank that gets its data from a \mbox{\hyperlink{classLoadImage}{Load\+Image}}. In order to make this writeable, or to create a writeable memory bank which starts with its bytes initialized to zero, you can use a \mbox{\hyperlink{classMemoryHashOverlay}{Memory\+Hash\+Overlay}} or a \mbox{\hyperlink{classMemoryPageOverlay}{Memory\+Page\+Overlay}}.
+
+A \mbox{\hyperlink{classMemoryHashOverlay}{Memory\+Hash\+Overlay}} overlays some other memory bank, such as a \mbox{\hyperlink{classMemoryImage}{Memory\+Image}}. If you read from a location that hasn\textquotesingle{}t been written to directly before, you get the data in the underlying memory bank. But if you write to this overlay, the value is stored in a hash table, and subsequent reads will return this value. Internally, the hashtable stores values in a {\itshape preferred} wordsize only on aligned addresses, but this is irrelevant to the interface. Unaligned requests are split up and handled transparently.
+
+A \mbox{\hyperlink{classMemoryPageOverlay}{Memory\+Page\+Overlay}} overlays another memory bank as well. But it implements writes to the bank by caching memory {\itshape pages}. Any write creates an aligned page to hold the new data. The class takes care of loading and filling in pages as needed.
+
+Here is an example of instantiating a \mbox{\hyperlink{classMemoryState}{Memory\+State}} and registering memory banks for a {\itshape ram} space which is initialized with the load image. The {\itshape ram} space is implemented with the \mbox{\hyperlink{classMemoryPageOverlay}{Memory\+Page\+Overlay}}, and the {\itshape register} space and the {\itshape temporary} space are implemented using the \mbox{\hyperlink{classMemoryHashOverlay}{Memory\+Hash\+Overlay}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ \textcolor{keywordtype}{void} setupMemoryState(\mbox{\hyperlink{classTranslate}{Translate}} \&trans,\mbox{\hyperlink{classLoadImage}{LoadImage}} \&loader) \{}
+\DoxyCodeLine{   \textcolor{comment}{// Set up memory state object}}
+\DoxyCodeLine{   \mbox{\hyperlink{classMemoryImage}{MemoryImage}} loadmemory(trans.\mbox{\hyperlink{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}{getDefaultCodeSpace}}(),8,4096,\&loader);}
+\DoxyCodeLine{   \mbox{\hyperlink{classMemoryPageOverlay}{MemoryPageOverlay}} ramstate(trans.\mbox{\hyperlink{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}{getDefaultCodeSpace}}(),8,4096,\&loadmemory);}
+\DoxyCodeLine{   \mbox{\hyperlink{classMemoryHashOverlay}{MemoryHashOverlay}} registerstate(trans.\mbox{\hyperlink{classAddrSpaceManager_a24efffb904ebb1a0a541fa74cafd51fc}{getSpaceByName}}(\textcolor{stringliteral}{"register"}),8,4096,4096,(\mbox{\hyperlink{classMemoryBank}{MemoryBank}} *)0);}
+\DoxyCodeLine{   \mbox{\hyperlink{classMemoryHashOverlay}{MemoryHashOverlay}} tmpstate(trans.\mbox{\hyperlink{classAddrSpaceManager_ab7428d74e76200ecc3c99a0e1ad7f613}{getUniqueSpace}}(),8,4096,4096,(\mbox{\hyperlink{classMemoryBank}{MemoryBank}} *)0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{   \mbox{\hyperlink{classMemoryState}{MemoryState}} memstate(\&trans);   \textcolor{comment}{// Instantiate the memory state object}}
+\DoxyCodeLine{   memstate.setMemoryBank(\&ramstate);}
+\DoxyCodeLine{   memstate.setMemoryBank(\&registerstate);}
+\DoxyCodeLine{   memstate.setMemoryBank(\&tmpstate);}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+All the memory bank constructors need a preferred wordsize, which is most relevant to the hashtable implementation, and a page size, which is most relevant to the page implementation. The hash overlays need an additional initializer specifying how big the hashtable should be. The null pointers passed in, in place of a real memory bank, indicate that the memory bank is initialized with all zeroes. Once the memory banks are instantiated, they are registered with the memory state via the \mbox{\hyperlink{classMemoryState_ad1c31dbc7de2dfb6926537c7f9166e92}{Memory\+State\+::set\+Memory\+Bank()}} method.\hypertarget{sleighAPIemulate_emu_breakpoints}{}\doxysubsection{Breakpoints}\label{sleighAPIemulate_emu_breakpoints}
+In order to provide behavior within the emulator beyond just what the core instruction emulation provides, the framework supports {\bfseries{breakpoint}} classes. A breakpoint is created by deriving a class from the \mbox{\hyperlink{classBreakCallBack}{Break\+Call\+Back}} class and overriding either \mbox{\hyperlink{classBreakCallBack_adb97ba6b111cb9a84856c9e0f9d506f9}{Break\+Call\+Back\+::address\+Callback()}} or \mbox{\hyperlink{classBreakCallBack_a93cd065c519c0e08e2c7729cb649f236}{Break\+Call\+Back\+::pcode\+Callback()}}. Here is an example of a breakpoint that implements a standard C library {\itshape puts} call an the x86 architecture. When the breakpoint is invoked, a call to {\itshape puts} has just been made, so the stack pointer is pointing to the return address and the next 4 bytes on the stack are a pointer to the string being passed in.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class }\mbox{\hyperlink{classPutsCallBack}{PutsCallBack}} : \textcolor{keyword}{public} \mbox{\hyperlink{classBreakCallBack}{BreakCallBack}} \{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classPutsCallBack_aed006bcf40674841a1799fa1374017b9}{addressCallback}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}} \&addr);}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{bool} \mbox{\hyperlink{classPutsCallBack_aed006bcf40674841a1799fa1374017b9}{PutsCallBack::addressCallback}}(\textcolor{keyword}{const} \mbox{\hyperlink{classAddress}{Address}} \&addr)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \mbox{\hyperlink{classMemoryState}{MemoryState}} *mem = \mbox{\hyperlink{classBreakCallBack_a8047349836361935e9885bd36819255c}{emulate}}-\/>getMemoryState();}
+\DoxyCodeLine{  uint1 buffer[256];}
+\DoxyCodeLine{  uint4 esp = mem-\/>\mbox{\hyperlink{classMemoryState_ae4d10a6ac34ebd96017915c5b6a39375}{getValue}}(\textcolor{stringliteral}{"ESP"});}
+\DoxyCodeLine{  \mbox{\hyperlink{classAddrSpace}{AddrSpace}} *ram = mem-\/>\mbox{\hyperlink{classMemoryState_aefbe63d695c36756cbc16d09bea76677}{getTranslate}}()-\/>\mbox{\hyperlink{classAddrSpaceManager_a24efffb904ebb1a0a541fa74cafd51fc}{getSpaceByName}}(\textcolor{stringliteral}{"ram"});}
+\DoxyCodeLine{}
+\DoxyCodeLine{  uint4 param1 = mem-\/>\mbox{\hyperlink{classMemoryState_ae4d10a6ac34ebd96017915c5b6a39375}{getValue}}(ram,esp+4,4);}
+\DoxyCodeLine{  mem-\/>\mbox{\hyperlink{classMemoryState_ab8ea70436398ce942b25366b71b26506}{getChunk}}(buffer,ram,param1,255);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  cout << (\textcolor{keywordtype}{char} *)\&buffer << endl;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  uint4 returnaddr = mem-\/>\mbox{\hyperlink{classMemoryState_ae4d10a6ac34ebd96017915c5b6a39375}{getValue}}(ram,esp,4);}
+\DoxyCodeLine{  mem-\/>\mbox{\hyperlink{classMemoryState_af4abdf013cacfaa4cfbe223f3893a76a}{setValue}}(\textcolor{stringliteral}{"ESP"},esp+8);}
+\DoxyCodeLine{  \mbox{\hyperlink{classBreakCallBack_a8047349836361935e9885bd36819255c}{emulate}}-\/>\mbox{\hyperlink{classEmulate_aff5f9779fdad54f853d4e799f5289410}{setExecuteAddress}}(\mbox{\hyperlink{classAddress}{Address}}(ram,returnaddr));}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} \textcolor{keyword}{true};            \textcolor{comment}{// This replaces the indicated instruction}}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Notice that the callback retrieves the value of the stack pointer by name. Using this value, the string pointer is retrieved, then the data for the actual string is retrieved. After dumping the string to standard out, the return address is recovered and the {\itshape return} instruction is emulated by explicitly setting the next execution address to be the return value.\hypertarget{sleighAPIemulate_emu_finalsetup}{}\doxysubsection{Running the Emulator}\label{sleighAPIemulate_emu_finalsetup}
+Here is an example of instantiating an \mbox{\hyperlink{classEmulatePcodeCache}{Emulate\+Pcode\+Cache}} object. A breakpoint is also instantiated and registered with the \mbox{\hyperlink{classBreakTable}{Break\+Table}}. ~\newline
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{...}
+\DoxyCodeLine{Sleigh trans(\&loader,\&context);    \textcolor{comment}{// Instantiate the translator}}
+\DoxyCodeLine{...}
+\DoxyCodeLine{MemoryState memstate(\&trans);      \textcolor{comment}{// Instantiate the memory state}}
+\DoxyCodeLine{...}
+\DoxyCodeLine{BreakTableCallBack breaktable(\&trans);  \textcolor{comment}{// Instantiate a breakpoint table}}
+\DoxyCodeLine{\mbox{\hyperlink{classEmulatePcodeCache}{EmulatePcodeCache}} emulator(\&trans,\&memstate,\&breaktable);  \textcolor{comment}{// Instantiate the emulator}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{// Set up the initial stack pointer}}
+\DoxyCodeLine{memstate.setValue(\textcolor{stringliteral}{"ESP"},0xbffffffc);}
+\DoxyCodeLine{emulator.setExecuteAddress(\mbox{\hyperlink{classAddress}{Address}}(trans.\mbox{\hyperlink{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}{getDefaultCodeSpace}}(),0x1D00114));  \textcolor{comment}{// Initial execution address}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classPutsCallBack}{PutsCallBack}} putscallback;}
+\DoxyCodeLine{breaktable.registerAddressCallback(\mbox{\hyperlink{classAddress}{Address}}(trans.\mbox{\hyperlink{classAddrSpaceManager_ad7113aad36405ce0cd8dab5eadfbb1b1}{getDefaultCodeSpace}}(),0x1D00130),\&putscallback);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classAssemblyRaw}{AssemblyRaw}} assememit;}
+\DoxyCodeLine{\textcolor{keywordflow}{for}(;;) \{}
+\DoxyCodeLine{  \mbox{\hyperlink{classAddress}{Address}} addr = emulator.getExecuteAddress();}
+\DoxyCodeLine{  trans.\mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{printAssembly}}(assememit,addr);}
+\DoxyCodeLine{  emulator.executeInstruction();}
+\DoxyCodeLine{\}}
+\end{DoxyCode}
+
+
+Notice how the initial stack pointer and initial execute address is set up. The breakpoint is registered with the \mbox{\hyperlink{classBreakTable}{Break\+Table}}, giving it a specific address. The execute\+Instruction method is called inside the loop, to actually run the emulator. Notice that a disassembly of each instruction is printed after each step of the emulator.
+
+Other information can be examined from within this execution loop or in other tailored breakpoints. In particular, the Emulate\+::get\+Current\+Op() method can be used to retrieve the an instance of the currently executing pcode operation. From this starting point, you can examine the low-\/level objects\+:
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{classPcodeOpRaw}{Pcode\+Op\+Raw}} and
+\item \mbox{\hyperlink{structVarnodeData}{Varnode\+Data}} 
+\end{DoxyItemize}

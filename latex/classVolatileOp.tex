@@ -1,0 +1,71 @@
+\hypertarget{classVolatileOp}{}\doxysection{Volatile\+Op Class Reference}
+\label{classVolatileOp}\index{VolatileOp@{VolatileOp}}
+
+
+A base class for operations that access volatile memory.  
+
+
+
+
+{\ttfamily \#include $<$userop.\+hh$>$}
+
+
+
+Inheritance diagram for Volatile\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{classVolatileOp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Volatile\+Op\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVolatileOp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{classVolatileOp_a49723e93482e3ece0899463711b2ba6b}{append\+Size}} (const string \&base, int4 size)
+\begin{DoxyCompactList}\small\item\em Append a suffix to a string encoding a specific size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A base class for operations that access volatile memory. 
+
+The decompiler models volatile memory by converting any direct read or write of the memory to a function that {\itshape accesses} the memory. This class and its derived classes model such functions. Within the p-\/code control-\/flow, dedicated user defined ops serve as a placeholder for the (possibly unknown) effects of modifying/accessing the memory and prevent accidental constant propagation. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVolatileOp_a49723e93482e3ece0899463711b2ba6b}\label{classVolatileOp_a49723e93482e3ece0899463711b2ba6b}} 
+\index{VolatileOp@{VolatileOp}!appendSize@{appendSize}}
+\index{appendSize@{appendSize}!VolatileOp@{VolatileOp}}
+\doxysubsubsection{\texorpdfstring{appendSize()}{appendSize()}}
+{\footnotesize\ttfamily string Volatile\+Op\+::append\+Size (\begin{DoxyParamCaption}\item[{const string \&}]{base,  }\item[{int4}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Append a suffix to a string encoding a specific size. 
+
+This allows a single user defined operator to have multiple symbol names based on the size of its operands in context. 
+\begin{DoxyParams}{Parameters}
+{\em base} & is the string to append the suffix to \\
+\hline
+{\em size} & is the size to encode expressed as the number of bytes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the appended string 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{userop_8hh}{userop.\+hh}}\item 
+userop.\+cc\end{DoxyCompactItemize}

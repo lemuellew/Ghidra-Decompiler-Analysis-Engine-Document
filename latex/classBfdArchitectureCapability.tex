@@ -1,0 +1,120 @@
+\hypertarget{classBfdArchitectureCapability}{}\doxysection{Bfd\+Architecture\+Capability Class Reference}
+\label{classBfdArchitectureCapability}\index{BfdArchitectureCapability@{BfdArchitectureCapability}}
+
+
+Extension point for building a G\+NU B\+FD capable \mbox{\hyperlink{classArchitecture}{Architecture}}.  
+
+
+
+
+{\ttfamily \#include $<$bfd\+\_\+arch.\+hh$>$}
+
+
+
+Inheritance diagram for Bfd\+Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classBfdArchitectureCapability__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Bfd\+Architecture\+Capability\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classBfdArchitectureCapability__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ \mbox{\hyperlink{classBfdArchitectureCapability_ac03b938e119bf80fcbc83b22db84ccf1}{build\+Architecture}} (const string \&filename, const string \&target, ostream $\ast$estream)
+\begin{DoxyCompactList}\small\item\em Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBfdArchitectureCapability_a0191dabc12d97b8c5fc0ba14392077b1}{is\+File\+Match}} (const string \&filename) const
+\begin{DoxyCompactList}\small\item\em Determine if this extension can handle this file. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classBfdArchitectureCapability_aa5231740c6fb12308f8e9a31ea291cf4}{is\+Xml\+Match}} (\mbox{\hyperlink{classDocument}{Document}} $\ast$doc) const
+\begin{DoxyCompactList}\small\item\em Determine is this extension can handle this X\+ML document. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Extension point for building a G\+NU B\+FD capable \mbox{\hyperlink{classArchitecture}{Architecture}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBfdArchitectureCapability_ac03b938e119bf80fcbc83b22db84ccf1}\label{classBfdArchitectureCapability_ac03b938e119bf80fcbc83b22db84ccf1}} 
+\index{BfdArchitectureCapability@{BfdArchitectureCapability}!buildArchitecture@{buildArchitecture}}
+\index{buildArchitecture@{buildArchitecture}!BfdArchitectureCapability@{BfdArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{buildArchitecture()}{buildArchitecture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$ Bfd\+Architecture\+Capability\+::build\+Architecture (\begin{DoxyParamCaption}\item[{const string \&}]{filename,  }\item[{const string \&}]{target,  }\item[{ostream $\ast$}]{estream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Build an \mbox{\hyperlink{classArchitecture}{Architecture}} given a raw file or data. 
+
+This is implemented by each separate extension. The method is handed a {\itshape filename} and possibly external target information and must build the \mbox{\hyperlink{classArchitecture}{Architecture}} object, initializing all the major subcomponents, using just this info. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the path to the executable file to examine \\
+\hline
+{\em target} & if non-\/empty is a language id string \\
+\hline
+{\em estream} & is an output stream for error messages \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_a42e418206c4bcd9c0bc86d8ddfbf03e0}{Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classBfdArchitectureCapability_a0191dabc12d97b8c5fc0ba14392077b1}\label{classBfdArchitectureCapability_a0191dabc12d97b8c5fc0ba14392077b1}} 
+\index{BfdArchitectureCapability@{BfdArchitectureCapability}!isFileMatch@{isFileMatch}}
+\index{isFileMatch@{isFileMatch}!BfdArchitectureCapability@{BfdArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isFileMatch()}{isFileMatch()}}
+{\footnotesize\ttfamily bool Bfd\+Architecture\+Capability\+::is\+File\+Match (\begin{DoxyParamCaption}\item[{const string \&}]{filename }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determine if this extension can handle this file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & is the name of the file to examine \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} is {\bfseries{this}} extension is suitable for analyzing the file 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_aa3d4fed15e42f3e853851babaf379376}{Architecture\+Capability}}.
+
+\mbox{\Hypertarget{classBfdArchitectureCapability_aa5231740c6fb12308f8e9a31ea291cf4}\label{classBfdArchitectureCapability_aa5231740c6fb12308f8e9a31ea291cf4}} 
+\index{BfdArchitectureCapability@{BfdArchitectureCapability}!isXmlMatch@{isXmlMatch}}
+\index{isXmlMatch@{isXmlMatch}!BfdArchitectureCapability@{BfdArchitectureCapability}}
+\doxysubsubsection{\texorpdfstring{isXmlMatch()}{isXmlMatch()}}
+{\footnotesize\ttfamily bool Bfd\+Architecture\+Capability\+::is\+Xml\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocument}{Document}} $\ast$}]{doc }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Determine is this extension can handle this X\+ML document. 
+
+If a file to analyze is X\+ML based, this method examines the X\+ML parse to determine if {\bfseries{this}} extension can understand the document 
+\begin{DoxyParams}{Parameters}
+{\em doc} & is the parsed X\+ML document \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if {\bfseries{this}} extension understands the X\+ML 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classArchitectureCapability_a653243b342d480273e0f04f7194094b8}{Architecture\+Capability}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bfd__arch_8hh}{bfd\+\_\+arch.\+hh}}\item 
+bfd\+\_\+arch.\+cc\end{DoxyCompactItemize}

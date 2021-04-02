@@ -1,0 +1,128 @@
+\hypertarget{classOperandSymbol}{}\doxysection{Operand\+Symbol Class Reference}
+\label{classOperandSymbol}\index{OperandSymbol@{OperandSymbol}}
+
+
+Inheritance diagram for Operand\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classOperandSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Operand\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{classOperandSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a37a7a7951fa162887021f5851da1b6df}\label{classOperandSymbol_a37a7a7951fa162887021f5851da1b6df}} 
+enum \{ {\bfseries code\+\_\+address} =1, 
+{\bfseries offset\+\_\+irrel} =2, 
+{\bfseries variable\+\_\+len} =4, 
+{\bfseries marked} =8
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a034b58e5d1eedcfeee9f85ea699ac56a}\label{classOperandSymbol_a034b58e5d1eedcfeee9f85ea699ac56a}} 
+{\bfseries Operand\+Symbol} (const string \&nm, int4 index, \mbox{\hyperlink{classConstructor}{Constructor}} $\ast$ct)
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a172e311e45795d49ee679fac4a35faad}\label{classOperandSymbol_a172e311e45795d49ee679fac4a35faad}} 
+uint4 {\bfseries get\+Relative\+Offset} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_ae4852740136d240df30da3fb8154e1fa}\label{classOperandSymbol_ae4852740136d240df30da3fb8154e1fa}} 
+int4 {\bfseries get\+Offset\+Base} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a449067986ae0236c97cbdec8de4c4723}\label{classOperandSymbol_a449067986ae0236c97cbdec8de4c4723}} 
+int4 {\bfseries get\+Minimum\+Length} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_ac93d6e408054938945aa9fc8cd6fcc38}\label{classOperandSymbol_ac93d6e408054938945aa9fc8cd6fcc38}} 
+\mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$ {\bfseries get\+Defining\+Expression} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_ac13b93b87472c1980d6cad5be122997a}\label{classOperandSymbol_ac13b93b87472c1980d6cad5be122997a}} 
+\mbox{\hyperlink{classTripleSymbol}{Triple\+Symbol}} $\ast$ {\bfseries get\+Defining\+Symbol} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_ab4bccbaf51039ac104de608792dcc698}\label{classOperandSymbol_ab4bccbaf51039ac104de608792dcc698}} 
+int4 {\bfseries get\+Index} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a5f2bc99daa08301586d3c8dd00261033}\label{classOperandSymbol_a5f2bc99daa08301586d3c8dd00261033}} 
+void {\bfseries define\+Operand} (\mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$pe)
+\item 
+\mbox{\Hypertarget{classOperandSymbol_af779510f6032b577ddfe3453fccfea2f}\label{classOperandSymbol_af779510f6032b577ddfe3453fccfea2f}} 
+void {\bfseries define\+Operand} (\mbox{\hyperlink{classTripleSymbol}{Triple\+Symbol}} $\ast$tri)
+\item 
+\mbox{\Hypertarget{classOperandSymbol_af7a8f9c15ef41de7385def495e073c0b}\label{classOperandSymbol_af7a8f9c15ef41de7385def495e073c0b}} 
+void {\bfseries set\+Code\+Address} (void)
+\item 
+\mbox{\Hypertarget{classOperandSymbol_afceafc766167e655252176850067b48b}\label{classOperandSymbol_afceafc766167e655252176850067b48b}} 
+bool {\bfseries is\+Code\+Address} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_af922e31dad656d8611d23e1e816b9279}\label{classOperandSymbol_af922e31dad656d8611d23e1e816b9279}} 
+void {\bfseries set\+Offset\+Irrelevant} (void)
+\item 
+\mbox{\Hypertarget{classOperandSymbol_aaabb092dd61abe21c855a35443397809}\label{classOperandSymbol_aaabb092dd61abe21c855a35443397809}} 
+bool {\bfseries is\+Offset\+Irrelevant} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a0b306a07c71c5d101a160c776cccb961}\label{classOperandSymbol_a0b306a07c71c5d101a160c776cccb961}} 
+void {\bfseries set\+Mark} (void)
+\item 
+\mbox{\Hypertarget{classOperandSymbol_ae0ccaa8ae25f40be2ac5420200fd899e}\label{classOperandSymbol_ae0ccaa8ae25f40be2ac5420200fd899e}} 
+void {\bfseries clear\+Mark} (void)
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a284c4038e0c1de1edee67f872b7debc9}\label{classOperandSymbol_a284c4038e0c1de1edee67f872b7debc9}} 
+bool {\bfseries is\+Marked} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a62fb73d10c92f1dd39977abe47f557d2}\label{classOperandSymbol_a62fb73d10c92f1dd39977abe47f557d2}} 
+virtual \mbox{\hyperlink{classVarnodeTpl}{Varnode\+Tpl}} $\ast$ {\bfseries get\+Varnode} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_aaebd25df34fa9100b22e3df9272d2910}\label{classOperandSymbol_aaebd25df34fa9100b22e3df9272d2910}} 
+virtual \mbox{\hyperlink{classPatternExpression}{Pattern\+Expression}} $\ast$ {\bfseries get\+Pattern\+Expression} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a292e9cb914a17155467e7e1f0572021c}\label{classOperandSymbol_a292e9cb914a17155467e7e1f0572021c}} 
+virtual void {\bfseries get\+Fixed\+Handle} (\mbox{\hyperlink{structFixedHandle}{Fixed\+Handle}} \&hnd, \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a9082a923e1e8f929c9fc0409f14fac74}\label{classOperandSymbol_a9082a923e1e8f929c9fc0409f14fac74}} 
+virtual int4 {\bfseries get\+Size} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a6aae865579741ebe784ba0782c0192ec}\label{classOperandSymbol_a6aae865579741ebe784ba0782c0192ec}} 
+virtual void {\bfseries print} (ostream \&s, \mbox{\hyperlink{classParserWalker}{Parser\+Walker}} \&walker) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_afd227d1393440f9bc06960cb64fbdc83}\label{classOperandSymbol_afd227d1393440f9bc06960cb64fbdc83}} 
+virtual void {\bfseries collect\+Local\+Values} (vector$<$ uintb $>$ \&results) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_aef01562ac38960c6b9fe99ecd574b6f6}\label{classOperandSymbol_aef01562ac38960c6b9fe99ecd574b6f6}} 
+virtual symbol\+\_\+type {\bfseries get\+Type} (void) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a20b491e8a76d47973fe52df326d9ce38}\label{classOperandSymbol_a20b491e8a76d47973fe52df326d9ce38}} 
+virtual void {\bfseries save\+Xml} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a9cdbc0cf454ad7ed2b3683100a4a8de0}\label{classOperandSymbol_a9cdbc0cf454ad7ed2b3683100a4a8de0}} 
+virtual void {\bfseries save\+Xml\+Header} (ostream \&s) const
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a89eb88d3d81b27fae7432adf31d2d27a}\label{classOperandSymbol_a89eb88d3d81b27fae7432adf31d2d27a}} 
+virtual void {\bfseries restore\+Xml} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el, \mbox{\hyperlink{classSleighBase}{Sleigh\+Base}} $\ast$trans)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a519e920ccec7617186a838b3258ff7d2}\label{classOperandSymbol_a519e920ccec7617186a838b3258ff7d2}} 
+class {\bfseries Constructor}
+\item 
+\mbox{\Hypertarget{classOperandSymbol_a466eb718dfbfae6a840e546d48e95627}\label{classOperandSymbol_a466eb718dfbfae6a840e546d48e95627}} 
+class {\bfseries Operand\+Equation}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+slghsymbol.\+hh\item 
+slghsymbol.\+cc\end{DoxyCompactItemize}

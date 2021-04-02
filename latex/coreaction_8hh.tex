@@ -1,0 +1,155 @@
+\hypertarget{coreaction_8hh}{}\doxysection{coreaction.\+hh File Reference}
+\label{coreaction_8hh}\index{coreaction.hh@{coreaction.hh}}
+
+
+Core decompilation actions which are indepedent of any particular architecture.  
+
+
+{\ttfamily \#include \char`\"{}ruleaction.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blockaction.\+hh\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}funcdata.\+hh\char`\"{}}\newline
+Include dependency graph for coreaction.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{coreaction_8hh__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classActionStart}{Action\+Start}}
+\begin{DoxyCompactList}\small\item\em Gather raw p-\/code for a function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionStop}{Action\+Stop}}
+\begin{DoxyCompactList}\small\item\em Do any post-\/processing after decompilation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionStartCleanUp}{Action\+Start\+Clean\+Up}}
+\begin{DoxyCompactList}\small\item\em Start clean up after main transform phase. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionStartTypes}{Action\+Start\+Types}}
+\begin{DoxyCompactList}\small\item\em Allow type recovery to start happening. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionStackPtrFlow}{Action\+Stack\+Ptr\+Flow}}
+\begin{DoxyCompactList}\small\item\em Analyze change to the stack pointer across sub-\/function calls. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionLaneDivide}{Action\+Lane\+Divide}}
+\begin{DoxyCompactList}\small\item\em Find Varnodes with a vectorized lane scheme and attempt to split the lanes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionSegmentize}{Action\+Segmentize}}
+\begin{DoxyCompactList}\small\item\em Make sure pointers into segmented spaces have the correct form. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionForceGoto}{Action\+Force\+Goto}}
+\begin{DoxyCompactList}\small\item\em Apply any overridden forced gotos. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMultiCse}{Action\+Multi\+Cse}}
+\begin{DoxyCompactList}\small\item\em Perform Common Sub-\/expression Elimination on C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL ops. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionShadowVar}{Action\+Shadow\+Var}}
+\begin{DoxyCompactList}\small\item\em Check for one C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL input set defining more than one \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionConstantPtr}{Action\+Constant\+Ptr}}
+\begin{DoxyCompactList}\small\item\em Check for constants, with pointer type, that correspond to global symbols. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDeindirect}{Action\+Deindirect}}
+\begin{DoxyCompactList}\small\item\em Eliminate locally constant indirect calls. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionVarnodeProps}{Action\+Varnode\+Props}}
+\begin{DoxyCompactList}\small\item\em Transform based on \mbox{\hyperlink{classVarnode}{Varnode}} properties, such as {\itshape read-\/only} and {\itshape volatile}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDirectWrite}{Action\+Direct\+Write}}
+\begin{DoxyCompactList}\small\item\em Mark Varnodes built out of {\itshape legal} parameters. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionConstbase}{Action\+Constbase}}
+\begin{DoxyCompactList}\small\item\em Search for input Varnodes that have been officially provided constant values. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionSpacebase}{Action\+Spacebase}}
+\begin{DoxyCompactList}\small\item\em Mark \mbox{\hyperlink{classVarnode}{Varnode}} objects that hold stack-\/pointer values and set-\/up special data-\/type. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionHeritage}{Action\+Heritage}}
+\begin{DoxyCompactList}\small\item\em Build Static Single Assignment (S\+SA) representation for function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionNonzeroMask}{Action\+Nonzero\+Mask}}
+\begin{DoxyCompactList}\small\item\em Calculate the non-\/zero mask property on all \mbox{\hyperlink{classVarnode}{Varnode}} objects. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionSetCasts}{Action\+Set\+Casts}}
+\begin{DoxyCompactList}\small\item\em Fill-\/in C\+P\+U\+I\+\_\+\+C\+A\+ST p-\/code ops as required by the casting strategy. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionAssignHigh}{Action\+Assign\+High}}
+\begin{DoxyCompactList}\small\item\em Assign initial high-\/level \mbox{\hyperlink{classHighVariable}{High\+Variable}} objects to each \mbox{\hyperlink{classVarnode}{Varnode}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMarkIndirectOnly}{Action\+Mark\+Indirect\+Only}}
+\begin{DoxyCompactList}\small\item\em Mark illegal \mbox{\hyperlink{classVarnode}{Varnode}} inputs used only in C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT ops. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMergeRequired}{Action\+Merge\+Required}}
+\begin{DoxyCompactList}\small\item\em Make {\itshape required} \mbox{\hyperlink{classVarnode}{Varnode}} merges as dictated by C\+P\+U\+I\+\_\+\+M\+U\+L\+T\+I\+E\+Q\+U\+AL, C\+P\+U\+I\+\_\+\+I\+N\+D\+I\+R\+E\+CT, and {\itshape addrtied} property. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMergeAdjacent}{Action\+Merge\+Adjacent}}
+\begin{DoxyCompactList}\small\item\em Try to merge an op\textquotesingle{}s input \mbox{\hyperlink{classVarnode}{Varnode}} to its output, if they are at the same storage location. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMergeCopy}{Action\+Merge\+Copy}}
+\begin{DoxyCompactList}\small\item\em Try to merge the input and output Varnodes of a C\+P\+U\+I\+\_\+\+C\+O\+PY op. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMergeMultiEntry}{Action\+Merge\+Multi\+Entry}}
+\begin{DoxyCompactList}\small\item\em Try to merge Varnodes specified by Symbols with multiple Symbol\+Entrys. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMergeType}{Action\+Merge\+Type}}
+\begin{DoxyCompactList}\small\item\em Try to merge Varnodes of the same type (if they don\textquotesingle{}t hold different values at the same time) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMarkExplicit}{Action\+Mark\+Explicit}}
+\begin{DoxyCompactList}\small\item\em Find {\bfseries{explicit}} Varnodes\+: Varnodes that have an explicit token representing them in the output. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMarkImplied}{Action\+Mark\+Implied}}
+\begin{DoxyCompactList}\small\item\em Mark all the {\itshape implied} \mbox{\hyperlink{classVarnode}{Varnode}} objects, which will have no explicit token in the output. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionNameVars}{Action\+Name\+Vars}}
+\begin{DoxyCompactList}\small\item\em Choose names for all high-\/level variables (High\+Variables) \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionUnreachable}{Action\+Unreachable}}
+\begin{DoxyCompactList}\small\item\em Remove unreachable blocks. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDoNothing}{Action\+Do\+Nothing}}
+\begin{DoxyCompactList}\small\item\em Remove blocks that do nothing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionRedundBranch}{Action\+Redund\+Branch}}
+\begin{DoxyCompactList}\small\item\em Get rid of {\bfseries{redundant}} branches\+: duplicate edges between the same input and output block. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDeterminedBranch}{Action\+Determined\+Branch}}
+\begin{DoxyCompactList}\small\item\em Remove conditional branches if the condition is constant. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDeadCode}{Action\+Dead\+Code}}
+\begin{DoxyCompactList}\small\item\em Dead code removal. Eliminate {\itshape dead} p-\/code ops. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionConditionalConst}{Action\+Conditional\+Const}}
+\begin{DoxyCompactList}\small\item\em Propagate conditional constants. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionSwitchNorm}{Action\+Switch\+Norm}}
+\begin{DoxyCompactList}\small\item\em Normalize jump-\/table construction. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionNormalizeSetup}{Action\+Normalize\+Setup}}
+\begin{DoxyCompactList}\small\item\em Prepare function prototypes for \char`\"{}normalize\char`\"{} simplification. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionPrototypeTypes}{Action\+Prototype\+Types}}
+\begin{DoxyCompactList}\small\item\em Lay down locked input and output data-\/type information. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDefaultParams}{Action\+Default\+Params}}
+\begin{DoxyCompactList}\small\item\em Find a prototype for each sub-\/function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionExtraPopSetup}{Action\+Extra\+Pop\+Setup}}
+\begin{DoxyCompactList}\small\item\em Define formal link between stack-\/pointer values before and after sub-\/function calls. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionFuncLink}{Action\+Func\+Link}}
+\begin{DoxyCompactList}\small\item\em Prepare for data-\/flow analysis of function parameters. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionFuncLinkOutOnly}{Action\+Func\+Link\+Out\+Only}}
+\begin{DoxyCompactList}\small\item\em Prepare for data-\/flow analysis of function parameters, when recovery isn\textquotesingle{}t required. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionParamDouble}{Action\+Param\+Double}}
+\begin{DoxyCompactList}\small\item\em Deal with situations that look like double precision parameters. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionActiveParam}{Action\+Active\+Param}}
+\begin{DoxyCompactList}\small\item\em Determine active parameters to sub-\/functions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionActiveReturn}{Action\+Active\+Return}}
+\begin{DoxyCompactList}\small\item\em Determine which sub-\/functions have active output Varnodes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionReturnRecovery}{Action\+Return\+Recovery}}
+\begin{DoxyCompactList}\small\item\em Determine data-\/flow holding the {\itshape return} {\itshape value} of the function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionRestrictLocal}{Action\+Restrict\+Local}}
+\begin{DoxyCompactList}\small\item\em Restrict possible range of local variables. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionLikelyTrash}{Action\+Likely\+Trash}}
+\begin{DoxyCompactList}\small\item\em Get rid of registers with trash values. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionRestructureVarnode}{Action\+Restructure\+Varnode}}
+\begin{DoxyCompactList}\small\item\em Create symbols that map out the local stack-\/frame for the function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionRestructureHigh}{Action\+Restructure\+High}}
+\begin{DoxyCompactList}\small\item\em Create symbols that map out the local stack-\/frame for the function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionMapGlobals}{Action\+Map\+Globals}}
+\begin{DoxyCompactList}\small\item\em Create symbols for any discovered global variables in the function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionInputPrototype}{Action\+Input\+Prototype}}
+\begin{DoxyCompactList}\small\item\em Calculate the prototype for the function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionOutputPrototype}{Action\+Output\+Prototype}}
+\begin{DoxyCompactList}\small\item\em Set the (already) recovered output data-\/type as a formal part of the prototype. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionUnjustifiedParams}{Action\+Unjustified\+Params}}
+\begin{DoxyCompactList}\small\item\em Adjust improperly justified parameters. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionInferTypes}{Action\+Infer\+Types}}
+\begin{DoxyCompactList}\small\item\em Infer and propagate data-\/types. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionHideShadow}{Action\+Hide\+Shadow}}
+\begin{DoxyCompactList}\small\item\em Locate {\itshape shadow} Varnodes and adjust them so they are hidden. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDominantCopy}{Action\+Dominant\+Copy}}
+\begin{DoxyCompactList}\small\item\em Replace C\+O\+P\+Ys from the same source with a single dominant C\+O\+PY. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionCopyMarker}{Action\+Copy\+Marker}}
+\begin{DoxyCompactList}\small\item\em Mark C\+O\+PY operations between Varnodes representing the object as {\itshape non-\/printing}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDynamicMapping}{Action\+Dynamic\+Mapping}}
+\begin{DoxyCompactList}\small\item\em Attach {\itshape dynamically} mapped symbols to Varnodes in time for data-\/type propagation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionDynamicSymbols}{Action\+Dynamic\+Symbols}}
+\begin{DoxyCompactList}\small\item\em Make final attachments of {\itshape dynamically} mapped symbols to Varnodes. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classActionPrototypeWarnings}{Action\+Prototype\+Warnings}}
+\begin{DoxyCompactList}\small\item\em Add warnings for prototypes that aren\textquotesingle{}t modeled properly. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPropagationState}{Propagation\+State}}
+\begin{DoxyCompactList}\small\item\em A class that holds a data-\/type traversal state during type propagation. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classPcodeOpEdge}{Pcode\+Op\+Edge}}
+\begin{DoxyCompactList}\small\item\em Class representing a {\itshape term} in an additive expression. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classTermOrder}{Term\+Order}}
+\begin{DoxyCompactList}\small\item\em A class for ordering \mbox{\hyperlink{classVarnode}{Varnode}} terms in an additive expression. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core decompilation actions which are indepedent of any particular architecture. 
+
+These are the internal actions. They are guaranteed to not to invalidate covers. (if they do they must check the covers themselves) 

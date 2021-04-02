@@ -1,0 +1,160 @@
+\hypertarget{classParameterSymbol}{}\doxysection{Parameter\+Symbol Class Reference}
+\label{classParameterSymbol}\index{ParameterSymbol@{ParameterSymbol}}
+
+
+A parameter with a formal backing \mbox{\hyperlink{classSymbol}{Symbol}}.  
+
+
+
+
+{\ttfamily \#include $<$fspec.\+hh$>$}
+
+
+
+Inheritance diagram for Parameter\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classParameterSymbol__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Parameter\+Symbol\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classParameterSymbol__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParameterSymbol_ad0e7cd03c77c5c514b980a0410547c7c}\label{classParameterSymbol_ad0e7cd03c77c5c514b980a0410547c7c}} 
+virtual const string \& \mbox{\hyperlink{classParameterSymbol_ad0e7cd03c77c5c514b980a0410547c7c}{get\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the name of the parameter (\char`\"{}\char`\"{} for return value) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_aec9aa765fcdb4e21f4fd223573e802b3}\label{classParameterSymbol_aec9aa765fcdb4e21f4fd223573e802b3}} 
+virtual \mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ \mbox{\hyperlink{classParameterSymbol_aec9aa765fcdb4e21f4fd223573e802b3}{get\+Type}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the data-\/type associate with {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a758e26ad63c7c212d9a70c5a82bbebf4}\label{classParameterSymbol_a758e26ad63c7c212d9a70c5a82bbebf4}} 
+virtual \mbox{\hyperlink{classAddress}{Address}} \mbox{\hyperlink{classParameterSymbol_a758e26ad63c7c212d9a70c5a82bbebf4}{get\+Address}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the storage address for {\bfseries{this}} parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a3b5d9b9aabab788511f43446745048c9}\label{classParameterSymbol_a3b5d9b9aabab788511f43446745048c9}} 
+virtual int4 \mbox{\hyperlink{classParameterSymbol_a3b5d9b9aabab788511f43446745048c9}{get\+Size}} (void) const
+\begin{DoxyCompactList}\small\item\em Get the number of bytes occupied by {\bfseries{this}} parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a91e7013d6ae6692ca8bdd95834625a2d}\label{classParameterSymbol_a91e7013d6ae6692ca8bdd95834625a2d}} 
+virtual bool \mbox{\hyperlink{classParameterSymbol_a91e7013d6ae6692ca8bdd95834625a2d}{is\+Type\+Locked}} (void) const
+\begin{DoxyCompactList}\small\item\em Is the parameter data-\/type locked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_aeadfb7be82e97a45d3f7bc661ce09bea}\label{classParameterSymbol_aeadfb7be82e97a45d3f7bc661ce09bea}} 
+virtual bool \mbox{\hyperlink{classParameterSymbol_aeadfb7be82e97a45d3f7bc661ce09bea}{is\+Name\+Locked}} (void) const
+\begin{DoxyCompactList}\small\item\em Is the parameter name locked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_ab248a298389e7b04175de72a49275d31}\label{classParameterSymbol_ab248a298389e7b04175de72a49275d31}} 
+virtual bool \mbox{\hyperlink{classParameterSymbol_ab248a298389e7b04175de72a49275d31}{is\+Size\+Type\+Locked}} (void) const
+\begin{DoxyCompactList}\small\item\em Is the size of the parameter locked. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a00574cdd1155e34ffa8020b29b8582a7}\label{classParameterSymbol_a00574cdd1155e34ffa8020b29b8582a7}} 
+virtual bool \mbox{\hyperlink{classParameterSymbol_a00574cdd1155e34ffa8020b29b8582a7}{is\+This\+Pointer}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} the \char`\"{}this\char`\"{} pointer for a class method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a664deaea278dd7353fe391f94233cfd0}\label{classParameterSymbol_a664deaea278dd7353fe391f94233cfd0}} 
+virtual bool \mbox{\hyperlink{classParameterSymbol_a664deaea278dd7353fe391f94233cfd0}{is\+Indirect\+Storage}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} really a pointer to the true parameter. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_ac05ae5af47313c5cebff093434c68a97}\label{classParameterSymbol_ac05ae5af47313c5cebff093434c68a97}} 
+virtual bool \mbox{\hyperlink{classParameterSymbol_ac05ae5af47313c5cebff093434c68a97}{is\+Hidden\+Return}} (void) const
+\begin{DoxyCompactList}\small\item\em Is {\bfseries{this}} a pointer to storage for a return value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a6a2fd9c22592c3e7144b3eb3ff349fe6}\label{classParameterSymbol_a6a2fd9c22592c3e7144b3eb3ff349fe6}} 
+virtual bool \mbox{\hyperlink{classParameterSymbol_a6a2fd9c22592c3e7144b3eb3ff349fe6}{is\+Name\+Undefined}} (void) const
+\begin{DoxyCompactList}\small\item\em Is the name of {\bfseries{this}} parameter undefined. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a87a4c3430377ccdd1efa5c3c4d720e9c}\label{classParameterSymbol_a87a4c3430377ccdd1efa5c3c4d720e9c}} 
+virtual void \mbox{\hyperlink{classParameterSymbol_a87a4c3430377ccdd1efa5c3c4d720e9c}{set\+Type\+Lock}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the lock on the data-\/type. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a1a69d14c3fd3a083f36a0c47b633ea28}\label{classParameterSymbol_a1a69d14c3fd3a083f36a0c47b633ea28}} 
+virtual void \mbox{\hyperlink{classParameterSymbol_a1a69d14c3fd3a083f36a0c47b633ea28}{set\+Name\+Lock}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle the lock on the name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_ad89ad5f9adf9e17c69bffc4ea31d3812}\label{classParameterSymbol_ad89ad5f9adf9e17c69bffc4ea31d3812}} 
+virtual void \mbox{\hyperlink{classParameterSymbol_ad89ad5f9adf9e17c69bffc4ea31d3812}{set\+This\+Pointer}} (bool val)
+\begin{DoxyCompactList}\small\item\em Toggle whether {\bfseries{this}} is the \char`\"{}this\char`\"{} pointer for a class method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParameterSymbol_a248a7be27fb94eeebe4628d623616a6d}{override\+Size\+Lock\+Type}} (\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$ct)
+\begin{DoxyCompactList}\small\item\em Change (override) the data-\/type of a {\itshape size-\/locked} parameter. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classParameterSymbol_a5cc33796ba27a4f9032fecbc20a65e28}{reset\+Size\+Lock\+Type}} (\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$factory)
+\begin{DoxyCompactList}\small\item\em Clear {\bfseries{this}} parameter\textquotesingle{}s data-\/type preserving any {\itshape size-\/lock}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classParameterSymbol_a53389b2a06d6ee2bd0ece306a70dc360}\label{classParameterSymbol_a53389b2a06d6ee2bd0ece306a70dc360}} 
+virtual \mbox{\hyperlink{classProtoParameter}{Proto\+Parameter}} $\ast$ \mbox{\hyperlink{classParameterSymbol_a53389b2a06d6ee2bd0ece306a70dc360}{clone}} (void) const
+\begin{DoxyCompactList}\small\item\em Clone the parameter. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ \mbox{\hyperlink{classParameterSymbol_a4ad5640e944e78b0e02679503ee27534}{get\+Symbol}} (void) const
+\begin{DoxyCompactList}\small\item\em Retrieve the formal \mbox{\hyperlink{classSymbol}{Symbol}} associated with {\bfseries{this}} parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classParameterSymbol_a14513e6f8d8efb1443e66390f3e19ffc}\label{classParameterSymbol_a14513e6f8d8efb1443e66390f3e19ffc}} 
+class {\bfseries Proto\+Store\+Symbol}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A parameter with a formal backing \mbox{\hyperlink{classSymbol}{Symbol}}. 
+
+Input parameters generally have a symbol associated with them. This class holds a reference to the \mbox{\hyperlink{classSymbol}{Symbol}} object and pulls the relevant parameter information off of it. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classParameterSymbol_a4ad5640e944e78b0e02679503ee27534}\label{classParameterSymbol_a4ad5640e944e78b0e02679503ee27534}} 
+\index{ParameterSymbol@{ParameterSymbol}!getSymbol@{getSymbol}}
+\index{getSymbol@{getSymbol}!ParameterSymbol@{ParameterSymbol}}
+\doxysubsubsection{\texorpdfstring{getSymbol()}{getSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSymbol}{Symbol}} $\ast$ Parameter\+Symbol\+::get\+Symbol (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Retrieve the formal \mbox{\hyperlink{classSymbol}{Symbol}} associated with {\bfseries{this}} parameter. 
+
+If there is no backing symbol an exception is thrown \begin{DoxyReturn}{Returns}
+the backing \mbox{\hyperlink{classSymbol}{Symbol}} object 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classProtoParameter_afb4a7192eb2e8449b47d85073b3d82e6}{Proto\+Parameter}}.
+
+\mbox{\Hypertarget{classParameterSymbol_a248a7be27fb94eeebe4628d623616a6d}\label{classParameterSymbol_a248a7be27fb94eeebe4628d623616a6d}} 
+\index{ParameterSymbol@{ParameterSymbol}!overrideSizeLockType@{overrideSizeLockType}}
+\index{overrideSizeLockType@{overrideSizeLockType}!ParameterSymbol@{ParameterSymbol}}
+\doxysubsubsection{\texorpdfstring{overrideSizeLockType()}{overrideSizeLockType()}}
+{\footnotesize\ttfamily void Parameter\+Symbol\+::override\+Size\+Lock\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDatatype}{Datatype}} $\ast$}]{ct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Change (override) the data-\/type of a {\itshape size-\/locked} parameter. 
+
+The original parameter must have a {\itshape type-\/lock} and T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN data-\/type. The {\itshape size-\/lock} is preserved and {\bfseries{this}} can be cleared back to its T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN state. 
+\begin{DoxyParams}{Parameters}
+{\em ct} & is the overriding data-\/type \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoParameter_a05418aa9f8e8fa0c7499b99cd51e24d3}{Proto\+Parameter}}.
+
+\mbox{\Hypertarget{classParameterSymbol_a5cc33796ba27a4f9032fecbc20a65e28}\label{classParameterSymbol_a5cc33796ba27a4f9032fecbc20a65e28}} 
+\index{ParameterSymbol@{ParameterSymbol}!resetSizeLockType@{resetSizeLockType}}
+\index{resetSizeLockType@{resetSizeLockType}!ParameterSymbol@{ParameterSymbol}}
+\doxysubsubsection{\texorpdfstring{resetSizeLockType()}{resetSizeLockType()}}
+{\footnotesize\ttfamily void Parameter\+Symbol\+::reset\+Size\+Lock\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTypeFactory}{Type\+Factory}} $\ast$}]{factory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Clear {\bfseries{this}} parameter\textquotesingle{}s data-\/type preserving any {\itshape size-\/lock}. 
+
+The data-\/type is converted to a T\+Y\+P\+E\+\_\+\+U\+N\+K\+N\+O\+WN of the same size 
+\begin{DoxyParams}{Parameters}
+{\em factory} & is the \mbox{\hyperlink{classTypeFactory}{Type\+Factory}} that will construct the unknown data-\/type \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classProtoParameter_a15d92b3da7ab6b1cd6cf52dea6ee2978}{Proto\+Parameter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{fspec_8hh}{fspec.\+hh}}\item 
+fspec.\+cc\end{DoxyCompactItemize}

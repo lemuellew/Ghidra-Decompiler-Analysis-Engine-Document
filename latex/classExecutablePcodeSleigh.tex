@@ -1,0 +1,98 @@
+\hypertarget{classExecutablePcodeSleigh}{}\doxysection{Executable\+Pcode\+Sleigh Class Reference}
+\label{classExecutablePcodeSleigh}\index{ExecutablePcodeSleigh@{ExecutablePcodeSleigh}}
+
+
+Inheritance diagram for Executable\+Pcode\+Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classExecutablePcodeSleigh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Executable\+Pcode\+Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classExecutablePcodeSleigh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classExecutablePcodeSleigh_a6ff724654bd9402977ba1999cfe4f8a3}\label{classExecutablePcodeSleigh_a6ff724654bd9402977ba1999cfe4f8a3}} 
+{\bfseries Executable\+Pcode\+Sleigh} (\mbox{\hyperlink{classArchitecture}{Architecture}} $\ast$g, const string \&src, const string \&nm)
+\item 
+virtual void \mbox{\hyperlink{classExecutablePcodeSleigh_a371bf279788a99380a3fb273e99a0266}{inject}} (\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&context, \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&emit) const
+\item 
+virtual void \mbox{\hyperlink{classExecutablePcodeSleigh_a066df419c0549f9279712783e6ceaa72}{restore\+Xml}} (const \mbox{\hyperlink{classElement}{Element}} $\ast$el)
+\begin{DoxyCompactList}\small\item\em Restore {\bfseries{this}} payload from an X\+ML stream. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classExecutablePcodeSleigh_aff5af659202741955010a5302bd08dcd}\label{classExecutablePcodeSleigh_aff5af659202741955010a5302bd08dcd}} 
+virtual void \mbox{\hyperlink{classExecutablePcodeSleigh_aff5af659202741955010a5302bd08dcd}{print\+Template}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print the p-\/code ops of the injection to a stream (for debugging) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classExecutablePcodeSleigh_a2983c78a762fc7083776690928dce88c}\label{classExecutablePcodeSleigh_a2983c78a762fc7083776690928dce88c}} 
+string {\bfseries parsestring}
+\item 
+\mbox{\Hypertarget{classExecutablePcodeSleigh_afadc3799f3bccc6f2ab372248caee10f}\label{classExecutablePcodeSleigh_afadc3799f3bccc6f2ab372248caee10f}} 
+\mbox{\hyperlink{classConstructTpl}{Construct\+Tpl}} $\ast$ {\bfseries tpl}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classExecutablePcodeSleigh_a66b43a88911f518d0a761ebd9375c30f}\label{classExecutablePcodeSleigh_a66b43a88911f518d0a761ebd9375c30f}} 
+class {\bfseries Pcode\+Inject\+Library\+Sleigh}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classExecutablePcodeSleigh_a371bf279788a99380a3fb273e99a0266}\label{classExecutablePcodeSleigh_a371bf279788a99380a3fb273e99a0266}} 
+\index{ExecutablePcodeSleigh@{ExecutablePcodeSleigh}!inject@{inject}}
+\index{inject@{inject}!ExecutablePcodeSleigh@{ExecutablePcodeSleigh}}
+\doxysubsubsection{\texorpdfstring{inject()}{inject()}}
+{\footnotesize\ttfamily void Executable\+Pcode\+Sleigh\+::inject (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classInjectContext}{Inject\+Context}} \&}]{context,  }\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&}]{emit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Perform the injection of {\bfseries{this}} payload into data-\/flow.
+
+P-\/code operations representing {\bfseries{this}} payload are copied into the controlling analysis context. The provided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object dictates exactly where the \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} and \mbox{\hyperlink{classVarnode}{Varnode}} objects are inserted and to what container. An \mbox{\hyperlink{classInjectContext}{Inject\+Context}} object specifies how placeholder elements become concrete Varnodes in the appropriate context. 
+\begin{DoxyParams}{Parameters}
+{\em context} & is the provided Inject\+Conject object \\
+\hline
+{\em emit} & is the provovided \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInjectPayload_aca9c322377f54e8e45c9a79e44ce0ff9}{Inject\+Payload}}.
+
+\mbox{\Hypertarget{classExecutablePcodeSleigh_a066df419c0549f9279712783e6ceaa72}\label{classExecutablePcodeSleigh_a066df419c0549f9279712783e6ceaa72}} 
+\index{ExecutablePcodeSleigh@{ExecutablePcodeSleigh}!restoreXml@{restoreXml}}
+\index{restoreXml@{restoreXml}!ExecutablePcodeSleigh@{ExecutablePcodeSleigh}}
+\doxysubsubsection{\texorpdfstring{restoreXml()}{restoreXml()}}
+{\footnotesize\ttfamily void Executable\+Pcode\+Sleigh\+::restore\+Xml (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classElement}{Element}} $\ast$}]{el }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Restore {\bfseries{this}} payload from an X\+ML stream. 
+
+The base class version of this method restores from a $<$pcode$>$ tag. Derived classes may restore from a parent tag and then invoke the base class method. 
+\begin{DoxyParams}{Parameters}
+{\em el} & is the X\+ML element \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classInjectPayload_a19811abba789abc6bc1d3b2322709255}{Inject\+Payload}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+inject\+\_\+sleigh.\+hh\item 
+inject\+\_\+sleigh.\+cc\end{DoxyCompactItemize}

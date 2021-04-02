@@ -1,0 +1,196 @@
+\hypertarget{classBlockCopy}{}\doxysection{Block\+Copy Class Reference}
+\label{classBlockCopy}\index{BlockCopy@{BlockCopy}}
+
+
+This class is used to mirror the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} objects in the fixed control-\/flow graph for a function.  
+
+
+
+
+{\ttfamily \#include $<$block.\+hh$>$}
+
+
+
+Inheritance diagram for Block\+Copy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classBlockCopy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Block\+Copy\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{classBlockCopy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBlockCopy_ae8eff265a0d9da347eda0042796c058b}\label{classBlockCopy_ae8eff265a0d9da347eda0042796c058b}} 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries sub\+Block} (int4 i) const
+\item 
+\mbox{\Hypertarget{classBlockCopy_aab8dda53eba113d624cbd3b22b0c58c1}\label{classBlockCopy_aab8dda53eba113d624cbd3b22b0c58c1}} 
+virtual \mbox{\hyperlink{classFlowBlock_a70df78390870fcdd51e31426ba6a193e}{block\+\_\+type}} {\bfseries get\+Type} (void) const
+\item 
+virtual void \mbox{\hyperlink{classBlockCopy_aa360ee1fda40a1cb2289cb92e615fb9c}{print\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Print a simple description of {\bfseries{this}} to stream. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classBlockCopy_ac44129ef866b5e09769f7962c1da928c}{print\+Tree}} (ostream \&s, int4 level) const
+\begin{DoxyCompactList}\small\item\em Print tree structure of any blocks owned by {\bfseries{this}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockCopy_aa648abadc84c98ba2d49902f9faac957}\label{classBlockCopy_aa648abadc84c98ba2d49902f9faac957}} 
+virtual void {\bfseries print\+Raw} (ostream \&s) const
+\item 
+virtual void \mbox{\hyperlink{classBlockCopy_a4336d4193f96a1499ee1d97281548a33}{emit}} (\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$lng) const
+\begin{DoxyCompactList}\small\item\em Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockCopy_ae7643bde7387390aaf61e2b4747bc5a7}\label{classBlockCopy_ae7643bde7387390aaf61e2b4747bc5a7}} 
+virtual const \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ {\bfseries get\+Exit\+Leaf} (void) const
+\item 
+\mbox{\Hypertarget{classBlockCopy_ab07a0819d0e6527dd08240f09400c7d6}\label{classBlockCopy_ab07a0819d0e6527dd08240f09400c7d6}} 
+virtual \mbox{\hyperlink{classPcodeOp}{Pcode\+Op}} $\ast$ {\bfseries last\+Op} (void) const
+\item 
+virtual bool \mbox{\hyperlink{classBlockCopy_ad31f116ca37dd1ba235f0642365cf4f4}{negate\+Condition}} (bool toporbottom)
+\begin{DoxyCompactList}\small\item\em Flip the condition computed by {\bfseries{this}}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} $\ast$ \mbox{\hyperlink{classBlockCopy_a86c90bb0020298ac2287ff5ab46af8a2}{get\+Split\+Point}} (void)
+\begin{DoxyCompactList}\small\item\em Get the leaf splitting block. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBlockCopy_a3187e07356b398d20f12e36691522ced}\label{classBlockCopy_a3187e07356b398d20f12e36691522ced}} 
+virtual bool {\bfseries is\+Complex} (void) const
+\item 
+virtual void \mbox{\hyperlink{classBlockCopy_a67aa0188bb62e91052092088eeec70ed}{save\+Xml\+Header}} (ostream \&s) const
+\begin{DoxyCompactList}\small\item\em Save basic information as X\+ML attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class is used to mirror the \mbox{\hyperlink{classBlockBasic}{Block\+Basic}} objects in the fixed control-\/flow graph for a function. 
+
+The decompiler does control-\/flow structuring by making an initial copy of the control-\/flow graph, then iteratively collapsing nodes (in the copy) into {\itshape structured} nodes. So an instance of this class acts as the mirror of an original basic block within the copy of the graph. During the structuring process, an instance will start with an exact mirror of its underlying basic block\textquotesingle{}s edges, but as the algorithm proceeds, edges may get replaced as neighboring basic blocks get collapsed, and eventually the instance will get collapsed itself and become a component of one of the {\itshape structured} block objects (\mbox{\hyperlink{classBlockIf}{Block\+If}}, \mbox{\hyperlink{classBlockDoWhile}{Block\+Do\+While}}, etc). The block that incorporates the \mbox{\hyperlink{classBlockCopy}{Block\+Copy}} as a component is accessible through get\+Parent(). 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockCopy_a4336d4193f96a1499ee1d97281548a33}\label{classBlockCopy_a4336d4193f96a1499ee1d97281548a33}} 
+\index{BlockCopy@{BlockCopy}!emit@{emit}}
+\index{emit@{emit}!BlockCopy@{BlockCopy}}
+\doxysubsubsection{\texorpdfstring{emit()}{emit()}}
+{\footnotesize\ttfamily virtual void Block\+Copy\+::emit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPrintLanguage}{Print\+Language}} $\ast$}]{lng }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Emit the instructions in {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} as structured code. 
+
+This is the main entry point, at the control-\/flow level, for printing structured code. 
+\begin{DoxyParams}{Parameters}
+{\em lng} & is the \mbox{\hyperlink{classPrintLanguage}{Print\+Language}} that provides details of the high-\/level language being printed \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a9baddec2635c95a5ac9019d6b21d3eab}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCopy_a86c90bb0020298ac2287ff5ab46af8a2}\label{classBlockCopy_a86c90bb0020298ac2287ff5ab46af8a2}} 
+\index{BlockCopy@{BlockCopy}!getSplitPoint@{getSplitPoint}}
+\index{getSplitPoint@{getSplitPoint}!BlockCopy@{BlockCopy}}
+\doxysubsubsection{\texorpdfstring{getSplitPoint()}{getSplitPoint()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}$\ast$ Block\+Copy\+::get\+Split\+Point (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the leaf splitting block. 
+
+If {\bfseries{this}} block ends with a conditional branch, return the deepest component block that performs the split. This component needs to be able to perform \mbox{\hyperlink{classFlowBlock_a09019e2e4104844e1a698ccf72560bef}{flip\+In\+Place\+Test()}} and \mbox{\hyperlink{classFlowBlock_a263ec50d30f807a8e1286ac37c6728ce}{flip\+In\+Place\+Execute()}} \begin{DoxyReturn}{Returns}
+the component \mbox{\hyperlink{classFlowBlock}{Flow\+Block}} or N\+U\+LL if this doesn\textquotesingle{}t end in a conditional branch 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a20996aacbad259e2e4a7bb0c72482335}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCopy_ad31f116ca37dd1ba235f0642365cf4f4}\label{classBlockCopy_ad31f116ca37dd1ba235f0642365cf4f4}} 
+\index{BlockCopy@{BlockCopy}!negateCondition@{negateCondition}}
+\index{negateCondition@{negateCondition}!BlockCopy@{BlockCopy}}
+\doxysubsubsection{\texorpdfstring{negateCondition()}{negateCondition()}}
+{\footnotesize\ttfamily virtual bool Block\+Copy\+::negate\+Condition (\begin{DoxyParamCaption}\item[{bool}]{toporbottom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Flip the condition computed by {\bfseries{this}}. 
+
+Flip the order of outgoing edges (at least). This should also affect the original op causing the condition. Note\+: we don\textquotesingle{}t have to flip at all levels of the hierarchy only at the top and at the bottom 
+\begin{DoxyParams}{Parameters}
+{\em toporbottom} & is {\bfseries{true}} if {\bfseries{this}} is the top outermost block of the hierarchy getting negated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if a change was made to data-\/flow 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_ae0f8a479ae1548280ff0b4f45bc08dc3}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCopy_aa360ee1fda40a1cb2289cb92e615fb9c}\label{classBlockCopy_aa360ee1fda40a1cb2289cb92e615fb9c}} 
+\index{BlockCopy@{BlockCopy}!printHeader@{printHeader}}
+\index{printHeader@{printHeader}!BlockCopy@{BlockCopy}}
+\doxysubsubsection{\texorpdfstring{printHeader()}{printHeader()}}
+{\footnotesize\ttfamily void Block\+Copy\+::print\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print a simple description of {\bfseries{this}} to stream. 
+
+Only print a header for {\bfseries{this}} single block 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a0d19c5b80186cf289dfbe0ce9e3ce37a}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCopy_ac44129ef866b5e09769f7962c1da928c}\label{classBlockCopy_ac44129ef866b5e09769f7962c1da928c}} 
+\index{BlockCopy@{BlockCopy}!printTree@{printTree}}
+\index{printTree@{printTree}!BlockCopy@{BlockCopy}}
+\doxysubsubsection{\texorpdfstring{printTree()}{printTree()}}
+{\footnotesize\ttfamily void Block\+Copy\+::print\+Tree (\begin{DoxyParamCaption}\item[{ostream \&}]{s,  }\item[{int4}]{level }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print tree structure of any blocks owned by {\bfseries{this}}. 
+
+Recursively print out the hierarchical structure of {\bfseries{this}} \mbox{\hyperlink{classFlowBlock}{Flow\+Block}}. 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+{\em level} & is the current level of indentation \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_ae00f14fc1916599ec34074fbb010c74b}{Flow\+Block}}.
+
+\mbox{\Hypertarget{classBlockCopy_a67aa0188bb62e91052092088eeec70ed}\label{classBlockCopy_a67aa0188bb62e91052092088eeec70ed}} 
+\index{BlockCopy@{BlockCopy}!saveXmlHeader@{saveXmlHeader}}
+\index{saveXmlHeader@{saveXmlHeader}!BlockCopy@{BlockCopy}}
+\doxysubsubsection{\texorpdfstring{saveXmlHeader()}{saveXmlHeader()}}
+{\footnotesize\ttfamily void Block\+Copy\+::save\+Xml\+Header (\begin{DoxyParamCaption}\item[{ostream \&}]{s }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Save basic information as X\+ML attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & is the output stream \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classFlowBlock_a6cf95f66e3f6940a8342b3e6fdfc5ca2}{Flow\+Block}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{block_8hh}{block.\+hh}}\item 
+block.\+cc\end{DoxyCompactItemize}

@@ -1,0 +1,321 @@
+\hypertarget{classSleigh}{}\doxysection{Sleigh Class Reference}
+\label{classSleigh}\index{Sleigh@{Sleigh}}
+
+
+A full S\+L\+E\+I\+GH engine.  
+
+
+
+
+{\ttfamily \#include $<$sleigh.\+hh$>$}
+
+
+
+Inheritance diagram for Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classSleigh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sleigh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSleigh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSleigh_a06ab69bb8b47d54d0fce4a222569e21f}{Sleigh}} (\mbox{\hyperlink{classLoadImage}{Load\+Image}} $\ast$ld, \mbox{\hyperlink{classContextDatabase}{Context\+Database}} $\ast$c\+\_\+db)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classConstructor}{Constructor}}. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSleigh_a258cd9fc30c87a071a75d6450dea54fc}\label{classSleigh_a258cd9fc30c87a071a75d6450dea54fc}} 
+virtual \mbox{\hyperlink{classSleigh_a258cd9fc30c87a071a75d6450dea54fc}{$\sim$\+Sleigh}} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSleigh_a2a9dc927d88ccb1ebece23293fb75b9c}{reset}} (\mbox{\hyperlink{classLoadImage}{Load\+Image}} $\ast$ld, \mbox{\hyperlink{classContextDatabase}{Context\+Database}} $\ast$c\+\_\+db)
+\begin{DoxyCompactList}\small\item\em Reset the engine for a new program. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSleigh_aca7ce17e881917e515aa45ea48810e45}{initialize}} (\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&store)
+\item 
+virtual void \mbox{\hyperlink{classSleigh_a7df1e3c0c4e2fa3090b6e38f53498aa1}{register\+Context}} (const string \&name, int4 sbit, int4 ebit)
+\begin{DoxyCompactList}\small\item\em Add a new context variable to the model for this processor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSleigh_ac44342619fef0c42a0f65c415683e58e}{set\+Context\+Default}} (const string \&nm, uintm val)
+\begin{DoxyCompactList}\small\item\em Set the default value for a particular context variable. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSleigh_a82409ca16da71a07eb338aa71b64882c}{allow\+Context\+Set}} (bool val) const
+\begin{DoxyCompactList}\small\item\em Toggle whether disassembly is allowed to affect context. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSleigh_aec2a92a6246fd8d2704d1f853f01ee85}{instruction\+Length}} (const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Get the length of a machine instruction. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSleigh_a7221a746dae0e1acfd2189a192974fe0}{one\+Instruction}} (\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&emit, const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Transform a single machine instruction into pcode. \end{DoxyCompactList}\item 
+virtual int4 \mbox{\hyperlink{classSleigh_a21c8622098202b1746bcda972d59d9aa}{print\+Assembly}} (\mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} \&emit, const \mbox{\hyperlink{classAddress}{Address}} \&baseaddr) const
+\begin{DoxyCompactList}\small\item\em Disassemble a single machine instruction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$ \mbox{\hyperlink{classSleigh_abab71643681aaa776f4e4c5d643be3a3}{obtain\+Context}} (const \mbox{\hyperlink{classAddress}{Address}} \&addr, int4 state) const
+\begin{DoxyCompactList}\small\item\em Obtain a parse tree for the instruction at the given address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSleigh_a54c142d4cf4954c6e9f5c32e9e96a215}{resolve}} (\mbox{\hyperlink{classParserContext}{Parser\+Context}} \&pos) const
+\begin{DoxyCompactList}\small\item\em Generate a parse tree suitable for disassembly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSleigh_a6feb982ab58134d1ad3730d9e252906c}{resolve\+Handles}} (\mbox{\hyperlink{classParserContext}{Parser\+Context}} \&pos) const
+\begin{DoxyCompactList}\small\item\em Prepare the parse tree for p-\/code generation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A full S\+L\+E\+I\+GH engine. 
+
+Its provided with a \mbox{\hyperlink{classLoadImage}{Load\+Image}} of the bytes to be disassembled and a \mbox{\hyperlink{classContextDatabase}{Context\+Database}}.
+
+Assembly is produced via the \mbox{\hyperlink{classSleigh_a21c8622098202b1746bcda972d59d9aa}{print\+Assembly()}} method, provided with an \mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} object and an \mbox{\hyperlink{classAddress}{Address}}.
+
+P-\/code is produced via the \mbox{\hyperlink{classSleigh_a7221a746dae0e1acfd2189a192974fe0}{one\+Instruction()}} method, provided with a \mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} object and an \mbox{\hyperlink{classAddress}{Address}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSleigh_a06ab69bb8b47d54d0fce4a222569e21f}\label{classSleigh_a06ab69bb8b47d54d0fce4a222569e21f}} 
+\index{Sleigh@{Sleigh}!Sleigh@{Sleigh}}
+\index{Sleigh@{Sleigh}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{Sleigh()}{Sleigh()}}
+{\footnotesize\ttfamily Sleigh\+::\+Sleigh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLoadImage}{Load\+Image}} $\ast$}]{ld,  }\item[{\mbox{\hyperlink{classContextDatabase}{Context\+Database}} $\ast$}]{c\+\_\+db }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{classConstructor}{Constructor}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ld} & is the \mbox{\hyperlink{classLoadImage}{Load\+Image}} to draw program bytes from \\
+\hline
+{\em c\+\_\+db} & is the context database \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSleigh_a82409ca16da71a07eb338aa71b64882c}\label{classSleigh_a82409ca16da71a07eb338aa71b64882c}} 
+\index{Sleigh@{Sleigh}!allowContextSet@{allowContextSet}}
+\index{allowContextSet@{allowContextSet}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{allowContextSet()}{allowContextSet()}}
+{\footnotesize\ttfamily void Sleigh\+::allow\+Context\+Set (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Toggle whether disassembly is allowed to affect context. 
+
+By default the disassembly/pcode translation engine can change the global context, thereby affecting later disassembly. Context may be getting determined by something other than control flow in, the disassembly, in which case this function can turn off changes made by the disassembly 
+\begin{DoxyParams}{Parameters}
+{\em val} & is {\bfseries{true}} to allow context changes, {\bfseries{false}} prevents changes \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classTranslate_ae74cac44825c3979c65c105bc66cd63c}{Translate}}.
+
+\mbox{\Hypertarget{classSleigh_aca7ce17e881917e515aa45ea48810e45}\label{classSleigh_aca7ce17e881917e515aa45ea48810e45}} 
+\index{Sleigh@{Sleigh}!initialize@{initialize}}
+\index{initialize@{initialize}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Sleigh\+::initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDocumentStorage}{Document\+Storage}} \&}]{store }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+The .sla file from the document store is loaded and cache objects are prepared 
+\begin{DoxyParams}{Parameters}
+{\em store} & is the document store containing the main $<$sleigh$>$ tag. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_af8e71e9a9477e9a91be400ecca565df5}{Translate}}.
+
+\mbox{\Hypertarget{classSleigh_aec2a92a6246fd8d2704d1f853f01ee85}\label{classSleigh_aec2a92a6246fd8d2704d1f853f01ee85}} 
+\index{Sleigh@{Sleigh}!instructionLength@{instructionLength}}
+\index{instructionLength@{instructionLength}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{instructionLength()}{instructionLength()}}
+{\footnotesize\ttfamily int4 Sleigh\+::instruction\+Length (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the length of a machine instruction. 
+
+This method decodes an instruction at a specific address just enough to find the number of bytes it uses within the instruction stream. 
+\begin{DoxyParams}{Parameters}
+{\em baseaddr} & is the \mbox{\hyperlink{classAddress}{Address}} of the instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes in the instruction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_aa7139376886fccfdcda529fc74f7b382}{Translate}}.
+
+\mbox{\Hypertarget{classSleigh_abab71643681aaa776f4e4c5d643be3a3}\label{classSleigh_abab71643681aaa776f4e4c5d643be3a3}} 
+\index{Sleigh@{Sleigh}!obtainContext@{obtainContext}}
+\index{obtainContext@{obtainContext}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{obtainContext()}{obtainContext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classParserContext}{Parser\+Context}} $\ast$ Sleigh\+::obtain\+Context (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{addr,  }\item[{int4}]{state }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Obtain a parse tree for the instruction at the given address. 
+
+The tree may be cached from a previous access. If the address has not been parsed, disassembly is performed, and a new parse tree is prepared. Depending on the desired {\itshape state}, the parse tree can be prepared either for disassembly or for p-\/code generation. 
+\begin{DoxyParams}{Parameters}
+{\em addr} & is the given address of the instruction \\
+\hline
+{\em state} & is the desired parse state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the parse tree object (Parse\+Context) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSleigh_a7221a746dae0e1acfd2189a192974fe0}\label{classSleigh_a7221a746dae0e1acfd2189a192974fe0}} 
+\index{Sleigh@{Sleigh}!oneInstruction@{oneInstruction}}
+\index{oneInstruction@{oneInstruction}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{oneInstruction()}{oneInstruction()}}
+{\footnotesize\ttfamily int4 Sleigh\+::one\+Instruction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPcodeEmit}{Pcode\+Emit}} \&}]{emit,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Transform a single machine instruction into pcode. 
+
+This is the main interface to the pcode translation engine. The {\itshape dump} method in the {\itshape emit} object is invoked exactly once for each pcode operation in the translation for the machine instruction at the given address. This routine can throw either
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{structUnimplError}{Unimpl\+Error}} or
+\item \mbox{\hyperlink{structBadDataError}{Bad\+Data\+Error}}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em emit} & is the tailored pcode emitting object \\
+\hline
+{\em baseaddr} & is the \mbox{\hyperlink{classAddress}{Address}} of the machine instruction \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of bytes in the machine instruction 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classTranslate_a1737782c38ee43de62ae2e7572321fc9}{Translate}}.
+
+\mbox{\Hypertarget{classSleigh_a21c8622098202b1746bcda972d59d9aa}\label{classSleigh_a21c8622098202b1746bcda972d59d9aa}} 
+\index{Sleigh@{Sleigh}!printAssembly@{printAssembly}}
+\index{printAssembly@{printAssembly}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{printAssembly()}{printAssembly()}}
+{\footnotesize\ttfamily int4 Sleigh\+::print\+Assembly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAssemblyEmit}{Assembly\+Emit}} \&}]{emit,  }\item[{const \mbox{\hyperlink{classAddress}{Address}} \&}]{baseaddr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Disassemble a single machine instruction. 
+
+This is the main interface to the disassembler for the processor. It disassembles a single instruction and returns the result to the application via the {\itshape dump} method in the {\itshape emit} object. 
+\begin{DoxyParams}{Parameters}
+{\em emit} & is the disassembly emitting object \\
+\hline
+{\em baseaddr} & is the address of the machine instruction to disassemble \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classTranslate_ac97443bb89e0c6bfb68caf9f48a8c85d}{Translate}}.
+
+\mbox{\Hypertarget{classSleigh_a7df1e3c0c4e2fa3090b6e38f53498aa1}\label{classSleigh_a7df1e3c0c4e2fa3090b6e38f53498aa1}} 
+\index{Sleigh@{Sleigh}!registerContext@{registerContext}}
+\index{registerContext@{registerContext}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{registerContext()}{registerContext()}}
+{\footnotesize\ttfamily void Sleigh\+::register\+Context (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{int4}]{sbit,  }\item[{int4}]{ebit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a new context variable to the model for this processor. 
+
+Add the name of a context register used by the processor and how that register is packed into the context state. This information is used by a \mbox{\hyperlink{classContextDatabase}{Context\+Database}} to associate names with context information and to pack context into a single state variable for the translation engine. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the new context variable \\
+\hline
+{\em sbit} & is the first bit of the variable in the packed state \\
+\hline
+{\em ebit} & is the last bit of the variable in the packed state \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classTranslate_ab389d99d7a2d0c4bdc03c7c1b2362c25}{Translate}}.
+
+\mbox{\Hypertarget{classSleigh_a2a9dc927d88ccb1ebece23293fb75b9c}\label{classSleigh_a2a9dc927d88ccb1ebece23293fb75b9c}} 
+\index{Sleigh@{Sleigh}!reset@{reset}}
+\index{reset@{reset}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void Sleigh\+::reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classLoadImage}{Load\+Image}} $\ast$}]{ld,  }\item[{\mbox{\hyperlink{classContextDatabase}{Context\+Database}} $\ast$}]{c\+\_\+db }\end{DoxyParamCaption})}
+
+
+
+Reset the engine for a new program. 
+
+Completely clear everything except the base and reconstruct with a new \mbox{\hyperlink{classLoadImage}{Load\+Image}} and \mbox{\hyperlink{classContextDatabase}{Context\+Database}} 
+\begin{DoxyParams}{Parameters}
+{\em ld} & is the new \mbox{\hyperlink{classLoadImage}{Load\+Image}} \\
+\hline
+{\em c\+\_\+db} & is the new \mbox{\hyperlink{classContextDatabase}{Context\+Database}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSleigh_a54c142d4cf4954c6e9f5c32e9e96a215}\label{classSleigh_a54c142d4cf4954c6e9f5c32e9e96a215}} 
+\index{Sleigh@{Sleigh}!resolve@{resolve}}
+\index{resolve@{resolve}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{resolve()}{resolve()}}
+{\footnotesize\ttfamily void Sleigh\+::resolve (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParserContext}{Parser\+Context}} \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Generate a parse tree suitable for disassembly. 
+
+Resolve {\itshape all} the constructors involved in the instruction at the indicated address 
+\begin{DoxyParams}{Parameters}
+{\em pos} & is the parse object that will hold the resulting tree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSleigh_a6feb982ab58134d1ad3730d9e252906c}\label{classSleigh_a6feb982ab58134d1ad3730d9e252906c}} 
+\index{Sleigh@{Sleigh}!resolveHandles@{resolveHandles}}
+\index{resolveHandles@{resolveHandles}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{resolveHandles()}{resolveHandles()}}
+{\footnotesize\ttfamily void Sleigh\+::resolve\+Handles (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classParserContext}{Parser\+Context}} \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Prepare the parse tree for p-\/code generation. 
+
+Resolve handle templates for the given parse tree, assuming Constructors are already resolved. 
+\begin{DoxyParams}{Parameters}
+{\em pos} & is the given parse tree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classSleigh_ac44342619fef0c42a0f65c415683e58e}\label{classSleigh_ac44342619fef0c42a0f65c415683e58e}} 
+\index{Sleigh@{Sleigh}!setContextDefault@{setContextDefault}}
+\index{setContextDefault@{setContextDefault}!Sleigh@{Sleigh}}
+\doxysubsubsection{\texorpdfstring{setContextDefault()}{setContextDefault()}}
+{\footnotesize\ttfamily void Sleigh\+::set\+Context\+Default (\begin{DoxyParamCaption}\item[{const string \&}]{name,  }\item[{uintm}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the default value for a particular context variable. 
+
+Set the value to be returned for a context variable when there are no explicit address ranges specifying a value for the variable. 
+\begin{DoxyParams}{Parameters}
+{\em name} & is the name of the context variable \\
+\hline
+{\em val} & is the value to be considered default \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classTranslate_ab608abbfb7f8a0ad21fed57dc00c0439}{Translate}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sleigh_8hh}{sleigh.\+hh}}\item 
+sleigh.\+cc\end{DoxyCompactItemize}

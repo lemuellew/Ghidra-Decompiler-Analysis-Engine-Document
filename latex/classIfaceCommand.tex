@@ -1,0 +1,173 @@
+\hypertarget{classIfaceCommand}{}\doxysection{Iface\+Command Class Reference}
+\label{classIfaceCommand}\index{IfaceCommand@{IfaceCommand}}
+
+
+A command that can be executed from the command line.  
+
+
+
+
+{\ttfamily \#include $<$interface.\+hh$>$}
+
+
+
+Inheritance diagram for Iface\+Command\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classIfaceCommand__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classIfaceCommand_ad0a0ba80d392ef1346c43283a8c3ca90}{set\+Data}} (\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$root, \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$data)=0
+\begin{DoxyCompactList}\small\item\em Associate a specific data object with this command. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{execute}} (istream \&s)=0
+\item 
+virtual string \mbox{\hyperlink{classIfaceCommand_a06f9500f4b0a0e3cf14010cf133502d5}{get\+Module}} (void) const =0
+\begin{DoxyCompactList}\small\item\em Get the formal module name to which this command belongs. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$ \mbox{\hyperlink{classIfaceCommand_a908e484baf6e090b46ceb2ccaea8139d}{create\+Data}} (void)=0
+\begin{DoxyCompactList}\small\item\em Create a specialized data object for {\bfseries{this}} command (and its module) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceCommand_a6b4cf9ece6453e1436aad4f8ab49b9d4}{add\+Word}} (const string \&temp)
+\begin{DoxyCompactList}\small\item\em Add a token to the command line string associated with this command. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classIfaceCommand_afbbaea977f2a7cd6de3339a6a737e7a6}\label{classIfaceCommand_afbbaea977f2a7cd6de3339a6a737e7a6}} 
+void \mbox{\hyperlink{classIfaceCommand_afbbaea977f2a7cd6de3339a6a737e7a6}{add\+Words}} (const vector$<$ string $>$ \&wordlist)
+\begin{DoxyCompactList}\small\item\em Add words to the associated command line string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classIfaceCommand_a4ee3f097c09e0ede38ce8e37a64cb458}{command\+String}} (string \&res) const
+\begin{DoxyCompactList}\small\item\em Get the complete command line string. \end{DoxyCompactList}\item 
+int4 \mbox{\hyperlink{classIfaceCommand_a7517eda70ce8d1ca6ed564e475b02f9f}{compare}} (const \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} \&op2) const
+\begin{DoxyCompactList}\small\item\em Order two commands by their command line strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A command that can be executed from the command line. 
+
+The command has data associated with it (via \mbox{\hyperlink{classIfaceCommand_ad0a0ba80d392ef1346c43283a8c3ca90}{set\+Data()}}) and is executed via the \mbox{\hyperlink{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}{execute()}} method. The command can get additional parameters from the command line by reading the input stream passed to it. The command is associated with a specific sequence of words (tokens) that should appear at the start of the command line. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIfaceCommand_a6b4cf9ece6453e1436aad4f8ab49b9d4}\label{classIfaceCommand_a6b4cf9ece6453e1436aad4f8ab49b9d4}} 
+\index{IfaceCommand@{IfaceCommand}!addWord@{addWord}}
+\index{addWord@{addWord}!IfaceCommand@{IfaceCommand}}
+\doxysubsubsection{\texorpdfstring{addWord()}{addWord()}}
+{\footnotesize\ttfamily void Iface\+Command\+::add\+Word (\begin{DoxyParamCaption}\item[{const string \&}]{temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a token to the command line string associated with this command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temp} & is the new token to add \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceCommand_a4ee3f097c09e0ede38ce8e37a64cb458}\label{classIfaceCommand_a4ee3f097c09e0ede38ce8e37a64cb458}} 
+\index{IfaceCommand@{IfaceCommand}!commandString@{commandString}}
+\index{commandString@{commandString}!IfaceCommand@{IfaceCommand}}
+\doxysubsubsection{\texorpdfstring{commandString()}{commandString()}}
+{\footnotesize\ttfamily void Iface\+Command\+::command\+String (\begin{DoxyParamCaption}\item[{string \&}]{res }\end{DoxyParamCaption}) const}
+
+
+
+Get the complete command line string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em res} & is overwritten with the full command line string \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classIfaceCommand_a7517eda70ce8d1ca6ed564e475b02f9f}\label{classIfaceCommand_a7517eda70ce8d1ca6ed564e475b02f9f}} 
+\index{IfaceCommand@{IfaceCommand}!compare@{compare}}
+\index{compare@{compare}!IfaceCommand@{IfaceCommand}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily int4 Iface\+Command\+::compare (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} \&}]{op2 }\end{DoxyParamCaption}) const}
+
+
+
+Order two commands by their command line strings. 
+
+The commands are ordered lexicographically and alphabetically by the comparing tokens in their respective command line strings 
+\begin{DoxyParams}{Parameters}
+{\em op2} & is the other command to compare with {\bfseries{this}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1, 0, 1 if {\bfseries{this}} is earlier, equal to, or after to the other command 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classIfaceCommand_a908e484baf6e090b46ceb2ccaea8139d}\label{classIfaceCommand_a908e484baf6e090b46ceb2ccaea8139d}} 
+\index{IfaceCommand@{IfaceCommand}!createData@{createData}}
+\index{createData@{createData}!IfaceCommand@{IfaceCommand}}
+\doxysubsubsection{\texorpdfstring{createData()}{createData()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classIfaceData}{Iface\+Data}}$\ast$ Iface\+Command\+::create\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a specialized data object for {\bfseries{this}} command (and its module) 
+
+This method is only called once per module \begin{DoxyReturn}{Returns}
+the newly created data object for the module 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classIfaceBaseCommand_aa9084b1ec06e7bd05b88a89303fd42a4}{Iface\+Base\+Command}}, \mbox{\hyperlink{classIfaceCodeDataCommand_a1ab8f8101f822cb726bca9e326fd5980}{Iface\+Code\+Data\+Command}}, \mbox{\hyperlink{classIfaceCommandDummy_aa386a0965e95c4b2f6808a79cda853d6}{Iface\+Command\+Dummy}}, and \mbox{\hyperlink{classIfaceDecompCommand_a9a4c2fccea348fbb80dc363dc6a39853}{Iface\+Decomp\+Command}}.
+
+\mbox{\Hypertarget{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}\label{classIfaceCommand_af10e29cee2c8e419de6efe9e680ad201}} 
+\index{IfaceCommand@{IfaceCommand}!execute@{execute}}
+\index{execute@{execute}!IfaceCommand@{IfaceCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily virtual void Iface\+Command\+::execute (\begin{DoxyParamCaption}\item[{istream \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Execute this command. Additional state can be read from the given command line stream. Otherwise, the command gets its data from its registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object 
+\begin{DoxyParams}{Parameters}
+{\em s} & is the input stream from the command line \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classIfcAnalyzeRange_a56bb172dc0ed81b268717560b2839c27}{Ifc\+Analyze\+Range}}, \mbox{\hyperlink{classIfcStructureBlocks_a39d9e8cd79a374d4392e254137d587c0}{Ifc\+Structure\+Blocks}}, \mbox{\hyperlink{classIfcPreferSplit_aaf3f2d962ed56ee7e784b8b88ca073d9}{Ifc\+Prefer\+Split}}, \mbox{\hyperlink{classIfcReadonly_ab91c44fe2d43b9f5fda34b77734a4b37}{Ifc\+Readonly}}, \mbox{\hyperlink{classIfcVolatile_a41bd6c55a0838a7c46925e1a2409fb9f}{Ifc\+Volatile}}, \mbox{\hyperlink{classIfcResetActionstats_a814bf0bc991a7b943643f5e72b507ea5}{Ifc\+Reset\+Actionstats}}, \mbox{\hyperlink{classIfcPrintActionstats_a46e637cead1a46f203fa2c1571f0b955}{Ifc\+Print\+Actionstats}}, \mbox{\hyperlink{classIfcCountPcode_ae6be267ea3118053a6e9945faa609350}{Ifc\+Count\+Pcode}}, \mbox{\hyperlink{classIfcCallOtherFixup_aec285f15002efa5a47ee620114ef6150}{Ifc\+Call\+Other\+Fixup}}, \mbox{\hyperlink{classIfcCallFixup_a303769cfca9f66c9409774fb823efd96}{Ifc\+Call\+Fixup}}, \mbox{\hyperlink{classIfcComment_ab3ec87a9d5332b0f4c10bd349f807650}{Ifc\+Comment}}, \mbox{\hyperlink{classIfcCallGraphList_ac481079688c06e5250db1b8ea81e8cc7}{Ifc\+Call\+Graph\+List}}, \mbox{\hyperlink{classIfcCallGraphLoad_acbec76d28fb6e2027a3101c33fde7435}{Ifc\+Call\+Graph\+Load}}, \mbox{\hyperlink{classIfcCallGraphBuild_abe1d0338026fa9dd6bcf466e12e0fed1}{Ifc\+Call\+Graph\+Build}}, \mbox{\hyperlink{classIfcCallGraphDump_aa64392bb204496b5aceaa74f0338871a}{Ifc\+Call\+Graph\+Dump}}, \mbox{\hyperlink{classIfcDuplicateHash_a8a4048b58da97771dcad39343e231b03}{Ifc\+Duplicate\+Hash}}, \mbox{\hyperlink{classIfcCommentInstr_a101c4b13e1dff5bd5fde18c7b62cd38c}{Ifc\+Comment\+Instr}}, \mbox{\hyperlink{classIfcGraphDom_aa784fb7316319c32eeee3e2b10c58b86}{Ifc\+Graph\+Dom}}, \mbox{\hyperlink{classIfcGraphControlflow_aba87e4fc25a1fda8d53591f3781ec32e}{Ifc\+Graph\+Controlflow}}, \mbox{\hyperlink{classIfcGraphDataflow_a5daf51e3a17da2d71241bbd1e900e8f7}{Ifc\+Graph\+Dataflow}}, \mbox{\hyperlink{classIfcPrintRaw_a9aecf31758a44ef1e025eb867e267529}{Ifc\+Print\+Raw}}, \mbox{\hyperlink{classIfcContinue_a422d9ffe63d6c9cea18cd8e494b7e6fb}{Ifc\+Continue}}, \mbox{\hyperlink{classIfcPrintMap_a5508ed1c8729f4e1d5172e5275423b59}{Ifc\+Print\+Map}}, \mbox{\hyperlink{classIfcPrintLocalrange_a30e3b78957d6afd8771280955d53ceb9}{Ifc\+Print\+Localrange}}, \mbox{\hyperlink{classIfcUnlockPrototype_ac21154c70e24fd3ba2e7d71d254c9b85}{Ifc\+Unlock\+Prototype}}, \mbox{\hyperlink{classIfcLockPrototype_aa2e82ff8df04101dcee268fca0f0f1b4}{Ifc\+Lock\+Prototype}}, \mbox{\hyperlink{classIfcPrintInputsAll_aaf763e010c0f82c94d95d9443fbe6f2c}{Ifc\+Print\+Inputs\+All}}, \mbox{\hyperlink{classIfcPrintInputs_af7467e8aed2fa56fb8e909461e022842}{Ifc\+Print\+Inputs}}, \mbox{\hyperlink{classIfcGlobalRegisters_a664345c70b1ae67ce6140acad8de4491}{Ifc\+Global\+Registers}}, \mbox{\hyperlink{classIfcGlobalify_a30fe295b7731c4161efb170abbd90c10}{Ifc\+Globalify}}, \mbox{\hyperlink{classIfcGlobalRemove_acb81449b281ae69ff0dac554beeb0318}{Ifc\+Global\+Remove}}, \mbox{\hyperlink{classIfcGlobalAdd_a727b49481db6ac9ae722fbce15ab595c}{Ifc\+Global\+Add}}, \mbox{\hyperlink{classIfcDeadcodedelay_ab3c538082471ef04a5cf0c48efd8a767}{Ifc\+Deadcodedelay}}, \mbox{\hyperlink{classIfcFlowOverride_a7bb5fdc69ea21e9236a4e015a39c9dac}{Ifc\+Flow\+Override}}, \mbox{\hyperlink{classIfcJumpOverride_a90f8e712da03bb3c716692501627f890}{Ifc\+Jump\+Override}}, \mbox{\hyperlink{classIfcProtooverride_adf9d52b83faac64aae4fb2e27890755c}{Ifc\+Protooverride}}, \mbox{\hyperlink{classIfcForcegoto_a5241453f234330ace35c00d319acd944}{Ifc\+Forcegoto}}, \mbox{\hyperlink{classIfcForceDec_a3dd7a4c7396bae9c375317b916057d9d}{Ifc\+Force\+Dec}}, \mbox{\hyperlink{classIfcForceHex_aeff89103d37c60da98f84ad8fbd0b4b1}{Ifc\+Force\+Hex}}, \mbox{\hyperlink{classIfcTypeVarnode_a121ff1e507f74d6ec86a07e120cd3ba8}{Ifc\+Type\+Varnode}}, \mbox{\hyperlink{classIfcNameVarnode_a211fbdeb57899f8999a86b8386b075a6}{Ifc\+Name\+Varnode}}, \mbox{\hyperlink{classIfcVarnodeCover_aff6014b51215552ea689e3cde90b7e6c}{Ifc\+Varnode\+Cover}}, \mbox{\hyperlink{classIfcPrintExtrapop_a57b328ffae6e3282b8cf789b702ba496}{Ifc\+Print\+Extrapop}}, \mbox{\hyperlink{classIfcVarnodehighCover_af8cd84bbe78884138b139ff231098894}{Ifc\+Varnodehigh\+Cover}}, \mbox{\hyperlink{classIfcPrintCover_a8869c00a9bbd7cecc498d1b675bc4bfe}{Ifc\+Print\+Cover}}, \mbox{\hyperlink{classIfcPrintVarnode_a45fb7ac3722eb334d0c28b5ee6b16d0e}{Ifc\+Print\+Varnode}}, \mbox{\hyperlink{classIfcRemove_a170d67940736747f8043483426214f54}{Ifc\+Remove}}, \mbox{\hyperlink{classIfcRetype_a045af05120fda8cc7fa637714db8ca22}{Ifc\+Retype}}, \mbox{\hyperlink{classIfcRename_a7c7b89bc0716bd3c4e7efc6c28cff73a}{Ifc\+Rename}}, \mbox{\hyperlink{classIfcPrintParamMeasures_a85f768a0cc5ac73b3feb42d46089ebce}{Ifc\+Print\+Param\+Measures}}, \mbox{\hyperlink{classIfcPrintHigh_a1ab0611a565a7dd33a40da7950e0ef17}{Ifc\+Print\+High}}, \mbox{\hyperlink{classIfcPrintSpaces_abc642427774b3e8e43054975ac5bf775}{Ifc\+Print\+Spaces}}, \mbox{\hyperlink{classIfcEcho_a37fd2ae3be2b866127abccc2989961a9}{Ifc\+Echo}}, \mbox{\hyperlink{classIfcPrintBlocktree_a91ae7617239d47cfb294ea84c499e579}{Ifc\+Print\+Blocktree}}, \mbox{\hyperlink{classIfcClosefile_afb061815b1fae3cf300afb8a179a6deb}{Ifc\+Closefile}}, \mbox{\hyperlink{classIfcPrintTree_ad0d5950a55f536fbba04efa4ba0ba572}{Ifc\+Print\+Tree}}, \mbox{\hyperlink{classIfcOpenfileAppend_aa3f7ac9ff923f0278e92962dd1ed6b67}{Ifc\+Openfile\+Append}}, \mbox{\hyperlink{classIfcBreakaction_ae02d475f7ddb0c84174542d9b88656a7}{Ifc\+Breakaction}}, \mbox{\hyperlink{classIfcOpenfile_a2cb0a3f5fa5d023b4de08a34220a79d3}{Ifc\+Openfile}}, \mbox{\hyperlink{classIfcBreakstart_a501a27b150ccb020030d0b0156890353}{Ifc\+Breakstart}}, \mbox{\hyperlink{classIfcHistory_a2d0c5037da245a4556030a853789275a}{Ifc\+History}}, \mbox{\hyperlink{classIfcSettrackedrange_acaa8f1641f3ffac2da07d34c377ef299}{Ifc\+Settrackedrange}}, \mbox{\hyperlink{classIfcQuit_a654a95f381fca497695ed65ad8896436}{Ifc\+Quit}}, \mbox{\hyperlink{classIfcSetcontextrange_aa24fec02de28b15d6e7a85d25567f52c}{Ifc\+Setcontextrange}}, \mbox{\hyperlink{classIfcListprototypes_a6ec2d710e21d1c84a8d2b0ed8769f594}{Ifc\+Listprototypes}}, \mbox{\hyperlink{classIfcListOverride_a85d2e02d525c2a7ab57e54602078a2b9}{Ifc\+List\+Override}}, \mbox{\hyperlink{classIfcListaction_a4513740c2b18e325cbf9c5382a715d08}{Ifc\+Listaction}}, \mbox{\hyperlink{classIfcProducePrototypes_a26647bb5ac26d0ab368034f8c1823289}{Ifc\+Produce\+Prototypes}}, \mbox{\hyperlink{classIfcProduceC_a45af16c6237ea8ff52caa3a7f655cb16}{Ifc\+ProduceC}}, \mbox{\hyperlink{classIfcPrintCTypes_a9f3c59436d04440a92041c217ddc7454}{Ifc\+Print\+C\+Types}}, \mbox{\hyperlink{classIfcPrintCGlobals_a7a490ed00e5ecaf3d805beb7f8ae1ad2}{Ifc\+Print\+C\+Globals}}, \mbox{\hyperlink{classIfcPrintCStruct_a12d8b638868ba6f7eaa84e88421c0ab1}{Ifc\+Print\+C\+Struct}}, \mbox{\hyperlink{classIfcPrintCFlat_a11c64bab560c5aaee612235a4d84d785}{Ifc\+Print\+C\+Flat}}, \mbox{\hyperlink{classIfcPrintCXml_aee74cbfcd8d9415aaf178283a32f34b9}{Ifc\+Print\+C\+Xml}}, \mbox{\hyperlink{classIfcPrintLanguage_a2c1930cfbe6eedec2f55080358e4c9a7}{Ifc\+Print\+Language}}, \mbox{\hyperlink{classIfcDecompile_acf3a1c4ebd4069695d56d89c2babcf28}{Ifc\+Decompile}}, \mbox{\hyperlink{classIfcCodeDataDumpTargetHits_a9b1c24dc6ceb8b6f66cc797fd3ce1f02}{Ifc\+Code\+Data\+Dump\+Target\+Hits}}, \mbox{\hyperlink{classIfcDumpbinary_a1a4fb5637d0c8792ed2aaf7615f7da00}{Ifc\+Dumpbinary}}, \mbox{\hyperlink{classIfcCodeDataDumpUnlinked_a9ac1562f496cfd10470f1a52fc97d872}{Ifc\+Code\+Data\+Dump\+Unlinked}}, \mbox{\hyperlink{classIfcDump_a4e3abbc8ca445ed10d88c2cf31f57601}{Ifc\+Dump}}, \mbox{\hyperlink{classIfcCodeDataDumpStarts_a580e0d5282d8338455f02dcb5368e0dc}{Ifc\+Code\+Data\+Dump\+Starts}}, \mbox{\hyperlink{classIfcPrintdisasm_aa443ed14bb273335f4c57f80891d9cc3}{Ifc\+Printdisasm}}, \mbox{\hyperlink{classIfcCodeDataDumpCrossRefs_a6524a8a49dcc7b1cd41657ea168d5eeb}{Ifc\+Code\+Data\+Dump\+Cross\+Refs}}, \mbox{\hyperlink{classIfcMaplabel_a14a4b538cfef0467342d45812b5dfbdd}{Ifc\+Maplabel}}, \mbox{\hyperlink{classIfcCodeDataDumpModelHits_a370a70077aa312c0ddb4f4e35cee5301}{Ifc\+Code\+Data\+Dump\+Model\+Hits}}, \mbox{\hyperlink{classIfcMapexternalref_a81048b8beac5fa5bfd987a4ac3a5b6b1}{Ifc\+Mapexternalref}}, \mbox{\hyperlink{classIfcCodeDataRun_a404246226c137a94b454bd5955f4d560}{Ifc\+Code\+Data\+Run}}, \mbox{\hyperlink{classIfcMapfunction_acf9d7edac75150821f0b9c6318e11dea}{Ifc\+Mapfunction}}, \mbox{\hyperlink{classIfcCodeDataTarget_a13114442d43a73d46354db913edc5cdc}{Ifc\+Code\+Data\+Target}}, \mbox{\hyperlink{classIfcMaphash_ae57da41dbb958189c2b6101ecfdc3293}{Ifc\+Maphash}}, \mbox{\hyperlink{classIfcCodeDataInit_a24c369dc92e55a44cb58ff8105dfccbd}{Ifc\+Code\+Data\+Init}}, \mbox{\hyperlink{classIfcMapaddress_a83f33c8f34d56dfcaabe64a58f9b8236}{Ifc\+Mapaddress}}, \mbox{\hyperlink{classIfcReadSymbols_a5e0b66be5caec5f99dd8c11e31826e5a}{Ifc\+Read\+Symbols}}, \mbox{\hyperlink{classIfcCleararch_a3a74e8bd153fd7da6139b41d4bf7c90d}{Ifc\+Cleararch}}, \mbox{\hyperlink{classIfcAddrrangeLoad_ae9d83583bd9d087d4b821dd3055968d0}{Ifc\+Addrrange\+Load}}, \mbox{\hyperlink{classIfaceCommandDummy_acac62af3353e7afe18ca6fd05b0d75fa}{Iface\+Command\+Dummy}}, \mbox{\hyperlink{classIfcFuncload_ae6dbe62903ed565fd45310e39b7dcb48}{Ifc\+Funcload}}, \mbox{\hyperlink{classIfcAdjustVma_aa7bfa89237119c9aaa0db9c38ec5112b}{Ifc\+Adjust\+Vma}}, \mbox{\hyperlink{classIfcParseFile_abe050f74bc02c78b231ed636e629b3ca}{Ifc\+Parse\+File}}, \mbox{\hyperlink{classIfcParseLine_ad1c74b89106a1f71511e80766f389de7}{Ifc\+Parse\+Line}}, \mbox{\hyperlink{classIfcOption_a2337595063d7701739837999034ac8bf}{Ifc\+Option}}, \mbox{\hyperlink{classIfcSource_a53da0f4768e86d92bea07dc05b4a878f}{Ifc\+Source}}, \mbox{\hyperlink{classIfcRestore_a19a9d5482d3aee44b2e0f548d69a12c4}{Ifc\+Restore}}, \mbox{\hyperlink{classIfcSave_a56ac19bca1d3b3cff186db25db549a6d}{Ifc\+Save}}, \mbox{\hyperlink{classIfcAddpath_abe711b93972455d4790fc6649cf67675}{Ifc\+Addpath}}, and \mbox{\hyperlink{classIfcLoadFile_af7ea7408b40db6c11eff2a4f99f4ef80}{Ifc\+Load\+File}}.
+
+\mbox{\Hypertarget{classIfaceCommand_a06f9500f4b0a0e3cf14010cf133502d5}\label{classIfaceCommand_a06f9500f4b0a0e3cf14010cf133502d5}} 
+\index{IfaceCommand@{IfaceCommand}!getModule@{getModule}}
+\index{getModule@{getModule}!IfaceCommand@{IfaceCommand}}
+\doxysubsubsection{\texorpdfstring{getModule()}{getModule()}}
+{\footnotesize\ttfamily virtual string Iface\+Command\+::get\+Module (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the formal module name to which this command belongs. 
+
+Commands in the same module share data through their registered \mbox{\hyperlink{classIfaceData}{Iface\+Data}} object \begin{DoxyReturn}{Returns}
+the formal module name 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classIfaceBaseCommand_add0c9e33b2e1a56b04caab6aaea343dd}{Iface\+Base\+Command}}, \mbox{\hyperlink{classIfaceCodeDataCommand_abfa633dd19e5672b125425a9541c94d3}{Iface\+Code\+Data\+Command}}, \mbox{\hyperlink{classIfaceCommandDummy_ae7284da5e8726825621896c967b2d295}{Iface\+Command\+Dummy}}, and \mbox{\hyperlink{classIfaceDecompCommand_aa1505dc6014dbdca5f922a826cd04b40}{Iface\+Decomp\+Command}}.
+
+\mbox{\Hypertarget{classIfaceCommand_ad0a0ba80d392ef1346c43283a8c3ca90}\label{classIfaceCommand_ad0a0ba80d392ef1346c43283a8c3ca90}} 
+\index{IfaceCommand@{IfaceCommand}!setData@{setData}}
+\index{setData@{setData}!IfaceCommand@{IfaceCommand}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily virtual void Iface\+Command\+::set\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIfaceStatus}{Iface\+Status}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{classIfaceData}{Iface\+Data}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Associate a specific data object with this command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & is the interface object this command is registered with \\
+\hline
+{\em data} & is the data object the command should use \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classIfaceBaseCommand_a551f7828c74ff2c0324ed4b3c0210039}{Iface\+Base\+Command}}, \mbox{\hyperlink{classIfaceCodeDataCommand_a778193a98c1a977a3635e63eb15a26d0}{Iface\+Code\+Data\+Command}}, \mbox{\hyperlink{classIfaceCommandDummy_a6cde79d0cd9edb822fa594259de68826}{Iface\+Command\+Dummy}}, and \mbox{\hyperlink{classIfaceDecompCommand_ad9bcf72bbdc7faddd7a23a1a4d127b0c}{Iface\+Decomp\+Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_8hh}{interface.\+hh}}\item 
+interface.\+cc\end{DoxyCompactItemize}

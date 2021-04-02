@@ -1,0 +1,96 @@
+\hypertarget{interface_8hh}{}\doxysection{interface.\+hh File Reference}
+\label{interface_8hh}\index{interface.hh@{interface.hh}}
+
+
+Classes and utilities for a {\itshape generic} command-\/line interface.  
+
+
+{\ttfamily \#include \char`\"{}capability.\+hh\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$cstdio$>$}\newline
+Include dependency graph for interface.\+hh\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{interface_8hh__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{interface_8hh__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structIfaceError}{Iface\+Error}}
+\begin{DoxyCompactList}\small\item\em An exception specific to the command line interface. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structIfaceParseError}{Iface\+Parse\+Error}}
+\begin{DoxyCompactList}\small\item\em An exception describing a parsing error in a command line. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structIfaceExecutionError}{Iface\+Execution\+Error}}
+\begin{DoxyCompactList}\small\item\em An exception throw during the execution of a command. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceData}{Iface\+Data}}
+\begin{DoxyCompactList}\small\item\em Data specialized for a particular command module. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}}
+\begin{DoxyCompactList}\small\item\em A command that can be executed from the command line. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceCommandDummy}{Iface\+Command\+Dummy}}
+\begin{DoxyCompactList}\small\item\em A dummy command used during parsing. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceCapability}{Iface\+Capability}}
+\begin{DoxyCompactList}\small\item\em Groups of console commands that are {\itshape discovered} by the loader. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceStatus}{Iface\+Status}}
+\begin{DoxyCompactList}\small\item\em A generic console mode interface and command executor. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfaceBaseCommand}{Iface\+Base\+Command}}
+\begin{DoxyCompactList}\small\item\em A root class for a basic set of commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcQuit}{Ifc\+Quit}}
+\begin{DoxyCompactList}\small\item\em Quit command to terminate processing from the given interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcHistory}{Ifc\+History}}
+\begin{DoxyCompactList}\small\item\em History command to list the most recent successful commands. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcOpenfile}{Ifc\+Openfile}}
+\begin{DoxyCompactList}\small\item\em Open file command to redirect bulk output to a specific file stream. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcOpenfileAppend}{Ifc\+Openfile\+Append}}
+\begin{DoxyCompactList}\small\item\em Open file command directing bulk output to be appended to a specific file. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcClosefile}{Ifc\+Closefile}}
+\begin{DoxyCompactList}\small\item\em Close command, closing the current bulk output file. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classIfcEcho}{Ifc\+Echo}}
+\begin{DoxyCompactList}\small\item\em Echo command to echo the current command line to the bulk output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{interface_8hh_af88fae35f618feee9303bf7d688365bb}{compare\+\_\+ifacecommand}} (const \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$a, const \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$b)
+\begin{DoxyCompactList}\small\item\em Compare to commands as pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classes and utilities for a {\itshape generic} command-\/line interface. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interface_8hh_af88fae35f618feee9303bf7d688365bb}\label{interface_8hh_af88fae35f618feee9303bf7d688365bb}} 
+\index{interface.hh@{interface.hh}!compare\_ifacecommand@{compare\_ifacecommand}}
+\index{compare\_ifacecommand@{compare\_ifacecommand}!interface.hh@{interface.hh}}
+\doxysubsubsection{\texorpdfstring{compare\_ifacecommand()}{compare\_ifacecommand()}}
+{\footnotesize\ttfamily bool compare\+\_\+ifacecommand (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$}]{a,  }\item[{const \mbox{\hyperlink{classIfaceCommand}{Iface\+Command}} $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compare to commands as pointers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & is a pointer to the first command \\
+\hline
+{\em b} & is a pointer to the second command \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries{true}} if the first pointer is ordered before the second 
+\end{DoxyReturn}
